@@ -99,6 +99,8 @@ Tree colour response
 FLORA_TREE_COLOUR.txt documents brighter lit foliage with native shadows.
 Current material/map evidence is validation/flora-tree-colour.json.
 
-Isolated source lighting calibration
+Source lighting calibration
 FLORA_TREE_LIGHTBENCH.txt documents the same-tree Blender 3.4.1 / Unreal
-comparison. This is a separate bench; its candidate is not installed here.
+comparison. The approved tree response is now installed in this driving scene;
+FLORA_TRAIL_SOURCE34.txt documents its shared lighting, actual game captures,
+remaining foliage limitations and validation/flora-trail-source34.json.

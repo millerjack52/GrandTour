@@ -9,7 +9,7 @@ def verify(world):
    mesh=c.static_mesh;count=c.get_instance_count()
    if not count or not mesh or '/FloraTrail/Meshes/' not in mesh.get_path_name():continue
    source=u.load_asset('/Game/GrandTour/ArtTests/FloraGroup/Assets/'+mesh.get_name());assert source
-   lods=S.get_lod_count(mesh);assert lods==3
+   lods=S.get_lod_count(mesh);assert lods==3,(mesh.get_name(),lods)
    triangles=mesh.get_static_mesh_description(0).get_triangle_count();assert triangles==source.get_static_mesh_description(0).get_triangle_count(),'LOD0 geometry changed'
    total+=triangles*count
    def bound(mat):
@@ -27,7 +27,7 @@ def verify(world):
      if key=='SourceCoverage':assert not t.get_editor_property('srgb')
      if key=='SourceBarkColour':
       assert t.get_editor_property('srgb') and t.get_editor_property('max_texture_size')==4096
-      assert [t.blueprint_get_size_x(),t.blueprint_get_size_y()]==[4096,4096]
+      assert [t.blueprint_get_size_x(),t.blueprint_get_size_y()]==[4096,4096],(t.get_path_name(),t.blueprint_get_size_x(),t.blueprint_get_size_y())
      textures[t.get_path_name()]={'dimensions':[t.blueprint_get_size_x(),t.blueprint_get_size_y()],'srgb':bool(t.get_editor_property('srgb'))}
    rows.append({'mesh':mesh.get_name(),'instances':count,'lods':lods,'lod0_triangles':triangles,'cast_shadow':bool(c.get_editor_property('cast_shadow')),'contact_shadow':bool(c.get_editor_property('cast_contact_shadow'))})
  assert len(rows)==8,rows

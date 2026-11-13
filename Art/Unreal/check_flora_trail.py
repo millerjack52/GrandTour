@@ -9,6 +9,7 @@ replacements={
 'from flora_trial_evidence import audited_fingerprint':'from flora_trail_evidence import audited_fingerprint',
 "(OUT/'LidarMud/reference.json')":"(ROOT/'Art/Export/FloraDrive/LidarMud/reference.json')",
 'from flora_rendered_deformation import RenderedDeformation':'import flora_rendered_deformation as rd; rd.O=OUT; RenderedDeformation=rd.RenderedDeformation',
+'u.unregister_slate_post_tick_callback(quit_handle);u.SystemLibrary.quit_editor()':'u.unregister_slate_post_tick_callback(quit_handle);u.EditorPythonScripting.set_keep_python_script_alive(False);u.SystemLibrary.quit_editor()',
 "yield 3\n    u.GTPlayWindowLibrary":"yield 3\n    for cmd in json.loads((ROOT/'Art/flora_trail_settings.json').read_text())['console']:u.SystemLibrary.execute_console_command(u.get_editor_subsystem(u.UnrealEditorSubsystem).get_editor_world(),cmd)\n    u.GTPlayWindowLibrary",
 }
 for old,new in replacements.items():

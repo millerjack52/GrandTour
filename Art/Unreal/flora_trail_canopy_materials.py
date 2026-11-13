@@ -37,6 +37,9 @@ def candidate(source,coverage,lighting,cfg):
 
 def install_component(c,cfg):
  if not c.static_mesh or c.static_mesh.get_name() not in ['SM_Exact_tree','SM_Exact_pine']:return []
+ if cfg.get('source_version')=='3.4.1':
+  from flora_trail_source34 import install_component as install_source34
+  return install_source34(c)
  changed=[]
  for i,m in enumerate(c.get_materials()):
   if m.blend_mode!=u.BlendMode.BLEND_MASKED:continue

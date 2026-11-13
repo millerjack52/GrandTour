@@ -2,6 +2,7 @@
   "reflectance": 0.6,
   "transmission": 0.32,
   "coverage_facing_floor": 0.62,
-  "scope": "Tree leaves only; source bark, shrubs, grass, scene exposure and lighting unchanged",
-  "measure_gpu": false
+  "scope": "Tree/pine Leaf_0 uses Blender 3.4.1 calibration; other materials unchanged. Lighting: flora_trail_source34_settings.json. Legacy reflectance/transmission/coverage fields apply only without source_version.",
+  "measure_gpu": false,
+  "source_version": "3.4.1"
 }

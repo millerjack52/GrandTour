@@ -1,0 +1,84 @@
+FloraTrail: approved Blender 3.4.1 tree response in the driving scene
+=================================================================
+
+Scope
+Promote the user-approved same-tree calibration into FloraTrail only. The
+Leaf_0 family on SM_Exact_tree and SM_Exact_pine uses the approved M_Source34Tree
+response with each species' own SourcePigment and SourceCoverage textures.
+Four instanced components contain 340 trees. No instance transforms, LODs,
+ground geometry, mud parameters or water simulation are changed by this pass.
+LiDAR, earlier studies and shared source assets remain protected by hashes.
+
+Lighting contract
+Match the warm case from the same-tree comparison: source sun energy 3 and sky
+strength 0.8, both using the measured 0.98 engine gain. The native sun intensity
+is 2.94 and skylight intensity 0.784. Sun colour is (1, .814, .539), sky colour
+(.58, .74, 1), source angle .5 degrees and exposure bias zero. Sun ray in Unreal
+coordinates is (.279447854, -.745194256, -.605470300). The existing Standard
+display transform is retained, not replaced with a new colour grade. Existing
+fog settings and sky artwork remain unchanged.
+
+The source-version tree material has native shadows, unchanged source pigment,
+world +Z diffuse response and original facing/hashed coverage. It contains no
+emissive colour lift. SourceShadowCoverage stays 1. Bark retains its approved
+4K textures. Other foliage families keep their existing conversion; their
+map-local SunDirection and SkyRadiance inputs are synchronized with this rig.
+This does not establish their Blender 3.4.1 parity. They remain the next audit
+target if the mixed scene shows a mismatch.
+
+Controls and reproduction
+Art/flora_trail_source34_settings.json contains the lighting controls. Canonical
+flora_trail_canopy_settings.json opts into source_version 3.4.1. The full scene
+builder calls the same installer and final lighting setup, preventing rebuilds
+from silently restoring the previous light gain or rejected colour ramp.
+Restore licensed Content and the approved lighting bench candidate first.
+
+From C:/GrandTour, with Unreal and Blender closed, run sequentially:
+  powershell -File Art/run_flora_trail_source34.ps1 -Stage preview
+  powershell -File Art/run_flora_trail_source34.ps1 -Stage install
+  powershell -File Art/run_flora_trail_source34.ps1 -Stage verify
+  powershell -File Art/run_flora_trail_source34.ps1 -Stage check
+  python Art/review_flora_trail_source34.py
+
+Preview makes reversible PIE changes. Install backs up the map, map-local
+collection and canonical settings under Saved/FloraTrailBackups. Verify reloads
+the saved map, checks native light values and the collection's saved direction,
+then captures actual game views. Editor-only LOD/source texture checks happen
+before PIE and after asynchronous texture loading; calling them during play
+does not return valid editor data. Parameter collection GUIDs are preserved.
+
+Review uses an actual unlit 0.18 neutral card in the game backbuffer to check the
+Standard display transfer (expected sRGB ~118/255). No screenshots are graded.
+It requires matching saved package fingerprints for install, visual and driving
+reports. The established driving test retains its continuous traversal, water
+contact, rendered ground SceneDepth, native GPU shader, sediment and reset gates.
+
+Results are recorded in validation/flora-trail-source34.json and locally in
+Art/Export/FloraTrail/Source34. Development failures are not passing evidence.
+The initial preview display-card attempt failed to attach a static mesh during
+PIE; only the saved verification's movable card is used as display evidence.
+An initial driving run passed its gameplay assertions but exited with a shutdown
+access violation. It is retained under Source34/shutdown-failed and is not a
+passing process result. The FloraTrail wrapper now releases the Python keepalive
+before requesting editor shutdown; all gameplay assertions remain unchanged.
+
+Limits
+The source response is closer to the author's original Blender version, not an
+exact match for all native shadowing. Fine temporal coverage noise remains.
+The existing undergrowth response can read darker than the calibrated crowns.
+This pass deliberately keeps the accepted calibration rather than adding a
+new artistic tint to conceal that difference. General local-light parity for
+the remaining foliage is unverified.
+Geometry and instance counts do not increase. The bench's tree shader pixel
+instruction count is lower than the previous candidate, but this is not a
+scene-level timing result. Captures use -norhithread for stable shutdown and the
+functional driving test includes capture pauses: performance remains unverified.
+
+Launch the saved scene with Drive-FloraTrail.bat.
+
+Verified result (13 November 2026)
+Install, saved-game verification and repeated driving check all exited zero.
+The game neutral-card RGB was (118.0, 118.0, 118.29), matching Standard output.
+All eight populated foliage components retained source textures and three LODs;
+327 protected source/other-map files retained their hashes. See the validation
+JSON for measured driving, rendered deformation and reset results.

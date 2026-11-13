@@ -147,6 +147,9 @@ def run():
  from flora_group_display import viewport_material
  ps=pp.settings;ps.weighted_blendables=props(u.WeightedBlendables(),array=[props(u.WeightedBlendable(),weight=1.,object=local(viewport_material()))]);pp.settings=ps
  u.get_editor_subsystem(u.UnrealEditorSubsystem).set_level_viewport_camera_info(u.Vector(-2850,-150,230),u.Rotator(pitch=4,yaw=8))
+ if json.loads((R/'Art/flora_trail_canopy_settings.json').read_text()).get('source_version')=='3.4.1':
+  from flora_trail_source34 import configure,settings
+  report['source34_lighting']=configure(world,settings(),save_collection=True)
  assert L.save_current_level();yield 5
  assert all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in protected.items()),'Approved input changed'
  report.update(ok=True,settings=cfg,source_assets_unchanged=True,instances=sum(x['instances'] for x in report['components']),route_length_m=52.3)

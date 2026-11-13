@@ -42,4 +42,4 @@ FloraTrail atmosphere controls and current saved-map visual evidence are documen
 
 The tree colour response refinement and current validation are documented in `docs/FLORA_TREE_COLOUR.txt`.
 
-The isolated same-tree lighting calibration is documented in `docs/FLORA_TREE_LIGHTBENCH.txt`. It uses the purchased project's specified Blender 3.4.1 version and does not promote changes into the driving scene or LiDAR.
+The same-tree lighting calibration is documented in `docs/FLORA_TREE_LIGHTBENCH.txt`. It uses the purchased project's specified Blender 3.4.1 version. Its approved tree response is now installed in FloraTrail under the comparison's lighting; see `docs/FLORA_TRAIL_SOURCE34.txt` for game-view and driving validation. LiDAR remains unchanged.

@@ -109,6 +109,11 @@ editor viewport automatically uses the same output transform. The older
 FloraTreeLightBench directory contains superseded local diagnostic attempts.
 No candidate is installed into FloraTrail or LiDAR by this workflow.
 
+Subsequent promotion: the user-approved result is installed into FloraTrail by
+the separate FLORA_TRAIL_SOURCE34 workflow. LiDAR remains unchanged. The original
+bench's protected-before hashes intentionally describe its historical isolated
+state; do not erase or rewrite them to conceal the authorized scene promotion.
+
 Next promotion gate
 Review the paired images first. Then validate the calibrated response in the
 actual driving viewport with the same display convention and a bounded lighting

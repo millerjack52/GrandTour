@@ -1,0 +1,27 @@
+{
+  "source_version": "3.4.1",
+  "comparison_case": "warm",
+  "sun_energy": 3.0,
+  "sky_strength": 0.8,
+  "sun_unit_gain": 0.98,
+  "sky_unit_gain": 0.98,
+  "sun_colour": [
+    1.0,
+    0.814,
+    0.539
+  ],
+  "sky_colour": [
+    0.58,
+    0.74,
+    1.0
+  ],
+  "sun_ray": [
+    0.27944785356521606,
+    -0.7451942563056946,
+    -0.6054702997207642
+  ],
+  "sun_source_angle": 0.5,
+  "contact_shadow_length": 0.0,
+  "exposure_bias": 0.0,
+  "shadow_coverage": 1.0
+}
