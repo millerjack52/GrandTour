@@ -5,6 +5,7 @@ R=Path('C:/GrandTour');O=R/'Art/Export/FloraTrail';D='/Game/GrandTour/ArtTests/F
 sys.path[:0]=[str(R/'Art/Unreal'),str(R/'Art/tools')]
 from benmore_river_life_materials import props,Graph
 from make_mud_road import centre
+from flora_trail_canopy_materials import install_component
 A=u.get_editor_subsystem(u.EditorActorSubsystem);L=u.get_editor_subsystem(u.LevelEditorSubsystem);E=u.EditorAssetLibrary;M=u.MaterialEditingLibrary
 cfg=json.loads((R/'Art/flora_trail_settings.json').read_text());O.mkdir(parents=True,exist_ok=True)
 report={'ok':False,'level':LEVEL,'components':[],'performance_verified':False,'materials':{}}
@@ -106,6 +107,7 @@ def run():
   props(c,cast_contact_shadow=True,visible_in_ray_tracing=False,affect_distance_field_lighting=False,shadow_cache_invalidation_behavior=u.ShadowCacheInvalidationBehavior.RIGID)
   c.set_cull_distances(14000,19000) if key in ['tree','pine'] else c.set_cull_distances(4500,8500)
   for i,m in enumerate(c.get_materials()):c.set_material(i,local(m))
+  install_component(c,json.loads((R/'Art/flora_trail_canopy_settings.json').read_text()))
   report['components'].append({'family':key,'far':far,'instances':len(transforms),'mesh':mesh.get_path_name(),'casts_shadows':shadow})
  report['removed_flower_instances']=removed
  visual=next(a for a in A.get_all_level_actors() if isinstance(a,u.GTMudRunnerVisual))

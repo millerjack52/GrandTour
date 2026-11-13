@@ -1,0 +1,258 @@
+{
+  "ok": true,
+  "scope": "FloraTrail tree leaf materials only",
+  "install": {
+    "ok": true,
+    "trees": 340,
+    "components": 4,
+    "materials": [
+      "/Game/GrandTour/ArtTests/FloraTrail/Materials/Canopy/M_Exact_pine_Leaf_0_26834fc_coverage_lighting.M_Exact_pine_Leaf_0_26834fc_coverage_lighting",
+      "/Game/GrandTour/ArtTests/FloraTrail/Materials/Canopy/M_Exact_tree_Leaf_0_26834fc_coverage_lighting.M_Exact_tree_Leaf_0_26834fc_coverage_lighting"
+    ],
+    "existing_assets_unchanged": true,
+    "geometry_and_lods_unchanged": true,
+    "scene_lights_and_exposure_unchanged": true,
+    "settings": {
+      "reflectance": 0.23,
+      "transmission": 0.16,
+      "coverage_facing_floor": 0.62,
+      "scope": "Tree leaves only; source bark, shrubs, grass, scene exposure and lighting unchanged"
+    },
+    "backup": "C:\\GrandTour\\Saved\\FloraTrailBackups\\canopy-1794602368690371900",
+    "previous_package_fingerprint": "2c17a898b946789557b67dea41017c227ddd5bcf7d454f8d248fb219afc8a87e"
+  },
+  "saved_map_verification": {
+    "ok": true,
+    "images": [
+      "game_before_canopy",
+      "game_before_road",
+      "game_after_canopy",
+      "game_after_road",
+      "game_after_driving"
+    ],
+    "timings": [],
+    "package_fingerprint": "883a463a39def5cf57f430f4487f562c78d3cee2578a020d856563bd00836f34",
+    "assets": {
+      "ok": true,
+      "components": [
+        {
+          "mesh": "SM_Exact_drygrass",
+          "instances": 743,
+          "lods": 3,
+          "lod0_triangles": 52,
+          "cast_shadow": false,
+          "contact_shadow": true
+        },
+        {
+          "mesh": "SM_Exact_fern",
+          "instances": 159,
+          "lods": 3,
+          "lod0_triangles": 460,
+          "cast_shadow": true,
+          "contact_shadow": true
+        },
+        {
+          "mesh": "SM_Exact_grass",
+          "instances": 6276,
+          "lods": 3,
+          "lod0_triangles": 42,
+          "cast_shadow": false,
+          "contact_shadow": true
+        },
+        {
+          "mesh": "SM_Exact_pine",
+          "instances": 92,
+          "lods": 3,
+          "lod0_triangles": 74670,
+          "cast_shadow": true,
+          "contact_shadow": true
+        },
+        {
+          "mesh": "SM_Exact_pine",
+          "instances": 101,
+          "lods": 3,
+          "lod0_triangles": 74670,
+          "cast_shadow": false,
+          "contact_shadow": true
+        },
+        {
+          "mesh": "SM_Exact_shrub",
+          "instances": 2524,
+          "lods": 3,
+          "lod0_triangles": 416,
+          "cast_shadow": true,
+          "contact_shadow": true
+        },
+        {
+          "mesh": "SM_Exact_tree",
+          "instances": 68,
+          "lods": 3,
+          "lod0_triangles": 37382,
+          "cast_shadow": true,
+          "contact_shadow": true
+        },
+        {
+          "mesh": "SM_Exact_tree",
+          "instances": 79,
+          "lods": 3,
+          "lod0_triangles": 37382,
+          "cast_shadow": false,
+          "contact_shadow": true
+        }
+      ],
+      "textures": {
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_drygrass_Colour.T_Exact_drygrass_Colour": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": true
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_006.T_SourceMask_Grass_006": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": false
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_fern_Colour.T_Exact_fern_Colour": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": true
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Fern_1.T_SourceMask_Fern_1": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": false
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_grass_Colour.T_Exact_grass_Colour": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": true
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_004.T_SourceMask_Grass_004": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": false
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_pine.T_SourceBark_pine": {
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "srgb": true
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_pine_Colour.T_Exact_pine_Colour": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": true
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": false
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_shrub_Colour.T_Exact_shrub_Colour": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": true
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Shrubbery.T_SourceMask_Shrubbery": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": false
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass.T_SourceMask_Grass": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": false
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Flower_0_RANDOM.T_SourceMask_Flower_0_RANDOM": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": false
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree": {
+          "dimensions": [
+            4096,
+            4096
+          ],
+          "srgb": true
+        },
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": {
+          "dimensions": [
+            2048,
+            2048
+          ],
+          "srgb": true
+        }
+      },
+      "lod0_triangle_upper_bound": 21331816,
+      "scope": "Every populated new foliage component uses the approved source texture bindings; LOD0 triangles preserved, 3 LODs, bark loaded at 4K."
+    },
+    "performance_verified": false,
+    "performance_scope": "Timings skipped by default; optional 300-frame PIE spot checks are not a sustained-driving or 1080p certification",
+    "geometry_lods_lights_exposure_unchanged": true
+  },
+  "processes": {
+    "canopy": {
+      "started": "2026-11-13T14:36:57.2418528-06:00",
+      "finished": "2026-11-13T14:38:27.4956255-06:00",
+      "stage": "canopy",
+      "exit_code": 0
+    },
+    "install": {
+      "started": "2026-11-13T14:39:08.5228450-06:00",
+      "finished": "2026-11-13T14:39:44.1804315-06:00",
+      "stage": "install",
+      "exit_code": 0
+    },
+    "verify": {
+      "started": "2026-11-13T14:45:01.4639436-06:00",
+      "finished": "2026-11-13T14:46:32.6575672-06:00",
+      "stage": "verify",
+      "exit_code": 0
+    }
+  },
+  "performance": {
+    "performance_verified": false,
+    "reason": "Skate and Unreal were concurrently using the RTX 4050 during the verification run. User previously chose to finish visuals and leave timings unverified.",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "observed_vram_used_mib": 5801,
+    "observed_gpu_utilization_percent": 97,
+    "other_process": "Skate",
+    "other_process_id": 33416,
+    "unreal_process_id": 10232
+  },
+  "images": [
+    "trees-before-after.jpg",
+    "diagnostic-grid.jpg",
+    "game_after_driving.png"
+  ],
+  "unchanged_geometry": true,
+  "remaining_limits": [
+    "Fine temporal mask edge noise",
+    "Full Blender appearance parity and full-pack conversion not claimed",
+    "No clean performance result while Skate shares the GPU"
+  ]
+}

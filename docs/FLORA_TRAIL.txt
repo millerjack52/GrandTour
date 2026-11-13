@@ -82,3 +82,10 @@ rendering/LOD refinement pass before a wider rollout.
 Generated map rebuilds keep a map backup under Saved/FloraTrailBackups.
 Art/review_flora_trail.py assembles unretouched screenshots and checks that all
 reports refer to the same saved asset fingerprint before writing validation.
+
+Tree refinement
+The tree-only coverage and lighting correction is documented in
+FLORA_TRAIL_CANOPY.txt. Current saved-map evidence is in
+validation/flora-trail-canopy.json. The earlier metrics and screenshots above
+remain the pre-refinement snapshot; tree geometry and gameplay systems did not
+change in this later pass.

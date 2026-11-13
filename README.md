@@ -35,3 +35,5 @@ The separate forest-path group study is documented in
 and a saved-map texture audit. Its map and licensed inputs remain local.
 
 The isolated **FloraTrail** driving section combines the approved source foliage conversion with deformable mud, shallow water and Rock Master banks. Run `Drive-FloraTrail.bat`; build, controls and validation are documented in `docs/FLORA_TRAIL.txt`. It leaves the LiDAR and earlier studies unchanged.
+
+FloraTrail's tree coverage and sunlight-response refinement is documented in `docs/FLORA_TRAIL_CANOPY.txt`, including controlled material tests and current saved-map validation.

@@ -1,0 +1,61 @@
+FLORA TRAIL / TREE COVERAGE AND LIGHT RESPONSE
+
+Problem and diagnosis
+In the low-angle game view, crowns were transparent and their leaf surfaces
+read as dark silhouettes. The previous compatibility shader multiplied atlas
+coverage by 0.1 + 0.9 * abs(N dot V)^3.412 for these trees: only about 0.185 of
+the atlas coverage remained at a 60-degree viewing angle. Its diffuse weight
+was zero, using squared pigment transmission / pi with a sun-facing lighting
+normal. That approximation did not provide a convincing reflective leaf surface
+in the playable forest.
+
+Controlled tests
+canopy_flora_trail.py captures the original, forced LOD0 only, coverage only,
+lighting only, combined, and combined with sun disabled. All variants share
+camera, source textures and scene settings. Full geometry alone did not resolve
+the thin appearance in the tested views. The combined material change provides
+fuller crowns, warm highlights and dark interiors without changing the sun.
+This is an Unreal appearance adaptation, not a claim of exact Blender parity.
+
+Installed change
+Tree leaf slots only, on four instanced components containing 340 trees.
+Native Two Sided Foliage uses the existing pigment and geometric normals, with
+reflectance 0.23, transmission 0.16, opacity 0.55, roughness 0.85 and specular 0.08.
+Emissive is zero. Coverage retains the source atlas, including zero-alpha gaps,
+with a gentler 0.62 + 0.38 * abs(N dot V)^0.7 viewing-angle response. The existing
+independent per-card temporal masking and stable shadow masking remain.
+
+No added trees, cards or texture samples. Bark, 4K texture bindings, tree mesh
+geometry, three LODs, instance transforms, fog, exposure, scene lights, ground,
+mud and water materials remain unchanged. Broad foliage rollout is still pending.
+Fine temporal edge noise can remain; this does not resolve every distant LOD issue.
+
+Reproducible controls and workflow
+Art/flora_trail_canopy_settings.json controls the tree adapter. The regular
+build_flora_trail.py builder applies it automatically. Native source-compatible
+materials remain available for direct comparison. The scoped installer backs
+up the map and verifies that pre-existing asset packages retain their hashes.
+
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail_canopy.ps1 -Stage canopy
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail_canopy.ps1 -Stage install
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail_canopy.ps1 -Stage verify
+python Art/review_flora_trail_canopy.py
+
+The verify stage reopens the saved map, checks all source texture bindings and
+4K bark, then captures original/fixed materials in actual PIE cameras. Set measure_gpu
+to true in the canopy settings to record optional 300-frame GPU spot checks.
+It defaults to false. The initial timing attempt shared the
+RTX 4050 with Skate: timings are unverified and must not be used as a performance
+acceptance or regression claim. Geometry/LOD counts are verified unchanged.
+No driving physics changed, so the previous mud/water functional verification
+remains evidence for that system; this pass adds tree-specific visual validation.
+
+Evidence lives in Art/Export/FloraTrail/Canopy and docs/validation/flora-trail-canopy.json.
+The earlier flora-trail validation describes the pre-canopy-fix visual state;
+use the new validation for the current tree materials and map fingerprint.
+
+Official rendering reference
+Epic documents Two Sided Foliage as a shading model for thin leaves and their
+light transmission:
+https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-properties
+https://dev.epicgames.com/documentation/en-us/unreal-engine/shading-models-in-unreal-engine
