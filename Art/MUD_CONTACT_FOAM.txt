@@ -1,0 +1,69 @@
+Mud water contact foam — 2026-10-13
+
+Drive:
+  /Game/GrandTour/ArtTests/RutInteraction/L_RutInteraction
+  /Game/GrandTour/ArtTests/RutInteraction/L_RutInteraction_Firm
+  /Game/GrandTour/ArtTests/RutInteraction/L_RutInteraction_Deep
+  /Game/GrandTour/ArtTests/MudWater/L_MudWater
+
+These already share /Game/GrandTour/ArtTests/MudWater/M_MudWater.
+Its colour, roughness, opacity and specular outputs now include contact foam.
+The installation verifies unchanged wave displacement, normal and wet/dry mask
+code, and unchanged map file hashes. No props or geometry are added to the maps.
+
+Placement:
+  Fine live mud height supplies a narrow waterline band around displaced clods.
+  Single-layer water's pre-water scene depth supplies the visible intersection
+  with rocks, timber and tyres, including below the original landscape surface.
+  This screen-space contact fringe is view-dependent; the terrain shoreline and
+  transported wake history remain in world space. This does not add solid obstacle
+  hydrodynamics to arbitrary props. Existing vehicle hull/tyre occupancy supplies
+  the moving contact source.
+  The passive concentration is carried by the actual pond velocity, decays with
+  a 2.8-second time constant, clears dry cells and clears when the pond sleeps.
+  Cream/tan patches have small torn holes and move with the surface flow.
+
+Budget:
+  One RGBA8 texture at the pond's existing resolution (126x126 here, 128x128 cap).
+  Cosmetic stepping/upload is capped at 30 Hz and uses existing active-pond limits.
+  It reads the water state; it cannot modify depth, soil, forces or occupancy.
+  No particles, added collision meshes, per-frame object scans or readbacks.
+  CPU foam timing excludes texture upload and GPU material cost.
+
+Controls:
+  gt.Water.Mud.Foam 0 / 1 — disable / enable cosmetic foam.
+  M_MudWater parameters: ContactFoamAmount (default 1), ShoreFoamWidthCm (3.8).
+  ContactFoamEnabled is bound by the runtime quality switch.
+
+Rebuild/check (run the preflight separately before EACH build or Unreal run):
+  powershell -NoProfile -File Art/wait_unreal_free.ps1 -MaxMinutes 0
+  powershell -NoProfile -File Art/build_guarded.ps1
+  powershell -NoProfile -File Art/mud_contact_foam.ps1 -Mode Setup
+  powershell -NoProfile -File Art/mud_contact_foam.ps1 -Mode Tests
+  powershell -NoProfile -File Art/mud_contact_foam.ps1 -Mode Review
+  Engine Python: Art/tools/make_mud_contact_foam_review.py
+
+Setup backs up the material under Saved/MudContactFoam/<timestamp>.
+If setup_shared_mud_water.py rebuilds the base material, reinstall this foam pass.
+Native checks cover source generation, decay, current transport, dry clearing,
+bounds, reset and exact invariance of the supplied physics arrays.
+Rendered review captures paired foam-off/on views of clods, tyres and a temporary
+immersed stone, plus an unpaused driving sample and actual frame/foam timings.
+Temporary review props are not saved. Source captures are not retouched.
+Only a fresh successful report AND a clean editor exit count as a passed run.
+
+Review: Art/Export/MudContactFoam/contact-foam.html
+Native results: Saved/Automation/MudContactFoam/index.json
+Live results: Art/Export/MudContactFoam/review-report.json
+Run exit status: Art/Export/MudContactFoam/*-run-status.json
+The first rendered attempt was rejected for a post-shutdown exit failure;
+its images/data are retained in Saved/MudContactFoam/FirstRender.
+
+Final verification (clean editor exit, 2026-10-13 23:01 local):
+  Five native water tests passed, including MudContactFoam.
+  Five live gates passed; six paired 1440x900 captures inspected.
+  Cosmetic CPU update: mean 0.0549 ms, peak 0.1751 ms.
+  Water volume error -0.00000003 m3, zero depth clamps or deferred time.
+  Six-second rendered driving segment: 365 frames, 16.72 ms mean,
+  17.23 ms p99 with the 60 fps limiter. This is not a marginal GPU-cost
+  comparison or a performance guarantee for larger scenes.

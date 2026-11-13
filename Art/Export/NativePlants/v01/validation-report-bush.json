@@ -1,0 +1,511 @@
+{
+  "ok": true,
+  "set": "bush",
+  "fbx_roundtrips": [
+    {
+      "name": "SM_NZ_Beech_Mature_LOD0",
+      "triangles": 26804,
+      "dimensions_m": [
+        11.582,
+        11.2376,
+        22.0598
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 3,
+      "ground_origin": true,
+      "glb_bytes": 2070288
+    },
+    {
+      "name": "SM_NZ_Beech_Mature_LOD1",
+      "triangles": 7658,
+      "dimensions_m": [
+        10.9153,
+        10.6434,
+        22.0594
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 624840
+    },
+    {
+      "name": "SM_NZ_Beech_Mature_LOD2",
+      "triangles": 1920,
+      "dimensions_m": [
+        11.5621,
+        12.1046,
+        22.0576
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 216304
+    },
+    {
+      "name": "SM_NZ_Beech_Pole_LOD0",
+      "triangles": 5746,
+      "dimensions_m": [
+        3.309,
+        3.1895,
+        12.0663
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 424824
+    },
+    {
+      "name": "SM_NZ_Beech_Pole_LOD1",
+      "triangles": 1870,
+      "dimensions_m": [
+        2.9759,
+        3.4572,
+        12.1315
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 156688
+    },
+    {
+      "name": "SM_NZ_Beech_Pole_LOD2",
+      "triangles": 576,
+      "dimensions_m": [
+        3.6953,
+        3.629,
+        11.7399
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 72748
+    },
+    {
+      "name": "SM_NZ_Beech_Edge_LOD0",
+      "triangles": 23026,
+      "dimensions_m": [
+        9.5121,
+        8.9847,
+        16.0377
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 3,
+      "ground_origin": true,
+      "glb_bytes": 1814680
+    },
+    {
+      "name": "SM_NZ_Beech_Edge_LOD1",
+      "triangles": 6714,
+      "dimensions_m": [
+        9.421,
+        8.7098,
+        15.8679
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 558096
+    },
+    {
+      "name": "SM_NZ_Beech_Edge_LOD2",
+      "triangles": 1920,
+      "dimensions_m": [
+        9.5626,
+        9.6624,
+        15.8663
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 234252
+    },
+    {
+      "name": "SM_NZ_DeadSpar_LOD0",
+      "triangles": 766,
+      "dimensions_m": [
+        3.6384,
+        3.7962,
+        14.0583
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 2,
+      "ground_origin": true,
+      "glb_bytes": 24240
+    },
+    {
+      "name": "SM_NZ_DeadSpar_LOD1",
+      "triangles": 230,
+      "dimensions_m": [
+        3.6379,
+        3.7962,
+        14.0551
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 8916
+    },
+    {
+      "name": "SM_NZ_DeadSpar_LOD2",
+      "triangles": 97,
+      "dimensions_m": [
+        3.64,
+        3.7912,
+        14.063
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 4988
+    },
+    {
+      "name": "SM_NZ_CrownFern_A_LOD0",
+      "triangles": 1943,
+      "dimensions_m": [
+        1.0759,
+        1.0684,
+        0.5632
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 184096
+    },
+    {
+      "name": "SM_NZ_CrownFern_A_LOD1",
+      "triangles": 618,
+      "dimensions_m": [
+        1.0615,
+        1.0578,
+        0.5585
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 61340
+    },
+    {
+      "name": "SM_NZ_CrownFern_A_LOD2",
+      "triangles": 150,
+      "dimensions_m": [
+        1.0615,
+        1.0578,
+        0.5486
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 16460
+    },
+    {
+      "name": "SM_NZ_CrownFern_B_LOD0",
+      "triangles": 2927,
+      "dimensions_m": [
+        1.517,
+        1.4754,
+        0.7614
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 276588
+    },
+    {
+      "name": "SM_NZ_CrownFern_B_LOD1",
+      "triangles": 888,
+      "dimensions_m": [
+        1.5059,
+        1.454,
+        0.7536
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 87516
+    },
+    {
+      "name": "SM_NZ_CrownFern_B_LOD2",
+      "triangles": 213,
+      "dimensions_m": [
+        1.5059,
+        1.454,
+        0.7518
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 22780
+    },
+    {
+      "name": "SM_NZ_CrownFern_C_LOD0",
+      "triangles": 2975,
+      "dimensions_m": [
+        1.9228,
+        1.8447,
+        0.9178
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 281104
+    },
+    {
+      "name": "SM_NZ_CrownFern_C_LOD1",
+      "triangles": 513,
+      "dimensions_m": [
+        1.912,
+        1.8308,
+        0.907
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 51164
+    },
+    {
+      "name": "SM_NZ_CrownFern_C_LOD2",
+      "triangles": 241,
+      "dimensions_m": [
+        1.912,
+        1.8308,
+        0.907
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 25588
+    },
+    {
+      "name": "SM_NZ_TreeFern_A_LOD0",
+      "triangles": 7818,
+      "dimensions_m": [
+        4.3765,
+        4.1792,
+        4.5396
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 731876
+    },
+    {
+      "name": "SM_NZ_TreeFern_A_LOD1",
+      "triangles": 2474,
+      "dimensions_m": [
+        4.4159,
+        4.2058,
+        4.5329
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 216940
+    },
+    {
+      "name": "SM_NZ_TreeFern_A_LOD2",
+      "triangles": 534,
+      "dimensions_m": [
+        4.3104,
+        4.0986,
+        4.5329
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 46672
+    },
+    {
+      "name": "SM_NZ_TreeFern_B_LOD0",
+      "triangles": 8780,
+      "dimensions_m": [
+        5.3551,
+        5.0775,
+        6.2133
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 814384
+    },
+    {
+      "name": "SM_NZ_TreeFern_B_LOD1",
+      "triangles": 2836,
+      "dimensions_m": [
+        5.3842,
+        5.122,
+        6.2048
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 246744
+    },
+    {
+      "name": "SM_NZ_TreeFern_B_LOD2",
+      "triangles": 616,
+      "dimensions_m": [
+        5.3263,
+        5.0139,
+        6.2048
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 53548
+    },
+    {
+      "name": "SM_NZ_TreeFern_Young_LOD0",
+      "triangles": 3683,
+      "dimensions_m": [
+        2.9871,
+        2.9761,
+        1.0297
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 367508
+    },
+    {
+      "name": "SM_NZ_TreeFern_Young_LOD1",
+      "triangles": 1121,
+      "dimensions_m": [
+        3.0081,
+        2.9997,
+        1.025
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 106828
+    },
+    {
+      "name": "SM_NZ_TreeFern_Young_LOD2",
+      "triangles": 166,
+      "dimensions_m": [
+        2.9613,
+        2.9539,
+        1.025
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 18136
+    }
+  ],
+  "lod_triangles": {
+    "SM_NZ_Beech_Edge": [
+      23026,
+      6714,
+      1920
+    ],
+    "SM_NZ_Beech_Mature": [
+      26804,
+      7658,
+      1920
+    ],
+    "SM_NZ_Beech_Pole": [
+      5746,
+      1870,
+      576
+    ],
+    "SM_NZ_CrownFern_A": [
+      1943,
+      618,
+      150
+    ],
+    "SM_NZ_CrownFern_B": [
+      2927,
+      888,
+      213
+    ],
+    "SM_NZ_CrownFern_C": [
+      2975,
+      513,
+      241
+    ],
+    "SM_NZ_DeadSpar": [
+      766,
+      230,
+      97
+    ],
+    "SM_NZ_TreeFern_A": [
+      7818,
+      2474,
+      534
+    ],
+    "SM_NZ_TreeFern_B": [
+      8780,
+      2836,
+      616
+    ],
+    "SM_NZ_TreeFern_Young": [
+      3683,
+      1121,
+      166
+    ]
+  },
+  "failures": [],
+  "meshes": 10,
+  "files": 30
+}

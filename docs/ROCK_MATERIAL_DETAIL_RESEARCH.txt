@@ -1,0 +1,92 @@
+ROCK DETAIL WITHOUT ADDITIONAL GEOMETRY
+8 November 2026. Research and proposed next pass; no asset or shader changes.
+
+Recommendation
+Keep the six outcrops at their current 2,112 triangles. Author a coherent rock
+surface with readable weathered faces and mineral patches, then combine its
+baked normal with a smaller repeating grain normal. Improve matching colour,
+roughness and moss masks before evaluating parallax. This is a specific follow-up
+to LIDAR_PERCEIVED_DETAIL_RESEARCH.txt, based on the rejected rock preview.
+
+Why the current study still looks plain
+Art/tools/bake_rock_weathering.py builds smooth noise, Gaussian pits and bowls.
+Art/Blender/build_forest_floor_revision.py:weathered_rock_material adds separate
+colour noise and fine bump. These produce grain, but little coherent chipped or
+fractured structure. This is an artistic diagnosis, not a measured GPU result.
+The packed RAH image contains roughness, cavity and height; only roughness is
+currently connected. Colour and surface shape largely describe different noise.
+Simply increasing normal strength or texture resolution will retain that pattern.
+
+Technique choices
+1. Bake surface structure onto the existing mesh. Epic documents baking high-poly
+   surface normals into textures, and Adobe documents baked maps as inputs to
+   material masks [1,2]. A detailed offline sculpt can supply worn fracture faces,
+   shallow chips and hollows without shipping its additional polygons. Author
+   matching pigment and roughness from the same feature masks; pigment stains
+   must not automatically become height. Keep directional lighting out of colour.
+2. Layer detail at different scales. Epic's detail-texturing workflow combines
+   base and repeating detail textures [3]. Proposed art scales, to validate:
+   30-100 cm mineral/weathering patches, 2-20 cm erosion and worn fracture detail,
+   then millimetre-scale grain. Keep the existing rounded silhouettes. The middle
+   scale should read at walking distance; tiny grain is for nearby inspection.
+3. Compose normals correctly. Use a tested reoriented/angle-corrected normal
+   blend, not colour-style addition or averaging. The original RNM article shows
+   why naive combinations flatten the base orientation and detail [4]. Verify
+   tangent basis and green-channel orientation when moving the +Y Blender maps
+   into Unreal. Keep normal and packed data textures linear, not colour-corrected.
+4. Give moss texture and placement logic. Proposal: combine the existing basal
+   vertex mask with texture-scale cavities and broken coverage. Use a separate
+   moss normal and roughness response, leaving substantial exposed mineral above.
+   Bake complex mask generation offline where practical. Curvature is a placement
+   aid, not an instruction to make every edge green or white.
+5. Optional parallax. BumpOffset shifts texture coordinates from a height map,
+   giving camera-dependent depth without additional polygons [5]. Compare it
+   only after the normal-only surface is convincing. Iterative POM/relief mapping
+   adds ray/height intersection work and sampling trade-offs [6]. Trial a bounded
+   near-view version if needed; do not apply it throughout the forest by default.
+   Standard normal/BumpOffset materials do not reshape the rock outline. No
+   tessellation or vertex displacement is proposed for this pass.
+
+Concrete next experiment
+A. Freeze mesh positions/topology, camera, lighting, placement and exposure.
+B. Build one reference-led rock material set: base colour, structural normal,
+   packed roughness/cavity/height, and a shared fine-detail normal. Use the owner's
+   Waimeamea rocky-shallows photograph for character; do not infer exact geology.
+   Start at the existing 1K structural-map size and evaluate feature readability
+   before increasing resolution. Correct UV stretching on steep rock sides if
+   necessary; document UV edits and any resulting render-vertex splits separately.
+C. Compare current versus new material on the same outcrop: neutral-grey normal
+   view, colour-only view, roughness view, then combined shading. Review close up,
+   at walking distance and across the bank. Require coherent weathered structure,
+   distinct mineral faces, textured irregular basal moss and no uniform crack grid.
+D. Test slow camera movement in Unreal at the saved 1600x900/TSR75 preset. Check
+   mip transitions, grain shimmer, stretching and normal seams. Filter/fade tiny
+   detail that cannot remain stable; Epic describes this aliasing concern [1].
+E. Only then compare normal-only, BumpOffset and an optional short-step POM variant.
+   Judge motion and grazing angles. Fading an effect visually does not prove its
+   samples stopped executing: verify shader compilation and actual GPU cost.
+
+Performance and delivery constraints
+No additional triangles does not mean no additional rendering cost. Share maps
+and material instances across the rocks, pack scalar maps when appropriate, and
+avoid multiplying every layer through three-axis projection. Keep normals in a
+normal-suitable format. Baked masks can avoid complex runtime procedural work.
+Texture memory, sampling and POM costs require measurement; no speedup is claimed.
+Performance benchmarking remains pending at the user's request while Skate shares
+the GPU. The current forest study is still a Blender prototype, not an installed
+Unreal improvement. Before promotion, verify contacts, exported masks and material
+appearance in game. This research changes no meshes, materials or textures.
+
+Primary sources (accessed 8 November 2026)
+[1] Epic: Bump Mapping Without Tangent Space
+https://dev.epicgames.com/documentation/en-us/unreal-engine/bump-mapping-without-tangent-space-in-unreal-engine
+[2] Adobe Substance 3D Painter: Baking
+https://experienceleague.adobe.com/en/docs/substance-3d-painter/using/baking/baking
+[3] Epic: Adding Detail Textures
+https://dev.epicgames.com/documentation/en-us/unreal-engine/adding-detail-textures-to-unreal-engine-materials
+[4] Colin Barre-Brisebois and Stephen Hill: Blending in Detail
+https://blog.selfshadow.com/publications/blending-in-detail/
+[5] Epic: Using Bump Offset
+https://dev.epicgames.com/documentation/en-us/unreal-engine/using-bump-offset-in-unreal-engine
+[6] Fabio Policarpo and Manuel M. Oliveira: GPU Gems 3, chapter 18
+https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-18-relaxed-cone-stepping-relief-mapping

@@ -1,0 +1,796 @@
+{
+  "source": "Art/Blender/bake_ground_detail_gr2.py",
+  "plan": "docs/GROUND_RELIEF_PLAN.md GR2 phase A + A2",
+  "tile_m": 2.0,
+  "size": 2048,
+  "texel_cm": 0.0977,
+  "parallax_depth_cm": 1.5,
+  "normal": "DirectX (green NEG_Y), tangent = the tile's u, v",
+  "palette": {
+    "scrub_dark_linear": [
+      0.095,
+      0.08,
+      0.052
+    ],
+    "scrub_light_linear": [
+      0.19,
+      0.145,
+      0.083
+    ],
+    "source": "live_mud_style.GROUND_HLSL",
+    "under_grass_scale": 0.62,
+    "straw_linear": [
+      0.32,
+      0.25,
+      0.13
+    ],
+    "pebble_linear": [
+      0.16,
+      0.145,
+      0.12
+    ],
+    "root_linear": [
+      0.07,
+      0.05,
+      0.032
+    ]
+  },
+  "orh": "R horizon AO (bake_gravel_orh.horizon_ao, 6 cm, 16 directions) at the parallax depth; G roughness 0.6-0.95; B soft rims (6 %/texel, 1-texel Gaussian)",
+  "sets": {
+    "ScrubSoil": {
+      "clods": {
+        "count": 22000,
+        "radius_cm": [
+          0.25,
+          3.0
+        ],
+        "power": 2.0,
+        "height_per_radius": [
+          0.35,
+          0.7
+        ]
+      },
+      "pebbles": {
+        "count": 260,
+        "diameter_cm": [
+          0.4,
+          2.2
+        ]
+      },
+      "cracks": {
+        "cell_cm": 16,
+        "warp_cm": 4,
+        "kept_share": 0.2,
+        "depth_cm": 0.45,
+        "colour_darken": 0.1225,
+        "presence_band_cm": [
+          4,
+          18
+        ],
+        "presence_edges": [
+          0.74,
+          0.86
+        ],
+        "junction_gap_cm": [
+          1.0,
+          2.5
+        ],
+        "runs": {
+          "count": 2913,
+          "count_20px": 88,
+          "extent_cm_p50_p95_max": [
+            1.953,
+            2.832,
+            5.566
+          ],
+          "pixels": 10133,
+          "largest_px": 127
+        }
+      },
+      "litter": {
+        "strands": 1300,
+        "length_cm": [
+          1.5,
+          4.5
+        ],
+        "width_cm": [
+          0.08,
+          0.16
+        ]
+      },
+      "darkening": {
+        "crack_lum_ratio": 0.7694,
+        "crack_ao_only_ratio": 0.8306,
+        "blur4cm_contrast": 0.078,
+        "root_lum_ratio": null
+      },
+      "files": {
+        "Color": "Art/Export/GroundDetailGR2/T_GD_ScrubSoilColor.png",
+        "Normal": "Art/Export/GroundDetailGR2/T_GD_ScrubSoilNormal.png",
+        "Height": "Art/Export/GroundDetailGR2/T_GD_ScrubSoilHeight.png",
+        "ORH": "Art/Export/GroundDetailGR2/T_GD_ScrubSoilORH.png"
+      },
+      "size": 2048,
+      "texel_cm": 0.0977,
+      "parallax_depth_cm": 1.5,
+      "seams": {
+        "colour": 1.07,
+        "height": 1.03,
+        "b": 1.048
+      },
+      "coherence": {
+        "height": [
+          0.0025,
+          0.0448
+        ],
+        "colour": [
+          0.009,
+          0.215
+        ]
+      },
+      "roughness_p5_50_95": [
+        0.921,
+        0.934,
+        0.948
+      ],
+      "ao_mean": 0.832,
+      "ao_p5": 0.655,
+      "b_p5_50_95_max": [
+        0.06,
+        0.166,
+        0.587,
+        1.0
+      ],
+      "height_p50_95": [
+        0.165,
+        0.597
+      ],
+      "colour_mean_linear": [
+        0.1229,
+        0.0986,
+        0.0603
+      ],
+      "luminance_mean": 0.101,
+      "litter_cover": 0.017,
+      "crack_cover": 0.0024,
+      "pebble_cover": 0.0095,
+      "root_cover": 0.0
+    },
+    "SoilUnderGrass": {
+      "clods": {
+        "count": 6000,
+        "radius_cm": [
+          0.25,
+          3.0
+        ],
+        "power": 2.0,
+        "height_per_radius": [
+          0.35,
+          0.7
+        ]
+      },
+      "pebbles": {
+        "count": 70,
+        "diameter_cm": [
+          0.4,
+          2.2
+        ]
+      },
+      "litter": {
+        "strands": 4200,
+        "length_cm": [
+          1.5,
+          4.5
+        ],
+        "width_cm": [
+          0.08,
+          0.16
+        ]
+      },
+      "roots": {
+        "fibres": 2400,
+        "length_cm": [
+          5.0,
+          15.0
+        ],
+        "clustered": true
+      },
+      "darkening": {
+        "crack_lum_ratio": null,
+        "crack_ao_only_ratio": null,
+        "blur4cm_contrast": 0.0761,
+        "root_lum_ratio": 0.8859
+      },
+      "files": {
+        "Color": "Art/Export/GroundDetailGR2/T_GD_SoilUnderGrassColor.png",
+        "Normal": "Art/Export/GroundDetailGR2/T_GD_SoilUnderGrassNormal.png",
+        "Height": "Art/Export/GroundDetailGR2/T_GD_SoilUnderGrassHeight.png",
+        "ORH": "Art/Export/GroundDetailGR2/T_GD_SoilUnderGrassORH.png"
+      },
+      "size": 2048,
+      "texel_cm": 0.0977,
+      "parallax_depth_cm": 1.5,
+      "seams": {
+        "colour": 0.881,
+        "height": 0.991,
+        "b": 0.958
+      },
+      "coherence": {
+        "height": [
+          0.0066,
+          0.0756
+        ],
+        "colour": [
+          0.0126,
+          0.1221
+        ]
+      },
+      "roughness_p5_50_95": [
+        0.747,
+        0.812,
+        0.828
+      ],
+      "ao_mean": 0.857,
+      "ao_p5": 0.658,
+      "b_p5_50_95_max": [
+        0.056,
+        0.15,
+        0.282,
+        1.0
+      ],
+      "height_p50_95": [
+        0.149,
+        0.292
+      ],
+      "colour_mean_linear": [
+        0.0758,
+        0.0607,
+        0.0371
+      ],
+      "luminance_mean": 0.0622,
+      "litter_cover": 0.0539,
+      "crack_cover": 0.0,
+      "pebble_cover": 0.0027,
+      "root_cover": 0.0611
+    }
+  },
+  "scatter": [
+    {
+      "family": "Clods",
+      "name": "SM_GD_Clod0",
+      "triangles": 176,
+      "size_m": [
+        0.0347,
+        0.0287,
+        0.0158
+      ],
+      "size_cm": 3,
+      "recipe": {
+        "height_ratio": 0.528,
+        "sunk": 0.253,
+        "stuck_crumbs": 9,
+        "fracture_planes": 2,
+        "loose_crumbs": 3
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.004,
+        0.0118
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Clod0.fbx"
+    },
+    {
+      "family": "Clods",
+      "name": "SM_GD_Clod1",
+      "triangles": 194,
+      "size_m": [
+        0.045,
+        0.0395,
+        0.0262
+      ],
+      "size_cm": 4.5,
+      "recipe": {
+        "height_ratio": 0.582,
+        "sunk": 0.324,
+        "stuck_crumbs": 11,
+        "fracture_planes": 3,
+        "loose_crumbs": 3
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.0085,
+        0.0177
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Clod1.fbx"
+    },
+    {
+      "family": "Clods",
+      "name": "SM_GD_Clod2",
+      "triangles": 224,
+      "size_m": [
+        0.0681,
+        0.0562,
+        0.0256
+      ],
+      "size_cm": 6,
+      "recipe": {
+        "height_ratio": 0.426,
+        "sunk": 0.34,
+        "stuck_crumbs": 14,
+        "fracture_planes": 2,
+        "loose_crumbs": 2
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.0087,
+        0.0169
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Clod2.fbx"
+    },
+    {
+      "family": "Clods",
+      "name": "SM_GD_Clod3",
+      "triangles": 266,
+      "size_m": [
+        0.0948,
+        0.0839,
+        0.0346
+      ],
+      "size_cm": 8,
+      "recipe": {
+        "height_ratio": 0.432,
+        "sunk": 0.308,
+        "stuck_crumbs": 15,
+        "fracture_planes": 2,
+        "loose_crumbs": 4
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.0107,
+        0.0239
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Clod3.fbx"
+    },
+    {
+      "family": "Clods",
+      "name": "SM_GD_Clod4",
+      "triangles": 266,
+      "size_m": [
+        0.1181,
+        0.0693,
+        0.0556
+      ],
+      "size_cm": 10,
+      "recipe": {
+        "height_ratio": 0.556,
+        "sunk": 0.252,
+        "stuck_crumbs": 15,
+        "fracture_planes": 2,
+        "loose_crumbs": 4
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.014,
+        0.0416
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Clod4.fbx"
+    },
+    {
+      "family": "Clods",
+      "name": "SM_GD_Clod5",
+      "triangles": 308,
+      "size_m": [
+        0.12,
+        0.1004,
+        0.0651
+      ],
+      "size_cm": 12,
+      "recipe": {
+        "height_ratio": 0.542,
+        "sunk": 0.271,
+        "stuck_crumbs": 20,
+        "fracture_planes": 2,
+        "loose_crumbs": 2
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.0177,
+        0.0474
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Clod5.fbx"
+    },
+    {
+      "family": "Pebbles",
+      "name": "SM_GD_Pebble0",
+      "triangles": 198,
+      "size_m": [
+        0.0102,
+        0.0084,
+        0.0072
+      ],
+      "size_cm": 1.2,
+      "source": "GravelRoadStudy 04 SM_GR_Stone1",
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Pebble0.fbx"
+    },
+    {
+      "family": "Pebbles",
+      "name": "SM_GD_Pebble1",
+      "triangles": 228,
+      "size_m": [
+        0.0182,
+        0.0158,
+        0.0112
+      ],
+      "size_cm": 2.2,
+      "source": "GravelRoadStudy 04 SM_GR_Stone2",
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Pebble1.fbx"
+    },
+    {
+      "family": "Pebbles",
+      "name": "SM_GD_Pebble2",
+      "triangles": 198,
+      "size_m": [
+        0.0305,
+        0.0285,
+        0.0223
+      ],
+      "size_cm": 3.5,
+      "source": "GravelRoadStudy 04 SM_GR_Stone3",
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Pebble2.fbx"
+    },
+    {
+      "family": "Pebbles",
+      "name": "SM_GD_Pebble3",
+      "triangles": 228,
+      "size_m": [
+        0.0429,
+        0.036,
+        0.0289
+      ],
+      "size_cm": 5.0,
+      "source": "GravelRoadStudy 04 SM_GR_Stone4",
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Pebble3.fbx"
+    },
+    {
+      "family": "Litter",
+      "name": "SM_GD_Litter0",
+      "triangles": 216,
+      "size_m": [
+        0.12,
+        0.0696,
+        0.0271
+      ],
+      "size_cm": 12,
+      "recipe": {
+        "blades": 16,
+        "mat_height_cm": 2.27,
+        "root_bands": 3
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.0044,
+        0.0227
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Litter0.fbx"
+    },
+    {
+      "family": "Litter",
+      "name": "SM_GD_Litter1",
+      "triangles": 240,
+      "size_m": [
+        0.16,
+        0.1594,
+        0.0282
+      ],
+      "size_cm": 16,
+      "recipe": {
+        "blades": 19,
+        "mat_height_cm": 2.42,
+        "root_bands": 4
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.004,
+        0.0242
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Litter1.fbx"
+    },
+    {
+      "family": "Litter",
+      "name": "SM_GD_Litter2",
+      "triangles": 276,
+      "size_m": [
+        0.21,
+        0.1765,
+        0.0378
+      ],
+      "size_cm": 21,
+      "recipe": {
+        "blades": 22,
+        "mat_height_cm": 3.34,
+        "root_bands": 2
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.0044,
+        0.0334
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Litter2.fbx"
+    },
+    {
+      "family": "Litter",
+      "name": "SM_GD_Litter3",
+      "triangles": 312,
+      "size_m": [
+        0.1781,
+        0.26,
+        0.033
+      ],
+      "size_cm": 26,
+      "recipe": {
+        "blades": 25,
+        "mat_height_cm": 2.89,
+        "root_bands": 3
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.0041,
+        0.0289
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Litter3.fbx"
+    },
+    {
+      "family": "Twigs",
+      "name": "SM_GD_Twig0",
+      "triangles": 110,
+      "size_m": [
+        0.0492,
+        0.1339,
+        0.007
+      ],
+      "size_cm": 15,
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Twig0.fbx"
+    },
+    {
+      "family": "Twigs",
+      "name": "SM_GD_Twig1",
+      "triangles": 110,
+      "size_m": [
+        0.2481,
+        0.0594,
+        0.0191
+      ],
+      "size_cm": 26,
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Twig1.fbx"
+    },
+    {
+      "family": "Twigs",
+      "name": "SM_GD_Twig2",
+      "triangles": 110,
+      "size_m": [
+        0.3839,
+        0.1586,
+        0.0202
+      ],
+      "size_cm": 40,
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_Twig2.fbx"
+    },
+    {
+      "family": "TussockBases",
+      "name": "SM_GD_TussockBase0",
+      "triangles": 336,
+      "size_m": [
+        0.2736,
+        0.2155,
+        0.0543
+      ],
+      "across_cm": 26,
+      "height_cm": 3.6,
+      "recipe": {
+        "height_ratio": 0.138,
+        "crown_fraction": 0.32,
+        "lumps": 14,
+        "roots": 3,
+        "lobes": 3
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.015,
+        0.0393
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_TussockBase0.fbx"
+    },
+    {
+      "family": "TussockBases",
+      "name": "SM_GD_TussockBase1",
+      "triangles": 346,
+      "size_m": [
+        0.3465,
+        0.3962,
+        0.0722
+      ],
+      "across_cm": 38,
+      "height_cm": 5.2,
+      "recipe": {
+        "height_ratio": 0.137,
+        "crown_fraction": 0.311,
+        "lumps": 14,
+        "roots": 3,
+        "lobes": 3
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.015,
+        0.0572
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_TussockBase1.fbx"
+    },
+    {
+      "family": "TussockBases",
+      "name": "SM_GD_TussockBase2",
+      "triangles": 360,
+      "size_m": [
+        0.4363,
+        0.534,
+        0.0951
+      ],
+      "across_cm": 50,
+      "height_cm": 7.2,
+      "recipe": {
+        "height_ratio": 0.144,
+        "crown_fraction": 0.268,
+        "lumps": 12,
+        "roots": 4,
+        "lobes": 2
+      },
+      "phase": "A2",
+      "z_range_m": [
+        -0.015,
+        0.0801
+      ],
+      "fbx": "Art/Export/GroundDetailGR2/SM_GD_TussockBase2.fbx"
+    }
+  ],
+  "renders": {
+    "ScrubSoil_3x3": "Art/Export/GroundDetailGR2/ScrubSoil_3x3.png",
+    "ScrubSoil_Displaced": "Art/Export/GroundDetailGR2/ScrubSoil_Displaced.png",
+    "SoilUnderGrass_3x3": "Art/Export/GroundDetailGR2/SoilUnderGrass_3x3.png",
+    "SoilUnderGrass_Displaced": "Art/Export/GroundDetailGR2/SoilUnderGrass_Displaced.png",
+    "Scatter_Clods": "Art/Export/GroundDetailGR2/Scatter_Clods.png",
+    "Scatter_Pebbles": "Art/Export/GroundDetailGR2/Scatter_Pebbles.png",
+    "Scatter_Litter": "Art/Export/GroundDetailGR2/Scatter_Litter.png",
+    "Scatter_Twigs": "Art/Export/GroundDetailGR2/Scatter_Twigs.png",
+    "Scatter_TussockBases": "Art/Export/GroundDetailGR2/Scatter_TussockBases.png",
+    "Scatter_Clods_A1": "Art/Export/GroundDetailGR2/Scatter_Clods_A1.png",
+    "Scatter_Litter_A1": "Art/Export/GroundDetailGR2/Scatter_Litter_A1.png",
+    "Scatter_TussockBases_A1": "Art/Export/GroundDetailGR2/Scatter_TussockBases_A1.png",
+    "ScrubSoil_AntiTile": "Art/Export/GroundDetailGR2/ScrubSoil_AntiTile.png",
+    "ScrubSoil_AntiTile_Single": "Art/Export/GroundDetailGR2/ScrubSoil_AntiTile_Single.png",
+    "SoilUnderGrass_AntiTile": "Art/Export/GroundDetailGR2/SoilUnderGrass_AntiTile.png",
+    "ScrubSoil_AntiTile_A2": "Art/Export/GroundDetailGR2/ScrubSoil_AntiTile_A2.png",
+    "ScrubSoil_AntiTile_Single_A2": "Art/Export/GroundDetailGR2/ScrubSoil_AntiTile_Single_A2.png"
+  },
+  "a2": {
+    "redone": [
+      "Clods",
+      "Litter",
+      "TussockBases"
+    ],
+    "kept": "the soil bakes, the pebbles, the twigs (twigs from A1's replayed random stream, so identical)",
+    "vertex_colour": "the redone meshes carry a float colour attribute 'Col' (linear; FBX sRGB vertex colour) multiplying the colour",
+    "clod_edges": "hard above 55 degrees (FBX smoothing by edge)",
+    "render_materials": "clods and tussock bases: the ScrubSoil colour box-projected (object space, 2 m), times a tint, times Col, bumped by the ScrubSoil height bake box-projected (distance 1.5 cm = the parallax depth); phase B needs the equivalent (world-aligned)",
+    "antitile": {
+      "sample_b_tile_m": 2.7,
+      "sample_b_uv_scale": 0.7407,
+      "sample_b_rotation_deg": 37.0,
+      "sample_b_uv_offset": [
+        0.37,
+        0.61
+      ],
+      "mask_noise": "2D fBm, lattice 7 m, detail 2, roughness 0.5",
+      "mask_smoothstep": [
+        0.45,
+        0.55
+      ],
+      "tint_noise": "2D fBm, lattice 13 m, detail 3, roughness 0.5",
+      "tint_ramp": [
+        0.38,
+        0.62
+      ],
+      "tint_damp": [
+        0.82,
+        0.8,
+        0.82
+      ],
+      "tint_dry": [
+        1.12,
+        1.07,
+        0.96
+      ],
+      "blended": "colour, roughness (ORH G), normal (B turned back by its rotation)",
+      "view": "ground x -1..20 m, y -14..14 m; eye (-0.5, 0, 1.7) m, pitch 20 deg, 30 mm lens, 1440 x 900; normal-mapped only"
+    }
+  },
+  "phase_b_item0": {
+    "a2": {
+      "cracks": {
+        "cell_cm": 16,
+        "warp_cm": 4,
+        "kept_share": 0.365,
+        "depth_cm": 0.45,
+        "colour_darken": 0.35,
+        "presence_band_cm": [
+          6,
+          30
+        ],
+        "presence_edges": [
+          0.55,
+          0.72
+        ],
+        "junction_gap_cm": null,
+        "runs": {
+          "count": 6770,
+          "count_20px": 235,
+          "extent_cm_p50_p95_max": [
+            2.051,
+            4.492,
+            6.641
+          ],
+          "pixels": 26423,
+          "largest_px": 309
+        }
+      },
+      "darkening": {
+        "crack_lum_ratio": 0.6299,
+        "crack_ao_only_ratio": 0.8276,
+        "blur4cm_contrast": 0.0781,
+        "root_lum_ratio": null
+      }
+    },
+    "now": {
+      "cracks": {
+        "cell_cm": 16,
+        "warp_cm": 4,
+        "kept_share": 0.2,
+        "depth_cm": 0.45,
+        "colour_darken": 0.1225,
+        "presence_band_cm": [
+          4,
+          18
+        ],
+        "presence_edges": [
+          0.74,
+          0.86
+        ],
+        "junction_gap_cm": [
+          1.0,
+          2.5
+        ],
+        "runs": {
+          "count": 2913,
+          "count_20px": 88,
+          "extent_cm_p50_p95_max": [
+            1.953,
+            2.832,
+            5.566
+          ],
+          "pixels": 10133,
+          "largest_px": 127
+        }
+      },
+      "darkening": {
+        "crack_lum_ratio": 0.7694,
+        "crack_ao_only_ratio": 0.8306,
+        "blur4cm_contrast": 0.078,
+        "root_lum_ratio": null
+      }
+    },
+    "soil_under_grass": {
+      "crack_lum_ratio": null,
+      "crack_ao_only_ratio": null,
+      "blur4cm_contrast": 0.0761,
+      "root_lum_ratio": 0.8859
+    }
+  }
+}

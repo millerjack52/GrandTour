@@ -1,0 +1,618 @@
+{
+ "ok": true,
+ "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+ "timings_collected": false,
+ "images": [
+  {
+   "location": "CreekClose",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_OnFoot_CreekClose.png",
+   "eye": [
+    -68140.4761904762,
+    20153.37301587301,
+    1738.13250222629
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -30.0,
+   "fov": 70.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 952,
+     "SM_GD_Clod1": 553,
+     "SM_GD_Clod2": 416,
+     "SM_GD_Clod3": 309,
+     "SM_GD_Clod4": 247,
+     "SM_GD_Clod5": 189,
+     "SM_GD_Pebble0_LG": 1626,
+     "SM_GD_Pebble1_LG": 786,
+     "SM_GD_Pebble2_LG": 424,
+     "SM_GD_Pebble3_LG": 301,
+     "SM_GD_Twig0_LG": 64,
+     "SM_GD_Twig1_LG": 35,
+     "SM_GD_Twig2_LG": 22,
+     "SM_GD_Litter0": 204,
+     "SM_GD_Litter1": 131,
+     "SM_GD_Litter2": 99,
+     "SM_GD_Litter3": 74
+    },
+    "scatter_per_family": {
+     "Clod": 2666,
+     "Pebble": 3137,
+     "Twig": 121,
+     "Litter": 508
+    },
+    "scatter_total": 6432,
+    "others_total": 291818,
+    "builds": 155
+   }
+  },
+  {
+   "location": "CreekClose",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_Verge_CreekClose.png",
+   "eye": [
+    -68641.01394141749,
+    -2031.4113916447154,
+    1224.4838413209654
+   ],
+   "yaw": -10.984456400274738,
+   "pitch": -10.0,
+   "fov": 70.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 979,
+     "SM_GD_Clod1": 600,
+     "SM_GD_Clod2": 438,
+     "SM_GD_Clod3": 332,
+     "SM_GD_Clod4": 251,
+     "SM_GD_Clod5": 193,
+     "SM_GD_Pebble0_LG": 3555,
+     "SM_GD_Pebble1_LG": 1698,
+     "SM_GD_Pebble2_LG": 986,
+     "SM_GD_Pebble3_LG": 673,
+     "SM_GD_Twig0_LG": 140,
+     "SM_GD_Twig1_LG": 83,
+     "SM_GD_Twig2_LG": 45,
+     "SM_GD_Litter0": 448,
+     "SM_GD_Litter1": 313,
+     "SM_GD_Litter2": 244,
+     "SM_GD_Litter3": 198
+    },
+    "scatter_per_family": {
+     "Clod": 2793,
+     "Pebble": 6912,
+     "Twig": 268,
+     "Litter": 1203
+    },
+    "scatter_total": 11176,
+    "others_total": 294233,
+    "builds": 164
+   }
+  },
+  {
+   "location": "CreekClose",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_Far_CreekClose.png",
+   "eye": [
+    -68140.4761904762,
+    20153.37301587301,
+    1738.13250222629
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -4.0,
+   "fov": 60.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 952,
+     "SM_GD_Clod1": 553,
+     "SM_GD_Clod2": 416,
+     "SM_GD_Clod3": 309,
+     "SM_GD_Clod4": 247,
+     "SM_GD_Clod5": 189,
+     "SM_GD_Pebble0_LG": 1626,
+     "SM_GD_Pebble1_LG": 786,
+     "SM_GD_Pebble2_LG": 424,
+     "SM_GD_Pebble3_LG": 301,
+     "SM_GD_Twig0_LG": 64,
+     "SM_GD_Twig1_LG": 35,
+     "SM_GD_Twig2_LG": 22,
+     "SM_GD_Litter0": 204,
+     "SM_GD_Litter1": 131,
+     "SM_GD_Litter2": 99,
+     "SM_GD_Litter3": 74
+    },
+    "scatter_per_family": {
+     "Clod": 2666,
+     "Pebble": 3137,
+     "Twig": 121,
+     "Litter": 508
+    },
+    "scatter_total": 6432,
+    "others_total": 291818,
+    "builds": 155
+   }
+  },
+  {
+   "location": "CreekReach",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_OnFoot_CreekReach.png",
+   "eye": [
+    -36338.1132710121,
+    39810.33549323433,
+    5880.021230898696
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -30.0,
+   "fov": 70.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 431,
+     "SM_GD_Clod1": 293,
+     "SM_GD_Clod2": 203,
+     "SM_GD_Clod3": 147,
+     "SM_GD_Clod4": 116,
+     "SM_GD_Clod5": 85,
+     "SM_GD_Pebble0_LG": 1636,
+     "SM_GD_Pebble1_LG": 769,
+     "SM_GD_Pebble2_LG": 453,
+     "SM_GD_Pebble3_LG": 300,
+     "SM_GD_Twig0_LG": 73,
+     "SM_GD_Twig1_LG": 50,
+     "SM_GD_Twig2_LG": 16,
+     "SM_GD_Litter0": 235,
+     "SM_GD_Litter1": 133,
+     "SM_GD_Litter2": 101,
+     "SM_GD_Litter3": 86
+    },
+    "scatter_per_family": {
+     "Clod": 1275,
+     "Pebble": 3158,
+     "Twig": 139,
+     "Litter": 555
+    },
+    "scatter_total": 5127,
+    "others_total": 271157,
+    "builds": 159
+   }
+  },
+  {
+   "location": "CreekReach",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_Verge_CreekReach.png",
+   "eye": [
+    -18048.284962400332,
+    15007.386096297854,
+    5919.862381330699
+   ],
+   "yaw": 202.05151560416252,
+   "pitch": -10.0,
+   "fov": 70.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 2086,
+     "SM_GD_Clod1": 1246,
+     "SM_GD_Clod2": 893,
+     "SM_GD_Clod3": 658,
+     "SM_GD_Clod4": 516,
+     "SM_GD_Clod5": 413,
+     "SM_GD_Pebble0_LG": 7410,
+     "SM_GD_Pebble1_LG": 3553,
+     "SM_GD_Pebble2_LG": 2058,
+     "SM_GD_Pebble3_LG": 1354,
+     "SM_GD_Twig0_LG": 297,
+     "SM_GD_Twig1_LG": 174,
+     "SM_GD_Twig2_LG": 100,
+     "SM_GD_Litter0": 930,
+     "SM_GD_Litter1": 634,
+     "SM_GD_Litter2": 494,
+     "SM_GD_Litter3": 399
+    },
+    "scatter_per_family": {
+     "Clod": 5812,
+     "Pebble": 14375,
+     "Twig": 571,
+     "Litter": 2457
+    },
+    "scatter_total": 23215,
+    "others_total": 275997,
+    "builds": 206
+   }
+  },
+  {
+   "location": "CreekReach",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_Far_CreekReach.png",
+   "eye": [
+    -36338.1132710121,
+    39810.33549323433,
+    5880.021230898696
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -4.0,
+   "fov": 60.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 431,
+     "SM_GD_Clod1": 293,
+     "SM_GD_Clod2": 203,
+     "SM_GD_Clod3": 147,
+     "SM_GD_Clod4": 116,
+     "SM_GD_Clod5": 85,
+     "SM_GD_Pebble0_LG": 1636,
+     "SM_GD_Pebble1_LG": 769,
+     "SM_GD_Pebble2_LG": 453,
+     "SM_GD_Pebble3_LG": 300,
+     "SM_GD_Twig0_LG": 73,
+     "SM_GD_Twig1_LG": 50,
+     "SM_GD_Twig2_LG": 16,
+     "SM_GD_Litter0": 235,
+     "SM_GD_Litter1": 133,
+     "SM_GD_Litter2": 101,
+     "SM_GD_Litter3": 86
+    },
+    "scatter_per_family": {
+     "Clod": 1275,
+     "Pebble": 3158,
+     "Twig": 139,
+     "Litter": 555
+    },
+    "scatter_total": 5127,
+    "others_total": 271157,
+    "builds": 159
+   }
+  },
+  {
+   "location": "LongVista",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_OnFoot_LongVista.png",
+   "eye": [
+    78535.53390593274,
+    53535.53390593274,
+    20316.96307961952
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -30.0,
+   "fov": 70.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 949,
+     "SM_GD_Clod1": 554,
+     "SM_GD_Clod2": 393,
+     "SM_GD_Clod3": 299,
+     "SM_GD_Clod4": 234,
+     "SM_GD_Clod5": 175,
+     "SM_GD_Pebble0_LG": 3467,
+     "SM_GD_Pebble1_LG": 1653,
+     "SM_GD_Pebble2_LG": 949,
+     "SM_GD_Pebble3_LG": 643,
+     "SM_GD_Twig0_LG": 135,
+     "SM_GD_Twig1_LG": 80,
+     "SM_GD_Twig2_LG": 50,
+     "SM_GD_Litter0": 467,
+     "SM_GD_Litter1": 294,
+     "SM_GD_Litter2": 234,
+     "SM_GD_Litter3": 176
+    },
+    "scatter_per_family": {
+     "Clod": 2604,
+     "Pebble": 6712,
+     "Twig": 265,
+     "Litter": 1171
+    },
+    "scatter_total": 10752,
+    "others_total": 243958,
+    "builds": 156
+   }
+  },
+  {
+   "location": "LongVista",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_Verge_LongVista.png",
+   "eye": [
+    25787.03771398409,
+    -2105.0233481026094,
+    5380.579954860186
+   ],
+   "yaw": -54.947630752506456,
+   "pitch": -10.0,
+   "fov": 70.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 1010,
+     "SM_GD_Clod1": 614,
+     "SM_GD_Clod2": 458,
+     "SM_GD_Clod3": 308,
+     "SM_GD_Clod4": 260,
+     "SM_GD_Clod5": 205,
+     "SM_GD_Pebble0_LG": 3703,
+     "SM_GD_Pebble1_LG": 1726,
+     "SM_GD_Pebble2_LG": 1014,
+     "SM_GD_Pebble3_LG": 668,
+     "SM_GD_Twig0_LG": 136,
+     "SM_GD_Twig1_LG": 82,
+     "SM_GD_Twig2_LG": 44,
+     "SM_GD_Litter0": 474,
+     "SM_GD_Litter1": 328,
+     "SM_GD_Litter2": 247,
+     "SM_GD_Litter3": 183
+    },
+    "scatter_per_family": {
+     "Clod": 2855,
+     "Pebble": 7111,
+     "Twig": 262,
+     "Litter": 1232
+    },
+    "scatter_total": 11460,
+    "others_total": 289557,
+    "builds": 174
+   }
+  },
+  {
+   "location": "LongVista",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_Far_LongVista.png",
+   "eye": [
+    78535.53390593274,
+    53535.53390593274,
+    20316.96307961952
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -4.0,
+   "fov": 60.0,
+   "ground_detail": 1,
+   "scatter_scale": 1,
+   "grass": {
+    "scatter_per_mesh": {
+     "SM_GD_Clod0": 949,
+     "SM_GD_Clod1": 554,
+     "SM_GD_Clod2": 393,
+     "SM_GD_Clod3": 299,
+     "SM_GD_Clod4": 234,
+     "SM_GD_Clod5": 175,
+     "SM_GD_Pebble0_LG": 3467,
+     "SM_GD_Pebble1_LG": 1653,
+     "SM_GD_Pebble2_LG": 949,
+     "SM_GD_Pebble3_LG": 643,
+     "SM_GD_Twig0_LG": 135,
+     "SM_GD_Twig1_LG": 80,
+     "SM_GD_Twig2_LG": 50,
+     "SM_GD_Litter0": 467,
+     "SM_GD_Litter1": 294,
+     "SM_GD_Litter2": 234,
+     "SM_GD_Litter3": 176
+    },
+    "scatter_per_family": {
+     "Clod": 2604,
+     "Pebble": 6712,
+     "Twig": 265,
+     "Litter": 1171
+    },
+    "scatter_total": 10752,
+    "others_total": 243958,
+    "builds": 156
+   }
+  },
+  {
+   "location": "CreekClose",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_OnFoot_CreekClose_Off.png",
+   "eye": [
+    -68140.4761904762,
+    20153.37301587301,
+    1738.13250222629
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -30.0,
+   "fov": 70.0,
+   "ground_detail": 0,
+   "scatter_scale": 0,
+   "grass": {
+    "scatter_per_mesh": {},
+    "scatter_per_family": {},
+    "scatter_total": 0,
+    "others_total": 291818,
+    "builds": 132
+   }
+  },
+  {
+   "location": "CreekReach",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_OnFoot_CreekReach_Off.png",
+   "eye": [
+    -36338.1132710121,
+    39810.33549323433,
+    5880.021230898696
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -30.0,
+   "fov": 70.0,
+   "ground_detail": 0,
+   "scatter_scale": 0,
+   "grass": {
+    "scatter_per_mesh": {},
+    "scatter_per_family": {},
+    "scatter_total": 0,
+    "others_total": 271157,
+    "builds": 142
+   }
+  },
+  {
+   "location": "LongVista",
+   "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1\\BI_OnFoot_LongVista_Off.png",
+   "eye": [
+    78535.53390593274,
+    53535.53390593274,
+    20316.96307961952
+   ],
+   "yaw": -79.99999999999999,
+   "pitch": -30.0,
+   "fov": 70.0,
+   "ground_detail": 0,
+   "scatter_scale": 0,
+   "grass": {
+    "scatter_per_mesh": {},
+    "scatter_per_family": {},
+    "scatter_total": 0,
+    "others_total": 243958,
+    "builds": 122
+   }
+  }
+ ],
+ "material": {
+  "pixel": 1827,
+  "vertex": 148,
+  "samplers": 28,
+  "pixel_texture_samples": 44,
+  "collections": [
+   "/Game/GrandTour/Terrain/MPC_GT_GroundDetail.MPC_GT_GroundDetail",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.MPC_TrackPaint"
+  ]
+ },
+ "surface_diagnosis": [
+  "traced=PM_Benmore_GravelLoose point=X=-83629.373 Y=-11460.958 Z=737.745 complex=PM_Benmore_GravelLoose simple=null comp=LandscapeHeightfieldCollisionComponent_114 renderObjects=[PM_Benmore_GravelFirm|PM_Benmore_GravelLoose|PM_Benmore_WetGround|PM_Benmore_FirmGround] renderSamples=16129 cooked=[PM_Benmore_FirmGround|PM_Benmore_GravelLoose|PM_Benmore_GravelFirm|PM_Benmore_WetGround] layers=1",
+  "traced=PM_Benmore_GravelFirm point=X=-18549.816 Y=-17647.416 Z=2392.558 complex=PM_Benmore_GravelFirm simple=null comp=LandscapeHeightfieldCollisionComponent_102 renderObjects=[PM_Benmore_GravelFirm|PM_Benmore_GravelLoose|PM_Benmore_WetGround|PM_Benmore_FirmGround] renderSamples=16129 cooked=[PM_Benmore_FirmGround|PM_Benmore_GravelLoose|PM_Benmore_GravelFirm] layers=1",
+  "traced=PM_Benmore_GravelFirm point=X=-9136.701 Y=-53831.061 Z=3965.769 complex=PM_Benmore_GravelFirm simple=null comp=LandscapeHeightfieldCollisionComponent_71 renderObjects=[PM_Benmore_GravelFirm|PM_Benmore_GravelLoose|PM_Benmore_WetGround|PM_Benmore_FirmGround] renderSamples=16129 cooked=[PM_Benmore_FirmGround|PM_Benmore_GravelLoose|PM_Benmore_GravelFirm] layers=1",
+  "traced=PM_Benmore_GravelFirm point=X=-25176.735 Y=5861.989 Z=3462.104 complex=PM_Benmore_GravelFirm simple=null comp=LandscapeHeightfieldCollisionComponent_134 renderObjects=[PM_Benmore_GravelFirm|PM_Benmore_GravelLoose|PM_Benmore_WetGround|PM_Benmore_FirmGround] renderSamples=16129 cooked=[PM_Benmore_FirmGround|PM_Benmore_GravelLoose|PM_Benmore_GravelFirm] layers=1",
+  "traced=PM_Benmore_GravelLoose point=X=3113.081 Y=11416.180 Z=6638.494 complex=PM_Benmore_GravelLoose simple=null comp=LandscapeHeightfieldCollisionComponent_136 renderObjects=[PM_Benmore_GravelFirm|PM_Benmore_GravelLoose|PM_Benmore_WetGround|PM_Benmore_FirmGround] renderSamples=16129 cooked=[PM_Benmore_FirmGround|PM_Benmore_GravelLoose|PM_Benmore_GravelFirm] layers=1",
+  "traced=PM_Benmore_GravelLoose point=X=29770.684 Y=-8595.558 Z=5138.729 complex=PM_Benmore_GravelLoose simple=null comp=LandscapeHeightfieldCollisionComponent_121 renderObjects=[PM_Benmore_GravelFirm|PM_Benmore_GravelLoose|PM_Benmore_WetGround|PM_Benmore_FirmGround] renderSamples=16129 cooked=[PM_Benmore_FirmGround|PM_Benmore_GravelLoose|PM_Benmore_GravelFirm] layers=1"
+ ],
+ "surfaces": {
+  "roads": {
+   "Terrace loop": {
+    "centre": {
+     "PM_Benmore_GravelLoose": 86,
+     "PM_Benmore_GravelFirm": 124
+    },
+    "quarter": {
+     "PM_Benmore_GravelFirm": 123,
+     "PM_Benmore_GravelLoose": 87
+    },
+    "edge-0.3m": {
+     "PM_Benmore_FirmGround": 69,
+     "PM_Benmore_GravelLoose": 92,
+     "PM_Benmore_GravelFirm": 49
+    },
+    "verge+1.5m": {
+     "PM_Benmore_FirmGround": 205,
+     "PM_Benmore_GravelLoose": 3,
+     "PM_Benmore_GravelFirm": 2
+    },
+    "grass+8m": {
+     "PM_Benmore_FirmGround": 209,
+     "PM_Benmore_GravelLoose": 1
+    }
+   },
+   "Hillside branch": {
+    "centre": {
+     "PM_Benmore_GravelFirm": 54,
+     "PM_Benmore_GravelLoose": 46
+    },
+    "quarter": {
+     "PM_Benmore_GravelLoose": 56,
+     "PM_Benmore_GravelFirm": 43,
+     "PM_Benmore_FirmGround": 1
+    },
+    "edge-0.3m": {
+     "PM_Benmore_GravelLoose": 52,
+     "PM_Benmore_GravelFirm": 21,
+     "PM_Benmore_FirmGround": 27
+    },
+    "verge+1.5m": {
+     "PM_Benmore_GravelFirm": 1,
+     "PM_Benmore_GravelLoose": 1,
+     "PM_Benmore_FirmGround": 98
+    },
+    "grass+8m": {
+     "PM_Benmore_GravelLoose": 1,
+     "PM_Benmore_FirmGround": 99
+    }
+   }
+  },
+  "grid": {
+   "PM_Benmore_WetGround": 56,
+   "PM_Benmore_FirmGround": 4027,
+   "PM_Benmore_GravelLoose": 8,
+   "PM_Benmore_GravelFirm": 5
+  },
+  "misses": 0
+ },
+ "sun": {
+  "forward": [
+   0.15863550393553982,
+   -0.8996666494155192,
+   -0.4067366430758004
+  ],
+  "view_yaw": -79.99999999999999
+ },
+ "locations": {
+  "CreekClose": {
+   "camera": "Benmore_Gaea_Camera_Creek_Close",
+   "open_ground": [
+    -68140.4761904762,
+    20153.37301587301,
+    1568.13250222629
+   ],
+   "ring_m": 10.0,
+   "road": "Terrace loop",
+   "road_point": [
+    -686.3091146008175,
+    -26.013218581838558
+   ],
+   "road_distance_m": 227.60399711470177,
+   "verge": [
+    -68641.01394141749,
+    -2031.4113916447154,
+    1054.4838413209654
+   ],
+   "verge_pm": "PM_Benmore_FirmGround"
+  },
+  "CreekReach": {
+   "camera": "Benmore_Gaea_Camera_Creek_Reach",
+   "open_ground": [
+    -36338.1132710121,
+    39810.33549323433,
+    5710.021230898696
+   ],
+   "ring_m": 50.0,
+   "road": "Hillside branch",
+   "road_point": [
+    -183.1145585954957,
+    153.96797291429255
+   ],
+   "road_distance_m": 254.14242538997337,
+   "verge": [
+    -18048.284962400332,
+    15007.386096297854,
+    5749.862381330699
+   ],
+   "verge_pm": "PM_Benmore_FirmGround"
+  },
+  "LongVista": {
+   "camera": "Benmore_Gaea_Camera_Long_Vista",
+   "open_ground": [
+    78535.53390593274,
+    53535.53390593274,
+    20146.96307961952
+   ],
+   "ring_m": 50.0,
+   "road": "Hillside branch",
+   "road_point": [
+    254.6681279895683,
+    -24.49052422158544
+   ],
+   "road_distance_m": 721.4180295969821,
+   "verge": [
+    25787.03771398409,
+    -2105.0233481026094,
+    5210.579954860186
+   ],
+   "verge_pm": "PM_Benmore_FirmGround"
+  }
+ },
+ "rerun_only": "_Off"
+}

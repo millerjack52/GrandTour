@@ -1,0 +1,80 @@
+RUT INTERACTION -- 2026-10-13
+
+Play /Game/GrandTour/ArtTests/RutInteraction/L_RutInteraction.
+The same folder contains L_RutInteraction_Firm and L_RutInteraction_Deep.
+These are private copies of the approved shared-water crossing, not a Benmore
+deployment. The original L_MudWater and L_MudProvingGround files are hash-checked.
+
+On the landscape surface actor, Use Rut Interaction enables this pass. It is
+false by default, so previously approved maps retain their behaviour. Disable
+it before Play for a control comparison. The layer-depth and bearing-strength
+settings are unchanged: standard 1/1, firm .65/1.6, deep 1.28/.6.
+
+WHAT CHANGED
+Rolling transports displaced soil preferentially into a low bow ahead of the
+tyre. Positive driven slip moves the deposit toward the heel; reverse driving
+reverses the transport direction. World-position clod variation breaks up the
+shoulders. Wet newly deposited banks relax into a lower adjacent mud cell,
+outside the loaded footprint. Both the cut and these transfers conserve volume.
+The existing finite mineral floor, load settlement, shear law and water remain.
+
+The physics thread uses the existing immutable 9 x 9 contact-height snapshot.
+Three probes across the footprint measure the rise into each direction of
+motion. The rolling toe subtracts the clearance afforded by the circular tyre;
+the sidewall encounters the actual lateral rise. Added work opposes entry into
+that material. Wet worked banks yield more readily. There is no centreline
+attractor, spring, speed cap or extra force driving the car downhill. Longitudinal
+and lateral impulses each have a supported-mass stopping bound. Existing soil
+drag remains separately bounded. Actual heights handle authored and player ruts.
+
+The first live run exposed too much forward resistance from counting ground
+the circular tyre could clear. That run was rejected; its reports are preserved
+in Saved/RutInteraction-FirstReview. The revised geometry-aware response was
+rebuilt and rerun. Only fresh clean-exit passing evidence is packaged for review.
+
+SCALING
+No new global field, world scan, collision mesh cook or rendering pass. Deposits
+and wet-bank relaxation only visit the current stamp neighbourhood. Terrain
+observation remains capped at 30 Hz; physics probes use the existing local copy.
+The water solver consumes the existing changed-bed journal. No additional
+particle system or second water simulation was added.
+
+RutInteractionReport reports actual physics-thread bank work in joules, peak
+force in newtons, and mean/peak calculation time per active wheel step. Counters
+include the vehicle's initial spawn, so the driving harness subtracts pre-drive
+work. GetSurfaceReport now includes observation mean/peak CPU time for all wheel
+queries and stamps. Rendered frame metrics are separate from these CPU timings.
+The added lateral_j counter separates sidewall work from rolling-toe work.
+The steered tyre axis comes from the actual Chaos wheel steering angle, rather
+than legacy travel-direction data. The review applies steering through the
+car's SetRawSteer path and verifies actual front-wheel angles, avoiding the
+car tick overwriting a one-off movement-component steering input.
+
+LIMITS
+Local relaxation occurs while tyres work the soil; after-departure slumping,
+erosion and sediment transport are not implemented. The model is an engineering
+approximation, not MudRunner source or a calibrated terramechanics model. Driving
+feel still needs the owner's review. The separate comparison maps are not yet a
+combined material-transition route. Whole-world and multiplayer limits from
+MUD_WATER_SHARED.txt still apply.
+
+REPRODUCE
+Before EACH build/Unreal invocation, run Art/wait_unreal_free.ps1 -MaxMinutes 0
+in its own tool call and require exit 0. Never close another editor by force.
+Art/build_guarded.ps1
+Art/rut_interaction.ps1 -Mode Tests
+Art/rut_interaction.ps1 -Mode Setup
+Art/rut_interaction.ps1 -Mode Review
+Art/rut_interaction.ps1 -Mode Benchmark
+Art/tools/make_rut_interaction_review.py
+
+Review: Art/Export/RutInteraction/rut-interaction.html
+Full data: review-report.json; native tests: Saved/Automation/RutInteraction.
+The harness uses fresh PIE worlds for control, worked, firm and deep, identical
+inputs, standing settlement, actual bank-work telemetry, soil and water balance,
+and one short unpaused rendered driving segment. Screenshots pause simulation.
+The performance segment repositions inside the bog and checks that at least
+80 percent of sampled wheel contacts remain on the deforming surface.
+An additional matched benchmark uses a fresh world per case and collects old
+world garbage before warmup. The original review frame spikes, including its
+garbage-collection event, remain in the report; no claim of hitch elimination.

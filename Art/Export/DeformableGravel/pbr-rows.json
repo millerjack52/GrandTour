@@ -1,0 +1,69 @@
+{
+  "dry": {
+    "roughness_p5_50_95": [
+      0.7765,
+      0.898,
+      0.9059
+    ],
+    "luminance_p5_50_95": [
+      0.1586,
+      0.1971,
+      0.2791
+    ],
+    "luminance_mean": 0.2036,
+    "ao_mean_p5": [
+      0.9156,
+      0.7725
+    ],
+    "pixels": 345744,
+    "passes": {
+      "luminance_in_0_05_0_35": true,
+      "roughness_p5_at_least_0_5": true
+    }
+  },
+  "wet": {
+    "roughness_p5_50_95": [
+      0.4,
+      0.4,
+      0.4
+    ],
+    "luminance_p5_50_95": [
+      0.1181,
+      0.1481,
+      0.2093
+    ],
+    "luminance_mean": 0.1529,
+    "ao_mean_p5": [
+      0.9156,
+      0.7725
+    ],
+    "pixels": 345744,
+    "luminance_vs_dry": 0.751,
+    "passes": {
+      "roughness_p5_at_least_0_4": true
+    }
+  },
+  "note": "linear buffers (MRP calibration); the middle 60 % of each capture (the stones: the whole picture, the ground hidden)",
+  "stones": {
+    "pixels": 22828,
+    "luminance_median": 0.2163,
+    "luminance_min": 0.1467,
+    "luminance_p1_5_95": [
+      0.1618,
+      0.1722,
+      0.3052
+    ],
+    "roughness_p5_50_95": [
+      0.7569,
+      0.8039,
+      0.8471
+    ],
+    "ground_p50": 0.1971,
+    "ratio_to_ground": 1.097,
+    "passes": {
+      "median_within_25_pct": true,
+      "none_under_0_08": true
+    }
+  },
+  "ok": true
+}

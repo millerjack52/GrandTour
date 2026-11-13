@@ -1,0 +1,28 @@
+{
+  "recipe": "GR2 twig() as a 6-sided 12-segment tube with 2-4 shoots (build_road_branches.py)",
+  "seed": 20261012,
+  "branches": [
+    {
+      "name": "SM_MRD_Branch0",
+      "length_cm": 60,
+      "size_m": [
+        0.5892,
+        0.3039,
+        0.0236
+      ],
+      "triangles": 258,
+      "fbx": "Art/Export/MudRoads/SM_MRD_Branch0.fbx"
+    },
+    {
+      "name": "SM_MRD_Branch1",
+      "length_cm": 105,
+      "size_m": [
+        0.8217,
+        0.8111,
+        0.0475
+      ],
+      "triangles": 337,
+      "fbx": "Art/Export/MudRoads/SM_MRD_Branch1.fbx"
+    }
+  ]
+}

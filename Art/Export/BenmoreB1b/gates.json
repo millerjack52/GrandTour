@@ -1,0 +1,23 @@
+{
+  "visibility": {
+    "picture": "B1b_Gravel_Chase",
+    "sprite_pixels": 83054,
+    "b1b": 83054,
+    "ratio": 1.0,
+    "asked": "at least 1.5",
+    "pass": false
+  },
+  "dust_in_shadow": {
+    "picture": "B1b_Gravel_Close",
+    "asked": "at least 0.5",
+    "sprite_pixels": 116986,
+    "in_shadow": 25633,
+    "in_sun": 91353,
+    "sunlit_ground_p75": 0.2407,
+    "shadow_median": 0.0904,
+    "sun_median": 0.2635,
+    "ratio": 0.343,
+    "pass": false
+  },
+  "dust_in_shadow_sweep": {}
+}

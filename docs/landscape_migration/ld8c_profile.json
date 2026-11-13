@@ -1,0 +1,7842 @@
+{
+ "about": "Leg dressing LD8a step 4 (docs/LEG_DRESSING_PLAN.md LD8a): the tables from Art/dressing/ld8_profile.ps1's logs.",
+ "route": "ProfileGPU under -game -RenderOffScreen (UE 5.8 RHI GPU profiler, log dump)",
+ "captures": 12,
+ "captures_parsed": 12,
+ "views": [
+  "hide_11_track",
+  "hide_17_border_low",
+  "hide_21_rut_wet",
+  "hide_29_ford_shallow",
+  "view_forest",
+  "view_thicket"
+ ],
+ "views_with_both_states": [
+  "hide_11_track",
+  "hide_17_border_low",
+  "hide_21_rut_wet",
+  "hide_29_ford_shallow",
+  "view_forest",
+  "view_thicket"
+ ],
+ "frame_average": {
+  "off": 11.385,
+  "on": 19.99,
+  "delta": 8.605
+ },
+ "async_compute_average": {
+  "off": 7.204,
+  "on": 12.931,
+  "delta": 5.727
+ },
+ "average": {
+  "(outside Scene)": {
+   "off": 0.569,
+   "on": 0.558,
+   "delta": -0.01
+  },
+  "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": -0.0
+  },
+  "BasePass": {
+   "off": 0.374,
+   "on": 1.716,
+   "delta": 1.342
+  },
+  "BuildRenderingCommandsDeferred(Culling=On)": {
+   "off": 0.02,
+   "on": 0.028,
+   "delta": 0.008
+  },
+  "CaptureConvolveSkyEnvMap": {
+   "off": 0.034,
+   "on": 0.021,
+   "delta": -0.013
+  },
+  "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": -0.0
+  },
+  "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+   "off": 0.003,
+   "on": 0.006,
+   "delta": 0.004
+  },
+  "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+   "off": 0.002,
+   "on": 0.0,
+   "delta": -0.002
+  },
+  "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+   "off": 0.0,
+   "on": 0.001,
+   "delta": 0.0
+  },
+  "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": 0.0
+  },
+  "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+   "off": 0.0,
+   "on": 0.001,
+   "delta": 0.001
+  },
+  "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+   "off": 0.0,
+   "on": 0.001,
+   "delta": 0.001
+  },
+  "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": 0.0
+  },
+  "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+   "off": 0.003,
+   "on": 0.003,
+   "delta": 0.0
+  },
+  "ClearDepthStencil (SceneDepthZ)": {
+   "off": 0.005,
+   "on": 0.006,
+   "delta": 0.001
+  },
+  "ClearIndirectDispatchArgs": {
+   "off": 0.003,
+   "on": 0.003,
+   "delta": 0.0
+  },
+  "ClearStencil (SceneDepthZ)": {
+   "off": 0.002,
+   "on": 0.004,
+   "delta": 0.002
+  },
+  "ComputeLightGrid": {
+   "off": 0.023,
+   "on": 0.025,
+   "delta": 0.002
+  },
+  "CustomDepth": {
+   "off": 0.138,
+   "on": 0.003,
+   "delta": -0.134
+  },
+  "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+   "off": 0.007,
+   "on": 0.007,
+   "delta": 0.0
+  },
+  "FXSystemPreRender": {
+   "off": 0.001,
+   "on": 0.001,
+   "delta": 0.0
+  },
+  "GBufferClear": {
+   "off": 0.003,
+   "on": 0.008,
+   "delta": 0.005
+  },
+  "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+   "off": 0.018,
+   "on": 0.024,
+   "delta": 0.005
+  },
+  "GPUSceneUpdate": {
+   "off": 0.014,
+   "on": 0.018,
+   "delta": 0.003
+  },
+  "HZB": {
+   "off": 0.05,
+   "on": 0.063,
+   "delta": 0.013
+  },
+  "LightFunctionAtlasGeneration": {
+   "off": 0.001,
+   "on": 0.001,
+   "delta": 0.0
+  },
+  "LumenSceneUpdate: 16 card captures 0.017M texels": {
+   "off": 0.0,
+   "on": 0.045,
+   "delta": 0.045
+  },
+  "LumenSceneUpdate: 2 card captures 0.031M texels": {
+   "off": 0.066,
+   "on": 0.04,
+   "delta": -0.026
+  },
+  "LumenSceneUpdate: 37 card captures 0.003M texels": {
+   "off": 0.0,
+   "on": 0.039,
+   "delta": 0.039
+  },
+  "LumenSceneUpdate: 37 card captures 0.004M texels": {
+   "off": 0.0,
+   "on": 0.062,
+   "delta": 0.062
+  },
+  "LumenSceneUpdate: 37 card captures 0.029M texels": {
+   "off": 0.0,
+   "on": 0.039,
+   "delta": 0.039
+  },
+  "LumenScreenProbeGather": {
+   "off": 0.042,
+   "on": 0.054,
+   "delta": 0.012
+  },
+  "Nanite::VisBuffer": {
+   "off": 0.277,
+   "on": 1.823,
+   "delta": 1.546
+  },
+  "NaniteBasePass": {
+   "off": 0.071,
+   "on": 0.18,
+   "delta": 0.108
+  },
+  "NaniteSkinningUpdateViewData": {
+   "off": 0.004,
+   "on": 0.004,
+   "delta": 0.001
+  },
+  "NaniteSkinningUpdateViewDataChunks": {
+   "off": 0.003,
+   "on": 0.004,
+   "delta": 0.001
+  },
+  "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+   "off": 0.078,
+   "on": 0.065,
+   "delta": -0.012
+  },
+  "RayTracingDynamicGeometry": {
+   "off": 0.068,
+   "on": 0.259,
+   "delta": 0.191
+  },
+  "RayTracingScene": {
+   "off": 0.115,
+   "on": 0.897,
+   "delta": 0.782
+  },
+  "RenderDeferredLighting": {
+   "off": 0.923,
+   "on": 2.229,
+   "delta": 1.306
+  },
+  "RenderVelocities(Opaque)": {
+   "off": 0.274,
+   "on": 0.488,
+   "delta": 0.214
+  },
+  "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+   "off": 0.003,
+   "on": 0.003,
+   "delta": 0.0
+  },
+  "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+   "off": 0.001,
+   "on": 0.001,
+   "delta": -0.0
+  },
+  "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": 0.0
+  },
+  "ScatterUpload (Resource: SceneCulling.Items)": {
+   "off": 0.001,
+   "on": 0.001,
+   "delta": 0.0
+  },
+  "SceneCulling_ComputeExplicitChunkBounds": {
+   "off": 0.007,
+   "on": 0.009,
+   "delta": 0.002
+  },
+  "SetRayTracingBindings": {
+   "off": 0.001,
+   "on": 0.001,
+   "delta": 0.001
+  },
+  "SetRayTracingBindingsInline": {
+   "off": 0.006,
+   "on": 0.015,
+   "delta": 0.008
+  },
+  "Shadow.Virtual.ProcessInvalidationsGPU": {
+   "off": 0.002,
+   "on": 0.002,
+   "delta": 0.0
+  },
+  "ShadowDepths": {
+   "off": 1.622,
+   "on": 6.141,
+   "delta": 4.518
+  },
+  "SkyAtmosphere": {
+   "off": 0.014,
+   "on": 0.069,
+   "delta": 0.055
+  },
+  "SkyAtmosphereLUTs": {
+   "off": 0.11,
+   "on": 0.076,
+   "delta": -0.034
+  },
+  "StochasticLighting": {
+   "off": 0.081,
+   "on": 0.416,
+   "delta": 0.335
+  },
+  "TemporalSuperResolution": {
+   "off": 0.012,
+   "on": 0.028,
+   "delta": 0.015
+  },
+  "VSMUpdateViewInstanceState": {
+   "off": 0.004,
+   "on": 0.005,
+   "delta": 0.001
+  },
+  "VirtualShadowMapMarkPages": {
+   "off": 0.073,
+   "on": 0.149,
+   "delta": 0.076
+  },
+  "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+   "off": 0.001,
+   "on": 0.0,
+   "delta": -0.0
+  },
+  "[async] CaptureConvolveSkyEnvMap": {
+   "off": 0.004,
+   "on": 0.004,
+   "delta": -0.0
+  },
+  "[async] DiffuseIndirectAndAO": {
+   "off": 4.596,
+   "on": 8.687,
+   "delta": 4.09
+  },
+  "[async] FXSystemPreRender": {
+   "off": 0.005,
+   "on": 0.007,
+   "delta": 0.002
+  },
+  "[async] LumenSceneLighting": {
+   "off": 2.015,
+   "on": 3.006,
+   "delta": 0.991
+  },
+  "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": 0.0
+  },
+  "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+   "off": 0.001,
+   "on": 0.0,
+   "delta": -0.001
+  },
+  "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": 0.0
+  },
+  "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+   "off": 0.0,
+   "on": 0.001,
+   "delta": 0.001
+  },
+  "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+   "off": 0.0,
+   "on": 0.0,
+   "delta": 0.0
+  },
+  "[async] PostProcessing": {
+   "off": 0.532,
+   "on": 1.147,
+   "delta": 0.615
+  },
+  "[async] PrepareImageBasedVRS": {
+   "off": 0.032,
+   "on": 0.053,
+   "delta": 0.021
+  },
+  "[async] RayTracingDynamicGeometry": {
+   "off": 0.004,
+   "on": 0.003,
+   "delta": -0.001
+  }
+ },
+ "top8_by_on_ms": [
+  "[async] DiffuseIndirectAndAO",
+  "ShadowDepths",
+  "[async] LumenSceneLighting",
+  "RenderDeferredLighting",
+  "Nanite::VisBuffer",
+  "BasePass",
+  "[async] PostProcessing",
+  "RayTracingScene"
+ ],
+ "grow5": [
+  "ShadowDepths",
+  "[async] DiffuseIndirectAndAO",
+  "Nanite::VisBuffer",
+  "BasePass",
+  "RenderDeferredLighting"
+ ],
+ "per_view": {
+  "hide_11_track": {
+   "captures": {
+    "0": 1,
+    "1": 1
+   },
+   "frame": {
+    "off": 9.61,
+    "on": 15.907,
+    "delta": 6.297
+   },
+   "async_compute": {
+    "off": 6.291,
+    "on": 10.645
+   },
+   "gpu_clock_mhz": {
+    "off": 2115,
+    "on": 1980
+   },
+   "gpu_temp_c": {
+    "off": 87,
+    "on": 87
+   },
+   "passes": {
+    "(outside Scene)": {
+     "off": 0.477,
+     "on": 0.464,
+     "delta": -0.013
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "BasePass": {
+     "off": 0.0,
+     "on": 2.006,
+     "delta": 2.006
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "off": 0.018,
+     "on": 0.021,
+     "delta": 0.003
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "off": 0.037,
+     "on": 0.026,
+     "delta": -0.011
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "off": 0.0,
+     "on": 0.004,
+     "delta": 0.004
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "off": 0.002,
+     "on": 0.0,
+     "delta": -0.002
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+     "off": 0.0,
+     "on": 0.002,
+     "delta": 0.002
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "off": 0.002,
+     "on": 0.003,
+     "delta": 0.001
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "off": 0.004,
+     "on": 0.005,
+     "delta": 0.001
+    },
+    "ClearIndirectDispatchArgs": {
+     "off": 0.002,
+     "on": 0.003,
+     "delta": 0.001
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "off": 0.0,
+     "on": 0.003,
+     "delta": 0.003
+    },
+    "ComputeLightGrid": {
+     "off": 0.022,
+     "on": 0.023,
+     "delta": 0.001
+    },
+    "CustomDepth": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "off": 0.007,
+     "on": 0.007,
+     "delta": 0.0
+    },
+    "FXSystemPreRender": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "GBufferClear": {
+     "off": 0.0,
+     "on": 0.007,
+     "delta": 0.007
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "GPUSceneUpdate": {
+     "off": 0.009,
+     "on": 0.01,
+     "delta": 0.001
+    },
+    "HZB": {
+     "off": 0.039,
+     "on": 0.07,
+     "delta": 0.031
+    },
+    "LightFunctionAtlasGeneration": {
+     "off": 0.002,
+     "on": 0.001,
+     "delta": -0.001
+    },
+    "LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.0,
+     "on": 0.15,
+     "delta": 0.15
+    },
+    "LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenScreenProbeGather": {
+     "off": 0.0,
+     "on": 0.008,
+     "delta": 0.008
+    },
+    "Nanite::VisBuffer": {
+     "off": 0.25,
+     "on": 1.528,
+     "delta": 1.278
+    },
+    "NaniteBasePass": {
+     "off": 0.065,
+     "on": 0.125,
+     "delta": 0.06
+    },
+    "NaniteSkinningUpdateViewData": {
+     "off": 0.004,
+     "on": 0.003,
+     "delta": -0.001
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "off": 0.03,
+     "on": 0.06,
+     "delta": 0.03
+    },
+    "RayTracingDynamicGeometry": {
+     "off": 0.0,
+     "on": 0.149,
+     "delta": 0.149
+    },
+    "RayTracingScene": {
+     "off": 0.0,
+     "on": 0.598,
+     "delta": 0.598
+    },
+    "RenderDeferredLighting": {
+     "off": 0.0,
+     "on": 2.427,
+     "delta": 2.427
+    },
+    "RenderVelocities(Opaque)": {
+     "off": 0.11,
+     "on": 0.218,
+     "delta": 0.108
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "off": 0.003,
+     "on": 0.002,
+     "delta": -0.001
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "off": 0.007,
+     "on": 0.014,
+     "delta": 0.007
+    },
+    "SetRayTracingBindings": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "SetRayTracingBindingsInline": {
+     "off": 0.0,
+     "on": 0.012,
+     "delta": 0.012
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "off": 0.002,
+     "on": 0.002,
+     "delta": 0.0
+    },
+    "ShadowDepths": {
+     "off": 0.0,
+     "on": 4.924,
+     "delta": 4.924
+    },
+    "SkyAtmosphere": {
+     "off": 0.0,
+     "on": 0.034,
+     "delta": 0.034
+    },
+    "SkyAtmosphereLUTs": {
+     "off": 0.064,
+     "on": 0.067,
+     "delta": 0.003
+    },
+    "StochasticLighting": {
+     "off": 0.0,
+     "on": 0.144,
+     "delta": 0.144
+    },
+    "TemporalSuperResolution": {
+     "off": 0.0,
+     "on": 0.021,
+     "delta": 0.021
+    },
+    "VSMUpdateViewInstanceState": {
+     "off": 0.003,
+     "on": 0.005,
+     "delta": 0.002
+    },
+    "VirtualShadowMapMarkPages": {
+     "off": 0.0,
+     "on": 0.125,
+     "delta": 0.125
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "off": 0.004,
+     "on": 0.004,
+     "delta": 0.0
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "off": 2.806,
+     "on": 7.395,
+     "delta": 4.589
+    },
+    "[async] FXSystemPreRender": {
+     "off": 0.005,
+     "on": 0.003,
+     "delta": -0.002
+    },
+    "[async] LumenSceneLighting": {
+     "off": 3.02,
+     "on": 2.605,
+     "delta": -0.415
+    },
+    "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] PostProcessing": {
+     "off": 0.412,
+     "on": 0.586,
+     "delta": 0.174
+    },
+    "[async] PrepareImageBasedVRS": {
+     "off": 0.029,
+     "on": 0.032,
+     "delta": 0.003
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    }
+   }
+  },
+  "hide_17_border_low": {
+   "captures": {
+    "0": 1,
+    "1": 1
+   },
+   "frame": {
+    "off": 12.062,
+    "on": 20.7,
+    "delta": 8.638
+   },
+   "async_compute": {
+    "off": 7.437,
+    "on": 12.791
+   },
+   "gpu_clock_mhz": {
+    "off": 1785,
+    "on": 1815
+   },
+   "gpu_temp_c": {
+    "off": 87,
+    "on": 86
+   },
+   "passes": {
+    "(outside Scene)": {
+     "off": 0.858,
+     "on": 0.51,
+     "delta": -0.348
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "BasePass": {
+     "off": 0.681,
+     "on": 1.491,
+     "delta": 0.81
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "off": 0.018,
+     "on": 0.028,
+     "delta": 0.01
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "off": 0.013,
+     "on": 0.022,
+     "delta": 0.009
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "off": 0.005,
+     "on": 0.006,
+     "delta": 0.001
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "off": 0.002,
+     "on": 0.0,
+     "delta": -0.002
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "off": 0.0,
+     "on": 0.002,
+     "delta": 0.002
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "off": 0.002,
+     "on": 0.002,
+     "delta": 0.0
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "off": 0.005,
+     "on": 0.005,
+     "delta": 0.0
+    },
+    "ClearIndirectDispatchArgs": {
+     "off": 0.002,
+     "on": 0.002,
+     "delta": 0.0
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "off": 0.004,
+     "on": 0.005,
+     "delta": 0.001
+    },
+    "ComputeLightGrid": {
+     "off": 0.022,
+     "on": 0.028,
+     "delta": 0.006
+    },
+    "CustomDepth": {
+     "off": 0.002,
+     "on": 0.009,
+     "delta": 0.007
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "off": 0.007,
+     "on": 0.007,
+     "delta": 0.0
+    },
+    "FXSystemPreRender": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "GBufferClear": {
+     "off": 0.005,
+     "on": 0.01,
+     "delta": 0.005
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "off": 0.038,
+     "on": 0.042,
+     "delta": 0.004
+    },
+    "GPUSceneUpdate": {
+     "off": 0.019,
+     "on": 0.021,
+     "delta": 0.002
+    },
+    "HZB": {
+     "off": 0.044,
+     "on": 0.064,
+     "delta": 0.02
+    },
+    "LightFunctionAtlasGeneration": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.139,
+     "on": 0.0,
+     "delta": -0.139
+    },
+    "LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.235,
+     "delta": 0.235
+    },
+    "LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenScreenProbeGather": {
+     "off": 0.088,
+     "on": 0.11,
+     "delta": 0.022
+    },
+    "Nanite::VisBuffer": {
+     "off": 0.259,
+     "on": 2.03,
+     "delta": 1.771
+    },
+    "NaniteBasePass": {
+     "off": 0.067,
+     "on": 0.117,
+     "delta": 0.05
+    },
+    "NaniteSkinningUpdateViewData": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "off": 0.004,
+     "on": 0.004,
+     "delta": 0.0
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "off": 0.026,
+     "on": 0.064,
+     "delta": 0.038
+    },
+    "RayTracingDynamicGeometry": {
+     "off": 0.133,
+     "on": 0.178,
+     "delta": 0.045
+    },
+    "RayTracingScene": {
+     "off": 0.135,
+     "on": 0.668,
+     "delta": 0.533
+    },
+    "RenderDeferredLighting": {
+     "off": 1.149,
+     "on": 2.108,
+     "delta": 0.959
+    },
+    "RenderVelocities(Opaque)": {
+     "off": 0.245,
+     "on": 0.502,
+     "delta": 0.257
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "off": 0.007,
+     "on": 0.008,
+     "delta": 0.001
+    },
+    "SetRayTracingBindings": {
+     "off": 0.001,
+     "on": 0.002,
+     "delta": 0.001
+    },
+    "SetRayTracingBindingsInline": {
+     "off": 0.011,
+     "on": 0.015,
+     "delta": 0.004
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "off": 0.002,
+     "on": 0.003,
+     "delta": 0.001
+    },
+    "ShadowDepths": {
+     "off": 3.24,
+     "on": 6.866,
+     "delta": 3.626
+    },
+    "SkyAtmosphere": {
+     "off": 0.025,
+     "on": 0.126,
+     "delta": 0.101
+    },
+    "SkyAtmosphereLUTs": {
+     "off": 0.066,
+     "on": 0.079,
+     "delta": 0.013
+    },
+    "StochasticLighting": {
+     "off": 0.17,
+     "on": 0.201,
+     "delta": 0.031
+    },
+    "TemporalSuperResolution": {
+     "off": 0.024,
+     "on": 0.035,
+     "delta": 0.011
+    },
+    "VSMUpdateViewInstanceState": {
+     "off": 0.003,
+     "on": 0.005,
+     "delta": 0.002
+    },
+    "VirtualShadowMapMarkPages": {
+     "off": 0.152,
+     "on": 0.16,
+     "delta": 0.008
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "off": 4.737,
+     "on": 8.845,
+     "delta": 4.108
+    },
+    "[async] FXSystemPreRender": {
+     "off": 0.015,
+     "on": 0.021,
+     "delta": 0.006
+    },
+    "[async] LumenSceneLighting": {
+     "off": 2.235,
+     "on": 2.441,
+     "delta": 0.206
+    },
+    "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] PostProcessing": {
+     "off": 0.401,
+     "on": 1.413,
+     "delta": 1.012
+    },
+    "[async] PrepareImageBasedVRS": {
+     "off": 0.03,
+     "on": 0.036,
+     "delta": 0.006
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    }
+   }
+  },
+  "hide_21_rut_wet": {
+   "captures": {
+    "0": 1,
+    "1": 1
+   },
+   "frame": {
+    "off": 13.101,
+    "on": 19.976,
+    "delta": 6.875
+   },
+   "async_compute": {
+    "off": 8.2,
+    "on": 13.058
+   },
+   "gpu_clock_mhz": {
+    "off": 1665,
+    "on": 1770
+   },
+   "gpu_temp_c": {
+    "off": 87,
+    "on": 86
+   },
+   "passes": {
+    "(outside Scene)": {
+     "off": 0.534,
+     "on": 0.485,
+     "delta": -0.049
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "BasePass": {
+     "off": 0.743,
+     "on": 2.159,
+     "delta": 1.416
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "off": 0.018,
+     "on": 0.028,
+     "delta": 0.01
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "off": 0.019,
+     "on": 0.017,
+     "delta": -0.002
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "off": 0.004,
+     "on": 0.008,
+     "delta": 0.004
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "off": 0.003,
+     "on": 0.0,
+     "delta": -0.003
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+     "off": 0.0,
+     "on": 0.003,
+     "delta": 0.003
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "off": 0.005,
+     "on": 0.006,
+     "delta": 0.001
+    },
+    "ClearIndirectDispatchArgs": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "off": 0.004,
+     "on": 0.004,
+     "delta": 0.0
+    },
+    "ComputeLightGrid": {
+     "off": 0.025,
+     "on": 0.024,
+     "delta": -0.001
+    },
+    "CustomDepth": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "off": 0.007,
+     "on": 0.007,
+     "delta": 0.0
+    },
+    "FXSystemPreRender": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "GBufferClear": {
+     "off": 0.005,
+     "on": 0.008,
+     "delta": 0.003
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "off": 0.035,
+     "on": 0.041,
+     "delta": 0.006
+    },
+    "GPUSceneUpdate": {
+     "off": 0.02,
+     "on": 0.02,
+     "delta": 0.0
+    },
+    "HZB": {
+     "off": 0.044,
+     "on": 0.062,
+     "delta": 0.018
+    },
+    "LightFunctionAtlasGeneration": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.271,
+     "delta": 0.271
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.146,
+     "on": 0.0,
+     "delta": -0.146
+    },
+    "LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenScreenProbeGather": {
+     "off": 0.111,
+     "on": 0.119,
+     "delta": 0.008
+    },
+    "Nanite::VisBuffer": {
+     "off": 0.284,
+     "on": 1.288,
+     "delta": 1.004
+    },
+    "NaniteBasePass": {
+     "off": 0.072,
+     "on": 0.327,
+     "delta": 0.255
+    },
+    "NaniteSkinningUpdateViewData": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "off": 0.312,
+     "on": 0.069,
+     "delta": -0.243
+    },
+    "RayTracingDynamicGeometry": {
+     "off": 0.126,
+     "on": 0.153,
+     "delta": 0.027
+    },
+    "RayTracingScene": {
+     "off": 0.149,
+     "on": 0.693,
+     "delta": 0.544
+    },
+    "RenderDeferredLighting": {
+     "off": 2.129,
+     "on": 2.343,
+     "delta": 0.214
+    },
+    "RenderVelocities(Opaque)": {
+     "off": 0.252,
+     "on": 0.506,
+     "delta": 0.254
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "off": 0.007,
+     "on": 0.007,
+     "delta": 0.0
+    },
+    "SetRayTracingBindings": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "SetRayTracingBindingsInline": {
+     "off": 0.013,
+     "on": 0.012,
+     "delta": -0.001
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "off": 0.002,
+     "on": 0.002,
+     "delta": 0.0
+    },
+    "ShadowDepths": {
+     "off": 3.616,
+     "on": 6.127,
+     "delta": 2.511
+    },
+    "SkyAtmosphere": {
+     "off": 0.027,
+     "on": 0.029,
+     "delta": 0.002
+    },
+    "SkyAtmosphereLUTs": {
+     "off": 0.301,
+     "on": 0.073,
+     "delta": -0.228
+    },
+    "StochasticLighting": {
+     "off": 0.144,
+     "on": 0.142,
+     "delta": -0.002
+    },
+    "TemporalSuperResolution": {
+     "off": 0.026,
+     "on": 0.024,
+     "delta": -0.002
+    },
+    "VSMUpdateViewInstanceState": {
+     "off": 0.003,
+     "on": 0.005,
+     "delta": 0.002
+    },
+    "VirtualShadowMapMarkPages": {
+     "off": 0.143,
+     "on": 0.16,
+     "delta": 0.017
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "off": 6.126,
+     "on": 8.979,
+     "delta": 2.853
+    },
+    "[async] FXSystemPreRender": {
+     "off": 0.002,
+     "on": 0.01,
+     "delta": 0.008
+    },
+    "[async] LumenSceneLighting": {
+     "off": 1.646,
+     "on": 3.042,
+     "delta": 1.396
+    },
+    "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] PostProcessing": {
+     "off": 0.378,
+     "on": 0.969,
+     "delta": 0.591
+    },
+    "[async] PrepareImageBasedVRS": {
+     "off": 0.029,
+     "on": 0.035,
+     "delta": 0.006
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "off": 0.002,
+     "on": 0.003,
+     "delta": 0.001
+    }
+   }
+  },
+  "hide_29_ford_shallow": {
+   "captures": {
+    "0": 1,
+    "1": 1
+   },
+   "frame": {
+    "off": 12.399,
+    "on": 28.545,
+    "delta": 16.146
+   },
+   "async_compute": {
+    "off": 8.97,
+    "on": 19.161
+   },
+   "gpu_clock_mhz": {
+    "off": 1665,
+    "on": 1665
+   },
+   "gpu_temp_c": {
+    "off": 87,
+    "on": 86
+   },
+   "passes": {
+    "(outside Scene)": {
+     "off": 0.472,
+     "on": 0.749,
+     "delta": 0.277
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "BasePass": {
+     "off": 0.823,
+     "on": 1.835,
+     "delta": 1.012
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "off": 0.019,
+     "on": 0.036,
+     "delta": 0.017
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "off": 0.029,
+     "on": 0.033,
+     "delta": 0.004
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "off": 0.007,
+     "on": 0.006,
+     "delta": -0.001
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "off": 0.003,
+     "on": 0.0,
+     "delta": -0.003
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "off": 0.0,
+     "on": 0.003,
+     "delta": 0.003
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "off": 0.007,
+     "on": 0.007,
+     "delta": 0.0
+    },
+    "ClearIndirectDispatchArgs": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "off": 0.003,
+     "on": 0.005,
+     "delta": 0.002
+    },
+    "ComputeLightGrid": {
+     "off": 0.025,
+     "on": 0.028,
+     "delta": 0.003
+    },
+    "CustomDepth": {
+     "off": 0.824,
+     "on": 0.01,
+     "delta": -0.814
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "off": 0.007,
+     "on": 0.01,
+     "delta": 0.003
+    },
+    "FXSystemPreRender": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "GBufferClear": {
+     "off": 0.006,
+     "on": 0.007,
+     "delta": 0.001
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "off": 0.037,
+     "on": 0.059,
+     "delta": 0.022
+    },
+    "GPUSceneUpdate": {
+     "off": 0.019,
+     "on": 0.027,
+     "delta": 0.008
+    },
+    "HZB": {
+     "off": 0.046,
+     "on": 0.082,
+     "delta": 0.036
+    },
+    "LightFunctionAtlasGeneration": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.11,
+     "on": 0.0,
+     "delta": -0.11
+    },
+    "LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.375,
+     "delta": 0.375
+    },
+    "LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenScreenProbeGather": {
+     "off": 0.051,
+     "on": 0.066,
+     "delta": 0.015
+    },
+    "Nanite::VisBuffer": {
+     "off": 0.281,
+     "on": 3.491,
+     "delta": 3.21
+    },
+    "NaniteBasePass": {
+     "off": 0.074,
+     "on": 0.164,
+     "delta": 0.09
+    },
+    "NaniteSkinningUpdateViewData": {
+     "off": 0.004,
+     "on": 0.005,
+     "delta": 0.001
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "off": 0.003,
+     "on": 0.005,
+     "delta": 0.002
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "off": 0.031,
+     "on": 0.077,
+     "delta": 0.046
+    },
+    "RayTracingDynamicGeometry": {
+     "off": 0.147,
+     "on": 0.245,
+     "delta": 0.098
+    },
+    "RayTracingScene": {
+     "off": 0.407,
+     "on": 0.923,
+     "delta": 0.516
+    },
+    "RenderDeferredLighting": {
+     "off": 2.258,
+     "on": 2.58,
+     "delta": 0.322
+    },
+    "RenderVelocities(Opaque)": {
+     "off": 0.184,
+     "on": 0.865,
+     "delta": 0.681
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "off": 0.007,
+     "on": 0.01,
+     "delta": 0.003
+    },
+    "SetRayTracingBindings": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "SetRayTracingBindingsInline": {
+     "off": 0.014,
+     "on": 0.017,
+     "delta": 0.003
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "off": 0.002,
+     "on": 0.003,
+     "delta": 0.001
+    },
+    "ShadowDepths": {
+     "off": 2.877,
+     "on": 8.436,
+     "delta": 5.559
+    },
+    "SkyAtmosphere": {
+     "off": 0.033,
+     "on": 0.033,
+     "delta": 0.0
+    },
+    "SkyAtmosphereLUTs": {
+     "off": 0.075,
+     "on": 0.095,
+     "delta": 0.02
+    },
+    "StochasticLighting": {
+     "off": 0.172,
+     "on": 1.72,
+     "delta": 1.548
+    },
+    "TemporalSuperResolution": {
+     "off": 0.024,
+     "on": 0.025,
+     "delta": 0.001
+    },
+    "VSMUpdateViewInstanceState": {
+     "off": 0.004,
+     "on": 0.004,
+     "delta": 0.0
+    },
+    "VirtualShadowMapMarkPages": {
+     "off": 0.145,
+     "on": 0.19,
+     "delta": 0.045
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "off": 0.005,
+     "on": 0.005,
+     "delta": 0.0
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "off": 5.944,
+     "on": 11.398,
+     "delta": 5.454
+    },
+    "[async] FXSystemPreRender": {
+     "off": 0.002,
+     "on": 0.003,
+     "delta": 0.001
+    },
+    "[async] LumenSceneLighting": {
+     "off": 1.987,
+     "on": 4.809,
+     "delta": 2.822
+    },
+    "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.004,
+     "delta": 0.004
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] PostProcessing": {
+     "off": 0.983,
+     "on": 2.767,
+     "delta": 1.784
+    },
+    "[async] PrepareImageBasedVRS": {
+     "off": 0.03,
+     "on": 0.146,
+     "delta": 0.116
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    }
+   }
+  },
+  "view_forest": {
+   "captures": {
+    "0": 1,
+    "1": 1
+   },
+   "frame": {
+    "off": 10.901,
+    "on": 15.559,
+    "delta": 4.658
+   },
+   "async_compute": {
+    "off": 6.77,
+    "on": 10.855
+   },
+   "gpu_clock_mhz": {
+    "off": 1665,
+    "on": 1740
+   },
+   "gpu_temp_c": {
+    "off": 86,
+    "on": 87
+   },
+   "passes": {
+    "(outside Scene)": {
+     "off": 0.539,
+     "on": 0.486,
+     "delta": -0.053
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "BasePass": {
+     "off": 0.0,
+     "on": 1.84,
+     "delta": 1.84
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "off": 0.024,
+     "on": 0.022,
+     "delta": -0.002
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "off": 0.062,
+     "on": 0.012,
+     "delta": -0.05
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "off": 0.0,
+     "on": 0.006,
+     "delta": 0.006
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "off": 0.002,
+     "on": 0.002,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "off": 0.004,
+     "on": 0.003,
+     "delta": -0.001
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "off": 0.006,
+     "on": 0.006,
+     "delta": 0.0
+    },
+    "ClearIndirectDispatchArgs": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "off": 0.0,
+     "on": 0.003,
+     "delta": 0.003
+    },
+    "ComputeLightGrid": {
+     "off": 0.028,
+     "on": 0.024,
+     "delta": -0.004
+    },
+    "CustomDepth": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "off": 0.008,
+     "on": 0.006,
+     "delta": -0.002
+    },
+    "FXSystemPreRender": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "GBufferClear": {
+     "off": 0.0,
+     "on": 0.007,
+     "delta": 0.007
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "GPUSceneUpdate": {
+     "off": 0.013,
+     "on": 0.011,
+     "delta": -0.002
+    },
+    "HZB": {
+     "off": 0.072,
+     "on": 0.048,
+     "delta": -0.024
+    },
+    "LightFunctionAtlasGeneration": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.234,
+     "delta": 0.234
+    },
+    "LumenScreenProbeGather": {
+     "off": 0.0,
+     "on": 0.008,
+     "delta": 0.008
+    },
+    "Nanite::VisBuffer": {
+     "off": 0.313,
+     "on": 1.282,
+     "delta": 0.969
+    },
+    "NaniteBasePass": {
+     "off": 0.079,
+     "on": 0.185,
+     "delta": 0.106
+    },
+    "NaniteSkinningUpdateViewData": {
+     "off": 0.004,
+     "on": 0.003,
+     "delta": -0.001
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "off": 0.003,
+     "on": 0.004,
+     "delta": 0.001
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "off": 0.043,
+     "on": 0.042,
+     "delta": -0.001
+    },
+    "RayTracingDynamicGeometry": {
+     "off": 0.0,
+     "on": 0.398,
+     "delta": 0.398
+    },
+    "RayTracingScene": {
+     "off": 0.0,
+     "on": 0.688,
+     "delta": 0.688
+    },
+    "RenderDeferredLighting": {
+     "off": 0.0,
+     "on": 1.824,
+     "delta": 1.824
+    },
+    "RenderVelocities(Opaque)": {
+     "off": 0.378,
+     "on": 0.293,
+     "delta": -0.085
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "off": 0.003,
+     "on": 0.002,
+     "delta": -0.001
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "off": 0.008,
+     "on": 0.007,
+     "delta": -0.001
+    },
+    "SetRayTracingBindings": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "SetRayTracingBindingsInline": {
+     "off": 0.0,
+     "on": 0.013,
+     "delta": 0.013
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "off": 0.002,
+     "on": 0.002,
+     "delta": 0.0
+    },
+    "ShadowDepths": {
+     "off": 0.0,
+     "on": 4.873,
+     "delta": 4.873
+    },
+    "SkyAtmosphere": {
+     "off": 0.0,
+     "on": 0.024,
+     "delta": 0.024
+    },
+    "SkyAtmosphereLUTs": {
+     "off": 0.083,
+     "on": 0.071,
+     "delta": -0.012
+    },
+    "StochasticLighting": {
+     "off": 0.0,
+     "on": 0.163,
+     "delta": 0.163
+    },
+    "TemporalSuperResolution": {
+     "off": 0.0,
+     "on": 0.016,
+     "delta": 0.016
+    },
+    "VSMUpdateViewInstanceState": {
+     "off": 0.005,
+     "on": 0.004,
+     "delta": -0.001
+    },
+    "VirtualShadowMapMarkPages": {
+     "off": 0.0,
+     "on": 0.133,
+     "delta": 0.133
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "off": 0.006,
+     "on": 0.004,
+     "delta": -0.002
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "off": 4.729,
+     "on": 7.907,
+     "delta": 3.178
+    },
+    "[async] FXSystemPreRender": {
+     "off": 0.005,
+     "on": 0.004,
+     "delta": -0.001
+    },
+    "[async] LumenSceneLighting": {
+     "off": 1.466,
+     "on": 2.413,
+     "delta": 0.947
+    },
+    "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.001,
+     "on": 0.0,
+     "delta": -0.001
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] PostProcessing": {
+     "off": 0.507,
+     "on": 0.471,
+     "delta": -0.036
+    },
+    "[async] PrepareImageBasedVRS": {
+     "off": 0.033,
+     "on": 0.036,
+     "delta": 0.003
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "off": 0.006,
+     "on": 0.003,
+     "delta": -0.003
+    }
+   }
+  },
+  "view_thicket": {
+   "captures": {
+    "0": 1,
+    "1": 1
+   },
+   "frame": {
+    "off": 10.237,
+    "on": 19.252,
+    "delta": 9.015
+   },
+   "async_compute": {
+    "off": 5.554,
+    "on": 11.079
+   },
+   "gpu_clock_mhz": {
+    "off": 1665,
+    "on": 1665
+   },
+   "gpu_temp_c": {
+    "off": 86,
+    "on": 86
+   },
+   "passes": {
+    "(outside Scene)": {
+     "off": 0.534,
+     "on": 0.657,
+     "delta": 0.123
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "BasePass": {
+     "off": 0.0,
+     "on": 0.967,
+     "delta": 0.967
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "off": 0.026,
+     "on": 0.036,
+     "delta": 0.01
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "off": 0.041,
+     "on": 0.014,
+     "delta": -0.027
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "off": 0.0,
+     "on": 0.008,
+     "delta": 0.008
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "off": 0.002,
+     "on": 0.004,
+     "delta": 0.002
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "off": 0.002,
+     "on": 0.003,
+     "delta": 0.001
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "off": 0.005,
+     "on": 0.006,
+     "delta": 0.001
+    },
+    "ClearIndirectDispatchArgs": {
+     "off": 0.003,
+     "on": 0.002,
+     "delta": -0.001
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "off": 0.0,
+     "on": 0.004,
+     "delta": 0.004
+    },
+    "ComputeLightGrid": {
+     "off": 0.018,
+     "on": 0.025,
+     "delta": 0.007
+    },
+    "CustomDepth": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "off": 0.006,
+     "on": 0.007,
+     "delta": 0.001
+    },
+    "FXSystemPreRender": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "GBufferClear": {
+     "off": 0.0,
+     "on": 0.007,
+     "delta": 0.007
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "GPUSceneUpdate": {
+     "off": 0.005,
+     "on": 0.016,
+     "delta": 0.011
+    },
+    "HZB": {
+     "off": 0.055,
+     "on": 0.05,
+     "delta": -0.005
+    },
+    "LightFunctionAtlasGeneration": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.0,
+     "on": 0.091,
+     "delta": 0.091
+    },
+    "LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "LumenScreenProbeGather": {
+     "off": 0.0,
+     "on": 0.011,
+     "delta": 0.011
+    },
+    "Nanite::VisBuffer": {
+     "off": 0.273,
+     "on": 1.319,
+     "delta": 1.046
+    },
+    "NaniteBasePass": {
+     "off": 0.071,
+     "on": 0.161,
+     "delta": 0.09
+    },
+    "NaniteSkinningUpdateViewData": {
+     "off": 0.003,
+     "on": 0.006,
+     "delta": 0.003
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "off": 0.003,
+     "on": 0.005,
+     "delta": 0.002
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "off": 0.024,
+     "on": 0.079,
+     "delta": 0.055
+    },
+    "RayTracingDynamicGeometry": {
+     "off": 0.0,
+     "on": 0.431,
+     "delta": 0.431
+    },
+    "RayTracingScene": {
+     "off": 0.0,
+     "on": 1.815,
+     "delta": 1.815
+    },
+    "RenderDeferredLighting": {
+     "off": 0.0,
+     "on": 2.093,
+     "delta": 2.093
+    },
+    "RenderVelocities(Opaque)": {
+     "off": 0.477,
+     "on": 0.547,
+     "delta": 0.07
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "off": 0.002,
+     "on": 0.004,
+     "delta": 0.002
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "off": 0.008,
+     "on": 0.01,
+     "delta": 0.002
+    },
+    "SetRayTracingBindings": {
+     "off": 0.0,
+     "on": 0.002,
+     "delta": 0.002
+    },
+    "SetRayTracingBindingsInline": {
+     "off": 0.0,
+     "on": 0.019,
+     "delta": 0.019
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "off": 0.002,
+     "on": 0.002,
+     "delta": 0.0
+    },
+    "ShadowDepths": {
+     "off": 0.0,
+     "on": 5.617,
+     "delta": 5.617
+    },
+    "SkyAtmosphere": {
+     "off": 0.0,
+     "on": 0.167,
+     "delta": 0.167
+    },
+    "SkyAtmosphereLUTs": {
+     "off": 0.073,
+     "on": 0.072,
+     "delta": -0.001
+    },
+    "StochasticLighting": {
+     "off": 0.0,
+     "on": 0.125,
+     "delta": 0.125
+    },
+    "TemporalSuperResolution": {
+     "off": 0.0,
+     "on": 0.045,
+     "delta": 0.045
+    },
+    "VSMUpdateViewInstanceState": {
+     "off": 0.004,
+     "on": 0.005,
+     "delta": 0.001
+    },
+    "VirtualShadowMapMarkPages": {
+     "off": 0.0,
+     "on": 0.129,
+     "delta": 0.129
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "off": 0.0,
+     "on": 0.001,
+     "delta": 0.001
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "off": 0.004,
+     "on": 0.003,
+     "delta": -0.001
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "off": 3.235,
+     "on": 7.596,
+     "delta": 4.361
+    },
+    "[async] FXSystemPreRender": {
+     "off": 0.003,
+     "on": 0.003,
+     "delta": 0.0
+    },
+    "[async] LumenSceneLighting": {
+     "off": 1.738,
+     "on": 2.728,
+     "delta": 0.99
+    },
+    "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "off": 0.001,
+     "on": 0.001,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "off": 0.0,
+     "on": 0.0,
+     "delta": 0.0
+    },
+    "[async] PostProcessing": {
+     "off": 0.513,
+     "on": 0.678,
+     "delta": 0.165
+    },
+    "[async] PrepareImageBasedVRS": {
+     "off": 0.042,
+     "on": 0.035,
+     "delta": -0.007
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "off": 0.004,
+     "on": 0.003,
+     "delta": -0.001
+    }
+   }
+  }
+ },
+ "overall_gtperf": {
+  "off": {
+   "runs": 1,
+   "frame_ms": 15.62,
+   "gpu_ms": 14.26
+  },
+  "on": {
+   "runs": 1,
+   "frame_ms": 20.01,
+   "gpu_ms": 18.58
+  },
+  "delta": {
+   "frame_ms": 4.39,
+   "gpu_ms": 4.32
+  }
+ },
+ "gtperf_runs": [
+  {
+   "run": "hide_d0",
+   "pair": 1,
+   "dressing": 0,
+   "steps": 26,
+   "frame_ms": 15.625,
+   "gpu_ms": 14.259230769230768,
+   "gpu_before_c": 60,
+   "gpu_after_c": 79,
+   "result": "[2026.09.28-21.54.22:706][579]LogTemp: Display: GTDRIVETEST_RESULT PASS screensh"
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "dressing": 1,
+   "steps": 26,
+   "frame_ms": 20.01269230769231,
+   "gpu_ms": 18.583076923076923,
+   "gpu_before_c": 65,
+   "gpu_after_c": 79,
+   "result": "[2026.09.28-22.02.42:777][388]LogTemp: Display: GTDRIVETEST_RESULT PASS screensh"
+  }
+ ],
+ "scene_stats_first": {
+  "hide_11_track d0": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+  "hide_17_border_low d0": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+  "hide_21_rut_wet d0": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+  "hide_29_ford_shallow d0": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+  "hide_11_track d1": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 151220 instances to render on 131 components (151220 on visible ones), grass.Enable 1",
+  "hide_17_border_low d1": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 118036 instances to render on 57 components (118036 on visible ones), grass.Enable 1",
+  "hide_21_rut_wet d1": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 110832 instances to render on 57 components (110832 on visible ones), grass.Enable 1",
+  "hide_29_ford_shallow d1": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 77559 instances to render on 57 components (77559 on visible ones), grass.Enable 1",
+  "view_forest_on d1": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 49664 instances to render on 56 components (49664 on visible ones), grass.Enable 1",
+  "view_forest_dress0 d0": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 49664 instances to render on 56 components (49664 on visible ones), grass.Enable 0",
+  "view_thicket_on d1": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 51958 instances to render on 50 components (51958 on visible ones), grass.Enable 1",
+  "view_thicket_dress0 d0": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 51958 instances to render on 50 components (51958 on visible ones), grass.Enable 0"
+ },
+ "records": [
+  {
+   "run": "hide_d0",
+   "pair": 1,
+   "picture": "hide_11_track",
+   "view": "hide_11_track",
+   "capture": 1,
+   "dressing": 0,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 87,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 2115,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+   "frame_ms": 9.61,
+   "async_compute_ms": 6.291,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.009,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.018,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.03,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "96"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.11,
+     "draws": 28,
+     "dispatches": 0,
+     "prims": [
+      "279480"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 0.25,
+     "draws": 16,
+     "dispatches": 63,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.065,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.039,
+     "draws": 9,
+     "dispatches": 5,
+     "prims": [
+      "420",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.022,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.064,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.037,
+     "draws": 4,
+     "dispatches": 0,
+     "prims": [
+      "4"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.477,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.029,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 3.02,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 2.806,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.412,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d0",
+   "pair": 1,
+   "picture": "hide_17_border_low",
+   "view": "hide_17_border_low",
+   "capture": 1,
+   "dressing": 0,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 87,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1785,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+   "frame_ms": 12.062,
+   "async_compute_ms": 7.437,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.019,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.018,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.026,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.245,
+     "draws": 77,
+     "dispatches": 0,
+     "prims": [
+      "693388"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 0.259,
+     "draws": 16,
+     "dispatches": 63,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.067,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.044,
+     "draws": 64,
+     "dispatches": 5,
+     "prims": [
+      "1488",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.022,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.066,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.013,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "CustomDepth": {
+     "ms": 0.002,
+     "draws": 26,
+     "dispatches": 0,
+     "prims": [
+      "6816"
+     ]
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.139,
+     "draws": 24,
+     "dispatches": 4,
+     "prims": [
+      "571560"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.133,
+     "draws": 0,
+     "dispatches": 32,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.135,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.011,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.088,
+     "draws": 2,
+     "dispatches": 1,
+     "prims": [
+      "428592"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 0.681,
+     "draws": 101,
+     "dispatches": 0,
+     "prims": [
+      "693388"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.17,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "ms": 0.038,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.152,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 3.24,
+     "draws": 117,
+     "dispatches": 94,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 1.149,
+     "draws": 9,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.024,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.025,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.858,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.015,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.03,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 2.235,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 4.737,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.401,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d0",
+   "pair": 1,
+   "picture": "hide_21_rut_wet",
+   "view": "hide_21_rut_wet",
+   "capture": 1,
+   "dressing": 0,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 87,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1665,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+   "frame_ms": 13.101,
+   "async_compute_ms": 8.2,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.02,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.018,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.312,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "1120"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.252,
+     "draws": 32,
+     "dispatches": 0,
+     "prims": [
+      "745466"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 0.284,
+     "draws": 16,
+     "dispatches": 63,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.072,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.044,
+     "draws": 13,
+     "dispatches": 5,
+     "prims": [
+      "684",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.025,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.301,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.019,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "CustomDepth": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.146,
+     "draws": 24,
+     "dispatches": 4,
+     "prims": [
+      "571560"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.126,
+     "draws": 0,
+     "dispatches": 28,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.149,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.013,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.111,
+     "draws": 3,
+     "dispatches": 1,
+     "prims": [
+      "430432"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 0.743,
+     "draws": 36,
+     "dispatches": 0,
+     "prims": [
+      "746586"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.144,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "ms": 0.035,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.143,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 3.616,
+     "draws": 121,
+     "dispatches": 94,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 2.129,
+     "draws": 9,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.026,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.027,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.534,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.029,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 1.646,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 6.126,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.378,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d0",
+   "pair": 1,
+   "picture": "hide_29_ford_shallow",
+   "view": "hide_29_ford_shallow",
+   "capture": 1,
+   "dressing": 0,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 87,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1665,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 0 instances to render on 0 components (0 on visible ones), grass.Enable 0",
+   "frame_ms": 12.399,
+   "async_compute_ms": 8.97,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.019,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=512bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.019,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.031,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "608"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.184,
+     "draws": 32,
+     "dispatches": 0,
+     "prims": [
+      "446902"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 0.281,
+     "draws": 16,
+     "dispatches": 63,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.074,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.046,
+     "draws": 11,
+     "dispatches": 5,
+     "prims": [
+      "528",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.025,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.075,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.029,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "CustomDepth": {
+     "ms": 0.824,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.11,
+     "draws": 8,
+     "dispatches": 6,
+     "prims": [
+      "120"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.147,
+     "draws": 0,
+     "dispatches": 32,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.407,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.014,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.051,
+     "draws": 2,
+     "dispatches": 1,
+     "prims": [
+      "114652"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 0.823,
+     "draws": 35,
+     "dispatches": 0,
+     "prims": [
+      "447510"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.172,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "ms": 0.037,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.145,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 2.877,
+     "draws": 210,
+     "dispatches": 94,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 2.258,
+     "draws": 9,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.024,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.033,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.472,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.03,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 1.987,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 5.944,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.983,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "hide_11_track",
+   "view": "hide_11_track",
+   "capture": 1,
+   "dressing": 1,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 87,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1980,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 151220 instances to render on 131 components (151220 on visible ones), grass.Enable 1",
+   "frame_ms": 15.907,
+   "async_compute_ms": 10.645,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.01,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.014,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=85544bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.021,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.06,
+     "draws": 54,
+     "dispatches": 0,
+     "prims": [
+      "96"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.218,
+     "draws": 66,
+     "dispatches": 0,
+     "prims": [
+      "241168"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 1.528,
+     "draws": 60,
+     "dispatches": 107,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.125,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.07,
+     "draws": 106,
+     "dispatches": 5,
+     "prims": [
+      "1716",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.023,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.067,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.026,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.15,
+     "draws": 24,
+     "dispatches": 4,
+     "prims": [
+      "571560"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.149,
+     "draws": 0,
+     "dispatches": 28,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.598,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.012,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 2.006,
+     "draws": 121,
+     "dispatches": 35,
+     "prims": [
+      "241264"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.144,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.125,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 4.924,
+     "draws": 136,
+     "dispatches": 138,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 2.427,
+     "draws": 12,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.021,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.034,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.464,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.032,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 2.605,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 7.395,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.586,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "hide_17_border_low",
+   "view": "hide_17_border_low",
+   "capture": 1,
+   "dressing": 1,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 86,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1815,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 118036 instances to render on 57 components (118036 on visible ones), grass.Enable 1",
+   "frame_ms": 20.7,
+   "async_compute_ms": 12.791,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.021,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.028,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.064,
+     "draws": 50,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.502,
+     "draws": 85,
+     "dispatches": 0,
+     "prims": [
+      "623892"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 2.03,
+     "draws": 60,
+     "dispatches": 107,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.117,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.064,
+     "draws": 145,
+     "dispatches": 5,
+     "prims": [
+      "2904",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.028,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.079,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.022,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "CustomDepth": {
+     "ms": 0.009,
+     "draws": 26,
+     "dispatches": 0,
+     "prims": [
+      "6816"
+     ]
+    },
+    "LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "ms": 0.235,
+     "draws": 19,
+     "dispatches": 39,
+     "prims": [
+      "2138"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.178,
+     "draws": 0,
+     "dispatches": 32,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.668,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.015,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.11,
+     "draws": 2,
+     "dispatches": 1,
+     "prims": [
+      "428592"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.01,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 1.491,
+     "draws": 159,
+     "dispatches": 35,
+     "prims": [
+      "623892"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.201,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "ms": 0.042,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.16,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 6.866,
+     "draws": 161,
+     "dispatches": 138,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 2.108,
+     "draws": 12,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.035,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.126,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.51,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.021,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.036,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.003M texels": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 2.441,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 8.845,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 1.413,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "hide_21_rut_wet",
+   "view": "hide_21_rut_wet",
+   "capture": 1,
+   "dressing": 1,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 86,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1770,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 110832 instances to render on 57 components (110832 on visible ones), grass.Enable 1",
+   "frame_ms": 19.976,
+   "async_compute_ms": 13.058,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.02,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=72440bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.028,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.069,
+     "draws": 56,
+     "dispatches": 0,
+     "prims": [
+      "1120"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.506,
+     "draws": 84,
+     "dispatches": 0,
+     "prims": [
+      "763594"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 1.288,
+     "draws": 60,
+     "dispatches": 107,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.327,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.062,
+     "draws": 115,
+     "dispatches": 5,
+     "prims": [
+      "1836",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.024,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.073,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.017,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "CustomDepth": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "ms": 0.271,
+     "draws": 26,
+     "dispatches": 37,
+     "prims": [
+      "286056"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.153,
+     "draws": 0,
+     "dispatches": 28,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.693,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.012,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.119,
+     "draws": 3,
+     "dispatches": 1,
+     "prims": [
+      "430432"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 2.159,
+     "draws": 142,
+     "dispatches": 35,
+     "prims": [
+      "764714"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.142,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "ms": 0.041,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.16,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 6.127,
+     "draws": 165,
+     "dispatches": 138,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 2.343,
+     "draws": 12,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.024,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.029,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.485,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.01,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.035,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 16 card captures 0.017M texels": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 3.042,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 8.979,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.969,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "hide_29_ford_shallow",
+   "view": "hide_29_ford_shallow",
+   "capture": 1,
+   "dressing": 1,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 86,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1665,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 77559 instances to render on 57 components (77559 on visible ones), grass.Enable 1",
+   "frame_ms": 28.545,
+   "async_compute_ms": 19.161,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.027,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.01,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=66296bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.036,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.077,
+     "draws": 57,
+     "dispatches": 0,
+     "prims": [
+      "608"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.865,
+     "draws": 63,
+     "dispatches": 0,
+     "prims": [
+      "436334"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 3.491,
+     "draws": 60,
+     "dispatches": 107,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.164,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.01,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.082,
+     "draws": 73,
+     "dispatches": 5,
+     "prims": [
+      "1332",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.028,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.095,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.033,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "CustomDepth": {
+     "ms": 0.01,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "ms": 0.375,
+     "draws": 26,
+     "dispatches": 41,
+     "prims": [
+      "286434"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.245,
+     "draws": 0,
+     "dispatches": 32,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.923,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.017,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.066,
+     "draws": 2,
+     "dispatches": 1,
+     "prims": [
+      "114652"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 1.835,
+     "draws": 121,
+     "dispatches": 35,
+     "prims": [
+      "436942"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 1.72,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUScene.UploadDynamicPrimitiveShaderDataForView": {
+     "ms": 0.059,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.19,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 8.436,
+     "draws": 254,
+     "dispatches": 138,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 2.58,
+     "draws": 12,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.025,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.033,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.749,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.146,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.004M texels": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 4.809,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 11.398,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 2.767,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "view_forest_on",
+   "view": "view_forest",
+   "capture": 1,
+   "dressing": 1,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 87,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1740,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 49664 instances to render on 56 components (49664 on visible ones), grass.Enable 1",
+   "frame_ms": 15.559,
+   "async_compute_ms": 10.855,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.011,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.022,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.042,
+     "draws": 48,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.293,
+     "draws": 50,
+     "dispatches": 0,
+     "prims": [
+      "273824"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 1.282,
+     "draws": 60,
+     "dispatches": 107,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.185,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.048,
+     "draws": 68,
+     "dispatches": 5,
+     "prims": [
+      "1224",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.024,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.071,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.012,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "ms": 0.234,
+     "draws": 17,
+     "dispatches": 31,
+     "prims": [
+      "666"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.398,
+     "draws": 0,
+     "dispatches": 32,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 0.688,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.013,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 1.84,
+     "draws": 98,
+     "dispatches": 35,
+     "prims": [
+      "273824"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.163,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.133,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 4.873,
+     "draws": 139,
+     "dispatches": 138,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 1.824,
+     "draws": 12,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.016,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.024,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.486,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.036,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 37 card captures 0.029M texels": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 2.413,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 7.907,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.471,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "view_forest_dress0",
+   "view": "view_forest",
+   "capture": 1,
+   "dressing": 0,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 86,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1665,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 49664 instances to render on 56 components (49664 on visible ones), grass.Enable 0",
+   "frame_ms": 10.901,
+   "async_compute_ms": 6.77,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.013,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=59800bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.024,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.043,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.378,
+     "draws": 73,
+     "dispatches": 0,
+     "prims": [
+      "347672"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 0.313,
+     "draws": 16,
+     "dispatches": 63,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.079,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.072,
+     "draws": 59,
+     "dispatches": 5,
+     "prims": [
+      "924",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.028,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.083,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.062,
+     "draws": 4,
+     "dispatches": 0,
+     "prims": [
+      "4"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.539,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.033,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 1.466,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 4.729,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.507,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "view_thicket_on",
+   "view": "view_thicket",
+   "capture": 1,
+   "dressing": 1,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 86,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1665,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 51958 instances to render on 50 components (51958 on visible ones), grass.Enable 1",
+   "frame_ms": 19.252,
+   "async_compute_ms": 11.079,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.016,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.01,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.036,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.079,
+     "draws": 60,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.547,
+     "draws": 75,
+     "dispatches": 0,
+     "prims": [
+      "206856"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 1.319,
+     "draws": 60,
+     "dispatches": 107,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.161,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.05,
+     "draws": 32,
+     "dispatches": 5,
+     "prims": [
+      "1092",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.025,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.072,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.014,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.091,
+     "draws": 8,
+     "dispatches": 4,
+     "prims": [
+      "120"
+     ]
+    },
+    "RayTracingDynamicGeometry": {
+     "ms": 0.431,
+     "draws": 0,
+     "dispatches": 36,
+     "prims": [
+      "0"
+     ]
+    },
+    "RayTracingScene": {
+     "ms": 1.815,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindings": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SetRayTracingBindingsInline": {
+     "ms": 0.019,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.FeedbackAllocator Size=4bytes)": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Lumen.Feedback Size=28800bytes)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "LumenScreenProbeGather": {
+     "ms": 0.011,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "GBufferClear": {
+     "ms": 0.007,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BasePass": {
+     "ms": 0.967,
+     "draws": 135,
+     "dispatches": 35,
+     "prims": [
+      "206856"
+     ]
+    },
+    "StochasticLighting": {
+     "ms": 0.125,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "VirtualShadowMapMarkPages": {
+     "ms": 0.129,
+     "draws": 0,
+     "dispatches": 9,
+     "prims": [
+      "0"
+     ]
+    },
+    "ShadowDepths": {
+     "ms": 5.617,
+     "draws": 128,
+     "dispatches": 138,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearStencil (SceneDepthZ)": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderDeferredLighting": {
+     "ms": 2.093,
+     "draws": 12,
+     "dispatches": 25,
+     "prims": [
+      "258",
+      "0"
+     ]
+    },
+    "TemporalSuperResolution": {
+     "ms": 0.045,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphere": {
+     "ms": 0.167,
+     "draws": 1,
+     "dispatches": 0,
+     "prims": [
+      "1"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.657,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.035,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 2.728,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 7.596,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.678,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  },
+  {
+   "run": "hide_d1",
+   "pair": 1,
+   "picture": "view_thicket_dress0",
+   "view": "view_thicket",
+   "capture": 1,
+   "dressing": 0,
+   "res": "1280x720",
+   "r.ScreenPercentage": 0.0,
+   "r.Nanite.AllowVoxels": 1,
+   "gpu_temp_c": 86,
+   "gpu_clock_reasons": "0x0000000000000020",
+   "gpu_clock_mhz": 1665,
+   "scene": "dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 51958 instances to render on 50 components (51958 on visible ones), grass.Enable 0",
+   "frame_ms": 10.237,
+   "async_compute_ms": 5.554,
+   "passes": {
+    "FXSystemPreRender": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "GPUSceneUpdate": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellBlockData)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.CellHeaders)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.Items)": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ScatterUpload (Resource: SceneCulling.ItemChunks)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "SceneCulling_ComputeExplicitChunkBounds": {
+     "ms": 0.008,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearIndirectDispatchArgs": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewDataChunks": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "NaniteSkinningUpdateViewData": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Shadow.Virtual.CacheInstanceAsDynamic Size=53200bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "BuildRenderingCommandsDeferred(Culling=On)": {
+     "ms": 0.026,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    },
+    "VSMUpdateViewInstanceState": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "Shadow.Virtual.ProcessInvalidationsGPU": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearBuffer(Substrate.SubstrateTileDrawIndirectBuffer Size=144bytes)": {
+     "ms": 0.002,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "AccessModePass[Graphics] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "ClearDepthStencil (SceneDepthZ)": {
+     "ms": 0.005,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)": {
+     "ms": 0.024,
+     "draws": 3,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "RenderVelocities(Opaque)": {
+     "ms": 0.477,
+     "draws": 78,
+     "dispatches": 0,
+     "prims": [
+      "229920"
+     ]
+    },
+    "Nanite::VisBuffer": {
+     "ms": 0.273,
+     "draws": 16,
+     "dispatches": 63,
+     "prims": [
+      "0",
+      "0"
+     ]
+    },
+    "NaniteBasePass": {
+     "ms": 0.071,
+     "draws": 2,
+     "dispatches": 0,
+     "prims": [
+      "2"
+     ]
+    },
+    "FVirtualShadowMapArray::UpdatePhysicalPageAddresses": {
+     "ms": 0.006,
+     "draws": 0,
+     "dispatches": 1,
+     "prims": [
+      "0"
+     ]
+    },
+    "HZB": {
+     "ms": 0.055,
+     "draws": 32,
+     "dispatches": 5,
+     "prims": [
+      "1056",
+      "0"
+     ]
+    },
+    "ComputeLightGrid": {
+     "ms": 0.018,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "LightFunctionAtlasGeneration": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "SkyAtmosphereLUTs": {
+     "ms": 0.073,
+     "draws": 0,
+     "dispatches": 4,
+     "prims": [
+      "0"
+     ]
+    },
+    "CaptureConvolveSkyEnvMap": {
+     "ms": 0.041,
+     "draws": 4,
+     "dispatches": 0,
+     "prims": [
+      "4"
+     ]
+    },
+    "(outside Scene)": {
+     "ms": 0.534,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": []
+    },
+    "[async] FXSystemPreRender": {
+     "ms": 0.003,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] AccessModePass[AsyncCompute] (Textures: 1, Buffers: 3)": {
+     "ms": 0.0,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PrepareImageBasedVRS": {
+     "ms": 0.042,
+     "draws": 0,
+     "dispatches": 2,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] CaptureConvolveSkyEnvMap": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneUpdate: 2 card captures 0.031M texels": {
+     "ms": 0.001,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] RayTracingDynamicGeometry": {
+     "ms": 0.004,
+     "draws": 0,
+     "dispatches": 0,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] LumenSceneLighting": {
+     "ms": 1.738,
+     "draws": 0,
+     "dispatches": 25,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] DiffuseIndirectAndAO": {
+     "ms": 3.235,
+     "draws": 0,
+     "dispatches": 65,
+     "prims": [
+      "0"
+     ]
+    },
+    "[async] PostProcessing": {
+     "ms": 0.513,
+     "draws": 0,
+     "dispatches": 3,
+     "prims": [
+      "0"
+     ]
+    }
+   }
+  }
+ ],
+ "compare": {
+  "with": "C:/GrandTour/docs/landscape_migration/ld8b_profile.json",
+  "views": [
+   "hide_11_track",
+   "hide_17_border_low",
+   "hide_21_rut_wet",
+   "hide_29_ford_shallow",
+   "view_forest",
+   "view_thicket"
+  ],
+  "frame_delta": {
+   "before": 6.593,
+   "after": 8.605
+  },
+  "passes": [
+   {
+    "pass": "ShadowDepths",
+    "before": 3.057,
+    "after": 4.518
+   },
+   {
+    "pass": "[async] DiffuseIndirectAndAO",
+    "before": 2.459,
+    "after": 4.09
+   },
+   {
+    "pass": "RenderDeferredLighting",
+    "before": 1.295,
+    "after": 1.306
+   },
+   {
+    "pass": "Nanite::VisBuffer",
+    "before": 1.139,
+    "after": 1.546
+   },
+   {
+    "pass": "[async] LumenSceneLighting",
+    "before": 0.638,
+    "after": 0.991
+   },
+   {
+    "pass": "BasePass",
+    "before": 0.621,
+    "after": 1.342
+   }
+  ]
+ }
+}

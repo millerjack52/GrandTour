@@ -1,0 +1,308 @@
+LIDAR RIVERBANK RECOVERY PLAN
+2026-11-05 - researched plan following rejection and rollback of RS6
+
+Current status (2026-11-06): RS7 first bounded section is implemented and saved.
+See Art/Export/LidarStudy/FirstSection/Review/index.html for actual game captures
+alongside the source references, and acceptance.json for evidence and gate status.
+Owner visual acceptance of this implementation remains pending; do not expand it.
+The following research record describes the pre-implementation RS5 baseline.
+The rejected RS6 map remains archived; rocky-bank.json remains disabled.
+
+2026-11-06 UPDATE: Read LIDAR_RIVERBANK_ACCEPTANCE.txt before implementation.
+The owner endorsed the direction of the photo-based v03 study after rejecting
+repetitive generic fern planting and the subsequent shrub-garden overcorrection.
+Actual photos 04/08/15 lead growth, variety and ground treatment. The generated
+study is a secondary style interpretation. Do not adopt an arbitrary fern count
+cap or equal-species mix. Visual reference endorsement is not a passed game build.
+
+DESIGN DECISION
+
+Build a lush, stylized Southland river gully with exposed weathered rock structure,
+asymmetric bank-grown ferns, warm gravel, amber shallows and readable forest light.
+The owner's site photos determine place, species character, river proportions,
+surface relationships and ecological arrangement. The supplied colourful woodland
+reference determines clarity, grouped colour, shape simplification and visual
+richness. The selected rocky-bank direction remains: rock emerges through the
+bank, with dense vegetation occupying soil pockets, cracks and sheltered shelves.
+
+The existing LiDAR landform, recognizable site layout, road routes, crossings,
+native mud/soil behaviour, water occupancy and interactions remain the foundation.
+Local authored detail below DEM resolution must have consistent physical support.
+
+EVIDENCE AND DIAGNOSIS
+
+Confirmed in source:
+- native_plant_lib.py::frond_path clamps p.z to floor when floor is supplied.
+- build_native_bush.py crown ferns and build_southland_floor.py kiokio pass
+  floor=.012. Kiokio's earlier shape fitting seeks hanging outer tips, but final
+  frond construction supplies that horizontal floor. This is a concrete mismatch
+  between a desired hanging form and a flat-ground construction assumption.
+- lidar_bank_planting.py fits whole plant transforms and scales fern height by
+  .82 while changing lateral proportions. This cannot independently control
+  crown attachment, upright growth, uphill clearance and downhill hanging fronds.
+- Foliage material code already enables Two Sided Foliage. RS1 raises its radial
+  normal blend to .32. Enabling two-sided foliage again is not a diagnosis.
+- The saved v6 preset uses 1600x900 output, TSR75 and StaticMeshLODDistanceScale 4;
+  component-level LOD scales also exist. Actual runtime mesh/material assignments,
+  LOD transitions and temporal rendering must be inspected, not inferred from names.
+- RS6 used the bank's world-space pigment but still looked detached: shared colour
+  code did not solve mismatched geometry, texture contrast, transitions or lighting.
+
+Observed in captures:
+- Broad smooth dark bank, visibly separate repeated plants and severe loss of
+  colour information in shade.
+- Rejected pass replaced that with oversized, similarly prominent rock objects,
+  bare gaps and small isolated shrubs on tops. Much of the original vegetation
+  structure was removed to accommodate the new objects.
+- Technical placement checks passed without demonstrating visual coherence.
+
+Not yet established by controlled runtime tests:
+- Relative contribution of geometry, live LOD choice, normal modification,
+  subsurface lighting, occlusion and TSR to the flat/speckled plant appearance.
+- Main cause of excessive darkness: exposure, local exposure, actual canopy
+  occlusion, skylight/GI representation or material values.
+- Exact local bedrock geology. Do not invent conspicuous stratigraphy from a
+  convenient asset pack. Follow the observed grey weathered rock character.
+
+1. ESTABLISH A RELIABLE BASELINE
+
+Use the restored map and saved v6 gameplay preset on the target RTX4050 Laptop
+6GB. Record actual console values and material/LOD assignments at the chosen bank.
+Capture standing eye height across the river, close oblique bank view, along-bank
+view and ordinary vehicle approach. Include a short moving sequence, not only
+high-resolution stills. Allow exposure, streaming and temporal histories to settle.
+
+Perform controlled comparisons on the same plant and camera: current vs LOD0;
+neutral material vs final material; geometric normals vs current modified normals;
+wind off vs on; native-resolution diagnostic vs saved TSR75. Inspect base colour,
+world normals, lighting-only, Lumen Scene and Surface Cache. Change one variable
+per comparison and restore the shipping preset afterwards.
+
+Deliverable: evidence of which faults belong to modeling, placement, materials,
+lighting or temporal rendering. Geometry failure leads to a mesh fix. A good LOD0
+that fails farther away leads to LOD work. A good neutral render that fails lit
+leads to shading/lighting work. Do not treat every fault as a scatter problem.
+
+2. FIX THE COMPOSITION AND LIGHTING TARGET BEFORE DETAIL
+
+Choose one approximately 20 m bank section, including its river toe, full bank
+height, canopy edge and a little foreground water/gravel. This is a bounded edit
+in the real map, with temporary grouping and easy rollback, not a detached demo.
+Exact bounds follow local cross-sections and protected crossing/road corridors.
+
+Block it with simple forms: one dominant exposed rock/earth feature, secondary
+interrupted exposures, a sheltered fern pocket and an open wet/gravel toe. Vary
+height, depth and overlap. Preserve major trees; move or remove individual trees
+only where there is a clear geometric or compositional reason.
+
+Calibrate light in this simple scene: fixed exposure for comparisons; readable
+cool/neutral shade; warm sun patches; bright foliage accents; retained dark
+crevices. Audit sky capture, occlusion and Lumen coverage first. A small plausible
+canopy opening may help, but mass tree clearing and blanket ambient increases are
+not substitutes for lighting diagnosis. Verify the result under gameplay exposure.
+
+Acceptance: the bank has a convincing silhouette and clear depth without texture
+detail or decorative plants. Shadows retain distinctions between soil, leaves and
+rock. Neither washed-out light nor crushed shade is acceptable.
+
+3. AUTHOR A CONNECTED BANK STRUCTURE
+
+Use the DEM for the broad landform, then build a small map-owned mesh set for
+features it cannot describe: an embedded face/rib, a fractured shoulder/ledge and
+an eroded soil/root transition. Fit these to the actual cross-section. Rock bodies
+continue into the slope; visible exposures belong to one underlying formation.
+Detached stones are subordinate pieces collected near the foot, scaled against
+the river, vehicle and vegetation. No automatic 9-12 m tall versions of small rocks.
+
+Major shape first, medium fractures second, surface grain last. Avoid complete
+isolated silhouettes, evenly spaced outcrops, repeated top shelves and identical
+rock heights. Blend the structural mesh into soil with actual overlap, tapered
+earth shoulders, root mats and localized moss. Texture blending cannot hide an
+incorrect outline or unsupported overhang.
+
+Use closed geometry and deliberate collision. Any change to drivable ground must
+use the existing relief/physics path. Preserve road/crossing clearance using full
+footprints, not just pivot distance. Keep native water/soil queries consistent.
+
+4. BUILD THE MISSING PLANT GROWTH FORMS
+
+Create map-owned variants rather than destructively changing the shared plant kit:
+- Upright crown fern for supported benches and forest floor.
+- Asymmetric bank kiokio: short uphill fronds, rising central fronds, long outer
+  fronds that arch away and hang below the crown; no flat-floor clamp below the edge.
+- Small crevice fern: compact attachment, directional open silhouette.
+- Wet-margin rush/sedge form for suitable sediment pockets, with bowed outer leaves.
+- Irregular woody shrub, used sparingly where there is enough soil volume.
+Moss/root mats are surface-attached growth, separate from these rooted plant forms.
+
+Separate the attachment frame from the growth frame. Roots and the lower crown
+fit the supporting pocket; main growth retains an upward component; individual
+fronds respond to gravity, available space and bank aspect. Do not rotate the
+entire crown to the terrain normal or flatten it to prevent intersection.
+
+Check each form from above, eye level and below on flat, moderate and steep test
+surfaces. Root probes validate contact; additional samples along representative
+fronds check uphill clipping and believable overhang. Fold and twist leaves for
+volume, preserve useful gaps, and differentiate young/old fronds. Build lower LODs
+around the same crown height and hanging silhouette before reducing small leaflets.
+
+5. PLACE PLANT COMMUNITIES WITH CAUSE
+
+Annotate eligible growth points with support type, soil depth class, slope,
+exposure, moisture/flood band, available volume and dominant outward direction.
+Use these to select growth forms. Establish irregular patches first, then place
+overlapping individuals within them. Species, age and colour vary within bounded
+families; they are not independently randomized at every point.
+
+Bank toe: wet stone, interrupted cobbles, sediment, sparse suitable margin growth.
+Exposed faces: readable rock, roots, moss in damp recesses, localized crevice plants.
+Shelves/hollows: dense interlocking ferns and accumulated organic matter.
+Upper bank: deeper rooted shrubs, saplings, trunks and litter connected to the
+forest behind. Trees grow from plausible soil volumes, not every available top.
+
+Use the actual flow layout to place erosion, deposits and snagged timber. Debris
+collects at obstructions and flood marks; moisture follows seeps/splash and drainage.
+Leave intentional quiet areas around dominant forms. Density comes from layered,
+overlapping communities, including low connecting vegetation, not uniform coverage.
+
+6. BRING MATERIALS INTO ONE VISUAL LANGUAGE
+
+Make a small in-scene material board under the same sun and shade. Establish
+relationships between weathered grey-brown rock, warm pale gravel, umber wet soil,
+olive/deep green mature foliage, lighter fresh growth and restrained bronze accents.
+These are relational art targets; shader RGB values are chosen in-engine.
+
+Control texture frequency, normal strength, roughness and saturation together.
+Use broad readable planes and colour masses, restrained medium detail and fine
+grain that appears mainly close up. Dampness modifies roughness and value in
+spatially credible bands. Moss is broken and moisture-led, never a uniform green cap.
+
+Match contact zones across terrain, rock, root pockets and foliage bases. Start
+with existing world-space fields and authored vertex masks. Evaluate localized
+RVT blending only if an actual seam remains; do not introduce a new large rendering
+dependency before establishing the geometry/material target.
+
+Retain leaf-specific normals and restrained light transmission. Verify per-instance
+pivots in normal shaping. Check small plant contact shadows against their cost;
+root darkness comes from structure and material transitions, not black circular
+decals. Keep stems/crowns anchored during wind animation.
+
+7. PROVE THE SECTION, THEN EXPAND
+
+The first deliverable is a complete in-map section: structure, ground transitions,
+three-dimensional foliage, coherent materials, lighting and moving-camera evidence.
+Show matched baseline/final images and close, oblique, across-river and vehicle views.
+No entire-bank deployment on the strength of a numerical placement report.
+
+Expand through distinct arrangements: exposed rocky shoulder; damp fern recess;
+root-bound forest edge; depositional gravel margin. Each has different massing,
+canopy density, moisture and plant proportions. Use authored controls with bounded
+procedural variation. Do not tile a complete rock-and-plant diorama along the river.
+
+Carry the same visual rules through pasture -> rank grass -> scrub -> forest edge,
+gravel -> compacted wheel lanes -> muddy drainage pockets, and dry bank -> damp toe
+-> shallow amber water. Existing road and water gameplay stay functional.
+
+8. MAKE THE AUTHORING REPEATABLE
+
+Consolidate this bank treatment into one recipe/manifest with separate geometry,
+growth, material and lighting parameters. It owns only the bounded region and
+map-owned assets. Rebuild from stable source placements and explicit exclusions,
+not repeated scale/tilt/removal passes over the last result. Record backups and
+restore exact transforms on removal. Coordinate forest visuals and colliders.
+Retain all unrelated work and the one-Unreal-process guard.
+
+9. ACCEPTANCE AND PERFORMANCE
+
+Visual acceptance:
+- Bank reads as a continuous landform with exposed structure from every test view.
+- No row of equally important boulders, potted shrubs or circular fern discs.
+- Roots disappear into believable soil/crevices; upright and hanging foliage forms
+  are legible, including across the river at normal gameplay resolution.
+- Material scale and contrast agree across rocks, ground, wood and plants.
+- Shade retains colour and depth; highlights preserve foliage shape.
+- Plant groups create density and variation without obvious repetition.
+- Movement does not reveal distracting LOD collapse, shimmer, ghosting or floating.
+
+Technical acceptance:
+- Correct saved/reloaded transforms, support, collision and crossing clearances.
+- Terrain/water/road invariants preserved except explicitly authored local relief.
+- Rebuild and rollback repeatable with no cumulative edits.
+- Target hardware, resolution and saved v6 preset retained for comparison.
+- Measure baseline and final GPU/frame timings, p95, VRAM and hitching during the
+  same walk/drive. A provisional additional GPU budget of roughly 1 ms for the
+  representative view is a design constraint to validate, not a promised result.
+- If over budget, simplify small leaf detail, shadowing and distant clusters first;
+  preserve important silhouettes. Do not claim 120 fps or lower global quality to
+  disguise cost. Profile actual gameplay, not a memory-pressured duplicate editor world.
+
+RESEARCH USED
+
+Owner photos: Art/References/Waimeamea/14_river_photo_reach_broad_ford.jpg and
+16_river_rocky_shallows_moss_banks.jpg. Style: Art/References/ReferenceStyle/2026-11-05.jpg.
+
+NZ Plant Conservation Network: kiokio occurs on cliffs, ravines and riverbanks;
+its fronds may be erect or pendulous. Supports a bank-specific growth form.
+https://www.nzpcn.org.nz/flora/species/parablechnum-novae-zelandiae/
+
+Environment Southland: plant choice depends on site conditions, including wet/dry
+positions and exposure. Supports habitat-based placement rather than random mix.
+https://www.es.govt.nz/environment/land-and-soil/land-management/riparian-management
+
+Epic stylized demo: coherent treatment across grass, stone, leaves and trunks.
+Historical art-direction example, not a recommendation to copy its old renderer.
+https://www.unrealengine.com/blog/new-release-stylized-demo
+
+Epic UE5.8 foliage shading: transmission and subsurface colour; audit existing
+implementation rather than enabling a feature the project already uses.
+https://dev.epicgames.com/documentation/unreal-engine/shading-models-in-unreal-engine?lang=en-US
+
+Epic Lumen: inspect Lumen Scene/Surface Cache and tracing representation when
+diagnosing lighting mismatch; do not infer the cause of dark banks from a screenshot.
+https://dev.epicgames.com/documentation/unreal-engine/lumen-technical-details-in-unreal-engine
+
+Epic TSR: thin geometry can require special temporal handling. Validate actual
+feature eligibility and motion behaviour; do not treat it as a geometry repair.
+https://dev.epicgames.com/documentation/unreal-engine/thin-geometry-detection-with-temporal-super-resolution
+
+Epic RVT: landscape/object blending is available as an optional seam solution;
+evaluate only after the existing system and geometry are proven insufficient.
+https://dev.epicgames.com/documentation/en-us/unreal-engine/runtime-virtual-texturing-in-unreal-engine
+
+2026-11-06 - RS7 FIRST BOUNDED RIVERBANK SECTION BUILT
+The owner authorized implementation after endorsing the photo-based v03 direction.
+The saved L_LidarStudy map now contains a 22 m river frontage by 15.6 m slope span,
+centred at -45800,-31600 cm. Four bank-specific fern forms (12 mesh variants),
+152 ferns, 51 grass clumps, 14 small toe-cobble clusters, fitted moss/earth/rock
+and 12 local bark overrides replace 74 low plants within this bounded section.
+Shared plant assets remain unchanged. No whole-bank expansion was performed.
+
+Review: Art/Export/LidarStudy/FirstSection/Review/index.html
+Five actual standalone game views are supplied beside owner photos 04/08/15,
+the original woodland style image and approved v03 study. Four matched before
+views are included. B03's original camera was below ground, so no invalid before
+view is presented. A roughly 12-second actual-game camera sequence is included;
+it is sampled at 12 fps and is not a live performance measurement.
+
+Root contact: 608 probes, maximum positive gap 1.2 cm. Surface registration error
+at five probes: below 0.04 cm. Repeat-build and saved/reloaded snapshots match
+(229 local instances). Outside low-plant hash preserves 207399 instances. Tree
+visual/collider total remains 148385. Original terrain digest is unchanged.
+Saved v6, 1600x900: four warmed matched views show mean GPU differences from
+-0.28 to +0.56 ms; no graphics-preset reduction. New small-foliage batch shadows
+were disabled to meet the provisional additional-cost budget, preserving geometry.
+No 120 fps claim is made.
+
+The new validate runner passed against the final saved map. A standalone ford
+smoke test moved 8.6 m without an engine-flood event; it does not prove a complete
+crossing. Acceptance gate D remains NOT TESTED in full. Owner visual acceptance
+is PENDING. The bounded section is delivered for visual review, not certified
+for expansion. Gate evidence, limitations, hashes and rollback instructions are
+in the review directory. The original brighter woodland reference remains visible
+in the comparison; an exact visual match is not claimed.
+
+Backup: Saved/LidarAuthoringBackups/RS7-1793994925613427600/
+Recipe: Art/Unreal/lidar_first_section.py
+Validate/rebuild wrapper: Art/rebuild_lidar_first_section.ps1
+Manifest: Art/Export/LidarStudy/Place/first-section.json
+The rejected RS6 rocky-bank.json remains disabled.

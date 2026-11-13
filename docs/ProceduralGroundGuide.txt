@@ -1,0 +1,385 @@
+Procedural Ground — first authoring milestone
+
+Super bog behind the start — 16 October 2026
+The added road control is labelled "Bog behind start - maximum soft soil".
+It starts 10m behind the existing PlayerStart, following the opposite of its
+heading, and bends through roughly 62m of broad wet ground. Turn around at
+the spawn to reach it. The existing forward route and spawn are retained.
+The condition uses the tool's maximum 100cm soil-layer input, zero firmness,
+full wetness, a 9m entry/end blend, irregular 32cm authored ruts, full churn,
+crossing traffic and shallow depression-filled water capped at 18cm.
+The generated layer varies spatially; 100cm is not a guaranteed vehicle sink.
+Live wheel excavation/push and native-derived soil response remain active.
+
+To rebuild this addition: Art/procedural_ground.ps1 -Mode StartBog -NoVisual.
+Despite the name, this install/check keeps the renderer enabled: Unreal 5.8
+landscape edit layers require it to update collision. It skips the rendered
+PIE review, not the landscape rendering needed during generation. Use Mode
+StartBog without NoVisual for the stationary rendered/contact review.
+Results: Art/Export/ProceduralGround/startbog[-functional].json and process
+records; backups are under BeforeStartBog. Driving remains with the owner.
+The saved/reloaded core measured 65.0–91.0cm of soil at full softness. Its
+generated shallow pools measured 1.0–14.9cm. Collision checks at 25 core
+locations and 747 shared-edge samples passed; repeat generation was identical.
+The addition uses four more relief tiles (60 total); no global physics limits
+or original-map assets were changed. All 85 protected asset hashes matched.
+The rendered stationary contact check exited 0 and its screenshot was inspected.
+At this extreme softness an earlier identical parked fixture produced a spinning
+front wheel with zero driver input; the diagnostic rerun settled without changing
+the soil. This intermittent limit is not claimed fixed. See startbog-first-parked
+and the final startbog report. The bog remains at the requested maximum settings.
+
+Live wheel-mud buildup — 16 October 2026
+The native visual path now runs a separate Push stage after excavation. It
+raises yielding shoulders, writes lateral movement, and lets subsequent tyres
+remould those shoulders. The previous native branch only queued cuts and
+bypassed the old deposit code. Both raised and lowered cells notify geometry
+consumers. Idle frames do not grow piles; overlapping stamps cannot reuse the
+same excavation budget.
+
+This applies to the existing playable Road 01 soft/churned/deep sections.
+Use Play-ProceduralGround.bat as before. Road Conditions still controls the
+initial relief and soil depth; this change controls the live wheel work.
+Test driving remains with the owner. LivingRoads uses parked cars with released
+pedals and handbrake, waiting for simulation time and terrain uploads. MudPush
+freezes the vehicle and applies controlled soil contacts to isolate the field;
+it does not establish vehicle dynamics or driving feel.
+
+Recovered: Push shader arithmetic, RED/MAX compositing, separate GB writer.
+Host adapters: Chaos footprint, finite displaced-soil budget, shoulder capacity
+and lateral magnitude. Full chassis bulldozing is not implemented. Existing
+road-pool geometry is prebuilt; arbitrary new-rut flooding/shoreline expansion
+is not established by this change. Do not confuse visual push with the
+separate native physical H/q support field.
+
+Evidence: Art/Export/ProceduralGround/mud-push-findings.txt.
+Checks: Art/procedural_ground.ps1 -Mode MudPush [-NoVisual], after the normal
+wait_unreal_free preflight. Functional and rendered results have separate
+mudpush[-functional].json reports and process-status records.
+Final MudPush rendered check passed with exit 0 on 16 October. Same-camera
+captures show the new cut/raised shoulders and a crossing pass remoulding them.
+The fixture measured 28.00cm maximum cut, 9.50cm maximum rise and 303 changed
+samples in the crossing pass. These are controlled repeated strokes, not a
+prediction of how deep one vehicle pass will sink. The 19-test surface/native
+regression suite passed, including no idle accumulation, overlapping contact
+budgets, a loaded neighbouring tyre, and preservation of a deep crossing rut.
+The final LivingRoads parked-car run also exited 0: all four surface sections
+retained four soil contacts/hits with zero drivetrain input. Actual wheels
+activated the new Push stage on grass, churn and deep mud; firm dirt did not
+excavate. This checks integration without driving the route.
+
+Living road update — 16 October 2026
+The detailed road tiles now enter the vehicle's soil-contact path. Previously,
+that path accepted only the original Landscape actor, even though the surface
+query already accepted the tiles. Immersion now uses the detailed road's upper
+height rather than the Landscape recessed beneath it. This restores the existing
+native-derived substance response on generated roads; it does not replace Chaos
+with Havok or establish full native vehicle/body displacement parity.
+
+Firmness now also controls physical softness (1 - Firmness). Wetness remains a
+separate appearance input. Grass is visual cover over the same yielding soil.
+The native extrusion and visual mud-update equations remain in use.
+
+Road > Conditions has four additional host authoring controls:
+  Track Spread Cm: alternate traffic lines fan out and rejoin the main tracks.
+  Churn: broad disturbed patches between wheel channels, from 0 to 1.
+  Crossing Tracks: intermittent crossing channels, from 0 to 1.
+  Breakup Cm: small clumps/depressions in the authored road bed.
+These compose the initial road. They are not wheel-generated live deformation,
+and are not claimed to reproduce a recovered native procedural generator.
+
+The existing four Road 01 sections now demonstrate firm dirt, yielding grassy
+ground, a wider churned crossing, and deeper soft mud with depression-filled
+water. Their maximum soil-layer inputs are 2 / 42 / 40 / 90cm; actual depth is
+spatially varied and actual wheel sink depends on load, soil state and support.
+The 90cm input does NOT mean the car automatically sinks 90cm.
+The authored rut-depth controls are 3 / 8 / 22 / 35cm respectively.
+Use Rebuild then Save All after editing. No extra rock scatter was added.
+Backup before this update: Art/Export/ProceduralGround/BeforeLivingRoads/Assets.
+Checks: Art/procedural_ground.ps1 -Mode LivingRoads [-NoVisual].
+The rendered check uses parked-car fixtures and a controlled soil stroke,
+without throttle or steering. See livingroads*.json for actual validation status.
+Final confirmation passed with exit 0 on 16 October. All four sections retained
+four soil contacts/hits with actual drivetrain input zero. The controlled probe
+changed physical extrusion by 10.20cm and visible height by -23.99cm. The final
+captures were visually inspected. One preceding run completed its checks but
+returned an access violation after shutdown; its report/log are retained as
+livingroads-passed-checks-unclean-exit*. The shutdown fault remains unexplained.
+Detailed reconstruction limits and the corrected stationary fixture are in
+Art/Export/ProceduralGround/livingroads-findings.txt.
+
+Road conditions pilot — 16 October 2026
+Select Road 01 - Conditions: firm grass shallow deep in the existing authoring
+map. In Details, expand Road > Conditions. The first 180m contains four editable
+examples: Firm dirt (0-45m), Worn grassy track (45-90m), Shallow mud (90-135m),
+and Deep mud and rut pools (135-180m). Each has a four-metre end blend.
+Distances follow the recovered road's control-polygon knot distance, which can
+differ slightly from the final curved centreline's arc length.
+
+Start/End Metres move a stretch along the road. Blend Metres softens its ends.
+Mud Depth Cm supplies the existing physical soil model; it does not carve the
+initial road. Rut Depth Cm controls initial geometric grooves and shoulders.
+Firmness and Wetness are independent inputs to the existing response model,
+not new native Havok constants. Grass Cover changes the surface coverage mask.
+Water Fill Cm is a maximum above a depression's lowest bed, also limited by its
+spill point. It does not guarantee water on a slope. Zero disables filling.
+Detail Seed changes the correlated rut breakup and wandering, not the spline.
+Overlapping Conditions apply in array order; later entries blend over earlier
+soil values and add their relief. Prefer non-overlapping ranges initially.
+
+Press Rebuild on the road after edits, then Save All. Empty roads have an Add
+Example Conditions button; it never replaces an existing Conditions array.
+These host procedural rules build separate relief, soil and water layers based
+on the Island findings. They are not a recovered native automatic road generator.
+
+Generated pools survey the final road collision bed at 25cm, fill enclosed
+depressions and clip water triangles to that bed. No new ellipse is carved.
+Pools share the existing water sheet's moving simulation and visual effects.
+The existing solver remains 62.5cm, so very narrow puddles have limited dynamic
+resolution. Existing map puddles/rivers remain separately authored; this pilot
+does not replace all earlier oval puddles throughout Big Mountain.
+
+Fine soil values are saved with each road tile so adjacent ruts can have
+different depth/firmness despite the coarse whole-map paint atlas. The existing
+surface actor's Maximum Layer Depth Cm still caps physical depth. The runtime
+model and its limits have not been replaced with a claimed native equivalent.
+The road's visual grass/material masks still use the existing map-wide atlas.
+
+Clear Generated restores the captured terrain/masks and original water domain,
+and removes this controller's road pool mesh. Rebuild reinstates the controls.
+The old water-bed protection now fades continuously instead of switching at a
+boolean shoreline. The controller owns only its generated pool data and mesh;
+the original water data asset is retained unchanged.
+
+Check/install: Art/procedural_ground.ps1 -Mode RoadConditions -NoVisual
+Headless checks verify native oracle, basin spill/drainage, repeatability,
+independent soil depth, collision, tile seams, water-bed agreement and reload.
+Backup: Art/Export/ProceduralGround/BeforeRoadConditions/Assets.
+Functional installation passed on 16 October: 684 seam samples, 42 collision
+probes, deterministic rebuild and reload. Subsequent stationary captures with
+the GPU free show the firm, grassy and deep-rut surfaces. The rut-pool sample
+ran 240 simulation steps at the 60fps cap, with no step clamps in that four-second
+window. A stationary 1cm water impulse produced a finite, changing response.
+This is a short stationary check, not a full-map performance or driving test.
+
+Road clutter correction — 16 October 2026
+The initial layered preset overpopulated the carriageway with large clods.
+MudChunks' native candidate budget was not a suitable final density: the native
+reference dirt distribution averages only .03024 red-channel density, with
+coverage above the brush threshold across about 29.5% of the reference. Our
+road-wide generated mask was substantially different.
+The study preset now uses sparse, smaller verge clods: budget 64, density .3,
+30cm road clearance, 350cm verge band, cluster strength .95, size ranges
+.55–1.1 and .5–.9 (plus native jitter). These are host composition choices,
+not claimed recovered native values. Road relief and other layers are retained.
+The correction is also in the Density preset, so rebuilding does not restore
+the excessive road scatter. Art/procedural_ground.ps1 -Mode ClodCorrection
+applies only this rule to an existing study and verifies other placements,
+terrain, relief-tile retention, repeatability, save/reload and protected assets.
+Its report is clodcorrection-functional.json with a separate process report;
+this headless correction does not certify rendered appearance. The previous
+study is backed up in Art/Export/ProceduralGround/BeforeClodCorrection.
+
+Layered composition update — 15 October 2026
+The study now has eight editable Scatter Rules: Canopy, YoungFirs, LowBushes,
+TallBushes, VergeShrubs, Twigs, FallenWood and MudClods. Habitat chooses woodland,
+open ground, a road-edge band or road coverage. Density sets the upper density;
+Cluster Strength/Scale and Seed Offset provide independent patch patterns.
+Scale Map Contrast widens the sampled size distribution. Variants optionally
+provide one inclusive native Min/Max Map Scale range and size range per mesh.
+Meshes outside the sampled range are excluded before random selection.
+Candidate Budget now supports 800 (the installed MudChunks brush budget).
+Mesh Footprint Cm sizes thin branches horizontally; do not combine it with
+Mesh Height Cm. Align To Ground fits clutter to the local surface gradient.
+Cast Shadow and Cull Distance remain independent controls per layer. Small
+clutter/shrubs in this study do not cast shadows; firs still do.
+
+Road 01 uses larger local width changes. Road 02 is an editable grassy passing
+track using the recovered grass-road height profile. Centre/Verge Grass Cover
+adds patchy visual vegetation while leaving physical soil depth independent.
+The existing streaming/contact grass system is retained, at 45cm near spacing.
+
+Evidence: Art/Export/MudRunnerEditorResearch/DistributionLayers/comparison.json
+records the installed reference's five independent density/scale maps, brush
+presets, hashes and 52 executed native range/selection cases. Our generated
+noise masks, habitats, seed addressing, mesh substitutions and surface alignment
+are host adaptations. Native linked leaf/cone litter brushes, complete placement
+acceptance and the separate deep authored mud layer remain unimplemented.
+The direct export contains hand-authored source masks/mud as well as generated
+placements; these controls do not claim to reproduce its entire composition.
+BeforeDensityLayers contains a backup of the study before this update.
+Art/procedural_ground.ps1 -Mode Density installs/checks this composition preset;
+it resets these study parameters. Use the actor Rebuild button for normal edits.
+Density validation results are in Art/Export/ProceduralGround/density.json and
+density-process.json. The earlier RoadRelief report describes the prior preset.
+
+Density validation status — 15 October 2026, 18:05 local
+Guarded C++ build and headless Density check passed, process exit 0. The study
+has 17,356 generated instances (previously 4,023), 50 scatter cells and 56 road
+tiles / 716,800 triangles. An unchanged rebuild retained all scatter cells and
+reproduced digest EB700BD9CEA5A35FB588119560CBCF2D. Clear/restoration, malformed
+variant rejection, save/reload and five solid-clod traces passed. All 85 original
+protected assets retain their hashes. See density-functional.json and its
+separate process report. Repeat build time was 3.875 seconds; this is editor
+generation time, not game performance. No test drive was performed.
+
+Rendered validation remains pending. The first rendered attempt hit a fixed
+play-start timing failure, then repeated GPU timeouts while The Last of Us was
+running. Only our check process was stopped; saved changes were retained. Its
+report/process/log are archived as density-gpu-contention-* for diagnosis.
+The script now waits for the actual play pawn and complete play shutdown.
+Re-run -Mode Density with the GPU free to capture/verify the three stationary
+sites. -NoVisual runs the functional checks without using the GPU. Do not treat
+the successful headless report as visual approval or a performance benchmark.
+
+Open-ProceduralGround.bat opens the editable Big Mountain study.
+Play-ProceduralGround.bat launches the game; keys 1–3 select stationary starts.
+Map: /Game/GrandTour/ArtTests/ProceduralGround/L_BigMountain_Authoring
+
+Edit a road
+1. Select "Road 01 - edit control points then Rebuild" in the Outliner.
+2. Select RoadControlPoints and move/add its spline control points in the viewport.
+3. Point Scale Y changes width locally. Width Cm sets the overall width.
+4. Project Points To Base places control points on the captured terrain.
+5. Press Rebuild on the road or Ground Authoring actor. Save All afterward.
+Duplicate a road or region to add another. Its Author property must point to the
+same Ground Authoring controller, and it must lie inside Generation Bounds.
+The yellow preview after rebuild is the reconstructed natural cubic. Unreal's
+normal spline widget uses a different interpolation; the generated result uses
+our reconstructed evaluator, not the widget's Hermite curve.
+
+Edit vegetation and soil
+Select the Woodland or Wet ground region. Move/rotate it and edit its Bounds
+extent. Grass Cover, Wetness and Mud Depth control appearance/response; regions
+do not turn a grass-covered soil into physically firm ground automatically.
+Region shapes and ecology variation are our authoring rules, not claimed native
+algorithm parity. Exclusion regions protect terrain and suppress generated
+plants. Clearing regions reduce woody cover. Region order is stable actor-name
+order; overlapping authored masks blend in that order.
+
+Select Ground Authoring to change Seed or Scatter Rules. Rules expose meshes,
+candidate budget, density, size range, road clearance, slope limit and culling.
+The recovered candidate generator uses a budget/4 count per 8m candidate square,
+16 pattern variants, and inverse-distance repulsion rather than hard spacing.
+Road debris uses solid collision only when a mesh has prepared simple collision.
+Changing a seed changes the generated arrangement, not the source terrain.
+
+Recovery and ownership
+Capture Base is already done for this study. Rebuild always reads that immutable
+snapshot, preventing old trenches from accumulating. Clear Generated restores
+terrain and masks to that capture and removes only this controller's scatter.
+It retains the road/region controls and snapshot, so Rebuild restores the result.
+Capture Base refuses to overwrite an existing snapshot.
+Use one controller per landscape. The first version requires a single landscape
+edit layer, as this study uses. Do not hand-edit its three owned output masks;
+they are generated products. Terrain edits inside its generation area would be
+replaced by the next rebuild. Unrelated actors and original map assets are not
+owned by the tool. Old one-off scatter inside this separate study was removed
+before capture; Clear does not reconstruct that older placement system.
+Use Clear Generated before deleting the controller; its output actors are
+separate actors so they remain available in the playable level.
+
+Current boundaries
+- First bounded authoring section, up to 1024m across. Not whole-world streaming.
+- Actual placement math runs in Unreal C++; no native STG/map output is imported.
+- Broad landscape sculpting respects the existing approximately 5m vertex grid.
+  Existing near-player mud rendering, deformation and grass remain active.
+  Fine road relief now uses local mesh tiles with matching triangle collision.
+- Existing river/pond assets and simulation are retained. Road shaping protects
+  sampled wet ground. New pond/river generation is not part of this first tool.
+- Generated 64m HISM cells are retained when their instance output is unchanged.
+  Input evaluation and the small region's masks are still recomputed on Rebuild;
+  this is not yet a fully incremental dependency graph or streaming scheduler.
+- Native spline, candidate, density, scale and end-fade kernels have oracle tests.
+  Local seeds, mask sampling, ecology, slope rejection, endpoint caps, width
+  parameterization and mesh adapters do not establish full editor parity.
+- Detailed terrain, foliage art and long-distance performance need further work.
+
+Fine road relief
+The existing authoring study now includes a dirt-road relief profile. Select a
+Road actor and expand Fine relief. Apply Relief enables its height texture;
+Relief Strength scales the signed offset (1 uses the recovered native amplitude).
+Set strength to 0 to compare against the same road bed without that offset.
+Rebuild regenerates geometry, collision and scatter roots together. Save All
+saves the tiles inside the level and the owned surface masks.
+
+Profiles are in /Game/GrandTour/ArtTests/ProceduralGround/RoadProfiles:
+  T_dirt_road   Default Width 700cm   Diffuse Aspect 2
+  T_grass_road  Default Width 400cm   Diffuse Aspect 2
+  T_dirt_path   Default Width 600cm   Diffuse Aspect 2
+When selecting another texture, set its matching default width/aspect above.
+Default Width controls texture coordinates; the road's Width Cm and point Scale Y
+still control the actual road footprint. These are separate native controls.
+These presets select relief only: surface colour, grass cover and soil wetness
+remain controlled by the existing road/region inputs.
+
+Ground Authoring exposes Relief Spacing Cm (25cm in this study), Relief Material,
+triangle counts and changed/retained tile counts. Tiles align to four landscape
+cells, taper at their outer boundary, and share the same samples for rendering
+and collision. Generation is rejected above 1.2 million vertices before edits.
+The study currently has 53 tiles / 678,400 triangles. These are conventional
+procedural meshes with frustum culling, not Nanite or a finished streaming/LOD
+solution. They remain loaded with the study map; budget larger road networks
+before extending this to the entire mountain. A natural cubic road can change
+along its full length after moving one point, requiring many tiles to rebuild.
+
+The coarse landscape is recessed under the tiles to keep its flat collision
+out of the new hollows. Never delete tile actors by hand: use Clear Generated
+to restore the captured landscape and remove owned tiles/scatter together.
+Terrain queries, visible mud, tread strips, grass roots and water bed queries
+use the detailed base height. Existing live mud deformation is added afterward.
+The texture offsets are centimetre-scale solid relief, not a substitute for
+the separate deep authored mud layer or a change to mud softness.
+
+Research and checks
+Art/Export/MudRunnerEditorResearch/RoadRelief/FINDINGS.txt distinguishes recovered
+sampling/tangent/height rules from Unreal tile construction and seam adapters.
+Art/Export/ProceduralGround/roadrelief.json records the current functional checks;
+roadrelief-process.json separately records process exit status.
+An earlier run passed functional checks but returned Windows access-violation
+status after its log closed; evidence is retained as passed-checks-unclean-exit-*
+in that folder. No cause was established from the available log.
+BeforeFineRelief in that folder contains copies of the study's earlier assets.
+
+Fine relief validation completed — 15 October 2026, 17:38 local
+The final guarded build/check passed with process exit 0. The native arithmetic
+oracle includes 108 road UV cases and 11 spline-derivative cases. Identical
+rebuilds retained all 53 tiles and reproduced the exact terrain/output digest.
+Road movement, restoration, zero-strength comparison, Clear and invalid input
+checks passed. Moving one point affected 54 tiles and retained 1 because the
+natural cubic changes along the road; this is not a claim of local-only edits.
+770 shared-edge samples matched exactly. After save/reload, 42 collision traces
+matched the tile heights within 0.000835cm. All 15 yielding-mud support probes
+passed. Three stationary vehicle checks retained four wheel contacts, and
+sunlit captures were inspected. No throttle/steering test drive was performed.
+All 85 protected original map files remained unchanged.
+The earlier shutdown fault did not reproduce in this final run; its cause is
+still unestablished, so the archived evidence above is retained.
+
+Source and evidence
+docs/ProceduralGroundPlan.txt
+Source/GrandTour/Terrain/GTEditorReconstruction.*
+Source/GrandTourEditor/Private/Terrain/GTProceduralGround.*
+Art/Export/ProceduralGround/install.json and check.json
+Art/Export/MudRunnerEditorResearch/Deep/
+
+Validation runs are stationary, without throttle or steering input.
+
+Completed validation — 15 October 2026
+The guarded C++ build and final Unreal check passed. The final check process
+exited cleanly with code 0. NativeOracle passed for the reconstructed kernels.
+The study contains 4,023 generated instances in 50 cells. An unchanged rebuild
+retained all 50 cells. Moving one middle road point by 18m replaced 11 cells and
+retained 39; restoring the point reproduced the original terrain/output digest.
+Changing and restoring the seed also reproduced the original result. Clear
+restored the captured persistent terrain layer; rebuild, save and reload passed.
+Duplicate control points were rejected before modifying generated output.
+Three stationary vehicle contact checks and three generated-clod blocking
+collision probes passed. All 85 protected original map files remained unchanged.
+Reports: Art/Export/ProceduralGround/check.json and check-process.json.
+
+These checks are not a driving assessment or a whole-map performance benchmark.
+A parked vehicle can still creep on soft ground. Existing mud wheel effects
+look excessive in the wet-start capture; the authoring milestone does not fix
+those effects. Vegetation density, asset variety and overall visual polish
+remain work for subsequent passes and user driving feedback.

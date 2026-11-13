@@ -1,0 +1,67 @@
+Procedural ground authoring — implementation plan, 15 October 2026
+
+Goal
+Editable Unreal roads and ground regions generate terrain, surface masks and
+vegetation on Gaea terrain. MudRunner's editor output is an oracle, never a
+source of placements for this tool. The existing mud, grass and water runtime
+systems remain the consumers of the authored results.
+
+First usable milestone
+1. Port recovered natural cubic splines, CRT random sequence, candidate pattern
+   generator, density gate, scale mapping and road endpoint weights to C++.
+   Compare C++ against fixtures produced by the native-instruction oracle.
+2. Add road spline actors, region actors and one authoring controller with
+   Capture Base, Rebuild and Clear Generated buttons. Explicit rebuilds only.
+   Capture immutable base terrain and masks; every rebuild starts there.
+3. Generate a bounded approximately 500m mountain corridor. Shape the road with
+   the recovered 2m sampling and 2m shoulders. Regions supply wetness, mud depth,
+   grass cover, vegetation density and exclusions. Keep existing water intact.
+4. Generate vegetation in independently seeded 64m cells, using recovered 8m
+   candidate banks and density/size gates. Rebuild changed cells, retain unchanged
+   cells, never clear unrelated actors. Use existing meshes and HISM culling.
+5. Install in a separate Big Mountain authoring map. Verify identical rebuilds,
+   seed changes, moved roads, clearing/restoration, save/reload, surface queries
+   and stationary rendering. The user test drives.
+
+Evidence versus adaptations
+Recovered: natural cubic coefficients/evaluation; candidate inverse-distance
+repulsion and 16 patterns; MSVCR110 rand; density threshold; scale calculation;
+road offset endpoint weights; 2m sampling and shoulder construction.
+Host design: region falloff/noise, road cross-section and wetness variation,
+per-cell seed assignment, collision spacing, slope rejection, Unreal ownership,
+incremental rebuilds and rendering. Full native rebuild seed scheduling and
+complete placement acceptance are not yet established. No full parity claim.
+
+Terrain-resolution boundary
+Big Mountain's existing landscape is approximately 5m per vertex. This first
+tool edits its broad road bed and shared surface masks; it cannot encode tyre
+rut geometry in those vertices. Existing near-player mud drawing/deformation
+continues to supply detail. A later dedicated high-resolution terrain patch
+system must solve collision, seams and streaming together before claiming the
+reference section's 13cm authored geometry over a 5km map.
+
+Following milestones
+- Layered composition: separate editable habitats/density/scale channels and
+  native ordinary-plant variant eligibility are implemented. Study presets use
+  eight layers, native brush budgets, patchy road vegetation and a second road
+  profile. Full linked ground-litter brushes and species-specific mesh assets
+  still need work; generated masks are host adaptations, not native map imports.
+- Road relief: implemented UV/derivative native oracles and signed texture
+  offsets with local mesh/collision tiles. Full native GPU raster/half-float
+  quantization parity and separate deep reference-mud authoring remain open.
+- Dedicated terrain-constrained pond/river authoring feeding GTWaterDomain,
+  with shoreline and drainage validation. First milestone preserves water.
+- Larger-scale streaming, persisted deformation and route-traversal profiling.
+- Better mesh libraries, custom region painting UI and artist preset assets.
+
+Success is an editable, deterministic tool, not a one-off generated screenshot.
+
+Milestone status — 15 October 2026
+The first usable milestone is implemented in L_BigMountain_Authoring. Guarded
+build, native oracle, deterministic road/seed rebuilds, clear/restoration,
+persistent landscape save/reload, stationary contact and solid-clod checks
+passed. Final Unreal check exited 0; protected originals remained unchanged.
+Open-ProceduralGround.bat opens the editable study. See ProceduralGroundGuide.txt
+for controls, ownership rules, validation evidence and current limits.
+Fine road relief is now implemented in the same study. Pond/river authoring,
+world streaming, deep authored mud composition and later art tooling remain.

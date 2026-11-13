@@ -1,0 +1,393 @@
+{
+  "plan": "docs/WHEEL_SPRAY_PLAN.md P1",
+  "blender": "5.1.2",
+  "seed": 8231,
+  "clumps": {
+    "units": "Blender metres; FBX centimetres (apply_unit_scale), -Z forward, Y up",
+    "pivot": "the bounds centre",
+    "material_slot": "M_GT_Clod",
+    "rows": [
+      {
+        "name": "SM_GT_SprayClump_0",
+        "family": "blob",
+        "elongation": 1.1,
+        "torn_lobes": 1,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          1.6,
+          1.31,
+          1.18
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_0.fbx"
+      },
+      {
+        "name": "SM_GT_SprayClump_1",
+        "family": "string",
+        "elongation": 2.4,
+        "torn_lobes": 0,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          1.9,
+          0.68,
+          0.55
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_1.fbx"
+      },
+      {
+        "name": "SM_GT_SprayClump_2",
+        "family": "blob",
+        "elongation": 1.25,
+        "torn_lobes": 2,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          1.99,
+          2.2,
+          1.16
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_2.fbx"
+      },
+      {
+        "name": "SM_GT_SprayClump_3",
+        "family": "flake",
+        "elongation": 1.3,
+        "torn_lobes": 1,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          2.6,
+          2.0,
+          0.82
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_3.fbx"
+      },
+      {
+        "name": "SM_GT_SprayClump_4",
+        "family": "string",
+        "elongation": 1.8,
+        "torn_lobes": 1,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          3.1,
+          1.16,
+          0.89
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_4.fbx"
+      },
+      {
+        "name": "SM_GT_SprayClump_5",
+        "family": "blob",
+        "elongation": 1.35,
+        "torn_lobes": 2,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          3.8,
+          2.92,
+          1.64
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_5.fbx"
+      },
+      {
+        "name": "SM_GT_SprayClump_6",
+        "family": "string",
+        "elongation": 3.0,
+        "torn_lobes": 0,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          4.7,
+          1.34,
+          0.85
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_6.fbx"
+      },
+      {
+        "name": "SM_GT_SprayClump_7",
+        "family": "flake",
+        "elongation": 1.45,
+        "torn_lobes": 2,
+        "triangles": 276,
+        "vertices": 140,
+        "size_cm": [
+          6.0,
+          5.31,
+          2.07
+        ],
+        "fbx": "Art/Export/WheelSpray/SM_GT_SprayClump_7.fbx"
+      }
+    ]
+  },
+  "atlases": {
+    "T_GT_SprayMud": {
+      "png": "Art/Export/WheelSpray/T_GT_SprayMud.png",
+      "size": 1024,
+      "frames": "4 x 4",
+      "layout": "frame f at column f % 4, row f // 4, row 0 at the top; 256 px frames; everything inside 0.90 of the half frame",
+      "format": "RGBA 8-bit",
+      "channels": "R soft height (one scale over the atlas), G 0, B 0, A coverage (soft painted edge ~3 px)",
+      "order": "0-3 single drops (2-3 with satellites), 4-7 clusters of 2-4, 8-11 ragged blobs with satellites, 12-15 ragged splats",
+      "frames_info": [
+        {
+          "frame": 0,
+          "coverage": 0.129,
+          "drops": 0
+        },
+        {
+          "frame": 1,
+          "coverage": 0.2132,
+          "drops": 0
+        },
+        {
+          "frame": 2,
+          "coverage": 0.1374,
+          "drops": 1
+        },
+        {
+          "frame": 3,
+          "coverage": 0.0885,
+          "drops": 2
+        },
+        {
+          "frame": 4,
+          "coverage": 0.1418,
+          "drops": 4
+        },
+        {
+          "frame": 5,
+          "coverage": 0.1772,
+          "drops": 4
+        },
+        {
+          "frame": 6,
+          "coverage": 0.1133,
+          "drops": 3
+        },
+        {
+          "frame": 7,
+          "coverage": 0.1081,
+          "drops": 3
+        },
+        {
+          "frame": 8,
+          "coverage": 0.1399,
+          "drops": 8
+        },
+        {
+          "frame": 9,
+          "coverage": 0.1313,
+          "drops": 6
+        },
+        {
+          "frame": 10,
+          "coverage": 0.1074,
+          "drops": 5
+        },
+        {
+          "frame": 11,
+          "coverage": 0.2062,
+          "drops": 7
+        },
+        {
+          "frame": 12,
+          "coverage": 0.1306,
+          "drops": 15
+        },
+        {
+          "frame": 13,
+          "coverage": 0.1485,
+          "drops": 12
+        },
+        {
+          "frame": 14,
+          "coverage": 0.1702,
+          "drops": 15
+        },
+        {
+          "frame": 15,
+          "coverage": 0.1409,
+          "drops": 15
+        }
+      ]
+    },
+    "T_GT_SprayGrit": {
+      "png": "Art/Export/WheelSpray/T_GT_SprayGrit.png",
+      "size": 1024,
+      "frames": "4 x 4",
+      "layout": "frame f at column f % 4, row f // 4, row 0 at the top; 256 px frames; everything inside 0.90 of the half frame",
+      "format": "RGBA 8-bit",
+      "channels": "R facet shade 0.35-1 (flat facets), G a random number per chip (palette pick), B 0, A mask (crisp)",
+      "order": "0-5 single chips, 6-11 two to four, 12-15 five to ten",
+      "frames_info": [
+        {
+          "frame": 0,
+          "chips": 1,
+          "coverage": 0.0177
+        },
+        {
+          "frame": 1,
+          "chips": 1,
+          "coverage": 0.0898
+        },
+        {
+          "frame": 2,
+          "chips": 1,
+          "coverage": 0.0326
+        },
+        {
+          "frame": 3,
+          "chips": 1,
+          "coverage": 0.0439
+        },
+        {
+          "frame": 4,
+          "chips": 1,
+          "coverage": 0.0455
+        },
+        {
+          "frame": 5,
+          "chips": 1,
+          "coverage": 0.1271
+        },
+        {
+          "frame": 6,
+          "chips": 4,
+          "coverage": 0.0524
+        },
+        {
+          "frame": 7,
+          "chips": 2,
+          "coverage": 0.0495
+        },
+        {
+          "frame": 8,
+          "chips": 2,
+          "coverage": 0.0581
+        },
+        {
+          "frame": 9,
+          "chips": 3,
+          "coverage": 0.0534
+        },
+        {
+          "frame": 10,
+          "chips": 3,
+          "coverage": 0.0543
+        },
+        {
+          "frame": 11,
+          "chips": 3,
+          "coverage": 0.0469
+        },
+        {
+          "frame": 12,
+          "chips": 8,
+          "coverage": 0.0345
+        },
+        {
+          "frame": 13,
+          "chips": 9,
+          "coverage": 0.02
+        },
+        {
+          "frame": 14,
+          "chips": 7,
+          "coverage": 0.0319
+        },
+        {
+          "frame": 15,
+          "chips": 10,
+          "coverage": 0.0146
+        }
+      ]
+    },
+    "T_GT_SprayDust": {
+      "png": "Art/Export/WheelSpray/T_GT_SprayDust.png",
+      "size": 1024,
+      "frames": "4 x 4",
+      "layout": "frame f at column f % 4, row f // 4, row 0 at the top; 256 px frames; everything inside 0.90 of the half frame",
+      "format": "grey 8-bit",
+      "channels": "coverage only",
+      "order": "the puff over its life, frame 0 first (22 dabs: spread, grow, thin, drop out)",
+      "coverage": [
+        0.0694,
+        0.1072,
+        0.1379,
+        0.1643,
+        0.1806,
+        0.1909,
+        0.1959,
+        0.1897,
+        0.1741,
+        0.1518,
+        0.1258,
+        0.0979,
+        0.0633,
+        0.0352,
+        0.0171,
+        0.0028
+      ]
+    }
+  },
+  "palette_linear": {
+    "mud_wet": "Standard bog mean x0.8 (Fresh 1)",
+    "mud_wet_rgb": [
+      0.0564,
+      0.0321,
+      0.0149
+    ],
+    "gravel_stone": "DG1b: Loose bake stone faces (ORH B > 0.45, 8 x 8 box) x0.82 x0.92-1.06, 64 picks",
+    "gravel_stone_mean": [
+      0.2198,
+      0.2334,
+      0.2235
+    ],
+    "dust": "Loose bake matrix (ORH B < 0.20) x0.82 x1.15",
+    "dust_rgb": [
+      0.2193,
+      0.2292,
+      0.2113
+    ],
+    "grit_tint_a": [
+      0.1582,
+      0.1844,
+      0.1933
+    ],
+    "grit_tint_b": [
+      0.2941,
+      0.2933,
+      0.2617
+    ],
+    "grit_tints": "the darker and the lighter quarter of the 64 stone picks (GritTintA, GritTintB)",
+    "mud_variant_means": {
+      "Standard": [
+        0.0705,
+        0.0401,
+        0.0186
+      ],
+      "Firm": [
+        0.0873,
+        0.0584,
+        0.0336
+      ],
+      "Deep": [
+        0.0491,
+        0.029,
+        0.0134
+      ],
+      "Stony": [
+        0.0691,
+        0.0441,
+        0.0227
+      ]
+    },
+    "mud_variant_note": "each bog slice bake mean, linear, dry (MudTint = x0.8 for wet)"
+  },
+  "renders": {
+    "Atlas_Sheets": "Art/Export/WheelSpray/Atlas_Sheets.png",
+    "Assets_Clumps": "Art/Export/WheelSpray/Assets_Clumps.png"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "license": "CC0",
+  "sources": [
+    "https://polyhaven.com/a/brown_mud_02",
+    "https://polyhaven.com/a/mud_cracked_dry_03"
+  ],
+  "files": [
+    {
+      "asset": "brown_mud_02",
+      "kind": "Diffuse",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/brown_mud_02/brown_mud_02_diff_2k.jpg",
+      "md5": "a2dd06f0df9ce45cc0c5abdd6c1629b2",
+      "path": "Art\\Textures\\LandscapeMudPBR\\brown_mud_02\\Diffuse.jpg"
+    },
+    {
+      "asset": "brown_mud_02",
+      "kind": "Displacement",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/brown_mud_02/brown_mud_02_disp_2k.png",
+      "md5": "424a01299369299091f1b8193191e58a",
+      "path": "Art\\Textures\\LandscapeMudPBR\\brown_mud_02\\Displacement.png"
+    },
+    {
+      "asset": "brown_mud_02",
+      "kind": "nor_dx",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/brown_mud_02/brown_mud_02_nor_dx_2k.png",
+      "md5": "013c9e882c640309d00fabc8bd203c7d",
+      "path": "Art\\Textures\\LandscapeMudPBR\\brown_mud_02\\nor_dx.png"
+    },
+    {
+      "asset": "brown_mud_02",
+      "kind": "Rough",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/brown_mud_02/brown_mud_02_rough_2k.png",
+      "md5": "e53629b9f9c912af86524fe20fc0c35a",
+      "path": "Art\\Textures\\LandscapeMudPBR\\brown_mud_02\\Rough.png"
+    },
+    {
+      "asset": "brown_mud_02",
+      "kind": "AO",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/brown_mud_02/brown_mud_02_ao_2k.png",
+      "md5": "f208872d0c79aab681672e2a187d5b75",
+      "path": "Art\\Textures\\LandscapeMudPBR\\brown_mud_02\\AO.png"
+    },
+    {
+      "asset": "mud_cracked_dry_03",
+      "kind": "Diffuse",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/mud_cracked_dry_03/mud_cracked_dry_03_diff_2k.jpg",
+      "md5": "a9c41ff82bf62c58a91b6820d4439165",
+      "path": "Art\\Textures\\LandscapeMudPBR\\mud_cracked_dry_03\\Diffuse.jpg"
+    },
+    {
+      "asset": "mud_cracked_dry_03",
+      "kind": "Displacement",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/mud_cracked_dry_03/mud_cracked_dry_03_disp_2k.png",
+      "md5": "42819f0a54cb3f6529fc409d36c6bb4f",
+      "path": "Art\\Textures\\LandscapeMudPBR\\mud_cracked_dry_03\\Displacement.png"
+    },
+    {
+      "asset": "mud_cracked_dry_03",
+      "kind": "nor_dx",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/mud_cracked_dry_03/mud_cracked_dry_03_nor_dx_2k.png",
+      "md5": "e443061de69fa4cbe49841a81ed1794c",
+      "path": "Art\\Textures\\LandscapeMudPBR\\mud_cracked_dry_03\\nor_dx.png"
+    },
+    {
+      "asset": "mud_cracked_dry_03",
+      "kind": "Rough",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/mud_cracked_dry_03/mud_cracked_dry_03_rough_2k.png",
+      "md5": "9485dd7b292727e6762e4f9c0459df46",
+      "path": "Art\\Textures\\LandscapeMudPBR\\mud_cracked_dry_03\\Rough.png"
+    },
+    {
+      "asset": "mud_cracked_dry_03",
+      "kind": "AO",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/mud_cracked_dry_03/mud_cracked_dry_03_ao_2k.png",
+      "md5": "5941af28eb18c929674d1b70f2c2f756",
+      "path": "Art\\Textures\\LandscapeMudPBR\\mud_cracked_dry_03\\AO.png"
+    }
+  ]
+}

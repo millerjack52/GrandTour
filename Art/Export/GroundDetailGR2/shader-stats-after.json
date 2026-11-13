@@ -1,0 +1,158 @@
+{
+  "ok": true,
+  "tag": "after",
+  "rows": [
+    {
+      "role": "L_MudVariants",
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape",
+      "ground_detail": "off (the parent)",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudVariants",
+      "material": "/Game/GrandTour/ArtTests/MudVariants/MI_GT_Landscape_Strips",
+      "ground_detail": "on (MI_GT_Landscape_Strips)",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudVariants (the Scrub row bypassing the blends)",
+      "material": "/Game/GrandTour/ArtTests/GroundDetail/Probe/M_VariantsLandscape_ScrubPreview",
+      "ground_detail": "off (probe copy)",
+      "pixel_instructions": 520,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudVariants (the Scrub row bypassing the blends)",
+      "material": "/Game/GrandTour/ArtTests/GroundDetail/Probe/M_VariantsLandscape_ScrubPreview_On",
+      "ground_detail": "on (probe MI)",
+      "pixel_instructions": 1232,
+      "vertex_instructions": 155,
+      "samplers": 12,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudDrive",
+      "material": "/Game/GrandTour/ArtTests/LiveMudDrive/M_LiveLandscape",
+      "ground_detail": "off (the parent)",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudDrive",
+      "material": "/Game/GrandTour/ArtTests/LiveMudDrive/MI_GT_Landscape_Strips",
+      "ground_detail": "on (MI_GT_Landscape_Strips)",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudDrive (the Scrub row bypassing the blends)",
+      "material": "/Game/GrandTour/ArtTests/GroundDetail/Probe/M_LiveLandscape_ScrubPreview",
+      "ground_detail": "off (probe copy)",
+      "pixel_instructions": 520,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudDrive (the Scrub row bypassing the blends)",
+      "material": "/Game/GrandTour/ArtTests/GroundDetail/Probe/M_LiveLandscape_ScrubPreview_On",
+      "ground_detail": "on (probe MI)",
+      "pixel_instructions": 1232,
+      "vertex_instructions": 155,
+      "samplers": 12,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_GravelDeform",
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "ground_detail": "off (the parent)",
+      "pixel_instructions": 201,
+      "vertex_instructions": 155,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_GravelDeform",
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/MI_GT_Landscape_Strips",
+      "ground_detail": "on (MI_GT_Landscape_Strips)",
+      "pixel_instructions": 591,
+      "vertex_instructions": 155,
+      "samplers": 6,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "The Hide and the legs",
+      "material": "/Game/GrandTour/Materials/M_GT_Landscape",
+      "ground_detail": null,
+      "pixel_instructions": 323,
+      "vertex_instructions": 155,
+      "samplers": 6,
+      "pixel_texture_samples": 12,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "ground scatter",
+      "material": "/Game/GrandTour/ArtTests/GroundDetail/M_GT_GroundScatter",
+      "ground_detail": null,
+      "pixel_instructions": 283,
+      "vertex_instructions": 206,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    }
+  ],
+  "graphs": {},
+  "mpc_track_paint": {
+    "scalars": [
+      "TrackDepthCm",
+      "PatchCount",
+      "PatchVariant0",
+      "PatchVariant1",
+      "PatchVariant2",
+      "PatchVariant3",
+      "MudCover",
+      "GrassMud",
+      "MudPBR",
+      "MudPOM",
+      "MudPOMShadow",
+      "GravelPOM",
+      "GravelDebug",
+      "GroundDetail"
+    ],
+    "vectors": 5
+  }
+}

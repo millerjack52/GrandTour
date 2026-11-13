@@ -1,0 +1,251 @@
+FLORADRIVE / LIDAR MUD + ROCK MASTER TRIAL
+=======================================
+
+Scope
+-----
+Changes are isolated to /Game/GrandTour/ArtTests/FloraDrive. The actual
+LiDARStudy map and source materials are read-only inputs. Whole-map adoption
+is a later step after reviewing the trial.
+
+Mud reference and transfer
+-------------------------
+The reference is the saved LiDAR logging mud track, not its firm gravel roads.
+Art/Unreal/export_lidar_mud_reference.py exports the actual surface response
+settings and samples along the logging road. Art/tools/make_flora_lidar_mud.py
+maps the character of stations 170–260 m into the small demonstration route:
+dry approach, wet hollow and recovery to firmer ground. It interpolates the
+measured depth, softness, wetness and grass cover, and samples the source
+corridor composition for litter/churn and road overlay choice.
+
+The surface uses the exact exported LiDAR settings for wheel support, native
+substance/water response, shear, rut interaction, grass cover, depth scaling,
+maximum depth, bearing strength and settlement speed. The extra demo-specific
+tyre-coating override is removed. Soil and tread shaders are local copies of
+the actual LiDAR shader paths, with world lookups remapped into this plot.
+The native road pigment and tread shading are retained; the demo's previous
+strong ground-colour replacement is bypassed on the mud corridor.
+
+Preserved improvements
+----------------------
+The authored rest-height texture, broken crown, wheel troughs and shoulders
+remain. Close POM and matching normal textures remain as surface detail.
+The native LiDAR roughness is retained on the road. Soil texture grain adds
+restrained modulation rather than replacing the LiDAR mud palette.
+Lighting and exposure are held fixed for comparison.
+
+This is a transfer of mud character onto a different road, not a geometrically
+identical copy of the LiDAR route. A small number of cells require extra layer
+thickness beneath the retained troughs; transfer.json records this adjustment.
+The existing pond and puddle topology is retained. CPU soil import and GPU
+water/ground bindings share the updated paint data and depth scale.
+The import requires a firm boundary; the transfer fades out before the edge.
+
+Rock Master trial
+-----------------
+Purchased source: D:/GrandTourAssets/FlippedNormals/Rock Master Tools/DATA.blend
+Creator: MeiU. Selected Large 005, 053, 077 and Medium 013, 085.
+The source materials are baked into colour, tangent normal and roughness
+textures. The current conversion uses 1K maps, about 18k triangles per large
+mesh and 6.5k per medium mesh, with three Unreal LODs. OpenGL normal maps are
+converted by flipping green on import. Source files remain unchanged.
+Twenty placements form four embedded exposures with matching smaller rocks;
+solid cores clear existing plants and trees. Collision is present and the
+driving corridor remains open. A restrained per-material RockTint allows
+palette adjustment without rebaking the purchased texture detail.
+
+Rebuild / review
+----------------
+1. Export the read-only LiDAR mud reference in Unreal.
+2. python Art/tools/make_flora_lidar_mud.py
+3. Blender --factory-startup -b --python Art/Blender/export_rock_master_trial.py
+4. Art/run_flora_drive.ps1 -Stage build
+5. Art/review_flora_lidar_trial.ps1 sequences audit, CPU soil verification,
+   rendered driving/reset, captures and evidence-bound comparisons.
+6. Inspect both comparison images and the individual Unreal screenshots.
+Do not run Blender and Unreal concurrently on this machine.
+
+Evidence / limits
+-----------------
+Art/Export/FloraDrive/BeforeLidarMudRocks contains the previous map and captures.
+LidarMud/reference.json and transfer.json contain the source and applied data.
+RockMaster/export-report.json records source/export triangle counts.
+build-report.json records LOD/collision and placement counts.
+The final review report must certify drive/reset, shader compilation and
+source-map protection. Editor GPU spot checks do not establish packaged FPS.
+The creator's Rock Master documentation links to a Notion manual which returned
+404. The product documentation page and source library were inspected; the
+inaccessible manual has not been represented as read:
+https://superhivemarket.com/products/rock-master-tools/docs
+
+Next whole-map gate
+-------------------
+Keep LiDAR's real road profiles, physics and water domains when adopting the
+look. Use its actual spline coordinates, not this demo's compressed station
+mapping. Trial one real bank/road section; check moving chase and valley views,
+terrain intersections, LOD transitions, shadow cost, texture memory and collision
+before extending curated rock/plant families across the entire LiDARStudy map.
+
+Validation status / 13 November 2026 UTC
+--------------------------------------
+Build passed. Python syntax passed for eight changed scripts. Exported LiDAR
+response settings match the build, the rest texture is byte-identical, and
+four protected source-map hashes match. Twenty rocks use five meshes, three
+LODs each and collision. Rendered check failed before tests began: D3D12
+out-of-memory with 941 MB local budget and 2762 MB used while Wardogs was
+running. Prior functional/capture reports are from the previous pass and
+must not be taken as validation of this new build. Await GPU availability,
+then run check and capture before claiming driving or visual completion.
+
+Completed offline audit / 13 November 2026 UTC
+---------------------------------------------
+Art/run_flora_drive.ps1 -Stage audit runs Unreal with NullRHI: no rendering,
+PIE or asset saves. It passed against the saved demonstration map.
+* Exact exported LiDAR response settings; no local region or tyre override.
+* Local paint maps reach both mud/tread and all three water materials.
+* All water depth-scale parameters agree with the mud response scale.
+* Native WPO deformation and the close-detail normal output are connected.
+* Twenty rock actors, five meshes, three reduced LODs and collision each.
+* Rock AABBs are embedded in the authored ground; minimum distance from the
+  road centreline is 578.36 cm (278.36 cm outside its 300 cm half-width).
+  This is conservative geometric clearance, not a driven collision test.
+* Total rocks at LOD0 would be 175,960 triangles if all were drawn together;
+  actual visible cost depends on camera, LOD choice, shadow passes and culling.
+* Fifteen 1K texture maps: conservative BC3/BC5 full-mip estimate 20.00 MiB.
+  NullRHI returned no built platform memory data: actual memory is UNKNOWN,
+  not zero. Residency and render cost must be measured in the GPU pass.
+* Source maps and retained authored height texture remain unchanged.
+
+Art/tools/verify_flora_trial_soil.py independently decodes the generated
+numerical PNGs and compares them with 125 saved Unreal SampleSurface queries.
+Depth, softness, wetness, grass, clay and cohesion pass. Maximum depth error
+is 0.0000025 cm (floating-point interpolation). These are saved CPU fields;
+this does not validate live wheel response, native GPU deformation or water.
+
+Evidence freshness
+------------------
+The audit records hashes of its map, material, texture and rock-mesh packages.
+Check and capture now require those versions and record a common fingerprint.
+The comparison builder rejects reports from an older asset set. Existing
+functional/capture results predate this transfer and cannot satisfy that gate.
+
+When the GPU is available, run:
+  powershell -ExecutionPolicy Bypass -File Art/review_flora_lidar_trial.ps1
+This sequences audit, independent soil verification, rendered driving/reset,
+actual captures and comparison generation. It never closes another app.
+Review the generated images before calling the visual pass complete; the
+script cannot establish aesthetic quality. Whole-map LiDAR rollout stays
+pending the trial review. Latest machine-readable evidence:
+  Art/Export/FloraDrive/audit-report.json
+  Art/Export/FloraDrive/soil-verification.json
+
+Ground foliage shadow correction / 13 November 2026 UTC
+------------------------------------------------------
+Cause: build_flora_drive.py enabled shadow maps for trees, rocks, ferns and
+shrubs but excluded small broadleaf plants and grasses. This left the broad
+leaf silhouettes visibly disconnected from the ground.
+The map-local flora_drive_ground_shadows helper now enables dynamic two-sided
+casting on 1,153 Small_Plants instances and contact-shadow participation on
+near ground foliage. The sun has a 60 cm world-space contact trace, casting
+intensity 1.0 and noncasting intensity 0.65. Fine grasses retain their previous
+shadow-map policy to contain masked shadow-rendering cost. No source foliage
+assets, planting transforms, mud materials, palette or exposure were changed.
+Settings: Art/Export/FloraDrive/ground-shadow-settings.json. The main build
+reapplies them. Existing maps can use the isolated -Stage shadows operation.
+
+Contact shadows are screen-space and cannot account for off-screen occluders.
+The broadleaf shadow-map path supplies real silhouettes; the contact term
+adds short nearby grounding. No painted black patch atlas was introduced.
+Reference: https://dev.epicgames.com/documentation/en-us/unreal-engine/contact-shadows-in-unreal-engine
+Local API verified in UE 5.8 LightComponent.h.
+
+Driving/reset check correction
+-----------------------------
+The first rendered traversal completed, but comparing wheel sinkage after
+cold startup/reload failed by about 0.64 cm; the settled vehicle positions
+were about 3.8 cm apart. Sinkage at different tyre locations is not a fixed
+terrain-reset invariant. The test now records wheel/position differences and
+requires four supported wheels, settled speed, the intended recovery location,
+camera and checkpoint. It retains the existing strict 0.01 cm reset threshold
+at fixed world-space route probes. The next run passed with zero terrain reset
+error and about 0.00024 cm wheel-sink difference. No gameplay code or mud
+physics thresholds were altered to obtain that result.
+
+The captured pre-shadow baseline and matching editor timings are preserved
+in Art/Export/FloraDrive/BeforeGroundShadows. The final ground-shadow comparison
+uses a fixed camera and unretouched screenshot crops. Source-bank views were
+reframed after a foreground trunk obstructed the first camera.
+
+FINAL RENDERED RESULT / 13 November 2026 UTC
+------------------------------------------
+Drive/check and final capture processes exited cleanly with all assertions
+passing. 51.284 m driven, 7.640 cm maximum compression, 21.588 cm maximum
+wheel water depth; fixed-world reset-height error 0.000 cm. Native mud/wave/
+water/sediment GPU reference comparisons pass. Runtime crown-to-trough relief
+minimum 16.333 cm, pond bed -31.990 cm. No material compilation errors.
+
+Stationary uncapped PIE at 1274 x 682, 300 frames per view:
+  Road GPU median 32.969 -> 34.351 ms (+1.381); after p95 45.882 ms.
+  Pond GPU median 33.764 -> 34.410 ms (+0.647); after p95 47.360 ms.
+These paired spot checks include run-to-run variation. They do not establish
+packaged FPS or whole-map performance. Wardogs was no longer running in the
+final capture. Broadleaf cast shadows and fine-foliage contact grounding are
+visibly present in the inspected fixed-camera comparison. Both rock review
+cameras now show the outcrops without a central foreground trunk obstruction.
+
+Actual Unreal comparisons inspected:
+  Art/Export/FloraDrive/ground-shadows-comparison.jpg
+  Art/Export/FloraDrive/lidar-mud-rocks-comparison.jpg
+  Art/Export/FloraDrive/lidar-mud-rocks-review.html
+All four protected source maps remain unchanged. The current trial is ready
+for user visual review, not automatic whole-map deployment.
+
+RENDERED-DEFORMATION CORRECTION / 12 November 2026 Edmonton
+---------------------------------------------------------
+User correctly identified that the car sank while the visible road stayed flat.
+The prior test measured CPU heights and checked a WPO graph connection. Neither
+proved the visible mesh moved. LiDAR's copied BenmoreWoodlandBridge gates both
+WPO and tread opacity by MR_VisualWindow, whose default remained centred at
+(-76000,-43200), half-size 2400 cm. FloraDrive's fixed grid does not execute the
+follow-player BindGridWindow path, so the remote default zeroed displacement.
+
+flora_lidar_mud.local_visual_window now initializes both local materials from
+the visual actor: (0,0,3750,600), fully covering its fixed 3150 cm half-size.
+This correction is also in the rebuild path. No physics settings or source
+LiDAR assets changed. A saved-asset audit now checks fixed-grid window coverage.
+
+The new runtime regression test reads SceneDepth from the actual NativeVisualGrid
+at a fixed 12 m patch (128 x 128), with car/water/tread geometry excluded. It
+briefly reinstates the old window as a negative control: every depth pixel is
+1000.0 cm, confirming a completely flat rendered mesh. Restoring the local
+window yields 985.109 to 1032.078 cm before driving. After driving, measured
+visible ground changes reach 8.141 cm downward and 3.922 cm upward, with 1,212
+pixels changing more than 1 cm. Full route, shader, water and reset checks pass;
+reset error is zero. Actual fixed-camera fresh/driven screenshots are retained.
+
+Art/Export/FloraDrive/rendered-ruts-comparison.jpg
+Art/Export/FloraDrive/rendered-ground-depth.json
+Art/Export/FloraDrive/window-report.json
+Art/Unreal/flora_rendered_deformation.py
+The older full-scene comparison and GPU spot timings predate this correction;
+its HTML now explicitly points to the corrected rendered-deformation evidence.
+
+LiDAR integration / editability requirements
+-------------------------------------------
+Current state: local material parameters and JSON/build scripts provide some
+controls; there is not yet one consolidated, artist-facing per-map profile.
+Before broad migration:
+* Appearance: expose palette, transmission, ground detail, contact shadows,
+  fog and distance treatments in per-map material instances/settings.
+* Placement: use seeded rules plus masks/exclusion zones and named asset-family
+  choices. Rebuild affected regions, preserve manual overrides separately.
+  Do not copy the demo's delete-and-regenerate tag workflow over hand edits.
+* Gameplay: retain LiDAR soil profiles, deformable surfaces and water domains.
+  Appearance changes must not silently alter tyre response or layer depths.
+* Bindings: initialize PaintWindow, VisualWindow and live field bindings from
+  the actual surface/grid; do not inherit coordinate constants from another map.
+* Validation: visible SceneDepth change, wheel response, reset and performance
+  are separate checks. Keep a representative road/bank review route.
+Routine colour/fog/shadow tuning should be easy. Asset replacements or planting
+rules require targeted regeneration/reimport and LOD checks. Road/soil/water
+changes are the most involved and need drive/deformation/water validation.
+Whole LiDARStudy remains unchanged; broad deployment is not performed here.

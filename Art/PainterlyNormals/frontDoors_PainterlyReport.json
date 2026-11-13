@@ -1,0 +1,12 @@
+{
+ "object": "frontDoors",
+ "resolution": 2048,
+ "seed": 7,
+ "dabs_per_pass": [
+  324,
+  730
+ ],
+ "ink_mask": false,
+ "painted_color": false,
+ "brush": "bundled oil_knife"
+}

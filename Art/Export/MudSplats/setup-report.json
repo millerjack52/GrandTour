@@ -1,0 +1,162 @@
+{
+  "ok": true,
+  "textures": [
+    {
+      "asset": "/Game/GrandTour/Mud/Splats/T_MudSplat_Mask",
+      "compression": "TC_MASKS",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/Mud/Splats/T_MudSplat_Height",
+      "compression": "TC_MASKS",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/Mud/Splats/T_MudSplat_Normal",
+      "compression": "TC_NORMALMAP",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/Mud/Splats/T_MudSplat_Splatter",
+      "compression": "TC_MASKS",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "collection": {
+    "collection": "/Game/GrandTour/Terrain/MPC_TrackPaint",
+    "added": [],
+    "scalars": 11
+  },
+  "function": {
+    "function": "/Game/GrandTour/Materials/MF_MudCover",
+    "created": false,
+    "rebuilt_between_pins": 24,
+    "inputs": [
+      "BaseColor",
+      "Normal",
+      "Roughness",
+      "TangentNormal"
+    ],
+    "outputs": [
+      "AmbientOcclusion",
+      "BaseColor",
+      "FloorMask",
+      "Normal",
+      "Roughness"
+    ],
+    "expressions": 32
+  },
+  "decal": {
+    "material": "/Game/GrandTour/Mud/Splats/M_GT_MudSplatDecal",
+    "domain": "<MaterialDomain.MD_DEFERRED_DECAL: 1>",
+    "blend": "<BlendMode.BLEND_TRANSLUCENT: 2>",
+    "scalars": {
+      "SpawnTime": 0.0,
+      "Tile": 0.0,
+      "SizeCm": 40.0,
+      "SplatTileCm": 300.0,
+      "SplatFadeS": 600.0,
+      "SplatDryS": 90.0,
+      "MudDryLighten": 1.45,
+      "MudWetDarken": 0.78,
+      "MudWetRough": 0.3,
+      "MudDryRough": 0.88,
+      "MudWetRoughLo": 0.45,
+      "MudWetRoughHi": 0.65,
+      "MudCavityTint": 0.15
+    },
+    "compile_errors": []
+  },
+  "ground": [
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_Environment.M_GT_Environment",
+      "weather": true,
+      "tangent": true,
+      "BaseColor": "kept",
+      "Roughness": "kept",
+      "Normal": "kept",
+      "AmbientOcclusion": "kept",
+      "RainFloor": "moved nothing (kept)",
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_Landscape.M_GT_Landscape",
+      "weather": true,
+      "tangent": false,
+      "BaseColor": "kept",
+      "Roughness": "kept",
+      "Normal": "kept",
+      "AmbientOcclusion": "kept",
+      "RainFloor": "moved nothing (kept)",
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/ArtTests/LiveMudDrive/M_LiveLandscape.M_LiveLandscape",
+      "weather": true,
+      "tangent": false,
+      "BaseColor": "kept",
+      "Roughness": "kept",
+      "Normal": "kept",
+      "AmbientOcclusion": "kept",
+      "RainFloor": "moved nothing (kept)",
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape.M_VariantsLandscape",
+      "weather": true,
+      "tangent": false,
+      "BaseColor": "kept",
+      "Roughness": "kept",
+      "Normal": "kept",
+      "AmbientOcclusion": "kept",
+      "RainFloor": "moved nothing (kept)",
+      "compile_errors": []
+    }
+  ],
+  "grass": [
+    {
+      "material": "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass.M_TS_Grass",
+      "created": false,
+      "base": "kept",
+      "weather": false,
+      "dry_colour": [
+        0.0705,
+        0.0401,
+        0.0186
+      ],
+      "line_cm": [
+        18.0,
+        30.0
+      ],
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_FoliageCard.M_GT_FoliageCard",
+      "created": false,
+      "base": "kept",
+      "weather": true,
+      "dry_colour": [
+        0.0705,
+        0.0401,
+        0.0186
+      ],
+      "line_cm": [
+        18.0,
+        30.0
+      ],
+      "compile_errors": []
+    }
+  ]
+}

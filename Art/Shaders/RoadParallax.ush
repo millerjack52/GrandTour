@@ -1,0 +1,102 @@
+// Near-field optical relief. World displacement and simulation remain upstream.
+// New fine detail, cavity and normals share the ray intersection; native pigment remains.
+struct RoadHeightField
+{
+ float2 UVG, UVS, DGX, DGY, DSX, DSY;
+ float Gravel;
+ float H(Texture2DArray G, Texture2D S, SamplerState Wrap, float2 offsetG, float2 offsetS)
+ {
+  float a=0,b=0;
+  [branch] if(Gravel>.001)a=G.SampleGrad(Wrap,float3(UVG+offsetG,0),DGX,DGY).b;
+  [branch] if(Gravel<.999)b=S.SampleGrad(Wrap,UVS+offsetS,DSX,DSY).r;
+  return lerp(b,a,Gravel);
+ }
+};
+Normal=OldNormal;Rough=OldRough;AO=OldAO;
+float2 dxWorld=ddx(P.xy-State.gb),dyWorld=ddy(P.xy-State.gb);
+float dist=length(Camera-P);
+float fade=SurfaceDetailStrength*(1-smoothstep(SurfaceNearCm,SurfaceFarCm,dist));
+float3 n=normalize(VertexN),view=normalize(Camera-P);
+// World XY tiles are intended for roadbeds and ground, not vertical rock faces.
+fade*=smoothstep(.52,.78,n.z);
+[branch] if(fade<.001)return Base;
+float2 mapUV=(P.xy+185000)/370000;
+float4 style=Style.SampleLevel(View.MaterialTextureBilinearClampedSampler,mapUV,0);
+float ad=abs((Clay.SampleLevel(View.MaterialTextureBilinearClampedSampler,mapUV,0).a-.5)*6.4);
+float gravel=(1-smoothstep(2.,2.6,ad))*(1-smoothstep(.12,.6,style.g));
+float2 riverUV=(P.xy-RiverDomain.xy)/RiverDomain.z;
+float3 river=RiverMask.SampleLevel(View.MaterialTextureBilinearClampedSampler,saturate(riverUV),0).rgb;
+float protectedRiver=max(river.r,river.g)*(all(riverUV>=0)&&all(riverUV<=1));
+float worked=saturate(State.a)*smoothstep(.05,1.5,max(0,-State.r));
+float protection=(1-saturate(Route))*(1-protectedRiver)*(1-worked);
+// Land-cover grass does not mean the ground mesh is covered by grass blades.
+// Exposed pasture shoulders need full ground relief while retaining their pigment.
+float soil=(1-gravel)*(1-saturate(style.r))*(1-saturate(style.a));
+float weight=saturate(gravel+soil)*protection*fade;
+[branch] if(weight<.001)return Base;
+float blend=gravel/max(gravel+soil,.001);
+float2 world=P.xy-State.gb;
+RoadHeightField field;
+field.UVG=float2(world.x,-world.y)/GravelTileCm;
+field.UVS=(world-float2(-45800,-31600))/GroundTileCm;
+field.DGX=float2(dxWorld.x,-dxWorld.y)/GravelTileCm;field.DGY=float2(dyWorld.x,-dyWorld.y)/GravelTileCm;
+field.DSX=dxWorld/GroundTileCm;field.DSY=dyWorld/GroundTileCm;field.Gravel=blend;
+float vn=max(dot(view,n),.12);
+float3 vt=view-n*dot(view,n);
+float depth=lerp(GroundDepthCm,GravelDepthCm,blend);
+// Smooth grazing fade prevents long rays and unstable stretched texels.
+float rayStrength=SurfaceParallaxStrength*fade*smoothstep(.08,.2,dot(view,n));
+float2 slide=-vt.xy/max(vn,.2)*depth*rayStrength;
+float2 rayG=float2(slide.x,-slide.y)/GravelTileCm,rayS=slide/GroundTileCm;
+float hit=0;
+[branch] if(rayStrength>.001){
+ int count=(int)clamp(round(lerp(SurfaceMaxSteps,8,saturate(vn))),8,32);
+ float t=0,lo=0,hi=0;
+ [loop] for(int i=0;i<32;i++){
+  float h=field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*t,rayS*t);
+  if(t>=1-h || i>=count){hi=t;break;}
+  lo=t;t=min(1.,t+1./count);hi=t;
+ }
+ // Fixed refinements give stable intersections at oblique road views.
+ [unroll] for(int j=0;j<4;j++){
+  float mid=(lo+hi)*.5;
+  float h=field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*mid,rayS*mid);
+  if(mid<1-h)lo=mid;else hi=mid;
+ }
+ float dl=lo-(1-field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*lo,rayS*lo));
+ float dh=hi-(1-field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*hi,rayS*hi));
+ hit=lerp(lo,hi,saturate(-dl/max(dh-dl,.00001)));
+}
+float2 guv=field.UVG+rayG*hit,suv=field.UVS+rayS*hit;
+float4 gd=float4(1,.85,0,1),sd=float4(0,.85,1,1);
+float3 gc=Base,sc=Base;
+[branch] if(blend>.001){
+ gd=GO.SampleGrad(View.MaterialTextureBilinearWrapedSampler,float3(guv,0),field.DGX,field.DGY);
+ gc=GC.SampleGrad(View.MaterialTextureBilinearWrapedSampler,float3(guv,0),field.DGX,field.DGY).rgb;
+ // Keep the approved warm gravel value; the bake supplies individual stones.
+ gc*=float3(.235,.224,.202)/float3(.248,.2603,.2433);
+ float wheel=1-smoothstep(.10,.30,abs(ad-.82));gc*=1-.14*wheel;
+}
+[branch] if(blend<.999){
+ sd=SoilData.SampleGrad(View.MaterialTextureBilinearWrapedSampler,suv,field.DSX,field.DSY);
+ float3 peat=SoilColour.SampleGrad(View.MaterialTextureBilinearWrapedSampler,suv,field.DSX,field.DSY).rgb;
+ // Retain local earth/moss pigment while replacing the fine texture with relief-aligned detail.
+ float peatLum=dot(peat,float3(.2126,.7152,.0722));
+ float3 tint=lerp(1,peat/max(peatLum,.02),.16);
+ sc=Base*tint*lerp(.72,1.28,smoothstep(.12,.85,sd.r));
+}
+// Derive the normal from the exact marched height, scaled in centimetres.
+float eps=.18;
+float2 gx=float2(eps/GravelTileCm,0),gy=float2(0,-eps/GravelTileCm);
+float2 sx=float2(eps/GroundTileCm,0),sy=float2(0,eps/GroundTileCm);
+float hx=field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*hit+gx,rayS*hit+sx)-field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*hit-gx,rayS*hit-sx);
+float hy=field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*hit+gy,rayS*hit+sy)-field.H(GO,SoilData,View.MaterialTextureBilinearWrapedSampler,rayG*hit-gy,rayS*hit-sy);
+float3 grad=float3(hx,hy,0)*depth/(2*eps);grad-=n*dot(grad,n);
+grad*=min(1.,1.5/max(length(grad),.001));
+float3 detailed=normalize(n-grad);
+Normal=normalize(lerp(OldNormal,detailed,weight));
+float cavity=lerp(sd.b,gd.r,blend);
+AO=lerp(OldAO,min(OldAO,cavity),weight);
+Rough=lerp(OldRough,clamp(lerp(sd.g,gd.g,blend),.65,.96),weight);
+float3 colour=lerp(sc,gc,blend)*lerp(.86,1,cavity);
+return lerp(Base,colour,weight);

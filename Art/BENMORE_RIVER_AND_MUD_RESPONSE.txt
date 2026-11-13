@@ -1,0 +1,582 @@
+Benmore river integration and mud response review — 2026-10-13
+
+RIVER (INSTALLED)
+The approved Mackenzie shingle/POM/distance sampling is installed in Gaea
+ShoreRefinement/M_GC_Terrain and M_GC_MouthBed. It follows the existing deposition,
+wetness, silt and road masks. The Benmore .umap, water, geography, physical-material
+and grass outputs were not changed. The before/after map SHA256 is
+B7EF985D229D8E316192187D78F6B235C5186C3D9A7F7C0D8F0136A0BE20390F.
+Saved material backups: Saved/BenmoreRiverShingle/1791911384952120700.
+Review: Art/Export/BenmoreRiverShingle/benmore-river.html.
+Installer: Art/install_benmore_river_shingle.ps1; shoreline rebuild retains the layer.
+The first installation completed all save/reload checks and eight images, then
+the editor exited with an access violation during shutdown. The report is successful;
+the process exit was not clean. The runner now reports these separately.
+
+MUD RESPONSE (DRIVABLE STUDY)
+Open /Game/GrandTour/ArtTests/MudResponse/L_MudResponse.
+This is a copy of the approved LandscapeMudScene, with its scanned mud and dressing.
+The native architecture-A surface compresses relative to each local authored height,
+preserving the bog's crowns and hollows. Normal load and rolling approach a shallow
+equilibrium; sustained positive drive slip can work deeper. Depth no longer accumulates
+simply because the car travels farther. Finite depth and cut/deposit volume conservation
+remain intact. This study uses an 8-14 cm yielding layer and 0.28 seed-depth scale,
+replacing its former 25-45 cm layer and 7-18 cm seeded cuts.
+
+GTLandscapeWheelEffects reads the same depth/wetness/cohesion/disturbance as the
+terrain. It draws irregular 2–11 cm ballistic clods plus the existing fine-spatter
+Niagara system. Rates are tread-driven, bursty, zero at rest, reduced on intact sod,
+and suppressed in deep water. Landed clods flatten briefly. These are cosmetic:
+they neither add soil volume nor enter the legacy volume-carrying throw simulation.
+The pool is bounded at 256. Performance has not been measured.
+
+BodyState consumes the landscape sample for cosmetic pickup and mud-line height.
+Pickup needs tread rotation and depends on wetness, exposed sod and finite depth;
+the existing water wash remains in place. M_ResponseTyre is a private normal-detail
+experiment; the automated review copies live coat/geometry parameters onto it.
+Its detail strength currently uses the average four-wheel coat. Production tyres
+retain their original material; their pickup state does use the new surface query.
+
+Grass strips alongside the muddy track: x=-1000/0/1000 cm, y=500..1150 cm:
+firm turf 2 cm, damp grass 5 cm, wet grass 8 cm. These are authoring exploration
+presets, not measured Benmore soils. They expose soil through disturbed cover and
+flatten the study's tagged grass instances. The grass screenshots use prescribed
+equal tyre stamps so the depth differences are comparable; the vehicle images use
+actual Chaos wheel contacts and normal driving inputs.
+
+PHYSICS SEAM / LIMITS
+The MudResponse study opts into EnableWheelSupport. QueryWheelSurface verifies that
+the contact belongs to this landscape, then samples its displaced height across the
+tyre footprint. The existing vehicle tuning/radius path applies a signed, rate-limited
+support offset (maximum 12 cm, with an additional wheel-size limit for sinking).
+This lets crowns lift the suspension and ruts lower it without double-counting legacy
+sinkage. Loaded tyres also penetrate the soft soil independently of permanent rut
+compression: 7 cm at full softness and nominal load, reduced by compaction and grass,
+with an 8 cm maximum and a hard stop at the painted mineral base. Penetration settles
+at 2-5 cm/s and unloads at 8 cm/s; it resets outside supported mud. It does not stamp
+extra permanent depth into every pass. The same sample supplies soft-ground friction and modest rolling resistance;
+compressed ground reduces the added plough resistance.
+
+This is a height-support approximation, not rebuilt landscape collision: collision
+normals, belly collision and horizontal rut-wall forces still use the original ground.
+It needs subjective driving review. EnableWheelSupport defaults off elsewhere;
+the setup script enables it only on L_MudResponse. Legacy mud-patch throw/coordinator
+code remains intact. Water spray is a future adaptation, not changed.
+
+REBUILD / REVIEW
+Before each Unreal or UBT command, run Art/wait_unreal_free.ps1 -MaxMinutes 0
+as its own command. Then Art/build_guarded.ps1 for native edits.
+Art/mud_response.ps1 creates/updates the private study.
+Art/mud_response.ps1 -Review drives two passes and crosses old ruts, captures seven views, and writes
+Art/Export/MudResponse/review-report.json and mud-response.html.
+Checks cover idle emission, real-car clods/pickup, soil-volume balance, grass depth
+limits, parked chassis height with support off/on, contact retention and rolling
+compression. -Tests runs the native local-compression, relief-preservation,
+stationary-equilibrium and volume/bounds regression fixture.
+-PhysicsOnly runs the same driving checks without rendering; report: contact-report.json.
+-Review -CaptureLite uses raster shadows and software Lumen for capture only, after
+the normal renderer stalled in the virtual-shadow/non-Nanite pass. Saved lighting
+and project settings are unchanged. GPU readback now runs only during capture.
+The latest renderer-free run passed all 16 driving checks: maximum normal-pass
+compression 4.62 cm, parked body shift -6.86 cm with both field support and loaded
+yield enabled. The initial stationary tyres penetrated 3.47-3.57 cm; the bog support
+test settled 3.06-6.47 cm depending on wheel load and soil. Checks now explicitly
+require loaded penetration and gradual settling, and verify the firm-base bound.
+The C++ build passed. The native field regression passed in the preceding revision;
+this revision changes the vehicle support bridge, not field stamping. These verify response
+and bounds, not whether subjective driving feel is finished.
+Final review page: Art/Export/MudResponse/mud-response.html, with driving-review.json.
+The wide image is from the preceding revision, before loaded tyre yield was added.
+No new rendered capture was attempted for this driving adjustment. Both earlier normal and lighter render passes
+stalled during further close-ups, so those old images are excluded from this revision's
+page. A renderer-free driving report passed; no completed rendered review is claimed.
+The capture process was stopped, and its last log retained at
+Saved/MudResponse/driving-capture-stall.log. -Review -CaptureLite -DrivingOnly retries
+only the ground and rut-crossing views, using a shorter temporal warm-up.
+The review clearing uses short sparse vegetation and an explicitly named unshadowed
+fill light to expose the material response. This lighting is not a Benmore edit.
+The earlier driving-feel revision did not run a performance benchmark. See the
+scalability revision below for the new targeted measurements.
+
+
+MUD SCALABILITY (2026-10-13)
+Balanced is now the default. Runtime console: gt.LandscapeMud.Quality 0 / 1 / 2.
+The presets affect visuals only; the 6.25 cm CPU soil, stamping, load-dependent
+sinkage, friction and wheel support do not change with quality.
+
+                       Low (0)       Balanced (1)       High (2)
+Visual update target   8 Hz          12 Hz              20 Hz
+Packing budget/frame   0.75 ms       1.5 ms             3 ms
+Max blocks/batch       8             16                 32
+Max live spray clods   64            128                256
+Clod update target     20 Hz         30 Hz              every frame
+Parallax / fine spray  off / off     on / reduced       on / full
+Mud shadow refresh     changed/2 Hz  changed/4 Hz       every frame
+
+Packing budgets are soft: one 32x32 block may overshoot. Override the balanced
+base budget with gt.LandscapeMud.UploadBudgetMs (0.1..8, low x0.5 / high x2).
+The cap on pending render updates prevents unbounded buffering when the GPU falls
+behind. New wheel contact changes are uploaded before old wetness decay. Cells
+outside disturbed areas are no longer scanned each frame. Settled cosmetic cells
+retire from the decay set; persistent height/track data remains.
+
+Full texture windows are no longer packed twice at 20 Hz. Dirty 32x32 regions are
+uploaded instead. A moving window refresh is spread across frames into staging
+textures; the old origin remains bound until the complete replacement is queued.
+Four 768x768 RGBA16F textures use about 18 MiB total (including staging), independent
+of world size. The CPU tile cache remains bounded conservatively at 128 MiB.
+CPU tile initialization is still synchronous; long-distance streaming needs a
+separate sustained drive check. This is not a whole-world streaming certification.
+
+Spray uses persistent instance buffers and batched transforms, rather than clearing
+and recreating every instance every frame. Only descending clods trace for landing.
+Low/medium clods do not cast shadows. Low retains scanned normals and geometric mud
+relief, but drops parallax/fine spray. Landscape shadow cache invalidation now follows
+actual soil geometry changes at the preset frequency; high retains continuous refresh.
+
+Targeted verification:
+- Native sparse-update fixture: identical packed pixels to the full-window reference,
+  rest/support preserved, settled cells retired, cached ruts survived a window shift.
+- Final CPU fixture measured 25.975 ms for 589,824 cells versus 0.233 ms for the changed
+  4,096 cells around one contact; decay visited 423 cells. These are packing-only
+  measurements, not frame times or a promise of a 100x faster game.
+- RTX 4050 Laptop, 1440x900, rendered six-second driving samples with active spray:
+  Balanced first: mean frame 16.704 ms, p99 17.615 ms.
+  Low: mean frame 16.674 ms, p99 16.690 ms.
+  High: mean frame 20.323 ms, p99 34.764 ms.
+  Balanced repeat: mean frame 16.671 ms, p99 16.709 ms.
+  Session cadence was near 60 Hz on Low/Balanced; these are short diagnostics, not
+  uncapped throughput estimates. Order was Balanced/Low/High/Balanced on repeated
+  passes over the same soil, retaining ruts. No strict A/B claim is made.
+- Driving profile completed with editor exit 0. An earlier stationary profile also
+  wrote all four CSVs, but its editor shutdown returned -1073741819 afterwards.
+- Balanced upload packing peaked at 1.594 ms before the high-quality sample; high
+  reached 3.069 ms. Sampled pending queues were zero; all windows published.
+
+Runs (guard every invocation as described above):
+Art/mud_response.ps1 -Tests
+Art/mud_response.ps1 -PhysicsOnly -Quality 0  (or 1 / 2)
+Art/mud_response.ps1 -Profile                (stationary, no readback/screenshots)
+Art/mud_response.ps1 -ProfileDriving         (real driving and spray)
+Profiles use the normal project renderer; CaptureLite is not used for these results.
+Profiling is bounded to four minutes and stops only the process started by its runner.
+Reports: Art/Export/MudResponse/scalability-report.json and
+scalability-driving-report.json, with raw CSV paths inside each.
+Unreal Insights scopes: LandscapeMud_Tick, LandscapeMud_Upload, LandscapeMud_Effects.
+
+The final handling regression passed all 16 checks at both Low and Balanced.
+Low report: contact-low-report.json; Balanced report: contact-report.json.
+
+
+PRESSURE-DRIVEN CLUMP YIELD (2026-10-13, after scalability)
+The earlier wheel-radius sinkage did not make existing mud shapes yield enough.
+The runtime wheel observer now transfers 80% of loaded penetration into a local
+pressure plane. Cells above that plane crush gradually; hollows below it are not
+cut simply to reproduce the rest shape. The local compression target and mineral
+base still cap excavation. Every removed volume is deposited beside the tyre.
+
+Opt-in wheel-support mud now uses a softer load/rolling compression target:
+static interpolation 0.35..3.2 cm and rolling addition 0.5..6 cm, with the existing
+load, slip and grass factors and finite-depth bounds. Per-cell cutting is capped
+at 6..30 cm/s by softness, scaled by square-root load and 0.45 on grass. The
+physics support follows the changing field. This preserves the existing visual
+quality/upload budgets; no full-window update or extra ground scan was introduced.
+Prescribed seed stamps and surfaces without EnableWheelSupport keep the old path.
+
+Verified: C++ build and three native tests passed, including LoadedClumps (crown
+crushing, untouched hollows, per-step limits, stable sustained-pressure equilibrium,
+and exact removed/deposited volume). All 17 default/Balanced driving checks passed.
+A new vehicle test records fixed world-space probes, then enables actual wheel
+pressure for two seconds: maximum surface drop 4.553 cm, chassis drop 1.600 cm.
+Normal rolling compression peaked at 5.427 cm. The test's rolling upper bound is
+now 9 cm, reflecting the deliberately softer response; firm-base, contact and
+conservation checks remain. This is a functional check, not proof of final feel.
+The performance table above is from the preceding scalability revision. No new
+frame-rate claim or screenshot is made for this pressure-response revision.
+
+SHARED LOAD EQUILIBRIUM (2026-10-13, L_MudResponse softness correction)
+Supersedes the pressure-response coefficients above. The owner confirmed the
+problem was in L_MudResponse. Its 8-14 cm paint layer bottomed out in existing
+scanned hollows. Bare bog now has 24-32 cm of available soil and softness .78-.96;
+the authored seed-depth scale remains .28 and grass remains 2 / 5 / 8 cm.
+This is a deeper soil reservoir, not a preset trench-depth increase.
+
+Vehicle support and live soil deformation now share a load-dependent settlement
+relative to the original, footprint-filtered bog height. Permanent displacement
+takes 70% at rest and 80% when rolling, with at most 2 cm extra from drive slip.
+The remaining penetration keeps the tyre embedded in yielding material. Removing
+the old rest-relative stamp floor on this path lets crests crush to that common
+plane. Uncontacted hollows are not excavated. Stationary load cannot ratchet the
+plane down indefinitely. The mineral base and positive wheel-radius bounds apply.
+Authored seed stamps retain their old shape limits and exact cut/deposit balance.
+
+Build and four native tests passed, including the new shared-equilibrium test.
+The updated map was saved. The headless vehicle run passed all 18 checks: wet-bog
+loaded settlement 13.66-16.17 cm, measured chassis shift -17.82 cm relative to
+support disabled, and 6.79 m forward travel during the sampled first pass. Initial
+parked ground compression was about 10.6-11.8 cm versus 2.0-2.8 cm previously.
+Peak individual clump compression during driving was 14.63 cm. The test bounds
+average-footprint compression below 16 cm rather than rejecting crushed peaks.
+The previous report is retained as contact-before-equilibrium.json.
+
+The existing visual quality / dirty-block upload budgets are unchanged. There is
+no new isolated frame-time claim for this revision. Physical support still uses
+Chaos wheel-radius offsets over landscape collision, not rebuilt rut-wall or
+chassis collision. This verifies a substantial change in sinking and terrain
+response; it does not establish the owner's subjective driving feel.
+
+Visual review: 01_vehicle_mud_spray.png was freshly captured at 13:48 local and
+inspected: the tyres are embedded in the deformed soil. CaptureLite used raster
+shadows/software Lumen; saved scene settings are unchanged. The complete capture
+sequence and retry stalled with the GPU at 100% while another game was running.
+Only the verified owned review processes were stopped; stall logs are retained in
+Saved/Logs/MudResponse-capture-stall.log and MudResponse-capture-retry.log. Older
+close-ups are not evidence for this revision. The runner now has an external
+eleven-minute timeout so a stalled render callback cannot hold the slot forever.
+Final rebuilt-binary headless rerun also passed all 18 checks, editor exit 0:
+loaded settlement 13.23-16.21 cm, chassis shift -17.89 cm and peak individual
+clump compression 14.61 cm. mud-response.html now shows only the fresh overview
+and links the final measurements and preserved previous-response report.
+
+SOIL CONTACT, UNRESTRICTED DRIVING AND PRESSED TYRE BEDS (2026-10-13)
+Supersedes the wheel-radius support implementation and plastic coefficients above.
+The owner permits player tracks as deep as the existing grooves; the concern is
+their cut-out shape. Retain depth while creating a continuous rounded bed, crushed
+crowns, low-pocket infill and displaced shoulders. Fine tread belongs in material
+shading rather than blocks cut into the 6.25 cm soil grid.
+
+GTSoilVehicleMovement now adjusts actual suspension contact height and normal from
+immutable local 9x9 soil snapshots. Tyres retain their physical radius. Macro
+landscape slope remains; soft sub-tyre soil slopes yield rather than acting like
+rigid kerbs. Grip decreases with wheelspin. Load-scaled local soil resistance grows
+with speed and immersion and is applied at each wheel on every physics step.
+There is no speed governor or automatic speed braking in the new driving harness.
+Soil automatic shifts use road progress to avoid repeated wheelspin-triggered
+upshift/torque-cut cycles; engine RPM and torque still follow wheel rotation.
+
+Permanent pressure settlement uses 60% at rest / 78% rolling plus bounded slip
+work. A rounded swept footprint and curved floor replace the sharp rectangular
+cut. Removed soil can fill low pockets below the bed, with exact cut/deposit
+balance. Worked shoulders (.15 track coverage) are distinguished from compressed
+tyre beds: misclassifying shoulders removed transport capacity and prematurely
+stopped yielding. The new equilibrium tests caught and verified this correction.
+Private M_ResponseGround was backed up and refreshed headlessly with subtle
+directional tread shading and reduced scan-chip relief inside compressed beds.
+
+Build succeeded; all five native LandscapeMud tests pass. The loaded-plane test
+settles at -13.399 cm for a -13.635 cm target, without further sustained-load
+ratcheting. Soil-volume conservation and sparse-update checks pass. CPU packing
+fixture: 30.847 ms full window (589,824 cells), 0.265 ms dirty blocks (4,096 cells),
+423 decay cells. These are CPU fixture measurements, not frame/GPU performance.
+
+All ten unrestricted dynamics trials completed and all 12 acceptance checks pass:
+  Four-second full-throttle firm ground: 48.56 km/h, 30.956 m travelled.
+  Four-second full-throttle bog: 5.40 km/h, 3.830 m travelled.
+  Four-second 45%-throttle bog: 5.34 km/h, 3.979 m travelled.
+  Two-second coast from 40 km/h: firm 37.26; settled bog 0.32; fresh bog 3.03 km/h.
+  Restart after eight seconds settling: 5.48 km/h, 3.863 m travelled in four seconds.
+  Reverse from settled bog: 0.88 km/h, 0.924 m backwards in four seconds.
+Previous binary full-throttle bog reached 16.77 km/h and settled 40 km/h coast
+ended at 32.15 km/h. These are short reproducible trials with this test car, not
+universal top speeds. The old reverse harness used the wrong pedal and is excluded.
+
+The owner explicitly requested finishing headless checks and deferring GPU checks
+while Horizon Zero Dawn is running. No new screenshots or GPU profile were taken
+after that instruction. Existing 14:50 captures predate the latest shape, contact
+normal, camera framing and material changes. The local review omits stale images
+and states the deferral. Current visual quality, owner driving feel, full Benmore
+streaming and many-vehicle performance remain unverified. Chassis collision still
+uses the original landscape; this is a tuned soil model, not full terramechanics.
+
+Repeatable commands, each preceded by a separate wait_unreal_free.ps1 call:
+  Art/mud_response.ps1 -Tests
+  Art/mud_response.ps1 -Dynamics
+  Art/mud_response.ps1 -PhysicsOnly
+  Art/mud_response.ps1 -Materials (NullRHI; saves only private ground material)
+  Python Art/tools/make_mud_response_review.py --headless
+Later, when GPU review is available: -Review -CaptureLite, then -ProfileDriving.
+Reports and review: Art/Export/MudResponse/{dynamics-after.json,contact-report.json,
+material-report.json,mud-response.html}; baseline retained as dynamics-before.json.
+
+Final rebuilt-binary scene validation passed all 18 checks, editor exit 0. Loaded
+settlement is 12.45-13.92 cm; chassis sits 12.85 cm lower with soil support enabled.
+Crossing retained contact and completed; local crown yield reached 14.63 cm;
+2 / 5 / 8 cm grass studies stayed above their finite bases. Spray emission and
+tyre-coating state checks passed, without claiming their rendered appearance.
+
+MUD VARIANTS DRIVING ROUTE REBUILD (2026-10-13)
+Owner explicitly selected L_MudVariants, the long driving route. It now uses the
+approved GTLandscapeSurface / GTSoilVehicleMovement response rather than the old
+four GTMudPatch variants. The private DA_ResponseRoute disables legacy patch
+spawning. The original DA_MudVariants remains as the terrain-authoring reference.
+Map, material, paint and spec backups are under Saved/MudVariantsResponse.
+
+Sections retain the original 25 m lengths and gravel gaps:
+  30-55 m: dry clay, 30 cm finite layer, softness .25, wetness .10, cohesion .94.
+  75-100 m: approved wet mud, 28 cm layer, softness .84, wetness .84.
+  120-145 m: deep soft bog, 46 cm layer, softness .98, wetness .96.
+  165-190 m: puddled bog, 48 cm layer, softness/wetness 1.
+Paint varies depth and softness spatially. The deeper reservoir adds up to 25%
+loaded yielding only beyond 32 cm thickness; the approved standard coefficient
+is unchanged. Signs identify sections; winch posts and tussock dressing remain.
+Broad terrain planes replace the old rigid road bumps below each mud section,
+blending into the approach. Seeded old tracks appear when each section's tiles
+are resident near the car, using translated GTMudDetailStudy actors.
+
+Three large pools occupy elliptical shallow bowls in the final section. The
+underlying ground is level; paint holds the water table, while BasinDepthCm adds
+a smoothly feathered depression to the CPU rest surface. The water-fill cap is
+32 cm instead of 6 cm, allowing deep ruts to reach a common water level. Private
+MudResponse and route materials use that limit, wet margins, depth/sediment
+colour, smoother pooled normals, lower water roughness and stronger disturbed
+ripples. Existing dry-mud scans and compressed-bed tread shading are retained.
+
+Missing spray: the old origin added SurfaceDeltaCm to contact points that already
+included deformed terrain, burying emitters in deep ruts. Landscape wheel effects
+now undo loaded tyre penetration to locate the mud surface and lift the origin
+above pooled water. Saturated pools reduce heavy clods and favour finer muddy
+spray. These changes preserve the existing bounded clod counts and quality tiers.
+
+Canonical rebuild: Art/setup_mud_variants.ps1 now invokes the new route builder.
+Direct runner: Art/mud_variants_response.ps1 -Mode Setup / Check / Audit.
+Every invocation still requires a separate wait_unreal_free.ps1 guard. All these
+operations run NullRHI. The user's deferred rendered/GPU review is still pending;
+headless particle triggering is not a visual acceptance test.
+Review generator: Art/tools/make_mud_route_review.py.
+Review: Art/Export/MudVariants/mud-variants-response.html.
+
+Final validation: build succeeded; 5/5 native soil tests, 10/10 route checks and
+18/18 original L_MudResponse regression checks passed. Four-second 65%-throttle
+route trials measured mean settled depth / end speed / forward travel:
+  Dry clay: 4.40 cm / 25.88 km/h / 17.192 m.
+  Wet mud: 14.55 cm / 0.87 km/h / 1.088 m.
+  Deep bog: 20.92 cm / 0.34 km/h / 0.369 m.
+  Puddled bog: 21.55 cm / 0.34 km/h / 0.404 m.
+The deep sections are deliberately slow, with the existing winch posts available.
+Route geometry/scan placement differs from L_MudResponse; these speeds are not
+direct A/B values for that scene. All four tyres retained contact, heavy spray
+emitted, and four fine-spray components were created in each trial. A 5 x 4 m
+probe of the first pool found 20.0 m2 with >1 cm water, maximum depth 16.05 cm.
+No current rendered appearance or GPU/frame-time result is claimed.
+
+NEW PROVING GROUND (2026-10-13; supersedes prior acceptance language)
+The owner explicitly rejected the last route's appearance AND driving response.
+Earlier uses of "approved" above describe an interim reaction, not current
+acceptance. No last-pass material, variant or handling baseline is approved.
+Owner authorized rendered checks again. Work now targets one saturated patch
+and connected pool before extending to dry clay, deeper bog and shallow grass.
+
+Isolated level: /Game/GrandTour/ArtTests/MudProvingGround/L_MudProvingGround.
+The existing MudResponse, MudVariants and Benmore maps are not rewritten here.
+Art/tools/make_mud_proving_ground.py produces a unique 31.5 m world rest map,
+with cell-centred RG16 height encoding and independently oriented broken clods,
+old tracks, basin lobes and intact islands. The imported CPU map and GPU material
+share the same heights; macro relief does not repeat every texture tile.
+
+Private soil uses the existing brown_mud_02 scans at two transformed scales,
+height-derived normals, worked-bed shading and real Nanite displacement.
+A separate non-colliding Single Layer Water surface follows the actual ground
+contours, including new depressions. Its local disturbed normals are not a
+propagating wake/fluid simulation. Tyre coating uses the existing per-wheel
+pickup/washing state with a new rest-space triplanar scanned-mud shader.
+
+Opt-in bUseSoilShearResponse makes saturated worked soil lose shear strength,
+dry compressed soil firm up, and excessive wheelspin pass peak traction.
+Displacement resistance depends on speed and immersion; no speed clamp is used.
+Support follows the finite soil base into old hollows and yields at rut walls.
+Plastic soil updates use swept footprints at a bounded 30 Hz; wheel physics
+still samples every physics step. Cosmetic quality does not change this rate.
+The opt-in spray release has a more visible crawling-speed arc. Heavy clods and
+Niagara fines retain quality budgets. Legacy scenes retain their previous law.
+
+Reproduce: separately run wait_unreal_free.ps1 before EVERY Unreal/build command.
+Then build_guarded.ps1; mud_response.ps1 -Tests; mud_proving_ground.ps1 -Mode
+Setup; mud_proving_ground.ps1 -Mode Review. The last runner uses real-time
+offscreen rendering, shader failure guards, fresh reports and an owned-process
+deadline. Setup backs up its private assets under Saved/MudProvingGround.
+Review includes crawl, cross-rut drive, injected momentum and a real firm-ground
+accelerated entry, coating state, a timestamped image sequence and separate
+1440x900 driving CSV captures. Art/tools/make_mud_proving_review.py packages them.
+Rendered completion alone is not visual acceptance; inspect the images directly.
+
+Final first-slice verification (2026-10-13 18:08 local):
+  Build succeeded; 7/7 native soil tests; 8/8 driving integration gates.
+  Latest setup and rendered review exited 0. All private shaders compiled.
+  Mean loaded tyre penetration during crawl: 13.10 cm (additional to the rut).
+  4.55 m across existing tracks, with all sampled wheels retaining contact.
+  A high-range approach accelerated on firm ground reached 14.95 km/h and
+  slowed to 0.34 km/h in worked mud at 60% throttle. No injected velocity in
+  that check. Coating exceeded .92 on every tyre; displaced volume balanced.
+  Direct image inspection covered wide/near ground, pool edge, loaded tyres,
+  new tracks, crossing and the timestamped motion sequence. Tyre UV stretching
+  was removed; wet spatter was darkened and its launch arc bounded.
+  Dense grass shadows were disabled in this private map; tree/shrub/vehicle
+  shadows remain. No VSM marking overflow recurred in the final rendered log.
+
+Performance is NOT accepted: Ace7Game was running during the final passes,
+with observed GPU use up to 100% and VRAM near the 6 GB device limit. Do not use
+the contended timing CSVs as benchmarks. The final -Quick pass intentionally
+checked rendering/contact only. Run a normal Review with the GPU free for a
+clean final profile; full Benmore streaming still needs separate validation.
+
+Review: Art/Export/MudProvingGround/mud-proving-ground.html
+Evidence: integration-checks.json, inspection-report.json, review-report.json,
+and review-run-status.json beside it. Previous full contended timing data is
+preserved as full-render-report-contended.json. Native image captures are the
+evidence; the HTML packages those captures rather than drawing a mockup.
+The first saturated prototype is ready for owner driving judgement. This does
+not approve the previous route, promise full MudRunner parity, or complete the
+later dry-clay/deep-bog/shallow-grass variants.
+
+2026-10-13 -- Soil properties after the owner's "Much better" feedback
+
+Added opted-in LayerDepthScale, BearingStrength and SettlementSpeedScale to
+GTLandscapeSurface. Default values preserve this new proving-ground baseline.
+Depth moves the finite mineral base; strength changes shared load equilibrium
+for both wheel support and plastic compression. No per-preset speed multiplier.
+CPU paint and the private shader use the same scaled depth, capped at 50 cm.
+Legacy surfaces ignore the new controls. Restart Play after editing properties.
+
+Saved L_MudProvingGround_Firm (depth .65 / strength 1.6) and
+L_MudProvingGround_DeepSoft (depth 1.28 / strength .6), alongside the baseline.
+These deliberately share the same authored geometry/materials to isolate soil
+properties; they are not the separate visual-biome variant rebuild.
+Build succeeded and eight GrandTour.LandscapeMud native tests passed.
+PropertiesReview exercises the same estate, standing load, then eight seconds
+of 60 percent throttle with low range and differential lock in each map.
+It gates relative settlement, chassis lowering, contact retention, image output
+and clean editor exit. The review pack also checks displaced-soil conservation.
+
+Setup initially exited with C0000005 after saving the maps. Unloading to Entry,
+clearing world references and collecting garbage before delayed shutdown gave
+a clean subsequent setup exit. The first image pass exposed delayed duplicate
+HighResShot writes: disabling rendering immediately after the first write could
+replace loaded-tyre captures with black frames. The capture now keeps rendering
+on until file writes settle and rejects undersized images. Inspect native
+images; a successful numerical report alone is not visual acceptance.
+
+Tuning guide and next water-integration contract: Art/MUD_SOIL_PROPERTIES.txt.
+Comparison evidence: Art/Export/MudProvingGround/propertiesreview-report.json,
+propertiesreview-run-status.json and mud-soil-properties.html.
+The new landscape mud is not yet registered with GTWaterSubsystem. Existing
+water currently knows the legacy patches. Full moving-bed coupling, shared
+water height/current, waves and wheel/hull spray are the next stage. No second
+water-force implementation was added. This comparison is not a GPU benchmark.
+
+Final PropertiesReview: fresh report, all four vehicle gates true, clean editor
+exit 0. Measured standing settlement: firm 9.69 cm, baseline 16.70 cm, deep-soft
+28.76 cm. Deep-soft body origin is 11.68 cm lower than baseline. All three retain
+100 percent sampled wheel contact. Actual final loaded-tyre and track PNGs were
+visually inspected; the deeper pocket and lower chassis are visible. Review
+packaging checks the current report/run status and each image before export.
+
+2026-10-13 -- Shared water over the accepted deformable soil
+The new isolated map is /Game/GrandTour/ArtTests/MudWater/L_MudWater.
+GTWaterSheet now has an opt-in MudSurface mode using the shared GTWaterField
+wet/dry solver with sealed boundaries. River reference mode remains opt-out
+from this branch. The live landscape plus deformed soil is the bed; updating
+it preserves water volume and lets connected water flow into newly cut ruts.
+The native MovingWaterBed test verifies displacement waves, dry-bank blocking,
+new-channel wetting, no invented water, and no depth safety clamps.
+
+Actual wheel/hull occupancy feeds the existing field once. GTWaterSubsystem
+returns the finite water column over the mud bed. Mud water remains kind Rut
+for coating consumers, with an explicit simulated-mud flag for existing hull
+forces. The original pool is replaced only in the test copy. Rendering uses
+the wave texture for surface height/normal and the fine soil field for bank
+clipping; a full-precision original-landscape texture supports elevated beds.
+Closed-basin sampling ignores dry-cell ground heights when interpolating the
+free surface, preventing water from tilting upward toward dry clods.
+
+The map uses 126 x 126 cells at 25 cm. Each pond is capped at 128 x 128;
+gt.Water.Mud.MaxActive defaults to one (maximum four). Candidate selection is
+one bounded top-four scan per frame. Sleeping initialized ponds retain their
+volume. Mud block revision stamps feed changed-bed regions at up to 10 Hz;
+field texture upload is capped at 30 Hz. This bounds active CPU work, not total
+world memory. Distant display, visited-pond paging, inter-domain exchange,
+fluid saves, multiplayer focus and infiltration/erosion remain future work.
+
+The initial map-copy setup accidentally edited the source world because
+save_map did not switch the active editor level. Recovery removed the added
+sheet and restored the accepted pool's mesh/material/transform from the
+untouched copy; repair-report.json records backups and checks. Setup now
+loads the copy explicitly and verifies the baseline file hash. The legacy
+MW1 setup script/report were restored to their verified clean pre-turn Git
+versions; new setup and evidence use distinct shared-water names/directories.
+
+Guide: Art/MUD_WATER_SHARED.txt. Rebuild: Art/mud_water.ps1 -Mode Setup.
+Evidence: Art/Export/MudWaterShared/shared-mud-water.html, review-report.json,
+review-run-status.json and shared-validation.json. Render captures pause the
+world; the report separately records a short unpaused rendered segment. CPU
+field statistics are not a whole-game FPS claim. No Benmore map rollout yet.
+
+Final shared-water evidence: build succeeded; 9 LandscapeMud and 4 Water tests
+passed; rendered review passed all 10 integration gates with clean exit 0.
+All ten PNGs were produced; overview and close sequence frames were inspected.
+The final 15,876-cell run averaged 0.357 ms per water step, peak 4.237 ms.
+Changed-bed updates peaked at 0.694 ms (the earlier full scan reached 3.002 ms).
+Maximum observed volume error was 0.00000005 m3; depth clamp count was zero.
+The final eight-second rendered segment added no simulation deficit; the whole
+review accumulated 0.0238 s including render transitions. Do not present this
+as a full-scene performance certification. The review HTML's local image links
+and JavaScript syntax were checked; no browser-render validation was performed.
+
+RUT INTERACTION -- 2026-10-13
+New opt-in bUseRutInteraction is enabled only in private copies under
+/Game/GrandTour/ArtTests/RutInteraction: L_RutInteraction, _Firm and _Deep.
+Both approved L_MudWater and L_MudProvingGround map hashes remain unchanged.
+Directional pressure transport adds a rolling bow, heel-biased wheelspin,
+world-stable broken shoulders and bounded local wet-bank relaxation. Actual
+soil-cell volume is conserved. The physics snapshot now uses the steered tyre
+axis for yielding bank resistance. The rolling toe accounts for the circular
+wheel clearance; forces only remove motion and remain impulse-limited.
+
+Validation: final build succeeded; 11 GrandTour.LandscapeMud native tests passed;
+12 actual-vehicle integration checks passed, including applied steering angles,
+lateral bank work, mobility, contact, soil/water balance and mud-only profiling.
+Standard standing settlement 16.88 cm (control 16.87), firm 9.68, deep 32.45.
+Nine-second standard net progress 15.19 m vs 15.32 control; actual added bank
+work 104.46 J, including 60.06 J lateral. Ground observation/stamping averaged
+1.55 ms per update (30 Hz cap), vs 1.07 control; new bank probes averaged
+0.000384 ms per active wheel step. Shared water retained volume without clamps.
+
+Matched rendered benchmark: control mean frame 16.83 ms / p99 24.42 ms;
+worked 17.14 / 27.03 ms; all sampled wheel contacts remained on mud. All five
+benchmark checks passed and the final process exited 0. Original review frame
+profile includes a GC event (19.34 ms mean / 64.21 ms p99); it is retained in
+the report. These are short local editor checks, not proof of whole-map scale.
+
+Rejected first review preserved at Saved/RutInteraction-FirstReview. It revealed
+excessive toe resistance; the corrected model was rebuilt and rerun. A later
+straight-driving review exposed a harness steering override and the legacy
+travel-vector/tyre-axis distinction; final tests verify real wheel steer and
+lateral work. One benchmark completed its data but returned C0000005 after
+editor shutdown. Its reports are preserved as Saved/RutInteraction-Benchmark-
+Teardown-*.json. Explicitly draining and unloading the review worlds before
+exit produced a fresh clean-exit benchmark; no failing run is packaged as passed.
+
+Guide: Art/RUT_INTERACTION.txt. Review: Art/Export/RutInteraction/rut-interaction.html.
+Images were inspected directly; HTML references and source were validated.
+No browser-rendered page review, no commits and no Benmore deployment.
+
+2026-10-13 — Shared mud-water contact foam
+Added broken cream/tan waterline foam to M_MudWater, shared by L_MudWater and
+the three L_RutInteraction maps. Fine terrain heights locate clod edges;
+pre-water scene depth locates visible rock/timber/tyre intersections below
+the original landscape. Occupancy changes feed a passive, advected 2.8-second
+foam trail, capped at 30 Hz on already-active ponds. Water and soil forces
+are unchanged. No map geometry edits. Native tests 5/5; rendered/live gates
+5/5 with clean exit. Measured cosmetic update 0.0549 ms mean / 0.1751 ms peak;
+water error -3e-8 m3, no clamps or time deficit. Six native comparison captures.
+Guide: Art/MUD_CONTACT_FOAM.txt
+Review: Art/Export/MudContactFoam/contact-foam.html
+
+2026-10-14 — Dry granular sand comparison
+Private /Game/GrandTour/ArtTests/SandTerrain/L_SandTerrain, with a loose
+38 cm layer and compacted 12 cm lane. Opt-in granular grip/resistance,
+broader conservative shoulder transport, rounded unique rest relief and
+dry dust. Loaded settlement 16.58 / 4.09 cm; original mud assets protected.
+Native soil/coating/dust checks 14/14; eight live gates; clean final exits.
+Short capped editor frame means 16.95 / 16.73 ms, not whole-map profiling.
+Guide: Art/SAND_TERRAIN.txt
+Review: Art/Export/SandTerrain/sand-terrain.html

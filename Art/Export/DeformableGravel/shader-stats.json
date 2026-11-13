@@ -1,0 +1,55 @@
+{
+  "ok": true,
+  "rows": [
+    {
+      "role": "study field",
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelField",
+      "pixel_instructions": 410,
+      "vertex_instructions": 263,
+      "samplers": 6,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "DG1 field",
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GT_Gravel",
+      "pixel_instructions": 666,
+      "vertex_instructions": 263,
+      "samplers": 5,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "landscape (DG1 arrays)",
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "pixel_instructions": 201,
+      "vertex_instructions": 155,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "loose stones",
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GT_GravelStone",
+      "pixel_instructions": 197,
+      "vertex_instructions": 201,
+      "samplers": 1,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "study stones",
+      "material": "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone",
+      "pixel_instructions": 191,
+      "vertex_instructions": 153,
+      "samplers": 1,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    }
+  ]
+}

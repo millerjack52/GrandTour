@@ -1,0 +1,383 @@
+{
+  "ok": true,
+  "slices": [
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardColor.T_MS_BogStandardColor",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStandardColor.png",
+      "source_bytes": 1502607,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmColor.T_MS_BogFirmColor",
+      "source": "Art/Export/MudStyleUE/T_MS_BogFirmColor.png",
+      "source_bytes": 1838383,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepColor.T_MS_BogDeepColor",
+      "source": "Art/Export/MudStyleUE/T_MS_BogDeepColor.png",
+      "source_bytes": 598166,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyColor.T_MS_BogStonyColor",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStonyColor.png",
+      "source_bytes": 1393409,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardNormal.T_MS_BogStandardNormal",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStandardNormal.png",
+      "source_bytes": 5943005,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmNormal.T_MS_BogFirmNormal",
+      "source": "Art/Export/MudStyleUE/T_MS_BogFirmNormal.png",
+      "source_bytes": 8269838,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepNormal.T_MS_BogDeepNormal",
+      "source": "Art/Export/MudStyleUE/T_MS_BogDeepNormal.png",
+      "source_bytes": 3288610,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyNormal.T_MS_BogStonyNormal",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStonyNormal.png",
+      "source_bytes": 6082835,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardRough.T_MS_BogStandardRough",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStandardRough.png",
+      "source_bytes": 1140254,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmRough.T_MS_BogFirmRough",
+      "source": "Art/Export/MudStyleUE/T_MS_BogFirmRough.png",
+      "source_bytes": 1413106,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepRough.T_MS_BogDeepRough",
+      "source": "Art/Export/MudStyleUE/T_MS_BogDeepRough.png",
+      "source_bytes": 855719,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyRough.T_MS_BogStonyRough",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStonyRough.png",
+      "source_bytes": 1295534,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardHeight.T_MS_BogStandardHeight",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStandardHeight.png",
+      "source_bytes": 7551984,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmHeight.T_MS_BogFirmHeight",
+      "source": "Art/Export/MudStyleUE/T_MS_BogFirmHeight.png",
+      "source_bytes": 8113588,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepHeight.T_MS_BogDeepHeight",
+      "source": "Art/Export/MudStyleUE/T_MS_BogDeepHeight.png",
+      "source_bytes": 7793661,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyHeight.T_MS_BogStonyHeight",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStonyHeight.png",
+      "source_bytes": 7764817,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardORH.T_MS_BogStandardORH",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStandardORH.png",
+      "source_bytes": 4170001,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmORH.T_MS_BogFirmORH",
+      "source": "Art/Export/MudStyleUE/T_MS_BogFirmORH.png",
+      "source_bytes": 5035229,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepORH.T_MS_BogDeepORH",
+      "source": "Art/Export/MudStyleUE/T_MS_BogDeepORH.png",
+      "source_bytes": 2662165,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyORH.T_MS_BogStonyORH",
+      "source": "Art/Export/MudStyleUE/T_MS_BogStonyORH.png",
+      "source_bytes": 4324104,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    }
+  ],
+  "arrays": [
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor.TA_MS_BogColor",
+      "created": false,
+      "slices": [
+        "T_MS_BogStandardColor",
+        "T_MS_BogFirmColor",
+        "T_MS_BogDeepColor",
+        "T_MS_BogStonyColor"
+      ],
+      "python_route": {
+        "slices": 4,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "4 slices of 2048 x 2048",
+      "source_slices": 4,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "package_bytes": 6662087
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal.TA_MS_BogNormal",
+      "created": false,
+      "slices": [
+        "T_MS_BogStandardNormal",
+        "T_MS_BogFirmNormal",
+        "T_MS_BogDeepNormal",
+        "T_MS_BogStonyNormal"
+      ],
+      "python_route": {
+        "slices": 4,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "4 slices of 2048 x 2048",
+      "source_slices": 4,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>",
+      "package_bytes": 19349005
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough.TA_MS_BogRough",
+      "created": false,
+      "slices": [
+        "T_MS_BogStandardRough",
+        "T_MS_BogFirmRough",
+        "T_MS_BogDeepRough",
+        "T_MS_BogStonyRough"
+      ],
+      "python_route": {
+        "slices": 4,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "4 slices of 2048 x 2048",
+      "source_slices": 4,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>",
+      "package_bytes": 4483256
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight.TA_MS_BogHeight",
+      "created": false,
+      "slices": [
+        "T_MS_BogStandardHeight",
+        "T_MS_BogFirmHeight",
+        "T_MS_BogDeepHeight",
+        "T_MS_BogStonyHeight"
+      ],
+      "python_route": {
+        "slices": 4,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "4 slices of 2048 x 2048",
+      "source_slices": 4,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_MASKS: 2>",
+      "package_bytes": 20849993
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogORH.TA_MS_BogORH",
+      "created": false,
+      "slices": [
+        "T_MS_BogStandardORH",
+        "T_MS_BogFirmORH",
+        "T_MS_BogDeepORH",
+        "T_MS_BogStonyORH"
+      ],
+      "python_route": {
+        "slices": 4,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "4 slices of 2048 x 2048",
+      "source_slices": 4,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>",
+      "package_bytes": 18581595
+    }
+  ],
+  "route": "Texture2DArray: made by Python (Texture2DArrayFactory), Source Textures set by Python (gave 4,4,4,4,4 slices), the source rebuilt by UGTMudArtLibrary::BuildTextureArray"
+}

@@ -1,0 +1,28 @@
+Water textures, sourced (docs/WATER_PLAN.md stage W4; never painted, never generated).
+
+T_GT_Water_N - the ripple normal carried by the flow
+  Name        Rain Ripples on Puddle (Others 0028)
+  Source      https://www.texturecan.com/details/531/
+  Asset id    others_0028
+  File        others_0028_2k.zip -> others_0028_normal_directx_2k.png (2048 x 2048)
+  Download    https://www.texturecan.com/downloads/others_0028/others_0028_2k_tghjEo.zip
+  Author      TextureCan.com
+  Licence     Creative Commons CC0 1.0 Universal (public domain; no attribution required)
+              https://www.texturecan.com/terms/ : "All the PBR textures, graphics and photos
+              offered by TextureCan.com are under the Creative Commons CC0 1.0 Universe License"
+              https://creativecommons.org/publicdomain/zero/1.0/
+  Downloaded  2026-09-17 with curl
+  Why this    A real water surface's ripple field, seamless and tileable, and the set ships the
+              DirectX-convention normal (green down), which is what Unreal wants: no flip.
+  Measured    mean 127.7 127.8 255.0 of 255 over 65,536 samples, R over 86-164 (a tangent-space
+              normal about flat, slopes to roughly +/- 0.3 in X) - Art/setup_m6_textures.py logs
+              the imported asset's own size and settings.
+  Imported as /Game/GrandTour/Textures/Water/T_GT_Water_N, TC_Normalmap, sRGB off, no green flip.
+
+Why ambientCG and Poly Haven are not the source: ambientCG's full_json API answers no Material
+for "water" (twelve hits, all ice, ground and surface imperfections) and has no Water001..003;
+Poly Haven's texture list has no water surface at all (four hits, all "waterproof tiles" tags).
+3dtextures.me's Water 001/002 are behind Google Drive links and their pages do not state CC0.
+OpenGameArt's 15-texture water pack with normals is CC-BY 3.0, not CC0.
+
+The foam mask's noise is procedural (the plan allows it there) - no texture.

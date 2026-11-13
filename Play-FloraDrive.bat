@@ -1,0 +1,2 @@
+@echo off
+start "GrandTour Flora Drive" "C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe" "%~dp0GrandTour.uproject" /Game/GrandTour/ArtTests/FloraDrive/L_FloraDrive -game -windowed -ResX=1600 -ResY=900 -GTNoLoad -NoSplash -GTLookKuwahara=0 -GTLidarPerformance=0 -ExecCmds="r.ScreenPercentage 100,r.AntiAliasingMethod 4,sg.AntiAliasingQuality 3,r.Nanite.Tessellation 1,r.Nanite.ProgrammableRaster 1,r.VolumetricFog.GridPixelSize 16,r.VolumetricFog.GridSizeZ 64"

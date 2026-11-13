@@ -1,0 +1,62 @@
+[
+  {
+    "id": "gravel1",
+    "author": "OBXJohn",
+    "title": "Tires on Gravel Road 1",
+    "page": "https://freesound.org/people/OBXJohn/sounds/251661/",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "warning": "Trailer tyre beside recorder on hayride; background tractor/people may remain.",
+    "preview_url": "https://cdn.freesound.org/previews/251/251661_3719168-hq.mp3",
+    "file": "Art\\Audio\\References\\Ground_Recorded_S2\\gravel1_hq_preview.mp3",
+    "sha256": "cb93b99fcb6332312e13b8fd901da5d86c6b08e6ccbcd8d4d43fdde228196d85",
+    "decoded_rate": 44100,
+    "decoded_seconds": 12.826122448979591,
+    "accessed_utc": "2026-10-24T20:42:42.093839+00:00"
+  },
+  {
+    "id": "gravel2",
+    "author": "OBXJohn",
+    "title": "Tires on Gravel Road 2",
+    "page": "https://freesound.org/people/OBXJohn/sounds/251662/",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "warning": "Trailer tyre beneath trailer; background tractor/people may remain.",
+    "preview_url": "https://cdn.freesound.org/previews/251/251662_3719168-hq.mp3",
+    "file": "Art\\Audio\\References\\Ground_Recorded_S2\\gravel2_hq_preview.mp3",
+    "sha256": "7fb1f952ddb3dc2ab3885303870414c7446ab591c7cd5b0defe239a88f34c5e4",
+    "decoded_rate": 44100,
+    "decoded_seconds": 20.793469387755103,
+    "accessed_utc": "2026-10-24T20:42:49.740357+00:00"
+  },
+  {
+    "id": "skid",
+    "author": "kyles",
+    "title": "auto car or van stop brake skid gravel short.flac",
+    "page": "https://freesound.org/people/kyles/sounds/637161/",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "warning": "Short car/van gravel stop; not a sustained sliding loop.",
+    "preview_url": "https://cdn.freesound.org/previews/637/637161_612689-hq.mp3",
+    "file": "Art\\Audio\\References\\Ground_Recorded_S2\\skid_hq_preview.mp3",
+    "sha256": "a116ebdca571da0b897d6baf183d01dfa7a0ca02e073c1dbdc905d3bd2ddfb38",
+    "decoded_rate": 48000,
+    "decoded_seconds": 1.126125,
+    "accessed_utc": "2026-10-24T20:42:51.476748+00:00"
+  },
+  {
+    "id": "grass_foley",
+    "author": "BBoz87",
+    "title": "Rolling In Grass Loop",
+    "page": "https://freesound.org/people/BBoz87/sounds/816446/",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "warning": "Recorded towel rubbed against shirt, NOT real tyres on grass.",
+    "preview_url": "https://cdn.freesound.org/previews/816/816446_13172217-hq.mp3",
+    "file": "Art\\Audio\\References\\Ground_Recorded_S2\\grass_foley_hq_preview.mp3",
+    "sha256": "9b37724558930d19d28e2ab1fb2fcc1fa1016717be3e551d7424b72c6953e3a3",
+    "decoded_rate": 44100,
+    "decoded_seconds": 4.380430839002267,
+    "accessed_utc": "2026-10-24T20:42:53.443986+00:00"
+  }
+]

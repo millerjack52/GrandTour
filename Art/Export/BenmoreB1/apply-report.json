@@ -1,0 +1,706 @@
+{
+ "ok": true,
+ "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+ "timings_collected": false,
+ "layers": {
+  "Tarmac": {
+   "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Tarmac.LI_Tarmac",
+   "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Tarmac.PM_Tarmac",
+   "blend": "<LandscapeTargetLayerBlendMethod.NONE: 0>",
+   "samples": 256,
+   "mean": 0.0,
+   "nonzero": 0,
+   "error": null
+  },
+  "Dirt": {
+   "info": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/FirmGroundLayers/LI_Dirt.LI_Dirt",
+   "phys": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/PM_Benmore_FirmGround.PM_Benmore_FirmGround",
+   "blend": "<LandscapeTargetLayerBlendMethod.NONE: 0>",
+   "samples": 256,
+   "mean": 0.0,
+   "nonzero": 0,
+   "error": null
+  },
+  "Mud": {
+   "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Mud.LI_Mud",
+   "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Mud.PM_Mud",
+   "blend": "<LandscapeTargetLayerBlendMethod.NONE: 0>",
+   "samples": 256,
+   "mean": 0.0,
+   "nonzero": 0,
+   "error": null
+  },
+  "Snow": {
+   "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Snow.LI_Snow",
+   "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Snow.PM_Snow",
+   "blend": "<LandscapeTargetLayerBlendMethod.NONE: 0>",
+   "samples": 256,
+   "mean": 0.0,
+   "nonzero": 0,
+   "error": null
+  },
+  "Scrub": {
+   "info": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/FirmGroundLayers/LI_Scrub.LI_Scrub",
+   "phys": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/PM_Benmore_FirmGround.PM_Benmore_FirmGround",
+   "blend": "<LandscapeTargetLayerBlendMethod.NONE: 0>",
+   "samples": 256,
+   "mean": 1.0,
+   "nonzero": 256,
+   "error": null
+  },
+  "Bog": {
+   "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Bog.LI_Bog",
+   "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Bog.PM_Bog",
+   "blend": "<LandscapeTargetLayerBlendMethod.NONE: 0>",
+   "samples": 256,
+   "mean": 0.0,
+   "nonzero": 0,
+   "error": null
+  }
+ },
+ "mpc": {
+  "path": "/Game/GrandTour/Terrain/MPC_GT_GroundDetail",
+  "scalars": 27,
+  "vectors": 5
+ },
+ "function": {
+  "path": "/Game/GrandTour/Terrain/GroundDetail/MF_GT_GroundDetail",
+  "inputs": [
+   "Base",
+   "ScrubW",
+   "GrassW",
+   "WorldPos",
+   "PomEnable",
+   "Rough",
+   "Normal",
+   "AO"
+  ],
+  "outputs": [
+   "Colour",
+   "Normal",
+   "Roughness",
+   "AO"
+  ],
+  "collection": "/Game/GrandTour/Terrain/MPC_GT_GroundDetail",
+  "mpc_scalars": [
+   "GDTileCm",
+   "GDTileBCm",
+   "GDRotBDeg",
+   "GDMaskM",
+   "GDTintM",
+   "GDHueShare",
+   "GDMeanLum0",
+   "GDMeanLum1",
+   "GDUnderGrassTone",
+   "GDNormalStrength",
+   "GDPomDepthCm",
+   "GDPomNearM",
+   "GDPomFarM",
+   "GDPomMinSteps",
+   "GDPomMaxSteps",
+   "GDPomRefine",
+   "GDPomShadowM",
+   "GDPomShadowStrength",
+   "GDFadeNearM",
+   "GDFadeFarM",
+   "GroundDetail"
+  ],
+  "mpc_vectors": [
+   "GDOffsetB",
+   "GDMaskEdges",
+   "GDTintEdges",
+   "GDTintDamp",
+   "GDTintDry"
+  ]
+ },
+ "strip_probe": {
+  "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape",
+  "errors": [
+   "(Function MF_Weather) (Node CollectionParameter) Material references too many MaterialParameterCollections!  A material may only reference 2 different collections."
+  ],
+  "pixel": 0,
+  "samplers": -1
+ },
+ "scatter_import_path": {
+  "SM_GD_Pebble0_LG": "Interchange",
+  "SM_GD_Pebble1_LG": "Interchange",
+  "SM_GD_Pebble2_LG": "Interchange",
+  "SM_GD_Pebble3_LG": "Interchange",
+  "SM_GD_Twig0_LG": "Interchange",
+  "SM_GD_Twig1_LG": "Interchange",
+  "SM_GD_Twig2_LG": "Interchange"
+ },
+ "scatter_meshes": [
+  {
+   "name": "SM_GD_Clod0",
+   "family": "Clods",
+   "size_cm": 3.0,
+   "min_z_cm": -0.401,
+   "max_z_cm": 1.181
+  },
+  {
+   "name": "SM_GD_Clod1",
+   "family": "Clods",
+   "size_cm": 4.5,
+   "min_z_cm": -0.848,
+   "max_z_cm": 1.772
+  },
+  {
+   "name": "SM_GD_Clod2",
+   "family": "Clods",
+   "size_cm": 6.0,
+   "min_z_cm": -0.869,
+   "max_z_cm": 1.689
+  },
+  {
+   "name": "SM_GD_Clod3",
+   "family": "Clods",
+   "size_cm": 8.0,
+   "min_z_cm": -1.065,
+   "max_z_cm": 2.395
+  },
+  {
+   "name": "SM_GD_Clod4",
+   "family": "Clods",
+   "size_cm": 10.0,
+   "min_z_cm": -1.398,
+   "max_z_cm": 4.161
+  },
+  {
+   "name": "SM_GD_Clod5",
+   "family": "Clods",
+   "size_cm": 12.0,
+   "min_z_cm": -1.766,
+   "max_z_cm": 4.741
+  },
+  {
+   "name": "SM_GD_Pebble0_LG",
+   "family": "Pebbles",
+   "size_cm": 1.2,
+   "min_z_cm": -0.217,
+   "max_z_cm": 0.507
+  },
+  {
+   "name": "SM_GD_Pebble1_LG",
+   "family": "Pebbles",
+   "size_cm": 2.2,
+   "min_z_cm": -0.336,
+   "max_z_cm": 0.785
+  },
+  {
+   "name": "SM_GD_Pebble2_LG",
+   "family": "Pebbles",
+   "size_cm": 3.5,
+   "min_z_cm": -0.67,
+   "max_z_cm": 1.563
+  },
+  {
+   "name": "SM_GD_Pebble3_LG",
+   "family": "Pebbles",
+   "size_cm": 5.0,
+   "min_z_cm": -0.866,
+   "max_z_cm": 2.02
+  },
+  {
+   "name": "SM_GD_Litter0",
+   "family": "Litter",
+   "size_cm": 12.0,
+   "min_z_cm": -0.439,
+   "max_z_cm": 2.269
+  },
+  {
+   "name": "SM_GD_Litter1",
+   "family": "Litter",
+   "size_cm": 16.0,
+   "min_z_cm": -0.401,
+   "max_z_cm": 2.42
+  },
+  {
+   "name": "SM_GD_Litter2",
+   "family": "Litter",
+   "size_cm": 21.0,
+   "min_z_cm": -0.44,
+   "max_z_cm": 3.343
+  },
+  {
+   "name": "SM_GD_Litter3",
+   "family": "Litter",
+   "size_cm": 26.0,
+   "min_z_cm": -0.409,
+   "max_z_cm": 2.889
+  },
+  {
+   "name": "SM_GD_Twig0_LG",
+   "family": "Twigs",
+   "size_cm": 15.0,
+   "min_z_cm": -0.211,
+   "max_z_cm": 0.492
+  },
+  {
+   "name": "SM_GD_Twig1_LG",
+   "family": "Twigs",
+   "size_cm": 26.0,
+   "min_z_cm": -0.574,
+   "max_z_cm": 1.339
+  },
+  {
+   "name": "SM_GD_Twig2_LG",
+   "family": "Twigs",
+   "size_cm": 40.0,
+   "min_z_cm": -0.607,
+   "max_z_cm": 1.417
+  }
+ ],
+ "grass_types": {
+  "LGT_GT_SoilScatter": {
+   "path": "/Game/GrandTour/Terrain/GroundDetail/LGT_GT_SoilScatter",
+   "varieties": [
+    {
+     "mesh": "SM_GD_Clod0",
+     "family": "Clods",
+     "per_10m2": 4.1453,
+     "per_m2_mean": 0.2156,
+     "cull_seen_m": [
+      20.0,
+      35.0
+     ],
+     "cull_asset_cm": [
+      3333,
+      5833
+     ],
+     "scale": [
+      0.8,
+      1.25
+     ],
+     "dynamic_shadow": true
+    },
+    {
+     "mesh": "SM_GD_Clod1",
+     "family": "Clods",
+     "per_10m2": 2.5483,
+     "per_m2_mean": 0.1325,
+     "cull_seen_m": [
+      20.0,
+      35.0
+     ],
+     "cull_asset_cm": [
+      3333,
+      5833
+     ],
+     "scale": [
+      0.8,
+      1.25
+     ],
+     "dynamic_shadow": true
+    },
+    {
+     "mesh": "SM_GD_Clod2",
+     "family": "Clods",
+     "per_10m2": 1.8044,
+     "per_m2_mean": 0.0938,
+     "cull_seen_m": [
+      20.0,
+      35.0
+     ],
+     "cull_asset_cm": [
+      3333,
+      5833
+     ],
+     "scale": [
+      0.8,
+      1.25
+     ],
+     "dynamic_shadow": true
+    },
+    {
+     "mesh": "SM_GD_Clod3",
+     "family": "Clods",
+     "per_10m2": 1.2776,
+     "per_m2_mean": 0.0664,
+     "cull_seen_m": [
+      20.0,
+      35.0
+     ],
+     "cull_asset_cm": [
+      3333,
+      5833
+     ],
+     "scale": [
+      0.8,
+      1.25
+     ],
+     "dynamic_shadow": true
+    },
+    {
+     "mesh": "SM_GD_Clod4",
+     "family": "Clods",
+     "per_10m2": 0.9775,
+     "per_m2_mean": 0.0508,
+     "cull_seen_m": [
+      20.0,
+      35.0
+     ],
+     "cull_asset_cm": [
+      3333,
+      5833
+     ],
+     "scale": [
+      0.8,
+      1.25
+     ],
+     "dynamic_shadow": true
+    },
+    {
+     "mesh": "SM_GD_Clod5",
+     "family": "Clods",
+     "per_10m2": 0.7854,
+     "per_m2_mean": 0.0408,
+     "cull_seen_m": [
+      20.0,
+      35.0
+     ],
+     "cull_asset_cm": [
+      3333,
+      5833
+     ],
+     "scale": [
+      0.8,
+      1.25
+     ],
+     "dynamic_shadow": true
+    },
+    {
+     "mesh": "SM_GD_Pebble0_LG",
+     "family": "Pebbles",
+     "per_10m2": 14.8663,
+     "per_m2_mean": 0.773,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.3
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Pebble1_LG",
+     "family": "Pebbles",
+     "per_10m2": 7.1831,
+     "per_m2_mean": 0.3735,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.3
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Pebble2_LG",
+     "family": "Pebbles",
+     "per_10m2": 4.1147,
+     "per_m2_mean": 0.214,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.3
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Pebble3_LG",
+     "family": "Pebbles",
+     "per_10m2": 2.682,
+     "per_m2_mean": 0.1395,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.3
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Twig0_LG",
+     "family": "Twigs",
+     "per_10m2": 0.5269,
+     "per_m2_mean": 0.0274,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.75,
+      1.2
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Twig1_LG",
+     "family": "Twigs",
+     "per_10m2": 0.2723,
+     "per_m2_mean": 0.0142,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.75,
+      1.2
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Twig2_LG",
+     "family": "Twigs",
+     "per_10m2": 0.1624,
+     "per_m2_mean": 0.0084,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.75,
+      1.2
+     ],
+     "dynamic_shadow": false
+    }
+   ],
+   "density_scaling": false,
+   "cull_distance_scale": 0.6000000238418579,
+   "lighting": "no distance-field lighting, mesh out of ray tracing; shadows only for clods",
+   "align_to_surface": true,
+   "random_yaw": true
+  },
+  "LGT_GT_GrassLitter": {
+   "path": "/Game/GrandTour/Terrain/GroundDetail/LGT_GT_GrassLitter",
+   "varieties": [
+    {
+     "mesh": "SM_GD_Litter0",
+     "family": "Litter",
+     "per_10m2": 1.8389,
+     "per_m2_mean": 0.0956,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.2
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Litter1",
+     "family": "Litter",
+     "per_10m2": 1.3021,
+     "per_m2_mean": 0.0677,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.2
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Litter2",
+     "family": "Litter",
+     "per_10m2": 0.9395,
+     "per_m2_mean": 0.0489,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.2
+     ],
+     "dynamic_shadow": false
+    },
+    {
+     "mesh": "SM_GD_Litter3",
+     "family": "Litter",
+     "per_10m2": 0.7271,
+     "per_m2_mean": 0.0378,
+     "cull_seen_m": [
+      15.0,
+      25.0
+     ],
+     "cull_asset_cm": [
+      2500,
+      4167
+     ],
+     "scale": [
+      0.8,
+      1.2
+     ],
+     "dynamic_shadow": false
+    }
+   ],
+   "density_scaling": false,
+   "cull_distance_scale": 0.6000000238418579,
+   "lighting": "no distance-field lighting, mesh out of ray tracing; shadows only for clods",
+   "align_to_surface": true,
+   "random_yaw": true
+  }
+ },
+ "surfaces": {
+  "PM_Benmore_GravelFirm": {
+   "friction": 0.6200000047683716,
+   "rolling_resistance": 0.029999999329447746,
+   "sinkage_rate": 0.0,
+   "max_sinkage": 0.05000000074505806,
+   "gravel_spray": true,
+   "tints": [
+    [
+     0.1802,
+     0.1766,
+     0.1658
+    ],
+    [
+     0.2153,
+     0.211,
+     0.198
+    ],
+    [
+     0.2,
+     0.196,
+     0.184
+    ]
+   ]
+  },
+  "PM_Benmore_GravelLoose": {
+   "friction": 0.6200000047683716,
+   "rolling_resistance": 0.029999999329447746,
+   "sinkage_rate": 0.0,
+   "max_sinkage": 0.05000000074505806,
+   "gravel_spray": true,
+   "tints": [
+    [
+     0.0731,
+     0.072,
+     0.0687
+    ],
+    [
+     0.3301,
+     0.3252,
+     0.3103
+    ],
+    [
+     0.2179,
+     0.2147,
+     0.2049
+    ]
+   ]
+  },
+  "PM_Benmore_WetGround": {
+   "friction": 0.4960000216960907,
+   "rolling_resistance": 0.04800000041723251,
+   "sinkage_rate": 0.0,
+   "max_sinkage": 0.05000000074505806,
+   "gravel_spray": false,
+   "tints": null
+  },
+  "PM_Benmore_FirmGround": {
+   "friction": 0.6200000047683716,
+   "rolling_resistance": 0.029999999329447746,
+   "sinkage_rate": 0.0,
+   "max_sinkage": 0.05000000074505806
+  }
+ },
+ "attach": {
+  "material": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/M_GC_Terrain.M_GC_Terrain",
+  "gravel_pom_switch_moved": 0,
+  "bed_uv": "(P.xy*.01-float2(-1581.1011904762,-1250.0000000000)+0.6200396825)/float2(2832.3412698413,2501.2400793651)",
+  "grass_entries": [
+   "LowGrass",
+   "CrownTussock",
+   "ShaggyTussock",
+   "TallClumps",
+   "DistantTussock",
+   "GTSoilScatter",
+   "GTGrassLitter"
+  ],
+  "painterly_grass_wiring_kept": [
+   "MaterialExpressionTextureSample_1",
+   "MaterialExpressionTextureSample_1",
+   "MaterialExpressionTextureSample_1",
+   "MaterialExpressionTextureSample_1",
+   "MaterialExpressionTextureSample_1"
+  ],
+  "physical_material_output": [
+   "PM_Benmore_GravelFirm",
+   "PM_Benmore_GravelLoose",
+   "PM_Benmore_WetGround",
+   "PM_Benmore_FirmGround"
+  ],
+  "where": "between the river-life pass (CP_Source pass-throughs) and the ChannelPilot bed; the bed overrides it"
+ },
+ "grass_cull_distance_scale": 0.6000000238418579,
+ "grass_density_scale": 0.5,
+ "physical_material_wait": {
+  "seconds": 1511,
+  "probes": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ]
+ },
+ "physical_material_built": false,
+ "saved": true
+}

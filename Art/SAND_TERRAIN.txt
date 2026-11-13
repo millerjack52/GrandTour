@@ -1,0 +1,78 @@
+SAND TERRAIN — isolated drivable comparison
+
+Open /Game/GrandTour/ArtTests/SandTerrain/L_SandTerrain.
+The PlayerStart faces +X in the loose lane at Y=-280 cm. The compacted lane
+is alongside at Y=+350 cm (to the right when facing +X). Drive along either
+lane, stop, pull away and cross between them. The change is gradual.
+
+Loose: 38 cm available soil layer; softness approximately 0.88–0.97.
+Compacted: 12 cm layer; softness approximately 0.22–0.29.
+Layer thickness is available material, not a promised wheel sink depth.
+Loaded equilibrium depends on weight, softness, existing relief and the
+mineral base. Both use the actual Chaos wheel support path.
+
+The opted-in granular law separates grip, lateral grip and rolling work
+from wet clay. Compressed sand becomes firmer; excess wheelspin loses
+traction. Local displaced material spreads into wider shoulders and
+relaxes toward a shallower bank angle while the tyre is working it.
+Cut and deposited volumes remain equal. This is a bounded contact model,
+not a simulation of every grain or of after-departure dune avalanches.
+
+The material uses a unique physical height field, broad colour variation,
+fine distance-filtered grain normals and a light directional tread mark.
+Numeric paint/rest textures are saved linear, uncompressed and without
+mips, and checked again in the fresh editor used for review.
+The scene uses existing dry wheel dust. Wet mud flicks and tyre mud coating
+are disabled for this dry study. No water surface is present.
+
+Surface controls: Use Granular Response, Use Soil Shear Response and Use
+Rut Interaction are all enabled here. Layer Depth Scale changes the
+available layer; Bearing Strength changes yielding under load;
+Settlement Speed Scale changes the rate of settlement. Granular response
+defaults off, preserving the accepted mud maps.
+
+Rebuild numeric data:
+  UE bundled Python: Art/tools/make_sand_terrain.py
+Before each build/editor invocation, run separately:
+  powershell -NoProfile -File Art/wait_unreal_free.ps1 -MaxMinutes 0
+Compile C++:
+  powershell -NoProfile -File Art/build_guarded.ps1
+Then run (with a separate preflight before each):
+  powershell -NoProfile -File Art/sand_terrain.ps1 -Mode Setup
+  powershell -NoProfile -File Art/sand_terrain.ps1 -Mode Tests
+  powershell -NoProfile -File Art/sand_terrain.ps1 -Mode Review
+Package verified native captures:
+  UE bundled Python: Art/tools/make_sand_terrain_review.py
+
+Review: Art/Export/SandTerrain/sand-terrain.html
+Live measurements: Art/Export/SandTerrain/review-report.json
+Process validation: *-run-status.json in the same directory.
+Native suite: GrandTour.LandscapeMud (12 tests including GranularSand),
+GrandTour.Mud.CarMud and GrandTour.DustLab.Emission (14 total).
+Runtime checks cover sinkage separation, traversal, granular contact,
+dryness, volume conservation, dust emission, absence of wet mud coating
+and finite car positions.
+Frames are short local editor runs capped at 60 fps, not a whole-map
+scalability guarantee. Existing active tiles/upload budgets are reused.
+
+Original L_RutInteraction and M_ProvingSoil files are hash-protected during
+setup. Assets are private to SandTerrain. No Benmore deployment or commit.
+Earlier rejected review report/logs are retained under
+Saved/SandTerrain/FirstReview; these are not the packaged final evidence.
+
+2026-10-14 final local validation:
+Build succeeded. Native checks 14/14; live gates 8/8. Setup, tests and final
+render processes each exited 0 with fresh reports. Loaded settlement was
+16.58 cm loose / 4.09 cm compacted. Half throttle in low range travelled
+5.59 m in 6.10 s loose / 20.50 m in 4.55 s compacted (lane-end cutoff).
+Mean frame time 16.95 / 16.73 ms; p99 22.75 / 17.05 ms, at a 60 fps cap.
+Soil observation mean 1.50 / 1.26 ms in these small test passes.
+Seven unretouched native captures inspected. HTML links/source validated;
+no browser-rendered page QA. Handling and art remain subject to owner review;
+the simplified grain shading and occasional angular shading at fresh track
+shoulders are still prototype details, not a claim of finished MudRunner parity.
+
+The broader CarMud regression fixture needed real tread rotation when
+preparing its coating/wash tests. A stationary tyre's lack of full coating
+is now asserted explicitly. Production mud coating behaviour was preserved;
+only opted-in granular terrain is excluded from wet-clay pickup.

@@ -1,0 +1,48 @@
+// FS1/CD sprays use diamond UVs: base (0,.5), sides (.55,0/1), tip (1,.5).
+// Analytic rounded leaflets, no extra texture residency or triangle count.
+float2 uv=UV;
+float dist=length(Camera-P);
+float fade=saturate(LeafStrength*Review)*(1-smoothstep(NearCm,FarCm,dist));
+float2 dpdxUV=ddx(uv),dpdyUV=ddy(uv);float3 px=ddx(P),py=ddy(P);
+float uvFootprint=length(abs(dpdxUV)+abs(dpdyUV));
+Normal=OldN;Subsurface=OldSub;Rough=OldRough;Mask=1;
+[branch] if(fade<.001)return Base;
+float best=100;float2 leafQ=0;float2 axis=float2(1,0);float rib=0;
+// Five overlapping rounded leaflets forming one attached spray, not floating dots.
+[unroll] for(int i=0;i<5;i++){
+ float2 centre;float2 size;float angle;
+ if(i==0){centre=float2(.72,.5);size=float2(.235,.135);angle=0;}
+ else {
+  float side=(i%2==0)?1:-1;float row=(i>2)?1:0;
+  centre=float2(.31+row*.22,.5+side*(.12+row*.08));
+  size=float2(.205,.115);angle=side*(.52+row*.22);
+ }
+ float2 a=float2(cos(angle),sin(angle)),b=float2(-a.y,a.x);
+ float2 delta=uv-centre,q=float2(dot(delta,a),dot(delta,b))/size;
+ float shape=length(q)-1;
+ if(shape<best){best=shape;leafQ=q;axis=a;}
+}
+// Rounded stem joins the leaflets. The silhouette fades to the original spray
+// before distant LODs; derivative widening avoids brittle subpixel slivers.
+float stem=max(abs(uv.y-.5)-.024,max(.025-uv.x,uv.x-.79));
+float edge=min(best,stem*5);
+float aa=max(uvFootprint*6,.015);
+Mask=lerp(1,saturate(.5-edge/aa),fade);
+float det=dpdxUV.x*dpdyUV.y-dpdxUV.y*dpdyUV.x;
+float inv=abs(det)>1e-10?1/det:0;
+float3 T=normalize((px*dpdyUV.y-py*dpdxUV.y)*inv+float3(1e-8,0,0));
+float3 B=normalize((-px*dpdyUV.x+py*dpdxUV.x)*inv+float3(0,1e-8,0));
+float3 N=normalize(OldN);
+// Smooth domed leaflet normals and a gentle midrib fold; world-space inputs.
+float2 bend=leafQ*float2(.20,.43);
+float2 grad=axis*bend.x+float2(-axis.y,axis.x)*bend.y;
+float3 tangent=grad.x*T+grad.y*B;tangent-=N*dot(tangent,N);
+Normal=normalize(lerp(N,normalize(N+tangent*Curvature),fade));
+float veinWidth=max(.045,uvFootprint*8);
+float vein=1-smoothstep(veinWidth,veinWidth*2,abs(leafQ.y));
+float edgeTint=smoothstep(.55,1,length(leafQ));
+float colourDetail=1-.08*edgeTint+.055*vein;
+float3 colour=Base*lerp(1,colourDetail,fade);
+Subsurface=lerp(OldSub,colour*Transmission*lerp(1,.68,vein),fade);
+Rough=lerp(OldRough,.68+.10*edgeTint,fade);
+return colour;

@@ -1,0 +1,27 @@
+{
+  "reviewed_utc": "2026-10-08T06:19:15.363801+00:00",
+  "visually_reviewed": true,
+  "images": [
+    {
+      "file": "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Gravel_Before.png",
+      "sha256": "ccc038f1d7b383734bd9e37878fbd2c6592f777ba1eaa3831cc0ae6658b6addc"
+    },
+    {
+      "file": "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Gravel_FirstPass.png",
+      "sha256": "2e0732f373745a4f6fdc42d0d7faed3cd9b1e51839df1b8b60f06225af227b32"
+    },
+    {
+      "file": "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Gravel_RepeatedPass.png",
+      "sha256": "ff5b0233f16acf36d513ab52e7f46b760431856383949777990ef3ace6d70544"
+    },
+    {
+      "file": "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Gravel_ShoulderPass.png",
+      "sha256": "41033894995233105ea6ab9644adeb814f65682c7418c29581b8e4026693d060"
+    }
+  ],
+  "observations": [
+    "Before surface is pale warm gray with painted stones and golden tussock margins.",
+    "First and repeated passes leave shallow readable ruts; fresh lane creates a separate pair.",
+    "Windrows remain fairly continuous at grazing angles; additional visual refinement remains."
+  ]
+}

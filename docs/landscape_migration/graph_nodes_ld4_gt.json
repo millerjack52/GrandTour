@@ -1,0 +1,271 @@
+{
+ "ok": true,
+ "project": "GrandTour",
+ "started": "2026-09-27 14:41:10",
+ "graphs": {
+  "/Game/GrandTour/Dressing/PCG/PCG_GT_Forest": {
+   "node_count": 414,
+   "class_counts": {
+    "PCGAttributeFilteringSettings": 44,
+    "PCGAttributeNoiseSettings": 13,
+    "PCGBoundsModifierSettings": 3,
+    "PCGDataFromActorSettings": 1,
+    "PCGDensityFilterSettings": 98,
+    "PCGDifferenceSettings": 35,
+    "PCGDistanceSettings": 1,
+    "PCGGetLandscapeSettings": 1,
+    "PCGGetSplineSettings": 3,
+    "PCGGraphInputOutputSettings": 2,
+    "PCGNormalToDensitySettings": 23,
+    "PCGProjectionSettings": 3,
+    "PCGSplineSamplerSettings": 3,
+    "PCGStaticMeshSpawnerSettings": 61,
+    "PCGSurfaceSamplerSettings": 36,
+    "PCGTransformPointsSettings": 87
+   },
+   "getter_actor_classes": [
+    "PCGDataFromActorSettings:None",
+    "PCGGetLandscapeSettings:/Script/Landscape.LandscapeProxy",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad.BP_OWRoad_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty.BP_OWRoad_Dusty_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel.BP_OWRoad_Gravel_C"
+   ],
+   "edge_count": 551,
+   "edge_signatures": {
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGAttributeFilteringSettings.In": 8,
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGDifferenceSettings.Source": 12,
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGDistanceSettings.Target": 1,
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGNormalToDensitySettings.In": 23,
+    "PCGAttributeNoiseSettings.Out -> PCGDensityFilterSettings.In": 39,
+    "PCGBoundsModifierSettings.Out -> PCGDifferenceSettings.Differences": 105,
+    "PCGDataFromActorSettings.Out -> PCGDifferenceSettings.Differences": 35,
+    "PCGDensityFilterSettings.Out -> PCGDifferenceSettings.Source": 23,
+    "PCGDensityFilterSettings.Out -> PCGDistanceSettings.Source": 1,
+    "PCGDensityFilterSettings.Out -> PCGStaticMeshSpawnerSettings.In": 13,
+    "PCGDensityFilterSettings.Out -> PCGTransformPointsSettings.In": 61,
+    "PCGDifferenceSettings.Out -> PCGDensityFilterSettings.In": 35,
+    "PCGDistanceSettings.Out -> PCGDensityFilterSettings.In": 1,
+    "PCGGetLandscapeSettings.Out -> PCGProjectionSettings.Projection Target": 3,
+    "PCGGetLandscapeSettings.Out -> PCGSurfaceSamplerSettings.Surface": 36,
+    "PCGGetSplineSettings.Out -> PCGSplineSamplerSettings.Spline": 3,
+    "PCGNormalToDensitySettings.Out -> PCGDensityFilterSettings.In": 23,
+    "PCGProjectionSettings.Out -> PCGBoundsModifierSettings.In": 3,
+    "PCGSplineSamplerSettings.Out -> PCGProjectionSettings.In": 3,
+    "PCGSurfaceSamplerSettings.Out -> PCGAttributeFilteringSettings.In": 36,
+    "PCGTransformPointsSettings.Out -> PCGAttributeNoiseSettings.In": 13,
+    "PCGTransformPointsSettings.Out -> PCGStaticMeshSpawnerSettings.In": 48,
+    "PCGTransformPointsSettings.Out -> PCGTransformPointsSettings.In": 26
+   }
+  },
+  "/Game/GrandTour/Dressing/PCG/PCG_GT_Meadow": {
+   "node_count": 62,
+   "class_counts": {
+    "PCGAttributeFilteringSettings": 7,
+    "PCGBoundsModifierSettings": 3,
+    "PCGDataFromActorSettings": 1,
+    "PCGDensityFilterSettings": 9,
+    "PCGDifferenceSettings": 7,
+    "PCGGetLandscapeSettings": 1,
+    "PCGGetSplineSettings": 3,
+    "PCGGraphInputOutputSettings": 2,
+    "PCGNormalToDensitySettings": 2,
+    "PCGProjectionSettings": 3,
+    "PCGSplineSamplerSettings": 3,
+    "PCGStaticMeshSpawnerSettings": 7,
+    "PCGSurfaceSamplerSettings": 7,
+    "PCGTransformPointsSettings": 7
+   },
+   "getter_actor_classes": [
+    "PCGDataFromActorSettings:None",
+    "PCGGetLandscapeSettings:/Script/Landscape.LandscapeProxy",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad.BP_OWRoad_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty.BP_OWRoad_Dusty_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel.BP_OWRoad_Gravel_C"
+   ],
+   "edge_count": 86,
+   "edge_signatures": {
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGDifferenceSettings.Source": 5,
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGNormalToDensitySettings.In": 2,
+    "PCGBoundsModifierSettings.Out -> PCGDifferenceSettings.Differences": 21,
+    "PCGDataFromActorSettings.Out -> PCGDifferenceSettings.Differences": 7,
+    "PCGDensityFilterSettings.Out -> PCGDifferenceSettings.Source": 2,
+    "PCGDensityFilterSettings.Out -> PCGTransformPointsSettings.In": 7,
+    "PCGDifferenceSettings.Out -> PCGDensityFilterSettings.In": 7,
+    "PCGGetLandscapeSettings.Out -> PCGProjectionSettings.Projection Target": 3,
+    "PCGGetLandscapeSettings.Out -> PCGSurfaceSamplerSettings.Surface": 7,
+    "PCGGetSplineSettings.Out -> PCGSplineSamplerSettings.Spline": 3,
+    "PCGNormalToDensitySettings.Out -> PCGDensityFilterSettings.In": 2,
+    "PCGProjectionSettings.Out -> PCGBoundsModifierSettings.In": 3,
+    "PCGSplineSamplerSettings.Out -> PCGProjectionSettings.In": 3,
+    "PCGSurfaceSamplerSettings.Out -> PCGAttributeFilteringSettings.In": 7,
+    "PCGTransformPointsSettings.Out -> PCGStaticMeshSpawnerSettings.In": 7
+   }
+  },
+  "/Game/GrandTour/Dressing/PCG/PCG_GT_Scree": {
+   "node_count": 35,
+   "class_counts": {
+    "PCGAttributeFilteringSettings": 1,
+    "PCGBoundsModifierSettings": 3,
+    "PCGDataFromActorSettings": 1,
+    "PCGDensityFilterSettings": 5,
+    "PCGDifferenceSettings": 3,
+    "PCGGetLandscapeSettings": 1,
+    "PCGGetSplineSettings": 3,
+    "PCGGraphInputOutputSettings": 2,
+    "PCGNormalToDensitySettings": 2,
+    "PCGProjectionSettings": 3,
+    "PCGSplineSamplerSettings": 3,
+    "PCGStaticMeshSpawnerSettings": 3,
+    "PCGSurfaceSamplerSettings": 2,
+    "PCGTransformPointsSettings": 3
+   },
+   "getter_actor_classes": [
+    "PCGDataFromActorSettings:None",
+    "PCGGetLandscapeSettings:/Script/Landscape.LandscapeProxy",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad.BP_OWRoad_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty.BP_OWRoad_Dusty_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel.BP_OWRoad_Gravel_C"
+   ],
+   "edge_count": 43,
+   "edge_signatures": {
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGDifferenceSettings.Source": 1,
+    "PCGBoundsModifierSettings.Out -> PCGDifferenceSettings.Differences": 9,
+    "PCGDataFromActorSettings.Out -> PCGDifferenceSettings.Differences": 3,
+    "PCGDensityFilterSettings.Out -> PCGDifferenceSettings.Source": 2,
+    "PCGDensityFilterSettings.Out -> PCGTransformPointsSettings.In": 3,
+    "PCGDifferenceSettings.Out -> PCGDensityFilterSettings.In": 3,
+    "PCGGetLandscapeSettings.Out -> PCGProjectionSettings.Projection Target": 3,
+    "PCGGetLandscapeSettings.Out -> PCGSurfaceSamplerSettings.Surface": 2,
+    "PCGGetSplineSettings.Out -> PCGSplineSamplerSettings.Spline": 3,
+    "PCGNormalToDensitySettings.Out -> PCGDensityFilterSettings.In": 2,
+    "PCGProjectionSettings.Out -> PCGBoundsModifierSettings.In": 3,
+    "PCGSplineSamplerSettings.Out -> PCGProjectionSettings.In": 3,
+    "PCGSurfaceSamplerSettings.Out -> PCGAttributeFilteringSettings.In": 1,
+    "PCGSurfaceSamplerSettings.Out -> PCGNormalToDensitySettings.In": 2,
+    "PCGTransformPointsSettings.Out -> PCGStaticMeshSpawnerSettings.In": 3
+   }
+  },
+  "/Game/GrandTour/Dressing/PCG/PCG_GT_Alpine": {
+   "node_count": 66,
+   "class_counts": {
+    "PCGAttributeFilteringSettings": 4,
+    "PCGAttributeNoiseSettings": 2,
+    "PCGBoundsModifierSettings": 3,
+    "PCGDataFromActorSettings": 1,
+    "PCGDensityFilterSettings": 13,
+    "PCGDifferenceSettings": 4,
+    "PCGGetLandscapeSettings": 1,
+    "PCGGetSplineSettings": 3,
+    "PCGGraphInputOutputSettings": 2,
+    "PCGNormalToDensitySettings": 3,
+    "PCGProjectionSettings": 3,
+    "PCGSplineSamplerSettings": 3,
+    "PCGStaticMeshSpawnerSettings": 8,
+    "PCGSurfaceSamplerSettings": 4,
+    "PCGTransformPointsSettings": 12
+   },
+   "getter_actor_classes": [
+    "PCGDataFromActorSettings:None",
+    "PCGGetLandscapeSettings:/Script/Landscape.LandscapeProxy",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad.BP_OWRoad_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty.BP_OWRoad_Dusty_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel.BP_OWRoad_Gravel_C"
+   ],
+   "edge_count": 78,
+   "edge_signatures": {
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGDifferenceSettings.Source": 1,
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGNormalToDensitySettings.In": 3,
+    "PCGAttributeNoiseSettings.Out -> PCGDensityFilterSettings.In": 6,
+    "PCGBoundsModifierSettings.Out -> PCGDifferenceSettings.Differences": 12,
+    "PCGDataFromActorSettings.Out -> PCGDifferenceSettings.Differences": 4,
+    "PCGDensityFilterSettings.Out -> PCGDifferenceSettings.Source": 3,
+    "PCGDensityFilterSettings.Out -> PCGStaticMeshSpawnerSettings.In": 2,
+    "PCGDensityFilterSettings.Out -> PCGTransformPointsSettings.In": 8,
+    "PCGDifferenceSettings.Out -> PCGDensityFilterSettings.In": 4,
+    "PCGGetLandscapeSettings.Out -> PCGProjectionSettings.Projection Target": 3,
+    "PCGGetLandscapeSettings.Out -> PCGSurfaceSamplerSettings.Surface": 4,
+    "PCGGetSplineSettings.Out -> PCGSplineSamplerSettings.Spline": 3,
+    "PCGNormalToDensitySettings.Out -> PCGDensityFilterSettings.In": 3,
+    "PCGProjectionSettings.Out -> PCGBoundsModifierSettings.In": 3,
+    "PCGSplineSamplerSettings.Out -> PCGProjectionSettings.In": 3,
+    "PCGSurfaceSamplerSettings.Out -> PCGAttributeFilteringSettings.In": 4,
+    "PCGTransformPointsSettings.Out -> PCGAttributeNoiseSettings.In": 2,
+    "PCGTransformPointsSettings.Out -> PCGStaticMeshSpawnerSettings.In": 6,
+    "PCGTransformPointsSettings.Out -> PCGTransformPointsSettings.In": 4
+   }
+  },
+  "/Game/GrandTour/Dressing/PCG/PCG_GT_Brush": {
+   "node_count": 59,
+   "class_counts": {
+    "PCGAttributeFilteringSettings": 6,
+    "PCGBoundsModifierSettings": 3,
+    "PCGDataFromActorSettings": 1,
+    "PCGDensityFilterSettings": 10,
+    "PCGDifferenceSettings": 5,
+    "PCGGetLandscapeSettings": 1,
+    "PCGGetSplineSettings": 3,
+    "PCGGraphInputOutputSettings": 2,
+    "PCGNormalToDensitySettings": 5,
+    "PCGProjectionSettings": 3,
+    "PCGSplineSamplerSettings": 3,
+    "PCGStaticMeshSpawnerSettings": 5,
+    "PCGSurfaceSamplerSettings": 5,
+    "PCGTransformPointsSettings": 7
+   },
+   "getter_actor_classes": [
+    "PCGDataFromActorSettings:None",
+    "PCGGetLandscapeSettings:/Script/Landscape.LandscapeProxy",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad.BP_OWRoad_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty.BP_OWRoad_Dusty_C",
+    "PCGGetSplineSettings:/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel.BP_OWRoad_Gravel_C"
+   ],
+   "edge_count": 75,
+   "edge_signatures": {
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGAttributeFilteringSettings.In": 1,
+    "PCGAttributeFilteringSettings.InsideFilter -> PCGNormalToDensitySettings.In": 5,
+    "PCGBoundsModifierSettings.Out -> PCGDifferenceSettings.Differences": 15,
+    "PCGDataFromActorSettings.Out -> PCGDifferenceSettings.Differences": 5,
+    "PCGDensityFilterSettings.Out -> PCGDifferenceSettings.Source": 5,
+    "PCGDensityFilterSettings.Out -> PCGTransformPointsSettings.In": 5,
+    "PCGDifferenceSettings.Out -> PCGDensityFilterSettings.In": 5,
+    "PCGGetLandscapeSettings.Out -> PCGProjectionSettings.Projection Target": 3,
+    "PCGGetLandscapeSettings.Out -> PCGSurfaceSamplerSettings.Surface": 5,
+    "PCGGetSplineSettings.Out -> PCGSplineSamplerSettings.Spline": 3,
+    "PCGNormalToDensitySettings.Out -> PCGDensityFilterSettings.In": 5,
+    "PCGProjectionSettings.Out -> PCGBoundsModifierSettings.In": 3,
+    "PCGSplineSamplerSettings.Out -> PCGProjectionSettings.In": 3,
+    "PCGSurfaceSamplerSettings.Out -> PCGAttributeFilteringSettings.In": 5,
+    "PCGTransformPointsSettings.Out -> PCGStaticMeshSpawnerSettings.In": 5,
+    "PCGTransformPointsSettings.Out -> PCGTransformPointsSettings.In": 2
+   }
+  }
+ },
+ "steps": [
+  {
+   "name": "/Game/GrandTour/Dressing/PCG/PCG_GT_Forest",
+   "ok": true,
+   "err": null
+  },
+  {
+   "name": "/Game/GrandTour/Dressing/PCG/PCG_GT_Meadow",
+   "ok": true,
+   "err": null
+  },
+  {
+   "name": "/Game/GrandTour/Dressing/PCG/PCG_GT_Scree",
+   "ok": true,
+   "err": null
+  },
+  {
+   "name": "/Game/GrandTour/Dressing/PCG/PCG_GT_Alpine",
+   "ok": true,
+   "err": null
+  },
+  {
+   "name": "/Game/GrandTour/Dressing/PCG/PCG_GT_Brush",
+   "ok": true,
+   "err": null
+  }
+ ],
+ "finished": "2026-09-27 14:41:11"
+}

@@ -1,0 +1,174 @@
+LIDAR: PERCEIVED DETAIL AND DEPTH RESEARCH
+6 November 2026. Research and proposed experiments; no rendering changes in this pass.
+
+Recommendation
+Build richer representations of the existing forms: coherent baked material
+detail nearby, real geometry at silhouette edges, and better distance proxies.
+Run a small comparison before expanding the method across the forest. The
+original colourful woodland image remains the palette/composition target;
+Waimeamea photographs govern species, growth, banks and material character.
+Rendering papers supply techniques, not a replacement photorealistic art style.
+
+Verified project findings
+1. Installed engine is UE 5.8.0; the saved profile targets RTX 4050 Laptop 6 GB,
+   1600x900 output with TSR at 75 percent. Its nominal internal image is therefore
+   1200x675. More tiny features need not produce more visible, stable detail.
+2. lidar_canopy_assets.py builds three fixed-view crossed planes, six triangles,
+   from three 512px captures. It has colour/opacity and normal atlases, but no
+   view-dependent depth reprojection. These are not octahedral impostors.
+3. lidar_first_section.py builds bank leaf colour from vertex colour and broad
+   variation, constant roughness and subsurface colour. It does not connect a
+   leaf normal texture, roughness texture or material AO. Some authored fern
+   LOD0s already contain about 5,200 triangles: geometry alone is not delivering
+   all the useful surface cues. Actual live graph should be audited in a prototype.
+4. lidar_bank_ground_material.py already uses triplanar colour, roughness/AO,
+   height-derived surface-gradient bump and distance fading. Its rock height is
+   derived from colour luminance; soil has an existing packed height channel.
+   The graph performs twelve main texture samples plus the bank edge mask.
+   Adding three-axis iterative parallax indiscriminately is a poor starting point.
+5. Bank and canopy import recipes explicitly disable Nanite for these assets.
+   ImpostorBaker and ProceduralVegetationEditor exist in the installed engine.
+   Neither is explicitly enabled in GrandTour.uproject. PVE is experimental.
+   An older r.Nanite.AllowVoxels=1 setting exists, but that does not prove these
+   assets use the modern Nanite Foliage pipeline. RendererSettings exposes a
+   separate experimental r.Nanite.Foliage option requiring an editor restart.
+6. Existing longer-range tree experiment, B01, 180 warm frames:
+                    baseline ms       longer LOD ms       change ms
+   GPU total            18.391             27.564             +9.174
+   Base pass             6.365             11.163             +4.799
+   Depth prepass         4.959              9.340             +4.381
+   Shadow depth          1.993              2.014             +0.021
+   This regression is concentrated in depth/colour raster work. It is evidence
+   against simply extending conventional geometry range, not proof that every
+   aspect of the scene is raster-bound. Current fog-only result remains saved.
+
+Technique shortlist
+
+A. Coherent baked material detail: first priority for the bank and plants
+Author a detailed source patch with real stones, litter, cracks and roots; bake
+matching normal, height, ambient occlusion and roughness data. Keep colour clean
+and deliberately stylized. Pigment stains should not automatically become holes.
+Use small reusable textures for grain and broad masks for ecological variation.
+Epic documents detail-normal layering as a way to increase close-range detail [1].
+For fronds, keep their bent shape and outline, adding subtle folds, veins,
+roughness and restrained baked self-occlusion. Bake on the actual authored form;
+do not put a photograph of an entire fern on a flat card. Do not bake directional
+sun shadows into albedo. Packed material AO is the first occlusion trial: Epic
+supports it with Lumen when static lighting is disabled, which this project
+already does. Epic describes bent normals as substantially costlier for small
+visual improvement, so they are not the default recommendation here [2].
+
+B. Bounded parallax for the near ground; opaque Nanite for silhouette detail
+Bump Offset provides camera-dependent surface parallax without changing geometry,
+but cannot fix outlines and can swim or fail at grazing angles [3]. Compare it
+with a short, distance-faded POM ray march on one UV-mapped patch. Relief mapping
+literature explains height intersection and its sampling/artifact trade-offs [4].
+Proposal: compare normal-only, simple offset and 8/16-step POM over the same
+4x4 m source patch; fade the latter over roughly 8-15 m and at extreme angles.
+These are starting experiment parameters, not certified quality settings.
+The repository already has a Benmore gravel POM implementation with derivative
+sampling and distance/angle fades. Reuse the ideas; its world-XY projection is
+unsuitable for copying unchanged onto steep banks.
+Use an opaque Nanite rock/root patch where protrusions and shadows must be real.
+Epic uses offline displaced Nanite meshes for silhouette and shadow detail [5].
+Keep the bank's masked border separate from the opaque interior in that trial.
+Do not convert all terrain or replace the collision surface during research.
+
+C. View-dependent impostors: strongest contained distance-forest candidate
+Epic's baker blends nearby captured viewpoints onto a proxy and supports depth
+and parallax options. Fortnite uses upper-hemisphere impostors for trees on its
+non-Nanite path [6]. Compare our crossed planes with an 8x8 and a 12x12 bake,
+starting at 2K, then measure atlas resolution versus memory and silhouette quality.
+Use upper hemisphere only for trees that cannot be seen from underneath at the
+transition; test full sphere or retain geometry for trees on steep overhead banks.
+Start with normal/depth-aware single-offset parallax; evaluate iterative mode
+only if it materially improves the moving view. Our current proxy is already six
+triangles, so the new proxy is not automatically cheaper. Its value is potentially
+better shape per millisecond; extra pixel work and atlas memory must be measured.
+Bake from the same approved source model and keep consistent albedo/lighting
+between representations. A better impostor will not fix an unconvincing source.
+
+D. Nanite Foliage with voxels and assemblies: modern strategic experiment
+UE 5.8 documents Nanite Foliage as experimental. Assemblies reuse branch/leaf
+parts; voxel representation preserves aggregate canopy volume at distance;
+skinning supplies wind [7]. This is a different approach from keeping thousands
+of conventional leaf triangles visible farther away.
+Test one map-owned beech variant with opaque leaf geometry and repeated assembly
+parts. Compare still foliage first, then animation/shadow cost independently.
+Do not assume enabling ordinary Nanite on current card foliage gives the same
+result. Current documented voxel shading uses vertex alpha for normal statistics;
+our bank plants use alpha for wind weighting, so migrate that data before reuse.
+Treat project-setting changes and the 6 GB memory limit as part of the test.
+No speed estimate is justified before representative-cluster measurements.
+
+E. Stable variation and temporal detail retention: supporting work
+Stochastic texture blending can reduce visible repetition in soil, bark and moss,
+at additional texture-sampling cost [8]. It is not a depth technique. Start with
+simple macro masks and rotated variants; evaluate stochastic blending selectively,
+not on every existing triplanar sample. Keep rock strata and root directionality.
+UE 5.8 Thin Geometry Detection targets unstable subpixel foliage detail [9].
+Inspect its actual runtime state and visualization, then compare on/off in motion.
+A short native-resolution diagnostic can distinguish reconstruction loss from
+asset limitations. Acceptance must remain at the same saved TSR75 preset; raising
+resolution or sharpening is not evidence that the asset technique became better.
+
+Proposed next implementation and pass criteria
+1. Capture a matched moving baseline: slow sideways bank walk, approach/recede
+   through tree transitions, uphill view beneath crowns, and an open forest vista.
+   Include fog on/off as a diagnostic; hold fog fixed for candidate comparisons.
+2. Build one 4x4 m ground patch and one existing fern with coherent baked detail.
+   Compare normal-only, near POM and an opaque Nanite protrusion patch separately.
+3. Compare one identical beech source as current crossed cards, depth impostor,
+   and Nanite voxel/assembly representation. Use a representative stand and the
+   actual river view; isolated model timing cannot predict a dense forest.
+4. Keep the existing source positions, root contacts, slope rules, species mix,
+   collision, DEM and palette. Use a plant-layout hash and existing contact probes.
+5. Visual pass: legible stone/root separation and leaf surface shape; convincing
+   lateral parallax; stable canopy volume; no sliding textures, flat-card turns,
+   dark AO halos, ghost trails, excessive shimmer or visible transition flashes.
+   Judge full game frames and motion beside the original/style and site references.
+6. Proposed performance gate: target combined median GPU increase no greater
+   than 1 ms at the four existing views; prefer a saving in forest views. Repeat
+   warmed A/B pairs at least three times, alternate order, record clocks/power
+   where available, and investigate changes smaller than run-to-run variation.
+   Report frame p95, Basepass, Prepass, shadow passes, texture/Nanite residency,
+   peak VRAM, and traversal streaming hitches. A 1 ms target is not a guarantee.
+   Keep peak memory within the actual available budget with headroom; 6 GB total
+   hardware capacity is not the same as available game memory. No 120 fps claim.
+7. Promote only candidates with a visible gain at gameplay distance and acceptable
+   measured cost. Keep the experimental Nanite option reversible until it passes.
+
+Primary sources (accessed 6 November 2026)
+[1] Epic: Adding Detail Textures
+https://dev.epicgames.com/documentation/unreal-engine/adding-detail-textures-to-unreal-engine-materials
+[2] Epic: Lumen GI and Reflections, Material Ambient Occlusion / Bent Normals
+https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine
+[3] Epic: Using Bump Offset
+https://dev.epicgames.com/documentation/en-us/unreal-engine/using-bump-offset-in-unreal-engine
+[4] Policarpo and Oliveira: Relaxed Cone Stepping for Relief Mapping, GPU Gems 3
+https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-18-relaxed-cone-stepping-relief-mapping
+[5] Epic: Bringing Nanite to Fortnite Battle Royale in Chapter 4
+https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4
+[6] Epic: Impostor Baker Plugin, UE 5.8
+https://dev.epicgames.com/documentation/unreal-engine/impostor-baker-plugin-in-unreal-engine
+[7] Epic: Nanite Foliage, UE 5.8
+https://dev.epicgames.com/documentation/unreal-engine/nanite-foliage
+[8] Unity Labs: Procedural Stochastic Texturing (2019; foundational technique)
+https://unity.com/blog/engine-platform/procedural-stochastic-texturing-in-unity
+[9] Epic: Thin Geometry Detection with TSR, UE 5.8
+https://dev.epicgames.com/documentation/unreal-engine/thin-geometry-detection-with-temporal-super-resolution
+
+Local evidence
+Art/Unreal/lidar_canopy_assets.py
+Art/Unreal/lidar_first_section.py
+Art/Unreal/lidar_bank_ground_material.py
+Art/Unreal/benmore_gravel_pom.py
+Art/Export/LidarStudy/FirstSection/plants.json
+Art/lidar_performance.json
+Config/DefaultEngine.ini
+Saved/LidarAuthoringQA/RS7/runtime-atmosphere-before.json
+Saved/LidarAuthoringQA/Atmosphere/rejected-long-lods-runtime.json
+Art/Export/LidarStudy/FirstSection/Review/Atmosphere/evidence.json
+
+
+Implementation evidence, 2026-11-06: UE 5.8 local source accepts r.Nanite.AllowVoxels OR r.Nanite.Foliage for voxel support. Existing AllowVoxels=1 suffices here. Both NANITE and VOXELS material usage flags are required; the local copied bark and canopy materials have both. See the PerceivedDetail review for measured limitations and rejected variants.

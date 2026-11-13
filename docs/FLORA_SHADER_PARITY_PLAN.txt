@@ -1,0 +1,258 @@
+FLORA PAINT: BLENDER / UNREAL APPEARANCE PARITY
+Plan prepared 2026-11-13. Implementation started 2026-11-13.
+Current: source contract and paired renderer bench implemented; first isolated
+Facing-coverage candidate under validation. Appearance parity has NOT passed.
+See Art/Export/LidarStudy/FloraParity/FIRST_IMPLEMENTATION.txt and
+comparison-report.json for evidence and remaining calibration work.
+
+Objective
+Make the SAME purchased plants read as closely as possible to their Blender
+source in Unreal: painted colour, edge coverage, diffuse lighting, transmitted
+light, interior depth and shadow softness. Composition and density are held
+fixed during this work. Reuse the existing forest-path study and purchased
+source; do not build another substitute reference scene.
+
+Success means repeatable agreement across lighting and viewing conditions,
+then the same improvement in the actual game. A pleasing single screenshot,
+successful shader compilation, or a colour correction is not a parity pass.
+The later full-map performance target remains 60fps / 16.67ms per frame.
+
+Confirmed starting evidence
+- Authoritative scene available at:
+  D:/GrandTourAssets/FlippedNormals/Flora_Paint_Bonus_Project_Files/
+  Bonus_Project_Files/001/001.blend
+- Existing study: /Game/GrandTour/ArtTests/FloraPath/L_FloraPath.
+- source-audit.json records Eevee, Standard view transform, Look None,
+  exposure 0. Reconfirm with the actual installed Blender version.
+- Flora_Shader_v4's Eevee path has separate diffuse/translucent BSDFs.
+  Combine XYZ (0,0,-10) connects to the translucent normal; the diffuse normal
+  is unconnected. Verify active group variants, links, coordinate space and
+  any migration/add-on patches before translating that into Unreal math.
+- Layer Weight Facing feeds a transparency mix. Soft/Shadow controls must be
+  traced by connectivity, not interpreted from their UI names.
+- export_flora_path.py bakes the Flora group's Color output, retains a mask
+  and alpha ramp, but does not export the complete renderer-dependent BSDF.
+- build_flora_path.py builds a simpler masked Two Sided Foliage material.
+  Later modules add independent normals, colours, coverage and transmission.
+- Earlier refine_flora_shader.py included facing-dependent coverage, but it
+  targeted FloraPilot, not the later FloraPath/FloraWorld material chain.
+- Config/DefaultEngine.ini already enables Substrate with ProjectGBufferFormat=0.
+  Installed UE5.8 RenderUtils.cpp says format 0 enforces a single closure.
+  This is a candidate limitation to test, NOT proof that it causes the mismatch.
+- The existing node dump keys inputs by socket NAME and omits some operations.
+  Duplicate names such as Shader/A/B can lose information. It cannot serve as
+  a lossless specification for a faithful shader port.
+
+0. Freeze the baseline and isolate work
+Deliverable: baseline manifest and recoverable material/capture snapshots.
+- Record source files, Blender version/build, OCIO configuration, Unreal build,
+  effective render settings, shader hashes and current material-instance chain.
+- Preserve the current map and generated package backups. Never rewrite the
+  purchased source, the existing study or the current woodland during experiments.
+- New content: /Game/GrandTour/ArtTests/FloraParity.
+- New exports/reports: Art/Export/LidarStudy/FloraParity.
+- Record current LiDAR terrain/mud/water/contact and planting invariants.
+- Run only one Blender/Unreal process at a time under the existing renderer
+  mutex; use isolated launches. No global project renderer changes for a test.
+Exit: all results can be reproduced and the previous appearance restored.
+
+1. Recover the exact source shader contract
+Deliverable: source-contract.json plus a readable equation/wiring report.
+- Reopen the actual source with autoexec disabled; inspect the active Eevee
+  output and evaluated materials. Record any required explicit source migration.
+- Export every reachable node group recursively, indexed socket identifiers,
+  operation/blend modes, clamping, data types, mute state, active outputs,
+  ramp interpolation, curve samples, mappings, image colour spaces and settings.
+- Trace separate source outputs: pigment, coverage, diffuse response,
+  transmission response, shadow behaviour and emission where actually used.
+- Resolve geometry normals, custom normals, coordinate transforms, per-object
+  random seeds, Generated coordinates and negative/nonuniform instance scales.
+- Trace source grass, fern, shrub, tree leaf and bark families; do not assume
+  every Flora_Shader variant shares one equation or one normal convention.
+- Identify what is already baked into atlases/vertex colours. Avoid applying
+  gradients, sRGB conversion or random colour twice.
+- Audit the CURRENT Unreal parent/instance chain, active output connections,
+  texture compression/mips and all artist wrappers against this contract.
+Exit: a difference ledger names each missing/approximated operation, its source
+evidence and a proposed implementation/test. Unknowns remain labelled unknown.
+
+2. Build a small paired rendering harness
+Deliverable: Blender and Unreal test scenes, capture scripts and a shared recipe.
+- Start with one fern, one broad shrub, and one leaf-bearing branch from the
+  exact evaluated source geometry; then expand to grass, bark and full crowns.
+- Freeze the same animation pose. Match geometry, UVs, colours, normals,
+  transforms, lens, aspect, camera and ground receiver. Explicitly fix LOD0
+  ONLY for this diagnostic asset comparison; production tests retain real LODs.
+- Use 18% grey and colour swatches to calibrate illumination/exposure once.
+  Do not copy unlike light-unit numbers or retune exposure for each plant.
+- Initial matrix: 3 assets x 4 lighting cases x 2 camera angles = 24 paired
+  cases. Lights: front, side, back and diffuse sky/shade. Cameras: face-on and
+  grazing. Add overlapping cards and a multi-layer clump on a shadow receiver.
+- Save the unmodified Blender beauty as truth. Use temporary source copies
+  for isolated emission/albedo, coverage, normals and lobe diagnostics.
+- Save scene-linear EXR diagnostics with exposure/pre-exposure accounted for,
+  plus display-referred PNGs through an explicitly matched transform. If an
+  Eevee lobe pass is unavailable, isolate the lobe in a duplicate material;
+  do not substitute Cycles beauty and call it Eevee parity.
+- Disable fog, bloom, wind and added art wrappers in the test only. Reintroduce
+  them later. Keep two result tracks: matched diagnostic display transform and
+  actual game tonemapping. A reference-only transform cannot certify shipping.
+- Use normal viewport capture, verify actual pixel dimensions, native 100%
+  internal resolution first, then the declared production TSR configuration.
+  Avoid the known HighResShot forced-LOD0 trap in game-view validation.
+Exit: repeated baseline captures are stable; chart/geometry errors are small
+enough that shader changes can be measured independently.
+
+3. Match colour and painted coverage first
+Deliverable: verified source-data material functions with automated probes.
+- Reproduce source colour/gradient/random logic, or bake it faithfully where
+  a bake preserves the source evaluation. Validate vertex colour quantization
+  and per-instance variation instead of assuming a shared vertex bake suffices.
+- Verify linear/sRGB boundaries for BOTH masks and colour data. A mask imported
+  as linear may still need the source's sRGB interpretation; test numeric swatches.
+- Port exact alpha curves and view-angle coverage. Separate rendered coverage,
+  transmitted illumination and shadow visibility; these are different controls.
+- Compare source mip/filter/edge behaviour with Unreal: static threshold,
+  temporally reconstructed masked coverage, and a translucent diagnostic bound.
+  Full translucent forest coverage is a candidate, not an automatic rollout.
+- Test overlap, motion, stationary temporal noise, distance, shadow masks and
+  far-atlas baking. Never bake independently randomized frames into colour,
+  normal and alpha. Retain deterministic bake captures for any temporal shader.
+Exit: pigment and edge errors are isolated and within the agreed diagnostic
+targets before lighting is tuned. Do not compensate a coverage failure with tint.
+
+4. Select and implement the lighting representation
+Deliverable: candidate comparison and one selected, documented shader path.
+Candidate A: corrected existing foliage representation.
+  Use source-faithful inputs and test how closely the current single-closure
+  path can match the measured response. Keep this as the performance baseline.
+Candidate B: explicit Substrate graph.
+  Test separate diffuse and transmitted responses/normals where supported.
+  Inspect the COMPILED representation and closure count, not just the graph.
+  Compare current Blendable against Adaptive only in a separate test project
+  or reproducibly isolated renderer configuration with required restarts/builds.
+  Measure simplification, bandwidth, shadows, GI, local lights and overlap.
+  Simply enabling Substrate (already enabled) is not a solution.
+Candidate C: narrowly scoped custom foliage lighting, conditional.
+  If A/B cannot represent the necessary source behaviour, document the failed
+  cases and investigate a shader-model extension supported by this UE build.
+  Confirm source-engine/build requirements, GBuffer storage and maintenance
+  implications before implementation. Keep engine work in an isolated branch.
+  A material Custom node cannot simply replace deferred lighting or recover
+  arbitrary shadow visibility. Do not fake missing shadowed transmission using
+  unconditional emissive fill or a camera-dependent painted highlight.
+
+For each candidate, measure diffuse shape, front/back balance, colour under
+shade, response to light direction/intensity and surface orientation. Match
+source roughness/diffuse behaviour explicitly, not only a generic Roughness slider.
+Select the least expensive candidate that passes the VISUAL matrix. If no
+candidate passes, investigate the specific residual and rerun that stage;
+do not declare a generic renderer difference or silently reduce the standard.
+
+5. Acceptance gates and comparison evidence
+Deliverable: coverage/albedo/lighting plots, contact sheets, clips and pass ledger.
+These are proposed diagnostic targets to freeze after harness calibration,
+before fitting the candidate shaders. Record any later target changes with reasons.
+- Colour charts: median DeltaE00 <=2, 95th percentile <=5 for nonclipped patches.
+- Unlit pigment: <=3% normalized linear RGB error in stable opaque interiors.
+- Fractional coverage: mean absolute difference <=.03 on the aligned object
+  region, plus edge/overlap inspection. Measure coverage against two known
+  backgrounds or an isolated mask; do not infer it from shaded beauty alone.
+- Lighting: <=10% normalized error in the selected diffuse/transmission ROI
+  response curves across light directions; compare energy and hue separately.
+- Beauty: no hard card-shaped highlights/shadows absent from Blender, no
+  crushed interiors, lost paint gradients, glowing shade or large hue drift.
+- Motion: a stationary hold and a 10-second camera move show no unacceptable
+  grain, ghosting, edge boil, sorting errors or changing apparent plant density.
+- Cross-condition guard: improvements must hold in front, side, back and shade.
+  No compensating parameter set for each camera or lighting case.
+- Shader compilation, fallback-material, instancing and saved-state checks pass.
+Metrics support visual review; no single pixel score proves painterly parity.
+Any residual beyond a gate gets an explicit cause/candidate/next-test entry.
+
+6. Revalidate in the existing forest-path study
+Deliverable: original Blender / current Unreal / corrected Unreal comparisons.
+- Duplicate the existing study for the candidate; preserve its geometry,
+  composition and camera. Change shading only for the first matched comparison.
+- Restore actual source light/world settings and game GI/shadows progressively.
+  Resolve display-transform differences explicitly; do not hide a material
+  mismatch with exposure, saturation, fog or a screenshot-only tonemapper.
+- Validate every material family and instance variant, then wind and source-
+  appropriate per-instance randomness. Keep native sharp detail where painted.
+- Present close leaf crops, whole plants, shaded understory, sunlit crowns,
+  moving footage and visible unresolved differences.
+Exit: this study establishes the approved appearance and technical baseline.
+No fresh whole-map reinterpretation before the shader comparison succeeds.
+
+7. Controlled LiDAR rollout
+Deliverable: versioned master/functions, map instances and reproducible migration.
+- Apply first to a bounded existing LiDAR section, holding cameras, lights,
+  planting and density fixed. Then migrate material bindings across the map.
+- Keep fidelity controls separate from optional map art direction. Expose
+  palette, source softness, transmission and shadow coverage with documented
+  ranges. Renderer format is PROJECT/platform scope, not a per-map slider.
+- Remove or bypass redundant correction wrappers explicitly; enabled=false
+  is not sufficient if previous graph nodes remain connected. Audit outputs.
+- Rebuild distant atlases/LODs from the approved shader with paired deterministic
+  captures. Validate colour/energy continuity through real LOD transitions.
+- Preserve terrain, real mud deformation graph, soil parameters, five water
+  actors, collisions, all planting positions and native grass custom-data/WPO.
+- Re-run the eight existing game cameras, roadside/driver views and motion,
+  with real gameplay LODs. Test a directional and local light plus night/shade.
+- Verify native grass-contact API separately from a real driving/deformation
+  check. The previously reported deep-mud bogging issue is not considered fixed.
+Exit: saved packages and actual gameplay show the improvement without functional
+regression. Rollback restores explicit package/material bindings and profiles.
+
+8. Performance management and the subsequent 60fps phase
+During shader selection: record base-pass/shadow/translucency costs, GPU time,
+overdraw, VRAM, texture residency, draw counts, closure storage and compilation
+cost in single-plant, overlapping-clump and dense-forest tests. No geometry or
+texture-sample increase does NOT mean a shader is free. Do not pick a knowingly
+unscalable solution solely because one isolated screenshot matches.
+
+After appearance passes: run a repeatable standalone driving route targeting
+60fps (16.67ms), recording CPU/GPU time, frame-time percentiles, shader/streaming
+stutter and VRAM. Declare hardware, power mode, output resolution, internal
+resolution/upscaler, quality settings and background GPU contention. Development
+machine previously identified: RTX4050 Laptop 6GB / Ryzen7 8845HS; verify again.
+Use verified 1920x1080 output for the declared test, not the earlier desktop-
+clamped 1274x682 captures. Do not infer runtime FPS from image sequence encoding
+or hidden-editor tick intervals. Freeze the approved visual tests throughout
+optimization. Reduce invisible work first; any fidelity compromise is reported,
+not silently traded away to achieve a frame-rate number.
+
+Implementation work packages (updated 2026-11-13)
+Art/Blender/audit_flora_parity.py        Lossless source specification.
+Art/Blender/render_flora_parity.py       Reference/isolated-pass captures.
+Art/Unreal/build_flora_parity.py         Shared-recipe test bench and candidates.
+Art/Unreal/flora_parity_coverage.py      Isolated source Facing-coverage candidate.
+Art/Unreal/build_flora_parity.py         Also records runtime settings/captures.
+Art/analyze_flora_parity.py             Diagnostic boards, charts and protection checks.
+Art/run_flora_parity.ps1                Sequential runner, fresh-output gates.
+docs/FLORA_SHADER_PARITY_RESULTS.txt    Decisions, failures and accepted residuals.
+Use separate recipe.json and source-contract.json, with schema/version/hash.
+Implement only the winning production path; keep experimental candidates local.
+
+Reporting and definition of done
+At each gate: show the same plant in Blender, prior Unreal and candidate Unreal;
+state what changed, what the comparison proves and what remains uncertain.
+At completion: source mapping, reproducible scripts, selected shader, every
+material-family check, static/motion evidence, map controls, LiDAR integration
+checks and an honest performance status. Distinguish diagnostic success,
+reference visual agreement, gameplay regression checks and 60fps acceptance.
+
+Sources used to scope this plan
+- Actual purchased source and local scripts/records listed above.
+- Installed UE5.8 RenderUtils.cpp: ProjectGBufferFormat and closure constraints.
+- Epic Substrate overview (web currently serves a newer revision; use installed
+  UE5.8 source for exact features and confirm shader behavior experimentally):
+  https://dev.epicgames.com/documentation/en-us/unreal-engine/overview-of-substrate-materials-in-unreal-engine
+- Blender 4.4 colour management:
+  https://docs.blender.org/manual/en/4.4/render/color_management.html
+
+No scene, material package or renderer configuration was changed while preparing
+the original plan. Implementation now writes only to the isolated FloraParity
+content/output directories. Existing maps, source .blend and DefaultEngine.ini
+remain hash-protected. Next gate is calibrated colour/coverage and temporal
+validation, followed by diffuse/transmission implementation and comparison.

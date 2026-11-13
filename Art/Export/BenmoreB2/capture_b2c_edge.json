@@ -1,0 +1,343 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+  "timings_collected": false,
+  "pictures": [
+    {
+      "name": "B2_Edge",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Edge.png",
+      "view": {
+        "eye": [
+          -77663,
+          -41488,
+          1275
+        ],
+        "target": [
+          -78080,
+          -40571,
+          1099
+        ],
+        "fov": 60.0,
+        "sun_angle_deg": 143.3
+      },
+      "zones": {
+        "zones": 76,
+        "units": 260,
+        "live": 1,
+        "live_cells": 37636,
+        "cap_tiles": 1,
+        "activations": 7,
+        "releases": 6,
+        "restores": 1,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          -77600,
+          -41400
+        ],
+        "coverage_texels_hole": 2167,
+        "coverage_writes": 8,
+        "live_units": [
+          {
+            "zone": 2,
+            "label": "Terrace loop 29-142 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              -33,
+              -18
+            ],
+            "cells": 37636,
+            "quads": 9091,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "zone": "Terrace loop 29-142 m gravel",
+      "border_cm": [
+        -77943,
+        -40800
+      ],
+      "border_dir": [
+        1.0,
+        0.0
+      ],
+      "inside_normal": [
+        0.0,
+        -1.0
+      ],
+      "strips_px": {
+        "inside": [
+          [
+            1029.9,
+            489.0
+          ],
+          [
+            197.5,
+            584.3
+          ],
+          [
+            201.0,
+            634.9
+          ],
+          [
+            1122.9,
+            519.5
+          ]
+        ],
+        "outside": [
+          [
+            1021.2,
+            486.3
+          ],
+          [
+            197.2,
+            579.6
+          ],
+          [
+            194.8,
+            543.1
+          ],
+          [
+            946.1,
+            465.5
+          ]
+        ]
+      },
+      "written": true,
+      "no_patch": {
+        "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Edge_NoPatch.png",
+        "patches_hidden": 3,
+        "landscapes": 1
+      }
+    }
+  ],
+  "car": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/UEDPIE_0_L_Benmore_GaeaReview.L_Benmore_GaeaReview:PersistentLevel.GTCarPawn_1",
+  "sun": {
+    "actor": "Sun",
+    "direction": [
+      0.159,
+      -0.9,
+      -0.407
+    ]
+  },
+  "zones_at_start": {
+    "zones": 76,
+    "units": 260,
+    "live": 6,
+    "live_cells": 319984,
+    "cap_tiles": 9,
+    "activations": 6,
+    "releases": 0,
+    "restores": 0,
+    "cache_entries": 0,
+    "cache_bytes": 0,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      -77400,
+      -41800
+    ],
+    "coverage_texels_hole": 8646,
+    "coverage_writes": 6,
+    "live_units": [
+      {
+        "zone": 1,
+        "label": "Terrace loop 0-29 m MudRoad",
+        "slot": 0,
+        "whole": true,
+        "tile": [
+          0,
+          0
+        ],
+        "cells": 131804,
+        "quads": 19886,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 0,
+        "whole": false,
+        "tile": [
+          -33,
+          -18
+        ],
+        "cells": 37636,
+        "quads": 9091,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 1,
+        "whole": false,
+        "tile": [
+          -32,
+          -18
+        ],
+        "cells": 37636,
+        "quads": 790,
+        "distance_m": 6.3
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 2,
+        "whole": false,
+        "tile": [
+          -34,
+          -17
+        ],
+        "cells": 37636,
+        "quads": 1210,
+        "distance_m": 19.1
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 3,
+        "whole": false,
+        "tile": [
+          -33,
+          -17
+        ],
+        "cells": 37636,
+        "quads": 10362,
+        "distance_m": 7.5
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 5,
+        "whole": false,
+        "tile": [
+          -33,
+          -16
+        ],
+        "cells": 37636,
+        "quads": 623,
+        "distance_m": 31.5
+      }
+    ]
+  },
+  "zone_count": 76,
+  "unit_count": 260,
+  "car_parked_cm": [
+    12000,
+    24000,
+    15139
+  ],
+  "viewport_px": [
+    1274,
+    682
+  ],
+  "zones_at_end": {
+    "zones": 76,
+    "units": 260,
+    "live": 6,
+    "live_cells": 319984,
+    "cap_tiles": 9,
+    "activations": 12,
+    "releases": 6,
+    "restores": 1,
+    "cache_entries": 0,
+    "cache_bytes": 0,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      -77600,
+      -41400
+    ],
+    "coverage_texels_hole": 8646,
+    "coverage_writes": 13,
+    "live_units": [
+      {
+        "zone": 1,
+        "label": "Terrace loop 0-29 m MudRoad",
+        "slot": 0,
+        "whole": true,
+        "tile": [
+          0,
+          0
+        ],
+        "cells": 131804,
+        "quads": 19886,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 0,
+        "whole": false,
+        "tile": [
+          -33,
+          -18
+        ],
+        "cells": 37636,
+        "quads": 9091,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 1,
+        "whole": false,
+        "tile": [
+          -32,
+          -18
+        ],
+        "cells": 37636,
+        "quads": 790,
+        "distance_m": 8.6
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 2,
+        "whole": false,
+        "tile": [
+          -34,
+          -17
+        ],
+        "cells": 37636,
+        "quads": 1210,
+        "distance_m": 16.8
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 3,
+        "whole": false,
+        "tile": [
+          -33,
+          -17
+        ],
+        "cells": 37636,
+        "quads": 10362,
+        "distance_m": 6.9
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 5,
+        "whole": false,
+        "tile": [
+          -33,
+          -16
+        ],
+        "cells": 37636,
+        "quads": 623,
+        "distance_m": 30.9
+      }
+    ]
+  }
+}

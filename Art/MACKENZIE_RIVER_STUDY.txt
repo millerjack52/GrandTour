@@ -1,0 +1,122 @@
+MACKENZIE RIVER MATERIAL STUDY
+
+Level: /Game/GrandTour/ArtTests/MackenzieRiverStudy/L_MackenzieRiverStudy
+Review: Art/Export/MackenzieRiverStudy/river-study.html
+Start with shore_transition.png and shallow_bed.png. upstream.png checks the
+opposite lighting direction; dry_bar.png and silt_margin.png isolate materials.
+Five cameras sit 160 cm above the underlying bed. Two wider cameras check the
+overview and distant reach; distant_reach.png specifically checks repetition.
+
+Scope
+A 36 m detailed reach in a larger context bed, built as one continuous static
+collision surface, with a shallow channel and tapered gravel island. Packed
+pebble material uses matched colour/normal/height/roughness/AO maps; dry, damp,
+and submerged states share the same coordinates. POM depth 3 cm fades with
+distance and grazing angle. Scan-driven mesh relief is bounded to +/-0.9 cm.
+Beyond 12-28 m the shingle transitions to three hashed texture offsets/rotations
+blended over a warped triangular lattice. Colour, normal, roughness and AO share
+coordinates and weights. Normal vectors rotate back into world space, and
+variance compensation keeps blended patches from losing contrast. This retains
+stone scale while breaking the regular 1.35 m repeat and common orientation.
+Broad sediment colour variation continues beyond the scattered stone deposits.
+The bed now grades through 5/20/50/100 cm spacing along the river, with relief
+filtered to its local sampling interval outside the original fine reach. This
+replaces the abrupt 20 cm to 5 m jump and aliased distant facets. Water clipping
+samples the exported bed triangles, including the filtered relief.
+Outside the detailed 36x20 m ford, relief blends over 15 m into nonperiodic
+terrain noise. The previous sum of sine waves became regular corrugations in
+wider views even after the texture repeat was broken up. The fine ford remains
+unchanged; the noise bands are filtered against the outer mesh's sample spacing.
+The bed's Nanite fallback retains source triangles for complex collision. The
+automatic fallback flattened this small reach within the large context mesh:
+the first runtime survey found errors up to 112.36 cm below the authored bed,
+which made the car read excessive water depth and flood. collision-review.json
+records the latest 15-point survey; collision-repair-evidence.json preserves the
+before/after repair. All repaired points matched within 0.75 cm, including the
+scan relief. The visible Nanite mesh is unchanged. Full fallback collision is
+appropriate for this isolated study; a production landscape remains the target.
+Partly buried cobbles have eight reusable shapes and patchy, size-varied placement.
+Quiet silt pockets suppress cobbles. Sparse tussocks and five wood fragments
+complete the margins. The revised margins reuse the approved brown_mud_02 and
+mud_cracked_dry_03 scans and BenmoreScannedMud shading: 260/180 cm repeats and
+2.5 cm POM. This restores material continuity; it does not add the forest
+study's churned geometry, ruts or soil simulation.
+
+The water is cloned from the material actually assigned to Benmore_RS_WaterDomain
+in the saved Gaea Benmore map (currently WaterSurface/M_GC_DomainRiver), with its
+installed M_FW_Precombine. Local flow/bank coordinates, texture bindings and the
+static coverage mask are adapted. The study's short data bake also receives a
+6 m edge blend so its current-driven waves do not end on a straight boundary.
+The original map and materials are not saved.
+benmore-water-reference.json records the exact source and original shader text.
+A 25 cm local water mesh grades to 50 cm through +/-180 m and 100 cm farther out,
+preserving wave/shore geometry beyond the close-up area instead of jumping to 5 m.
+The native GTWaterSheet uses a study-owned 25 cm depth/current bake over 80x40 m;
+its moving simulation window and ambient-wave settings match Benmore. The far
+context is visual only. Dry/wet coverage and live material bindings are checked.
+
+No Benmore map or physics edits. Small stones are decorative, without collision.
+The static bed has no authored physical surface zones and currently falls back
+to the vehicle's tarmac behaviour. Mud does not sink or rut. Proper loose-gravel,
+wet-ground and finite-depth mud behaviour requires the existing terrain surface
+system, not a cosmetic material change. Water depth/current now reach the existing
+water subsystem; the optional drive review checks actual tyre/hull/spray response.
+Hills are simple context geometry; this is not a surveyed Mackenzie location.
+Performance has not been benchmarked (owner measures performance).
+The distance revision saved the level and all seven captures with no final
+material or Python errors. Its 15-point collision survey still matched within
+0.75 cm, and dry/wet queries and live water bindings passed. The outer source
+mesh is denser: 3,067,480 bed triangles and 114,844 water triangles. This is an
+art-study correction, not a performance-validated production topology.
+The last run returned exit code -1073741819 after the editor log closed.
+This is recorded separately from scene/capture success in run-status.json;
+the intermittent editor shutdown access violation remains unresolved.
+The original six captures are retained in before-distance-fix for comparison.
+
+References and provenance
+Art/Export/MackenzieRiverConcept/concept.html links the approved generated concept
+and the original Ohau, Ahuriri and Godley reference photographs. The Ohau source
+documents didymo: only water clarity and stone scale guided this study, not its
+thick algal mat. Regional photos are not imported textures.
+
+The original River Small Rocks scan read too soil-heavy in the first scene.
+Final shingle uses Poly Haven's Ganges River Pebbles by Amal Kumar, CC0:
+https://polyhaven.com/a/ganges_river_pebbles
+It is a material source, not New Zealand geology documentation. The shader
+reduces warm/purple saturation to fit the reference palette. Source files remain
+unmodified; download_mackenzie_river_textures.ps1 verifies published MD5 hashes.
+Art/Textures/MackenzieRiver/source-manifest.json stores exact URLs and hashes.
+
+Rebuild
+1. powershell -NoProfile -File Art/download_mackenzie_river_textures.ps1
+2. Run Blender 5.1 hidden/background with --python Art/Blender/build_mackenzie_river_study.py
+3. As its OWN command: powershell -NoProfile -File Art/wait_unreal_free.ps1 -MaxMinutes 0
+4. Only after step 3 returns 0:
+   powershell -NoProfile -File Art/build_mackenzie_river_study.ps1
+The Unreal runner reserves Local\GrandTour-BenmoreProfiling, saves this dedicated
+level, captures seven views and exits. Existing level copies go to Saved/MackenzieRiverStudy.
+The runner uses -GTLook=0 -GTLookSky=0 -GTLookHaze=0 for neutral material inspection.
+Use those launch flags for matching Play captures, or set gt.Look.Post, gt.Look.Sky
+and gt.Look.Haze to 0 in the editor console before Play. The saved study exposure
+has priority 500 so the ordinary game exposure preset cannot wash out daylight.
+
+Optional functional water crossing (run the guard again as its own command):
+   powershell -NoProfile -File Art/build_mackenzie_river_study.ps1 -DriveReview
+It uses a native Range Rover in Play and drives it across with normal
+throttle/brake/steering inputs at a fixed simulation timestep. It records contact,
+surface tag, water depth, forces and spray in drive-report.json. No level is saved.
+It checks the bed collider in Play first; an old simplified fallback is backed up
+and repaired with Play stopped before repeating the check and driving.
+This is a water connection check, not approval of handling or a performance test.
+The final crossing completed with 54 samples at a fixed 1/60 s timestep, dry
+approach/exit, active tyre and hull water forces and splash/bow spray. Maximum
+sampled wheel water depth was 0.62 m (including dynamic water). All wheels still
+reported Surface.Tarmac. The scene is not a finished gravel/mud driving section.
+An earlier capture harness run exhausted VRAM; the final run drains GPU work
+each frame, including background rain captures when viewport rendering is off.
+The successful final crossing still returned the known shutdown access violation
+after saving its report/capture; drive-run-status.json separates those results.
+
+The geometry .blend, FBX files, imported assets and captures are generated local
+artifacts. The source scripts plus this document reproduce the study using the
+existing approved mud assets and the installed Benmore water assets.

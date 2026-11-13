@@ -1,0 +1,320 @@
+{
+  "ok": true,
+  "ground_detail_stripped": 44,
+  "materials": [
+    "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelField",
+    "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+  ],
+  "dg1_materials": {
+    "mpc": {
+      "mpc": "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "added": [],
+      "scalars": 14
+    },
+    "field": {
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GT_Gravel",
+      "arrays": {
+        "GC": "/Game/GrandTour/ArtTests/DeformableGravel/TA_GV_Color",
+        "GN": "/Game/GrandTour/ArtTests/DeformableGravel/TA_GV_Normal",
+        "GO": "/Game/GrandTour/ArtTests/DeformableGravel/TA_GV_ORH"
+      },
+      "scalars": {
+        "GravelTileCm": 200.0,
+        "GravelMeanHL": 0.2959,
+        "GravelSlideUV": 1.0,
+        "GravelPomDepthCm": 0.8,
+        "GravelPackedDepthCm": 0.5,
+        "GravelPomNearM": 6.0,
+        "GravelPomFarM": 14.0,
+        "GravelPomMinSteps": 8.0,
+        "GravelPomMaxSteps": 16.0,
+        "GravelPomGrazingMinSteps": 12.0,
+        "GravelPomRefine": 5.0,
+        "GravelPomShadowM": 4.0,
+        "GravelPomShadowStrength": 0.45,
+        "GravelWindrowAO": 1.15,
+        "GravelWindrowHeight": 1.2,
+        "GravelNormalStrength": 1.0,
+        "GravelAOStrength": 1.0,
+        "GravelCavityTint": 0.15,
+        "GravelAlbedoScale": 0.82,
+        "GravelWetDarken": 0.75,
+        "GravelWetRough": 0.4,
+        "GravelWallBreakLo": 0.25,
+        "GravelWallBreakHi": 1.25,
+        "GravelWallNoiseCm": 45.0,
+        "GravelWallTiltCap": 0.14
+      },
+      "mpc": [
+        "GravelPOM",
+        "GravelDebug"
+      ],
+      "expressions": 43
+    },
+    "landscape": {
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "arrays": "slice 0 (Loose), uv (x, -y) / 2 m, no POM",
+      "scalars": [
+        "GravelTileCm",
+        "GravelNormalStrength",
+        "GravelAOStrength",
+        "GravelCavityTint",
+        "GravelAlbedoScale",
+        "GravelWetDarken",
+        "GravelWetRough"
+      ]
+    },
+    "stone": {
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GT_GravelStone",
+      "colour": "a Loose-bake stone face per instance (ORH B > 0.45, mip 3) x 0.82 x 0.92-1.06",
+      "rough": "0.75-0.85 per instance, to 0.4 wet",
+      "fade": "PerInstanceFadeAmount, interleaved-gradient dither, masked"
+    }
+  },
+  "grass_variation": {
+    "in": 360,
+    "bare": 68,
+    "out": 320,
+    "crest_extra": 28,
+    "bare_share": 0.1889,
+    "scale_min": 0.553,
+    "scale_max": 1.441,
+    "tilt_max_deg": 12.0
+  },
+  "ground_detail": {
+    "ensure_mpc": {
+      "mpc": "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "added": [],
+      "scalars": 14
+    },
+    "grass_map": {
+      "texture": "/Game/GrandTour/ArtTests/GroundDetail/T_GD_Grass_GravelDeform.T_GD_Grass_GravelDeform",
+      "png": "Art/Export/GroundDetailGR2/T_GD_Grass_GravelDeform.png",
+      "cells": 378,
+      "cell_cm": 50.0,
+      "instances": 320,
+      "dense_share": 0.0,
+      "blur_cm": 100.0,
+      "cover_smoothstep": [
+        0.2,
+        0.5
+      ]
+    },
+    "landscape": {
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "kind": "gravel",
+      "where": "the gravel surface's grass verge (3.75-5.9 m off the line), on the base colour, normal, roughness and AO outputs",
+      "switch": "GroundDetail (static, off in the parent)"
+    },
+    "mi": {
+      "path": "/Game/GrandTour/ArtTests/DeformableGravel/MI_GT_Landscape_Strips.MI_GT_Landscape_Strips",
+      "landscapes": 1,
+      "grass_bounds": [
+        -2000.0,
+        -9400.0,
+        5.291005291005291e-05,
+        5.291005291005291e-05
+      ]
+    },
+    "scatter": {
+      "ok": true,
+      "instances": 71284,
+      "meshes": {
+        "SM_GD_Clod0": 5863,
+        "SM_GD_Clod1": 6746,
+        "SM_GD_Clod2": 3471,
+        "SM_GD_Clod3": 2030,
+        "SM_GD_Clod4": 1204,
+        "SM_GD_Clod5": 397,
+        "SM_GD_Pebble0": 28017,
+        "SM_GD_Pebble1": 14480,
+        "SM_GD_Pebble2": 5320,
+        "SM_GD_Pebble3": 1440,
+        "SM_GD_Litter0": 107,
+        "SM_GD_Litter1": 86,
+        "SM_GD_Litter2": 109,
+        "SM_GD_Litter3": 95,
+        "SM_GD_Twig0": 550,
+        "SM_GD_Twig1": 513,
+        "SM_GD_Twig2": 576,
+        "SM_GD_TussockBase0": 9,
+        "SM_GD_TussockBase1": 96,
+        "SM_GD_TussockBase2": 175
+      },
+      "families": {
+        "Clods": {
+          "instances": 19711,
+          "per_m2": 0.5978
+        },
+        "Pebbles": {
+          "instances": 49257,
+          "per_m2": 1.4939
+        },
+        "Litter": {
+          "instances": 397,
+          "per_m2": 0.2823
+        },
+        "Twigs": {
+          "instances": 1639,
+          "per_m2": 0.0497
+        },
+        "TussockBases": {
+          "instances": 280,
+          "per_m2": 0.0
+        }
+      },
+      "open_area_m2": 32971,
+      "litter_area_m2": 1406.5,
+      "tussocks": 320,
+      "tussocks_under_footprint": 0,
+      "rejected": 4880,
+      "missed_traces": 0,
+      "cluster": [
+        300.0,
+        0.1,
+        2.5,
+        0.25
+      ],
+      "cull_cm": [
+        3000,
+        4000,
+        1800,
+        2500
+      ]
+    },
+    "switches": "gt.Ground.Detail 0/1, gt.Ground.Scatter 0/1, gt.Ground.ScatterDensity 0-1"
+  },
+  "relief": {
+    "route": {
+      "samples": 273,
+      "grade_pct": {
+        "p50": 2.18,
+        "p95": 5.25,
+        "max": 6.0
+      },
+      "cross_pct": {
+        "p50": 0.15,
+        "p95": 0.38,
+        "max": 0.47
+      },
+      "off_ford_p95_pct": {
+        "grade": 5.25,
+        "cross": 0.38
+      }
+    },
+    "hummocks": {
+      "raw": 2938,
+      "stamped": 2710,
+      "density_per_100m2": 8.22,
+      "nearest_mean_m": 1.706,
+      "nearest_cv": 0.566,
+      "stamped_nearest_cv": 0.565,
+      "pair_peak": 1.15,
+      "pair_peak_at_m": 2.75,
+      "pair_bins_0_5m": [
+        1.236,
+        1.167,
+        1.152,
+        1.125,
+        1.124,
+        1.15,
+        1.12,
+        1.082,
+        1.094,
+        1.133,
+        1.092,
+        1.052,
+        1.045,
+        1.048,
+        1.108,
+        1.006,
+        1.043,
+        1.077,
+        1.062,
+        1.081,
+        1.059,
+        1.031,
+        1.03,
+        1.05,
+        1.034,
+        1.022,
+        0.995,
+        0.979,
+        1.027,
+        1.023
+      ],
+      "field_slope_max_deg": 34.0,
+      "ground_slope_max_deg": 32.68,
+      "ground_slope_p99_deg": 19.62,
+      "hummock_max_m": 0.619
+    }
+  },
+  "relief_numbers": {
+    "land": {
+      "base_amplitude_m": 3.5,
+      "base_wavelength_m": 60.0,
+      "octaves": 4,
+      "persistence": 0.5
+    },
+    "relief": {
+      "roughness_octaves": 3,
+      "roughness_wavelength_m": 6.0,
+      "scrub_roughness_m": 0.45,
+      "mud_roughness_m": 0.22
+    },
+    "hummocks": {
+      "density": 8.0,
+      "cluster_wavelength_m": 12.0,
+      "cluster_min": 0.1,
+      "cluster_max": 2.2,
+      "radius_min_m": 1.0,
+      "radius_max_m": 2.8,
+      "radius_power": 2.0,
+      "height_min_m": 0.15,
+      "height_max_m": 0.5,
+      "rim_warp": 0.25,
+      "crest_offset": 0.3,
+      "seed": 0
+    },
+    "grass": {
+      "height_jitter": 0.45,
+      "height_wavelength_m": 3.0,
+      "height_fine_wavelength_m": 0.8,
+      "bare_share_min": 0.1,
+      "bare_share_max": 0.25,
+      "bare_wavelength_m": 2.0,
+      "bare_share_wavelength_m": 12.0,
+      "tilt_degrees": 12.0,
+      "slope_follow": 0.5,
+      "crest_tussock_weight": 2.0,
+      "seed": 0
+    },
+    "pre_churn_scale": 1.0
+  },
+  "level": "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform",
+  "sections": [
+    {
+      "span_m": [
+        30.0,
+        55.0
+      ],
+      "sink_cap_cm": 2.500000037252903,
+      "sink_rate_cm_s": 0.4000000189989805
+    },
+    {
+      "span_m": [
+        80.0,
+        110.0
+      ],
+      "sink_cap_cm": 5.000000074505806,
+      "sink_rate_cm_s": 0.8999999612569809
+    }
+  ],
+  "cell_cm": 12.5,
+  "physical_surface": "Dirt tag with test-owned gravel coefficients",
+  "limitations": [
+    "heightfield-driven wheel sinkage/rut forces; base landscape collision is not recooked",
+    "session lifetime only",
+    "not installed across Benmore yet"
+  ]
+}

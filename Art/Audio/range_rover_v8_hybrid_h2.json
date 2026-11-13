@@ -1,0 +1,27 @@
+{
+  "name": "Range Rover hybrid H2 - RPM and throttle controlled",
+  "source_profile": "Art/Audio/range_rover_v8_hybrid_h1.json",
+  "sample_rate": 48000,
+  "minimum_rpm": 700,
+  "maximum_rpm": 5000,
+  "rpm_smoothing_seconds": 0.015,
+  "throttle_attack_seconds": 0.045,
+  "throttle_release_seconds": 0.14,
+  "loop_crossfade_seconds": 0.16,
+  "loop_match_seconds": 0.04,
+  "loop_end_search_seconds": 0.12,
+  "prepared_loop_rms": 0.10,
+  "closed_throttle_cutoff_hz": 600,
+  "open_throttle_cutoff_hz": 6200,
+  "loaded_presence_gain": 1.7,
+  "support_band_hz": [32, 125],
+  "support_to_recorded_bass_db": -18,
+  "maximum_true_peak_dbfs": -6,
+  "banks": [
+    {"name": "idle", "source": "idle", "start": 6, "end": 16, "root_rpm": 790},
+    {"name": "low", "source": "revs", "start": 9.5, "end": 10.8, "root_rpm": 960},
+    {"name": "medium", "source": "revs", "start": 18.1, "end": 21.8, "root_rpm": 1890},
+    {"name": "upper", "source": "revs", "start": 6.1, "end": 8.1, "root_rpm": 2180}
+  ],
+  "calibration_note": "Root RPMs are provisional acoustic estimates, not tachometer measurements. Above 2180 RPM the upper bank is pitched upward; 4200 RPM requires about 1.93x speed. Throttle timbre is authored filtering of recorded material, not separate measured on/off-load captures."
+}

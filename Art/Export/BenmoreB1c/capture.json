@@ -1,0 +1,762 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+  "timings_collected": false,
+  "pictures": [
+    {
+      "name": "B1c_Gravel_Chase",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Gravel_Chase.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 225,
+          "GravelDust": 74
+        },
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 3,
+          "Snow": 0,
+          "Water": 0
+        },
+        "clumps_drawn": 0,
+        "speed_mps": 11.72,
+        "car_cm": [
+          -84742,
+          -22988,
+          701
+        ],
+        "camera": {
+          "eye": [
+            -84700,
+            -22405,
+            819
+          ],
+          "target": [
+            -84792,
+            -22727,
+            739
+          ],
+          "sun_angle_deg": 26.6
+        },
+        "wheels": [
+          {
+            "wheel": 0,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelLoose",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              10.96,
+              1.95
+            ]
+          },
+          {
+            "wheel": 1,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelFirm",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              86.66,
+              15.41
+            ]
+          },
+          {
+            "wheel": 2,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelLoose",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              56.59,
+              10.06
+            ]
+          },
+          {
+            "wheel": 3,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelLoose",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              12.27,
+              2.18
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "wetness": 0.0
+      },
+      "stretch": {
+        "index": 121,
+        "direction": -1,
+        "sun_heading_deviation_deg": 6.2,
+        "attempt": 1
+      },
+      "wheel_ticks_by_material_last_40m": {
+        "PM_Benmore_GravelLoose": 389,
+        "PM_Benmore_GravelFirm": 422,
+        "PM_Benmore_FirmGround": 21
+      },
+      "drive_s": 12.3,
+      "track": [
+        [
+          0.0,
+          0,
+          -0.02,
+          -0.1,
+          0.04,
+          0.1
+        ],
+        [
+          0.5,
+          0,
+          -0.02,
+          -0.1,
+          0.02,
+          1.2
+        ],
+        [
+          1.0,
+          1,
+          -0.02,
+          0.6,
+          0.03,
+          2.5
+        ],
+        [
+          1.5,
+          1,
+          -0.03,
+          0.5,
+          0.03,
+          3.8
+        ],
+        [
+          2.0,
+          3,
+          -0.06,
+          1.8,
+          0.07,
+          5.4
+        ],
+        [
+          2.5,
+          4,
+          -0.15,
+          2.6,
+          0.12,
+          7.1
+        ],
+        [
+          3.0,
+          6,
+          -0.33,
+          3.2,
+          0.17,
+          8.8
+        ],
+        [
+          3.5,
+          8,
+          -0.59,
+          3.5,
+          0.23,
+          10.3
+        ],
+        [
+          4.0,
+          11,
+          -0.94,
+          3.8,
+          0.3,
+          11.0
+        ],
+        [
+          4.5,
+          14,
+          -1.25,
+          3.3,
+          0.34,
+          11.4
+        ],
+        [
+          5.0,
+          17,
+          -1.52,
+          1.6,
+          0.34,
+          11.7
+        ],
+        [
+          5.5,
+          20,
+          -1.65,
+          0.8,
+          0.34,
+          11.7
+        ],
+        [
+          6.0,
+          23,
+          -1.64,
+          -0.5,
+          0.3,
+          11.8
+        ],
+        [
+          6.5,
+          26,
+          -1.6,
+          -0.6,
+          0.29,
+          11.8
+        ],
+        [
+          7.0,
+          28,
+          -1.54,
+          -0.8,
+          0.27,
+          11.8
+        ],
+        [
+          7.5,
+          31,
+          -1.45,
+          -0.9,
+          0.25,
+          11.8
+        ],
+        [
+          8.0,
+          34,
+          -1.38,
+          -1.3,
+          0.23,
+          11.8
+        ],
+        [
+          8.5,
+          37,
+          -1.32,
+          -0.3,
+          0.24,
+          11.8
+        ],
+        [
+          9.0,
+          40,
+          -1.32,
+          0.6,
+          0.27,
+          11.8
+        ],
+        [
+          9.5,
+          43,
+          -1.36,
+          -0.3,
+          0.25,
+          11.8
+        ],
+        [
+          10.0,
+          46,
+          -1.38,
+          0.5,
+          0.28,
+          11.8
+        ],
+        [
+          10.5,
+          49,
+          -1.42,
+          0.1,
+          0.28,
+          11.7
+        ],
+        [
+          11.0,
+          52,
+          -1.39,
+          -0.5,
+          0.25,
+          11.7
+        ],
+        [
+          11.5,
+          55,
+          -1.34,
+          -0.8,
+          0.24,
+          11.7
+        ],
+        [
+          12.0,
+          58,
+          -1.27,
+          -0.8,
+          0.22,
+          11.7
+        ]
+      ],
+      "written": true,
+      "no_sprites": {
+        "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Gravel_Chase_NoSprites.png",
+        "hidden": 4
+      }
+    },
+    {
+      "name": "B1c_Gravel_Close",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Gravel_Close.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 47,
+          "GravelDust": 10
+        },
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 0
+        },
+        "clumps_drawn": 0,
+        "speed_mps": 2.51,
+        "car_cm": [
+          -44606,
+          -59911,
+          2804
+        ],
+        "camera": {
+          "eye": [
+            -44846,
+            -59588,
+            2842
+          ],
+          "target": [
+            -44822,
+            -59868,
+            2832
+          ],
+          "sun_angle_deg": 22.5
+        },
+        "wheels": [
+          {
+            "wheel": 0,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelFirm",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              7.71,
+              1.37
+            ]
+          },
+          {
+            "wheel": 1,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelLoose",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              13.44,
+              2.39
+            ]
+          },
+          {
+            "wheel": 2,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelFirm",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              17.88,
+              3.18
+            ]
+          },
+          {
+            "wheel": 3,
+            "contact": true,
+            "phys_material": "PM_Benmore_GravelLoose",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              27.7,
+              4.93
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "wetness": 0.0
+      },
+      "stretch": {
+        "index": 1084,
+        "direction": -1,
+        "across_sun_deviation_deg": 2.7,
+        "wheel_offset_from_centre_cm": 14,
+        "wheel_side": "right"
+      },
+      "camera_wheel": 3,
+      "launch_s": 1.2,
+      "written": true,
+      "no_sprites": {
+        "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Gravel_Close_NoSprites.png",
+        "hidden": 4
+      },
+      "floor_sweep": {
+        "default": 2.5,
+        "1.5": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Gravel_Close_Floor1.5.png",
+        "4.0": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Gravel_Close_Floor4.png"
+      }
+    },
+    {
+      "name": "B1c_Verge",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Verge.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 3,
+          "GravelDust": 3
+        },
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 118,
+          "Snow": 0,
+          "Water": 0
+        },
+        "clumps_drawn": 0,
+        "speed_mps": 8.62,
+        "car_cm": [
+          -83184,
+          -26910,
+          750
+        ],
+        "camera": {
+          "eye": [
+            -83198,
+            -26325,
+            867
+          ],
+          "target": [
+            -83258,
+            -26655,
+            787
+          ],
+          "sun_angle_deg": 22.0
+        },
+        "wheels": [
+          {
+            "wheel": 0,
+            "contact": true,
+            "phys_material": "PM_Benmore_FirmGround",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "wheel": 1,
+            "contact": true,
+            "phys_material": "PM_Benmore_FirmGround",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "wheel": 2,
+            "contact": true,
+            "phys_material": "PM_Benmore_FirmGround",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "wheel": 3,
+            "contact": true,
+            "phys_material": "PM_Benmore_FirmGround",
+            "surface_tag": "Surface.Dirt",
+            "gravel_patch": false,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "wetness": 0.0
+      },
+      "stretch": {
+        "index": 100,
+        "direction": -1,
+        "side": "right",
+        "offset_from_centre_cm": 640,
+        "sun_heading_deviation_deg": 9.4,
+        "attempt": 1
+      },
+      "wheel_ticks_by_material_last_40m": {
+        "PM_Benmore_FirmGround": 1099,
+        "null": 2,
+        "PM_Benmore_GravelLoose": 11
+      },
+      "drive_s": 11.2,
+      "track": [
+        [
+          0.0,
+          0,
+          0.72,
+          11.2,
+          -0.95,
+          0.1
+        ],
+        [
+          0.5,
+          0,
+          0.66,
+          10.4,
+          -0.5,
+          0.9
+        ],
+        [
+          1.0,
+          0,
+          0.52,
+          10.7,
+          -0.12,
+          1.9
+        ],
+        [
+          1.5,
+          1,
+          0.28,
+          10.4,
+          0.07,
+          2.0
+        ],
+        [
+          2.0,
+          2,
+          0.08,
+          9.3,
+          0.2,
+          2.2
+        ],
+        [
+          2.5,
+          2,
+          -0.12,
+          8.8,
+          0.33,
+          2.5
+        ],
+        [
+          3.0,
+          3,
+          -0.26,
+          8.0,
+          0.38,
+          3.3
+        ],
+        [
+          3.5,
+          4,
+          -0.41,
+          6.8,
+          0.39,
+          4.2
+        ],
+        [
+          4.0,
+          5,
+          -0.59,
+          4.1,
+          0.34,
+          5.4
+        ],
+        [
+          4.5,
+          7,
+          -0.72,
+          1.8,
+          0.29,
+          6.3
+        ],
+        [
+          5.0,
+          8,
+          -0.69,
+          -1.5,
+          0.16,
+          7.3
+        ],
+        [
+          5.5,
+          10,
+          -0.55,
+          -1.3,
+          0.12,
+          7.8
+        ],
+        [
+          6.0,
+          12,
+          -0.45,
+          -1.3,
+          0.08,
+          8.3
+        ],
+        [
+          6.5,
+          14,
+          -0.39,
+          -0.3,
+          0.09,
+          8.6
+        ],
+        [
+          7.0,
+          17,
+          -0.38,
+          0.2,
+          0.1,
+          8.8
+        ],
+        [
+          7.5,
+          19,
+          -0.41,
+          0.5,
+          0.12,
+          8.9
+        ],
+        [
+          8.0,
+          21,
+          -0.5,
+          1.5,
+          0.16,
+          8.9
+        ],
+        [
+          8.5,
+          23,
+          -0.57,
+          1.2,
+          0.18,
+          8.6
+        ],
+        [
+          9.0,
+          25,
+          -0.86,
+          2.8,
+          0.31,
+          8.2
+        ],
+        [
+          9.5,
+          28,
+          -1.0,
+          -1.9,
+          0.21,
+          8.1
+        ],
+        [
+          10.0,
+          30,
+          -0.93,
+          0.7,
+          0.27,
+          8.2
+        ],
+        [
+          10.5,
+          32,
+          -0.92,
+          0.2,
+          0.25,
+          8.4
+        ],
+        [
+          11.0,
+          34,
+          -0.89,
+          -0.7,
+          0.21,
+          8.6
+        ]
+      ],
+      "written": true,
+      "no_sprites": {
+        "image": "C:\\GrandTour\\Art\\Export\\BenmoreB1c\\B1c_Verge_NoSprites.png",
+        "hidden": 4
+      }
+    }
+  ],
+  "car": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/UEDPIE_0_L_Benmore_GaeaReview.L_Benmore_GaeaReview:PersistentLevel.GTCarPawn_1",
+  "sun": {
+    "actor": "Sun",
+    "direction": [
+      0.159,
+      -0.9,
+      -0.407
+    ]
+  },
+  "surface_effects_actors": [
+    "Benmore_VehicleSurfaceEffects"
+  ],
+  "wheel_geometry_cm": [
+    [
+      160,
+      -77
+    ],
+    [
+      160,
+      77
+    ],
+    [
+      -115,
+      -77
+    ],
+    [
+      -115,
+      77
+    ]
+  ]
+}

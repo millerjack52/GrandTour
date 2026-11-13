@@ -1,0 +1,449 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+  "timings_collected": false,
+  "pictures": [
+    {
+      "name": "Triage_B2_Bog_1",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_B2_Bog_1.png",
+      "view": {
+        "eye": [
+          21265,
+          -22863,
+          4472
+        ],
+        "target": [
+          21820,
+          -26010,
+          4270
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 20.4
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "camera_from": "capture_b2c.json",
+      "written": true
+    },
+    {
+      "name": "Triage_B2_Bog_3",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_B2_Bog_3.png",
+      "view": {
+        "eye": [
+          -60105,
+          -56323,
+          2219
+        ],
+        "target": [
+          -59550,
+          -59470,
+          2124
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 22.3
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "camera_from": "capture_b2c.json",
+      "written": true
+    },
+    {
+      "name": "Triage_B2_Road_Mud",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_B2_Road_Mud.png",
+      "view": {
+        "eye": [
+          -84734,
+          -22265,
+          862
+        ],
+        "target": [
+          -84503,
+          -23646,
+          697
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 17.3
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "camera_from": "capture_b2c.json",
+      "written": true
+    },
+    {
+      "name": "Triage_B2_Top",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_B2_Top.png",
+      "view": {
+        "eye": [
+          -84730,
+          -22366,
+          3698
+        ],
+        "target": [
+          -84521,
+          -23548,
+          698
+        ],
+        "fov": 70.0,
+        "sun_angle_deg": 44.2
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "camera_from": "capture_b2c.json",
+      "written": true
+    },
+    {
+      "name": "Triage_B2_MudFar",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_B2_MudFar.png",
+      "view": {
+        "eye": [
+          -84301,
+          -13442,
+          1008
+        ],
+        "target": [
+          -84521,
+          -23548,
+          698
+        ],
+        "fov": 50.0,
+        "sun_angle_deg": 24.8
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "camera_from": "capture_b2c.json",
+      "written": true
+    },
+    {
+      "name": "Triage_B2_Edge",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_B2_Edge.png",
+      "view": {
+        "eye": [
+          -77663,
+          -41488,
+          1275
+        ],
+        "target": [
+          -78080,
+          -40571,
+          1099
+        ],
+        "fov": 60.0,
+        "sun_angle_deg": 143.3
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "camera_from": "capture_b2c_edge.json",
+      "written": true
+    },
+    {
+      "name": "Triage_B2_Road_Gravel",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_B2_Road_Gravel.png",
+      "view": {
+        "eye": [
+          -22885,
+          -14093,
+          2462
+        ],
+        "target": [
+          -22585,
+          -14524,
+          2292
+        ],
+        "fov": 70.0,
+        "sun_angle_deg": 23.9
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "camera_from": "capture_edge_gravel.json",
+      "written": true
+    },
+    {
+      "name": "Triage_Join_OnFoot",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreTriage\\Triage_Join_OnFoot.png",
+      "view": {
+        "eye": [
+          -84994,
+          -21188,
+          846
+        ],
+        "target": [
+          -84625,
+          -22957,
+          695
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 19.3
+      },
+      "zones": {
+        "zones": 0,
+        "units": 0,
+        "live": 0,
+        "live_cells": 0,
+        "cap_tiles": 9,
+        "activations": 0,
+        "releases": 0,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          0,
+          0
+        ],
+        "coverage_texels_hole": 0,
+        "coverage_writes": 0,
+        "live_units": []
+      },
+      "join_arc_m": 251.87,
+      "zones_joined": [
+        "Terrace loop 222-252 m MudRoad",
+        "Terrace loop 252-307 m gravel"
+      ],
+      "written": true
+    }
+  ],
+  "car": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/UEDPIE_0_L_Benmore_GaeaReview.L_Benmore_GaeaReview:PersistentLevel.GTCarPawn_1",
+  "sun": {
+    "actor": "Sun",
+    "direction": [
+      0.159,
+      -0.9,
+      -0.407
+    ]
+  },
+  "zones_at_start": {
+    "zones": 0,
+    "units": 0,
+    "live": 0,
+    "live_cells": 0,
+    "cap_tiles": 9,
+    "activations": 0,
+    "releases": 0,
+    "restores": 0,
+    "cache_entries": 0,
+    "cache_bytes": 0,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      0,
+      0
+    ],
+    "coverage_texels_hole": 0,
+    "coverage_writes": 0,
+    "live_units": []
+  },
+  "zone_count": 0,
+  "unit_count": 0,
+  "car_parked_cm": [
+    12000,
+    24000,
+    15139
+  ],
+  "surfaces": {
+    "Terrace loop": {
+      "centre": {
+        "PM_Benmore_GravelLoose": 86,
+        "PM_Benmore_GravelFirm": 124
+      },
+      "edge-0.3m": {
+        "PM_Benmore_FirmGround": 69,
+        "PM_Benmore_GravelLoose": 92,
+        "PM_Benmore_GravelFirm": 49
+      },
+      "grass+8m": {
+        "PM_Benmore_FirmGround": 209,
+        "PM_Benmore_GravelLoose": 1
+      }
+    },
+    "Hillside branch": {
+      "centre": {
+        "PM_Benmore_GravelFirm": 54,
+        "PM_Benmore_GravelLoose": 46
+      },
+      "edge-0.3m": {
+        "PM_Benmore_GravelLoose": 52,
+        "PM_Benmore_GravelFirm": 21,
+        "PM_Benmore_FirmGround": 27
+      },
+      "grass+8m": {
+        "PM_Benmore_GravelLoose": 1,
+        "PM_Benmore_FirmGround": 99
+      }
+    }
+  },
+  "zones_at_end": {
+    "zones": 0,
+    "units": 0,
+    "live": 0,
+    "live_cells": 0,
+    "cap_tiles": 9,
+    "activations": 0,
+    "releases": 0,
+    "restores": 0,
+    "cache_entries": 0,
+    "cache_bytes": 0,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      0,
+      0
+    ],
+    "coverage_texels_hole": 0,
+    "coverage_writes": 0,
+    "live_units": []
+  }
+}

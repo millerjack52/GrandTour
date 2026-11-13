@@ -1,0 +1,39 @@
+{
+    "author":  "Amal Kumar",
+    "use":  "Material source; mineral palette adjusted in shader. Not a New Zealand location scan.",
+    "source":  "https://polyhaven.com/a/ganges_river_pebbles",
+    "files":  [
+                  {
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/ganges_river_pebbles/ganges_river_pebbles_diff_2k.jpg",
+                      "md5":  "c7265256e7cb4ee18d189c48e5d66f06",
+                      "file":  "C:\\GrandTour\\Art\\Textures\\MackenzieRiver\\ganges_river_pebbles_diff_2k.jpg",
+                      "kind":  "Diffuse"
+                  },
+                  {
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/ganges_river_pebbles/ganges_river_pebbles_nor_dx_2k.jpg",
+                      "md5":  "282fce413952f299ad6f3e6dce191c2a",
+                      "file":  "C:\\GrandTour\\Art\\Textures\\MackenzieRiver\\ganges_river_pebbles_nor_dx_2k.jpg",
+                      "kind":  "nor_dx"
+                  },
+                  {
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/ganges_river_pebbles/ganges_river_pebbles_disp_2k.png",
+                      "md5":  "157023381e0f0ec98d404cb9a789e46d",
+                      "file":  "C:\\GrandTour\\Art\\Textures\\MackenzieRiver\\ganges_river_pebbles_disp_2k.png",
+                      "kind":  "Displacement"
+                  },
+                  {
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/ganges_river_pebbles/ganges_river_pebbles_rough_2k.jpg",
+                      "md5":  "2920b38c1584569b90b676e480e7f222",
+                      "file":  "C:\\GrandTour\\Art\\Textures\\MackenzieRiver\\ganges_river_pebbles_rough_2k.jpg",
+                      "kind":  "Rough"
+                  },
+                  {
+                      "url":  "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/ganges_river_pebbles/ganges_river_pebbles_ao_2k.jpg",
+                      "md5":  "f90c0f4088a59fec8e94ffda082c8eda",
+                      "file":  "C:\\GrandTour\\Art\\Textures\\MackenzieRiver\\ganges_river_pebbles_ao_2k.jpg",
+                      "kind":  "AO"
+                  }
+              ],
+    "asset":  "ganges_river_pebbles",
+    "license":  "CC0"
+}

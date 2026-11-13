@@ -1,0 +1,97 @@
+REFERENCE POLISH / 2026-11-13
+===========================
+Instruction: audit all views against the owner references, plan missing work,
+implement it, then establish the visual baseline for a separate 60 fps phase.
+
+Reference hierarchy
+- Sunlit woodland: default daytime lighting, branching silhouettes, warm bark,
+  olive/gold painted leaves, cool under-canopy depth and varied ground colonies.
+- Colourful woodland: compatible copper/teal understory accents and layering;
+  do not turn the entire forest pink to imitate one composition.
+- Cool mist: legible depth layers and silhouette separation; not a permanent
+  blue overlay across the daytime map.
+
+Audit findings and implementation order
+1. Actual leaf NormalUpBlend was set to .95 in the earlier soften pass. This
+   largely discards the source normals and makes all branches light alike.
+   Retain imported normals: .28 for crowns, .18 for low plants. Moderate
+   transmission instead of using near-upward normals to brighten everything.
+2. PathPainterlyCoverage uses ViewScalarBlueNoise and View.StateFrameIndex.
+   Canopy baker captures colour, alpha and normals on independent frames.
+   Deterministic spatial coverage must replace temporal noise during baking;
+   use the same stable painted-edge handling in the map-local materials.
+   Re-bake all three distant tree atlases, preserving source pack assets.
+3. Understory is too uniformly green. Add coherent copper and teal colonies
+   derived from world position, controlled by MapPlantPigment; retain main
+   green/olive coverage and original masks, geometry, wind and contacts.
+4. Rebind rebuilt far materials/LOD screens, preserve local canopy shading,
+   verify protected terrain/mud/water and inspect the same eight game cameras.
+5. Compare before/reference/after. If the main causes remain visible, adjust
+   their actual source rather than hiding the result with stronger fog/blur.
+
+Second audit findings
+- Imported leaf normals alone restored depth but left granular highlights.
+  MapCrownVolume now blends them toward an ellipsoidal crown lighting normal,
+  using a vertex-interpolated instance centre for HISM correctness. Geometry,
+  masks and branch silhouettes are unchanged. Strength remains editable.
+- Native stumps/logs were wrongly given a purchased tree's packed UV1 atlas.
+  They do not have that atlas layout. M_FloraDebrisWood now uses their original
+  vertex-colour variation with a shared warm bark pigment; no black atlas padding.
+- CRITICAL CAPTURE CORRECTION: UE 5.8 UnrealClient.cpp HighResScreenshot sets
+  r.ForceLOD=0 for its dummy render, then restores the prior value. Earlier
+  HighResShot valley captures therefore did not represent gameplay tree LODs.
+  review now uses normal Shot -nosuffix from the settled gameplay viewport.
+  Near cameras preserve their original 1.6 aspect inside the viewport; valley
+  cameras preserve 16:9. Earlier screenshots remain diagnostic history and
+  must not be presented as an identical-renderer before/after comparison.
+- Runtime fog audit found density .01 and volumetrics disabled, despite the
+  authoring recipe requesting .025. GTWeatherSubsystem was replacing density.
+  The map fog is now tagged GTWeatherUnmanaged (the existing study mechanism),
+  with configurable volumetrics over 150m and extinction .65. Other weather
+  actors remain managed. This deliberately makes the map's artistic fog static
+  until its own profile is changed; future weather coupling must be relative
+  to the map's authored baseline rather than replacing it with a global value.
+- Distant representation now has three side cards plus one crown card: eight
+  triangles, four atlas views in a native power-of-two 2048x512 texture. This
+  replaces the two-side/six-triangle version exposed by normal viewport captures.
+- Normal viewport capture was clamped by the current desktop to 1274x682.
+  Record actual output dimensions; these are visual-review images, not a
+  1920x1080 performance benchmark. Do not upscale and present them as native HD.
+
+Acceptance
+- No baked salt-and-pepper holes in crowns; stable edges during movement.
+- Branch/crown lighting has readable forms, deep cool interiors, warm highlights.
+- Ground plants retain root contact, varied sizes and coherent colour colonies.
+- Roads/mud remain legible; preserve native soil/deformation graph and water.
+- Same-camera captures, no image generation or post-capture regrading.
+- Record all remaining gaps honestly. No claim of pixel-identical composition.
+
+60 fps phase, AFTER visual acceptance
+Use a fixed gameplay route, vehicle, weather, 1920x1080 output and declared
+hardware. Capture standalone CPU/GPU frame times and p95/p99 stutter, then
+budget for 16.67ms total. Optimize hidden work first: instance/LOD visibility,
+shadow update cost, masked overdraw, grass streaming and material work. Freeze
+reference cameras and compare every optimization against the approved images.
+Do not claim 60 fps from hidden-editor tick intervals or remove visual layers
+to pass. Resolution/upscaling changes must be explicit in benchmark reports.
+Detected development hardware: RTX 4050 Laptop 6GB, Ryzen 7 8845HS. Existing
+runtime profile uses TSR at 75%; its configured output is 1600x900, while the
+review opens a 1920x1080 PIE window. The standalone benchmark must state its
+actual output/internal resolution and power mode. No 60 fps result claimed.
+
+Implementation controls
+- Art/Unreal/flora_world_finish.py: stable painted coverage, imported normal
+  preservation, coherent transmission and world-position plant pigments.
+- Material instances: NormalUpBlend, MapTransmission, MapPlantPigment.
+- Shared lighting/fog/palette: FloraWorld/profile.json and map style asset.
+- Art/run_lidar_flora_world.ps1 canopy, then polish, then review.
+- Review now runs saved-map integrity checks before entering PIE. It checks
+  the same soil, terrain, water, mud and geometry contracts as verify, plus
+  absence of temporal-frame noise in the local painted-coverage materials.
+
+Technical sources checked
+Epic shading models: https://dev.epicgames.com/documentation/unreal-engine/shading-models-in-unreal-engine?application_version=5.8
+Purchased source material/scene manifests: Art/Export/LidarStudy/FloraPath/
+Actual shader cause: Art/Unreal/soften_flora_path.py
+Actual baker: Art/Unreal/lidar_canopy_assets.py
+Backup: D:/GrandTourBackups/FloraWorld_Polish_2026-11-13/

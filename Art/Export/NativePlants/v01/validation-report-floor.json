@@ -1,0 +1,761 @@
+{
+  "ok": true,
+  "set": "floor",
+  "fbx_roundtrips": [
+    {
+      "name": "SM_NZ_Kiokio_A_LOD0",
+      "triangles": 2232,
+      "dimensions_m": [
+        1.6509,
+        1.7057,
+        0.8926
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 211208
+    },
+    {
+      "name": "SM_NZ_Kiokio_A_LOD1",
+      "triangles": 443,
+      "dimensions_m": [
+        1.6118,
+        1.6608,
+        0.8775
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 44312
+    },
+    {
+      "name": "SM_NZ_Kiokio_A_LOD2",
+      "triangles": 108,
+      "dimensions_m": [
+        1.5976,
+        1.6608,
+        0.8775
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 12240
+    },
+    {
+      "name": "SM_NZ_Kiokio_B_LOD0",
+      "triangles": 3396,
+      "dimensions_m": [
+        2.6984,
+        2.5443,
+        1.3427
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 320624
+    },
+    {
+      "name": "SM_NZ_Kiokio_B_LOD1",
+      "triangles": 563,
+      "dimensions_m": [
+        2.662,
+        2.5101,
+        1.328
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 55948
+    },
+    {
+      "name": "SM_NZ_Kiokio_B_LOD2",
+      "triangles": 136,
+      "dimensions_m": [
+        2.662,
+        2.5101,
+        1.328
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 15048
+    },
+    {
+      "name": "SM_NZ_Log_A_LOD0",
+      "triangles": 2739,
+      "dimensions_m": [
+        8.1908,
+        1.2253,
+        0.9573
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 2,
+      "ground_origin": true,
+      "glb_bytes": 80436
+    },
+    {
+      "name": "SM_NZ_Log_A_LOD1",
+      "triangles": 769,
+      "dimensions_m": [
+        8.1897,
+        1.2171,
+        0.9501
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 24428
+    },
+    {
+      "name": "SM_NZ_Log_A_LOD2",
+      "triangles": 186,
+      "dimensions_m": [
+        8.1897,
+        1.2033,
+        0.9552
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 7680
+    },
+    {
+      "name": "SM_NZ_Log_B_LOD0",
+      "triangles": 1943,
+      "dimensions_m": [
+        5.0569,
+        1.019,
+        0.8964
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 2,
+      "ground_origin": true,
+      "glb_bytes": 60788
+    },
+    {
+      "name": "SM_NZ_Log_B_LOD1",
+      "triangles": 573,
+      "dimensions_m": [
+        5.0704,
+        1.0197,
+        0.8951
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 20040
+    },
+    {
+      "name": "SM_NZ_Log_B_LOD2",
+      "triangles": 174,
+      "dimensions_m": [
+        5.0608,
+        1.0178,
+        0.8936
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 7872
+    },
+    {
+      "name": "SM_NZ_Stump_A_LOD0",
+      "triangles": 1404,
+      "dimensions_m": [
+        2.1097,
+        2.1073,
+        1.2725
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 43376
+    },
+    {
+      "name": "SM_NZ_Stump_A_LOD1",
+      "triangles": 452,
+      "dimensions_m": [
+        2.1099,
+        2.1103,
+        1.2748
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 15840
+    },
+    {
+      "name": "SM_NZ_Stump_A_LOD2",
+      "triangles": 134,
+      "dimensions_m": [
+        2.1228,
+        2.1131,
+        1.2649
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 6268
+    },
+    {
+      "name": "SM_NZ_MossHummock_A_LOD0",
+      "triangles": 690,
+      "dimensions_m": [
+        0.7238,
+        0.6256,
+        0.2958
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 93988
+    },
+    {
+      "name": "SM_NZ_MossHummock_A_LOD1",
+      "triangles": 234,
+      "dimensions_m": [
+        0.7136,
+        0.6234,
+        0.2864
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 32284
+    },
+    {
+      "name": "SM_NZ_MossHummock_A_LOD2",
+      "triangles": 56,
+      "dimensions_m": [
+        0.7238,
+        0.5948,
+        0.2783
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 8508
+    },
+    {
+      "name": "SM_NZ_MossHummock_B_LOD0",
+      "triangles": 690,
+      "dimensions_m": [
+        1.0648,
+        1.2246,
+        0.4209
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 94164
+    },
+    {
+      "name": "SM_NZ_MossHummock_B_LOD1",
+      "triangles": 234,
+      "dimensions_m": [
+        1.0565,
+        1.2175,
+        0.4154
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 32192
+    },
+    {
+      "name": "SM_NZ_MossHummock_B_LOD2",
+      "triangles": 56,
+      "dimensions_m": [
+        1.0429,
+        1.2175,
+        0.3982
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 8504
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_S_LOD0",
+      "triangles": 529,
+      "dimensions_m": [
+        0.3872,
+        0.3967,
+        0.1209
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 17868
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_S_LOD1",
+      "triangles": 190,
+      "dimensions_m": [
+        0.3939,
+        0.3929,
+        0.124
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 7864
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_S_LOD2",
+      "triangles": 54,
+      "dimensions_m": [
+        0.399,
+        0.3946,
+        0.119
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 3824
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_M_LOD0",
+      "triangles": 538,
+      "dimensions_m": [
+        0.7903,
+        0.8091,
+        0.1607
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 18800
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_M_LOD1",
+      "triangles": 155,
+      "dimensions_m": [
+        0.7931,
+        0.8057,
+        0.1509
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 7040
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_M_LOD2",
+      "triangles": 52,
+      "dimensions_m": [
+        0.7833,
+        0.8075,
+        0.1569
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 4164
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_L_LOD0",
+      "triangles": 559,
+      "dimensions_m": [
+        1.4135,
+        1.3839,
+        0.1428
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 19628
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_L_LOD1",
+      "triangles": 187,
+      "dimensions_m": [
+        1.4155,
+        1.4204,
+        0.1351
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 8416
+    },
+    {
+      "name": "SM_NZ_Cobble_Cluster_L_LOD2",
+      "triangles": 54,
+      "dimensions_m": [
+        1.4163,
+        1.3927,
+        0.1527
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 4748
+    },
+    {
+      "name": "SM_NZ_CobbleBar_LOD0",
+      "triangles": 2872,
+      "dimensions_m": [
+        3.138,
+        2.0673,
+        0.2105
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 94000
+    },
+    {
+      "name": "SM_NZ_CobbleBar_LOD1",
+      "triangles": 594,
+      "dimensions_m": [
+        3.1677,
+        2.0284,
+        0.2245
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 34824
+    },
+    {
+      "name": "SM_NZ_CobbleBar_LOD2",
+      "triangles": 192,
+      "dimensions_m": [
+        2.8844,
+        1.9593,
+        0.2745
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 12084
+    },
+    {
+      "name": "SM_NZ_Driftwood_A_LOD0",
+      "triangles": 1474,
+      "dimensions_m": [
+        4.3601,
+        1.0436,
+        0.9942
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 45612
+    },
+    {
+      "name": "SM_NZ_Driftwood_A_LOD1",
+      "triangles": 440,
+      "dimensions_m": [
+        4.3582,
+        1.0137,
+        0.9955
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 15820
+    },
+    {
+      "name": "SM_NZ_Driftwood_A_LOD2",
+      "triangles": 143,
+      "dimensions_m": [
+        4.3529,
+        0.9979,
+        0.9924
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 6996
+    },
+    {
+      "name": "SM_NZ_LogJam_LOD0",
+      "triangles": 4972,
+      "dimensions_m": [
+        6.0167,
+        2.8682,
+        1.139
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 2,
+      "ground_origin": true,
+      "glb_bytes": 153720
+    },
+    {
+      "name": "SM_NZ_LogJam_LOD1",
+      "triangles": 1424,
+      "dimensions_m": [
+        6.0164,
+        2.8706,
+        1.1117
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 50408
+    },
+    {
+      "name": "SM_NZ_LogJam_LOD2",
+      "triangles": 480,
+      "dimensions_m": [
+        6.0069,
+        2.8692,
+        1.1059
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 21064
+    },
+    {
+      "name": "SM_NZ_Boulder_A_LOD0",
+      "triangles": 886,
+      "dimensions_m": [
+        1.2736,
+        1.572,
+        0.7424
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 27252
+    },
+    {
+      "name": "SM_NZ_Boulder_A_LOD1",
+      "triangles": 238,
+      "dimensions_m": [
+        1.2618,
+        1.5279,
+        0.7424
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 8616
+    },
+    {
+      "name": "SM_NZ_Boulder_A_LOD2",
+      "triangles": 64,
+      "dimensions_m": [
+        1.2602,
+        1.5279,
+        0.7406
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 3516
+    },
+    {
+      "name": "SM_NZ_Boulder_B_LOD0",
+      "triangles": 945,
+      "dimensions_m": [
+        0.8012,
+        0.6752,
+        0.444
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 28884
+    },
+    {
+      "name": "SM_NZ_Boulder_B_LOD1",
+      "triangles": 240,
+      "dimensions_m": [
+        0.8006,
+        0.6651,
+        0.4377
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 8680
+    },
+    {
+      "name": "SM_NZ_Boulder_B_LOD2",
+      "triangles": 66,
+      "dimensions_m": [
+        0.7457,
+        0.6485,
+        0.4179
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 3576
+    }
+  ],
+  "lod_triangles": {
+    "SM_NZ_Boulder_A": [
+      886,
+      238,
+      64
+    ],
+    "SM_NZ_Boulder_B": [
+      945,
+      240,
+      66
+    ],
+    "SM_NZ_CobbleBar": [
+      2872,
+      594,
+      192
+    ],
+    "SM_NZ_Cobble_Cluster_L": [
+      559,
+      187,
+      54
+    ],
+    "SM_NZ_Cobble_Cluster_M": [
+      538,
+      155,
+      52
+    ],
+    "SM_NZ_Cobble_Cluster_S": [
+      529,
+      190,
+      54
+    ],
+    "SM_NZ_Driftwood_A": [
+      1474,
+      440,
+      143
+    ],
+    "SM_NZ_Kiokio_A": [
+      2232,
+      443,
+      108
+    ],
+    "SM_NZ_Kiokio_B": [
+      3396,
+      563,
+      136
+    ],
+    "SM_NZ_LogJam": [
+      4972,
+      1424,
+      480
+    ],
+    "SM_NZ_Log_A": [
+      2739,
+      769,
+      186
+    ],
+    "SM_NZ_Log_B": [
+      1943,
+      573,
+      174
+    ],
+    "SM_NZ_MossHummock_A": [
+      690,
+      234,
+      56
+    ],
+    "SM_NZ_MossHummock_B": [
+      690,
+      234,
+      56
+    ],
+    "SM_NZ_Stump_A": [
+      1404,
+      452,
+      134
+    ]
+  },
+  "failures": [],
+  "meshes": 15,
+  "files": 45
+}

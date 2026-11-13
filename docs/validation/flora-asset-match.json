@@ -1,0 +1,180 @@
+{
+  "date_utc": "2026-11-13T18:10:18.309237+00:00",
+  "status": "experimental_candidate_not_promoted",
+  "still_capture": {
+    "completed": true,
+    "images": 52,
+    "process_exit": -1073741819,
+    "process_check": "failed_after_logged_shutdown"
+  },
+  "motion_capture": {
+    "completed": true,
+    "process_exit": 0,
+    "process_check": "passed",
+    "evolving_frames": 48,
+    "settled_controls": 2
+  },
+  "python_syntax_checked": [
+    "Art/Blender/render_flora_exact.py",
+    "Art/Blender/bake_flora_exact.py",
+    "Art/Blender/flora_pigment_check.py",
+    "Art/Unreal/flora_exact_materials.py",
+    "Art/Unreal/build_flora_exact.py",
+    "Art/compare_flora_exact.py",
+    "Art/review_flora_exact_motion.py"
+  ],
+  "comparison": {
+    "source_pigment_and_mask_only": {
+      "fern": {
+        "integrated_rgb_ratio": [
+          1.0330884456634521,
+          1.0232739448547363,
+          1.023345708847046
+        ],
+        "relative_rgb_l1_blurred": 0.06446877121925354
+      },
+      "shrub": {
+        "integrated_rgb_ratio": [
+          0.9608172178268433,
+          0.9679690599441528,
+          0.8784648180007935
+        ],
+        "relative_rgb_l1_blurred": 0.08429767191410065
+      },
+      "tree": {
+        "integrated_rgb_ratio": [
+          0.9848101735115051,
+          0.9834116697311401,
+          0.9874983429908752
+        ],
+        "relative_rgb_l1_blurred": 0.03833038732409477
+      }
+    },
+    "neutral_receivers": {
+      "front": {
+        "blender": 0.26513671875,
+        "unreal": 0.26806640625,
+        "relative_error": 0.011049723756906077
+      },
+      "side": {
+        "blender": 0.2274169921875,
+        "unreal": 0.224365234375,
+        "relative_error": 0.013419216317767043
+      },
+      "back": {
+        "blender": 0.24267578125,
+        "unreal": 0.2412109375,
+        "relative_error": 0.006036217303822937
+      },
+      "shade": {
+        "blender": 0.1337890625,
+        "unreal": 0.1343994140625,
+        "relative_error": 0.004562043795620438
+      }
+    },
+    "opacity": {
+      "fern": {
+        "integrated_ratio": 0.8297609686851501,
+        "relative_l1": 0.24672552943229675,
+        "source_solid_fraction": 0.17832287507130634,
+        "unreal_solid_fraction": 0.16573516766981944
+      },
+      "shrub": {
+        "integrated_ratio": 0.9094327688217163,
+        "relative_l1": 0.12518052756786346,
+        "source_solid_fraction": 0.5174382973981837,
+        "unreal_solid_fraction": 0.48878576952822894
+      },
+      "tree": {
+        "integrated_ratio": 0.937288224697113,
+        "relative_l1": 0.08548854291439056,
+        "source_solid_fraction": 0.5980360243055556,
+        "unreal_solid_fraction": 0.5431335662456329
+      }
+    },
+    "display": "Beauty boards use native Blender and Unreal PNGs, neutral tone settings and exposure 0 in both, no per-asset colour fit. Pigment diagnostic uses shared Standard sRGB at +1 stop. Metrics use scene-linear HDR.",
+    "performance_verified": false,
+    "protected_unchanged": {
+      "Config/DefaultEngine.ini": true,
+      "Content/GrandTour/ArtTests/LidarStudy/L_LidarStudy.umap": true,
+      "Content/GrandTour/ArtTests/FloraPath/L_FloraPath.umap": true
+    },
+    "purchased_source_unchanged": true,
+    "paired_cases": [
+      "chart_back",
+      "chart_coolshade",
+      "chart_front",
+      "chart_shade",
+      "chart_side",
+      "chart_warm",
+      "fern_back_face",
+      "fern_back_grazing",
+      "fern_coolshade_face",
+      "fern_coolshade_grazing",
+      "fern_front_face",
+      "fern_front_grazing",
+      "fern_noshadow_face",
+      "fern_opacity_face",
+      "fern_pigment_face",
+      "fern_shade_face",
+      "fern_shade_grazing",
+      "fern_side_face",
+      "fern_side_grazing",
+      "fern_warm_face",
+      "fern_warm_grazing",
+      "shrub_back_face",
+      "shrub_back_grazing",
+      "shrub_coolshade_face",
+      "shrub_coolshade_grazing",
+      "shrub_front_face",
+      "shrub_front_grazing",
+      "shrub_noshadow_face",
+      "shrub_opacity_face",
+      "shrub_pigment_face",
+      "shrub_shade_face",
+      "shrub_shade_grazing",
+      "shrub_side_face",
+      "shrub_side_grazing",
+      "shrub_warm_face",
+      "shrub_warm_grazing",
+      "tree_back_face",
+      "tree_back_grazing",
+      "tree_coolshade_face",
+      "tree_coolshade_grazing",
+      "tree_front_face",
+      "tree_front_grazing",
+      "tree_noshadow_face",
+      "tree_opacity_face",
+      "tree_pigment_face",
+      "tree_shade_face",
+      "tree_shade_grazing",
+      "tree_side_face",
+      "tree_side_grazing",
+      "tree_warm_face",
+      "tree_warm_grazing"
+    ]
+  },
+  "motion": {
+    "runtime_fps_verified": false,
+    "scope": "48 evolving camera/light frames, then two settled controls; no wind/forest-scale claim",
+    "controls": {
+      "6": {
+        "relative_rgb_l1_5px": 0.15623095631599426,
+        "mean_display_difference_0_to_1": 0.014423937129251139
+      },
+      "30": {
+        "relative_rgb_l1_5px": 0.21454764902591705,
+        "mean_display_difference_0_to_1": 0.019906351453783555
+      }
+    }
+  },
+  "performance_verified": false,
+  "remaining": [
+    "Fine coverage grain and motion/settled softness mismatch",
+    "Arbitrary local lights and nonuniform sky",
+    "Full procedural bark normals",
+    "Game viewport display-path validation",
+    "Still-capture shutdown error",
+    "Whole-library memory and forest-scale performance"
+  ]
+}

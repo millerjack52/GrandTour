@@ -1,0 +1,714 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+  "timings_collected": false,
+  "pictures": [
+    {
+      "name": "B2_Edge",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Edge.png",
+      "view": {
+        "eye": [
+          -77663,
+          -41488,
+          1275
+        ],
+        "target": [
+          -78080,
+          -40571,
+          1099
+        ],
+        "fov": 60.0,
+        "sun_angle_deg": 143.3
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 1,
+        "live_cells": 37636,
+        "cap_tiles": 1,
+        "activations": 2,
+        "releases": 1,
+        "restores": 0,
+        "cache_entries": 0,
+        "cache_bytes": 0,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          -77600,
+          -41400
+        ],
+        "coverage_texels_hole": 2119,
+        "coverage_writes": 3,
+        "live_units": [
+          {
+            "zone": 2,
+            "label": "Terrace loop 29-142 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              -33,
+              -18
+            ],
+            "cells": 37636,
+            "quads": 8851,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "zone": "Terrace loop 29-142 m gravel",
+      "border_arc_m": 51,
+      "written": true
+    },
+    {
+      "name": "B2_Road_Gravel",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Road_Gravel.png",
+      "view": {
+        "eye": [
+          -22885,
+          -14093,
+          2462
+        ],
+        "target": [
+          -22585,
+          -14524,
+          2292
+        ],
+        "fov": 70.0,
+        "sun_angle_deg": 23.9
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 9,
+        "live_cells": 338724,
+        "cap_tiles": 9,
+        "activations": 28,
+        "releases": 19,
+        "restores": 0,
+        "cache_entries": 5,
+        "cache_bytes": 114880,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          -25000,
+          -12800
+        ],
+        "coverage_texels_hole": 12297,
+        "coverage_writes": 30,
+        "live_units": [
+          {
+            "zone": 19,
+            "label": "Terrace loop 895-1013 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              -12,
+              -6
+            ],
+            "cells": 37636,
+            "quads": 331,
+            "distance_m": 34.6
+          },
+          {
+            "zone": 19,
+            "label": "Terrace loop 895-1013 m gravel",
+            "slot": 1,
+            "whole": false,
+            "tile": [
+              -11,
+              -6
+            ],
+            "cells": 37636,
+            "quads": 11124,
+            "distance_m": 10.6
+          },
+          {
+            "zone": 19,
+            "label": "Terrace loop 895-1013 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              -10,
+              -6
+            ],
+            "cells": 37636,
+            "quads": 855,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 19,
+            "label": "Terrace loop 895-1013 m gravel",
+            "slot": 6,
+            "whole": false,
+            "tile": [
+              -11,
+              -5
+            ],
+            "cells": 37636,
+            "quads": 1467,
+            "distance_m": 23.0
+          },
+          {
+            "zone": 20,
+            "label": "Terrace loop 1013-1131 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              -9,
+              -8
+            ],
+            "cells": 37636,
+            "quads": 2686,
+            "distance_m": 22.9
+          },
+          {
+            "zone": 20,
+            "label": "Terrace loop 1013-1131 m gravel",
+            "slot": 3,
+            "whole": false,
+            "tile": [
+              -8,
+              -8
+            ],
+            "cells": 37636,
+            "quads": 12649,
+            "distance_m": 38.6
+          },
+          {
+            "zone": 20,
+            "label": "Terrace loop 1013-1131 m gravel",
+            "slot": 5,
+            "whole": false,
+            "tile": [
+              -10,
+              -7
+            ],
+            "cells": 37636,
+            "quads": 6655,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 20,
+            "label": "Terrace loop 1013-1131 m gravel",
+            "slot": 6,
+            "whole": false,
+            "tile": [
+              -9,
+              -7
+            ],
+            "cells": 37636,
+            "quads": 10353,
+            "distance_m": 8.1
+          },
+          {
+            "zone": 20,
+            "label": "Terrace loop 1013-1131 m gravel",
+            "slot": 7,
+            "whole": false,
+            "tile": [
+              -10,
+              -6
+            ],
+            "cells": 37636,
+            "quads": 5525,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "speed_mps": 7.43,
+      "sun_heading_deviation_deg": 42.9,
+      "largest_bend_deg": 1.0,
+      "start_arc_m": 962.0,
+      "direction": 1.0,
+      "attempt": 2,
+      "track": [
+        [
+          0.0,
+          0,
+          -0.2,
+          -30.6,
+          -0.45,
+          0.2
+        ],
+        [
+          0.5,
+          0,
+          -0.11,
+          -29.8,
+          -0.7,
+          0.9
+        ],
+        [
+          1.0,
+          0,
+          0.12,
+          -25.4,
+          -0.84,
+          1.7
+        ],
+        [
+          1.5,
+          1,
+          0.41,
+          -18.2,
+          -0.78,
+          2.8
+        ],
+        [
+          2.0,
+          2,
+          0.67,
+          -10.8,
+          -0.64,
+          3.9
+        ],
+        [
+          2.5,
+          3,
+          0.87,
+          -4.8,
+          -0.48,
+          5.1
+        ],
+        [
+          3.0,
+          4,
+          0.94,
+          -1.0,
+          -0.36,
+          5.9
+        ],
+        [
+          3.5,
+          6,
+          0.91,
+          1.0,
+          -0.27,
+          6.4
+        ],
+        [
+          4.0,
+          7,
+          0.81,
+          2.0,
+          -0.19,
+          6.8
+        ],
+        [
+          4.5,
+          9,
+          0.68,
+          2.0,
+          -0.15,
+          7.0
+        ],
+        [
+          5.0,
+          11,
+          0.54,
+          1.9,
+          -0.11,
+          7.2
+        ],
+        [
+          5.5,
+          13,
+          0.41,
+          1.4,
+          -0.08,
+          7.2
+        ],
+        [
+          6.0,
+          14,
+          0.32,
+          1.3,
+          -0.06,
+          7.3
+        ],
+        [
+          6.5,
+          16,
+          0.26,
+          0.8,
+          -0.05,
+          7.3
+        ],
+        [
+          7.0,
+          18,
+          0.21,
+          0.3,
+          -0.05,
+          7.4
+        ],
+        [
+          7.5,
+          20,
+          0.19,
+          -0.1,
+          -0.06,
+          7.4
+        ],
+        [
+          8.0,
+          22,
+          0.19,
+          -0.5,
+          -0.07,
+          7.4
+        ],
+        [
+          8.5,
+          24,
+          0.23,
+          -0.8,
+          -0.09,
+          7.4
+        ],
+        [
+          9.0,
+          25,
+          0.27,
+          -0.7,
+          -0.1,
+          7.4
+        ],
+        [
+          9.5,
+          27,
+          0.31,
+          -0.8,
+          -0.11,
+          7.5
+        ],
+        [
+          10.0,
+          29,
+          0.36,
+          -0.8,
+          -0.13,
+          7.4
+        ],
+        [
+          10.5,
+          31,
+          0.4,
+          -0.7,
+          -0.13,
+          7.4
+        ],
+        [
+          11.0,
+          33,
+          0.44,
+          -0.4,
+          -0.14,
+          7.4
+        ]
+      ],
+      "lowered_cm3": 2371173,
+      "wheels": [
+        {
+          "sinkage_cm": 5.0,
+          "in_patch": true,
+          "profiled": true
+        },
+        {
+          "sinkage_cm": 5.0,
+          "in_patch": true,
+          "profiled": true
+        },
+        {
+          "sinkage_cm": 5.0,
+          "in_patch": true,
+          "profiled": true
+        },
+        {
+          "sinkage_cm": 5.0,
+          "in_patch": true,
+          "profiled": true
+        }
+      ],
+      "written": true,
+      "no_dust": {
+        "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Road_Gravel_NoDust.png",
+        "niagara_hidden": 4
+      }
+    }
+  ],
+  "car": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/UEDPIE_0_L_Benmore_GaeaReview.L_Benmore_GaeaReview:PersistentLevel.GTCarPawn_1",
+  "sun": {
+    "actor": "Sun",
+    "direction": [
+      0.159,
+      -0.9,
+      -0.407
+    ]
+  },
+  "zones_at_start": {
+    "zones": 76,
+    "units": 259,
+    "live": 1,
+    "live_cells": 37636,
+    "cap_tiles": 9,
+    "activations": 1,
+    "releases": 0,
+    "restores": 0,
+    "cache_entries": 0,
+    "cache_bytes": 0,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      -77400,
+      -41800
+    ],
+    "coverage_texels_hole": 2119,
+    "coverage_writes": 1,
+    "live_units": [
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 0,
+        "whole": false,
+        "tile": [
+          -33,
+          -18
+        ],
+        "cells": 37636,
+        "quads": 8851,
+        "distance_m": 0.0
+      }
+    ]
+  },
+  "zone_count": 76,
+  "unit_count": 259,
+  "car_parked_cm": [
+    12000,
+    24000,
+    15139
+  ],
+  "failed_tracks": [
+    {
+      "attempt": 1,
+      "start_arc_m": 134.0,
+      "direction": -1.0,
+      "track": [
+        [
+          0.0,
+          0,
+          -0.53,
+          -146.7,
+          -1.0,
+          0.1
+        ],
+        [
+          0.5,
+          0,
+          -0.33,
+          -144.6,
+          -1.0,
+          1.2
+        ],
+        [
+          1.0,
+          0,
+          0.35,
+          -135.6,
+          -1.0,
+          2.4
+        ],
+        [
+          1.5,
+          0,
+          1.66,
+          -121.8,
+          -1.0,
+          3.6
+        ],
+        [
+          2.0,
+          0,
+          3.71,
+          -104.2,
+          -1.0,
+          4.4
+        ],
+        [
+          2.5,
+          0,
+          5.77,
+          -95.1,
+          -1.0,
+          4.2
+        ],
+        [
+          3.0,
+          0,
+          7.46,
+          -86.2,
+          -1.0,
+          3.0
+        ],
+        [
+          3.5,
+          0,
+          8.92,
+          -76.1,
+          -1.0,
+          2.9
+        ]
+      ]
+    }
+  ],
+  "drive_failures": [
+    "attempt 1: left the path or stalled (10.0 m off, 2.7 m/s)"
+  ],
+  "zones_at_end": {
+    "zones": 76,
+    "units": 259,
+    "live": 9,
+    "live_cells": 338724,
+    "cap_tiles": 9,
+    "activations": 28,
+    "releases": 19,
+    "restores": 0,
+    "cache_entries": 5,
+    "cache_bytes": 114880,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      -25000,
+      -12800
+    ],
+    "coverage_texels_hole": 12297,
+    "coverage_writes": 30,
+    "live_units": [
+      {
+        "zone": 19,
+        "label": "Terrace loop 895-1013 m gravel",
+        "slot": 0,
+        "whole": false,
+        "tile": [
+          -12,
+          -6
+        ],
+        "cells": 37636,
+        "quads": 331,
+        "distance_m": 35.2
+      },
+      {
+        "zone": 19,
+        "label": "Terrace loop 895-1013 m gravel",
+        "slot": 1,
+        "whole": false,
+        "tile": [
+          -11,
+          -6
+        ],
+        "cells": 37636,
+        "quads": 11124,
+        "distance_m": 11.2
+      },
+      {
+        "zone": 19,
+        "label": "Terrace loop 895-1013 m gravel",
+        "slot": 2,
+        "whole": false,
+        "tile": [
+          -10,
+          -6
+        ],
+        "cells": 37636,
+        "quads": 855,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 19,
+        "label": "Terrace loop 895-1013 m gravel",
+        "slot": 6,
+        "whole": false,
+        "tile": [
+          -11,
+          -5
+        ],
+        "cells": 37636,
+        "quads": 1467,
+        "distance_m": 23.7
+      },
+      {
+        "zone": 20,
+        "label": "Terrace loop 1013-1131 m gravel",
+        "slot": 2,
+        "whole": false,
+        "tile": [
+          -9,
+          -8
+        ],
+        "cells": 37636,
+        "quads": 2686,
+        "distance_m": 20.3
+      },
+      {
+        "zone": 20,
+        "label": "Terrace loop 1013-1131 m gravel",
+        "slot": 3,
+        "whole": false,
+        "tile": [
+          -8,
+          -8
+        ],
+        "cells": 37636,
+        "quads": 12649,
+        "distance_m": 35.5
+      },
+      {
+        "zone": 20,
+        "label": "Terrace loop 1013-1131 m gravel",
+        "slot": 5,
+        "whole": false,
+        "tile": [
+          -10,
+          -7
+        ],
+        "cells": 37636,
+        "quads": 6655,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 20,
+        "label": "Terrace loop 1013-1131 m gravel",
+        "slot": 6,
+        "whole": false,
+        "tile": [
+          -9,
+          -7
+        ],
+        "cells": 37636,
+        "quads": 10353,
+        "distance_m": 5.7
+      },
+      {
+        "zone": 20,
+        "label": "Terrace loop 1013-1131 m gravel",
+        "slot": 7,
+        "whole": false,
+        "tile": [
+          -10,
+          -6
+        ],
+        "cells": 37636,
+        "quads": 5525,
+        "distance_m": 0.0
+      }
+    ]
+  }
+}

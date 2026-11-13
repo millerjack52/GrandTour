@@ -1,0 +1,37 @@
+{
+ "size": [
+  900,
+  1440
+ ],
+ "max_abs": 151,
+ "mean_abs": 1.437,
+ "pixels_differing": 942602,
+ "pixels_over_8": 53428,
+ "total": 1296000,
+ "regions": {
+  "mud_road_x0-1100_y425-525": {
+   "mean": 1.53,
+   "p99": 10,
+   "max": 39,
+   "over8_share": 0.01467
+  },
+  "sky_y60-250": {
+   "mean": 0.551,
+   "p99": 2,
+   "max": 14,
+   "over8_share": 0.00015
+  },
+  "grass_y600-850": {
+   "mean": 3.572,
+   "p99": 16,
+   "max": 75,
+   "over8_share": 0.07451
+  },
+  "hill_y300-380_x500-900": {
+   "mean": 1.01,
+   "p99": 4,
+   "max": 17,
+   "over8_share": 0.00125
+  }
+ }
+}

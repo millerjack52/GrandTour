@@ -1,0 +1,79 @@
+{
+  "ok": true,
+  "steps": {
+    "material": {
+      "samples_before": 21,
+      "expressions_before": 122,
+      "mpcs_before": [
+        "/Game/GrandTour/Materials/MPC_Weather",
+        "/Game/GrandTour/Terrain/MPC_TrackPaint"
+      ],
+      "functions_before": [
+        "/Game/GrandTour/Materials/MF_TrackPaint",
+        "/Game/GrandTour/Materials/MF_Weather"
+      ],
+      "biome_rows": [
+        "OW_Meadow",
+        "OW_MeadowLush",
+        "OW_MeadowDry",
+        "OW_Forest",
+        "OW_ForestBeech",
+        "OW_ForestBirch",
+        "OW_ForestFir",
+        "OW_ForestOak",
+        "OW_Scree",
+        "OW_Alpine",
+        "Thicket"
+      ],
+      "rows": 17,
+      "grades": [
+        "OW_Meadow = T_GT_Grass x (0.433 1.000 0.333)",
+        "OW_MeadowLush = T_GT_Grass x (0.333 0.933 0.267)",
+        "OW_MeadowDry = T_GT_Grass x (1.000 0.933 0.400)",
+        "OW_Forest = T_GT_Grass x (0.167 0.500 0.200)",
+        "OW_ForestBeech = T_GT_Grass x (0.267 0.533 0.133)",
+        "OW_ForestBirch = T_GT_Grass x (0.333 0.633 0.267)",
+        "OW_ForestFir = T_GT_Grass x (0.100 0.400 0.233)",
+        "OW_ForestOak = T_GT_Grass x (0.467 0.600 0.133)",
+        "OW_Scree = T_GT_Dirt x (1.067 1.000 0.933)",
+        "OW_Alpine = T_GT_Dirt x (0.867 0.867 0.600)",
+        "Thicket = T_GT_Grass x (0.267 0.747 0.213)"
+      ],
+      "grass_entries": 13,
+      "grass_layer_samples": 10,
+      "grass_wired": [
+        "MeadowGrass <- OW_Meadow x green (LGT_OWMeadowGrass)",
+        "MeadowFlowers <- OW_Meadow x drift (LGT_OWMeadowFlowers)",
+        "MeadowDryPatches <- OW_Meadow x dry (LGT_OWMeadowDryGrass)",
+        "MeadowLushGrass <- OW_MeadowLush (LGT_OWMeadowLushGrass)",
+        "MeadowLushFlowers <- OW_MeadowLush x drift (LGT_OWMeadowLushFlowers)",
+        "MeadowDryGrass <- OW_MeadowDry (LGT_OWMeadowDryGrass)",
+        "ForestFloor <- OW_Forest x patch (LGT_OWForestFloor)",
+        "ForestFloorBeech <- OW_ForestBeech x patch (LGT_OWFloorDeciduous)",
+        "ForestFloorBirch <- OW_ForestBirch x patch (LGT_OWFloorDeciduous)",
+        "ForestFloorFir <- OW_ForestFir x patch (LGT_OWFloorFir)",
+        "ForestFloorOak <- OW_ForestOak x patch (LGT_OWFloorOak)",
+        "AlpineGrass <- OW_Alpine (LGT_OWAlpineGrass)",
+        "ThicketGrass <- Thicket (LGT_OWMeadowLushGrass)"
+      ],
+      "rvt_attributes": [
+        "BaseColor",
+        "Roughness",
+        "Normal"
+      ],
+      "rvt": "/Game/ANGRY_MESH/StylizedPack_Common/Textures/RVT_AM_01_Material",
+      "samples_after": 21,
+      "expressions_after": 122,
+      "mpcs_after": [
+        "/Game/GrandTour/Materials/MPC_Weather",
+        "/Game/GrandTour/Terrain/MPC_TrackPaint"
+      ],
+      "functions_after": [
+        "/Game/GrandTour/Materials/MF_TrackPaint",
+        "/Game/GrandTour/Materials/MF_Weather"
+      ],
+      "compile_errors": [],
+      "ok": true
+    }
+  }
+}

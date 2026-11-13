@@ -1,0 +1,1502 @@
+{
+ "ok": true,
+ "stage": "c",
+ "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+ "timings_collected": false,
+ "umap_mtime_at_load": 1791861999.5583332,
+ "zones_removed": 76,
+ "shader_wait_s": 2,
+ "probe_linear": [
+  0.2575,
+  0.2043,
+  0.1234
+ ],
+ "zones": [
+  {
+   "id": 1,
+   "label": "Terrace loop 0-29 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 28.99,
+   "actor": "Terrace loop 0-29 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2971,
+    0.2378,
+    0.1441
+   ],
+   "mud_colour_linear": [
+    0.1068,
+    0.0836,
+    0.0479
+   ],
+   "mud_tint": [
+    1.519,
+    2.091,
+    2.573
+   ]
+  },
+  {
+   "id": 2,
+   "label": "Terrace loop 29-142 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 112.93,
+   "actor": "Terrace loop 29-142 m gravel"
+  },
+  {
+   "id": 3,
+   "label": "Terrace loop 142-172 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 142-172 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2394,
+    0.1934,
+    0.1244
+   ],
+   "mud_colour_linear": [
+    0.087,
+    0.0689,
+    0.0423
+   ],
+   "mud_tint": [
+    1.238,
+    1.723,
+    2.274
+   ]
+  },
+  {
+   "id": 4,
+   "label": "Terrace loop 172-222 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 49.95,
+   "actor": "Terrace loop 172-222 m gravel"
+  },
+  {
+   "id": 5,
+   "label": "Terrace loop 222-252 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 222-252 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2947,
+    0.2364,
+    0.1488
+   ],
+   "mud_colour_linear": [
+    0.1059,
+    0.0832,
+    0.0497
+   ],
+   "mud_tint": [
+    1.507,
+    2.08,
+    2.671
+   ]
+  },
+  {
+   "id": 6,
+   "label": "Terrace loop 252-307 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 54.96,
+   "actor": "Terrace loop 252-307 m gravel"
+  },
+  {
+   "id": 7,
+   "label": "Terrace loop 307-337 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 307-337 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2977,
+    0.2326,
+    0.1279
+   ],
+   "mud_colour_linear": [
+    0.107,
+    0.0816,
+    0.0418
+   ],
+   "mud_tint": [
+    1.521,
+    2.039,
+    2.248
+   ]
+  },
+  {
+   "id": 8,
+   "label": "Terrace loop 337-395 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 57.95,
+   "actor": "Terrace loop 337-395 m gravel"
+  },
+  {
+   "id": 9,
+   "label": "Terrace loop 395-425 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 395-425 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2844,
+    0.2245,
+    0.1315
+   ],
+   "mud_colour_linear": [
+    0.1024,
+    0.079,
+    0.0435
+   ],
+   "mud_tint": [
+    1.457,
+    1.976,
+    2.341
+   ]
+  },
+  {
+   "id": 10,
+   "label": "Terrace loop 425-463 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 37.97,
+   "actor": "Terrace loop 425-463 m gravel"
+  },
+  {
+   "id": 11,
+   "label": "Terrace loop 463-493 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 463-493 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2843,
+    0.2283,
+    0.1409
+   ],
+   "mud_colour_linear": [
+    0.1024,
+    0.0805,
+    0.0471
+   ],
+   "mud_tint": [
+    1.456,
+    2.013,
+    2.531
+   ]
+  },
+  {
+   "id": 12,
+   "label": "Terrace loop 493-544 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 50.96,
+   "actor": "Terrace loop 493-544 m gravel"
+  },
+  {
+   "id": 13,
+   "label": "Terrace loop 544-598 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 53.97,
+   "actor": "Terrace loop 544-598 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2605,
+    0.2074,
+    0.1201
+   ],
+   "mud_colour_linear": [
+    0.0943,
+    0.0734,
+    0.04
+   ],
+   "mud_tint": [
+    1.341,
+    1.836,
+    2.151
+   ]
+  },
+  {
+   "id": 14,
+   "label": "Terrace loop 598-697 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 99.44,
+   "actor": "Terrace loop 598-697 m gravel"
+  },
+  {
+   "id": 15,
+   "label": "Terrace loop 697-797 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 99.45,
+   "actor": "Terrace loop 697-797 m gravel"
+  },
+  {
+   "id": 16,
+   "label": "Terrace loop 797-827 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 797-827 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.3064,
+    0.2433,
+    0.1413
+   ],
+   "mud_colour_linear": [
+    0.11,
+    0.0853,
+    0.0465
+   ],
+   "mud_tint": [
+    1.564,
+    2.134,
+    2.501
+   ]
+  },
+  {
+   "id": 17,
+   "label": "Terrace loop 827-865 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 37.96,
+   "actor": "Terrace loop 827-865 m gravel"
+  },
+  {
+   "id": 18,
+   "label": "Terrace loop 865-895 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 865-895 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2997,
+    0.2372,
+    0.1454
+   ],
+   "mud_colour_linear": [
+    0.1077,
+    0.0833,
+    0.0483
+   ],
+   "mud_tint": [
+    1.531,
+    2.082,
+    2.595
+   ]
+  },
+  {
+   "id": 19,
+   "label": "Terrace loop 895-1013 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 118.43,
+   "actor": "Terrace loop 895-1013 m gravel"
+  },
+  {
+   "id": 20,
+   "label": "Terrace loop 1013-1131 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 118.43,
+   "actor": "Terrace loop 1013-1131 m gravel"
+  },
+  {
+   "id": 21,
+   "label": "Terrace loop 1131-1161 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 1131-1161 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.3139,
+    0.2446,
+    0.1388
+   ],
+   "mud_colour_linear": [
+    0.1125,
+    0.0855,
+    0.0453
+   ],
+   "mud_tint": [
+    1.6,
+    2.138,
+    2.438
+   ]
+  },
+  {
+   "id": 22,
+   "label": "Terrace loop 1161-1277 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 115.92,
+   "actor": "Terrace loop 1161-1277 m gravel"
+  },
+  {
+   "id": 23,
+   "label": "Terrace loop 1277-1307 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 1277-1307 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2516,
+    0.1998,
+    0.122
+   ],
+   "mud_colour_linear": [
+    0.0912,
+    0.0709,
+    0.041
+   ],
+   "mud_tint": [
+    1.297,
+    1.773,
+    2.204
+   ]
+  },
+  {
+   "id": 24,
+   "label": "Terrace loop 1307-1349 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 41.96,
+   "actor": "Terrace loop 1307-1349 m gravel"
+  },
+  {
+   "id": 25,
+   "label": "Terrace loop 1349-1379 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 1349-1379 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2669,
+    0.2112,
+    0.1255
+   ],
+   "mud_colour_linear": [
+    0.0965,
+    0.0746,
+    0.0418
+   ],
+   "mud_tint": [
+    1.372,
+    1.866,
+    2.248
+   ]
+  },
+  {
+   "id": 26,
+   "label": "Terrace loop 1379-1429 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 49.96,
+   "actor": "Terrace loop 1379-1429 m gravel"
+  },
+  {
+   "id": 27,
+   "label": "Terrace loop 1429-1459 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 1429-1459 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2868,
+    0.2273,
+    0.1319
+   ],
+   "mud_colour_linear": [
+    0.1032,
+    0.08,
+    0.0436
+   ],
+   "mud_tint": [
+    1.469,
+    2.001,
+    2.345
+   ]
+  },
+  {
+   "id": 28,
+   "label": "Terrace loop 1459-1565 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 105.93,
+   "actor": "Terrace loop 1459-1565 m gravel"
+  },
+  {
+   "id": 29,
+   "label": "Terrace loop 1565-1595 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 1565-1595 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2651,
+    0.2092,
+    0.1218
+   ],
+   "mud_colour_linear": [
+    0.0958,
+    0.0739,
+    0.0405
+   ],
+   "mud_tint": [
+    1.363,
+    1.849,
+    2.177
+   ]
+  },
+  {
+   "id": 30,
+   "label": "Terrace loop 1595-1678 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 82.94,
+   "actor": "Terrace loop 1595-1678 m gravel"
+  },
+  {
+   "id": 31,
+   "label": "Terrace loop 1678-1761 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 82.95,
+   "actor": "Terrace loop 1678-1761 m gravel"
+  },
+  {
+   "id": 32,
+   "label": "Terrace loop 1761-1791 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 1761-1791 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2773,
+    0.2184,
+    0.1321
+   ],
+   "mud_colour_linear": [
+    0.1,
+    0.077,
+    0.044
+   ],
+   "mud_tint": [
+    1.422,
+    1.925,
+    2.365
+   ]
+  },
+  {
+   "id": 33,
+   "label": "Terrace loop 1791-1879 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 87.95,
+   "actor": "Terrace loop 1791-1879 m gravel"
+  },
+  {
+   "id": 34,
+   "label": "Terrace loop 1879-1913 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 33.98,
+   "actor": "Terrace loop 1879-1913 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.3254,
+    0.2527,
+    0.1399
+   ],
+   "mud_colour_linear": [
+    0.1164,
+    0.0882,
+    0.0454
+   ],
+   "mud_tint": [
+    1.656,
+    2.204,
+    2.442
+   ]
+  },
+  {
+   "id": 35,
+   "label": "Terrace loop 1913-1947 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 33.98,
+   "actor": "Terrace loop 1913-1947 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2952,
+    0.2308,
+    0.1279
+   ],
+   "mud_colour_linear": [
+    0.1061,
+    0.081,
+    0.0419
+   ],
+   "mud_tint": [
+    1.509,
+    2.025,
+    2.251
+   ]
+  },
+  {
+   "id": 36,
+   "label": "Terrace loop 1947-2013 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 65.96,
+   "actor": "Terrace loop 1947-2013 m gravel"
+  },
+  {
+   "id": 37,
+   "label": "Terrace loop 2013-2043 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 2013-2043 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.3173,
+    0.2517,
+    0.1454
+   ],
+   "mud_colour_linear": [
+    0.1136,
+    0.0881,
+    0.0477
+   ],
+   "mud_tint": [
+    1.617,
+    2.203,
+    2.564
+   ]
+  },
+  {
+   "id": 38,
+   "label": "Terrace loop 2043-2098 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 54.95,
+   "actor": "Terrace loop 2043-2098 m gravel"
+  },
+  {
+   "id": 39,
+   "label": "Terrace loop 2098-2128 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 2098-2128 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2768,
+    0.2236,
+    0.1419
+   ],
+   "mud_colour_linear": [
+    0.0998,
+    0.079,
+    0.0477
+   ],
+   "mud_tint": [
+    1.42,
+    1.976,
+    2.563
+   ]
+  },
+  {
+   "id": 40,
+   "label": "Terrace loop 2128-2198 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 70.45,
+   "actor": "Terrace loop 2128-2198 m gravel"
+  },
+  {
+   "id": 41,
+   "label": "Terrace loop 2198-2269 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 70.46,
+   "actor": "Terrace loop 2198-2269 m gravel"
+  },
+  {
+   "id": 42,
+   "label": "Terrace loop 2269-2299 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 2269-2299 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2708,
+    0.2176,
+    0.1334
+   ],
+   "mud_colour_linear": [
+    0.0978,
+    0.077,
+    0.0447
+   ],
+   "mud_tint": [
+    1.391,
+    1.924,
+    2.402
+   ]
+  },
+  {
+   "id": 43,
+   "label": "Terrace loop 2299-2365 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 65.96,
+   "actor": "Terrace loop 2299-2365 m gravel"
+  },
+  {
+   "id": 44,
+   "label": "Terrace loop 2365-2431 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 65.95,
+   "actor": "Terrace loop 2365-2431 m gravel"
+  },
+  {
+   "id": 45,
+   "label": "Terrace loop 2431-2461 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Terrace loop 2431-2461 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2906,
+    0.2282,
+    0.1345
+   ],
+   "mud_colour_linear": [
+    0.1046,
+    0.0802,
+    0.0444
+   ],
+   "mud_tint": [
+    1.487,
+    2.005,
+    2.39
+   ]
+  },
+  {
+   "id": 46,
+   "label": "Terrace loop 2461-2501 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 39.97,
+   "actor": "Terrace loop 2461-2501 m gravel"
+  },
+  {
+   "id": 47,
+   "label": "Terrace loop 2501-2517 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 15.99,
+   "actor": "Terrace loop 2501-2517 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2835,
+    0.2259,
+    0.1361
+   ],
+   "mud_colour_linear": [
+    0.1021,
+    0.0796,
+    0.0453
+   ],
+   "mud_tint": [
+    1.453,
+    1.991,
+    2.434
+   ]
+  },
+  {
+   "id": 48,
+   "label": "Hillside branch 0-27 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 26.98,
+   "actor": "Hillside branch 0-27 m gravel"
+  },
+  {
+   "id": 49,
+   "label": "Hillside branch 27-57 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 27-57 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2877,
+    0.226,
+    0.1301
+   ],
+   "mud_colour_linear": [
+    0.1036,
+    0.0795,
+    0.0429
+   ],
+   "mud_tint": [
+    1.473,
+    1.987,
+    2.307
+   ]
+  },
+  {
+   "id": 50,
+   "label": "Hillside branch 57-130 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 73.44,
+   "actor": "Hillside branch 57-130 m gravel"
+  },
+  {
+   "id": 51,
+   "label": "Hillside branch 130-204 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 73.45,
+   "actor": "Hillside branch 130-204 m gravel"
+  },
+  {
+   "id": 52,
+   "label": "Hillside branch 204-234 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 204-234 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2723,
+    0.2202,
+    0.1447
+   ],
+   "mud_colour_linear": [
+    0.0983,
+    0.0779,
+    0.0489
+   ],
+   "mud_tint": [
+    1.398,
+    1.948,
+    2.628
+   ]
+  },
+  {
+   "id": 53,
+   "label": "Hillside branch 234-311 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 76.95,
+   "actor": "Hillside branch 234-311 m gravel"
+  },
+  {
+   "id": 54,
+   "label": "Hillside branch 311-388 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 76.95,
+   "actor": "Hillside branch 311-388 m gravel"
+  },
+  {
+   "id": 55,
+   "label": "Hillside branch 388-418 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 388-418 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2554,
+    0.2118,
+    0.1356
+   ],
+   "mud_colour_linear": [
+    0.0925,
+    0.0754,
+    0.046
+   ],
+   "mud_tint": [
+    1.316,
+    1.885,
+    2.473
+   ]
+  },
+  {
+   "id": 56,
+   "label": "Hillside branch 418-451 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 32.96,
+   "actor": "Hillside branch 418-451 m gravel"
+  },
+  {
+   "id": 57,
+   "label": "Hillside branch 451-481 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 451-481 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2684,
+    0.2164,
+    0.1319
+   ],
+   "mud_colour_linear": [
+    0.097,
+    0.0766,
+    0.0442
+   ],
+   "mud_tint": [
+    1.379,
+    1.915,
+    2.376
+   ]
+  },
+  {
+   "id": 58,
+   "label": "Hillside branch 481-559 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 78.44,
+   "actor": "Hillside branch 481-559 m gravel"
+  },
+  {
+   "id": 59,
+   "label": "Hillside branch 559-638 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 78.45,
+   "actor": "Hillside branch 559-638 m gravel"
+  },
+  {
+   "id": 60,
+   "label": "Hillside branch 638-668 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 638-668 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2867,
+    0.2334,
+    0.1531
+   ],
+   "mud_colour_linear": [
+    0.1032,
+    0.0824,
+    0.0516
+   ],
+   "mud_tint": [
+    1.468,
+    2.06,
+    2.773
+   ]
+  },
+  {
+   "id": 61,
+   "label": "Hillside branch 668-721 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 52.95,
+   "actor": "Hillside branch 668-721 m gravel"
+  },
+  {
+   "id": 62,
+   "label": "Hillside branch 721-751 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 721-751 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2883,
+    0.2302,
+    0.1407
+   ],
+   "mud_colour_linear": [
+    0.1038,
+    0.0811,
+    0.0469
+   ],
+   "mud_tint": [
+    1.476,
+    2.026,
+    2.52
+   ]
+  },
+  {
+   "id": 63,
+   "label": "Hillside branch 751-804 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 52.95,
+   "actor": "Hillside branch 751-804 m gravel"
+  },
+  {
+   "id": 64,
+   "label": "Hillside branch 804-834 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 804-834 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2601,
+    0.2052,
+    0.1186
+   ],
+   "mud_colour_linear": [
+    0.0941,
+    0.0726,
+    0.0395
+   ],
+   "mud_tint": [
+    1.339,
+    1.816,
+    2.122
+   ]
+  },
+  {
+   "id": 65,
+   "label": "Hillside branch 834-927 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 93.44,
+   "actor": "Hillside branch 834-927 m gravel"
+  },
+  {
+   "id": 66,
+   "label": "Hillside branch 927-1020 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 93.44,
+   "actor": "Hillside branch 927-1020 m gravel"
+  },
+  {
+   "id": 67,
+   "label": "Hillside branch 1020-1050 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 1020-1050 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.2539,
+    0.2038,
+    0.1287
+   ],
+   "mud_colour_linear": [
+    0.092,
+    0.0723,
+    0.0435
+   ],
+   "mud_tint": [
+    1.309,
+    1.808,
+    2.337
+   ]
+  },
+  {
+   "id": 68,
+   "label": "Hillside branch 1050-1083 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 32.96,
+   "actor": "Hillside branch 1050-1083 m gravel"
+  },
+  {
+   "id": 69,
+   "label": "Hillside branch 1083-1113 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "actor": "Hillside branch 1083-1113 m MudRoad",
+   "soil_samples": 20,
+   "soil_linear": [
+    0.3093,
+    0.2451,
+    0.146
+   ],
+   "mud_colour_linear": [
+    0.1109,
+    0.0859,
+    0.0482
+   ],
+   "mud_tint": [
+    1.578,
+    2.148,
+    2.589
+   ]
+  },
+  {
+   "id": 70,
+   "label": "Hillside branch 1113-1189 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 75.95,
+   "actor": "Hillside branch 1113-1189 m gravel"
+  }
+ ],
+ "bogs": [
+  {
+   "centre_m": [
+    218.2,
+    -260.1
+   ],
+   "z_m": 42.69,
+   "yaw_deg": -142.4,
+   "half_m": [
+    17.2,
+    9.1
+   ],
+   "area_m2": 489.6,
+   "region_m2": 1416.3,
+   "slope_max_deg": 10.21,
+   "slope_mean_deg": 3.55,
+   "to_road_m": 19.7,
+   "to_water_m": 903.1,
+   "to_mudroad_m": 20.0,
+   "vegetation": 1.207,
+   "flow_log": 10.36,
+   "nearest_camera": [
+    "Benmore_Gaea_Camera_Creek_Reach",
+    828.4
+   ],
+   "variant": "Firm",
+   "id": 71,
+   "label": "Bog 1 (Firm)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    4176,
+    4377
+   ],
+   "soil_samples": 24,
+   "soil_linear": [
+    0.28,
+    0.2245,
+    0.145
+   ],
+   "placed": true,
+   "actor": "Bog 1 (Firm)",
+   "section_variant": "<GTMudVariant.FIRM: 1>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0,
+   "mud_colour_linear": [
+    0.1009,
+    0.0792,
+    0.0487
+   ],
+   "mud_tint": [
+    1.158,
+    1.357,
+    1.455
+   ]
+  },
+  {
+   "centre_m": [
+    -477.7,
+    -622.0
+   ],
+   "z_m": 26.66,
+   "yaw_deg": 179.9,
+   "half_m": [
+    17.2,
+    8.3
+   ],
+   "area_m2": 448.5,
+   "region_m2": 1683.9,
+   "slope_max_deg": 3.42,
+   "slope_mean_deg": 2.59,
+   "to_road_m": 21.0,
+   "to_water_m": 674.5,
+   "to_mudroad_m": 88.6,
+   "vegetation": 1.509,
+   "flow_log": 3.09,
+   "nearest_camera": [
+    "Benmore_Fleet_Overview",
+    352.9
+   ],
+   "variant": "Stony",
+   "id": 72,
+   "label": "Bog 2 (Stony)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    2576,
+    2751
+   ],
+   "soil_samples": 24,
+   "soil_linear": [
+    0.2814,
+    0.2248,
+    0.1383
+   ],
+   "placed": true,
+   "actor": "Bog 2 (Stony)",
+   "section_variant": "<GTMudVariant.STONY: 3>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0,
+   "mud_colour_linear": [
+    0.1014,
+    0.0793,
+    0.0462
+   ],
+   "mud_tint": [
+    1.474,
+    1.806,
+    2.052
+   ]
+  },
+  {
+   "centre_m": [
+    -595.5,
+    -594.7
+   ],
+   "z_m": 21.25,
+   "yaw_deg": 155.6,
+   "half_m": [
+    17.2,
+    7.5
+   ],
+   "area_m2": 405.3,
+   "region_m2": 772.0,
+   "slope_max_deg": 3.27,
+   "slope_mean_deg": 2.26,
+   "to_road_m": 24.3,
+   "to_water_m": 566.0,
+   "to_mudroad_m": 35.1,
+   "vegetation": 1.568,
+   "flow_log": 0.69,
+   "nearest_camera": [
+    "Benmore_Fleet_Overview",
+    246.8
+   ],
+   "variant": "Firm",
+   "id": 73,
+   "label": "Bog 3 (Firm)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    2049,
+    2197
+   ],
+   "soil_samples": 24,
+   "soil_linear": [
+    0.2563,
+    0.2064,
+    0.1316
+   ],
+   "placed": true,
+   "actor": "Bog 3 (Firm)",
+   "section_variant": "<GTMudVariant.FIRM: 1>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0,
+   "mud_colour_linear": [
+    0.0928,
+    0.0732,
+    0.0445
+   ],
+   "mud_tint": [
+    1.065,
+    1.254,
+    1.327
+   ]
+  },
+  {
+   "centre_m": [
+    -92.8,
+    -250.8
+   ],
+   "z_m": 27.91,
+   "yaw_deg": 142.8,
+   "half_m": [
+    17.2,
+    8.7
+   ],
+   "area_m2": 469.3,
+   "region_m2": 1158.0,
+   "slope_max_deg": 16.62,
+   "slope_mean_deg": 2.83,
+   "to_road_m": 18.1,
+   "to_water_m": 670.0,
+   "to_mudroad_m": 52.0,
+   "vegetation": 1.582,
+   "flow_log": 2.08,
+   "nearest_camera": [
+    "Benmore_RL_Camera_River_Reach",
+    588.9
+   ],
+   "variant": "Stony",
+   "id": 74,
+   "label": "Bog 4 (Stony)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    2739,
+    2876
+   ],
+   "soil_samples": 24,
+   "soil_linear": [
+    0.331,
+    0.261,
+    0.1497
+   ],
+   "placed": true,
+   "actor": "Bog 4 (Stony)",
+   "section_variant": "<GTMudVariant.STONY: 3>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0,
+   "mud_colour_linear": [
+    0.1183,
+    0.0911,
+    0.0489
+   ],
+   "mud_tint": [
+    1.72,
+    2.076,
+    2.172
+   ]
+  },
+  {
+   "centre_m": [
+    134.1,
+    -288.9
+   ],
+   "z_m": 38.8,
+   "yaw_deg": -141.3,
+   "half_m": [
+    15.1,
+    9.4
+   ],
+   "area_m2": 446.5,
+   "region_m2": 1073.4,
+   "slope_max_deg": 10.12,
+   "slope_mean_deg": 2.89,
+   "to_road_m": 18.9,
+   "to_water_m": 860.0,
+   "to_mudroad_m": 29.7,
+   "vegetation": 1.637,
+   "flow_log": 0.69,
+   "nearest_camera": [
+    "Benmore_RL_Camera_River_Reach",
+    798.5
+   ],
+   "variant": "Firm",
+   "id": 75,
+   "label": "Bog 5 (Firm)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    3826,
+    3935
+   ],
+   "soil_samples": 24,
+   "soil_linear": [
+    0.3138,
+    0.2495,
+    0.1581
+   ],
+   "placed": true,
+   "actor": "Bog 5 (Firm)",
+   "section_variant": "<GTMudVariant.FIRM: 1>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0,
+   "mud_colour_linear": [
+    0.1125,
+    0.0874,
+    0.0526
+   ],
+   "mud_tint": [
+    1.29,
+    1.497,
+    1.569
+   ]
+  },
+  {
+   "centre_m": [
+    -296.5,
+    -38.9
+   ],
+   "z_m": 19.2,
+   "yaw_deg": 60.3,
+   "half_m": [
+    17.2,
+    12.1
+   ],
+   "area_m2": 653.9,
+   "region_m2": 807.3,
+   "slope_max_deg": 11.84,
+   "slope_mean_deg": 2.99,
+   "to_road_m": 20.0,
+   "to_water_m": 376.2,
+   "to_mudroad_m": 28.6,
+   "vegetation": 1.685,
+   "flow_log": 1.61,
+   "nearest_camera": [
+    "Benmore_RL_Camera_River_Reach",
+    300.6
+   ],
+   "variant": "Stony",
+   "id": 76,
+   "label": "Bog 6 (Stony)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    1828,
+    1978
+   ],
+   "soil_samples": 24,
+   "soil_linear": [
+    0.2973,
+    0.2383,
+    0.1427
+   ],
+   "placed": true,
+   "actor": "Bog 6 (Stony)",
+   "section_variant": "<GTMudVariant.STONY: 3>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0,
+   "mud_colour_linear": [
+    0.1068,
+    0.0838,
+    0.0473
+   ],
+   "mud_tint": [
+    1.553,
+    1.909,
+    2.102
+   ]
+  }
+ ],
+ "far_maps": {
+  "ok": true,
+  "mud_zones": 37,
+  "mask_size": 4096,
+  "mask_texel_cm": 50.0,
+  "colour_size": 1024,
+  "colour_texel_cm": 200.0,
+  "origin_cm": [
+   -130200,
+   -125800
+  ],
+  "size_cm": 204800,
+  "mud_texels": 48127,
+  "apron_texels": 26722,
+  "apron_cm": 200
+ },
+ "far_textures": {
+  "mask": "/Game/GrandTour/Terrain/DeformZones/T_GT_MudZoneMask.T_GT_MudZoneMask",
+  "colour": "/Game/GrandTour/Terrain/DeformZones/T_GT_MudZoneColour.T_GT_MudZoneColour"
+ },
+ "coverage_default": "/Game/GrandTour/Terrain/DeformZones/T_GT_DeformCoverageNone.T_GT_DeformCoverageNone",
+ "vegetation_copy": "/Game/GrandTour/Terrain/DeformZones/T_RL_Vegetation.T_RL_Vegetation",
+ "terrain_before": {
+  "pixel": 1938,
+  "vertex": 153,
+  "samplers": 31,
+  "pixel_texture_samples": 42
+ },
+ "attach": {
+  "unwrapped": [
+   "MP_OPACITY_MASK",
+   "MP_BASE_COLOR",
+   "MP_ROUGHNESS"
+  ],
+  "wrapped": {
+   "MP_OPACITY_MASK": "MaterialExpressionCustom_23.(main)",
+   "MP_BASE_COLOR": "MaterialExpressionCustom_26.return",
+   "MP_ROUGHNESS": "MaterialExpressionCustom_26.Rough"
+  },
+  "vegetation": [
+   "/Game/GrandTour/Terrain/DeformZones/T_RL_Vegetation.T_RL_Vegetation"
+  ],
+  "road_zone_material": {
+   "material": "/Game/GrandTour/Terrain/DeformZones/M_GC_Terrain_Zone.M_GC_Terrain_Zone",
+   "injected": [
+    {
+     "node": "MaterialExpressionCustom_6",
+     "loose": true,
+     "parallax": false
+    },
+    {
+     "node": "MaterialExpressionCustom_8",
+     "loose": true,
+     "parallax": false
+    },
+    {
+     "node": "MaterialExpressionCustom_12",
+     "loose": true,
+     "parallax": true
+    },
+    {
+     "node": "MaterialExpressionCustom_30",
+     "loose": true,
+     "parallax": false
+    },
+    {
+     "node": "MaterialExpressionCustom_28",
+     "loose": true,
+     "parallax": false
+    }
+   ],
+   "base_colour_from": "MaterialExpressionCustom_28.return",
+   "normal_from": "MaterialExpressionCustom_26.Normal",
+   "pixel": 2071,
+   "vertex": 269,
+   "samplers": 32
+  }
+ },
+ "terrain_after": {
+  "pixel": 1938,
+  "vertex": 153,
+  "samplers": 31,
+  "pixel_texture_samples": 42
+ },
+ "mud_zone_material": {
+  "material": "/Game/GrandTour/Terrain/DeformZones/M_GT_Mud_Zone.M_GT_Mud_Zone",
+  "base_colour_from": "MaterialExpressionCustom_1.return",
+  "opacity_from": "MaterialExpressionCustom_1.Mask",
+  "blend_mode": "<BlendMode.BLEND_MASKED: 1>",
+  "pixel": 1312,
+  "samplers": 7
+ },
+ "blend_mode": "<BlendMode.BLEND_MASKED: 1>",
+ "umap_mtime_before_save": 1791861999.5583332,
+ "saved": true,
+ "surface_effects_actors": [
+  "Benmore_VehicleSurfaceEffects"
+ ]
+}

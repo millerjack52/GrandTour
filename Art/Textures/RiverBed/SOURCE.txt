@@ -1,0 +1,8 @@
+River Small Rocks - Poly Haven (Rob Tuytel / Rico Cilliers)
+Source: https://polyhaven.com/a/river_small_rocks
+License: CC0 https://polyhaven.com/license
+Downloaded 2026-10-08 using https://api.polyhaven.com/files/river_small_rocks
+Original, unmodified 2K Diffuse, DirectX normal, Roughness and Displacement.
+Source world repeat: 2.9 metres, shown on the asset page.
+Exact file URLs and verified API MD5 hashes: source-manifest.json.
+Geographic pilot masks are computed data; they are not new painted art textures.

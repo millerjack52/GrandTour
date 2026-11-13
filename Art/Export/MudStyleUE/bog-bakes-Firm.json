@@ -1,0 +1,246 @@
+{
+  "source": "Art/Export/MudStyleStudy/05_variants/Firm (Art/Blender/build_mud_wet_study.py), baked by Art/Blender/export_mud_wet.py",
+  "variant": "Firm",
+  "tile_m": 3.0,
+  "size": 2048,
+  "mirror": false,
+  "normal": "DirectX tangent (green = -Y), from the bump of the height",
+  "height_range_cm": [
+    -0.297,
+    2.132
+  ],
+  "fields": {
+    "tile_cm": 300.0,
+    "size": 2048,
+    "clods": 2650,
+    "clod_across_cm": [
+      3.0,
+      5.51,
+      10.0
+    ],
+    "clod_height_cm": [
+      0.2,
+      1.96
+    ],
+    "clod_cover": 0.5006,
+    "crumbs": 2500,
+    "crumb_across_cm": [
+      1.0,
+      4.0
+    ],
+    "crumb_cover": 0.0616,
+    "gap_cover": 0.0365,
+    "slurry_cover": 0.4125,
+    "height_range_cm": [
+      -0.297,
+      2.132
+    ],
+    "value_scale": 1.1723,
+    "clay_lstar": 41.619,
+    "churn_lstar": 29.966,
+    "coherence_colour": 0.0057,
+    "coherence_height": 0.0023,
+    "variant": "Firm"
+  },
+  "maps": {
+    "T_MS_BogFirmColor": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogFirmColor.png",
+      "bits": 8,
+      "channels": 3,
+      "colour": "sRGB",
+      "seam_ratio": {
+        "R": 0.954,
+        "G": 0.985,
+        "B": 1.003
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          -0.15,
+          -0.48
+        ],
+        "G": [
+          0.2,
+          -0.4
+        ],
+        "B": [
+          0.08,
+          -0.03
+        ]
+      },
+      "bytes": 1838383,
+      "min": 0.2784,
+      "mean": 0.3258,
+      "max": 0.3922
+    },
+    "T_MS_BogFirmNormal": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogFirmNormal.png",
+      "bits": 8,
+      "channels": 3,
+      "colour": "linear",
+      "seam_ratio": {
+        "R": 1.016,
+        "G": 1.016,
+        "B": 0.966
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          0.62,
+          -0.28
+        ],
+        "G": [
+          0.9,
+          -1.12
+        ],
+        "B": [
+          -0.06,
+          -0.43
+        ]
+      },
+      "bytes": 8269838
+    },
+    "T_MS_BogFirmRough": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogFirmRough.png",
+      "bits": 8,
+      "channels": 1,
+      "colour": "linear",
+      "seam_ratio": {
+        "R": 0.949
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          -0.1,
+          -0.57
+        ]
+      },
+      "bytes": 1413106,
+      "min": 0.549,
+      "mean": 0.7555,
+      "max": 0.902
+    },
+    "T_MS_BogFirmHeight": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogFirmHeight.png",
+      "bits": 16,
+      "channels": 1,
+      "colour": "linear",
+      "seam_ratio": {
+        "R": 0.937
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          0.13,
+          -1.23
+        ]
+      },
+      "bytes": 8113588,
+      "min": 0.0,
+      "mean": 0.2514,
+      "max": 1.0
+    }
+  },
+  "value": {
+    "churn": {
+      "lstar": 29.986093237828136,
+      "value": 0.32579886529320135,
+      "lum": 0.06277705132308674,
+      "sat": 0.3846563843658706,
+      "mean_linear": [
+        0.0873,
+        0.0584,
+        0.0336
+      ]
+    },
+    "clay": {
+      "lstar": 41.619384645688044,
+      "value": 0.4634648951400635,
+      "lum": 0.12307966435973683,
+      "sat": 0.40500372257294215,
+      "mean_linear": [
+        0.1823,
+        0.1116,
+        0.0622
+      ]
+    },
+    "worked": {
+      "lstar": 33.4111601059749,
+      "value": 0.3493125494913798,
+      "lum": 0.07749724910112936,
+      "sat": 0.28905786977460013,
+      "mean_linear": [
+        0.1003,
+        0.0735,
+        0.0503
+      ]
+    },
+    "ratio_to_clay": {
+      "lstar": 0.72,
+      "value": 0.703,
+      "linear_luminance": 0.51,
+      "saturation": 0.95
+    }
+  },
+  "direction": {
+    "note": "structure-tensor coherence: (whole tile, mean over 10 cm); 0 = no direction, 1 = stripes",
+    "churn_colour": [
+      0.0056,
+      0.0655
+    ],
+    "churn_height": [
+      0.0023,
+      0.0821
+    ],
+    "clay_colour": [
+      0.0267,
+      0.349
+    ],
+    "worked_colour": [
+      0.8852,
+      0.8841
+    ]
+  },
+  "roughness": {
+    "slurry": [
+      0.58,
+      0.639,
+      0.722
+    ],
+    "wet_gaps": 0.582,
+    "clod_tops_upper_half": 0.884,
+    "crumbs": 0.888,
+    "lowest_20pc_height": 0.645,
+    "highest_10pc_height": 0.897,
+    "glossy_share_under_04": 0.0,
+    "matte_share_over_08": 39.6,
+    "note": "slurry as its 5th / 50th / 95th percentiles"
+  },
+  "value_by_zone_linear_luminance": {
+    "slurry": 0.0555,
+    "clod_tops": 0.0722,
+    "wet_gaps": 0.0487
+  },
+  "bake_tile3x3": {
+    "file": "Art/Export/MudStyleStudy/05_variants/Firm/Bake_Tile3x3.png",
+    "landmarks_30cm": {
+      "mean": {
+        "max_abs_z": 3.33,
+        "share_over_3": 0.04
+      },
+      "contrast": {
+        "max_abs_z": 4.07,
+        "share_over_3": 0.4
+      }
+    }
+  },
+  "study_tile3x3": {
+    "file": "Art/Export/MudStyleStudy/05_variants/Firm/Tile3x3.png",
+    "landmarks_30cm": {
+      "mean": {
+        "max_abs_z": 3.28,
+        "share_over_3": 0.03
+      },
+      "contrast": {
+        "max_abs_z": 4.06,
+        "share_over_3": 0.42
+      }
+    }
+  }
+}

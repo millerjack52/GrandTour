@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "ran": [
+    "setup_m1_body.py",
+    "setup_m1_masters.py"
+  ],
+  "stats": [
+    {
+      "material": "M_GT_Vehicle",
+      "pixel_instructions": 750,
+      "samplers": 10
+    },
+    {
+      "material": "M_GT_Tyre",
+      "pixel_instructions": 341,
+      "samplers": 5
+    },
+    {
+      "material": "M_GT_Glass",
+      "pixel_instructions": 443,
+      "samplers": 3
+    }
+  ]
+}

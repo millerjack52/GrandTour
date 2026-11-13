@@ -1,0 +1,306 @@
+LiDARStudy: Flora Paint / Rock Master integration
+================================================
+
+WHOLE-MAP ROLLOUT — 2026-11-13
+Owner instruction: "Go. Get the entire lidar study map to this".
+This supersedes the bounded-only scope recorded in the historical notes below.
+
+LATEST ART-DIRECTION PASS / 2026-11-13
+- Two iterations tested instance-space plant pigments, volume normals, broken
+  bark moss and related canopy colours. Final nineteen material checks, map
+  integrity and runtime review passed with clean exit 0.
+- Eight scene views visually inspected; no added meshes or texture maps.
+  Lighting/fog/cameras/render settings unchanged from the previous baseline.
+- Improvement is restrained. Broad cards, simpler debris and crown silhouettes
+  still differ from the references. No exact-match or 60fps claim.
+- See LIDAR_FLORA_ART_DIRECTION.txt and FloraWorld/art-review.html.
+- Latest saved map SHA256: 56c7d0d96862f595540196806c131552e224e27f01bfd66bb4fde2ca6dccec69
+
+PREVIOUS REFERENCE POLISH / HISTORICAL BASELINE — 2026-11-13
+- Completed the reference audit, cause investigation and corrective implementation.
+  Eight gameplay cameras were visually inspected, with two native grass-contact
+  captures. Final DX12 review and saved-map polish both exited cleanly with 0.
+- Saved-map integrity, twelve foliage shader checks and runtime authored-fog
+  assertions passed. Terrain digest, soil, five water actors, native mud grid,
+  tread, WPO/opacity connections, planting counts and grass inputs are preserved.
+  Historical verification teardown crashes below are not the final run status.
+- Fixed flattened foliage normals, temporal noise in baked crown coverage,
+  native debris UV/material mismatch, and weather overriding authored fog.
+  Added broad crown lighting, coherent copper/teal plant colonies and three-side
+  plus top distant canopy coverage (eight triangles). Source pack assets retained.
+- Captures now use normal viewport Shot: HighResShot forces LOD0 in this engine
+  and misrepresented gameplay distant trees. Final captures are 1274x682, not
+  native 1080p. Boards resize only. Matched final-polish comparisons use the
+  same normal viewport capture path; historical pilot boards are labelled.
+- Runtime artistic fog now retains density .025 with volumetrics. It is tagged
+  GTWeatherUnmanaged; future weather coupling must scale its authored baseline.
+- Remaining visual differences: repeated distant crown forms, simpler native
+  debris geometry and some visible broad plant cards. This is a reviewed visual
+  baseline, not a claim of identical composition or exhaustive inspection of
+  every planted root. See visual-audit.json and LIDAR_FLORA_REFERENCE_POLISH.txt.
+- Native contact probe changed bent/removed instances from 3 to 5. This is an
+  API/material check, not a new full driving test. The earlier deep-mud traversal
+  bogging issue remains unresolved.
+- Hidden-editor median tick intervals: approach 71.5ms, mud 64.3ms, bank 59.5ms,
+  woodland 61.5ms, upper road 69.7ms, hillside 49.8ms, river valley 36.8ms,
+  long valley 16.7ms. These are not standalone CPU/GPU benchmark results.
+  The next phase targets 60fps with controlled standalone profiling and matched
+  visual regression checks. No 60fps result has been established.
+- Saved map SHA256:
+  f1c8a414d397280e01dc94e7b20a657a9a226a426ecdf21fbbe04939be8a0825
+
+The saved L_LidarStudy now has a separate FloraWorld generation owner:
+- 146,197 living forest trees use three purchased Flora Paint tree shapes.
+  Native tree locations, dead spars and collision remain. Original living
+  canopy render components are hidden and retained for recovery.
+- The source three geometry LODs are retained in local mesh copies. A fourth,
+  eight-triangle LOD is baked in Unreal from each source tree's base colour and
+  normals. Three upright cards plus a top card preserve overhead canopy coverage.
+  Screen thresholds are 1/.65/.28/.14; minimum geometry LOD is 1. Transition
+  distance varies with tree size and camera FOV; these are not fixed metres.
+- 13,030 source-pack saplings replace the sharp legacy tall tree-fern tier at
+  the original planting positions. Low ferns remain at all established roots.
+  Saplings use minimum LOD2 and the same eight-triangle distant tier, with a
+  200–350m cull. Native logs, stumps and roots retain native vertex-colour variation with
+  M_FloraDebrisWood, avoiding incompatible purchased UV atlas coordinates.
+- 135,201 additional source-pack plants (read install-report for exact current
+  counts), distributed in varied clumps around existing forest-floor anchors.
+  Native grass streaming/interaction and all 139,753 low-fern planting positions
+  remain. Those fern positions now use three Flora Paint fern shapes (460
+  triangles each), replacing the dominant old triangular fronds. Original
+  fern components remain hidden for recovery. New detail
+  culls at 65–100m (painted ferns 65–110m); broad plants/ferns cast shadows. Fine grass retains contact
+  participation. Dense geometry is not drawn across whole distant valleys.
+- 11,792 rounded native hummock visuals are replaced by five Rock Master
+  variants, seated and partly buried against the final terrain. Original
+  collision stays in place; new decorative instances introduce no collision.
+- Ground grain, normals and near-camera POM now cover the map, retaining the
+  native displacement and opacity connections. POM fades out at 7–18m and
+  ground texture detail at 18–65m. It does not simulate tyre deformation.
+
+Editable map profile:
+  /Game/GrandTour/ArtTests/LidarStudy/FloraWorld/DA_Lidar_FloraWoodland
+Authoring recipe:
+  Art/Export/LidarStudy/FloraWorld/profile.json
+Colour/haze is live through the map's existing style controller. The JSON also
+owns exposure, lighting, generation density and distance budgets. Material
+copies expose MapFoliageTint. Source purchased packages are not recoloured.
+Shrubbery also exposes MapAccentColour/MapAccentStrength for restrained warm
+understory accents. Exposure meters the brighter 80–98% of the histogram within
+EV100 10.5–13.4, retaining readable shade without averaging whole valleys into
+washed-out highlights. Six-triangle canopy materials avoid stippled LOD dither;
+the existing terrain-aware canopy shadow field supplies broad distant shading.
+
+The actual runtime profile in Art/lidar_performance.json keeps TSR at 75% and
+excludes non-Nanite foliage from coarse virtual shadow pages. Its global mesh
+LOD multiplier is now 1: the new canopy has explicit near/far thresholds and
+the legacy multiplier of 4 would flatten nearby tree shapes too early.
+FirstReview captures bypassed this runtime profile and are diagnostic only.
+Final review-report records the actual rendering variables used.
+
+Streamed roadside grass now uses Grass_005/013/016 from Flora Paint (38–42
+triangles per clump), with Dry_Grass_014 in the rank band. The native host,
+planting lattice, wet-ground rejection, streaming and remembered tyre contacts
+are unchanged. Map-local InteractiveGrass materials retain the pack's appearance
+and wind, adding the existing root-height/bent/removed custom-data contract on
+channels 0/1/2. The original three solid rock-core exclusions remain. Rank grass
+is unindexed for contact as before. The review exercises native contact removal
+and captures contact_before/contact_after separately from the eight scene views.
+
+Commands (close other owned Unreal/Blender processes first):
+  Art/run_lidar_flora_world.ps1 audit
+  Art/run_lidar_flora_world.ps1 canopy  # render source atlases, rebuild far LOD
+  Art/run_lidar_flora_world.ps1 install # regenerate whole-map art and save
+  Art/run_lidar_flora_world.ps1 refine  # palette/light/exposure only, save
+  Art/run_lidar_flora_world.ps1 review  # actual game cameras and timings
+  Art/run_lidar_flora_world.ps1 verify # reopen saved map, integrity/count checks
+
+Pre-rollout map backup:
+  D:/GrandTourBackups/FloraWorld_2026-11-13/L_LidarStudy.umap
+Generated assets/reports/views:
+  Content/GrandTour/ArtTests/LidarStudy/FloraWorld/
+  Art/Export/LidarStudy/FloraWorld/
+
+Acceptance requires inspecting ground-level, upper-road, cross-valley and
+long-valley captures together against the three owner references. Shader
+compilation/fallback checks and native terrain/soil/water invariants are gates.
+Offscreen editor frame intervals are comparative evidence only, not a shipping
+GPU benchmark. The previously documented deep-mud traversal failure is not
+resolved by this art pass and must not be reported as passed.
+
+AUTHORITATIVE VISUAL DIRECTION — owner correction, 2026-11-13
+The owner's three Flora Paint references are the style target, not the latest
+LiDAR captures. Unaltered copies are retained in:
+Art/References/FloraPaint/OwnerStyle_2026-11-13/
+  01_colourful_woodland.jpg
+  02_cool_mist.jpg
+  03_sunlit_woodland.jpg
+
+Use the third image as the daytime woodland anchor. The first and second show
+compatible colour/atmosphere variants; do not combine every pink, cyan and gold
+accent into one woodland. Keep palettes and fog adjustable per map.
+
+Required visual qualities:
+- Painterly leaf and grass shapes, overlapping crown masses, and brush-like
+  texture variation rather than uniformly noisy or flat foliage.
+- Warm sunlit greens/golds and bark, cooler coloured shadows with readable
+  detail. Neither washed-out highlights nor almost-black forest interiors.
+- Dense, layered ground cover: retain ferns and grass, vary their scale, clump
+  shape and species, mix in smaller plants and restrained colour accents.
+  Coverage is required, but a repetitive fern carpet is not the style target.
+- Cohesive bark, foliage, rocks and ground. Tune retained native vegetation
+  to the same visual language as the purchased assets; restoring coverage
+  alone does not finish the art direction.
+- Cool atmospheric depth separating successive woodland layers without
+  turning everything into grey-green haze. Distant canopy retains larger
+  readable shapes and light/shadow separation as fine detail falls away.
+
+The latest wide captures expose a bright yellow-green island within a duller,
+more uniform old forest. That mismatch is NOT accepted as the intended look.
+Preserving existing LiDAR lighting/palette was a controlled migration baseline,
+not an instruction to preserve its visual shortcomings. This correction takes
+precedence for subsequent art refinement.
+
+Before broader rollout, compare actual Unreal ground-level, cross-valley and
+long-distance views with these references. Evaluate shape, palette, shadow
+readability, ground coverage and depth together. Asset installation and density
+counts alone do not establish visual acceptance. Keep native terrain/soil/water
+behaviour intact and measure rendering cost.
+This direction update records intent; it does not claim a new shader/lighting
+pass has been implemented or that the current scene matches exactly.
+
+Historical bounded pilot scope (superseded by whole-map rollout above)
+The actual saved map is /Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy.
+This pass replaces a bounded section of the existing logging route, stations
+170–260 metres, roughly 20 metres either side. It is NOT a whole-map tree
+replacement. The surrounding forest, manual banks, obstacles and other authored
+sections remain. The original map snapshot is in:
+Art/Export/LidarStudy/FloraIntegration/Before/L_LidarStudy.umap
+
+Why bounded first
+The map has about 148,000 native trees. The converted Flora Paint source trees
+have tens of thousands of triangles each, including their current lower LODs.
+Copying the demo population across the entire forest would be an uncontrolled
+increase in rendering and memory cost. This integration uses 145 source trees
+at the existing stand positions, with minimum LOD1, plus approximately 6,400
+ground plants and 12 Rock Master rocks in three groups. Read install-report.json
+for the current exact counts. A whole-map conversion needs cheaper far canopy
+representations and streaming/LOD measurements before replacing the remainder.
+
+What changes
+- Reviewed Flora Paint materials are cloned under LiDARStudy/FloraIntegration.
+  Source textures, geometry, painterly coverage and subtle distance-faded wind
+  are retained. Broad leaves, shrubs and ferns cast real shadows. Fine grass
+  uses the contact-shadow participation flag and existing scene lighting.
+- Native source tree/tall tree-fern instances are removed ONLY in the corridor;
+  their transforms are recorded in source-removals.json for regeneration.
+  Established low CrownFern/Kiokio ground coverage is retained, except within
+  solid outcrop footprints. This corrects the first pass's excessive clearing.
+- New living plants remain upright, with roots placed against the final road
+  relief. Very steep spots are rejected. Thin low plants use width-based scale
+  rather than scaling an almost-flat mesh to an arbitrary large height.
+- Rock Master outcrops follow the actual bank slope, are partially buried,
+  avoid the driving corridor, and reject new plants through their solid cores.
+- Native streamed grass remains in the integrated corridor alongside Flora
+  Paint clumps. Only solid outcrop cores mask it out. Its native wheel-contact
+  system remains intact. retain_native_grass and retain_ground_ferns default
+  to true in the profile and installer, following the owner's coverage request.
+- New ground materials wrap the actual approved LiDAR material outputs. They
+  retain native WPO, coverage, soil pigment and roughness/wetness. Purchased
+  forest-ground colour and normal textures supply grain and normal detail;
+  the height texture is reconstructed from normals, NOT a creator height map.
+  POM uses 10–24 steps, fades from 7 to 18 metres and branches out beyond the
+  section. Other normal/grain detail fades by 65 metres.
+
+What must remain intact
+- GTProceduralGround output digest, roads and rest relief.
+- LiDAR soil properties, native simulation and water-domain locations.
+- GTMudRunnerVisual follow_player_grid = true and runtime MR_VisualWindow.
+- GTLS_Field, GTLS_Water, GTLS_Window, GTLS_Ready and native WPO graph.
+- Existing sun, palette profiles, fog and source asset packages.
+
+Controls and iteration
+Edit Art/Export/LidarStudy/FloraIntegration/profile.json for tree families,
+height range, ground-cover species/groups, seed, outcrops, cull distances and
+ground-detail strength/tile size/POM distances. The map-local material assets
+are also editable in Unreal. Existing DistanceStyle profiles still own the
+map palette/fog. This is a script/profile workflow, not a finished artist UI.
+Keep retain_native_grass and retain_ground_ferns enabled for full ground cover.
+The coverage stage restores recorded low ferns without regenerating the trees,
+rocks or new Flora Paint placement; coverageview reloads and captures the result.
+Coverage restoration: 1,646 native low ferns (three CrownFern and two Kiokio
+variants), plus native interactive grass. Reloaded component counts and four
+actual Unreal views passed. Close-view median editor ticks were 91.9, 85.3 and
+68.9ms versus 90.8, 83.9 and 67.7ms before restoration; canopy was 42.2ms versus
+42.4ms. These short samples remain provisional, not GPU benchmark claims.
+coverage-comparison.jpg compares the sparse integration pass against this
+restored coverage from the identical mud-road camera.
+The coverage save process exited cleanly. The rendered coverage-view run
+completed all captures and count checks, then hit the previously observed
+shutdown access violation; it is not a clean end-to-end editor pass.
+
+Commands (PowerShell, from C:/GrandTour; close other Unreal/Blender instances):
+  powershell -ExecutionPolicy Bypass -File Art/run_lidar_flora.ps1 -Stage install
+  powershell -ExecutionPolicy Bypass -File Art/run_lidar_flora.ps1 -Stage materials
+  powershell -ExecutionPolicy Bypass -File Art/run_lidar_flora.ps1 -Stage check
+  powershell -ExecutionPolicy Bypass -File Art/run_lidar_flora.ps1 -Stage verify
+  powershell -ExecutionPolicy Bypass -File Art/run_lidar_flora.ps1 -Stage coverageview
+  python Art/tools/build_lidar_flora_review.py
+
+Install restores previously removed generated instances before reselecting
+the corridor, then regenerates only actors prefixed LidarStudy_FloraIntegration_.
+Keep hand edits on actors outside that prefix. The original generated source
+components must still exist. Do not rerun the old whole-map installers as an
+editing shortcut; their ownership rules differ. Materials-only updates avoid
+resaving the large map when only ground parameters change.
+
+Validation and lessons
+1. NullRHI checks alone cannot approve a material: the first DX12 pass exceeded
+   the native mud material's sampler limit. All seven added detail textures
+   now share the engine world-wrap sampler. The runner rejects material compile
+   failures or default-material fallback.
+2. CPU soil depression and car sinkage are insufficient proof of visible mud.
+   The runtime check captures SceneDepth of ONLY the native following grid/tile
+   components before/after driving, excluding vehicle, water and tread decals.
+   It separately checks native compression and the bound visual-window values.
+3. The first 0.5-throttle attempt crossed most of the hollow but did not finish
+   the exit within 50 simulation seconds. That attempt is archived under
+   HalfThrottle and is not counted as a passing drive. It did demonstrate
+   rendered depression (~29.6cm maximum) and new native soil compression.
+   The 0.8-throttle retry also failed traversal (station 217.59m at timeout,
+   maximum 218.13m); increased wheelspin cut deeper ruts rather than completing
+   the exit. Maximum rendered depression was 28.28cm, with 2,846 depth pixels
+   changed by more than 1cm. Native compression at the probe increased from
+   0.082cm to 6.834cm. Do NOT claim a passed drive or full integration sign-off.
+4. Source instance order after restoration must not randomize species on every
+   rebuild; sort source positions before deterministic species selection.
+5. The before screenshots completed, but that editor process subsequently
+   returned an access violation at shutdown. Do not count it as a clean baseline
+   test run. The latest 0.8-throttle check also returned a shutdown access
+   violation after captures/failed driving assertion. The half-throttle attempt
+   exited cleanly. Teardown remains a known validation limitation.
+6. Timing samples are hidden-editor tick intervals, NOT GPU timings or a
+   standalone performance certification. See the current check report and
+   native profiling logs; do not extrapolate this small section to the map.
+   Current before/after median tick ms: approach 92.8/90.8, mud 88.7/83.9,
+   bank 70.0/67.7, canopy context 38.2/42.4. The canopy sample is slower; cheaper
+   distant representations remain necessary before a whole-map replacement.
+7. One retained dead spar shared the original hidden-trunk component with
+   replaced live trees. Its collision is restored separately by the repair
+   stage; future installs remove colliders only at replaced living-tree positions.
+   repair-report.json records the location and resulting saved map hash.
+   The repair process saved successfully but also had a shutdown access
+   violation. A separate fresh-load verify stage subsequently confirmed the
+   saved population (145 trees, 6,484 plants, 12 rocks), native terrain/soil,
+   water locations, following mud grid, and exactly one restored dead-spar
+   collider. Its map hash matches the repair report. This read-only verification
+   is separate from the failed traversal gate.
+
+Evidence
+Art/Export/LidarStudy/FloraIntegration/review.html
+before-report.json / install-report.json / materials-report.json / check-report.json
+rendered-depth.json contains raw actual depth captures.
+The comparison images use matching cameras, unchanged sun/exposure, and actual
+Unreal captures. They are not generated reference renders or colour-retouched.
+The existing woodland lighting is very dark under this canopy; the integration
+does not silently change that approved global lighting to flatter the new assets.

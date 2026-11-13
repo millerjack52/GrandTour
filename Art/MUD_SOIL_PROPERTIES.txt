@@ -1,0 +1,56 @@
+SOIL PROPERTIES -- 2026-10-13
+
+Edit the GTLandscapeSurface actor, Landscape Surface > Soil Properties, before Play.
+These controls apply to the opted-in Soil Shear Response proving ground. Default
+values preserve the baseline the owner liked. Restart Play after changing them;
+live rebasing of an already deformed soil cache is deliberately not supported.
+
+Layer Depth Scale: multiplies the painted yielding layer below the reference
+plane, without enlarging the clods. 1 gives approximately 33-39 cm in the bog;
+1.28 gives approximately 42-50 cm. The mineral base and renderer currently stop
+at 50 cm below that plane. Existing hollows consume part of the available layer.
+
+Bearing Strength: 1 is the baseline, .6 is weak bog, 1.6 is firmer soil. Reducing
+it increases load-dependent equilibrium sinking AND the compressed tyre bed.
+Depth alone is a capacity, not a command to bury every tyre: strong deep soil can
+still carry the car. The wheel-size support safety limit also bounds immersion.
+Existing contact resistance reacts to the increased immersion; no speed limit
+or per-preset speed multiplier is added.
+
+Settlement Speed Scale: changes how quickly the additional loaded penetration
+approaches equilibrium (1 baseline), not the final depth. Plastic ruts retain
+the existing bounded pressure-update rate. Wetness/cohesion in Mud Regions
+still control soil shear and remoulding; they are independent of layer depth.
+
+COMPARISON LEVELS (all in /Game/GrandTour/ArtTests/MudProvingGround)
+L_MudProvingGround           depth 1.00, strength 1.0
+L_MudProvingGround_Firm      depth 0.65, strength 1.6
+L_MudProvingGround_DeepSoft  depth 1.28, strength 0.6
+These are property comparisons using the same geometry and materials, not the
+separate visual-biome variants requested earlier.
+
+WATER INTEGRATION -- ISOLATED PROTOTYPE
+The soil comparison maps retain their masked SingleLayerWater pool. A separate
+/Game/GrandTour/ArtTests/MudWater/L_MudWater now connects this soil to the shared
+GTWaterField simulation. See Art/MUD_WATER_SHARED.txt for controls, validation,
+scaling limits and the review. The comparison maps have not been migrated.
+
+The integration requirements were:
+1. Feed the live mud bed into the local water interaction window, including
+   fresh ruts and displaced banks. Apply bounded dirty-region updates; do not
+   rebuild the full landscape or fluid domain for each wheel stamp.
+2. Let that water solver own surface elevation, depth and velocity. Render the
+   same result over mud, remove the duplicate proving-ground pool, and route
+   wheel/hull samples through the existing shared water query. No added second
+   buoyancy/drag path. Current GTWaterSubsystem registers legacy mud patches,
+   not this new LandscapeSurface; that missing connection must be explicit.
+3. Transfer wheel/hull displacement into the solver once. Drive muddy splash,
+   clearer water spray and tyre washing from shared depth/current/contact data.
+4. Verify bed-change mass accounting, dry/wet shore movement, waves entering
+   newly connected ruts, no force duplication, and bounded update cost. Compare
+   the existing Benmore water before/after; keep the current soil baseline.
+
+Validation: Art/mud_proving_ground.ps1 -Mode PropertiesReview captures matched
+standing-load and driven-track views and actual vehicle telemetry. The report
+is Art/Export/MudProvingGround/propertiesreview-report.json. Rendered evidence
+and measured settlement must be checked before reporting the comparison ready.

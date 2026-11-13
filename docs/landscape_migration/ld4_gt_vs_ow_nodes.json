@@ -1,0 +1,91 @@
+{
+ "ow": "docs/landscape_migration/graph_nodes_ld4_ow_before.json",
+ "gt": "docs/landscape_migration/graph_nodes_ld4_gt.json",
+ "graphs": {
+  "Forest": {
+   "ow_nodes": 204,
+   "gt_nodes": 414,
+   "added": 210,
+   "listed_additions": 210,
+   "ow_edges": 301,
+   "gt_edges": 551,
+   "added_by_class": {
+    "PCGAttributeFilteringSettings": 10,
+    "PCGAttributeNoiseSettings": 13,
+    "PCGDensityFilterSettings": 59,
+    "PCGDifferenceSettings": 10,
+    "PCGNormalToDensitySettings": 10,
+    "PCGStaticMeshSpawnerSettings": 36,
+    "PCGSurfaceSamplerSettings": 10,
+    "PCGTransformPointsSettings": 62
+   },
+   "mismatch": {},
+   "ok": true
+  },
+  "Meadow": {
+   "ow_nodes": 62,
+   "gt_nodes": 62,
+   "added": 0,
+   "listed_additions": 0,
+   "ow_edges": 86,
+   "gt_edges": 86,
+   "added_by_class": {},
+   "mismatch": {},
+   "ok": true
+  },
+  "Scree": {
+   "ow_nodes": 35,
+   "gt_nodes": 35,
+   "added": 0,
+   "listed_additions": 0,
+   "ow_edges": 43,
+   "gt_edges": 43,
+   "added_by_class": {},
+   "mismatch": {},
+   "ok": true
+  },
+  "Alpine": {
+   "ow_nodes": 46,
+   "gt_nodes": 66,
+   "added": 20,
+   "listed_additions": 20,
+   "ow_edges": 58,
+   "gt_edges": 78,
+   "added_by_class": {
+    "PCGAttributeNoiseSettings": 2,
+    "PCGDensityFilterSettings": 6,
+    "PCGStaticMeshSpawnerSettings": 4,
+    "PCGTransformPointsSettings": 8
+   },
+   "mismatch": {},
+   "ok": true
+  },
+  "Brush": {
+   "ow_nodes": 0,
+   "gt_nodes": 59,
+   "added": 59,
+   "listed_additions": 59,
+   "ow_edges": 0,
+   "gt_edges": 75,
+   "added_by_class": {
+    "PCGAttributeFilteringSettings": 6,
+    "PCGBoundsModifierSettings": 3,
+    "PCGDataFromActorSettings": 1,
+    "PCGDensityFilterSettings": 10,
+    "PCGDifferenceSettings": 5,
+    "PCGGetLandscapeSettings": 1,
+    "PCGGetSplineSettings": 3,
+    "PCGGraphInputOutputSettings": 2,
+    "PCGNormalToDensitySettings": 5,
+    "PCGProjectionSettings": 3,
+    "PCGSplineSamplerSettings": 3,
+    "PCGStaticMeshSpawnerSettings": 5,
+    "PCGSurfaceSamplerSettings": 5,
+    "PCGTransformPointsSettings": 7
+   },
+   "mismatch": {},
+   "ok": true
+  }
+ },
+ "ok": true
+}

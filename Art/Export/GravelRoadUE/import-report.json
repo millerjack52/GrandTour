@@ -1,0 +1,81 @@
+{
+  "ok": true,
+  "maps": [
+    {
+      "path": "/Game/GrandTour/ArtTests/TussockStyle/L_TussockStyle",
+      "replaced_terrain": 8,
+      "hidden_old_stone_components": 3,
+      "instances": 9523,
+      "backup": "/Game/GrandTour/ArtTests/GravelRoad/Before_L_TussockStyle"
+    },
+    {
+      "path": "/Game/GrandTour/ArtTests/TussockStyle/L_TussockStyle_Overview",
+      "replaced_terrain": 8,
+      "hidden_old_stone_components": 3,
+      "instances": 9523,
+      "backup": "/Game/GrandTour/ArtTests/GravelRoad/Before_L_TussockStyle_Overview"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "SM_GR_DryRoad",
+      "source_triangles": 4992,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_ExitRoad",
+      "source_triangles": 4800,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_MudApproach",
+      "source_triangles": 2496,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_FordBed",
+      "source_triangles": 1536,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_GravelVergeL",
+      "source_triangles": 4608,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_GravelVergeR",
+      "source_triangles": 4608,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_BankL",
+      "source_triangles": 23040,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_BankR",
+      "source_triangles": 23040,
+      "nanite": true
+    },
+    {
+      "name": "SM_GR_Stone1",
+      "source_triangles": 33,
+      "nanite": false
+    },
+    {
+      "name": "SM_GR_Stone2",
+      "source_triangles": 38,
+      "nanite": false
+    },
+    {
+      "name": "SM_GR_Stone3",
+      "source_triangles": 33,
+      "nanite": false
+    },
+    {
+      "name": "SM_GR_Stone4",
+      "source_triangles": 38,
+      "nanite": false
+    }
+  ]
+}

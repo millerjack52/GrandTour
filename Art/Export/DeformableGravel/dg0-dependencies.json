@@ -1,0 +1,478 @@
+{
+  "ok": true,
+  "roots": [
+    "/Game/GrandTour/ArtTests/DeformableGravel",
+    "/Game/GrandTour/ArtTests/GravelRoad"
+  ],
+  "seeds": [
+    "/Game/GrandTour/ArtTests/DeformableGravel/DA_GravelDeform",
+    "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Bog",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Dirt",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Mud",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Scrub",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Snow",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Tarmac",
+    "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelField",
+    "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Bog",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Dirt",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Mud",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Snow",
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Tarmac",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_BankL",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_BankR",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_DryRoad",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_ExitRoad",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_FordBed",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_GravelVergeL",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_GravelVergeR",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_MudApproach",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone1",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone2",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone3",
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone4",
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor",
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactNormal",
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor",
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseNormal"
+  ],
+  "counts": {
+    "engine": 4,
+    "study": 33,
+    "shared": 42,
+    "code": 5
+  },
+  "groups": {
+    "engine": [
+      "/Engine/EditorResources/LightIcons/S_LightError",
+      "/Engine/EngineMaterials/WeightMapArrayPlaceholderTexture",
+      "/Engine/EngineMaterials/WeightMapPlaceholderTexture",
+      "/Engine/EngineMaterials/WorldGridMaterial"
+    ],
+    "study": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/DA_GravelDeform",
+      "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Bog",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Dirt",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Mud",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Scrub",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Snow",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Tarmac",
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelField",
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Bog",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Dirt",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Mud",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Snow",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Tarmac",
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road",
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_BankL",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_BankR",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_DryRoad",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_ExitRoad",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_FordBed",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_GravelVergeL",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_GravelVergeR",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_MudApproach",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone1",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone2",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone3",
+      "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone4",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactNormal",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseNormal"
+    ],
+    "shared": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayColor",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedColor",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepColor",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepRough",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmColor",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmRough",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardColor",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardRough",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyColor",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyRough",
+      "/Game/GrandTour/ArtTests/RoadFordStyle/T_RB_Normal",
+      "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_GravelPainted",
+      "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_MeadowPainted",
+      "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass",
+      "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Straw",
+      "/Game/GrandTour/Materials/MF_TrackPaint",
+      "/Game/GrandTour/Materials/MF_Weather",
+      "/Game/GrandTour/Materials/MPC_Weather",
+      "/Game/GrandTour/Materials/RT_RainOcclusion",
+      "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "/Game/GrandTour/Terrain/RT_TrackPaint",
+      "/Game/GrandTour/Textures/Mud/T_GT_Mud_Diffuse",
+      "/Game/GrandTour/Textures/Mud/T_GT_Mud_Normal",
+      "/Game/GrandTour/Textures/Mud/T_GT_Mud_Rough",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_D",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_R",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Grass_D",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Grass_R"
+    ],
+    "code": [
+      "/Script/GameplayTags",
+      "/Script/GrandTour",
+      "/Script/InterchangeEngine",
+      "/Script/Landscape",
+      "/Script/NavigationSystem"
+    ]
+  },
+  "shared_referenced_by": {
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayColor": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayNormal": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedColor": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedNormal": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepColor": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepHeight": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepNormal": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepRough": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmColor": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmHeight": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmNormal": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmRough": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardColor": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardHeight": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardNormal": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardRough": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyColor": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyHeight": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyNormal": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyRough": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough"
+    ],
+    "/Game/GrandTour/ArtTests/RoadFordStyle/T_RB_Normal": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_GravelPainted": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_MeadowPainted": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass": [
+      "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Straw"
+    ],
+    "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Straw": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform"
+    ],
+    "/Game/GrandTour/Materials/MF_TrackPaint": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Materials/MF_Weather": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Materials/MPC_Weather": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelField",
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "/Game/GrandTour/Materials/MF_Weather"
+    ],
+    "/Game/GrandTour/Materials/RT_RainOcclusion": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "/Game/GrandTour/Materials/MF_Weather"
+    ],
+    "/Game/GrandTour/Terrain/MPC_TrackPaint": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass",
+      "/Game/GrandTour/Materials/MF_TrackPaint"
+    ],
+    "/Game/GrandTour/Terrain/RT_TrackPaint": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelField",
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass",
+      "/Game/GrandTour/Materials/MF_TrackPaint"
+    ],
+    "/Game/GrandTour/Textures/Mud/T_GT_Mud_Diffuse": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Textures/Mud/T_GT_Mud_Normal": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Textures/Mud/T_GT_Mud_Rough": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_D": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_R": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Grass_D": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Grass_R": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape"
+    ]
+  },
+  "edges": {
+    "/Game/GrandTour/ArtTests/DeformableGravel/DA_GravelDeform": [],
+    "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform": [
+      "/Engine/EditorResources/LightIcons/S_LightError",
+      "/Engine/EngineMaterials/WorldGridMaterial",
+      "/Game/GrandTour/ArtTests/DeformableGravel/DA_GravelDeform",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Bog",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Dirt",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Mud",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Scrub",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Snow",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Tarmac",
+      "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Dirt",
+      "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Straw"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Bog": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Bog"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Dirt": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Dirt"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Mud": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Mud"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Scrub": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Dirt"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Snow": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Snow"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Layers/LI_Tarmac": [
+      "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Tarmac"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelField": [
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactNormal",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseNormal",
+      "/Game/GrandTour/Materials/MPC_Weather",
+      "/Game/GrandTour/Terrain/RT_TrackPaint"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape": [
+      "/Engine/EngineMaterials/WeightMapArrayPlaceholderTexture",
+      "/Engine/EngineMaterials/WeightMapPlaceholderTexture",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactNormal",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayColor",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedColor",
+      "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedNormal",
+      "/Game/GrandTour/Materials/MF_TrackPaint",
+      "/Game/GrandTour/Materials/MF_Weather",
+      "/Game/GrandTour/Materials/MPC_Weather",
+      "/Game/GrandTour/Materials/RT_RainOcclusion",
+      "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "/Game/GrandTour/Terrain/RT_TrackPaint",
+      "/Game/GrandTour/Textures/Mud/T_GT_Mud_Diffuse",
+      "/Game/GrandTour/Textures/Mud/T_GT_Mud_Normal",
+      "/Game/GrandTour/Textures/Mud/T_GT_Mud_Rough",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_D",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_R",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Grass_D",
+      "/Game/GrandTour/Textures/Stylised/T_GT_Grass_R"
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Bog": [],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Dirt": [],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Mud": [],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Snow": [],
+    "/Game/GrandTour/ArtTests/DeformableGravel/Surfaces/PM_Tarmac": [],
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road": [
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactNormal",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor",
+      "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseNormal",
+      "/Game/GrandTour/ArtTests/RoadFordStyle/T_RB_Normal",
+      "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_GravelPainted",
+      "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_MeadowPainted"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone": [],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_BankL": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_BankR": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_DryRoad": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_ExitRoad": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_FordBed": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_GravelVergeL": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_GravelVergeR": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_MudApproach": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone1": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone2": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone3": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/SM_GR_Stone4": [
+      "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Stone"
+    ],
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor": [],
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactNormal": [],
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor": [],
+    "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseNormal": [],
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor": [
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepColor",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmColor",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardColor",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyColor"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight": [
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardHeight",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyHeight"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal": [
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardNormal",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyNormal"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough": [
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepRough",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmRough",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardRough",
+      "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyRough"
+    ],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayColor": [],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayNormal": [],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedColor": [],
+    "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedNormal": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepColor": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepHeight": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepNormal": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogDeepRough": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmColor": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmHeight": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmNormal": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogFirmRough": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardColor": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardHeight": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardNormal": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStandardRough": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyColor": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyHeight": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyNormal": [],
+    "/Game/GrandTour/ArtTests/MudStyle/Variants/T_MS_BogStonyRough": [],
+    "/Game/GrandTour/ArtTests/RoadFordStyle/T_RB_Normal": [],
+    "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_GravelPainted": [],
+    "/Game/GrandTour/ArtTests/RoadFordStyle/T_RF_MeadowPainted": [],
+    "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass": [
+      "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "/Game/GrandTour/Terrain/RT_TrackPaint"
+    ],
+    "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Straw": [
+      "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass"
+    ],
+    "/Game/GrandTour/Materials/MF_TrackPaint": [
+      "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "/Game/GrandTour/Terrain/RT_TrackPaint"
+    ],
+    "/Game/GrandTour/Materials/MF_Weather": [
+      "/Game/GrandTour/Materials/MPC_Weather",
+      "/Game/GrandTour/Materials/RT_RainOcclusion"
+    ],
+    "/Game/GrandTour/Materials/MPC_Weather": [],
+    "/Game/GrandTour/Materials/RT_RainOcclusion": [],
+    "/Game/GrandTour/Terrain/MPC_TrackPaint": [],
+    "/Game/GrandTour/Terrain/RT_TrackPaint": [],
+    "/Game/GrandTour/Textures/Mud/T_GT_Mud_Diffuse": [],
+    "/Game/GrandTour/Textures/Mud/T_GT_Mud_Normal": [],
+    "/Game/GrandTour/Textures/Mud/T_GT_Mud_Rough": [],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_D": [],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_R": [],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Grass_D": [],
+    "/Game/GrandTour/Textures/Stylised/T_GT_Grass_R": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "visibility": {
+    "picture": "B1c_Gravel_Chase",
+    "sprite_pixels": 1269169,
+    "b1b": 83054,
+    "ratio": 15.281,
+    "asked": "at least 1.5",
+    "pass": true
+  },
+  "dust_in_shadow": {
+    "picture": "B1c_Gravel_Close",
+    "asked": "at least 0.5",
+    "sprite_pixels": 310653,
+    "in_shadow": 23087,
+    "in_sun": 287566,
+    "sunlit_ground_p75": 0.2413,
+    "shadow_median": 0.438,
+    "sun_median": 0.5165,
+    "ratio": 0.848,
+    "pass": true
+  },
+  "dust_in_shadow_sweep": {
+    "1.5": {
+      "sprite_pixels": 302569,
+      "in_shadow": 22828,
+      "in_sun": 279741,
+      "sunlit_ground_p75": 0.2413,
+      "shadow_median": 0.3366,
+      "sun_median": 0.4401,
+      "ratio": 0.765,
+      "pass": true
+    },
+    "4": {
+      "sprite_pixels": 329578,
+      "in_shadow": 23295,
+      "in_sun": 306283,
+      "sunlit_ground_p75": 0.2413,
+      "shadow_median": 0.529,
+      "sun_median": 0.5936,
+      "ratio": 0.891,
+      "pass": true
+    }
+  }
+}

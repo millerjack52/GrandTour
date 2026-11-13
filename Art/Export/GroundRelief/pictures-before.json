@@ -1,0 +1,138 @@
+{
+  "ok": true,
+  "tag": "before",
+  "strips": [
+    {
+      "strip": "MudVariants",
+      "level": "/Game/GrandTour/ArtTests/MudVariants/L_MudVariants",
+      "cameras": {
+        "Relief_Overview": {
+          "eye_m": [
+            79.21,
+            25.27,
+            27.29
+          ],
+          "look_m": [
+            95.0,
+            0.0,
+            0.12
+          ],
+          "fov": 60.0
+        },
+        "Relief_OnFoot": {
+          "eye_m": [
+            80.0,
+            18.0,
+            2.7
+          ],
+          "look_m": [
+            91.25,
+            0.0,
+            -0.06
+          ],
+          "fov": 65.0
+        },
+        "Relief_Bog": {
+          "eye_m": [
+            80.0,
+            4.0,
+            1.86
+          ],
+          "look_m": [
+            87.95,
+            -8.72,
+            0.06
+          ],
+          "fov": 65.0
+        }
+      }
+    },
+    {
+      "strip": "DeformableGravel",
+      "level": "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform",
+      "cameras": {
+        "Relief_Overview": {
+          "eye_m": [
+            54.21,
+            25.27,
+            25.29
+          ],
+          "look_m": [
+            70.0,
+            0.0,
+            0.1
+          ],
+          "fov": 60.0
+        },
+        "Relief_OnFoot": {
+          "eye_m": [
+            60.0,
+            18.0,
+            1.91
+          ],
+          "look_m": [
+            71.25,
+            0.0,
+            0.1
+          ],
+          "fov": 65.0
+        }
+      }
+    },
+    {
+      "strip": "LiveMudDrive",
+      "level": "/Game/GrandTour/ArtTests/LiveMudDrive/L_MudDrive",
+      "cameras": {
+        "Relief_Overview": {
+          "eye_m": [
+            24.21,
+            25.27,
+            25.47
+          ],
+          "look_m": [
+            40.0,
+            0.0,
+            0.05
+          ],
+          "fov": 60.0
+        },
+        "Relief_OnFoot": {
+          "eye_m": [
+            30.0,
+            18.0,
+            2.24
+          ],
+          "look_m": [
+            41.25,
+            0.0,
+            0.04
+          ],
+          "fov": 65.0
+        },
+        "Relief_Bog": {
+          "eye_m": [
+            36.0,
+            4.0,
+            1.96
+          ],
+          "look_m": [
+            43.95,
+            -8.72,
+            0.21
+          ],
+          "fov": 65.0
+        }
+      }
+    }
+  ],
+  "images": [
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\GR1_Before\\Relief_Overview.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\GR1_Before\\Relief_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\GR1_Before\\Relief_Bog.png",
+    "C:\\GrandTour\\Art\\Export\\DeformableGravel\\GR1_Before\\Relief_Overview.png",
+    "C:\\GrandTour\\Art\\Export\\DeformableGravel\\GR1_Before\\Relief_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\GR1_Before\\Relief_Overview.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\GR1_Before\\Relief_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\GR1_Before\\Relief_Bog.png"
+  ]
+}

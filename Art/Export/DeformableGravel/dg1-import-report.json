@@ -1,0 +1,155 @@
+{
+  "ok": true,
+  "slices": [
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/Bakes/T_GV_LooseColor.T_GV_LooseColor",
+      "source": "Art/Export/GravelDG1/T_GV_LooseColor.png",
+      "source_bytes": 2707803,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/Bakes/T_GV_PackedColor.T_GV_PackedColor",
+      "source": "Art/Export/GravelDG1/T_GV_PackedColor.png",
+      "source_bytes": 2450371,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/Bakes/T_GV_LooseNormal.T_GV_LooseNormal",
+      "source": "Art/Export/GravelDG1/T_GV_LooseNormal.png",
+      "source_bytes": 4742795,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/Bakes/T_GV_PackedNormal.T_GV_PackedNormal",
+      "source": "Art/Export/GravelDG1/T_GV_PackedNormal.png",
+      "source_bytes": 4805415,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/Bakes/T_GV_LooseORH.T_GV_LooseORH",
+      "source": "Art/Export/GravelDG1/T_GV_LooseORH.png",
+      "source_bytes": 6745052,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/Bakes/T_GV_PackedORH.T_GV_PackedORH",
+      "source": "Art/Export/GravelDG1/T_GV_PackedORH.png",
+      "source_bytes": 5681757,
+      "size": [
+        2048,
+        2048
+      ],
+      "source_format": null,
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    }
+  ],
+  "arrays": [
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/TA_GV_Color.TA_GV_Color",
+      "created": true,
+      "slices": [
+        "T_GV_LooseColor",
+        "T_GV_PackedColor"
+      ],
+      "python_route": {
+        "slices": 2,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "2 slices of 2048 x 2048",
+      "source_slices": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "package_bytes": 5200666
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/TA_GV_Normal.TA_GV_Normal",
+      "created": true,
+      "slices": [
+        "T_GV_LooseNormal",
+        "T_GV_PackedNormal"
+      ],
+      "python_route": {
+        "slices": 2,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "2 slices of 2048 x 2048",
+      "source_slices": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>",
+      "package_bytes": 8755318
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/DeformableGravel/TA_GV_ORH.TA_GV_ORH",
+      "created": true,
+      "slices": [
+        "T_GV_LooseORH",
+        "T_GV_PackedORH"
+      ],
+      "python_route": {
+        "slices": 2,
+        "size": [
+          2048,
+          2048
+        ],
+        "error": null
+      },
+      "rebuilt": "2 slices of 2048 x 2048",
+      "source_slices": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>",
+      "package_bytes": 8515319
+    }
+  ],
+  "route": "Texture2DArray: made by Python (Texture2DArrayFactory), Source Textures set by Python (gave 2,2,2 slices), the source rebuilt by UGTMudArtLibrary::BuildTextureArray"
+}

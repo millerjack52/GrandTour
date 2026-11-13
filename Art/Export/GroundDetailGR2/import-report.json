@@ -1,0 +1,480 @@
+{
+  "ok": true,
+  "slices": [
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/Bakes/T_GD_ScrubSoilColor.T_GD_ScrubSoilColor",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/Bakes/T_GD_SoilUnderGrassColor.T_GD_SoilUnderGrassColor",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/Bakes/T_GD_ScrubSoilNormal.T_GD_ScrubSoilNormal",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/Bakes/T_GD_SoilUnderGrassNormal.T_GD_SoilUnderGrassNormal",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/Bakes/T_GD_ScrubSoilORH.T_GD_ScrubSoilORH",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/Bakes/T_GD_SoilUnderGrassORH.T_GD_SoilUnderGrassORH",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    }
+  ],
+  "arrays": [
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/TA_GD_Color.TA_GD_Color",
+      "created": false,
+      "slices": [
+        "T_GD_ScrubSoilColor",
+        "T_GD_SoilUnderGrassColor"
+      ],
+      "rebuilt": "2 slices of 2048 x 2048",
+      "source_slices": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/TA_GD_Normal.TA_GD_Normal",
+      "created": false,
+      "slices": [
+        "T_GD_ScrubSoilNormal",
+        "T_GD_SoilUnderGrassNormal"
+      ],
+      "rebuilt": "2 slices of 2048 x 2048",
+      "source_slices": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+    },
+    {
+      "asset": "/Game/GrandTour/ArtTests/GroundDetail/TA_GD_ORH.TA_GD_ORH",
+      "created": false,
+      "slices": [
+        "T_GD_ScrubSoilORH",
+        "T_GD_SoilUnderGrassORH"
+      ],
+      "rebuilt": "2 slices of 2048 x 2048",
+      "source_slices": 2,
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "SM_GD_Clod0",
+      "family": "Clods",
+      "triangles": 176,
+      "size_cm": [
+        3.47,
+        2.87,
+        1.58
+      ],
+      "min_z_cm": -0.4,
+      "material": "MI_GD_Clod",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Clod1",
+      "family": "Clods",
+      "triangles": 194,
+      "size_cm": [
+        4.5,
+        3.95,
+        2.62
+      ],
+      "min_z_cm": -0.85,
+      "material": "MI_GD_Clod",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Clod2",
+      "family": "Clods",
+      "triangles": 224,
+      "size_cm": [
+        6.81,
+        5.62,
+        2.56
+      ],
+      "min_z_cm": -0.87,
+      "material": "MI_GD_Clod",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Clod3",
+      "family": "Clods",
+      "triangles": 266,
+      "size_cm": [
+        9.48,
+        8.39,
+        3.46
+      ],
+      "min_z_cm": -1.07,
+      "material": "MI_GD_Clod",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Clod4",
+      "family": "Clods",
+      "triangles": 266,
+      "size_cm": [
+        11.81,
+        6.93,
+        5.56
+      ],
+      "min_z_cm": -1.4,
+      "material": "MI_GD_Clod",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Clod5",
+      "family": "Clods",
+      "triangles": 308,
+      "size_cm": [
+        12.0,
+        10.04,
+        6.51
+      ],
+      "min_z_cm": -1.77,
+      "material": "MI_GD_Clod",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Pebble0",
+      "family": "Pebbles",
+      "triangles": 198,
+      "size_cm": [
+        1.02,
+        0.84,
+        0.72
+      ],
+      "min_z_cm": -0.2,
+      "material": "MI_GD_Pebble",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Pebble1",
+      "family": "Pebbles",
+      "triangles": 228,
+      "size_cm": [
+        1.82,
+        1.58,
+        1.12
+      ],
+      "min_z_cm": -0.33,
+      "material": "MI_GD_Pebble",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Pebble2",
+      "family": "Pebbles",
+      "triangles": 198,
+      "size_cm": [
+        3.05,
+        2.85,
+        2.23
+      ],
+      "min_z_cm": -0.64,
+      "material": "MI_GD_Pebble",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Pebble3",
+      "family": "Pebbles",
+      "triangles": 228,
+      "size_cm": [
+        4.29,
+        3.6,
+        2.89
+      ],
+      "min_z_cm": -0.83,
+      "material": "MI_GD_Pebble",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Litter0",
+      "family": "Litter",
+      "triangles": 216,
+      "size_cm": [
+        12.0,
+        6.96,
+        2.71
+      ],
+      "min_z_cm": -0.44,
+      "material": "MI_GD_Litter",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Litter1",
+      "family": "Litter",
+      "triangles": 240,
+      "size_cm": [
+        16.0,
+        15.94,
+        2.82
+      ],
+      "min_z_cm": -0.4,
+      "material": "MI_GD_Litter",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Litter2",
+      "family": "Litter",
+      "triangles": 276,
+      "size_cm": [
+        21.0,
+        17.65,
+        3.78
+      ],
+      "min_z_cm": -0.44,
+      "material": "MI_GD_Litter",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Litter3",
+      "family": "Litter",
+      "triangles": 312,
+      "size_cm": [
+        17.81,
+        26.0,
+        3.3
+      ],
+      "min_z_cm": -0.41,
+      "material": "MI_GD_Litter",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Twig0",
+      "family": "Twigs",
+      "triangles": 110,
+      "size_cm": [
+        4.92,
+        13.39,
+        0.7
+      ],
+      "min_z_cm": -0.05,
+      "material": "MI_GD_Twig",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Twig1",
+      "family": "Twigs",
+      "triangles": 110,
+      "size_cm": [
+        24.81,
+        5.94,
+        1.91
+      ],
+      "min_z_cm": 0.03,
+      "material": "MI_GD_Twig",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_Twig2",
+      "family": "Twigs",
+      "triangles": 110,
+      "size_cm": [
+        38.39,
+        15.86,
+        2.02
+      ],
+      "min_z_cm": 0.04,
+      "material": "MI_GD_Twig",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_TussockBase0",
+      "family": "TussockBases",
+      "triangles": 336,
+      "size_cm": [
+        27.36,
+        21.55,
+        5.43
+      ],
+      "min_z_cm": -1.5,
+      "material": "MI_GD_TussockBase",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_TussockBase1",
+      "family": "TussockBases",
+      "triangles": 346,
+      "size_cm": [
+        34.65,
+        39.62,
+        7.22
+      ],
+      "min_z_cm": -1.5,
+      "material": "MI_GD_TussockBase",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    },
+    {
+      "name": "SM_GD_TussockBase2",
+      "family": "TussockBases",
+      "triangles": 360,
+      "size_cm": [
+        43.63,
+        53.4,
+        9.51
+      ],
+      "min_z_cm": -1.5,
+      "material": "MI_GD_TussockBase",
+      "vertex_colour": "replaced from the FBX",
+      "collision": "none",
+      "nanite": false
+    }
+  ],
+  "mpc": {
+    "mpc": "/Game/GrandTour/Terrain/MPC_TrackPaint",
+    "added": [],
+    "scalars": 14
+  },
+  "scatter_material": {
+    "material": "/Game/GrandTour/ArtTests/GroundDetail/M_GT_GroundScatter",
+    "instances": {
+      "Clods": {
+        "mi": "MI_GD_Clod",
+        "SoilShare": 1.0,
+        "UseVertexColour": 1.0,
+        "Rough": 0.93,
+        "Tint": [
+          1.2,
+          1.14,
+          1.06
+        ]
+      },
+      "Pebbles": {
+        "mi": "MI_GD_Pebble",
+        "SoilShare": 0.0,
+        "UseVertexColour": 0.0,
+        "Rough": 0.72,
+        "Tint": [
+          0.16,
+          0.145,
+          0.12
+        ]
+      },
+      "Twigs": {
+        "mi": "MI_GD_Twig",
+        "SoilShare": 0.0,
+        "UseVertexColour": 0.0,
+        "Rough": 0.85,
+        "Tint": [
+          0.1,
+          0.08,
+          0.06
+        ]
+      },
+      "Litter": {
+        "mi": "MI_GD_Litter",
+        "SoilShare": 0.0,
+        "UseVertexColour": 1.0,
+        "Rough": 0.8,
+        "Tint": [
+          0.32,
+          0.25,
+          0.13
+        ]
+      },
+      "TussockBases": {
+        "mi": "MI_GD_TussockBase",
+        "SoilShare": 1.0,
+        "UseVertexColour": 1.0,
+        "Rough": 0.92,
+        "Tint": [
+          0.86,
+          0.8,
+          0.7
+        ]
+      }
+    },
+    "colour": "vertex colour x the strip palette (soil families: x ScrubSoil luminance, box 2 m)",
+    "bump": "TA_GD_Normal slice 0 box-projected at 2 m (the 1.5 cm bake)",
+    "fade": "PerInstanceFadeAmount, dithered, masked",
+    "wet": "x0.75, rough to 0.45"
+  }
+}

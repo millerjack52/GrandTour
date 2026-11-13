@@ -1,0 +1,648 @@
+{
+  "source": "Art/Export/GravelRoadStudy/04 (revision 04, Art/Blender/gravel_road_material.py), baked by Art/Blender/bake_gravel_dg1.py",
+  "plan": "docs/DEFORMABLE_GRAVEL_PLAN.md DG1 item 1",
+  "tile_m": 2.0,
+  "size": 2048,
+  "texel_cm": 0.0977,
+  "mirror": false,
+  "normal": "DirectX tangent (green = -Y), Cycles NORMAL bake of the study's two chained bumps",
+  "periodic_inputs": {
+    "stones": "Voronoi F1 / distance to edge, 13 per metre: 26 x 26 cells wrapped",
+    "chips": "Voronoi, 34 per metre: 68 x 68 cells wrapped",
+    "warp": "noise 16 per metre (32 periods), Color R/G matched to Blender 5.1 Noise detail 0 Color R/G",
+    "wash": "noise detail 1 at 1.00 per metre (study 1.15; 2 periods), matched to Blender 5.1 Noise detail 1 Fac",
+    "dabs": "23149 dabs, sigma 3.0 x 0.55 cm, random orientation (18 bins), matched to Blender 5.1 Noise detail 0 Fac (study: 6:1 along the road)",
+    "field_readback_max_error": 5.119618896181656e-05
+  },
+  "height": {
+    "definition": "phase A3: per-stone parallax height (bake_gravel_dg1.parallax_heights), 0-1 in units both sets share; Height PNG = the sharp height, ORH.B = its soft rims; the colour and normal bakes are from the study shader, unchanged",
+    "stones": {
+      "centre_skew": "lo + (hi - lo) x u^1.00",
+      "centre_range": {
+        "Loose": [
+          0.35,
+          1.0
+        ],
+        "Packed": [
+          0.25,
+          0.7
+        ]
+      },
+      "tilt_rise": [
+        0.15,
+        0.45
+      ],
+      "tilt_width_cells": 1.12,
+      "footprint": "F1 < 0.56 cells, 0.015 cells inside the Voronoi edges",
+      "side_slope_per_texel": 0.06
+    },
+    "chips": {
+      "raise_range": [
+        0.05,
+        0.3
+      ],
+      "shape": "the study chip shape (bevel 0.025-0.13 x size 0.28-0.61)"
+    },
+    "matrix": "0.05 + 0.025 x unit noise (3 cm features), clamped 0-0.1"
+  },
+  "roughness_note": "the study dry roughness is one constant, 0.9 (ground_material_v2: 0.9 - 0.3 x wetness; dry wetness 0); DG1 item 1 decision: 0.9 - 0.16 x smoothstep(0.45, 0.9, h) on the sharp height, Packed - 0.05, floor 0.55 (Rough PNG = ORH.G)",
+  "parallax_depth_cm": {
+    "Loose": 0.8,
+    "Packed": 0.5,
+    "note": "ORH.B 0-1 (units both sets share) x depth; Packed B reaches 0.836, so 0.42 cm"
+  },
+  "sets": {
+    "Loose": {
+      "study_vertex_alpha": 1.0,
+      "files": {
+        "Color": "Art/Export/GravelDG1/T_GV_LooseColor.png",
+        "Normal": "Art/Export/GravelDG1/T_GV_LooseNormal.png",
+        "Height": "Art/Export/GravelDG1/T_GV_LooseHeight.png",
+        "Rough": "Art/Export/GravelDG1/T_GV_LooseRough.png",
+        "AO": "Art/Export/GravelDG1/T_GV_LooseAO.png",
+        "ORH": "Art/Export/GravelDG1/T_GV_LooseORH.png"
+      },
+      "height_range_cm": [
+        0.0,
+        0.8
+      ],
+      "height_cm_p50_95_99": [
+        0.184,
+        0.641,
+        0.747
+      ],
+      "parallax_stones": {
+        "stones_present": 500,
+        "centre_range": [
+          0.35,
+          1.0
+        ],
+        "centre_p5_50_95": [
+          0.381,
+          0.652,
+          0.932
+        ],
+        "centre_share_0_35_0_55": 0.334,
+        "rise_p5_50_95": [
+          0.17,
+          0.295,
+          0.432
+        ],
+        "shifted_down": 54,
+        "facet_share": 0.2131,
+        "stone_surface_share": 0.4523,
+        "matrix_min_max": [
+          0.0,
+          0.1
+        ],
+        "chip_top_p50_95": [
+          0.222,
+          0.342
+        ]
+      },
+      "roughness_p5_50_95": {
+        "rough_png": [
+          0.761,
+          0.902,
+          0.902
+        ],
+        "orh_g": [
+          0.761,
+          0.902,
+          0.902
+        ]
+      },
+      "colour": {
+        "linear_mean": [
+          0.2481,
+          0.2604,
+          0.2434
+        ],
+        "luminance_mean": 0.2566,
+        "luminance_p5_50_95": [
+          0.1933,
+          0.2465,
+          0.3593
+        ],
+        "lstar_mean": 57.48
+      },
+      "study_numbers": {
+        "broad_stone_coverage_mean": 0.3202,
+        "stone_face_share_coverage_over_0_5": 0.3144,
+        "chip_opacity_mean": 0.3399,
+        "broad_bump_height_mean": 0.3202,
+        "broad_bump_height_p95": 1.0
+      },
+      "seams": {
+        "Color": {
+          "R": {
+            "ratio": 0.875,
+            "edge_z_rows_cols": [
+              0.23,
+              -1.83
+            ]
+          },
+          "G": {
+            "ratio": 0.883,
+            "edge_z_rows_cols": [
+              0.16,
+              -1.6
+            ]
+          },
+          "B": {
+            "ratio": 0.908,
+            "edge_z_rows_cols": [
+              -0.13,
+              -0.98
+            ]
+          }
+        },
+        "Normal": {
+          "R": {
+            "ratio": 0.928,
+            "edge_z_rows_cols": [
+              -0.47,
+              -0.48
+            ]
+          },
+          "G": {
+            "ratio": 0.962,
+            "edge_z_rows_cols": [
+              -0.27,
+              -0.15
+            ]
+          },
+          "B": {
+            "ratio": 1.033,
+            "edge_z_rows_cols": [
+              -0.21,
+              0.55
+            ]
+          }
+        },
+        "Rough": {
+          "R": {
+            "ratio": 1.349,
+            "edge_z_rows_cols": [
+              0.36,
+              1.55
+            ]
+          }
+        },
+        "Height": {
+          "R": {
+            "ratio": 1.073,
+            "edge_z_rows_cols": [
+              0.32,
+              0.66
+            ]
+          }
+        },
+        "ORH": {
+          "R": {
+            "ratio": 0.955,
+            "edge_z_rows_cols": [
+              0.15,
+              -0.71
+            ]
+          },
+          "G": {
+            "ratio": 1.349,
+            "edge_z_rows_cols": [
+              0.36,
+              1.55
+            ]
+          },
+          "B": {
+            "ratio": 1.094,
+            "edge_z_rows_cols": [
+              0.45,
+              0.86
+            ]
+          }
+        }
+      },
+      "direction": {
+        "note": "structure-tensor coherence (whole tile, mean over 10 cm): 0 no direction, 1 stripes",
+        "height": [
+          0.0114,
+          0.0861
+        ],
+        "parallax_height": [
+          0.0128,
+          0.0874
+        ],
+        "colour_luminance": [
+          0.0172,
+          0.14
+        ]
+      },
+      "orh": {
+        "parallax_depth_cm": 0.8,
+        "ao": {
+          "radius_cm": 6.0,
+          "directions": 16,
+          "steps_px": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            10,
+            14,
+            19,
+            25,
+            32,
+            41,
+            51,
+            61
+          ],
+          "height_cm": "sharp h x 0.8",
+          "mean": 0.906,
+          "p1_5_50_95": [
+            0.68,
+            0.765,
+            0.923,
+            0.993
+          ],
+          "under_0_7": 0.0147
+        },
+        "rough_orh_g": {
+          "formula": "0.9 - 0.16 x smoothstep(0.45, 0.9, h)",
+          "min_max": [
+            0.74,
+            0.9
+          ],
+          "p5_50_95": [
+            0.76,
+            0.9,
+            0.9
+          ]
+        },
+        "parallax_height": {
+          "cap_pct_of_range_per_texel": 6.0,
+          "sigma_texels": 1.0,
+          "max_slope_per_texel_pct_before": 23.32,
+          "max_slope_per_texel_pct_after": 6.0,
+          "texels_for_a_full_range_rise": 17,
+          "cm_for_a_full_range_rise": 1.63,
+          "mean_abs_change": 0.0067,
+          "p99_abs_change": 0.06,
+          "mean_b": 0.2959,
+          "stone_tops": {
+            "definition": "the tilted tops of fully present stones where they are the surface",
+            "share": 0.2131,
+            "median_b": 0.588,
+            "p5_b": 0.341,
+            "max_b": 1.0,
+            "per_stone_max_b": {
+              "stones": 500,
+              "p5_25_50_75_95": [
+                0.269,
+                0.532,
+                0.694,
+                0.871,
+                0.992
+              ]
+            },
+            "per_stone_top_mean_b": {
+              "note": "each stone weighted once (the gate median weights texels)",
+              "stones": 417,
+              "p5_25_50_75_95": [
+                0.368,
+                0.492,
+                0.647,
+                0.817,
+                0.925
+              ]
+            },
+            "gates": {
+              "median_measure": "per stone: median over the stones of each top mean B",
+              "stone_top_median_b": 0.647,
+              "median_b_min": 0.6,
+              "max_b_min": 0.97,
+              "median_pass": true,
+              "max_pass": true
+            }
+          }
+        }
+      }
+    },
+    "Packed": {
+      "study_vertex_alpha": 0.32,
+      "files": {
+        "Color": "Art/Export/GravelDG1/T_GV_PackedColor.png",
+        "Normal": "Art/Export/GravelDG1/T_GV_PackedNormal.png",
+        "Height": "Art/Export/GravelDG1/T_GV_PackedHeight.png",
+        "Rough": "Art/Export/GravelDG1/T_GV_PackedRough.png",
+        "AO": "Art/Export/GravelDG1/T_GV_PackedAO.png",
+        "ORH": "Art/Export/GravelDG1/T_GV_PackedORH.png"
+      },
+      "height_range_cm": [
+        0.0,
+        0.4181
+      ],
+      "height_cm_p50_95_99": [
+        0.11,
+        0.3,
+        0.352
+      ],
+      "parallax_stones": {
+        "stones_present": 500,
+        "centre_range": [
+          0.25,
+          0.7
+        ],
+        "centre_p5_50_95": [
+          0.272,
+          0.459,
+          0.681
+        ],
+        "centre_share_0_35_0_55": 0.444,
+        "rise_p5_50_95": [
+          0.17,
+          0.295,
+          0.432
+        ],
+        "shifted_down": 0,
+        "facet_share": 0.2627,
+        "stone_surface_share": 0.4387,
+        "matrix_min_max": [
+          0.0,
+          0.1
+        ],
+        "chip_top_p50_95": [
+          0.222,
+          0.342
+        ]
+      },
+      "roughness_p5_50_95": {
+        "rough_png": [
+          0.808,
+          0.851,
+          0.851
+        ],
+        "orh_g": [
+          0.808,
+          0.851,
+          0.851
+        ]
+      },
+      "colour": {
+        "linear_mean": [
+          0.2405,
+          0.2519,
+          0.2338
+        ],
+        "luminance_mean": 0.2482,
+        "luminance_p5_50_95": [
+          0.2009,
+          0.246,
+          0.3028
+        ],
+        "lstar_mean": 56.79
+      },
+      "study_numbers": {
+        "broad_stone_coverage_mean": 0.1735,
+        "stone_face_share_coverage_over_0_5": 0.1659,
+        "chip_opacity_mean": 0.2757,
+        "broad_bump_height_mean": 0.1878,
+        "broad_bump_height_p95": 0.5985
+      },
+      "seams": {
+        "Color": {
+          "R": {
+            "ratio": 0.874,
+            "edge_z_rows_cols": [
+              0.22,
+              -2.02
+            ]
+          },
+          "G": {
+            "ratio": 0.881,
+            "edge_z_rows_cols": [
+              0.27,
+              -1.94
+            ]
+          },
+          "B": {
+            "ratio": 0.939,
+            "edge_z_rows_cols": [
+              0.23,
+              -1.1
+            ]
+          }
+        },
+        "Normal": {
+          "R": {
+            "ratio": 0.95,
+            "edge_z_rows_cols": [
+              -0.2,
+              -0.43
+            ]
+          },
+          "G": {
+            "ratio": 1.026,
+            "edge_z_rows_cols": [
+              0.23,
+              0.03
+            ]
+          },
+          "B": {
+            "ratio": 1.034,
+            "edge_z_rows_cols": [
+              0.05,
+              0.3
+            ]
+          }
+        },
+        "Rough": {
+          "R": {
+            "ratio": 1.341,
+            "edge_z_rows_cols": [
+              0.97,
+              0.4
+            ]
+          }
+        },
+        "Height": {
+          "R": {
+            "ratio": 1.045,
+            "edge_z_rows_cols": [
+              0.52,
+              0.03
+            ]
+          }
+        },
+        "ORH": {
+          "R": {
+            "ratio": 1.028,
+            "edge_z_rows_cols": [
+              1.18,
+              -0.92
+            ]
+          },
+          "G": {
+            "ratio": 1.341,
+            "edge_z_rows_cols": [
+              0.97,
+              0.4
+            ]
+          },
+          "B": {
+            "ratio": 1.058,
+            "edge_z_rows_cols": [
+              0.56,
+              0.22
+            ]
+          }
+        }
+      },
+      "direction": {
+        "note": "structure-tensor coherence (whole tile, mean over 10 cm): 0 no direction, 1 stripes",
+        "height": [
+          0.0095,
+          0.0829
+        ],
+        "parallax_height": [
+          0.0109,
+          0.0806
+        ],
+        "colour_luminance": [
+          0.0082,
+          0.1046
+        ]
+      },
+      "orh": {
+        "parallax_depth_cm": 0.5,
+        "ao": {
+          "radius_cm": 6.0,
+          "directions": 16,
+          "steps_px": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            10,
+            14,
+            19,
+            25,
+            32,
+            41,
+            51,
+            61
+          ],
+          "height_cm": "sharp h x 0.5",
+          "mean": 0.948,
+          "p1_5_50_95": [
+            0.785,
+            0.851,
+            0.964,
+            0.996
+          ],
+          "under_0_7": 0.0004
+        },
+        "rough_orh_g": {
+          "formula": "0.9 - 0.16 x smoothstep(0.45, 0.9, h) - 0.05, floor 0.55",
+          "min_max": [
+            0.699,
+            0.85
+          ],
+          "p5_50_95": [
+            0.809,
+            0.85,
+            0.85
+          ]
+        },
+        "parallax_height": {
+          "cap_pct_of_range_per_texel": 6.0,
+          "sigma_texels": 1.0,
+          "max_slope_per_texel_pct_before": 23.32,
+          "max_slope_per_texel_pct_after": 6.0,
+          "texels_for_a_full_range_rise": 17,
+          "cm_for_a_full_range_rise": 1.63,
+          "mean_abs_change": 0.0058,
+          "p99_abs_change": 0.0546,
+          "mean_b": 0.2482,
+          "stone_tops": {
+            "definition": "the tilted tops of fully present stones where they are the surface",
+            "share": 0.2627,
+            "median_b": 0.435,
+            "p5_b": 0.235,
+            "max_b": 0.831,
+            "per_stone_max_b": {
+              "stones": 500,
+              "p5_25_50_75_95": [
+                0.204,
+                0.408,
+                0.527,
+                0.644,
+                0.769
+              ]
+            },
+            "per_stone_top_mean_b": {
+              "note": "each stone weighted once (the gate median weights texels)",
+              "stones": 418,
+              "p5_25_50_75_95": [
+                0.265,
+                0.345,
+                0.455,
+                0.576,
+                0.676
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "packed_vs_loose": {
+    "luminance": 0.967,
+    "lstar": 0.988,
+    "broad_stone_coverage": 0.542,
+    "stone_face_share": 0.528,
+    "chip_opacity": 0.811,
+    "broad_bump_height": 0.587,
+    "height_p95": 0.468
+  },
+  "gates": {
+    "loose_max_b": 1.0,
+    "loose_texel_median_b_for_reference": 0.588,
+    "median_measure": "per stone: median over the stones of each top mean B",
+    "stone_top_median_b": 0.647,
+    "median_b_min": 0.6,
+    "max_b_min": 0.97,
+    "median_pass": true,
+    "max_pass": true
+  },
+  "track_blend": {
+    "rule": "p = smoothstep(0.35, 0.7, T - 0.3 x (hL - mean(hL))), hL = Loose ORH.B",
+    "mean_hL": 0.2959
+  },
+  "renders": {
+    "files": {
+      "Loose_3x3.png": "Art/Export/GravelDG1/Loose_3x3.png",
+      "Packed_3x3.png": "Art/Export/GravelDG1/Packed_3x3.png",
+      "Transition.png": "Art/Export/GravelDG1/Transition.png",
+      "Close.png": "Art/Export/GravelDG1/Close.png",
+      "OnFoot.png": "Art/Export/GravelDG1/OnFoot.png"
+    },
+    "ground": "Loose_3x3, Packed_3x3, Transition: flat 6 m, the tile 3 x 3, normal maps (object space = the flat ground tangent space), Specular IOR Level 0.5, roughness ORH.G",
+    "camera": "3x3 and Transition: eye 1.7 m up, 1.5 m behind the ground edge, looking along x (the paths), 18 deg down, 30 mm",
+    "lighting": "study 04: world Soft cool daylight, sun Directional daylight; AgX Medium High Contrast; Cycles 32 samples, denoised; 1440 x 900",
+    "transition": {
+      "rule": "p = smoothstep(0.35, 0.7, T - 0.3 (hL - mean(hL))), hL = Loose ORH.B, mean(hL) = 0.2959",
+      "T": "max of two Gaussians, sigma 0.185 m, centres +-0.784 + 0.12 sin(0.29 x) (the study lanes)",
+      "stones": 1083,
+      "stones_per_m2": 30.1,
+      "stone_rule": "the study placement (78000 tries per 466.7 m2, scaled to 5.8 x 5.8 m), none where T > 0.35"
+    },
+    "displaced": {
+      "ground": "the transition ground continued to 40 x 40 m (x 0-40 along the paths, y -20..20; the tile and the paths repeat); the study stones on its road band to x 40 (6964 in all)",
+      "displacement": "true displacement, Cycles adaptive subdivision (simple, 1 px dicing) of a 0.5 m grid, by lerp(Loose B x 0.8 cm, Packed B x 0.5 cm, p); shading normal = the baked normal maps in the flat frame (as POM shades); stones on the displaced height",
+      "close": "location (3.0, 1.106, 0.6), looking along -y across the y < 0 path, 20 deg down, 60 mm; the view centre on the inner p = 0.5 edge of that path",
+      "on_foot": "location (0.5, 0, 1.7), looking along x (the paths), 25 deg down, 90 deg horizontal FOV"
+    }
+  }
+}

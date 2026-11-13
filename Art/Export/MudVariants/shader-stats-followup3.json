@@ -1,0 +1,546 @@
+{
+  "tag": "followup3",
+  "ok": true,
+  "rows": [
+    {
+      "role": "mud ground",
+      "material": "/Game/GrandTour/Materials/M_GT_Mud",
+      "pixel_instructions": 917,
+      "vertex_instructions": 264,
+      "samplers": 6,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "rut water",
+      "material": "/Game/GrandTour/Materials/M_GT_MudWater",
+      "pixel_instructions": 2602,
+      "vertex_instructions": 339,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "car body",
+      "material": "/Game/GrandTour/Materials/M_GT_Vehicle",
+      "pixel_instructions": 750,
+      "vertex_instructions": 245,
+      "samplers": 10,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 3,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "tyre",
+      "material": "/Game/GrandTour/Materials/M_GT_Tyre",
+      "pixel_instructions": 341,
+      "vertex_instructions": 314,
+      "samplers": 5,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 6
+    },
+    {
+      "role": "glass",
+      "material": "/Game/GrandTour/Materials/M_GT_Glass",
+      "pixel_instructions": 443,
+      "vertex_instructions": 339,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/Materials/M_GT_Landscape",
+      "pixel_instructions": 323,
+      "vertex_instructions": 155,
+      "samplers": 6,
+      "pixel_texture_samples": 12,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/Materials/M_GT_Environment",
+      "pixel_instructions": 375,
+      "vertex_instructions": 155,
+      "samplers": 7,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/ArtTests/LiveMudDrive/M_LiveLandscape",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "splat decal",
+      "material": "/Game/GrandTour/Mud/Splats/M_GT_MudSplatDecal",
+      "pixel_instructions": 415,
+      "vertex_instructions": 344,
+      "samplers": 6,
+      "pixel_texture_samples": 0,
+      "vertex_texture_samples": 3,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "clods",
+      "material": "/Game/GrandTour/Materials/M_GT_Clod",
+      "pixel_instructions": 262,
+      "vertex_instructions": 148,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    }
+  ],
+  "texture_groups": {
+    "mud": {
+      "textures": [
+        {
+          "texture": "/Game/GrandTour/Terrain/RT_TrackPaint",
+          "cls": "TextureRenderTarget2D",
+          "format": "unknown",
+          "bytes": 33554432,
+          "size": null,
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Mud/T_GT_Mud_Diffuse",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Mud/T_GT_Mud_Normal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 5636096,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Mud/T_GT_Mud_Rough",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayColor",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayNormal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 5636096,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedColor",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedNormal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 5636096,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+          "cls": "Texture2DArray",
+          "format": "DXT1",
+          "bytes": 11206656,
+          "size": null,
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal",
+          "cls": "Texture2DArray",
+          "format": "BC5",
+          "bytes": 22413312,
+          "size": null,
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogORH",
+          "cls": "Texture2DArray",
+          "format": "BC7",
+          "bytes": 22413312,
+          "size": null,
+          "first_used_by": "M_GT_Mud"
+        },
+        {
+          "texture": "/Game/GrandTour/Materials/RT_RainOcclusion",
+          "cls": "TextureRenderTarget2D",
+          "format": "unknown",
+          "bytes": 2097152,
+          "size": null,
+          "first_used_by": "M_GT_Landscape"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Stylised/T_GT_Grass_D",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 720896,
+          "size": [
+            1024,
+            1024
+          ],
+          "first_used_by": "M_VariantsLandscape"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Stylised/T_GT_Grass_R",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 720896,
+          "size": [
+            1024,
+            1024
+          ],
+          "first_used_by": "M_VariantsLandscape"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_D",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 720896,
+          "size": [
+            1024,
+            1024
+          ],
+          "first_used_by": "M_VariantsLandscape"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Stylised/T_GT_Dirt_R",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 720896,
+          "size": [
+            1024,
+            1024
+          ],
+          "first_used_by": "M_VariantsLandscape"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_VariantsLandscape"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_VariantsLandscape"
+        },
+        {
+          "texture": "/Game/GrandTour/Mud/Splats/T_MudSplat_Mask",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_MudSplatDecal"
+        },
+        {
+          "texture": "/Game/GrandTour/Mud/Splats/T_MudSplat_Height",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_MudSplatDecal"
+        },
+        {
+          "texture": "/Game/GrandTour/Mud/Splats/T_MudSplat_Normal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 5636096,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_MudSplatDecal"
+        },
+        {
+          "texture": "/Game/GrandTour/Terrain/RT_ImpactsDefault",
+          "cls": "TextureRenderTarget2D",
+          "format": "unknown",
+          "bytes": 1024,
+          "size": null,
+          "first_used_by": "M_GT_Vehicle"
+        },
+        {
+          "texture": "/Engine/EngineMaterials/FlatNormal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 4096,
+          "size": [
+            16,
+            16
+          ],
+          "first_used_by": "M_GT_Vehicle"
+        },
+        {
+          "texture": "/Engine/EngineResources/DefaultTexture",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 16384,
+          "size": [
+            128,
+            128
+          ],
+          "first_used_by": "M_GT_Vehicle"
+        },
+        {
+          "texture": "/Engine/EngineMaterials/DefaultDiffuse_TC_Masks",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 16384,
+          "size": [
+            128,
+            128
+          ],
+          "first_used_by": "M_GT_Vehicle"
+        },
+        {
+          "texture": "/Game/GrandTour/Mud/Splats/T_MudSplat_Splatter",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Vehicle"
+        }
+      ],
+      "total_bytes": 142513152,
+      "total_mb": 135.9
+    },
+    "snow": {
+      "textures": [
+        {
+          "texture": "/Game/GrandTour/Terrain/RT_TrackPaint",
+          "cls": "TextureRenderTarget2D",
+          "format": "unknown",
+          "bytes": 33554432,
+          "size": null,
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Mud/T_GT_Mud_Diffuse",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Mud/T_GT_Mud_Normal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 5636096,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Mud/T_GT_Mud_Rough",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayColor",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayNormal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 5636096,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedColor",
+          "cls": "Texture2D",
+          "format": "DXT1",
+          "bytes": 2818048,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/ArtTests/MudStyle/T_MS_WorkedNormal",
+          "cls": "Texture2D",
+          "format": "BC5",
+          "bytes": 5636096,
+          "size": [
+            2048,
+            2048
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/Textures/Snow/T_GT_SnowDetail",
+          "cls": "Texture2D",
+          "format": "BC7",
+          "bytes": 1441792,
+          "size": [
+            1024,
+            1024
+          ],
+          "first_used_by": "M_GT_Snow"
+        },
+        {
+          "texture": "/Game/GrandTour/Materials/RT_RainOcclusion",
+          "cls": "TextureRenderTarget2D",
+          "format": "unknown",
+          "bytes": 2097152,
+          "size": null,
+          "first_used_by": "M_SnowLandscape"
+        }
+      ],
+      "total_bytes": 65273856,
+      "total_mb": 62.2
+    }
+  },
+  "loose_arrays": [
+    {
+      "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogORH",
+      "cls": "Texture2DArray",
+      "format": "BC7",
+      "bytes": 22413312,
+      "size": null
+    },
+    {
+      "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogOR",
+      "cls": "Texture2DArray",
+      "format": "BC5",
+      "bytes": 22413312,
+      "size": null
+    },
+    {
+      "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeightPOM",
+      "cls": "Texture2DArray",
+      "format": "BC4",
+      "bytes": 11206656,
+      "size": null
+    },
+    {
+      "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeightPOM8",
+      "cls": "Texture2DArray",
+      "format": "G8",
+      "bytes": 22413312,
+      "size": null
+    },
+    {
+      "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogRough",
+      "cls": "Texture2DArray",
+      "format": "DXT1",
+      "bytes": 11206656,
+      "size": null
+    },
+    {
+      "texture": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogHeight",
+      "cls": "Texture2DArray",
+      "format": "DXT1",
+      "bytes": 11206656,
+      "size": null
+    }
+  ]
+}

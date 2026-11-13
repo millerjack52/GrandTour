@@ -1,0 +1,7 @@
+Generated using the built-in image_gen tool on 2026-10-06.
+Purpose: painted willow bark texture for the mature willow model.
+Source: exec-ec04b612-d2dc-4ac3-a59b-99e724abec0f.png
+The texture is generated, not photographed. Tile continuity is not pixel-verified.
+
+Final prompt:
+Use case: stylized-concept. Asset type: production hand-painted bark ALBEDO texture for a 3D willow trunk in a stylised New Zealand high-country driving game. Generate a square, edge-to-edge seamless tile of mature willow bark, viewed completely flat, no cylinder, no perspective, no scene. Vertical lengthwise grain. Hand-painted angular brushwork with irregular overlapping elongated strips and weathered flaking bark, branching narrow cracks, restrained natural variation of strip width and length. Several broad planes of warm grey-brown weathered wood, muted ochre/taupe exposed facets, subtle slate-grey cooler strips; small dark brown crevices only. Rich painterly material but not hyper-detailed photorealism. Bark should read as fibrous, rough, woody with purposeful broad and fine marks. Represents about 1 metre of circumference by 2 metres of tree height. Perfectly even flat diffuse lighting appropriate for base colour, no baked light direction, no highlights, no ambient shadow gradient. Avoid smooth camouflage blobs, outlined Voronoi cells, concentric wood rings, plank seams, repetitive zebra stripes, strongly black patches, moss, leaves, branches, borders, labels, text. The entire canvas must be usable bark texture with continuity at all four edges.

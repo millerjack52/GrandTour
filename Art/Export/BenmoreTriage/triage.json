@@ -1,0 +1,269 @@
+{
+ "ok": true,
+ "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+ "timings_collected": false,
+ "tests_run": false,
+ "umap_mtime_at_load": 1791862466.6513474,
+ "actor_classes_before": {
+  "Actor": 43,
+  "BP_CraftedUtility_Fleet_C": 1,
+  "BP_E39Touring_C": 1,
+  "BP_Ferrari288_C": 1,
+  "BP_GraphicAdventure_C": 1,
+  "BP_Impreza2003_Fleet_C": 1,
+  "BP_KadettA_C": 1,
+  "BP_LandCruiser80_Fleet_C": 1,
+  "BP_Panda1990_Fleet_C": 1,
+  "BP_Pathfinder2002_Fleet_C": 1,
+  "BP_Prado_Fleet_C": 1,
+  "BP_SJ413_C": 1,
+  "CameraActor": 12,
+  "DirectionalLight": 1,
+  "ExponentialHeightFog": 1,
+  "GTCarPawn": 1,
+  "GTDeformZone": 76,
+  "GTTerrainBuilder": 1,
+  "GTVehicleSurfaceEffects": 1,
+  "GTWaterSheet": 1,
+  "Landscape": 1,
+  "PlayerStart": 1,
+  "PostProcessVolume": 2,
+  "SkyAtmosphere": 1,
+  "SkyLight": 1,
+  "StaticMeshActor": 257,
+  "VolumetricCloud": 1
+ },
+ "removed": {
+  "gravel": 39,
+  "mud_road": 31,
+  "bog": 6,
+  "other_in_folder": []
+ },
+ "mud_patches_left": [],
+ "zones_left": 0,
+ "surface_effects_actors": [
+  "Benmore_VehicleSurfaceEffects"
+ ],
+ "material_before": {
+  "pixel": 1938,
+  "vertex": 153,
+  "samplers": 31,
+  "pixel_texture_samples": 42,
+  "nodes": 124,
+  "roots": {
+   "MP_BASE_COLOR": [
+    "MaterialExpressionCustom_28",
+    "return"
+   ],
+   "MP_NORMAL": [
+    "MaterialExpressionCustom_26",
+    "Normal"
+   ],
+   "MP_ROUGHNESS": [
+    "MaterialExpressionCustom_31",
+    ""
+   ],
+   "MP_AMBIENT_OCCLUSION": [
+    "MaterialExpressionMaterialFunctionCall_1",
+    "AO"
+   ],
+   "MP_OPACITY_MASK": [
+    "MaterialExpressionMultiply_5",
+    ""
+   ],
+   "MP_SPECULAR": [
+    "MaterialExpressionConstant_1",
+    ""
+   ],
+   "MP_METALLIC": [
+    null,
+    ""
+   ],
+   "MP_EMISSIVE_COLOR": [
+    null,
+    ""
+   ]
+  },
+  "collections": [
+   "/Game/GrandTour/Terrain/MPC_GT_GroundDetail.BenmoreGravelPOM",
+   "/Game/GrandTour/Terrain/MPC_GT_GroundDetail.ScatterClusterCm",
+   "/Game/GrandTour/Terrain/MPC_GT_GroundDetail.ScatterMax",
+   "/Game/GrandTour/Terrain/MPC_GT_GroundDetail.ScatterMin",
+   "/Game/GrandTour/Terrain/MPC_GT_GroundDetail.ScatterScale",
+   "/Game/GrandTour/Terrain/MPC_GT_GroundDetail.ScatterSharpen",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch0",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch1",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch2",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch3"
+  ],
+  "grass": [
+   [
+    "LowGrass",
+    "LGT_Painterly_LowGrass"
+   ],
+   [
+    "CrownTussock",
+    "LGT_Painterly_CrownTussock"
+   ],
+   [
+    "ShaggyTussock",
+    "LGT_Painterly_ShaggyTussock"
+   ],
+   [
+    "TallClumps",
+    "LGT_Painterly_TallClumps"
+   ],
+   [
+    "DistantTussock",
+    "LGT_Painterly_DistantTussock"
+   ],
+   [
+    "GTSoilScatter",
+    "LGT_GT_SoilScatter"
+   ],
+   [
+    "GTGrassLitter",
+    "LGT_GT_GrassLitter"
+   ]
+  ],
+  "physical_material_outputs": 1,
+  "claude_nodes": 23,
+  "textures": [
+   "/Game/GrandTour/Terrain/DeformZones/T_GT_DeformCoverageNone",
+   "/Game/GrandTour/Terrain/DeformZones/T_GT_MudZoneColour",
+   "/Game/GrandTour/Terrain/DeformZones/T_GT_MudZoneMask",
+   "/Game/GrandTour/Terrain/DeformZones/T_RL_Vegetation"
+  ]
+ },
+ "attach": {
+  "deform_unwrapped": [
+   "MP_OPACITY_MASK",
+   "MP_BASE_COLOR",
+   "MP_ROUGHNESS"
+  ],
+  "gravel_pom_switch_restored": 1,
+  "grass_entries_removed": 2,
+  "grass_entries": [
+   "LowGrass",
+   "CrownTussock",
+   "ShaggyTussock",
+   "TallClumps",
+   "DistantTussock"
+  ],
+  "vegetation_restored": 1,
+  "material": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/M_GC_Terrain.M_GC_Terrain",
+  "bed_uv": "(P.xy*.01-float2(-1581.1011904762,-1250.0000000000)+0.6200396825)/float2(2832.3412698413,2501.2400793651)",
+  "physical_material_output": [
+   "PM_Benmore_GravelFirm",
+   "PM_Benmore_GravelLoose",
+   "PM_Benmore_WetGround",
+   "PM_Benmore_FirmGround"
+  ]
+ },
+ "material_after": {
+  "pixel": 1090,
+  "vertex": 148,
+  "samplers": 24,
+  "pixel_texture_samples": 31,
+  "nodes": 104,
+  "roots": {
+   "MP_BASE_COLOR": [
+    "MaterialExpressionCustom_26",
+    "return"
+   ],
+   "MP_NORMAL": [
+    "MaterialExpressionCustom_26",
+    "Normal"
+   ],
+   "MP_ROUGHNESS": [
+    "MaterialExpressionCustom_26",
+    "Rough"
+   ],
+   "MP_AMBIENT_OCCLUSION": [
+    null,
+    ""
+   ],
+   "MP_OPACITY_MASK": [
+    "MaterialExpressionCustom_23",
+    ""
+   ],
+   "MP_SPECULAR": [
+    "MaterialExpressionConstant_1",
+    ""
+   ],
+   "MP_METALLIC": [
+    null,
+    ""
+   ],
+   "MP_EMISSIVE_COLOR": [
+    null,
+    ""
+   ]
+  },
+  "collections": [
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/MPC_Benmore_GravelPOM.Enabled",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch0",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch1",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch2",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.Patch3"
+  ],
+  "grass": [
+   [
+    "LowGrass",
+    "LGT_Painterly_LowGrass"
+   ],
+   [
+    "CrownTussock",
+    "LGT_Painterly_CrownTussock"
+   ],
+   [
+    "ShaggyTussock",
+    "LGT_Painterly_ShaggyTussock"
+   ],
+   [
+    "TallClumps",
+    "LGT_Painterly_TallClumps"
+   ],
+   [
+    "DistantTussock",
+    "LGT_Painterly_DistantTussock"
+   ]
+  ],
+  "physical_material_outputs": 1,
+  "claude_nodes": 3,
+  "textures": [
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation"
+  ]
+ },
+ "physical_material_wait_s": 180,
+ "umap_mtime_before_save": 1791862466.6513474,
+ "saved": true,
+ "actor_classes_after": {
+  "Actor": 43,
+  "BP_CraftedUtility_Fleet_C": 1,
+  "BP_E39Touring_C": 1,
+  "BP_Ferrari288_C": 1,
+  "BP_GraphicAdventure_C": 1,
+  "BP_Impreza2003_Fleet_C": 1,
+  "BP_KadettA_C": 1,
+  "BP_LandCruiser80_Fleet_C": 1,
+  "BP_Panda1990_Fleet_C": 1,
+  "BP_Pathfinder2002_Fleet_C": 1,
+  "BP_Prado_Fleet_C": 1,
+  "BP_SJ413_C": 1,
+  "CameraActor": 12,
+  "DirectionalLight": 1,
+  "ExponentialHeightFog": 1,
+  "GTCarPawn": 1,
+  "GTTerrainBuilder": 1,
+  "GTVehicleSurfaceEffects": 1,
+  "GTWaterSheet": 1,
+  "Landscape": 1,
+  "PlayerStart": 1,
+  "PostProcessVolume": 2,
+  "SkyAtmosphere": 1,
+  "SkyLight": 1,
+  "StaticMeshActor": 257,
+  "VolumetricCloud": 1
+ }
+}

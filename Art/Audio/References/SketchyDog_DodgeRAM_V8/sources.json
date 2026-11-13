@@ -1,0 +1,34 @@
+[
+  {
+    "id": "760152",
+    "label": "idle",
+    "creator": "sketchy.dog",
+    "source_page": "https://freesound.org/people/sketchy.dog/sounds/760152/",
+    "download_url": "https://cdn.freesound.org/previews/760/760152_14146533-hq.mp3",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "retrieved": "2026-10-24",
+    "file": "760152_idle_hq_preview.mp3",
+    "sha256": "53ebaf6c1964c0a2bc060512a13bce38779c1b8f33ca82b1294dff7c05f13628",
+    "sample_rate": 44100,
+    "channels": 2,
+    "seconds": 21.84886621315193,
+    "format": "Freesound public high-quality MP3 preview; not original lossless WAV"
+  },
+  {
+    "id": "760153",
+    "label": "driving",
+    "creator": "sketchy.dog",
+    "source_page": "https://freesound.org/people/sketchy.dog/sounds/760153/",
+    "download_url": "https://cdn.freesound.org/previews/760/760153_14146533-hq.mp3",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "retrieved": "2026-10-24",
+    "file": "760153_driving_hq_preview.mp3",
+    "sha256": "34171dced4860c3cf4a72d3f271e009f28b2a165c42961054edb0eab4cf4cf8b",
+    "sample_rate": 44100,
+    "channels": 2,
+    "seconds": 87.35054421768707,
+    "format": "Freesound public high-quality MP3 preview; not original lossless WAV"
+  }
+]

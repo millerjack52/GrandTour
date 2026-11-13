@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "images": [
+    "C:\\GrandTour\\Art\\Export\\GravelRoadUE\\UE_Driver.png",
+    "C:\\GrandTour\\Art\\Export\\GravelRoadUE\\UE_Overview.png"
+  ],
+  "post_mode": 2,
+  "warp_scale": 0.0,
+  "kuwahara": 0,
+  "post_volumes": [
+    {
+      "name": "RF_Exposure",
+      "blendables": 0
+    },
+    {
+      "name": "PostProcessVolume1",
+      "blendables": 0
+    }
+  ],
+  "gravel_instances": 9523,
+  "gravel_components": 4,
+  "terrain_materials": [
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road",
+    "/Game/GrandTour/ArtTests/GravelRoad/M_GR_Road.M_GR_Road"
+  ]
+}

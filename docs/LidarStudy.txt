@@ -1,0 +1,703 @@
+LINZ woodland study — 16 October 2026
+
+Play: C:/GrandTour/Play-LidarStudy.bat
+Edit: C:/GrandTour/Open-LidarStudy.bat
+Map: /Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy
+Keys 1–4: Trailhead, Woodland, Wet hollow, Ridge return.
+
+Terrain
+Full supplied CF08 + CG08 coverage (3637 x 3701 source pixels), NZTM2000
+EPSG:2193, heights in NZVD2016. Original GeoTIFF files are unchanged.
+Unreal X points east, Y south. World origin corresponds to the central pixel
+E1197144.5 N4865011.5. World Z is source elevation in centimetres.
+32m of edge padding on the east/west sides fits a square landscape without
+stretching the geography. The 2017 x 2017 landscape has 1.835m spacing;
+the unresampled 1m source is retained for future refinement.
+Source attribution: Toitu Te Whenua Land Information New Zealand,
+New Zealand LiDAR 1m DEM, layer 121859. Supplied metadata sits beside the TIFFs.
+
+Geographic reconstruction (reference preparation complete; see Place install/check
+reports for the current installed status)
+The full source coverage is retained. Registered OSM/LINZ-origin landcover
+supplies the broad forest/clearing layout. The priority access road, hairpin,
+pond and additional clearings were digitized from registered Esri World Imagery
+and anchored to the user's house at -46.2461944444, 167.767 (WGS84).
+The aerial reference is not shipped as a game texture. Approximate digitization
+accuracy is 2-5m; this is not a survey. Tree species and individual positions
+remain approximations using existing broadleaf assets.
+
+River placement uses the original 1m source DEM, analysed at 2m spacing with
+steepest-descent D8 drainage and priority-flood routing through local pits.
+The user's rough red line identifies the northern valley only: its pixels do
+not define any river vertices. The earlier larger eastern tributary has been
+removed from the main river reference. Bends are simplified by at most 0.65m;
+no smoothing straightens them across the valley sides. The resulting course
+is 7.19km including the downstream continuation to the coverage boundary.
+Thirteen short reaches require review because routing needs over 1m of local
+pit conditioning. Conditioning does not change the source or imported terrain.
+The DEM is not a bathymetric survey; water levels/depths are inferred and the
+0.5m/s current is a gameplay value, not a measured flow. Some inferred pools
+are several metres deep. The named river identity beyond the user-confirmed
+valley and missing tributaries have not been independently surveyed.
+
+Reference review: Art/Export/LidarStudy/Reference/terrain-course-review.png
+Cyan = inferred channel; orange = uncertain local-pit reaches; yellow = access
+road; red = user-supplied house anchor. Reference metadata and provenance are
+stored beside that image. House E1196621.8555 N4865274.0675 (NZTM2000).
+
+The new Place installer replaces the arbitrary loop with 5.73km of registered
+roads, retaining native surface/deformation response. A sparse-road opt-in
+allows up to 4096m authoring bounds, with no broad regions or vegetation scatter
+inside that controller. The 1.2M fine-vertex and other generation guards remain.
+A 32m segment lookup avoids scanning every road for every map texel; only road
+corridors change the ecology masks. Source terrain outside road changes stays
+as imported. Forest placement is a separate map-wide layer with four tree LODs,
+including six-triangle distant cards. The house is currently an editor anchor,
+not a reconstructed building. No invented buildings are implied by the anchor.
+
+Source attribution: OpenStreetMap contributors (ODbL), including LINZ-origin
+landcover; Esri World Imagery reference imagery (Esri, Vantor, Earthstar
+Geographics, GIS User Community); original supplied LINZ elevation data.
+
+Chassis mud change
+Generated road tiles retain their upper query mesh for wheel sampling and
+visibility. A separate invisible physics-only mesh represents the finite solid
+base. Nine samples of the actual chassis root box supply yielding support and
+dissipative drag at physics-step frequency, and contact-driven mud disturbance.
+Existing saved maps migrate when Play begins. Firm vertices keep solid support,
+and independent rocks/obstacles retain their normal collision.
+This is a Chaos adapter, not a port of Havok contact constraints. It currently
+supports the project's one-box root chassis; untouched landscape outside the
+fine road patches retains its ordinary rigid collision.
+
+Original first-pass reports: Art/Export/LidarStudy/install.json and check.json.
+Place replacement reports: Art/Export/LidarStudy/Place/install.json and check.json;
+Art/Export/ChassisMud/check.json. Driving remains for the owner.
+
+Review sites on the road bed — 16 October 2026 (Claude, picking up from GPT)
+The 14:37 check failed: the Riverside house review car rolled 27 degrees and
+slid, and Pond bend sat at 21 degrees. The four review sites were raw aerial
+pixel picks 3-6m beside the registered road lines, and the road vertex nearest
+the house crosses a 26 degree side slope. prepare_lidar_place.py now snaps each
+site onto its road and slides it to the flattest bench within 40m (site_on_road),
+heading along the road; sites.json records the cross/along slope in degrees.
+Sites moved 5-25m (Riverside house now 7m from the house anchor). The check
+budget rose from 800 to 1700s (lidar_place.ps1 process limit 2400s) because a
+cold check renders about 3s per frame and needs about 16 minutes.
+Result 15:23: Install, Polish and Check passed, exit 0, 71 protected originals
+unchanged; all four sites rest level (roll under 1 degree, four contacts) and the
+three water patches answer surface/impulse queries. Not fixed: the Access pond
+still renders as a flat matte slab with a hard shoreline in Access_pond.png,
+and River_beside_house.png is blocked by a canopy, so the Polish water repair is
+unconfirmed in these frames. Driving and the water look remain for the owner.
+
+Road bench (LP1) — 16 October 2026
+The private road lines (Riverside access, Pond field spur) were digitized 3-6m beside the
+real bench and crossed side slopes of up to 26 degrees. prepare_lidar_place.py now
+re-registers both onto the 1m source DEM (dem.npy, x_cm=(col-1818.5)*100,
+y_cm=(row-1850.5)*100, matches the landscape to 0.19m RMS): a continuous-offset path
+-12..+12m minimising car-track cross-slope with a 1m per 5m drift limit and pinned ends;
+install raises the private roads' cut/fill to 60cm and rebuilds whenever a digest of
+roads/sites/trees changes; check_lidar_place.py reports corridor cross-slope every 10m
+from the built relief tiles (private p95 <= 5 deg, max <= 10; public p95 <= 4). Result:
+Riverside p95 1.8/max 7.4 deg, spur 4.7/8.9, Waimeamea 0.7/10.3 (its end station at the
+private junction), Waterhouse 1.3/5.0; all four review sites level. Public roads were not
+moved. Driving the hairpin and the bush climb remains for the owner.
+
+Water binding (LP2) — 16 October 2026
+The flat matte water in the check captures was a binding fault, not the material: the
+sheet wrapped a surface's existing dynamic material instance (left by the editor preview
+and copied into PIE) in a second instance with no valid parent. GTWaterDomainSheet.cpp
+now reuses the sheet's own instance and never wraps one. Art/lidar_place.ps1 gained
+WaterDiag (eye-level captures into Place/water/) and Water (re-runnable look pass on the
+three cloned materials: tannin colours, mirror pools, foam only on riffles). The pond now
+reads as a dark mirror with amber shallows. The river still floats above the valley floor
+because the prepared surface follows the filled drainage profile; LP2b replaces that with a
+channel-bottom model from the 1m DEM. The map's sky light is 8.0 (Benmore 1.15); a 1.5
+capture pair is produced for the owner to choose.
+
+River channel (LP2b) — 16 October 2026
+The river surface no longer follows the filled drainage profile. prepare_lidar_place.py
+builds a channel bottom from the 1m DEM (minimum within 12m of the course, 21m mean),
+adds 0.3-1.2m of depth with a 20cm floor over the raw bottom, forbids the surface rising
+downstream faster than 2cm/m and caps depth at 1.5m. Trees and understory are excluded by
+the actual wet mask plus 1.8m, flow speed 0.3-1.5m/s follows the surface slope, and the
+style masks mark the wet channel as rock. The river now sits in its channel and is
+continuous except for 17 stretches of 10m or more where the DEM channel bottom rises
+0.6-3m above both neighbours (prepare.json water[River].dry_stretches, with distance to
+the house). Whether those are log jams, culverts, bridges, drops or DEM artefacts is an
+owner question; the DEM is not a bathymetric survey. Open for the next water pass: surface
+sparkle noise, slab-rock banks instead of cobbles, no cobble bed material, two straight
+orange lines across the water near the house, and the sky-light choice (8.0 saved, 1.5
+captured for comparison in Place/water/).
+
+
+RR1 river update (2026-10-20 UTC; see LIDAR_PLACE_PLAN stage log):
+Owner's paired river photos are now Waimeamea references 14-16. Detailed widening,
+rounded cobbles/boulders, warmer DG1 gravel on the corner point, and fern/moss/root/
+driftwood dressing are local to the house and two crossings. Full 7.2km continuity
+is repaired in a derived landscape; source LiDAR, course and surface levels stay
+unchanged. The dry point is protected and the channel connects around it. The
+native ground field remains the only deformation system. RR1 adapts DG1 textures
+to that field; it does not install the older standalone gravel simulator.
+Prepare validates the connected river before publishing inputs. Main order remains
+Prepare -> Install -> Polish -> Water -> Check. RiverDetail refreshes only this
+local material/dressing pass; RiverCheck captures and checks the actual saved map.
+One Unreal at a time, never kill it. Human drive remains the acceptance gate.
+
+RR1 completion: saved-map river continuity, live rut deformation/spray, seven
+water/emitter tests and the main map Check passed with normal editor exits.
+995 local river-detail instances in 83 groups (61 solid); no extra simulator.
+Evidence: Saved/LidarAuthoringQA/RR1-passed. Owner drive/visual acceptance pending.
+
+PF60 (2026-10-19): 60fps-average standalone preset at1600x900 in Art/lidar_performance.json. Start Art/open_lidar_study.ps1 -Play -ShowFPS; -OriginalQuality opts out. TSR75%, earlier LODs, bounded VSM range/resolution and HZB occlusion. Fixed tread history rebuilding the entire procedural render proxy by separating its16 sections; 4096-mark capacity/isolation check passes. Four short capped drives average60.0fps; frame-time variation remains (p95 18-21ms), so not a perfectly locked/full-route guarantee. Vegetation counts, physics, deformation, water and spray retained. Trees/ferns have no animated WPO; grass has sway. Ineffective foliage wind-limit experiment reverted; saved map matches its pre-FPS backup. Numbers and limitations are in docs/LIDAR_PLACE_PLAN.md PF60; evidence Saved/LidarAuthoringQA/PF60. Owner drive is the gate.
+
+PF60 correction (2026-10-20 UTC): Earlier capped 18-21ms p95 figures came from legacy end-of-frame CSV timing, which mixes cap waits with variable work. Runtime logical-boundary captures of the same preset twice average60.0fps at all four sites, p95 16.67-16.69ms. This is a measurement correction, not an extra rendering speedup. GTPerf schema2 separates logical engine delta from raw end intervals. Build and live probe validation passed. Map/preset unchanged. Still short offscreen drives at1600x900, not presentation or whole-route proof; owner drive remains the gate. Evidence Saved/LidarAuthoringQA/PF60-pacing; all numbers in the stage log.
+
+
+GS3 grass, 2026-10-20: first grounded BOTW-inspired pass saved directly in LiDAR. New cheaper authored blades/LODs and a distant pasture layer reaching150m; near wind and wheel response retained. Ground and blades share palette/variation; ground reuses existing flattened-grass/thatch bitmaps with new colour/contrast. No new texture bitmap. Saved1600x900 preset unchanged: four short capped drives59.8-60.0fps,p95~16.68ms, isolated41.5ms river hitch. Uncapped paddock tail latency remains, so no full-route/perfect-lock guarantee. GrassCheck/build passed. Start Art/open_lidar_study.ps1 -Play -Paddock -ShowFPS. Full figures in stage log; evidence Saved/LidarAuthoringQA/GS3. Owner drive/colour acceptance pending.
+
+
+GS3-2,2026-10-20: softer irregular grass/ground transition with height settling85-145m and filtered tuft/thatch detail; outer150m limit/density unchanged. Stronger coherent sway, near wheel response retained. Car synth muted in driving studies; compact info panel, F1 show/hide. Build, material install and saved-map handler/audio/contact checks passed. Four1600x900 saved-preset drives59.8-60.0fps,p95~16.68ms, isolated38.4ms river hitch; not a full-route lock guarantee. Stage log has numbers; Saved/LidarAuthoringQA/GS3-2 has evidence. Owner drive is the gate.
+
+
+LP6,2026-10-20: reusable polish installed directly in LiDAR. Live river shores compare final ground + native displacement inside a bounded2.5m envelope; static coverage rebuilt against final bed. Vegetation reseated;3198 sampled saved roots have0cm error. Rounded crown/card and two-sided leaf shading, longer local LOD retention. River dressing12242 instances/99groups/61solid,16 live-ground groups,no small-detail collisions/shadows,25-45m fade. First-use mud-water shader stalls moved to asynchronous readiness; water physics continues while cosmetics wait. Build7 and7 numerical tests pass; actual saved-map dry-to-wet check passes (2.25cm cut,1.32cm water). Final four short moving captures60.0FPS,p95~16.68ms,max18.35ms; stationary59.9-60.0FPS with isolated42.52ms hitch at1600x900 TSR75. Not whole-route/presentation proof. Full plan docs/LIDAR_LEVEL_POLISH.md; all numbers in stage log; evidence Saved/LidarAuthoringQA/LP6/result.json. Owner drive/visual approval pending. Uncommitted.
+
+
+FS1,2026-10-20: tree shape pass applied directly to L_LidarStudy. Map-owned mature/pole/edge beech now have irregular volumetric crowns, unequal branches and lower edge growth; all bough groups survive LOD reduction. Six-triangle rebaked far cards, alpha-preserving mips; source-bound baking and idempotent tint survive rebuilds. Existing148420 trees and terrain digest unchanged;2116 root samples0cm error. Clean shader/cache/tint check passes. Final stationary59.9-60.0FPS at1600x900 TSR75. Four moving49m captures59.5-60.0FPS with one56.84ms ford frame; short repeat60FPS,max17.14ms. Not whole-route proof. Full numbers in stage log, docs/LIDAR_FOREST_SHAPES.md and Saved/LidarAuthoringQA/FS1/result.json. Owner visual/drive gate pending; uncommitted.
+
+
+2026-10-20 HS1: photo-led house/garage added directly to L_LidarStudy. Owner corrected frontage by 90 degrees toward river; final yaw0, anchor unchanged. Garage door E/scroll/T selects among12 cars, replaces current car and preserves boot inventory. Saved-map integration passed all12; house checkpoint updated. See docs/LIDAR_HOMESTEAD.md and Place stage log for files, measurements, known limits and rebuild. First FPS capture was contaminated by concurrent Skate GPU load/thermal throttling; no new60FPS claim. Owner drive/visual approval remains the gate. Uncommitted.
+
+HS2 homestead correction - 2026-10-21 UTC: owner rejected initial photo resemblance. Separate veranda/main roofs, green wing roof, clad deck/foundations, lighter timber, compact closer garage, lower house datum and sloping lawn into gravel court installed in L_LidarStudy. River-facing orientation retained. Final install and all 12 garage checks passed; native ground digest unchanged. Two clean stationary homestead views held60fps at1600x900 TSR75%, frame p95 16.681/16.679ms. This is not whole-route/display timing acceptance. Full numbers, shutdown retry notes and artifacts in LIDAR_PLACE_PLAN.md HS2; current usage/layout in LIDAR_HOMESTEAD.md. Owner drive/visual review remains required.
+
+
+RR2 2026-10-21 UTC: restored the low inside gravel point as an attached bank (configured preservation polygon plus local derived-guide bend). Actual saved relief has a >=3m dry connection; bank probe 46.66cm above water; native gravel cap 4.61cm and transient stroke deformed 1cm. River remains connected over all 7189 stations. Homestead local ground unchanged. Both repaired-bank standalone views 60fps (1600x900 TSR75), clean standalone exit. Batch editor shutdown errors remain; legacy general Check expects obsolete pre-GS3 grass. Full measurements, limitations and paths in LIDAR_PLACE_PLAN.md RR2 and Saved/LidarAuthoringQA/RR2/status.json.
+
+
+RH1 2026-10-21 UTC: owner wants the same cars on fast gravel and slow off-road, with more forgiving high-speed slides. Added speed-blended post-peak lateral force retention in GTSoilVehicleMovement (30-65km/h, default strength0.75), preserving peak grip and bypassing low range, low speed, deep mud and water. No power, suspension, terrain or asset edits. gt.Vehicle.SlideRecovery 0/1 provides old/new A/B. Build and five force/mud/rut tests pass, normal exits. Actual Chaos slide force +35.3% at79.2km/h/40deg; tested low-range/low-speed/peak forces identical. Three-car LiDAR slide trials reduce integrated slip4.4-6.3%; Suzuki lateral travel worsens, so owner feel gate remains. Six route regressions pass, low-range travel within5% of baseline; see Saved/LidarAuthoringQA/Rally/regression.json. No new60fps claim. IMPORTANT broader rally blocker: Waimeamea Road station200m samples native mud=true, granular=false despite gravel appearance; road rebuild zeros styleR. Separate explicit road surface authoring fix needed; do not lower shared mud resistance. Full results, files, controls and limitations in docs/LIDAR_RALLY_HANDLING.md. Uncommitted.
+
+
+FR1 - Firm gravel rally roads (2026-10-21 UTC)
+Owner: established gravel roads, including Riverside access, need not deform;
+make them smoother for faster rally driving. Same cars retain off-road tuning.
+Implemented opt-in bFirmGravel and 16 m longitudinal profile filter in the
+procedural road builder. Zero yielding depth / softness across the carriageway,
+50 cm interpolation guard, soil transition through shoulder; overlap resolution
+prevents another road shoulder from reintroducing mud at a firm-road junction.
+Firm cut/fill limit 120 cm; road XY and widths preserved. All four established
+roads use the shared lidar_firm_roads.py policy. Logging designs remain separate.
+Riverside final 35 m retains its existing geometric profile, with 16 m blend on
+the approach, preserving the house and baked apron; physical soil is still rigid.
+Installer version rd1-5-fr1 plus firm_gravel fr1-1 gate persists the policy.
+Targeted runner Art/firm_lidar_roads.ps1 saves map and paint/style/macro masks.
+Build succeeded; targeted editor rebuild, save and reload exited 0. Before digest
+8D447603F1A414A8637E08491F2B048D; after 6AE1F9489CE5EC408044BFEC06A9FE25.
+8,565 samples (three lanes at 2 m intervals): all zero yielding depth.
+Two-metre profile midpoint residual RMS cm, before -> after:
+Riverside 1.883 -> 1.243 (-34.0%); Pond spur 3.350 -> 2.148 (-35.9%);
+Waimeamea 0.623 -> 0.406 (-34.9%); Waterhouse 0.886 -> 0.256 (-71.1%).
+1,004,400 triangles unchanged; 1,948 tiles rebuilt and 284 retained. Second
+rebuild identical digest, zero changed tiles. Protected house/apron, river-bank
+and logging ground samples: maximum elevation change 0 cm. Logging controls,
+conditions and sampled mud/bank yielding depths unchanged (maximum change 0 cm).
+Backups and full samples: Saved/LidarAuthoringQA/FR1/apply.json and backup path
+recorded there. Full house survey and layout recertified against new map digest.
+No engine, tyre, suspension, gearing or off-road force coefficients changed.
+Driving and soil-stroke checks running; owner drive remains acceptance gate.
+No new standalone 60 fps claim.
+
+
+FR1 water preservation: road rebuild recreated the static pool mesh visible.
+Restored its hidden-in-game state, retaining all four live rut basins. Compared
+the complete old and regenerated water seed arrays and extents: identical.
+GTProceduralRoadWater.inl now carries the hidden state into future rebuilt
+meshes. Saved/reloaded with exit 0; ground digest unchanged. Evidence:
+Saved/LidarAuthoringQA/FR1/water.json; Saved/Logs/FirmRoads-Water.log.
+
+
+FR1 drive validation (2026-10-21 UTC):
+Waimeamea 40 s high-range peaks: Range Rover 76.942, BMW 73.753, Suzuki 74.786
+km/h; all completed the finite drive/brake check. Original access driver went
+wide and stopped; its old broad pass flag is not route acceptance. Driver now
+uses 5 m bend samples, stronger earlier braking and detects five-second stalls.
+Repeat Riverside 35 s from station 1290 m:
+RangeRover: distance 89.100 m, peak 39.476 km/h, max offset 8.956 m, pass False; departed route or rolled.
+BMW: distance 274.903 m, peak 41.971 km/h, max offset 1.488 m, pass True; completed finite segment.
+Suzuki: distance 273.233 m, peak 41.734 km/h, max offset 1.086 m, pass True; completed finite segment.
+The automatic Range Rover drive remains failed; owner drive is the feel gate.
+BMW and Suzuki passed this finite segment, not the full route. Logging 15 s
+low range: RR 52.494 m, Suzuki 10.412 m, BMW -1.893 m (failed). No exact
+pre-change baseline for that logging segment; no off-road coefficient change.
+Both runs passed all four soil-stroke cases: roads stayed at zero, logging mud
+and river gravel each yielded ~1 cm (caps 5.700 and 4.613 cm).
+Evidence: Saved/LidarAuthoringQA/Rally/firm-roads.json, firm-access.json and
+Saved/LidarAuthoringQA/FR1/validation-summary.json. Raw overall route results
+remain false; do not present all routes as passed. No new FPS certification.
+
+
+## HS3 - house placement and cleanup (2026-10-21 UTC)
+
+Owner satellite references lead the correction. Registered aerial pixel (613,363.5), 0.625m/pixel, resolves to world (-51137.5,-26131.25)cm. House moved 11.34m mostly east; yaw -65deg follows roof axis with veranda NW toward river/court. Garage local (540,-1100)cm. Canonical Art/References/Homestead/site-layout.json supplies placement; survey, apron, door, collection bay, recovery checkpoint and benchmark cameras follow it. Original new references archived unchanged. Registration and dimensions are image estimates.
+
+Model: trimmed joined roofs, recessed framed wall openings, cleaner weatherboard laps, closed side undercroft, unobstructed solar array, vertex-alpha surface roughness. House 8050 triangles/17 hulls (previous 8108/15); garage 2702/9; apron 3382 triangles (previous 3482). Native terrain digest unchanged at 6AE1F9489CE5EC408044BFEC06A9FE25; source DEM SHA256 deba359a50b01fedb76af13cc6846162983408c3a76c5032e421de543507d75d. House datum 5494.447cm, garage floor 5234.119cm. Removed 261 intersecting vegetation instances. Road validation now protects the current registered footprint.
+
+Guarded install and views exited 0. First gameplay check passed assertions but exited -1073741819 after shutdown log close; archived as HS3/check-shutdown-fault.*. Released remaining editor/PIE wrappers before teardown. Full repeat: 12 swaps, inventory retained, one car, door/menu, bay obstruction, capacity refusal, duplicate/refusal while driving, entry and walk-away all passed; normal-input departure 14.18m; editor exit 0. No C++ change/build required.
+
+Standalone hs3-relocated: 1600x900, saved TSR75 capped preset, 840 measured frames/view. House arrival / garage door: 60.0/60.0 FPS; frame p95 16.680/16.671ms; GPU mean 8.637/7.705ms; exit 0. Stationary offscreen scope only, excluding loads/teleports/screenshots, not whole-route or presentation timing. Evidence Saved/LidarAuthoringQA/HS3 and Place/playperf-hs3-relocated-summary.json. Final views Place/HS3_house_front.png, HS3_house_overview.png, HS3_garage_menu.png. Source/exports backup Saved/LidarAuthoringBackups/HS3-source; map backup HS1-1792611552074800600. Owner visual/drive review remains gate. No commits.
+
+
+## HS4 - longer L wing and usable veranda stairs (2026-10-21 UTC)
+
+Owner: extend wing behind garage; steps lead nowhere; model in Blender. Wing now 10.3m long (was 7.4), front Y=-6.5m, 4.5m projection beyond main wall. Roof/walls/floor/foundation/simple collision extended together. Stairs moved to X=1.45m inside the L, 1.8m balustrade opening, continuous veranda deck terminating before wing wall. Blender source/export/BLEND rebuilt; existing house anchor and garage placement retained. House 8367 triangles/17 hulls (+317 triangles), garage 2702/9, apron 3382. Same materials, actors and LOD policy. House datum 5502.183cm; garage 5234.119cm.
+
+Guarded install/check exit 0. Twelve garage swaps and existing refusal/inventory checks passed. Real walking movement traversed seven waypoints up stairs, through railing opening, along deck and back down; 99.29cm rise, no falling or obstruction, only initial placement teleported. Native digest 6AE1F9489CE5EC408044BFEC06A9FE25 and source DEM checksum unchanged. Evidence Saved/LidarAuthoringQA/HS4, final Place/HS4_house_front.png and HS4_house_overview.png. Source/export backup Saved/LidarAuthoringBackups/HS4-source; pre-install map backup recorded in HS4/install.json. No new FPS claim, C++ edits or commits. Owner review remains gate.
+
+NEXT, explicitly reserved by owner: high-speed driving has inadequate steering. Do not consider it addressed by the house pass; driving code/tuning were untouched.
+
+RH2 - responsive steering, 2026-10-21.
+Owner reference: Forza Horizon 4; first input-response pass, not its physics reconstruction.
+New GTResponsiveSteering helper + automation test; GTCarPawn integration; dual-driving probes/driver inverse fixed.
+High range 30-60 km/h blend: original squared input to linear; rise 2.5 -> 6/s, return 5 -> 8/s. Existing faster per-car rates retained.
+Low range any speed, <=30 km/h, mud/bog/snow bypass. Sinkage fade 6-12 cm; water fade 1-5 cm.
+Wheel lock/speed curve, tyre peak grip, RH1 slide recovery, power, suspension, mud/water/terrain unchanged.
+Console gt.Vehicle.ResponsiveSteering 0 original / 1 revised (default); per-car HighSpeedSteeringResponse 0..1.
+Build succeeded; ResponsiveSteering + SlideRecovery + SubstanceOracle + LivePush + RutWallWork + DirectionalSoilFlow: 6 passed, exit 0.
+Installed code LiDAR probes: 36 runs, 18 paired checks passed; 80 km/h taps/half-stick, 90 km/h reversals, 20 km/h both ranges and 90 km/h low range.
+80 km/h half-stick peak wheel degrees / heading change at 0.7 seconds, original -> revised:
+RangeRover: wheel 2.016 -> 4.065; heading 4.653 -> 9.398 degrees.
+BMW: wheel 2.013 -> 4.055; heading 3.915 -> 7.995 degrees.
+Suzuki: wheel 2.022 -> 4.082; heading 4.963 -> 9.090 degrees.
+Riverside 35-second high-range route (includes corrected AI input inverse, cannot isolate RH2):
+RangeRover: 305.686 m; peak 46.260 km/h; max centreline offset 0.516 m; pass=True.
+BMW: 281.930 m; peak 42.718 km/h; max centreline offset 0.411 m; pass=True.
+Suzuki: 271.311 m; peak 41.799 km/h; max centreline offset 0.521 m; pass=True.
+Soil Waimeamea Road: depth cap 0.000000 cm; deformation 0.000000 -> 0.000000 cm; pass=True.
+Soil Riverside access: depth cap 0.000000 cm; deformation 0.000000 -> 0.000000 cm; pass=True.
+Soil Logging mud: depth cap 5.699537 cm; deformation -0.247748 -> -1.247745 cm; pass=True.
+Soil River gravel bank: depth cap 4.613458 cm; deformation -0.408609 -> -1.408604 cm; pass=True.
+Evidence Saved/LidarAuthoringQA/Rally/responsive-steering.json, responsive-steering-access.json; Saved/Automation/ResponsiveSteering; docs/LIDAR_RALLY_HANDLING.md.
+No map or asset saves. No fresh FPS benchmark. Owner drive remains acceptance gate; high-speed probe coasts after velocity injection, not a sustained throttle test.
+
+
+## RH3 - consistent keyboard response and normal-Play performance (2026-10-21)
+
+Owner feedback: RH2 still felt delayed/uneven on keyboard and performance had
+regressed. RH3 removes speed-dependent blending of the input filter on firm
+high-range surfaces. The existing speed-dependent maximum steering lock remains.
+Linear response rises at 6/s and returns at 8/s throughout firm high range;
+authored faster rates survive. Low range, contacted mud/bog/snow, sinkage and
+water bypass/fades remain as RH2. Tyre force curves, power, suspension and slide
+recovery are not retuned by this pass. This supersedes RH2's <=30 km/h bypass.
+
+The ordinary editor launch log had no performance commands: directional shadow
+bias was -1.5 rather than the saved preset's +0.5. PIE also defaults to overriding
+game screen percentage. A new GTLidarPerformanceSubsystem applies the canonical
+Art/lidar_performance.json when L_LidarStudy begins Game/PIE, respects explicit
+higher-priority overrides and restores prior settings on the last play world's
+shutdown. The JSON is staged as a runtime dependency (packaged build untested).
+OriginalQuality launcher uses -GTLidarPerformance=0; gt.Lidar.PerformanceAuto 0
+before Play is another opt-out. Version 2 keeps TSR at 75%, uses mesh LOD scale
+4 instead of 3 and shadow bias 1 instead of 0.5. Density is unchanged; the
+tradeoff is earlier mesh simplification and lower shadow resolution. Output
+resolution remains whatever the player/editor chooses; measurements below are
+1600x900. The preset caps normal play to 60 fps; captures are uncapped.
+
+Water profiling exposed two avoidable costs. RefreshDomainBed now samples only
+supported cells and preserves the live field without copying/rebuilding it if
+reference depths did not change. TickWaterDomain alone owns player-centred
+streaming: remote parked-car lids/impulses are clipped instead of repeatedly
+moving the simulation away from the player. Whole-course coverage/immersion
+queries remain independent of this local surface-wave window.
+
+Validation:
+- Editor builds succeeded: Saved/Logs/rh3-build.txt and rh3-water-build.txt.
+- Nine automation tests passed, exit 0, Saved/Automation/RH3: ResponsiveSteering,
+  SlideRecovery, DirectionalSoilFlow, RutWallWork, LivePush, SubstanceOracle,
+  MovingDomain, RiverReference and ShoreEnvelope.
+- 24 actual A/D keyboard sequences, 12 paired comparisons, all handling checks
+  passed in the saved LiDAR map. Three cars (Range Rover/BMW/Suzuki), 20/40/80
+  km/h high range, 20 km/h low range. Each sequence presses A for 160 ms,
+  releases, presses D for 160 ms, then releases; input trace reaches both signs
+  and returns to zero. Initial velocity is injected and the car coasts for
+  1.4 seconds: this is not a sustained throttle/cornering or owner-feel verdict.
+  High-range peak wheel-angle ratios on/off were 5.13-5.73 for these short taps;
+  low-range ratios were 0.97-1.00 with response weight exactly zero.
+  Evidence: Saved/LidarAuthoringQA/Rally/rh3-keyboard.json. Its subsequent water
+  setup failed because the car was still moving too fast to exit, so the whole
+  report must NOT be treated as a fully successful run despite its old ok=true
+  field. The runner now sets ok=false on exceptions and waits for braking before
+  the water test. All keyboard comparisons completed before this setup failure.
+- Separate water-mode rerun passed with normal editor/wrapper exit:
+  Saved/LidarAuthoringQA/Rally/rh3-water.json. All 14 preset values applied without
+  test-side profile commands and restored exactly after PIE. A remote contact
+  left local water height exactly 4488.623535 cm and returned zero remote impulse.
+  At (-47938.658044,-37813.658044), a soil stroke lowered terrain delta from
+  -1.168833 to -3.417597 cm; the formerly dry shore became wet, depth 1.556757 cm.
+  Reproduce with Art/check_lidar_dual_driving.ps1 -Mode water -Label <new-label>.
+
+Performance on RTX 4050 Laptop 6 GB, Development offscreen standalone, 1600x900,
+uncapped; 440 measured frames per scene, excludes loading/teleports/screenshots:
+
+| Scene | Stock mean FPS / p95 ms | Prior saved preset, steering off | RH3 final mean FPS / p95 ms |
+| --- | --- | --- | --- |
+| River | 51.4 / 29.844 | 77.4 / 16.302 | 89.9 / 12.944 |
+| Bog 214 | 31.3 / 42.458 | 55.8 / 23.447 | 69.7 / 17.920 |
+| Bog 552 | 30.9 / 47.408 | 63.3 / 20.201 | 71.9 / 17.657 |
+| Access stress | 36.1 / 37.846 | 60.8 / 22.183 | 64.6 / 19.052 |
+
+These are short fixed-heading LOW-range throttle stress scenes, NOT completed
+rally routes. In particular, the old access fixture drives into trees/off-road;
+its screenshot must not be used to claim successful road following. Stock used
+100% screen percentage and stock quality; the prior and final saved presets use
+75%. The improvement combines configuration and code changes, not steering
+alone. Final GPU p95: 11.290, 13.658, 16.081, 15.488 ms in table order. Full-frame
+p95 still exceeds 16.667 ms in three scenes: NO locked-60 or full-route claim.
+SteeringResponse CSV scope mean 0.000822 ms / p95 0.0013 ms across warmed final
+capture frames (mostly low-range bypass; not a high-range A/B cost comparison).
+Water.LiveRiverBed mean per-call cost old -> final, table order:
+3.2520 -> 1.2447, 3.7703 -> 0.3160, 3.6776 -> 0.2993, 3.3781 -> 0.0443 ms.
+Final window log has seven moves for initial placement, four teleports and two
+local focus movements, without repeated far-contact recentering. Final bog view
+was inspected: full foliage, ground detail and mud remain visible.
+
+Evidence: Art/Export/LidarStudy/Place/playperf-rh3-{stock,saved-off,tuned,final}
+metadata/summary JSON, Saved/Profiling/gt_perf_PF60-rh3-final-*.json and final CSV
+Saved/Profiling/CSV/Profile(20261021_154828).csv. Reproduce final capture:
+Art/profile_lidar_play.ps1 -Label <new-label> -UseSavedProfile -Uncapped -Drive -Probes.
+No map/assets were saved, no commits made, Unreal closed normally. Owner driving
+remains the acceptance gate; remaining streaming/rendering spikes are documented
+rather than hidden by average FPS.
+
+
+PF120 2026-10-21 UTC: target120 NOT achieved. Keep v5 Art/lidar_performance.json:
+66.667% TSR, LOD6, shadow bias2/rays2, expensive RT effects/reflections off,
+0.5ms mud upload budget,120 cap. Height-only wheel grid queries remove redundant
+full surface samples; bog vehicle tick about4.3-4.6ms ->1.2ms. Incremental ISM
+updates retain grass density/range/contact; water window skips duplicate/domain-
+unsupported queries. Tracked pointers replace four raw registry arrays with the
+same getter API. No handling/physics-rate or saved-map changes.
+Standalone short stresses82-100fps vs RH3's65-90, p95 11.56-15.71ms. Longer PIE
+road captures66/60fps with1.29/1.40s GC stalls. Experimental incremental GC clean
+run had no observed GC cycles; forced collection still stalled about0.8s in the
+first traversal, so ALL gc.* overrides were removed. Do not claim GC fixed or
+locked120. Nine physics/steering/water tests,3528 height comparisons, actual-map
+water/roads and grass coverage/contact checks passed. Stage PF120 in
+LIDAR_PLACE_PLAN.md / LIDAR_RALLY_HANDLING.md contains all trial settings and
+numbers, limitations and reproduction. Next work: GC first-pass traversal,
+forest/shadow GPU cost, terrain/water window churn. Preserve density and physics.
+
+PF120 final diagnostic outcome (2026-10-21 UTC): pf120-gc-verify completed and
+Unreal exited normally. 248 incremental cycles completed;251 no-unreachable-
+reference verification passes;900 reachability iterations, worst998.01ms.
+No GC reference errors/assertions. Registry24/15/7/7 and preset restoration passed.
+Forced continuous-GC routes covered77.122m /67.054m, peak42.00/40.38km/h;
+7.4/7.5fps means, p95 802.110/799.815ms, max1025.699/855.089ms. These artificial
+stress timings demonstrate WHY the experimental collector settings were rejected;
+they are NOT normal-game performance. Retained v5 contains17 commands and NO gc.*
+overrides. Normal gameplay corresponds to pf120-roads, with the documented
+60.2-66.0fps editor averages and periodic collection hitches still unresolved.
+Do not attribute pf120-gc-roads-final's clean maxima to a proven GC fix.
+The explicit test-only GT_DUAL_DRIVE_GC_STRESS=1 flag now supplies its own three
+experimental collector commands, continuous collection and reference checking;
+these are never written to the gameplay preset. The object iterator used by the
+registry test is explicitly destroyed before driving, so it cannot retain a GC
+pause. No Unreal process left running at completion. 120fps remains an open target.
+
+
+VQ2 (2026-10-21 local) supersedes the old PF120 v5 visual recommendation above.
+Owner: visuals first. Keep v6 TSR75/LOD4/shadowbias1/rays4 quality settings and
+all safe CPU work. Active CanopyKit now has baked instance-rotated normal atlases
+and longer 3D crown range. Map-owned fine verge mesh/material plus finer lower
+pasture LODs replace the coarse spikes. No terrain/handling changes. See VQ2 in
+LIDAR_PLACE_PLAN.md for source files, backups, saved-map checks, actual captures,
+contended timing numbers, and unresolved import shutdown exit code. User visual
+and drive acceptance remain pending;120fps is NOT achieved or newly validated.
+
+
+VQ2 final: saved map and standalone images verified; final standalone exited0.
+Grass coverage/contact assertions pass after bounded streaming wait. Editor-based
+install and PIE-check processes still returned access violation on shutdown after
+successful in-world checks. It is NOT proven import-only. Strict wrappers retain
+failure; see Saved/LidarAuthoringQA/VQ2/review.json. No driving tuning changes.
+
+
+GD1, 2026-10-21: LiDAR gravel dust enabled at intensity 1.2. The missing plume had two causes: the saved manager was zero, and smooth authored Gravel used a generic Tarmac collision tag. Dust now reads authored type/moisture/water cached by traction's existing query; no additional surface query and no driving changes. Wet/mud/snow/airborne gates remain. Rebuilds retain dust; shared mud/water FX unchanged. Build and 2 dust/mud tests passed. Final actual-map dry-road drive reached 51.12 km/h, peak 199 live particles, wet rate 0, fully drained to 0; final process exit 0. Saved/LidarAuthoringQA/GD1 contains captures and reports. Earlier install/wet-road editor shutdown access violations remain recorded; do not treat these as clean process passes. See GD1 stage log. No measured FPS claim.
+
+
+RH4 2026-10-23 UTC - rally response candidate, not final feel acceptance
+See docs/LIDAR_RALLY_HANDLING.md RH4 for complete audit and evidence.
+Kept deliberate full opposite-key acceleration to12/s, smoothly30-60km/h;
+normal turn-in/release6/8 and existing low-range/mud/water bypass remain.
+No tyre/lock/power/suspension or v6 graphics change; audio muted.
+Rejected extra steering-lock reserve. Solver telemetry now uses actual applied
+input/wheel angle/force/load, not unpopulated engine debug/network fields.
+Existing rally map shallow recess5cm; default400 preserved for old authors.
+Backed up/rebuilt/saved/reloaded;297 dry firm samples and LiDAR hash passed.
+Final build and10 tests pass. RR/BMW/Suzuki complete controlled laps, exit0.
+80km/h deliberate reversal latency332/297/296 ->185/194/200ms. Full-lap tracking
+not uniformly improved (RR offset2.47 ->3.41m); owner keyboard drive is final gate.
+Final editor mean11.84-12.01ms, p95 13.14-13.67ms, worst162-181ms, actual1274x682
+with Python overhead.120fps not met. Prior first-frame759/1591ms baseline spikes
+were output serialization contamination; capture boundaries fixed, raw retained.
+Live mud overall fail: RR43.414m pass, BMW-1.886m stalled, Suzuki6.701m <10m.
+All steering response/reversal gates zero; no blanket off-road success claim.
+River remote domain/shore opening/3528 height equivalence checks pass.
+Offroad and reversal processes returned-1073741819 after shutdown; earlier
+startup SparseArray crash preserved. Engine startup/shutdown issues unresolved.
+Final visual/function Review exit0; runoff trench absent in matching view,
+98.18km/h straight smoke, dust/checkpoints/12-car menu/BMW swap work.
+Evidence Saved/RallyHandlingQA/rh4-final-review and analysis-rh4-final.json.
+Play with Art/rally_handling.ps1 -Mode Play; A/B console command
+gt.Vehicle.CountersteerResponse 0 (baseline) or 1 (candidate). Drive steps in main doc.
+
+
+RH5 (2026-10-23/24 UTC): owner requested less smooth gravel, thrown stones and visible
+steering sway. Added circuit-only 4 cm firm physical relief, corrected authored
+Gravel recognition in the existing chip emitter, and bounded high-speed firm-ground
+suspension compliance with exact low-range restoration. Contrasting RR/BMW/Suzuki
+probes, full corners, native regression suite and live off-road/river evidence are
+recorded in docs/LIDAR_RALLY_HANDLING.md and Saved/RallyHandlingQA/rh5-validation-summary.json.
+Keep documented route/process failures separate from successful in-world checks.
+Graphics unchanged, audio muted; owner drive still required. Historical
+LidarAuthoringBackups was inspected only; no deletion.
+
+RS1 (2026-11-05): owner chose L_LidarStudy for the supplied dense, varied,
+colourful style reference (Art/References/ReferenceStyle/2026-11-05.jpg).
+Map-wide coordinated near/far/ground grass palette, lighter foliage and skylight;
+219 additional native-kit verge plants in a bounded access-road study. Pastures
+excluded; terrain digest, original forest/understory counts and grass distances
+preserved before/after and after save/reload. Initial banded colour trial replaced
+by irregular patches (rs1-2). Both installs and all three standalone view captures
+exit 0. Final GrassCheck passes: coverage, streaming consistency, bending/removal,
+muted audio; process exit 0. Four short matched stationary GPU means essentially
+unchanged (details in docs/LIDAR_REFERENCE_STYLE.md); not a driving benchmark or
+120 fps claim. No handling/terrain regeneration or graphics reduction. Rebuild
+hooks preserve the style; full rebuild pipeline not rerun. Original binary backup
+Saved/LidarAuthoringBackups/RS1-1793911144198362000. Final evidence and images:
+Saved/LidarAuthoringQA/RS1/review.json and Images/. Owner visual/drive acceptance
+remains open. No Unreal left running; no commits or unrelated reversions.
+RS2 road material follow-up, 2026-11-05: warmer softer gravel, lifted mud midtones,
+and live rut/lip colour response saved to M_Terrain/M_Detail. Map hash unchanged;
+no physics or geometry changes. Clean reapply and saved-material check exited 0;
+reapplication stable. Three gravel probes remained firm (zero sinkage/softness).
+Short low-range mud drive progressed 21.20 m and changed sampled surface height
+by up to 8.83 cm. Four matched stationary performance views showed no observed
+cost increase; this is not a full performance or handling acceptance claim.
+Evidence, initial rejected shader-edit attempt, limitations and previews:
+Saved/LidarAuthoringQA/RS2/review.json. Original material backup:
+Saved/LidarAuthoringBackups/RS2-1793912450057048800.
+RS3 river planting, 2026-11-05: replaced repeated low ferns in the bounded river
+reach with 2,354 plants across 270 mixed clusters, nine mesh shapes and restrained
+sage/olive/gold colour variation. Heights, widths, spacing and exposed gravel gaps
+vary. Original outside-reach instances preserved, 270 cm road clearance; terrain,
+water, solid objects and roads unchanged. Saved reload, deterministic reapplication
+and final runtime captures passed; both final Unreal processes exited 0. Sparse
+first pass rejected visually. Original map backup:
+Saved/LidarAuthoringBackups/RS3-1793913658946374900.
+Evidence and same-camera before/after: Saved/LidarAuthoringQA/RS3/review.json.
+RS4 steep-bank material, 2026-11-05: replaced top-down-only rock projection with
+world XY/YZ/XZ blending in M_Terrain/M_Detail. Warmer stone, irregular earth/moss
+pockets and restored rock contrast in rs4-2. Map SHA unchanged; all other custom
+programs and final property connections preserved. Repeat application and fresh
+saved readback passed. Final install and capture processes both exited 0.
+Original material backup: Saved/LidarAuthoringBackups/RS4-1793916564645915000.
+Evidence: Saved/LidarAuthoringQA/RS4/review.json and Images. This changes the surface
+appearance, not slope geometry; no new performance/handling benchmark was run.
+RS5 bank planting, 2026-11-05: root support and plant habit corrected in the river
+reach. Removed 65 unsupported tree ferns; replaced 253 low fern clumps with arched
+kiokio fitted downhill, narrowed across the bank and rooted into it. Shrubs stay
+mostly upright on viable ground; moss/root mats flatten to the face. Flat and
+outside-study transforms preserved exactly. 873 root crowns checked at eight rim
+points each; maximum rim gap -5 cm. Saved reload, idempotence and runtime material
+preservation checks passed; final install and review processes exited 0.
+Backup: Saved/LidarAuthoringBackups/RS5-1793917649476001900.
+Evidence/limitations: Saved/LidarAuthoringQA/RS5/review.json. PIE ran under memory
+pressure; streamed grass in the pictures is not a density/performance comparison.
+2026-11-05 RS6 - user-selected rocky river bank
+The river bend now uses 21 partly buried angular outcrop pieces in seven overlapping
+formations. 84 upright rush, tussock, compact shrub and flax clumps are rooted on
+actual collision-traced rock ledges and seams. Flat fern rosettes are cleared from
+the outcrop footprints. 55 obstructing tree visuals and their 55 trunk colliders
+were removed together; all other instance transforms are preserved exactly.
+The map-owned M_BankStone uses the same world-space rock texture, scale and
+stone/earth/moss pigment code as RS4's bank. It replaces the imported pack's pale
+rock and bright green caps. New ledge plants use MI_NZ_Foliage_Bush.
+No DEM, road, water, terrain material or lighting change belongs to this pass.
+Four root probes per plant are buried at least 4 cm into rock. Outcrop support
+samples are embedded by 55 cm; full rock bounds remain at least 15.26 m from road
+centreline segments. Tree/collider root pairs are checked after clearing.
+Recipe: Art/Unreal/lidar_rocky_bank.py. Guarded repeat install:
+  powershell -File Art/preview_lidar_rocky_bank.ps1 -Install
+RS3 reapplies RS6 after RS5 when rocky-bank.json exists; RS3/RS4/RS5 review scripts
+recognise the RS6 saved checkpoint. Full terrain regeneration was not rerun.
+Backup: Saved/LidarAuthoringBackups/RS6-1793920301782955600/L_LidarStudy.umap
+QA: Saved/LidarAuthoringQA/RS6/install.json, validation.json and Final-*.png.
+Visual evidence is from the editor viewport, not a new driving/PIE benchmark.
+2026-11-05 RS6 REJECTED by owner after visual review.
+The oversized, separated boulders and perched shrubs do not meet the requested
+riverbank quality. Restore the pre-RS6 saved map; archive the rejected map and
+disable rocky-bank.json so normal regeneration does not reapply this attempt.
+RS6 code and screenshots remain as rejected experiment evidence, not approved art.
+Next design work should prove one small bank section first: embedded, connected
+rock structure, crevice-rooted vegetation, and material/light coherence. Do not
+repeat the rejected boulder row across the river reach.
+2026-11-06 PHOTO-BASED REFERENCE AND ACCEPTANCE CONTRACT
+Owner corrected generic generated fern repetition and asked to use the existing
+site photographs. Photo-based study v03 received positive direction feedback.
+Primary photos: 04 steep-bank growth; 08 layered/varied fern understory; 15 warm
+gravel/moss transition. Original photos retain authority over generated details.
+Study: Art/References/ReferenceStyle/PhotoBased/waimeamea-bank-v03.png
+Plan: docs/LIDAR_RIVERBANK_ACCEPTANCE.txt (five evidence-backed acceptance gates).
+Generated concepts v01/v02 are superseded. Do not replace the photographed fern
+community with a generic shrub garden or enforce the discarded three-fern cap.
+Current implementation remains RS5; new implementation gates are NOT TESTED.
+2026-11-06 - RS7 FIRST BOUNDED RIVERBANK SECTION BUILT
+The owner authorized implementation after endorsing the photo-based v03 direction.
+The saved L_LidarStudy map now contains a 22 m river frontage by 15.6 m slope span,
+centred at -45800,-31600 cm. Four bank-specific fern forms (12 mesh variants),
+152 ferns, 51 grass clumps, 14 small toe-cobble clusters, fitted moss/earth/rock
+and 12 local bark overrides replace 74 low plants within this bounded section.
+Shared plant assets remain unchanged. No whole-bank expansion was performed.
+
+Review: Art/Export/LidarStudy/FirstSection/Review/index.html
+Five actual standalone game views are supplied beside owner photos 04/08/15,
+the original woodland style image and approved v03 study. Four matched before
+views are included. B03's original camera was below ground, so no invalid before
+view is presented. A roughly 12-second actual-game camera sequence is included;
+it is sampled at 12 fps and is not a live performance measurement.
+
+Root contact: 608 probes, maximum positive gap 1.2 cm. Surface registration error
+at five probes: below 0.04 cm. Repeat-build and saved/reloaded snapshots match
+(229 local instances). Outside low-plant hash preserves 207399 instances. Tree
+visual/collider total remains 148385. Original terrain digest is unchanged.
+Saved v6, 1600x900: four warmed matched views show mean GPU differences from
+-0.28 to +0.56 ms; no graphics-preset reduction. New small-foliage batch shadows
+were disabled to meet the provisional additional-cost budget, preserving geometry.
+No 120 fps claim is made.
+
+The new validate runner passed against the final saved map. A standalone ford
+smoke test moved 8.6 m without an engine-flood event; it does not prove a complete
+crossing. Acceptance gate D remains NOT TESTED in full. Owner visual acceptance
+is PENDING. The bounded section is delivered for visual review, not certified
+for expansion. Gate evidence, limitations, hashes and rollback instructions are
+in the review directory. The original brighter woodland reference remains visible
+in the comparison; an exact visual match is not claimed.
+
+Backup: Saved/LidarAuthoringBackups/RS7-1793994925613427600/
+Recipe: Art/Unreal/lidar_first_section.py
+Validate/rebuild wrapper: Art/rebuild_lidar_first_section.ps1
+Manifest: Art/Export/LidarStudy/Place/first-section.json
+The rejected RS6 rocky-bank.json remains disabled.
+2026-11-06 - RS7 GROUND MATERIAL DETAIL FOLLOW-UP
+The owner approved the improvement but reported blurred/flat ground. The two
+map-owned bank ground materials now use 2 m root/litter soil detail, 1.1 m rock
+fractures and 35 cm mineral detail, with filtered world-space bump, cavity shading
+and spatial roughness/dampness variation. Two map-owned 2K soil textures remain
+resident; shared source textures and global rendering settings are unchanged.
+This is shading relief, not physical displacement: map geometry, plant placements,
+root support, collision and exposure remain the previously checked version.
+The first runtime attempt flattened the inherited linear-data rock range; this
+was corrected before the final ground-final captures. The final standalone game
+captures reload the saved material assets successfully. Editor preview images and
+the superseded ground-detail capture are diagnostic, not delivery evidence.
+Review and final timing record:
+Art/Export/LidarStudy/FirstSection/Review/GroundDetail/index.html
+Art/Export/LidarStudy/FirstSection/Review/GroundDetail/evidence.json
+Implementation: Art/Unreal/lidar_bank_ground_material.py
+Material backup: Saved/LidarAuthoringBackups/RS7Ground-1794001850837697000/
+Earlier first-section images and motion clip remain historical evidence. The
+original review page links to the current ground-material comparison.
+2026-11-06 - RS7 PHYSICAL SURFACE RELIEF FOLLOW-UP
+The owner reported that the textured ground still read as flat and instructed
+that discovered causes should be implemented. The bank mesh itself is rebuilt:
+10 cm sampling, 70648 faces, irregular soil hummocks, embedded mineral features,
+stepped rock lips facing the river, and several stronger root runs. Mild cavity
+colour follows geometric recesses. This is a geometry change with matching
+complex-as-simple collision, not another shading-only update.
+The approved plant layout is frozen in plant-layout.json for deterministic rebuild.
+6191 contact constraints preserve existing roots and low fronds. All 229 local
+instance transforms and 207399 outside low plants remain unchanged. Validation
+covers 608 root probes and 10285 frond samples across 152 plants; penetration did
+not increase. The original procedural terrain digest, road network and exposure
+remain unchanged. Only the fitted first-section surface asset is reimported.
+Source recipe: Art/Unreal/lidar_bank_relief_detail.py
+Data: Art/Export/LidarStudy/FirstSection/physical-relief.json
+Build: Art/Blender/build_lidar_bank_surface.py
+Review/evidence: Art/Export/LidarStudy/FirstSection/Review/PhysicalRelief/index.html
+Art/Export/LidarStudy/FirstSection/Review/PhysicalRelief/evidence.json
+The older GroundDetail images are the preceding material-only revision. Current
+first-section review links point to the physical-relief comparison. A complete
+live walking/driving route remains a separate gate, not implied by these probes.
+
+2026-11-06 - FOREST ATMOSPHERE FOLLOW-UP
+Owner: add forest fog and improve distant forest depth while keeping the original
+colourful woodland reference. Existing height fog began at 1100 m, missing most
+forest views. Saved L_LidarStudy now uses light height haze from 18 m, density
+0.024, falloff 0.1, opacity cap 0.62, base elevation 45 m, cool luminance
+(550,850,1050). Two low-density LocalFogVolume actors sit deeper in the river
+woodland; full volumetric fog stays off. Sun, sky light and exposure unchanged.
+
+Two longer geometric tree-range trials were measured and rejected: the broad
+extension cost about 9-10 ms in forest views; the modest trial still reached
++3.62 ms. Final is the measured fog-only state. The four original canopy meshes
+were restored byte-for-byte from the pre-change backup, retaining all tree LODs.
+Distant forest improvement in this pass comes from depth-dependent colour and
+contrast. Better distant crown shapes still need better cheap representations;
+this pass does not claim that asset work is complete.
+
+Plant snapshot, outside planting, DEM digest, tree counts and near LOD checks
+passed. Final saved map was rendered in standalone with identical cameras and
+saved v6 at 1600x900. GPU mean changes in one matched pair were -0.47 to +1.63 ms across
+four views; not full-route performance proof. Source screenshots are unchanged.
+Authoring editor had one abnormal teardown after successful saving/validation;
+subsequent editor and standalone runs exited cleanly. No new runtime material
+compile error found. Full route, temporal transition and owner visual gates remain.
+
+Recipe: Art/Unreal/lidar_forest_atmosphere.py; settings in
+Art/Export/LidarStudy/Place/forest-atmosphere.json.
+Review: Art/Export/LidarStudy/FirstSection/Review/Atmosphere/index.html
+Evidence: same directory/evidence.json; isolation and rejected trials under
+Saved/LidarAuthoringQA/Atmosphere and Saved/LidarAuthoringQA/RS7.
+
+
+PERCEIVED DETAIL BOUNDED REVIEW - 2026-11-06
+Built a 4 x 4 m normal-detail ground patch, corrected one Cascade fern UV/baked-occlusion variant, and an AO/Nanite-voxel version of 48 existing beech trees. Original ground colour, vegetation layout, root contacts, terrain and collision are preserved. Original LOD geometry supplies the 48 trees' shadows. TSR thin-geometry detection is enabled globally for this review candidate.
+Actual review: Art/Export/LidarStudy/FirstSection/Review/PerceivedDetail/index.html
+The review contains seven matched unretouched game views, the original style reference, site photographs, a labelled generated study, and four moving before/after clips. Motion samples are 12 fps, not a performance measurement.
+Three warmed alternating A/B pairs, 1600x900, TSR 75, saved v6 preset. Median paired GPU changes:
+  D01: +1.018 ms
+  B01: +0.786 ms
+  B04: +1.193 ms
+  F01: +0.912 ms
+  F02: +1.531 ms
+  G01: +0.931 ms
+  T01: +0.264 ms
+Observed +1 ms median gate: NOT PASSED. Temperature and clock variation prevents a tightly controlled sub-millisecond conclusion. Full raw timings, memory/pass metrics and telemetry remain in evidence.json and gpu-telemetry.csv. No whole-world or target-FPS claim.
+Geometry validation: 229 local instance hash unchanged; 207399 outside low-plant instances unchanged; 148373 main-forest geometry trees plus 12 local trees and 148385 existing colliders; 48 identical stand transforms; 608 root probes; 10285 frond probes on 152 plants; no additional clipping. Original CanopyKit packages and project descriptor match the pre-pass backup.
+Not promoted: POM ground, Nanite bank skin and the custom 24-view depth proxy. Captures with missing voxel material usage were invalidated. Ground normals add shading detail, not new silhouettes. This remains a bounded candidate with OWNER VISUAL ACCEPTANCE PENDING; the reference's colour composition and variety are not fully matched.
+Recipe: Art/Export/LidarStudy/FirstSection/PerceivedDetail/accepted.json. Asset-only rebuild: Art/rebuild_perceived_detail.ps1, with Unreal closed. Requires the existing saved stand; full-world regeneration is not integrated. The individual bake/import steps ran successfully; the convenience rebuild wrapper has not been rerun end-to-end.
+Variant switching: python Art/tools/select_perceived_variant.py baseline|final (Unreal closed). This switches experiment assets, not the entire map or global TSR config. Full pre-pass files are recorded in Saved/LidarAuthoringQA/PerceivedDetail/backup.json; Config/DefaultEngine.ini was also backed up there.
+
+
+SHRUB SHADOW CORRECTION - 2026-11-06
+Restored dynamic and two-sided shadow casting on 2446 woody shrubs and 152 RS7 bank plants (2598 unchanged transforms). The earlier no-shadow foliage policy removed self-shadowing and ground anchoring; mesh sections already supported shadows. Corrected the installation, reference-style, bank planting, river-variety, river-detail and first-section authoring rules. Planting hashes, terrain and root-contact checks pass.
+Actual before/after review: Art/Export/LidarStudy/FirstSection/Review/ShrubShadows/index.html
+Single warmed A/B GPU deltas (indicative; thermal variation and prior +1 ms gate remain unresolved): D01 +3.65 ms, B01 +3.88 ms, B04 +3.02 ms, F01 +0.35 ms.
+Backup: C:\GrandTour\Saved\LidarAuthoringBackups\ShrubShadows-1794020359369439800
+
+
+FERN FLOOR LAYER - 2026-11-06
+Added a bank-owned fitted forest-floor layer: 1339 fallen leaves, 117 twig fragments, 303 connected root runs and 271 moss clods, totalling 30840 static triangles. A 512x512 short-range occlusion bake traces the actual 152 fern instances and fitted bank. No changes to the underlying terrain mesh, collision, vegetation placement, sun or exposure. Planting and root-contact checks pass. Small decorative pieces have no collision.
+Review: Art/Export/LidarStudy/FirstSection/Review/FernFloor/index.html
+Rebuild: Blender --background --python Art/Blender/build_fern_floor.py, then run fern_floor.run() in the existing authoring editor. Bake is static: rebuild after changes to the bank or planting. The perceived-detail material rebuild preserves this installed layer. Full-world regeneration is not integrated.
+One warmed A/B GPU comparison (indicative, not a repeated gate): D01 +0.03 ms, B01 -0.07 ms, B04 +0.10 ms, G01 -0.02 ms.
+
+
+PHOTO-LED PEAT AND MOSS - 2026-11-08
+Implemented in the existing RS7 section after owner approved the illustrated implementation. New bank-owned 2K colour/packed-detail maps replace continuous green ground with dark peat, small beech litter and root fibres. A unique 1K coverage map matches 350 fitted moss pieces, about 25 percent of the bank footprint. Moss varies in size, elongation and grouping, with thin buried fringes. Local dampness follows concavity. Existing rock material detail and other material packages are preserved.
+Replaced the earlier floor decoration with 1319 small leaves, 111 twig fragments, 302 embedded root runs and 350 moss pieces; 67322 source triangles and two reduced distance meshes. Contact occlusion rebaked against the actual bank and 152-plant layout. Underlying bank mesh/collision, 229 local transforms, 207399 outside instances, terrain digest, lighting and renderer settings unchanged. 608 root probes pass. No collision on decorative pieces.
+Review: Art/Export/LidarStudy/FirstSection/Review/PeatMoss/index.html
+Evidence: same directory/evidence.json
+Rebuild: Art/rebuild_peat_moss.ps1; individual texture, geometry, LOD and Unreal import steps executed successfully. Ground-material and fern-floor rebuild hooks preserve this recipe. Static contact bake must be regenerated if planting/terrain changes.
+Actual game captures use identical four cameras and saved v6 settings at 1600x900, with no material fallback. Final single matched-pair GPU median deltas: D01 +0.120 ms, B01 +0.035 ms, B04 +0.106 ms, G01 +0.006 ms. Indicative only, not repeated/full-route certification; earlier perceived-detail performance gate remains unresolved. Initial candidate moss looked like separate padded blobs and was revised before delivery. Owner visual acceptance pending; generated images remain targets, not actual game evidence. River gravel is a separate follow-up.

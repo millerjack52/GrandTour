@@ -1,0 +1,32 @@
+[
+  {
+    "id": "49988",
+    "label": "dodge318_revs",
+    "creator": "BoilingSand",
+    "source_page": "https://freesound.org/people/BoilingSand/sounds/49988/",
+    "download_url": "https://cdn.freesound.org/previews/49/49988_571325-hq.mp3",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "retrieved": "2026-10-24",
+    "file": "49988_dodge318_revs_hq_preview.mp3",
+    "sha256": "9a4cdf38be398e1c10ce429faa1fc0dfd6d5ad4232eea2fb202ceb5af755fec8",
+    "sample_rate": 44100,
+    "channels": 2,
+    "seconds": 34.71383219954649,
+    "format": "Public HQ MP3 preview"
+  },
+  {
+    "id": "505321",
+    "label": "amg_revs",
+    "creator": "marcelweiss",
+    "source_page": "https://freesound.org/people/marcelweiss/sounds/505321/",
+    "download_url": "https://cdn.freesound.org/previews/505/505321_7236652-hq.mp3",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "retrieved": "2026-10-24",
+    "file": "505321_amg_revs_hq_preview.mp3",
+    "sha256": "28c1a811eaebfd53fb7e77f272105e78b4056e905a1d38e7a0951590f1e66a85",
+    "sample_rate": 48000,
+    "channels": 2,
+    "seconds": 6.2,
+    "format": "Public HQ MP3 preview"
+  }
+]

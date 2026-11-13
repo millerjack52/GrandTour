@@ -1,0 +1,11 @@
+# LD8b: the 10 OW grass types before (= after) the GT copies
+6f15da63c8601c4378ba327e9c19219e55ea8ddc *Content/OWGame/Dev/DressingLab/LGT_OWAlpineGrass.uasset
+daf06effcd7ce80a1bcc855a0615940632aba612 *Content/OWGame/Dev/DressingLab/LGT_OWFloorDeciduous.uasset
+4c8d2c65e954457a8fcbdc3e268eca77901de26c *Content/OWGame/Dev/DressingLab/LGT_OWFloorFir.uasset
+70941a612113acde0f2f38bef6e673d6bfabbdc7 *Content/OWGame/Dev/DressingLab/LGT_OWFloorOak.uasset
+55115dfcc1b948e2268a3b43d76d084df3b3dd53 *Content/OWGame/Dev/DressingLab/LGT_OWForestFloor.uasset
+41d02df504d10a06924301dbef2f0c6e6bcf076b *Content/OWGame/Dev/DressingLab/LGT_OWMeadowDryGrass.uasset
+c49bd4800128503e816e87a60b4b4f16df27a0db *Content/OWGame/Dev/DressingLab/LGT_OWMeadowFlowers.uasset
+72230743ea5ab475b2c588a55cdea6a81013023f *Content/OWGame/Dev/DressingLab/LGT_OWMeadowGrass.uasset
+21eaab6cd3b69d8fc7f997e301b6413dec9a9bd7 *Content/OWGame/Dev/DressingLab/LGT_OWMeadowLushFlowers.uasset
+c3045e02adfb7701a9d3612e34c11fa6bd99f651 *Content/OWGame/Dev/DressingLab/LGT_OWMeadowLushGrass.uasset

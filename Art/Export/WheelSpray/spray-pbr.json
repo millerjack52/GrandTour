@@ -1,0 +1,178 @@
+{
+  "rows": {
+    "Spray_Mud_Close base colour": {
+      "empty_custom_depth": 0.0,
+      "custom_depth_pixels": 19662,
+      "sprite_pixels": 992,
+      "luminance_median": 0.0319,
+      "luminance_p10_50_90": [
+        0.0319,
+        0.0319,
+        0.0319
+      ],
+      "rgb_median": [
+        0.0498,
+        0.0284,
+        0.0137
+      ],
+      "gate": "median in 0.03-0.25",
+      "pass": true
+    },
+    "Spray_Mud_Drive base colour": {
+      "empty_custom_depth": 0.0,
+      "custom_depth_pixels": 4830,
+      "sprite_pixels": 3722,
+      "luminance_median": 0.0359,
+      "luminance_p10_50_90": [
+        0.0359,
+        0.0359,
+        0.0359
+      ],
+      "rgb_median": [
+        0.0562,
+        0.032,
+        0.0144
+      ],
+      "gate": "median in 0.03-0.25",
+      "pass": true
+    },
+    "Spray_Gravel_Close base colour": {
+      "empty_custom_depth": 0.0,
+      "custom_depth_pixels": 670,
+      "sprite_pixels": 13,
+      "luminance_median": 0.1571,
+      "luminance_p10_50_90": [
+        0.1336,
+        0.1571,
+        0.1948
+      ],
+      "rgb_median": [
+        0.1504,
+        0.1592,
+        0.1562
+      ],
+      "gate": "median within 30 % of 0.197 (0.138-0.256)",
+      "ratio_to_ground": 0.797,
+      "pass": true
+    },
+    "Spray_Mud_Close droplets above the arch": {
+      "camera_wheel": 3,
+      "arch_wheel": 3,
+      "wheel_radius_cm": 38.0,
+      "arch_line_y_px": 135.4,
+      "droplet_pixels": 992,
+      "above_pixels": 659,
+      "share_above": 0.664,
+      "gate": "at least 0.25",
+      "pass": true
+    },
+    "Spray_Gravel_Close dust in shadow": {
+      "dust_pixels": 455429,
+      "grit_pixels": 912,
+      "sunlit_ground_p75": 0.3756,
+      "shadow_threshold": 0.1502,
+      "dust_in_shadow_pixels": 62627,
+      "dust_in_sun_pixels": 392802,
+      "dust_in_shadow_median": 0.2653,
+      "dust_in_sun_median": 0.4811,
+      "ratio": 0.551,
+      "gate": "at least 0.5",
+      "pass": true
+    },
+    "Spray_Mud_Close muddy splash": {
+      "water_pixels": 235,
+      "luminance_median": 0.5331,
+      "rgb_median": [
+        0.9301,
+        0.4564,
+        0.1144
+      ],
+      "gate": "median luminance 0.03-0.3 and R > G > B (final image)",
+      "pass": false
+    },
+    "Spray_Mud_Drive droplet height": {
+      "method": "CPU estimate from the launch velocities (BaseVelocity and rates at the capture)",
+      "droplets": 19980,
+      "height_p50_m": 0.742,
+      "height_p95_m": 1.125,
+      "apex_p95_m": 1.248,
+      "apex_max_m": 1.488,
+      "base_velocities": [
+        [
+          -203.3,
+          3.5,
+          287.4
+        ],
+        [
+          -144.4,
+          3.1,
+          255.5
+        ],
+        [
+          -187.4,
+          3.4,
+          278.8
+        ],
+        [
+          -144.4,
+          3.1,
+          255.5
+        ]
+      ],
+      "rates": [
+        124.6,
+        403.9,
+        61.2,
+        46.3
+      ],
+      "gate": "p95 at most 2.5 m",
+      "pass": true
+    },
+    "Spray_Mud_Drive droplet clumping": {
+      "droplet_pixels": 4885,
+      "occupied_cells": 165,
+      "cells": 1260,
+      "cv_32px_cells": 3.93,
+      "pass": true
+    }
+  },
+  "dust_light_sweep": {
+    "L0.5_F1.4": {
+      "dust_in_shadow_median": 0.2354,
+      "dust_in_sun_median": 0.4539,
+      "ratio": 0.519,
+      "pass": true
+    },
+    "L0.7_F1.4": {
+      "dust_in_shadow_median": 0.265,
+      "dust_in_sun_median": 0.4811,
+      "ratio": 0.551,
+      "pass": true
+    },
+    "L0.7_F1": {
+      "dust_in_shadow_median": 0.244,
+      "dust_in_sun_median": 0.4592,
+      "ratio": 0.531,
+      "pass": true
+    },
+    "L0.7_F2": {
+      "dust_in_shadow_median": 0.2947,
+      "dust_in_sun_median": 0.5171,
+      "ratio": 0.57,
+      "pass": true
+    },
+    "L1_F0.3": {
+      "dust_in_shadow_median": 0.2836,
+      "dust_in_sun_median": 0.4611,
+      "ratio": 0.615,
+      "pass": true
+    },
+    "L1_F1": {
+      "dust_in_shadow_median": 0.2834,
+      "dust_in_sun_median": 0.5004,
+      "ratio": 0.566,
+      "pass": true
+    }
+  },
+  "ok": false
+}

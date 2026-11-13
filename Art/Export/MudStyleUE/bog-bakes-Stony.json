@@ -1,0 +1,256 @@
+{
+  "source": "Art/Export/MudStyleStudy/05_variants/Stony (Art/Blender/build_mud_wet_study.py), baked by Art/Blender/export_mud_wet.py",
+  "variant": "Stony",
+  "tile_m": 3.0,
+  "size": 2048,
+  "mirror": false,
+  "normal": "DirectX tangent (green = -Y), from the bump of the height",
+  "height_range_cm": [
+    -0.424,
+    2.471
+  ],
+  "fields": {
+    "tile_cm": 300.0,
+    "size": 2048,
+    "clods": 800,
+    "clod_across_cm": [
+      3.0,
+      6.64,
+      12.97
+    ],
+    "clod_height_cm": [
+      0.21,
+      2.41
+    ],
+    "clod_cover": 0.2472,
+    "crumbs": 1300,
+    "crumb_across_cm": [
+      1.0,
+      4.0
+    ],
+    "crumb_cover": 0.0313,
+    "gap_cover": 0.0108,
+    "slurry_cover": 0.7145,
+    "height_range_cm": [
+      -0.424,
+      2.471
+    ],
+    "value_scale": 1.2174,
+    "clay_lstar": 41.619,
+    "churn_lstar": 25.804,
+    "coherence_colour": 0.0092,
+    "coherence_height": 0.0053,
+    "stones": 1800,
+    "stone_across_cm": [
+      1.2,
+      3.11,
+      5.99
+    ],
+    "stone_cover_visible": 0.0759,
+    "variant": "Stony"
+  },
+  "maps": {
+    "T_MS_BogStonyColor": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogStonyColor.png",
+      "bits": 8,
+      "channels": 3,
+      "colour": "sRGB",
+      "seam_ratio": {
+        "R": 0.822,
+        "G": 0.778,
+        "B": 0.762
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          0.16,
+          -1.7
+        ],
+        "G": [
+          -0.14,
+          -1.65
+        ],
+        "B": [
+          -0.29,
+          -1.56
+        ]
+      },
+      "bytes": 1393409,
+      "min": 0.2314,
+      "mean": 0.2892,
+      "max": 0.4784
+    },
+    "T_MS_BogStonyNormal": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogStonyNormal.png",
+      "bits": 8,
+      "channels": 3,
+      "colour": "linear",
+      "seam_ratio": {
+        "R": 0.925,
+        "G": 0.845,
+        "B": 0.937
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          -0.02,
+          -0.83
+        ],
+        "G": [
+          -0.46,
+          -1.8
+        ],
+        "B": [
+          0.15,
+          -0.82
+        ]
+      },
+      "bytes": 6082835
+    },
+    "T_MS_BogStonyRough": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogStonyRough.png",
+      "bits": 8,
+      "channels": 1,
+      "colour": "linear",
+      "seam_ratio": {
+        "R": 0.84
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          0.19,
+          -1.68
+        ]
+      },
+      "bytes": 1295534,
+      "min": 0.2196,
+      "mean": 0.4289,
+      "max": 0.8588
+    },
+    "T_MS_BogStonyHeight": {
+      "file": "Art/Export/MudStyleUE/T_MS_BogStonyHeight.png",
+      "bits": 16,
+      "channels": 1,
+      "colour": "linear",
+      "seam_ratio": {
+        "R": 0.769
+      },
+      "seam_z_rows_cols": {
+        "R": [
+          -0.7,
+          -2.16
+        ]
+      },
+      "bytes": 7764817,
+      "min": 0.0,
+      "mean": 0.2048,
+      "max": 1.0
+    }
+  },
+  "value": {
+    "churn": {
+      "lstar": 25.806342513004218,
+      "value": 0.28918857369038875,
+      "lum": 0.047854142401848945,
+      "sat": 0.45098206488842185,
+      "mean_linear": [
+        0.0691,
+        0.0441,
+        0.0227
+      ]
+    },
+    "clay": {
+      "lstar": 41.619384645688044,
+      "value": 0.4634648951400635,
+      "lum": 0.12307966435973683,
+      "sat": 0.40500372257294215,
+      "mean_linear": [
+        0.1823,
+        0.1116,
+        0.0622
+      ]
+    },
+    "worked": {
+      "lstar": 33.4111601059749,
+      "value": 0.3493125494913798,
+      "lum": 0.07749724910112936,
+      "sat": 0.28905786977460013,
+      "mean_linear": [
+        0.1003,
+        0.0735,
+        0.0503
+      ]
+    },
+    "ratio_to_clay": {
+      "lstar": 0.62,
+      "value": 0.624,
+      "linear_luminance": 0.389,
+      "saturation": 1.114
+    }
+  },
+  "direction": {
+    "note": "structure-tensor coherence: (whole tile, mean over 10 cm); 0 = no direction, 1 = stripes",
+    "churn_colour": [
+      0.0091,
+      0.0871
+    ],
+    "churn_height": [
+      0.0053,
+      0.0996
+    ],
+    "clay_colour": [
+      0.0267,
+      0.349
+    ],
+    "worked_colour": [
+      0.8852,
+      0.8841
+    ]
+  },
+  "roughness": {
+    "slurry": [
+      0.22,
+      0.329,
+      0.584
+    ],
+    "wet_gaps": 0.279,
+    "clod_tops_upper_half": 0.796,
+    "crumbs": 0.799,
+    "lowest_20pc_height": 0.302,
+    "highest_10pc_height": 0.797,
+    "glossy_share_under_04": 68.1,
+    "matte_share_over_08": 13.8,
+    "note": "slurry as its 5th / 50th / 95th percentiles",
+    "stone_tops": 0.579
+  },
+  "value_by_zone_linear_luminance": {
+    "slurry": 0.0467,
+    "clod_tops": 0.053,
+    "wet_gaps": 0.0355,
+    "stone_tops": 0.0956
+  },
+  "stone_visible_share": 7.59,
+  "bake_tile3x3": {
+    "file": "Art/Export/MudStyleStudy/05_variants/Stony/Bake_Tile3x3.png",
+    "landmarks_30cm": {
+      "mean": {
+        "max_abs_z": 3.38,
+        "share_over_3": 0.2
+      },
+      "contrast": {
+        "max_abs_z": 4.41,
+        "share_over_3": 0.51
+      }
+    }
+  },
+  "study_tile3x3": {
+    "file": "Art/Export/MudStyleStudy/05_variants/Stony/Tile3x3.png",
+    "landmarks_30cm": {
+      "mean": {
+        "max_abs_z": 3.37,
+        "share_over_3": 0.16
+      },
+      "contrast": {
+        "max_abs_z": 4.04,
+        "share_over_3": 0.37
+      }
+    }
+  }
+}

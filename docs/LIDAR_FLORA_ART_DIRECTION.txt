@@ -1,0 +1,94 @@
+REFERENCE ART-DIRECTION PASS / 2026-11-13
+=======================================
+Request: try another reference pass, including less conventional techniques.
+
+Diagnosis
+The surviving mismatch is a hierarchy of forms: individual cards have equal
+visual weight, lower trunks are unbroken vertical bars, and neighbouring crowns
+vary independently rather than forming painted masses. The reference has dark
+plant centres, warm tips, moss on bark and groups of related vegetation colour.
+
+Chosen experiment: instance-space pigment volumes
+- Normalize each source mesh against INSTANCE local bounds before wind. Feed
+  this through a vertex interpolator, preserving identity in large HISM groups.
+- Paint a restrained cool root-to-tip value gradient inside plant clumps. Blend
+  source normals toward a clump dome to shade the volume while retaining fronds.
+- Give exposed upper growth an ochre tint. Add localized rust colonies rather
+  than globally warming all foliage or lifting the scene's exposure.
+- Break lower trunks with vertically irregular moss patches, preserving the
+  purchased bark underneath. Use real lighting; no emissive moss/leaf highlights.
+- Use a slow world field shared by neighbouring crowns to form colour families.
+  Apply the same family field to near geometry and far cards.
+- Reconnect transmission to final pigment so it cannot bypass the new shading.
+
+Why this route
+It changes object appearance in 3D, not a screen-space blur that can smear
+silhouettes or swim during camera motion. It adds no meshes, shadow casters or
+texture samples. Extra shader arithmetic/interpolators still have a cost; zero
+samples does not imply free, and 60fps is not established by this experiment.
+Lighting, fog, cameras, render resolution, mud and planting counts stay fixed
+for a fair comparison. The existing map is backed up before modification.
+
+Source checks
+- Purchased FloraPath/Implementation-notes.txt: the source diffuse lobe uses
+  mesh normals; the custom Flora_Shader normal affects transmission. A general
+  upward normal blend is not equivalent. Keep moderate volume normal blending.
+- UE5.8 MaterialExpressions.cpp and HLSLMaterialTranslator.cpp: Bounds defaults
+  to InstanceLocal, distinct from the potentially huge HISM ObjectLocal bounds.
+- Epic shading-model documentation describes Two Sided Foliage transmission:
+  https://dev.epicgames.com/documentation/unreal-engine/shading-models-in-unreal-engine
+
+Additional research
+Valve's Illustrative Rendering in Team Fortress 2 describes warm/cool form
+shading and perspective-attached painted detail. Those are useful principles,
+not a request to copy TF2's look. Here they are applied to the supplied Flora
+Paint reference through plant volumes and existing lit Unreal materials.
+https://cdn.steamstatic.com/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf
+
+Controls
+Art/Export/LidarStudy/FloraWorld/profile.json -> art_direction:
+ plant_root_depth, plant_tip_warmth, plant_volume_normal,
+ bark_moss, crown_pigment.
+Applied by run_lidar_flora_world.ps1 polish, then review. Material parameter
+names are PlantRootDepth, PlantTipWarmth, PlantVolumeNormal, BarkMossStrength
+and CrownPigmentStrength. No purchased source asset is modified.
+The enabled flag controls installation, not removal of an already installed
+wrapper. Existing strengths can be set to zero; the full pre-pass package
+backup is D:/GrandTourBackups/FloraWorld_ArtDirection_2026-11-13.
+
+Validation
+First experiment: all eight normal-viewport views plus the two contact views
+captured successfully. Nineteen material checks and saved-map integrity passed.
+The visual review found overly broad moss and excessive loss of warm accents.
+The second iteration tightens the moss footprint and lowers the volume-normal
+blend from .38 to .18 and root darkening from .55 to .32. Warm tips increase
+from .48 to .75. Bark moss is .52; crown family strength is .65.
+
+Hypothesis rejected: automatic back-face normal flipping. Actual UE5.8
+MaterialTemplate.ush gates that flip on tangent-space or single-layer-water
+normals. Our world-space foliage does not enter that branch; do NOT add a
+TwoSidedSign compensation based on generic foliage advice. No such change made.
+
+Final runtime review passed, clean exit 0. Eight scene views were visually
+inspected; two contact captures and the native contact API probe also passed.
+All nineteen new material checks and saved-map integrity assertions passed.
+Saved map SHA256: 56c7d0d96862f595540196806c131552e224e27f01bfd66bb4fde2ca6dccec69
+No additional meshes or texture maps. This still adds shader arithmetic and
+interpolators; no standalone 60fps result is claimed.
+
+Visual outcome: a restrained refinement, most visible in broken lower-trunk
+moss, shaded plant masses and related canopy colour. The first stronger test
+was reduced after inspecting real game views. The supplied reference still
+has finer branch silhouettes, more intentional openings for sunlight and
+richer hero props. Several broad shrub cards and native debris remain simple.
+The next substantial gain needs source-asset silhouette selection and local
+planting composition, not further global saturation/fog or a blur filter.
+
+Further development direction, not claimed implemented here:
+Preview the seven already-imported tree variants under one locked camera,
+select a branchier mix, and rebuild matching distant representations. Test
+replacement of the most conspicuous broad shrub cards with curved low-cost
+pack alternatives before any whole-map replacement. Use sun-access and root
+spacing to arrange colonies and openings while retaining existing coverage.
+Keep this pass as the comparison baseline; judge silhouettes at gameplay
+resolution before committing any extra geometry budget.

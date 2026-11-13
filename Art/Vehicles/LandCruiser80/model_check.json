@@ -1,0 +1,356 @@
+{
+  "status": "UNREAL_ART_IMPORTED_DRIVING_PENDING",
+  "asset": {
+    "source_revision": "R7",
+    "wheel_bounds_metres": {
+      "Wheel_FL": {
+        "min": [
+          0.6549999117851257,
+          -1.8399991989135742,
+          8.344650268554688e-07
+        ],
+        "max": [
+          0.965999960899353,
+          -1.0100008249282837,
+          0.8299992084503174
+        ]
+      },
+      "Wheel_FR": {
+        "min": [
+          -0.965999960899353,
+          -1.8399990797042847,
+          8.344650268554688e-07
+        ],
+        "max": [
+          -0.6549999117851257,
+          -1.0100007057189941,
+          0.8299992084503174
+        ]
+      },
+      "Wheel_RL": {
+        "min": [
+          0.6549999117851257,
+          1.0100007057189941,
+          8.344650268554688e-07
+        ],
+        "max": [
+          0.965999960899353,
+          1.8399990797042847,
+          0.8299992084503174
+        ]
+      },
+      "Wheel_RR": {
+        "min": [
+          -0.965999960899353,
+          1.0100008249282837,
+          8.344650268554688e-07
+        ],
+        "max": [
+          -0.6549999117851257,
+          1.8399991989135742,
+          0.8299992084503174
+        ]
+      }
+    },
+    "bones": [
+      "Root",
+      "Wheel_FL",
+      "Wheel_FR",
+      "Wheel_RL",
+      "Wheel_RR",
+      "Door_FL",
+      "Door_FR",
+      "Door_RL",
+      "Door_RR",
+      "Hood",
+      "TailgateUpper",
+      "TailgateLower",
+      "Steering",
+      "Needle_Speedometer",
+      "Needle_Tachometer",
+      "Needle_Fuel",
+      "Needle_Voltage",
+      "Needle_Coolant",
+      "Needle_Oil"
+    ],
+    "materials": {
+      "Exterior": [
+        "T_LC80_Exterior_BaseColor.png",
+        "T_LC80_Exterior_ORM.png"
+      ],
+      "Interior": [
+        "T_LC80_Interior_BaseColor.png",
+        "T_LC80_Interior_ORM.png"
+      ]
+    },
+    "validation": {
+      "rigid_weights_uv_finite_nonzero_faces": "PASS",
+      "articulation": {
+        "Wheel_FL": {
+          "vertices": 1582,
+          "max_error_m": 1.7881393432617188e-07
+        },
+        "Wheel_FR": {
+          "vertices": 1582,
+          "max_error_m": 1.7881393432617188e-07
+        },
+        "Wheel_RL": {
+          "vertices": 1582,
+          "max_error_m": 2.7314279645418166e-07
+        },
+        "Wheel_RR": {
+          "vertices": 1582,
+          "max_error_m": 2.7314279645418166e-07
+        },
+        "Door_FL": {
+          "vertices": 1124,
+          "max_error_m": 2.1490760299348766e-07
+        },
+        "Door_FR": {
+          "vertices": 1124,
+          "max_error_m": 2.6656007498500226e-07
+        },
+        "Door_RL": {
+          "vertices": 1140,
+          "max_error_m": 2.457562461863554e-07
+        },
+        "Door_RR": {
+          "vertices": 1140,
+          "max_error_m": 2.6656007498500226e-07
+        },
+        "Hood": {
+          "vertices": 98,
+          "max_error_m": 2.6656007498500226e-07
+        },
+        "TailgateUpper": {
+          "vertices": 168,
+          "max_error_m": 4.805480091749757e-07
+        },
+        "TailgateLower": {
+          "vertices": 632,
+          "max_error_m": 2.6656007498500226e-07
+        },
+        "Steering": {
+          "vertices": 304,
+          "max_error_m": 1.2013700229374393e-07
+        },
+        "Needle_Speedometer": {
+          "vertices": 8,
+          "max_error_m": 2.457562461863554e-07
+        },
+        "Needle_Tachometer": {
+          "vertices": 8,
+          "max_error_m": 2.4027400458748785e-07
+        },
+        "Needle_Fuel": {
+          "vertices": 8,
+          "max_error_m": 1.3328003749250113e-07
+        },
+        "Needle_Voltage": {
+          "vertices": 8,
+          "max_error_m": 2.384185791015625e-07
+        },
+        "Needle_Coolant": {
+          "vertices": 8,
+          "max_error_m": 2.384185791015625e-07
+        },
+        "Needle_Oil": {
+          "vertices": 8,
+          "max_error_m": 1.2731557704981462e-07
+        }
+      }
+    },
+    "triangles": 47652,
+    "vertices": 26588
+  },
+  "validation": {
+    "LOD1": {
+      "triangles": 38696,
+      "ratio_requested": 0.58,
+      "weights": "PASS"
+    },
+    "LOD2": {
+      "triangles": 32702,
+      "ratio_requested": 0.3,
+      "weights": "PASS"
+    },
+    "roundtrip_LOD0": {
+      "status": "PASS",
+      "triangles": 47652,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 285.0000000000004,
+      "track_cm": 160.00000000000165,
+      "bounds_cm": [
+        486.64996337890625,
+        225.09999084472656,
+        188.99992771356483
+      ],
+      "bones": 19,
+      "fbx_sha256": "4195515aea2d11bfc9edf4de7d53a985033f7c488ff0b6dc41cfb54f7d494c2f"
+    },
+    "roundtrip_LOD1": {
+      "status": "PASS",
+      "triangles": 38696,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 285.0000000000004,
+      "track_cm": 160.00000000000165,
+      "bounds_cm": [
+        486.64996337890625,
+        225.09999084472656,
+        188.99992771356483
+      ],
+      "bones": 19,
+      "fbx_sha256": "b7f3092acd39b8477b271d030d9fcbc88a26a7a604b965145b5d2c2100802631"
+    },
+    "roundtrip_LOD2": {
+      "status": "PASS",
+      "triangles": 32702,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 285.0000000000004,
+      "track_cm": 160.00000000000165,
+      "bounds_cm": [
+        486.64996337890625,
+        225.09999084472656,
+        188.90965866297483
+      ],
+      "bones": 19,
+      "fbx_sha256": "6b9652f66f88ff3e9aeb717f211ce3858d3bbcab03c8ddc1da2009e4b5561ec2"
+    },
+    "collision_template": {
+      "body_boxes": [
+        {
+          "bone": "Root",
+          "centre_cm": [
+            0.0,
+            0.0,
+            84.0
+          ],
+          "size_cm": [
+            420.0,
+            169.0,
+            54.0
+          ]
+        },
+        {
+          "bone": "Root",
+          "centre_cm": [
+            -55.0,
+            4.152384462940972e-06,
+            144.0
+          ],
+          "size_cm": [
+            282.0,
+            148.0,
+            78.0
+          ]
+        },
+        {
+          "bone": "Root",
+          "centre_cm": [
+            142.0,
+            -1.0720701538957655e-05,
+            102.0
+          ],
+          "size_cm": [
+            158.0,
+            162.0,
+            38.0
+          ]
+        }
+      ],
+      "status": "Blender template only; fit and suspension contact require Unreal"
+    }
+  },
+  "unreal_import": {
+    "status": "IMPORTED",
+    "source": "Package_v03",
+    "mesh": "/Game/GrandTour/Vehicles/Bodies/LandCruiser80/SK_LandCruiser80",
+    "review_level": "/Game/GrandTour/ArtTests/LandCruiser80/L_LandCruiserReview",
+    "checks": {
+      "bounds_cm": [
+        486.64996337890625,
+        225.09999084472656,
+        188.99992771356483
+      ],
+      "bone_count": 19,
+      "reference_bones_cm": {
+        "Root": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Wheel_FL": [
+          142.5000060398317,
+          -79.99998924154885,
+          41.5
+        ],
+        "Wheel_FR": [
+          142.4999939601675,
+          80.0000107584507,
+          41.5
+        ],
+        "Wheel_RL": [
+          -142.4999939601675,
+          -80.0000107584507,
+          41.5
+        ],
+        "Wheel_RR": [
+          -142.5000060398317,
+          79.99998924154885,
+          41.5
+        ]
+      },
+      "material_slots": [
+        {
+          "slot": "M_LC80_Exterior",
+          "material": "/Game/GrandTour/Vehicles/Bodies/LandCruiser80/Materials/M_LC80_Exterior.M_LC80_Exterior"
+        },
+        {
+          "slot": "LC_Glass",
+          "material": "/Game/GrandTour/Vehicles/Bodies/LandCruiser80/Materials/M_LC80_Glass.M_LC80_Glass"
+        },
+        {
+          "slot": "M_LC80_Interior",
+          "material": "/Game/GrandTour/Vehicles/Bodies/LandCruiser80/Materials/M_LC80_Interior.M_LC80_Interior"
+        },
+        {
+          "slot": "M_LC80_Markings",
+          "material": "/Game/GrandTour/Vehicles/Bodies/LandCruiser80/Materials/M_LC80_Markings.M_LC80_Markings"
+        }
+      ],
+      "lod_count": 3,
+      "lod_sections": [
+        4,
+        4,
+        4
+      ],
+      "lod_vertices": [
+        82010,
+        66854,
+        55728
+      ],
+      "physics_bodies": [
+        "Root physicsType=0 boxes=1 spheres=0 capsules=0 convex=0",
+        "constraints=0"
+      ],
+      "material_graph_compilation": "PASS",
+      "textures": "four 2048px maps; albedo sRGB, ORM linear; markings vertex colour"
+    },
+    "rendered_review": {
+      "status": "INSPECTED",
+      "views": [
+        "Front",
+        "Rear",
+        "Cockpit"
+      ],
+      "notes": "Inspected in the Unreal editor: body and interior textures, transparent glass and vertex-coloured gauge markings render with assigned materials. Driving not tested."
+    },
+    "limitations": [
+      "Art import and inspection scene; not wired into the selectable/drivable vehicle system.",
+      "Root box is initial collision only; compound fitting and driving validation remain pending."
+    ]
+  }
+}

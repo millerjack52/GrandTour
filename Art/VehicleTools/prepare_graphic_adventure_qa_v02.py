@@ -1,0 +1,13 @@
+from pathlib import Path
+T=Path('C:/GrandTour/Art/VehicleTools')
+p=T/'graphic_adventure_coverage_v02.py';s=p.read_text().replace('graphic-adventure-assembly-v01','graphic-adventure-assembly-v02')
+s=s.replace("-.17,.04,.308", "-.17,.032,.301").replace(".05,.247,.308", ".036,.252,.301").replace(".261,.444,.308", ".260,.414,.301")
+s=s.replace("-.100,.385,.425", "-.087,.385,.425")
+s=s.replace(".152,.308", ".152,.301").replace(".045,.152,.424", ".034,.152,.424").replace(".250,.244,.308", ".255,.244,.301").replace(".27,.305", ".27,.299")
+s=s.replace("seq(.310,.422,45)","seq(.303,.422,45)").replace("[(.308,.2545),(.424,.2155)]", "[(.301,.2565),(.424,.211)]")
+s=s.replace("[.264,.265,.266]", "[.2575,.2585,.2600]").replace("seq(-.17,.44,65)", "seq(-.17,.435,65)")
+s=s.replace("[(.308,-.181),(.424,-.111)]", "[(.301,-.185),(.424,-.107)]").replace("seq(.18,.307,30)", "seq(.190,.300,30)").replace("[-.1705,.1705]", "[-.1675,.1675]").replace("[.177,.308,.423]", "[.187,.301,.423]")
+s=s.replace("seq(-.175,.441,45)","seq(-.175,.434,45)")
+p.write_text(s)
+p=T/'verify_graphic_adventure_v02.py';s=p.read_text().replace('from graphic_adventure_coverage import','from graphic_adventure_coverage_v02 import');p.write_text(s)
+p=T/'review_graphic_adventure_v02.py';s=p.read_text().replace('graphic-adventure-assembly-v01','graphic-adventure-assembly-v02');s=s.replace("render('review-bottom',(0,0,-2),(0,0,.15),5.0)","render('review-bottom',(0,0,-2),(0,0,.15),6.4)");p.write_text(s)

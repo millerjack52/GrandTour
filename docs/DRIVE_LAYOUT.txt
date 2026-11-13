@@ -1,0 +1,107 @@
+DRIVE LAYOUT CONVERSIONS — 2026-10-28
+
+Controls
+Stop the car, press U, select DRIVE LAYOUT (or cycle with Tab), choose using
+arrows/mouse, then Enter / Fit. U returns to driving. Preview, Compare and Cancel
+do not change the drivetrain. Range Rover retains all workshop categories;
+other fleet cars expose the drive-layout category only.
+
+AWD torque split (2026-10-28)
+With AWD selected, Left/Right or the on-screen arrow buttons adjust the nominal
+front/rear split in 5% steps, from 10:90 to 90:10. Left adds rear bias. Up/Down
+still choose the drive layout. Enter applies both layout and split; Cancel/Close
+discard preview changes. Retuning an already fitted AWD kit requires no extra
+kit, consumes no inventory and does not repair damage. The car must be stopped.
+50:50 is the default; 30:70 is an available rear-biased setup.
+
+Choices
+Factory: uses the car's original CentreSplitFront (Ferrari RWD, Range Rover AWD).
+FWD: front axle receives drive; rear axle receives no drive or diff coupling.
+RWD: rear axle receives drive; front axle receives no drive or diff coupling.
+AWD: adjustable front/rear torque before differential coupling (default 50:50).
+
+Conversion is independent of the engine package, gear ratios, suspension and
+tyres. Range Rover Standard/Rally/Expedition combinations remain available.
+Front/rear shaft-speed weighting, driven contacts and reflected engine inertia
+follow the selected wheels. Selectable locks only couple driven axles. Ferrari
+limited slip follows the driven axle(s). Handbrake retains the existing automatic
+clutch release and rear wheel brakes; it does not become a front axle brake in FWD.
+
+Storage and fitting
+Optional Slot.DriveLayout in the existing mechanical loadout. Parts are
+Part.DriveFactory, Part.DriveFWD, Part.DriveRWD, Part.DriveAWD. Old saves without
+this slot retain Factory. The slot migrates onto existing blueprint instances
+at BeginPlay. No map, vehicle blueprint or wheel asset rewrite is required.
+
+The AWD split is an independent setting on the drivetrain, copied by the existing
+campaign capture/apply path through FGTCarrySnapshot.AWDFrontShare. Older saves
+default to 50:50. It is remembered while switching layouts but only affects an
+explicit AWD conversion. Factory, FWD and RWD retain their normal axle selection.
+The split also weights shaft RPM and reflected engine inertia. Centre coupling
+can redistribute torque away from the nominal split while conserving total drive.
+
+Campaign uses the normal carry snapshot/save path. Workshop fitting in the rally
+test lab is free, changes the active car and does not auto-save a campaign or
+persist a lab selection across a fresh launch. Campaign fitting uses a conversion
+kit from the boot and returns the old kit. Conversion items have no added mass or
+performance multiplier in this prototype; the change is driven-wheel topology.
+
+Only Range Rover and Ferrari use the existing independent engine/clutch and firm
+ground wheel-momentum model. Other cars keep their existing engine model. Explicit
+conversions conserve shaft torque through the diffs; Factory retains the fleet's
+legacy torque-cap behavior where applicable.
+
+Validation
+Art/workshop.ps1 -Mode LayoutCheck runs native disk-serialization checks and
+rendered PIE tests on the existing L_RallyHandling map. It tests Range Rover,
+Ferrari and BMW conversions, forward/reverse axle torque, lock turns, driven
+shaft RPM, low range and handbrake (RR/Ferrari), stationary-only fitting, previews,
+Factory restoration, old-loadout compatibility, recreation from captured loadout,
+engine-package coexistence, and protected map/player-save hashes.
+Report: Saved/WorkshopQA/layoutcheck.json
+Screenshots: Saved/WorkshopQA/drive-layout-range-rover.png and drive-layout-ferrari.png
+
+AWD-specific validation: Art/workshop.ps1 -Mode BiasCheck. It runs native weighted
+differential, reverse/lock, disk save and production snapshot capture/apply tests,
+then rendered driving at five splits on Range Rover and Ferrari. It also checks
+retuning, preview/cancel, bounds, other layouts, reverse, low range, handbrake,
+engine-package coexistence and protected save/map hashes.
+Report: Saved/WorkshopQA/biascheck.json; screenshots: awd-30-70-*.png in that folder.
+Final AWD run: 251 checks passed, including both native suites; process exit 0.
+Five recorded split scenarios per car had mean callback times around 12-13 ms.
+This is a bounded functional probe, not a circuit benchmark or a 120 fps claim.
+An earlier hidden-editor run failed its speed check while ticking at roughly 1 Hz;
+that report/log are preserved as biascheck-first-speed-failure.*. The test now
+disables background throttling on the process's EditorPerformanceSettings object,
+waits for a usable frame cadence, and records frame timing before judging speed.
+It does not save that preference or reduce graphics quality.
+
+Build environment: the Fab update introduced FabToolset after the installed
+UE5Rules assembly was compiled. Refreshing the rules with
+Art/build_guarded.ps1 -ForceRulesCompile resolved the build error, leaving Fab
+enabled. The original rules cache and touched sources were backed up under
+Saved/WorkshopBackups/20261028-awd-bias. The guarded option passes both
+-ForceRulesCompile and -SkipRulesCompile because the UE 5.8 timestamp path
+otherwise overwrites the force flag. Normal builds keep their existing flags.
+
+Recorded results
+- Guarded editor build succeeded.
+- LayoutCheck: 369 checks passed, including native disk tests; process exit 0.
+- Ferrari existing regression: all 44 assertions passed; process returned
+  -1073741819 after the shutdown log closed. This is not a clean process pass.
+- Range Rover regression: all 148 assertions passed after updating the obsolete
+  BMW workshop-exclusion assertion. Process returned the same shutdown error.
+  The prior intermittent editor shutdown failure remains unresolved.
+- An intermediate RR rerun failed the three-second spawn-settling check. Its
+  report/log are retained. The harness now disables live keyboard input on test
+  pawns and grants up to three extra seconds to settle, with the same <30 cm/s
+  threshold and recorded velocities. No physics was changed for that failure.
+- Original exclusion failure, settling failure and final regression reports/logs
+  are preserved under Saved/WorkshopQA/layout-*. The full cosmetic suite was not
+  rerun; its obsolete non-RR workshop exclusion was changed to the still-required
+  cosmetic exclusion. LayoutCheck covers the new mechanical-only access.
+
+These checks verify functionality, not subjective handling acceptance or 120 fps.
+
+Build/launch rule: run Art/wait_unreal_free.ps1 as a separate command before each
+guarded build or launcher. Never terminate an existing Unreal session.

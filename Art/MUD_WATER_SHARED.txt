@@ -1,0 +1,75 @@
+SHARED MUD WATER -- 2026-10-13
+
+Play /Game/GrandTour/ArtTests/MudWater/L_MudWater.
+This is an isolated copy of the accepted proving ground. Soil thickness,
+bearing strength, relief and tyre-contact model keep the accepted settings.
+The Benmore river and the soil property comparison maps are not replaced.
+
+The pond uses GTWaterSheet, GTWaterField and GTWaterSubsystem, the existing
+water framework. The river evolves disturbances around its authored current;
+this pond uses the same field's conservative wet/dry solver with sealed edges.
+Wheel and hull occupancy use the existing displacement path. The rendered
+surface elevation and normal come from the simulated field, not a second
+cosmetic wave animation. The original flat proving-ground pool is removed
+only in L_MudWater.
+
+The bed is the original landscape plus live mud relief. A cut keeps the water
+already present in that cell; it does not refill to a fixed water table. Water
+can flow from connected cells into a newly opened rut, while displaced soil
+can push water out. Fine mud heights clip the rendered shoreline and limit
+the physical water column. Buried tyre/hull volume underneath the soil is not
+counted as an extra depth of water. Muddy water keeps kind Rut for dirt/coating
+consumers, with an explicit flag allowing the existing hull forces to read a
+real simulated pond. Legacy cosmetic rut water remains excluded from hull lift.
+
+SCALING AND CONTROLS
+On MudWater_SharedPond: Mud Half Size Cm sets the connected basin extent;
+Mud Cell Cm requests resolution. Side length is capped at 128 cells. The test
+uses 126 x 126 cells at 25 cm, covering 31.5 x 31.5 m. Narrower ruts are resolved
+by the fine mud mask; their water flow is still limited by the water grid.
+Use a smaller basin for finer fluid cells rather than scaling the grid without
+a budget. Base Level Cm sets initial fill before Play; it is not a live refill.
+Restart Play after editing these controls. The sheet's Mud Surface and the
+ground actor's Simulated Water references must point to one another. A sheet
+should enclose the whole connected basin; its outer edges are sealed.
+
+gt.Water.Mud.MaxActive defaults to 1, supports 0..4. Selection is one linear
+world scan per frame, retaining only the nearest candidates. Only nearby
+selected ponds step; sleeping initialized ponds keep water and deformation.
+Bed geometry is updated at most 10 Hz from changed 2 m ground blocks, with a
+sampling halo. Field texture upload is capped at 30 Hz. Existing fixed fluid
+substeps and catch-up limits are retained and instrumented.
+
+This bounds active simulation work. It is NOT yet an unlimited-world paging
+system: visited ponds retain CPU/GPU state; distant unvisited ponds need a
+static display for production, and adjoining domains need explicit exchange
+rather than overlapping sheets. Multiplayer focus selection, save/load of
+fluid state, rainfall/infiltration, erosion and river-to-pond water exchange
+are not implemented in this prototype. Splash particles remain a separate
+visual layer fed by the shared contact data. No full 3D fluid claim is made.
+
+REPRODUCTION
+Before EACH Unreal/build invocation run Art/wait_unreal_free.ps1 -MaxMinutes 0
+as a separate command and require exit 0. Never close another editor by force.
+Art/build_guarded.ps1
+Art/mud_response.ps1 -Tests
+Art/mud_water.ps1 -Mode Tests        existing water regression suite
+Art/mud_water.ps1 -Mode Setup        private material and map, with backup
+Art/mud_water.ps1 -Mode Review       actual car crossing, renders, telemetry
+Art/tools/make_mud_water_review.py   package the successful fresh evidence
+
+Evidence is in Art/Export/MudWaterShared/shared-mud-water.html and review-report.json.
+The native test opens a dry bank, verifies wave blocking, volume conservation
+and wetting of the cut. The scene checks actual vehicle occupancy, moving-bed
+updates, water depth/current, shader compilation, sleeping and waking, and
+clamps. CPU solver timings exclude renderer cost; screenshot captures pause
+simulation and cannot establish a whole-game frame-rate target.
+
+SETUP CORRECTION
+The first setup used save_map to duplicate the baseline but did not switch
+the active editor world. The added sheet and pool replacement therefore went
+into the source map. They were removed and the accepted pool was restored
+using its transform, mesh and material from the untouched pre-edit clone.
+Art/Export/MudWaterShared/repair-report.json records this recovery and its backups.
+Setup now explicitly loads the copy and verifies that the baseline file hash
+does not change. Repair mode is a one-time recovery tool, not a normal step.

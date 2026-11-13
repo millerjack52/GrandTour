@@ -1,0 +1,22 @@
+{
+  "name": "Range Rover V8 - procedural listening prototype v1",
+  "description": "Warm, restrained cross-plane V8 archetype for the current game car; not a calibrated recording or exact model-year recreation.",
+  "sample_rate": 48000,
+  "oversampling": 2,
+  "idle_rpm": 800,
+  "maximum_rpm": 5000,
+  "cylinder_count": 8,
+  "firing_banks": [0, 1, 1, 0, 1, 0, 0, 1],
+  "cylinder_gains": [1.0, 0.94, 1.04, 0.98, 0.96, 1.03, 0.93, 1.02],
+  "bank_delay_ms": [0.0, 0.62],
+  "exhaust_echo_ms": [4.7, 5.6],
+  "exhaust_feedback": 0.28,
+  "exhaust_lowpass_idle_hz": 650,
+  "exhaust_lowpass_loaded_hz": 2400,
+  "exhaust_gain": 0.8,
+  "intake_gain": 0.12,
+  "mechanical_gain": 0.065,
+  "body_gain": 0.10,
+  "seed": 1084,
+  "maximum_pack_peak_dbfs": -6.0
+}

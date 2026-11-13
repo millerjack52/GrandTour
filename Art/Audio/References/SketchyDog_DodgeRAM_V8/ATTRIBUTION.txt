@@ -1,0 +1,11 @@
+Recordings by sketchy.dog (Sketchy Dog LLC), via Freesound:
+V8 Dodge RAM 1500 Engine Starting & Idling
+https://freesound.org/people/sketchy.dog/sounds/760152/
+V8 Dodge RAM 1500 Engine Starting, Idling, then Driving for around 1:30 minutes.
+https://freesound.org/people/sketchy.dog/sounds/760153/
+Both licensed CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Retrieved 2026-10-24. Public HQ MP3 previews used for this offline prototype.
+H1 uses only the idle recording (760152): excerpts, filtering, stereo-width and
+gain adjustment, crossfades and procedural bass layering. Original recording
+pitch/timing is retained. The driving recording (760153) is an unused candidate.
+No endorsement by the recorder is implied. Retain this attribution with derivatives.

@@ -1,0 +1,363 @@
+{
+ "source_blend": "C:\\GrandTour\\Art\\rangerover.blend",
+ "blender": "5.1.2",
+ "export_yaw_deg": 90.0,
+ "units": "FBX in centimetres, unit scale 1; Blender file in metres",
+ "axes": "export space: +X front, +Y left, +Z up; Unreal: +X front, -Y left, +Z up",
+ "skeletal_mesh": "SK_RangeRover.fbx",
+ "bones": {
+  "Root": {
+   "export_cm": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "unreal_cm": [
+    0.0,
+    -0.0,
+    0.0
+   ],
+   "parent": null
+  },
+  "Wheel_FL": {
+   "export_cm": [
+    160.2,
+    78.4,
+    37.9
+   ],
+   "unreal_cm": [
+    160.2,
+    -78.4,
+    37.9
+   ],
+   "parent": "Root"
+  },
+  "Wheel_FR": {
+   "export_cm": [
+    160.2,
+    -78.4,
+    37.9
+   ],
+   "unreal_cm": [
+    160.2,
+    78.4,
+    37.9
+   ],
+   "parent": "Root"
+  },
+  "Wheel_RL": {
+   "export_cm": [
+    -114.9,
+    78.4,
+    37.9
+   ],
+   "unreal_cm": [
+    -114.9,
+    -78.4,
+    37.9
+   ],
+   "parent": "Root"
+  },
+  "Wheel_RR": {
+   "export_cm": [
+    -114.9,
+    -78.4,
+    37.9
+   ],
+   "unreal_cm": [
+    -114.9,
+    78.4,
+    37.9
+   ],
+   "parent": "Root"
+  }
+ },
+ "wheelbase_cm": 275.1,
+ "track_cm": 156.8,
+ "axle_midpoint_offset_cm": -22.6,
+ "wheel_radius_cm": 38.0,
+ "wheel_width_cm": 24.8,
+ "overall_size_cm": [
+  185.8,
+  461.0,
+  179.3
+ ],
+ "parts": [
+  {
+   "source": "baseInterior",
+   "name": "BaseInterior",
+   "bone": "Root",
+   "material": "M_Interior",
+   "faces": 72,
+   "tris": 148,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    0.083,
+    0.795
+   ]
+  },
+  {
+   "source": "bonnet",
+   "name": "Bonnet",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 132,
+   "tris": 260,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    -1.562,
+    1.083
+   ]
+  },
+  {
+   "source": "boot",
+   "name": "Boot",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 118,
+   "tris": 228,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    2.028,
+    1.185
+   ]
+  },
+  {
+   "source": "bumper",
+   "name": "Bumper",
+   "bone": "Root",
+   "material": "M_Trim",
+   "faces": 188,
+   "tris": 374,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    -2.133,
+    0.534
+   ]
+  },
+  {
+   "source": "frontDoors",
+   "name": "FrontDoors",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 112,
+   "tris": 220,
+   "paired": true,
+   "centre_blender_m": [
+    0.0,
+    -0.41,
+    0.77
+   ]
+  },
+  {
+   "source": "frontPanel",
+   "name": "FrontPanel",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 130,
+   "tris": 256,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    -1.571,
+    0.68
+   ]
+  },
+  {
+   "source": "frontWheelArch",
+   "name": "FrontWheelArch",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 168,
+   "tris": 336,
+   "paired": true,
+   "centre_blender_m": [
+    0.0,
+    -1.55,
+    0.64
+   ]
+  },
+  {
+   "source": "passengerDoors",
+   "name": "PassengerDoors",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 126,
+   "tris": 252,
+   "paired": true,
+   "centre_blender_m": [
+    0.0,
+    0.617,
+    0.769
+   ]
+  },
+  {
+   "source": "pillars",
+   "name": "Pillars",
+   "bone": "Root",
+   "material": "M_Trim",
+   "faces": 34,
+   "tris": 68,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    0.059,
+    1.414
+   ]
+  },
+  {
+   "source": "rearArches",
+   "name": "RearArches",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 68,
+   "tris": 136,
+   "paired": true,
+   "centre_blender_m": [
+    0.0,
+    1.125,
+    0.621
+   ]
+  },
+  {
+   "source": "rearBumper",
+   "name": "RearBumper",
+   "bone": "Root",
+   "material": "M_Trim",
+   "faces": 92,
+   "tris": 180,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    1.917,
+    0.565
+   ]
+  },
+  {
+   "source": "rearPanel",
+   "name": "RearPanel",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 118,
+   "tris": 232,
+   "paired": true,
+   "centre_blender_m": [
+    0.0,
+    1.715,
+    0.892
+   ]
+  },
+  {
+   "source": "Roof",
+   "name": "Roof",
+   "bone": "Root",
+   "material": "M_Body",
+   "faces": 206,
+   "tris": 396,
+   "paired": false,
+   "centre_blender_m": [
+    0.0,
+    0.617,
+    1.727
+   ]
+  },
+  {
+   "source": "wheelFrontLeft",
+   "name": "WheelFrontLeft",
+   "bone": "Wheel_FL",
+   "material": "M_Wheel",
+   "faces": 172,
+   "tris": 376,
+   "paired": false,
+   "centre_blender_m": [
+    0.784,
+    -1.602,
+    0.379
+   ]
+  },
+  {
+   "source": "wheelFrontRight",
+   "name": "WheelFrontRight",
+   "bone": "Wheel_FR",
+   "material": "M_Wheel",
+   "faces": 172,
+   "tris": 376,
+   "paired": false,
+   "centre_blender_m": [
+    -0.784,
+    -1.602,
+    0.379
+   ]
+  },
+  {
+   "source": "wheelRearLeft",
+   "name": "WheelRearLeft",
+   "bone": "Wheel_RL",
+   "material": "M_Wheel",
+   "faces": 172,
+   "tris": 376,
+   "paired": false,
+   "centre_blender_m": [
+    0.784,
+    1.149,
+    0.379
+   ]
+  },
+  {
+   "source": "wheelRearRight",
+   "name": "WheelRearRight",
+   "bone": "Wheel_RR",
+   "material": "M_Wheel",
+   "faces": 172,
+   "tris": 376,
+   "paired": false,
+   "centre_blender_m": [
+    -0.784,
+    1.149,
+    0.379
+   ]
+  }
+ ],
+ "static_meshes": [
+  "Static/SM_RR_BaseInterior.fbx",
+  "Static/SM_RR_Bonnet.fbx",
+  "Static/SM_RR_Boot.fbx",
+  "Static/SM_RR_Bumper.fbx",
+  "Static/SM_RR_FrontDoors_L.fbx",
+  "Static/SM_RR_FrontDoors_R.fbx",
+  "Static/SM_RR_FrontPanel.fbx",
+  "Static/SM_RR_FrontWheelArch_L.fbx",
+  "Static/SM_RR_FrontWheelArch_R.fbx",
+  "Static/SM_RR_PassengerDoors_L.fbx",
+  "Static/SM_RR_PassengerDoors_R.fbx",
+  "Static/SM_RR_Pillars.fbx",
+  "Static/SM_RR_RearArches_L.fbx",
+  "Static/SM_RR_RearArches_R.fbx",
+  "Static/SM_RR_RearBumper.fbx",
+  "Static/SM_RR_RearPanel_L.fbx",
+  "Static/SM_RR_RearPanel_R.fbx",
+  "Static/SM_RR_Roof.fbx",
+  "Static/SM_RR_Wheel.fbx"
+ ],
+ "warnings": [
+  "skipped frontDoors.001: only 1 faces",
+  "skipped pillars.001: only 3 faces",
+  "baseInterior: 2 edges shared by 3+ faces (internal faces)",
+  "bonnet: 10 edges shared by 3+ faces (internal faces)",
+  "boot: 4 edges shared by 3+ faces (internal faces)",
+  "bumper: merged 1 doubled verts (within 1 mm) for export; do Merge by Distance in the .blend too",
+  "bumper: 24 edges shared by 3+ faces (internal faces)",
+  "frontDoors: merged 18 doubled verts (within 1 mm) for export; do Merge by Distance in the .blend too",
+  "frontDoors: 26 edges shared by 3+ faces (internal faces)",
+  "frontWheelArch: 8 edges shared by 3+ faces (internal faces)",
+  "passengerDoors: merged 10 doubled verts (within 1 mm) for export; do Merge by Distance in the .blend too",
+  "passengerDoors: 26 edges shared by 3+ faces (internal faces)",
+  "Roof: merged 5 doubled verts (within 1 mm) for export; do Merge by Distance in the .blend too",
+  "Roof: 14 edges shared by 3+ faces (internal faces)",
+  "vehicle origin is 22.6 cm behind the axle midpoint; docs convention is origin at the axle midpoint. Move the model in the .blend if you want them to coincide (the FBX follows the file)."
+ ]
+}

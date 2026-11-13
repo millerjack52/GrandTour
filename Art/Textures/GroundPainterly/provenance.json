@@ -1,0 +1,19 @@
+{
+  "generator": "OpenAI image_gen builtin",
+  "date": "2026-09-28",
+  "source_dimensions": [
+    1254,
+    1254
+  ],
+  "postprocessing": "None. Unreal imports with STRETCH_TO_POWER_OF_TWO, maximum 2048, streaming enabled.",
+  "prompts": [
+    [
+      "gravel",
+      "Use case: stylized-concept. Asset type: seamless square tiling BASE COLOR / ALBEDO game ground texture, not a scene or material ball. Make a top-down orthographic texture of rough New Zealand high-country gravel road earth for a painterly low-poly driving game. Covers approximately 3 x 3 metres. Rich readable medium-sized angular gravel chips 2–9 cm, a few 12 cm flat embedded slate fragments, smaller aggregate and irregular bare compressed ochre dirt patches. Dense gravel with deliberate clusters, varied orientation and 30% visible earth; no tyre marks (added by game), no standing plants. Hand-painted simplified polygonal stones with two or three broad colour facets, muted cool slate-grey and warm chalk beige stones against deep umber/ochre soil, strong value separation, broad restrained paint marks. Flat evenly illuminated base colour, no directional cast shadows, no AO black outlines, no specular highlights, no photographic grain or tiny white speckle. Maintain restrained natural palette, not orange, not washed out. Uniform detail scale all across tile; no central motif, paths, border, horizon, text, diagram, objects beyond the texture. Edges must repeat seamlessly left/right and top/bottom. Fill entire square with usable texture."
+    ],
+    [
+      "meadow",
+      "Use case: stylized-concept. Asset type: seamless square tiling BASE COLOR / ALBEDO game ground texture, not a scene or material ball. Top-down orthographic flat texture of golden dry tussock meadow UNDERLAYER for a painterly low-poly New Zealand high-country driving game. Covers about 3 x 3 metres. Interlocking irregular patches of ochre-gold matted short grass and dried leaf litter, deep olive moss pockets, exposed warm brown compacted soil, sparse embedded angular small slate stones. Broad hand-painted brush dabs and simple faceted shapes, short directional straw strokes 3–12 cm bundled in varied directions, not individually rendered fine hair, not standing tufts (models supply these). Strong readable rich gold vs olive and dark earth contrast, golden grass 60%, olive 15%, earth 25%, colors natural and saturated but no orange fluorescent yellow. Even unlit base color, absolutely no directional lighting or cast shadows or specular highlights. No realistic photo noise, no black outlines, no tall vegetation, no scenery, no horizon, no texture labels, no border. Uniform detail scale all across tile, no central composition, seamlessly repeating all edges. Fill the entire square with usable ground texture."
+    ]
+  ]
+}

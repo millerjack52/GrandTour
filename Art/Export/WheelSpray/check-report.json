@@ -1,0 +1,2235 @@
+{
+  "ok": true,
+  "pictures": [
+    {
+      "name": "Spray_Mud_Spin",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Mud_Spin.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 121,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 51,
+        "cpu_live": {
+          "Mud": 51,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 0.21,
+        "x_m": 137.46,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            13233.604387127447,
+            314.58537936204937,
+            -80.71974182128906
+          ],
+          "target": [
+            13510.708661442137,
+            61.39387212703205,
+            -160.71974182128906
+          ],
+          "sun_angle_deg": 20.9,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              18.28,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              19.45,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              5.34,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              151.1,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      },
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 120,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 51,
+        "cpu_live": {
+          "Mud": 51,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 0.21,
+        "x_m": 137.46,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            13233.604387127447,
+            314.58537936204937,
+            -80.71974182128906
+          ],
+          "target": [
+            13510.708661442137,
+            61.39387212703205,
+            -160.71974182128906
+          ],
+          "sun_angle_deg": 20.9,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              18.28,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              19.45,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              5.34,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              151.1,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      }
+    },
+    {
+      "name": "Spray_Mud_Spin_Greybox",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Mud_Spin_Greybox.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 27,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 22
+        },
+        "speed_mps": 0.34,
+        "x_m": 137.06,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            13183.062894923074,
+            299.97570212373415,
+            -83.37327575683594
+          ],
+          "target": [
+            13466.790130649964,
+            54.241746950182524,
+            -163.37327575683594
+          ],
+          "sun_angle_deg": 21.9,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 0,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      },
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 27,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 22
+        },
+        "speed_mps": 0.34,
+        "x_m": 137.06,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            13183.062894923074,
+            299.97570212373415,
+            -83.37327575683594
+          ],
+          "target": [
+            13466.790130649964,
+            54.241746950182524,
+            -163.37327575683594
+          ],
+          "sun_angle_deg": 21.9,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 0,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      }
+    },
+    {
+      "name": "Spray_Mud_Close",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Mud_Close.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 95,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 6,
+        "cpu_live": {
+          "Mud": 6,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 0.17,
+        "x_m": 135.59,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            13199.968372011144,
+            232.11360453542994,
+            -88.08329772949219
+          ],
+          "target": [
+            13321.964733591549,
+            53.52526543815724,
+            -168.0832977294922
+          ],
+          "sun_angle_deg": 7.0,
+          "wheel_dist_m": 3.21
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              78.36,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              16.44,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              9.58,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              57.73,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      },
+      "arch_line": {
+        "wheels": [
+          {
+            "wheel": 2,
+            "radius_cm": 38.0,
+            "screen": [
+              670.4,
+              95.1
+            ]
+          },
+          {
+            "wheel": 3,
+            "radius_cm": 38.0,
+            "screen": [
+              950.8,
+              117.9
+            ]
+          }
+        ],
+        "viewport": [
+          1274,
+          682
+        ]
+      },
+      "custom_depth_taken_out": [
+        "Dash_SpeedoFace_0",
+        "Dash_SpeedoRim_0",
+        "Dash_SpeedoNeedle_0",
+        "Dash_SpeedoHub_0",
+        "Dash_TachoFace_0",
+        "Dash_TachoRim_0",
+        "Dash_TachoNeedle_0",
+        "Dash_TachoHub_0",
+        "Dash_FuelFace_0",
+        "Dash_FuelRim_0",
+        "Dash_FuelNeedle_0",
+        "Dash_FuelHub_0",
+        "Dash_TempFace_0",
+        "Dash_TempRim_0",
+        "Dash_TempNeedle_0",
+        "Dash_TempHub_0",
+        "Dash_Light0_0",
+        "Dash_Light1_0",
+        "Dash_Light2_0",
+        "Dash_Light3_0",
+        "Dash_Light4_0",
+        "Dash_Light5_0",
+        "Dash_Light6_0",
+        "Dash_Light7_0",
+        "Dash_Light8_0",
+        "Dash_Light9_0"
+      ],
+      "gate_dumps": [
+        {
+          "base": "C:/GrandTour/Art/Export/WheelSpray/Spray_Mud_Close_Gate",
+          "hidden": null
+        },
+        {
+          "base": "C:/GrandTour/Art/Export/WheelSpray/Spray_Mud_Close_Gate_NoSprites",
+          "hidden": "niagara"
+        }
+      ],
+      "same_frame": {
+        "Spray_Mud_Close_NoWater": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Mud_Close_NoWater.png",
+          "hidden": [
+            "Spray_water"
+          ]
+        }
+      },
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 93,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 6,
+        "cpu_live": {
+          "Mud": 6,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 0.17,
+        "x_m": 135.59,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            13199.968372011144,
+            232.11360453542994,
+            -88.08329772949219
+          ],
+          "target": [
+            13321.964733591549,
+            53.52526543815724,
+            -168.0832977294922
+          ],
+          "sun_angle_deg": 7.0,
+          "wheel_dist_m": 3.21
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              78.36,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              16.44,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              9.58,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 2,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              57.73,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      }
+    },
+    {
+      "name": "Spray_Mud_Drive",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Mud_Drive.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 962,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 113,
+        "cpu_live": {
+          "Mud": 113,
+          "Dust": 9,
+          "Snow": 0,
+          "Water": 26
+        },
+        "speed_mps": 5.82,
+        "x_m": 87.05,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8167.39151390484,
+            331.1621988244424,
+            53.01749038696289
+          ],
+          "target": [
+            8443.208620399986,
+            76.57474532710444,
+            -26.98250961303711
+          ],
+          "sun_angle_deg": 20.7,
+          "wheel_dist_m": 4.86
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              341.95,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              257.77,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              409.52,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              256.95,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 26,
+        "wetness": 0.0
+      },
+      "droplet_heights": {
+        "method": "CPU estimate from the launch velocities (BaseVelocity and rates at the capture)",
+        "droplets": 19980,
+        "height_p50_m": 0.764,
+        "height_p95_m": 1.162,
+        "apex_p95_m": 1.29,
+        "apex_max_m": 1.511,
+        "base_velocities": [
+          [
+            -198.5,
+            5.6,
+            284.0
+          ],
+          [
+            -146.6,
+            4.7,
+            255.8
+          ],
+          [
+            -189.5,
+            5.4,
+            279.1
+          ],
+          [
+            -146.6,
+            4.7,
+            255.8
+          ]
+        ],
+        "rates": [
+          342.0,
+          257.8,
+          409.5,
+          257.0
+        ]
+      },
+      "custom_depth_taken_out": [
+        "Dash_SpeedoFace_0",
+        "Dash_SpeedoRim_0",
+        "Dash_SpeedoNeedle_0",
+        "Dash_SpeedoHub_0",
+        "Dash_TachoFace_0",
+        "Dash_TachoRim_0",
+        "Dash_TachoNeedle_0",
+        "Dash_TachoHub_0",
+        "Dash_FuelFace_0",
+        "Dash_FuelRim_0",
+        "Dash_FuelNeedle_0",
+        "Dash_FuelHub_0",
+        "Dash_TempFace_0",
+        "Dash_TempRim_0",
+        "Dash_TempNeedle_0",
+        "Dash_TempHub_0",
+        "Dash_Light0_0",
+        "Dash_Light1_0",
+        "Dash_Light2_0",
+        "Dash_Light3_0",
+        "Dash_Light4_0",
+        "Dash_Light5_0",
+        "Dash_Light6_0",
+        "Dash_Light7_0",
+        "Dash_Light8_0",
+        "Dash_Light9_0"
+      ],
+      "gate_dumps": [
+        {
+          "base": "C:/GrandTour/Art/Export/WheelSpray/Spray_Mud_Drive_Gate",
+          "hidden": null
+        },
+        {
+          "base": "C:/GrandTour/Art/Export/WheelSpray/Spray_Mud_Drive_Gate_NoSprites",
+          "hidden": "niagara"
+        }
+      ],
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 944,
+          "GravelGrit": 0,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 113,
+        "cpu_live": {
+          "Mud": 113,
+          "Dust": 9,
+          "Snow": 0,
+          "Water": 26
+        },
+        "speed_mps": 5.82,
+        "x_m": 87.05,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8167.39151390484,
+            331.1621988244424,
+            53.01749038696289
+          ],
+          "target": [
+            8443.208620399986,
+            76.57474532710444,
+            -26.98250961303711
+          ],
+          "sun_angle_deg": 20.7,
+          "wheel_dist_m": 4.86
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              341.95,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              257.77,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              409.52,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": false,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              256.95,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 26,
+        "wetness": 0.0
+      }
+    },
+    {
+      "name": "Spray_Gravel_Drive",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Drive.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 47,
+          "GravelDust": 43
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 27,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 12.35,
+        "x_m": 94.04,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8828.88130332276,
+            328.9813777123131,
+            78.52870559692383
+          ],
+          "target": [
+            9108.166708931376,
+            78.69114757166432,
+            -1.4712944030761719
+          ],
+          "sun_angle_deg": 21.3,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              46.97,
+              12.53
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              30.88,
+              8.23
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              20.31,
+              5.42
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              3.85,
+              1.03
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      },
+      "same_frame": {
+        "Spray_Gravel_Drive_NoGreyDust": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Drive_NoGreyDust.png",
+          "hidden": [
+            "Spray_dust"
+          ]
+        }
+      },
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 46,
+          "GravelDust": 43
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 27,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 12.35,
+        "x_m": 94.04,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8828.88130332276,
+            328.9813777123131,
+            78.52870559692383
+          ],
+          "target": [
+            9108.166708931376,
+            78.69114757166432,
+            -1.4712944030761719
+          ],
+          "sun_angle_deg": 21.3,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              46.97,
+              12.53
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              30.88,
+              8.23
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              20.31,
+              5.42
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              3.85,
+              1.03
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      }
+    },
+    {
+      "name": "Spray_Gravel_Launch",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Launch.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 43,
+          "GravelDust": 14
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 3.53,
+        "x_m": 88.23,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8290.628462962786,
+            328.4650632221363,
+            102.08086013793945
+          ],
+          "target": [
+            8570.759345864617,
+            78.82052544473326,
+            22.080860137939453
+          ],
+          "sun_angle_deg": 21.4,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              25.49,
+              6.8
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              0.0,
+              10.27,
+              2.74
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              16.84,
+              4.49
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              36.63,
+              9.77
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      },
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 43,
+          "GravelDust": 14
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 0,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 3.53,
+        "x_m": 88.23,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8290.628462962786,
+            328.4650632221363,
+            102.08086013793945
+          ],
+          "target": [
+            8570.759345864617,
+            78.82052544473326,
+            22.080860137939453
+          ],
+          "sun_angle_deg": 21.4,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              25.49,
+              6.8
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": true,
+            "rates_mud_grit_dust": [
+              0.0,
+              10.27,
+              2.74
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              16.84,
+              4.49
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              36.63,
+              9.77
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      }
+    },
+    {
+      "name": "Spray_Gravel_Wet",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Wet.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 71,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 22,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 12.28,
+        "x_m": 94.15,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8832.944824066517,
+            315.82713275443734,
+            78.10405349731445
+          ],
+          "target": [
+            9117.230325264387,
+            71.18722211294475,
+            -1.8959465026855469
+          ],
+          "sun_angle_deg": 22.1,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              40.12,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              55.18,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              8.12,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              7.72,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 1.0
+      },
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 69,
+          "GravelDust": 0
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 22,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 12.28,
+        "x_m": 94.15,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8832.944824066517,
+            315.82713275443734,
+            78.10405349731445
+          ],
+          "target": [
+            9117.230325264387,
+            71.18722211294475,
+            -1.8959465026855469
+          ],
+          "sun_angle_deg": 22.1,
+          "wheel_dist_m": 4.85
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              40.12,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              55.18,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              8.12,
+              0.0
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              7.72,
+              0.0
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 1.0
+      }
+    },
+    {
+      "name": "Spray_Gravel_Close",
+      "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close.png",
+      "at_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 84,
+          "GravelDust": 69
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 4,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 9.8,
+        "x_m": 93.14,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8911.255400193777,
+            253.18967728327,
+            82.16104888916016
+          ],
+          "target": [
+            9030.648600376559,
+            72.93086717604334,
+            2.1610488891601562
+          ],
+          "sun_angle_deg": 6.8,
+          "wheel_dist_m": 3.21
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              59.46,
+              15.86
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              64.16,
+              17.11
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              61.35,
+              16.36
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              62.82,
+              16.75
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      },
+      "custom_depth_taken_out": [
+        "Dash_SpeedoFace_0",
+        "Dash_SpeedoRim_0",
+        "Dash_SpeedoNeedle_0",
+        "Dash_SpeedoHub_0",
+        "Dash_TachoFace_0",
+        "Dash_TachoRim_0",
+        "Dash_TachoNeedle_0",
+        "Dash_TachoHub_0",
+        "Dash_FuelFace_0",
+        "Dash_FuelRim_0",
+        "Dash_FuelNeedle_0",
+        "Dash_FuelHub_0",
+        "Dash_TempFace_0",
+        "Dash_TempRim_0",
+        "Dash_TempNeedle_0",
+        "Dash_TempHub_0",
+        "Dash_Light0_0",
+        "Dash_Light1_0",
+        "Dash_Light2_0",
+        "Dash_Light3_0",
+        "Dash_Light4_0",
+        "Dash_Light5_0",
+        "Dash_Light6_0",
+        "Dash_Light7_0",
+        "Dash_Light8_0",
+        "Dash_Light9_0"
+      ],
+      "gate_dumps": [
+        {
+          "base": "C:/GrandTour/Art/Export/WheelSpray/Spray_Gravel_Close_Gate",
+          "hidden": null
+        },
+        {
+          "base": "C:/GrandTour/Art/Export/WheelSpray/Spray_Gravel_Close_Gate_NoSprites",
+          "hidden": "niagara"
+        }
+      ],
+      "same_frame": {
+        "Spray_Gravel_Close_NoSprites": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close_NoSprites.png",
+          "hidden": [
+            "Spray_Fine_0",
+            "Spray_Fine_1",
+            "Spray_Fine_2",
+            "Spray_Fine_3"
+          ]
+        },
+        "Spray_Gravel_Close_Dust_L1_F0.3": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close_Dust_L1_F0.3.png",
+          "hidden": [
+            1.0,
+            0.3
+          ]
+        },
+        "Spray_Gravel_Close_Dust_L1_F1": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close_Dust_L1_F1.png",
+          "hidden": [
+            1.0,
+            1.0
+          ]
+        },
+        "Spray_Gravel_Close_Dust_L0.7_F1": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close_Dust_L0.7_F1.png",
+          "hidden": [
+            0.7,
+            1.0
+          ]
+        },
+        "Spray_Gravel_Close_Dust_L0.7_F1.4": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close_Dust_L0.7_F1.4.png",
+          "hidden": [
+            0.7,
+            1.4
+          ]
+        },
+        "Spray_Gravel_Close_Dust_L0.5_F1.4": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close_Dust_L0.5_F1.4.png",
+          "hidden": [
+            0.5,
+            1.4
+          ]
+        },
+        "Spray_Gravel_Close_Dust_L0.7_F2": {
+          "image": "C:\\GrandTour\\Art\\Export\\WheelSpray\\Spray_Gravel_Close_Dust_L0.7_F2.png",
+          "hidden": [
+            0.7,
+            2.0
+          ]
+        }
+      },
+      "after_capture": {
+        "niagara_live": {
+          "MudDroplets": 0,
+          "GravelGrit": 80,
+          "GravelDust": 69
+        },
+        "clumps_drawn": 0,
+        "cpu_live": {
+          "Mud": 0,
+          "Dust": 4,
+          "Snow": 0,
+          "Water": 0
+        },
+        "speed_mps": 9.8,
+        "x_m": 93.14,
+        "camera": {
+          "wheel": 3,
+          "side": "right",
+          "eye": [
+            8911.255400193777,
+            253.18967728327,
+            82.16104888916016
+          ],
+          "target": [
+            9030.648600376559,
+            72.93086717604334,
+            2.1610488891601562
+          ],
+          "sun_angle_deg": 6.8,
+          "wheel_dist_m": 3.21
+        },
+        "wheels": [
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              59.46,
+              15.86
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              64.16,
+              17.11
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              61.35,
+              16.36
+            ]
+          },
+          {
+            "contact": true,
+            "gravel": true,
+            "variant": 0,
+            "slipping": false,
+            "rates_mud_grit_dust": [
+              0.0,
+              62.82,
+              16.75
+            ]
+          }
+        ],
+        "art": 1,
+        "fine": 1,
+        "fine_scale": 1.0,
+        "muddy_splash": 0,
+        "wetness": 0.0
+      }
+    }
+  ],
+  "sun": {
+    "/Game/GrandTour/ArtTests/MudVariants/L_MudVariants": [
+      0.472,
+      -0.756,
+      -0.454
+    ],
+    "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform": [
+      0.472,
+      -0.756,
+      -0.454
+    ]
+  },
+  "puddle_spin": {
+    "Spray_Mud_Spin": {
+      "found": true,
+      "cell_cm": [
+        13601.2,
+        -161.2
+      ],
+      "water_cm": 2.53,
+      "moved_m": 5.37,
+      "wheel": "rear left",
+      "car_cm": [
+        13731.2,
+        -81.2
+      ]
+    },
+    "Spray_Mud_Spin_Greybox": {
+      "found": true,
+      "cell_cm": [
+        13438.8,
+        63.8
+      ],
+      "water_cm": 4.14,
+      "moved_m": 3.69,
+      "wheel": "rear right",
+      "car_cm": [
+        13568.8,
+        -16.2
+      ]
+    },
+    "Spray_Mud_Close": {
+      "found": true,
+      "cell_cm": [
+        13338.8,
+        63.8
+      ],
+      "water_cm": 2.54,
+      "moved_m": 2.69,
+      "wheel": "rear right",
+      "car_cm": [
+        13468.8,
+        -16.2
+      ]
+    }
+  },
+  "kill_check": {
+    "height_cm": 60.0,
+    "burst_s": 0.06,
+    "expected_s": {
+      "first_hit": 0.35,
+      "second_hit": 0.56,
+      "mud_life_min": 0.6,
+      "grit_life_min": 0.8
+    },
+    "frames": 103,
+    "MudDroplets": {
+      "peak": 22,
+      "peak_s": 0.067,
+      "half_gone_s": 0.4,
+      "all_gone_s": 0.45
+    },
+    "GravelGrit": {
+      "peak": 22,
+      "peak_s": 0.067,
+      "half_gone_s": 0.567,
+      "all_gone_s": 0.633
+    },
+    "rows_t_mud_grit": [
+      [
+        0.017,
+        0,
+        0
+      ],
+      [
+        0.033,
+        7,
+        7
+      ],
+      [
+        0.05,
+        15,
+        15
+      ],
+      [
+        0.067,
+        22,
+        22
+      ],
+      [
+        0.083,
+        20,
+        22
+      ],
+      [
+        0.083,
+        20,
+        22
+      ],
+      [
+        0.1,
+        18,
+        22
+      ],
+      [
+        0.117,
+        18,
+        22
+      ],
+      [
+        0.133,
+        18,
+        21
+      ],
+      [
+        0.15,
+        18,
+        21
+      ],
+      [
+        0.167,
+        18,
+        21
+      ],
+      [
+        0.183,
+        18,
+        21
+      ],
+      [
+        0.2,
+        18,
+        20
+      ],
+      [
+        0.217,
+        17,
+        20
+      ],
+      [
+        0.233,
+        17,
+        20
+      ],
+      [
+        0.25,
+        17,
+        20
+      ],
+      [
+        0.267,
+        17,
+        20
+      ],
+      [
+        0.283,
+        17,
+        20
+      ],
+      [
+        0.3,
+        17,
+        20
+      ],
+      [
+        0.317,
+        17,
+        20
+      ],
+      [
+        0.333,
+        17,
+        20
+      ],
+      [
+        0.35,
+        17,
+        20
+      ],
+      [
+        0.367,
+        16,
+        20
+      ],
+      [
+        0.383,
+        14,
+        20
+      ],
+      [
+        0.4,
+        7,
+        20
+      ],
+      [
+        0.417,
+        3,
+        19
+      ],
+      [
+        0.433,
+        1,
+        18
+      ],
+      [
+        0.45,
+        0,
+        17
+      ],
+      [
+        0.467,
+        0,
+        17
+      ],
+      [
+        0.483,
+        0,
+        16
+      ],
+      [
+        0.5,
+        0,
+        16
+      ],
+      [
+        0.517,
+        0,
+        16
+      ],
+      [
+        0.533,
+        0,
+        14
+      ],
+      [
+        0.55,
+        0,
+        14
+      ],
+      [
+        0.567,
+        0,
+        8
+      ],
+      [
+        0.583,
+        0,
+        6
+      ],
+      [
+        0.6,
+        0,
+        3
+      ],
+      [
+        0.617,
+        0,
+        1
+      ],
+      [
+        0.633,
+        0,
+        0
+      ],
+      [
+        0.65,
+        0,
+        0
+      ],
+      [
+        0.667,
+        0,
+        0
+      ],
+      [
+        0.683,
+        0,
+        0
+      ],
+      [
+        0.7,
+        0,
+        0
+      ],
+      [
+        0.717,
+        0,
+        0
+      ],
+      [
+        0.733,
+        0,
+        0
+      ],
+      [
+        0.75,
+        0,
+        0
+      ],
+      [
+        0.767,
+        0,
+        0
+      ],
+      [
+        0.783,
+        0,
+        0
+      ],
+      [
+        0.8,
+        0,
+        0
+      ],
+      [
+        0.817,
+        0,
+        0
+      ],
+      [
+        0.833,
+        0,
+        0
+      ],
+      [
+        0.85,
+        0,
+        0
+      ],
+      [
+        0.867,
+        0,
+        0
+      ],
+      [
+        0.883,
+        0,
+        0
+      ],
+      [
+        0.9,
+        0,
+        0
+      ],
+      [
+        0.917,
+        0,
+        0
+      ],
+      [
+        0.933,
+        0,
+        0
+      ],
+      [
+        0.95,
+        0,
+        0
+      ],
+      [
+        0.967,
+        0,
+        0
+      ],
+      [
+        0.983,
+        0,
+        0
+      ],
+      [
+        1.0,
+        0,
+        0
+      ],
+      [
+        1.017,
+        0,
+        0
+      ],
+      [
+        1.033,
+        0,
+        0
+      ],
+      [
+        1.05,
+        0,
+        0
+      ],
+      [
+        1.067,
+        0,
+        0
+      ],
+      [
+        1.083,
+        0,
+        0
+      ],
+      [
+        1.1,
+        0,
+        0
+      ],
+      [
+        1.117,
+        0,
+        0
+      ],
+      [
+        1.133,
+        0,
+        0
+      ],
+      [
+        1.15,
+        0,
+        0
+      ],
+      [
+        1.167,
+        0,
+        0
+      ],
+      [
+        1.183,
+        0,
+        0
+      ],
+      [
+        1.2,
+        0,
+        0
+      ],
+      [
+        1.217,
+        0,
+        0
+      ],
+      [
+        1.233,
+        0,
+        0
+      ],
+      [
+        1.25,
+        0,
+        0
+      ],
+      [
+        1.267,
+        0,
+        0
+      ],
+      [
+        1.283,
+        0,
+        0
+      ],
+      [
+        1.3,
+        0,
+        0
+      ],
+      [
+        1.317,
+        0,
+        0
+      ],
+      [
+        1.333,
+        0,
+        0
+      ],
+      [
+        1.35,
+        0,
+        0
+      ],
+      [
+        1.367,
+        0,
+        0
+      ],
+      [
+        1.383,
+        0,
+        0
+      ],
+      [
+        1.4,
+        0,
+        0
+      ],
+      [
+        1.417,
+        0,
+        0
+      ],
+      [
+        1.433,
+        0,
+        0
+      ],
+      [
+        1.45,
+        0,
+        0
+      ],
+      [
+        1.467,
+        0,
+        0
+      ],
+      [
+        1.483,
+        0,
+        0
+      ],
+      [
+        1.5,
+        0,
+        0
+      ],
+      [
+        1.517,
+        0,
+        0
+      ],
+      [
+        1.533,
+        0,
+        0
+      ],
+      [
+        1.55,
+        0,
+        0
+      ],
+      [
+        1.567,
+        0,
+        0
+      ],
+      [
+        1.583,
+        0,
+        0
+      ],
+      [
+        1.6,
+        0,
+        0
+      ],
+      [
+        1.617,
+        0,
+        0
+      ],
+      [
+        1.633,
+        0,
+        0
+      ],
+      [
+        1.65,
+        0,
+        0
+      ],
+      [
+        1.667,
+        0,
+        0
+      ],
+      [
+        1.683,
+        0,
+        0
+      ],
+      [
+        1.7,
+        0,
+        0
+      ]
+    ]
+  },
+  "sun_angles_deg": {
+    "Spray_Mud_Spin": 20.9,
+    "Spray_Mud_Spin_Greybox": 21.9,
+    "Spray_Mud_Close": 7.0,
+    "Spray_Mud_Drive": 20.7,
+    "Spray_Gravel_Drive": 21.3,
+    "Spray_Gravel_Launch": 21.4,
+    "Spray_Gravel_Wet": 22.1,
+    "Spray_Gravel_Close": 6.8
+  },
+  "check_run": {
+    "fixed_dt": {
+      "ok": true,
+      "frames": 300,
+      "asked": 0.016667,
+      "min": 0.016667,
+      "max": 0.016667
+    },
+    "render": {
+      "always": false,
+      "windows": 9,
+      "frames": 12274,
+      "frames_rendered": 4192
+    },
+    "pipeline": {
+      "wall_s": 234.4,
+      "frames": 12274,
+      "fps": 52.36,
+      "note": "the check run's own wall clock and frame rate (tooling), not game performance"
+    }
+  }
+}

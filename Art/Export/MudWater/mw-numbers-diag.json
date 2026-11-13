@@ -1,0 +1,317 @@
+{
+  "report": "Art\\Export\\MudWater\\check-diag.json",
+  "tag": "diag",
+  "owner": {
+    "track_pixels": 106756,
+    "water_pixels": 206662,
+    "mud_pixels": 57648,
+    "track_box_px": [
+      [
+        784.2,
+        375.3
+      ],
+      [
+        1080.1,
+        1489.0
+      ],
+      [
+        359.9,
+        1489.0
+      ],
+      [
+        655.8,
+        375.3
+      ]
+    ]
+  },
+  "diagnosis": {
+    "base": {
+      "mean_lum": 0.2416,
+      "highlight_share": 0.0015,
+      "detail": 4.651
+    },
+    "Repeat": {
+      "mean_lum": 0.2418,
+      "highlight_share": 0.0015,
+      "detail": 4.614,
+      "mean_abs_diff": 0.507,
+      "diff_over_8_share": 0.0022
+    },
+    "SlideUV0": {
+      "mean_lum": 0.2417,
+      "highlight_share": 0.0015,
+      "detail": 4.649,
+      "mean_abs_diff": 2.788,
+      "diff_over_8_share": 0.0657
+    },
+    "FreshWet0": {
+      "mean_lum": 0.2416,
+      "highlight_share": 0.0014,
+      "detail": 4.608,
+      "mean_abs_diff": 2.921,
+      "diff_over_8_share": 0.0742
+    },
+    "POM0": {
+      "mean_lum": 0.2453,
+      "highlight_share": 0.0026,
+      "detail": 5.425,
+      "mean_abs_diff": 6.351,
+      "diff_over_8_share": 0.299
+    },
+    "AllOff": {
+      "mean_lum": 0.245,
+      "highlight_share": 0.0026,
+      "detail": 5.546,
+      "mean_abs_diff": 6.466,
+      "diff_over_8_share": 0.3048
+    },
+    "DeformDetail0": {
+      "mean_lum": 0.2421,
+      "highlight_share": 0.0011,
+      "detail": 3.705,
+      "mean_abs_diff": 3.586,
+      "diff_over_8_share": 0.1211
+    },
+    "WaterMotion0": {
+      "mean_lum": 0.2417,
+      "highlight_share": 0.0014,
+      "detail": 4.491,
+      "mean_abs_diff": 2.945,
+      "diff_over_8_share": 0.073
+    },
+    "NoWater": {
+      "mean_lum": 0.2414,
+      "highlight_share": 0.0014,
+      "detail": 4.609,
+      "mean_abs_diff": 2.77,
+      "diff_over_8_share": 0.0529
+    }
+  },
+  "glare": {
+    "water_pixels": 206662,
+    "over_095_share": 0.0027,
+    "over_090_share": 0.0332,
+    "mean_lum": 0.487,
+    "gate": "share of water pixels over 0.95 <= 0.05",
+    "pass": true
+  },
+  "glare_water_motion0": {
+    "over_095_share": 0.0032,
+    "mean_lum": 0.4867
+  },
+  "motion": {
+    "water_pixels": 34957,
+    "gate": "mean |dL| >= 2/255 and >= 15 % of the water over 4/255",
+    "motion1": {
+      "pairs": [
+        {
+          "mean_abs_dl": 2.35,
+          "share_over_4": 0.1793
+        },
+        {
+          "mean_abs_dl": 2.206,
+          "share_over_4": 0.1756
+        }
+      ],
+      "pass_": true
+    },
+    "motion0": {
+      "pairs": [
+        {
+          "mean_abs_dl": 0.409,
+          "share_over_4": 0.0001
+        }
+      ],
+      "pass_": false
+    }
+  },
+  "encoding": {
+    "file_type": "exr",
+    "gravel_roughness_median": 0.898,
+    "verdict": "linear"
+  },
+  "pbr": [
+    {
+      "name": "MW_PBR_Close_Dry",
+      "condition": "dry",
+      "pixels": 8159,
+      "water_pixels_in_box": 563377,
+      "rough_p5_50_95": [
+        0.455,
+        0.525,
+        0.733
+      ],
+      "rough_under_050": 0.3154,
+      "rough_box_p5_all": [
+        0.455
+      ],
+      "base_luminance_mean": 0.0321,
+      "in_soil_band": false
+    },
+    {
+      "name": "MW_PBR_Close_Wet",
+      "condition": "wet",
+      "pixels": 149459,
+      "water_pixels_in_box": 422077,
+      "rough_p5_50_95": [
+        0.498,
+        0.498,
+        0.584
+      ],
+      "rough_under_050": 0.8627,
+      "rough_box_p5_all": [
+        0.498
+      ],
+      "base_luminance_mean": 0.0219,
+      "in_soil_band": false,
+      "pass_rough_p5": false,
+      "pass_rough_p5_8bit": true
+    }
+  ],
+  "owner_buffers": {
+    "track_mud_rough_p5_50_95": [
+      0.455,
+      0.51,
+      0.647
+    ],
+    "normal_z_mean": 0.9762,
+    "neighbour_angle_deg_mean": 0.844
+  },
+  "rings_test": {
+    "water_pixels": 34957,
+    "changed_over_8_in_water": 2494,
+    "changed_over_8_outside": 1787,
+    "mean_abs_dl_in_water": 2.509
+  },
+  "diagnosis_close": {
+    "base": {
+      "pixels": 571536,
+      "mean_lum": 0.2738,
+      "highlight_share": 0.0106,
+      "detail": 7.338
+    },
+    "Repeat": {
+      "mean_lum": 0.2738,
+      "highlight_share": 0.0106,
+      "detail": 7.282,
+      "mean_abs_diff": 0.577,
+      "diff_over_8_share": 0.0009
+    },
+    "SlideUV0": {
+      "mean_lum": 0.2738,
+      "highlight_share": 0.0107,
+      "detail": 7.358,
+      "mean_abs_diff": 0.545,
+      "diff_over_8_share": 0.0009
+    },
+    "FreshWet0": {
+      "mean_lum": 0.2738,
+      "highlight_share": 0.0107,
+      "detail": 7.355,
+      "mean_abs_diff": 0.614,
+      "diff_over_8_share": 0.001
+    },
+    "POM0": {
+      "mean_lum": 0.2762,
+      "highlight_share": 0.0122,
+      "detail": 7.351,
+      "mean_abs_diff": 10.088,
+      "diff_over_8_share": 0.3654
+    },
+    "DeformDetail0": {
+      "mean_lum": 0.2751,
+      "highlight_share": 0.0118,
+      "detail": 4.446,
+      "mean_abs_diff": 5.341,
+      "diff_over_8_share": 0.2168
+    },
+    "Repeat2": {
+      "mean_lum": 0.2739,
+      "highlight_share": 0.0105,
+      "detail": 7.225,
+      "mean_abs_diff": 0.726,
+      "diff_over_8_share": 0.0019
+    }
+  },
+  "rings_frame": {
+    "puddle": null,
+    "shot_kmh": null,
+    "counts_at_shot": null,
+    "reached": null,
+    "describe": null
+  },
+  "pool_layers": {
+    "Mottle0": {
+      "mean_abs_diff": 4.432,
+      "detail_ref": 6.875,
+      "detail_off": 6.279,
+      "lum_sd_ref": 38.397,
+      "lum_sd_off": 38.065
+    },
+    "Ruffle0": {
+      "mean_abs_diff": 14.477,
+      "detail_ref": 6.372,
+      "detail_off": 6.721,
+      "lum_sd_ref": 38.086,
+      "lum_sd_off": 32.873
+    },
+    "Froth0": {
+      "mean_abs_diff": 5.47,
+      "detail_ref": 6.378,
+      "detail_off": 2.21,
+      "lum_sd_ref": 37.83,
+      "lum_sd_off": 37.863
+    },
+    "Flecks0": {
+      "mean_abs_diff": 3.66,
+      "detail_ref": 6.202,
+      "detail_off": 6.283,
+      "lum_sd_ref": 37.775,
+      "lum_sd_off": 37.688
+    },
+    "Drift0": {
+      "mean_abs_diff": 7.421,
+      "detail_ref": 5.657,
+      "detail_off": 7.839,
+      "lum_sd_ref": 37.56,
+      "lum_sd_off": 37.539
+    },
+    "Ripple0": {
+      "mean_abs_diff": 4.166,
+      "detail_ref": 5.984,
+      "detail_off": 6.488,
+      "lum_sd_ref": 37.444,
+      "lum_sd_off": 37.54
+    },
+    "Motion0": {
+      "mean_abs_diff": 0.92,
+      "detail_ref": 9.303,
+      "detail_off": 8.235,
+      "lum_sd_ref": 32.944,
+      "lum_sd_off": 32.883
+    }
+  },
+  "rings": {
+    "drive": {
+      "wheels": 37,
+      "feet": 0,
+      "live": 0
+    },
+    "drive_end": {
+      "wheels": 37,
+      "feet": 0,
+      "live": 0
+    },
+    "drive_start": {
+      "wheels": 0,
+      "feet": 0,
+      "live": 0
+    },
+    "shot_kmh": 1.7,
+    "walk_start": null,
+    "walk_end": null,
+    "walk_skipped": null,
+    "drive_describe": "ticks 1708; wheel-ticks 6832: in contact 6573, in rut water 2025, over 1 cm 2021, moving 3248; fastest car 368 cm/s; walker ticks 0: in water 0, moving 0, deepest 0.0 cm; rings wheels 37 feet 0; system loaded, sources 4, components 4; switch 1",
+    "walk_describe": null
+  }
+}

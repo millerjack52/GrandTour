@@ -1,0 +1,57 @@
+{
+  "texture": "T_GT_WaterRings.png",
+  "size": 1024,
+  "cells": "2 x 2 (row 0 at the top)",
+  "channels": "R=G=B shade (0.5 neutral, over: crest, under: trough), A coverage",
+  "seed": 4127,
+  "cells_info": [
+    {
+      "cell": 0,
+      "column": 0,
+      "row": 0,
+      "inner_ring": false,
+      "coverage_mean": 0.0685,
+      "coverage_max": 1.0,
+      "shade_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "cell": 1,
+      "column": 1,
+      "row": 0,
+      "inner_ring": true,
+      "coverage_mean": 0.0993,
+      "coverage_max": 1.0,
+      "shade_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "cell": 2,
+      "column": 0,
+      "row": 1,
+      "inner_ring": false,
+      "coverage_mean": 0.0896,
+      "coverage_max": 1.0,
+      "shade_range": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "cell": 3,
+      "column": 1,
+      "row": 1,
+      "inner_ring": true,
+      "coverage_mean": 0.0763,
+      "coverage_max": 1.0,
+      "shade_range": [
+        0.0,
+        1.0
+      ]
+    }
+  ]
+}

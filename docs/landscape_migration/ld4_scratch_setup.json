@@ -1,0 +1,204 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Test/L_GTDressScratch",
+  "overwrite": false,
+  "steps": {
+    "level": {
+      "ok": true,
+      "value": {
+        "replaced_existing": false,
+        "actors_removed": 0,
+        "world": "L_GTDressScratch"
+      }
+    },
+    "spec": {
+      "ok": true,
+      "value": {
+        "asset": "/Game/GrandTour/Test/DA_Terrain_GTDressScratch",
+        "created": true,
+        "rules": [
+          [
+            "OW_Scree",
+            0.0,
+            0.1
+          ],
+          [
+            "OW_Alpine",
+            0.1,
+            0.22
+          ],
+          [
+            "Thicket",
+            0.22,
+            0.38
+          ],
+          [
+            "OW_ForestFir",
+            0.38,
+            0.52
+          ],
+          [
+            "OW_Forest",
+            0.52,
+            0.74
+          ],
+          [
+            "OW_MeadowLush",
+            0.74,
+            0.87
+          ]
+        ],
+        "fallback": "OW_Meadow",
+        "components_per_side": 3
+      }
+    },
+    "lighting": {
+      "ok": true,
+      "value": "sun, sky light, sky atmosphere, height fog"
+    },
+    "landscape": {
+      "ok": true,
+      "value": {
+        "label": "GTDRESS_Landscape",
+        "bounds_origin": [
+          0,
+          0,
+          311
+        ],
+        "bounds_size": [
+          37800,
+          37800,
+          1372
+        ],
+        "layer_infos": [
+          "OW_Scree",
+          "OW_Alpine",
+          "Thicket",
+          "OW_ForestFir",
+          "OW_Forest",
+          "OW_MeadowLush",
+          "OW_Meadow"
+        ]
+      }
+    },
+    "exclusion": {
+      "ok": true,
+      "value": {
+        "boxes": 77,
+        "box_components": 77,
+        "tags": [
+          "OWDressing.Exclude"
+        ]
+      }
+    },
+    "volumes": {
+      "ok": true,
+      "value": [
+        {
+          "label": "GTDRESS_PCG_Forest",
+          "tag": "GTBiome.Forest",
+          "graph": "PCG_GT_Forest",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            38000,
+            38000,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTDRESS_PCG_Meadow",
+          "tag": "GTBiome.Meadow",
+          "graph": "PCG_GT_Meadow",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            38000,
+            38000,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTDRESS_PCG_Scree",
+          "tag": "GTBiome.Scree",
+          "graph": "PCG_GT_Scree",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            38000,
+            38000,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTDRESS_PCG_Alpine",
+          "tag": "GTBiome.Alpine",
+          "graph": "PCG_GT_Alpine",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            38000,
+            38000,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTDRESS_PCG_Brush",
+          "tag": "GTBiome.Brush",
+          "graph": "PCG_GT_Brush",
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            38000,
+            38000,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        }
+      ]
+    },
+    "save": {
+      "ok": true,
+      "value": "saved"
+    },
+    "gate": {
+      "ok": true,
+      "value": {
+        "tagged_volumes": {
+          "Forest": 1,
+          "Meadow": 1,
+          "Scree": 1,
+          "Alpine": 1,
+          "Brush": 1
+        },
+        "landscapes": 1,
+        "exclusions": 1,
+        "actors_total": 11
+      }
+    }
+  }
+}

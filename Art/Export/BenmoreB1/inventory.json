@@ -1,0 +1,1507 @@
+{
+ "ok": true,
+ "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+ "read_only": true,
+ "landscapes": [
+  {
+   "label": "Benmore_Gaea_Terrain_2500m",
+   "cls": "Landscape",
+   "location": [
+    -125000.0,
+    -125000.0,
+    0.0
+   ],
+   "scale": [
+    124.0079345703125,
+    124.0079345703125,
+    200.0
+   ],
+   "landscape_material": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/M_GC_Terrain.M_GC_Terrain",
+   "default_phys_material": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/PM_Benmore_FirmGround.PM_Benmore_FirmGround",
+   "collision_mip_level": 0,
+   "simple_collision_mip_level": 0,
+   "component_size_quads": "ERR Landscape: Failed to find property 'component_size_quads' for attribute 'component_size_quads' on 'Landscape'",
+   "subsection_size_quads": "ERR Landscape: Failed to find property 'subsection_size_quads' for attribute 'subsection_size_quads' on 'Landscape'",
+   "num_subsections": "ERR Landscape: Failed to find property 'num_subsections' for attribute 'num_subsections' on 'Landscape'",
+   "use_dynamic_material_instance": true,
+   "b_use_dynamic_material_instance": "ERR Landscape: Failed to find property 'b_use_dynamic_material_instance' for attribute 'b_use_dynamic_material_instance' on 'Landscape'",
+   "target_layers": {
+    "Tarmac": {
+     "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Tarmac.LI_Tarmac",
+     "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Tarmac.PM_Tarmac",
+     "no_weight_blend": "ERR LandscapeLayerInfoObject: Failed to find property 'no_weight_blend' for attribute 'no_weight_blend' on 'LandscapeLayerInfoObject'"
+    },
+    "Dirt": {
+     "info": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/FirmGroundLayers/LI_Dirt.LI_Dirt",
+     "phys": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/PM_Benmore_FirmGround.PM_Benmore_FirmGround",
+     "no_weight_blend": "ERR LandscapeLayerInfoObject: Failed to find property 'no_weight_blend' for attribute 'no_weight_blend' on 'LandscapeLayerInfoObject'"
+    },
+    "Mud": {
+     "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Mud.LI_Mud",
+     "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Mud.PM_Mud",
+     "no_weight_blend": "ERR LandscapeLayerInfoObject: Failed to find property 'no_weight_blend' for attribute 'no_weight_blend' on 'LandscapeLayerInfoObject'"
+    },
+    "Snow": {
+     "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Snow.LI_Snow",
+     "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Snow.PM_Snow",
+     "no_weight_blend": "ERR LandscapeLayerInfoObject: Failed to find property 'no_weight_blend' for attribute 'no_weight_blend' on 'LandscapeLayerInfoObject'"
+    },
+    "Scrub": {
+     "info": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/FirmGroundLayers/LI_Scrub.LI_Scrub",
+     "phys": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/PM_Benmore_FirmGround.PM_Benmore_FirmGround",
+     "no_weight_blend": "ERR LandscapeLayerInfoObject: Failed to find property 'no_weight_blend' for attribute 'no_weight_blend' on 'LandscapeLayerInfoObject'"
+    },
+    "Bog": {
+     "info": "/Game/GrandTour/Demo/BenmoreFullSite/Layers/LI_Bog.LI_Bog",
+     "phys": "/Game/GrandTour/Terrain/Surfaces/PM_Bog.PM_Bog",
+     "no_weight_blend": "ERR LandscapeLayerInfoObject: Failed to find property 'no_weight_blend' for attribute 'no_weight_blend' on 'LandscapeLayerInfoObject'"
+    },
+    "__LANDSCAPE_VISIBILITY__": {
+     "info": null,
+     "phys": null,
+     "no_weight_blend": null
+    }
+   },
+   "components": 256,
+   "layer_weights_16x16": {
+    "Tarmac": {
+     "samples": 256,
+     "numeric": 0,
+     "mean": null,
+     "nonzero": 0,
+     "first_err": null
+    },
+    "Dirt": {
+     "samples": 256,
+     "numeric": 0,
+     "mean": null,
+     "nonzero": 0,
+     "first_err": null
+    },
+    "Mud": {
+     "samples": 256,
+     "numeric": 0,
+     "mean": null,
+     "nonzero": 0,
+     "first_err": null
+    },
+    "Snow": {
+     "samples": 256,
+     "numeric": 0,
+     "mean": null,
+     "nonzero": 0,
+     "first_err": null
+    },
+    "Scrub": {
+     "samples": 256,
+     "numeric": 0,
+     "mean": null,
+     "nonzero": 0,
+     "first_err": null
+    },
+    "Bog": {
+     "samples": 256,
+     "numeric": 0,
+     "mean": null,
+     "nonzero": 0,
+     "first_err": null
+    }
+   }
+  }
+ ],
+ "material": {
+  "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/M_GC_Terrain.M_GC_Terrain",
+  "cls": "Material",
+  "instance_chain": [],
+  "base": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/M_GC_Terrain.M_GC_Terrain",
+  "blend_mode": "<BlendMode.BLEND_MASKED: 1>",
+  "shading_model": "<MaterialShadingModel.MSM_DEFAULT_LIT: 1>",
+  "tangent_space_normal": true,
+  "two_sided": false,
+  "used_with_instanced_static_meshes": false,
+  "opacity_mask_clip_value": 0.5,
+  "collections": [
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/MPC_Benmore_GravelPOM.MPC_Benmore_GravelPOM",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.MPC_TrackPaint"
+  ],
+  "stats": {
+   "pixel": 1090,
+   "vertex": 148,
+   "samplers": 24,
+   "pixel_texture_samples": 19,
+   "vertex_texture_samples": 0,
+   "interpolator_scalars": 0
+  },
+  "roots": {
+   "MP_BASE_COLOR": [
+    "MaterialExpressionCustom_26",
+    "return"
+   ],
+   "MP_NORMAL": [
+    "MaterialExpressionCustom_26",
+    "Normal"
+   ],
+   "MP_ROUGHNESS": [
+    "MaterialExpressionCustom_26",
+    "Rough"
+   ],
+   "MP_AMBIENT_OCCLUSION": [
+    null,
+    ""
+   ],
+   "MP_OPACITY_MASK": [
+    "MaterialExpressionCustom_23",
+    ""
+   ],
+   "MP_SPECULAR": [
+    "MaterialExpressionConstant_1",
+    ""
+   ],
+   "MP_METALLIC": [
+    null,
+    ""
+   ],
+   "MP_EMISSIVE_COLOR": [
+    null,
+    ""
+   ]
+  },
+  "node_count": 101,
+  "node_kinds": {
+   "MaterialExpressionTextureSample": 22,
+   "MaterialExpressionWorldPosition": 9,
+   "MaterialExpressionCustom": 27,
+   "MaterialExpressionConstant": 3,
+   "MaterialExpressionVertexNormalWS": 4,
+   "MaterialExpressionLandscapeGrassOutput": 1,
+   "MaterialExpressionCameraVectorWS": 1,
+   "MaterialExpressionCameraPositionWS": 3,
+   "MaterialExpressionCollectionParameter": 5,
+   "MaterialExpressionTextureObject": 17,
+   "MaterialExpressionDDX": 1,
+   "MaterialExpressionDDY": 1,
+   "MaterialExpressionTransform": 2,
+   "MaterialExpressionMultiply": 5
+  },
+  "grass": [
+   {
+    "input": "LowGrass",
+    "grass_type": "/Game/GrandTour/Demo/BenmoreRoads/Painterly/LGT_Painterly_LowGrass.LGT_Painterly_LowGrass",
+    "source": "MaterialExpressionTextureSample_1",
+    "source_out": "ERR MaterialEditingLibrary: Failed to convert parameter 'input_node' when calling function 'MaterialEditingLibrary.GetInputNodeOutputNameForMaterialExpression' on '",
+    "source_tex": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation.T_RL_Vegetation",
+    "scalability": true,
+    "varieties": [
+     {
+      "affect_distance_field_lighting": false,
+      "align_to_surface": true,
+      "align_to_triangle_normals": true,
+      "allowed_density_range": [
+       0.0,
+       1.0
+      ],
+      "cast_contact_shadow": true,
+      "cast_dynamic_shadow": false,
+      "end_cull_distance": 11000,
+      "end_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD310B28) {default: 10000}>",
+      "grass_density": 350.0,
+      "grass_density_quality": "<Struct 'PerQualityLevelFloat' (0x00000215DD310970) {default: 400.000000}>",
+      "grass_mesh": "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Fine.SM_TS_Fine",
+      "keep_instance_buffer_cpu_copy": false,
+      "lighting_channels": "<Struct 'LightingChannels' (0x00000215DD310BDC) {channel0: True, channel1: False, channel2: False}>",
+      "max_scale_weight_attenuation": 0.5,
+      "min_lod": -1,
+      "override_materials": "[\"/Script/Engine.Material'/Game/GrandTour/Demo/BenmoreRoads/Painterly/M_Painterly_Tussock.M_Painterly_Tussock'\"]",
+      "placement_jitter": 1.0,
+      "random_rotation": true,
+      "receives_decals": false,
+      "scale_x": [
+       0.8500000238418579,
+       1.5
+      ],
+      "scale_y": [
+       0.8500000238418579,
+       1.5
+      ],
+      "scale_z": [
+       0.7225000262260437,
+       1.5
+      ],
+      "scaling": "<GrassScaling.LOCK_XY: 2>",
+      "shadow_cache_invalidation_behavior": "<ShadowCacheInvalidationBehavior.AUTO: 0>",
+      "start_cull_distance": 6500,
+      "start_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD310A50) {default: 10000}>",
+      "use_grid": false,
+      "use_landscape_lightmap": false,
+      "weight_attenuates_max_scale": false
+     }
+    ]
+   },
+   {
+    "input": "CrownTussock",
+    "grass_type": "/Game/GrandTour/Demo/BenmoreRoads/Painterly/LGT_Painterly_CrownTussock.LGT_Painterly_CrownTussock",
+    "source": "MaterialExpressionTextureSample_1",
+    "source_out": "ERR MaterialEditingLibrary: Failed to convert parameter 'input_node' when calling function 'MaterialEditingLibrary.GetInputNodeOutputNameForMaterialExpression' on '",
+    "source_tex": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation.T_RL_Vegetation",
+    "scalability": true,
+    "varieties": [
+     {
+      "affect_distance_field_lighting": false,
+      "align_to_surface": true,
+      "align_to_triangle_normals": true,
+      "allowed_density_range": [
+       0.0,
+       1.0
+      ],
+      "cast_contact_shadow": true,
+      "cast_dynamic_shadow": false,
+      "end_cull_distance": 32000,
+      "end_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD311A28) {default: 10000}>",
+      "grass_density": 70.0,
+      "grass_density_quality": "<Struct 'PerQualityLevelFloat' (0x00000215DD311870) {default: 400.000000}>",
+      "grass_mesh": "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Straw.SM_TS_Straw",
+      "keep_instance_buffer_cpu_copy": false,
+      "lighting_channels": "<Struct 'LightingChannels' (0x00000215DD311ADC) {channel0: True, channel1: False, channel2: False}>",
+      "max_scale_weight_attenuation": 0.5,
+      "min_lod": -1,
+      "override_materials": "[\"/Script/Engine.Material'/Game/GrandTour/Demo/BenmoreRoads/Painterly/M_Painterly_Tussock.M_Painterly_Tussock'\"]",
+      "placement_jitter": 1.0,
+      "random_rotation": true,
+      "receives_decals": false,
+      "scale_x": [
+       0.6499999761581421,
+       1.2000000476837158
+      ],
+      "scale_y": [
+       0.6499999761581421,
+       1.2000000476837158
+      ],
+      "scale_z": [
+       0.5525000095367432,
+       1.2000000476837158
+      ],
+      "scaling": "<GrassScaling.LOCK_XY: 2>",
+      "shadow_cache_invalidation_behavior": "<ShadowCacheInvalidationBehavior.AUTO: 0>",
+      "start_cull_distance": 18000,
+      "start_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD311950) {default: 10000}>",
+      "use_grid": false,
+      "use_landscape_lightmap": false,
+      "weight_attenuates_max_scale": false
+     }
+    ]
+   },
+   {
+    "input": "ShaggyTussock",
+    "grass_type": "/Game/GrandTour/Demo/BenmoreRoads/Painterly/LGT_Painterly_ShaggyTussock.LGT_Painterly_ShaggyTussock",
+    "source": "MaterialExpressionTextureSample_1",
+    "source_out": "ERR MaterialEditingLibrary: Failed to convert parameter 'input_node' when calling function 'MaterialEditingLibrary.GetInputNodeOutputNameForMaterialExpression' on '",
+    "source_tex": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation.T_RL_Vegetation",
+    "scalability": true,
+    "varieties": [
+     {
+      "affect_distance_field_lighting": false,
+      "align_to_surface": true,
+      "align_to_triangle_normals": true,
+      "allowed_density_range": [
+       0.0,
+       1.0
+      ],
+      "cast_contact_shadow": true,
+      "cast_dynamic_shadow": false,
+      "end_cull_distance": 38000,
+      "end_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD310228) {default: 10000}>",
+      "grass_density": 55.0,
+      "grass_density_quality": "<Struct 'PerQualityLevelFloat' (0x00000215DD310070) {default: 400.000000}>",
+      "grass_mesh": "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Rust.SM_TS_Rust",
+      "keep_instance_buffer_cpu_copy": false,
+      "lighting_channels": "<Struct 'LightingChannels' (0x00000215DD3102DC) {channel0: True, channel1: False, channel2: False}>",
+      "max_scale_weight_attenuation": 0.5,
+      "min_lod": -1,
+      "override_materials": "[\"/Script/Engine.Material'/Game/GrandTour/Demo/BenmoreRoads/Painterly/M_Painterly_Tussock.M_Painterly_Tussock'\"]",
+      "placement_jitter": 1.0,
+      "random_rotation": true,
+      "receives_decals": false,
+      "scale_x": [
+       0.699999988079071,
+       1.25
+      ],
+      "scale_y": [
+       0.699999988079071,
+       1.25
+      ],
+      "scale_z": [
+       0.5950000286102295,
+       1.25
+      ],
+      "scaling": "<GrassScaling.LOCK_XY: 2>",
+      "shadow_cache_invalidation_behavior": "<ShadowCacheInvalidationBehavior.AUTO: 0>",
+      "start_cull_distance": 21000,
+      "start_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD310150) {default: 10000}>",
+      "use_grid": false,
+      "use_landscape_lightmap": false,
+      "weight_attenuates_max_scale": false
+     }
+    ]
+   },
+   {
+    "input": "TallClumps",
+    "grass_type": "/Game/GrandTour/Demo/BenmoreRoads/Painterly/LGT_Painterly_TallClumps.LGT_Painterly_TallClumps",
+    "source": "MaterialExpressionTextureSample_1",
+    "source_out": "ERR MaterialEditingLibrary: Failed to convert parameter 'input_node' when calling function 'MaterialEditingLibrary.GetInputNodeOutputNameForMaterialExpression' on '",
+    "source_tex": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation.T_RL_Vegetation",
+    "scalability": true,
+    "varieties": [
+     {
+      "affect_distance_field_lighting": false,
+      "align_to_surface": true,
+      "align_to_triangle_normals": true,
+      "allowed_density_range": [
+       0.0,
+       1.0
+      ],
+      "cast_contact_shadow": true,
+      "cast_dynamic_shadow": false,
+      "end_cull_distance": 45000,
+      "end_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD313228) {default: 10000}>",
+      "grass_density": 35.0,
+      "grass_density_quality": "<Struct 'PerQualityLevelFloat' (0x00000215DD313070) {default: 400.000000}>",
+      "grass_mesh": "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Weathered.SM_TS_Weathered",
+      "keep_instance_buffer_cpu_copy": false,
+      "lighting_channels": "<Struct 'LightingChannels' (0x00000215DD3132DC) {channel0: True, channel1: False, channel2: False}>",
+      "max_scale_weight_attenuation": 0.5,
+      "min_lod": -1,
+      "override_materials": "[\"/Script/Engine.Material'/Game/GrandTour/Demo/BenmoreRoads/Painterly/M_Painterly_Tussock.M_Painterly_Tussock'\"]",
+      "placement_jitter": 1.0,
+      "random_rotation": true,
+      "receives_decals": false,
+      "scale_x": [
+       0.800000011920929,
+       1.399999976158142
+      ],
+      "scale_y": [
+       0.800000011920929,
+       1.399999976158142
+      ],
+      "scale_z": [
+       0.6800000071525574,
+       1.399999976158142
+      ],
+      "scaling": "<GrassScaling.LOCK_XY: 2>",
+      "shadow_cache_invalidation_behavior": "<ShadowCacheInvalidationBehavior.AUTO: 0>",
+      "start_cull_distance": 22000,
+      "start_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD313150) {default: 10000}>",
+      "use_grid": false,
+      "use_landscape_lightmap": false,
+      "weight_attenuates_max_scale": false
+     }
+    ]
+   },
+   {
+    "input": "DistantTussock",
+    "grass_type": "/Game/GrandTour/Demo/BenmoreRoads/Painterly/LGT_Painterly_DistantTussock.LGT_Painterly_DistantTussock",
+    "source": "MaterialExpressionTextureSample_1",
+    "source_out": "ERR MaterialEditingLibrary: Failed to convert parameter 'input_node' when calling function 'MaterialEditingLibrary.GetInputNodeOutputNameForMaterialExpression' on '",
+    "source_tex": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation.T_RL_Vegetation",
+    "scalability": true,
+    "varieties": [
+     {
+      "affect_distance_field_lighting": false,
+      "align_to_surface": true,
+      "align_to_triangle_normals": true,
+      "allowed_density_range": [
+       0.0,
+       1.0
+      ],
+      "cast_contact_shadow": true,
+      "cast_dynamic_shadow": false,
+      "end_cull_distance": 95000,
+      "end_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD310E28) {default: 10000}>",
+      "grass_density": 6.0,
+      "grass_density_quality": "<Struct 'PerQualityLevelFloat' (0x00000215DD310C70) {default: 400.000000}>",
+      "grass_mesh": "/Game/GrandTour/ArtTests/TussockStyle/SM_TS_Straw.SM_TS_Straw",
+      "keep_instance_buffer_cpu_copy": false,
+      "lighting_channels": "<Struct 'LightingChannels' (0x00000215DD310EDC) {channel0: True, channel1: False, channel2: False}>",
+      "max_scale_weight_attenuation": 0.5,
+      "min_lod": 2,
+      "override_materials": "[\"/Script/Engine.Material'/Game/GrandTour/Demo/BenmoreRoads/Painterly/M_Painterly_Tussock.M_Painterly_Tussock'\"]",
+      "placement_jitter": 1.0,
+      "random_rotation": true,
+      "receives_decals": false,
+      "scale_x": [
+       0.8999999761581421,
+       1.5
+      ],
+      "scale_y": [
+       0.8999999761581421,
+       1.5
+      ],
+      "scale_z": [
+       0.7649999856948853,
+       1.5
+      ],
+      "scaling": "<GrassScaling.LOCK_XY: 2>",
+      "shadow_cache_invalidation_behavior": "<ShadowCacheInvalidationBehavior.AUTO: 0>",
+      "start_cull_distance": 65000,
+      "start_cull_distance_quality": "<Struct 'PerQualityLevelInt' (0x00000215DD310D50) {default: 10000}>",
+      "use_grid": false,
+      "use_landscape_lightmap": false,
+      "weight_attenuates_max_scale": false
+     }
+    ]
+   }
+  ],
+  "textures": [
+   "/Game/ANGRY_MESH/StylizedPack_MeadowEnvironment/Textures/Landscape/T_Landscape_Cliffs_01_A.T_Landscape_Cliffs_01_A",
+   "/Game/ANGRY_MESH/StylizedPack_MeadowEnvironment/Textures/Landscape/T_Landscape_DryGrass_01_A.T_Landscape_DryGrass_01_A",
+   "/Game/ANGRY_MESH/StylizedPack_MeadowEnvironment/Textures/Landscape/T_Landscape_Grass_01_N.T_Landscape_Grass_01_N",
+   "/Game/ANGRY_MESH/StylizedPack_MeadowEnvironment/Textures/Rocks/T_RockDetail_01_N.T_RockDetail_01_N",
+   "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactColor.T_GR_CompactColor",
+   "/Game/GrandTour/ArtTests/GravelRoad/T_GR_CompactNormal.T_GR_CompactNormal",
+   "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseColor.T_GR_LooseColor",
+   "/Game/GrandTour/ArtTests/GravelRoad/T_GR_LooseNormal.T_GR_LooseNormal",
+   "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayColor.T_MS_ClayColor",
+   "/Game/GrandTour/ArtTests/MudStyle/T_MS_ClayNormal.T_MS_ClayNormal",
+   "/Game/GrandTour/Demo/BenmoreRoads/Composition/T_Benmore_CompositionZones.T_Benmore_CompositionZones",
+   "/Game/GrandTour/Demo/BenmoreRoads/Environment/T_Benmore_Landform.T_Benmore_Landform",
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_RiverColor.T_CP_RiverColor",
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_RiverNormal.T_CP_RiverNormal",
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_RiverRough.T_CP_RiverRough",
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation.T_RL_Vegetation",
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/T_GC_ExtendedBedZones.T_GC_ExtendedBedZones",
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/T_RL_Ecology.T_RL_Ecology",
+   "/Game/GrandTour/Demo/BenmoreRoads/Hills/T_Benmore_HillNormal.T_Benmore_HillNormal",
+   "/Game/GrandTour/Demo/BenmoreRoads/Hills/T_Benmore_HillStructure.T_Benmore_HillStructure",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_FineGravel.T_Benmore_FineGravel",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_FineGravelH.T_Benmore_FineGravelH",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_FineGravelN.T_Benmore_FineGravelN",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_LooseGravel.T_Benmore_LooseGravel",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_LooseGravelH.T_Benmore_LooseGravelH",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_LooseGravelN.T_Benmore_LooseGravelN",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_RoadCoordinates.T_Benmore_RoadCoordinates",
+   "/Game/GrandTour/Demo/BenmoreRoads/ReferenceVistas/T_Benmore_FineHillNormal.T_Benmore_FineHillNormal",
+   "/Game/GrandTour/Demo/BenmoreRoads/T_Benmore_RoadMask.T_Benmore_RoadMask",
+   "/Game/GrandTour/Textures/Stylised/T_GT_Grass_D.T_GT_Grass_D",
+   "/Game/GrandTour/Textures/Stylised/T_GT_Grass_N.T_GT_Grass_N"
+  ]
+ },
+ "strip_collections": {
+  "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape": [
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.MPC_TrackPaint"
+  ],
+  "/Game/GrandTour/ArtTests/LiveMudDrive/M_LiveLandscape": [
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.MPC_TrackPaint"
+  ],
+  "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape": [
+   "/Game/GrandTour/Materials/MPC_Weather.MPC_Weather",
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.MPC_TrackPaint"
+  ],
+  "/Game/GrandTour/Materials/M_GT_Landscape": [
+   "/Game/GrandTour/Terrain/MPC_TrackPaint.MPC_TrackPaint"
+  ]
+ },
+ "actor_classes": {
+  "WorldSettings": 1,
+  "Brush": 1,
+  "Landscape": 1,
+  "DirectionalLight": 1,
+  "SkyLight": 1,
+  "SkyAtmosphere": 1,
+  "PostProcessVolume": 2,
+  "Actor": 44,
+  "PlayerStart": 1,
+  "CameraActor": 12,
+  "StaticMeshActor": 257,
+  "ExponentialHeightFog": 1,
+  "VolumetricCloud": 1,
+  "GTTerrainBuilder": 1,
+  "GTWaterSheet": 1,
+  "BP_Ferrari288_C": 1,
+  "BP_E39Touring_C": 1,
+  "BP_KadettA_C": 1,
+  "BP_SJ413_C": 1,
+  "BP_GraphicAdventure_C": 1,
+  "GTCarPawn": 1,
+  "BP_Panda1990_Fleet_C": 1,
+  "BP_Prado_Fleet_C": 1,
+  "BP_CraftedUtility_Fleet_C": 1,
+  "BP_Pathfinder2002_Fleet_C": 1,
+  "BP_Impreza2003_Fleet_C": 1,
+  "BP_LandCruiser80_Fleet_C": 1,
+  "BuoyancyManager": 1,
+  "DefaultPhysicsVolume": 1,
+  "GameplayDebuggerPlayerManager": 1,
+  "AbstractNavData": 1
+ },
+ "cameras": [
+  {
+   "label": "Benmore_RouteOverview",
+   "loc": [
+    -155000.0,
+    -205000.0,
+    155000.0
+   ],
+   "rot": [
+    2.3721725028735818e-07,
+    -33.18121337890625,
+    55.954063415527344
+   ]
+  },
+  {
+   "label": "Benmore_River_Camera_Close",
+   "loc": [
+    -73084.32988594606,
+    24614.199113366987,
+    1709.4782964043357
+   ],
+   "rot": [
+    -0.0,
+    -0.5762083530426025,
+    -5.764017105102539
+   ]
+  },
+  {
+   "label": "Benmore_River_Camera_Reach",
+   "loc": [
+    -61000.0,
+    31000.0,
+    5250.724999999999
+   ],
+   "rot": [
+    -0.0,
+    -19.0,
+    -155.0
+   ]
+  },
+  {
+   "label": "Benmore_Gaea_Camera_Creek_Close",
+   "loc": [
+    -69140.4761904762,
+    20153.37301587301,
+    1814.6175384521484
+   ],
+   "rot": [
+    1.8306988636140886e-07,
+    -11.206073760986328,
+    121.60750579833984
+   ]
+  },
+  {
+   "label": "Benmore_Gaea_Camera_Creek_Reach",
+   "loc": [
+    -32802.579365079364,
+    36274.80158730159,
+    10614.420318603516
+   ],
+   "rot": [
+    4.895803726867598e-07,
+    -27.91477394104004,
+    135.0
+   ]
+  },
+  {
+   "label": "Benmore_Gaea_Camera_Long_Vista",
+   "loc": [
+    75000.0,
+    50000.0,
+    18769.249572753906
+   ],
+   "rot": [
+    -1.4043627061255393e-07,
+    -5.964329242706299,
+    -174.4724578857422
+   ]
+  },
+  {
+   "label": "Benmore_RL_Camera_Ford",
+   "loc": [
+    -67100.0,
+    20800.0,
+    1896.86
+   ],
+   "rot": [
+    1.9215836744024273e-07,
+    -11.27540397644043,
+    126.8698959350586
+   ]
+  },
+  {
+   "label": "Benmore_RL_Camera_Footbridge",
+   "loc": [
+    -39425.0,
+    42375.0,
+    5296.2474999999995
+   ],
+   "rot": [
+    1.54147343778277e-07,
+    -8.897430419921875,
+    128.65980529785156
+   ]
+  },
+  {
+   "label": "Benmore_RL_Camera_River_Reach",
+   "loc": [
+    -55625.0,
+    11250.0,
+    6375.1125
+   ],
+   "rot": [
+    2.02768518420271e-07,
+    -15.208380699157715,
+    99.78240966796875
+   ]
+  },
+  {
+   "label": "Benmore_RL_Camera_Long_Vista",
+   "loc": [
+    75000.0,
+    50000.0,
+    18769.249572753906
+   ],
+   "rot": [
+    -1.4043627061255393e-07,
+    -5.964329242706299,
+    -174.4724578857422
+   ]
+  },
+  {
+   "label": "CameraActor",
+   "loc": [
+    -122000.0,
+    -6500.0,
+    1300.0
+   ],
+   "rot": [
+    1.7213309888575168e-07,
+    -9.474058151245117,
+    135.0
+   ]
+  },
+  {
+   "label": "Benmore_Fleet_Overview",
+   "loc": [
+    -76084.0982405122,
+    -41138.79755679829,
+    3219.0844535827637
+   ],
+   "rot": [
+    5.842562700308918e-07,
+    -27.100582122802734,
+    165.5638427734375
+   ]
+  }
+ ],
+ "road_actors": [
+  {
+   "label": "Benmore_Roadside_ArtSample",
+   "cls": "Actor",
+   "instances": 594,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_RouteOverview",
+   "cls": "CameraActor",
+   "instances": 0,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_ReferenceRoadAggregate",
+   "cls": "Actor",
+   "instances": 5704,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_RoadVergeDetail",
+   "cls": "Actor",
+   "instances": 52104,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_RL_tree_SM_Willow_Broad",
+   "cls": "Actor",
+   "instances": 8,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_RL_gravel_SM_GR_Stone1",
+   "cls": "Actor",
+   "instances": 350,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_RL_gravel_SM_GR_Stone2",
+   "cls": "Actor",
+   "instances": 350,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_RL_gravel_SM_GR_Stone3",
+   "cls": "Actor",
+   "instances": 350,
+   "splines": 0
+  },
+  {
+   "label": "Benmore_RL_gravel_SM_GR_Stone4",
+   "cls": "Actor",
+   "instances": 350,
+   "splines": 0
+  }
+ ],
+ "terrain_builders": [
+  {
+   "label": "Benmore_RL_CrossingProfiles",
+   "spec_asset": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/DA_GC_CrossingProfiles.DA_GC_CrossingProfiles",
+   "sections": 2,
+   "section_rows": [
+    "ERR GTRouteSection: Failed to find property 'name' for attribute 'name' on 'GTRouteSection'",
+    "ERR GTRouteSection: Failed to find property 'name' for attribute 'name' on 'GTRouteSection'"
+   ]
+  }
+ ],
+ "sky": [
+  "Sun",
+  "Sky",
+  "SkyAtmosphere",
+  "Benmore_DistanceHaze"
+ ],
+ "textures": [
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_BedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_RiverColor",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": true,
+   "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_RiverNormal",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_RiverRough",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelPilot/T_CP_Shore",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_CP_BedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_CP_Shore",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_CS_HeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_RL_Ecology",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_RL_Vegetation",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_RL_WaterMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_RS_DomainFlow",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ChannelShape/T_RS_DomainMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_CP_BedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_CP_Shore",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_GC_ExtendedBedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_GC_HeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_RL_Ecology",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_RL_Mouth",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_RL_Vegetation",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_RL_WaterMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_RS_DomainFlow",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/CourseRevision/T_RS_DomainMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_CP_BedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_CP_Shore",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_GC_HeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_RL_Ecology",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_RL_Vegetation",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_RL_WaterMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_RS_DomainFlow",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/GaeaCreek/T_RS_DomainMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_CP_BedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_CP_Shore",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_GC_ExtendedBedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_GC_HeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Ecology",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Mouth",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_WaterMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RS_DomainFlow",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RS_DomainMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverLife/T_RL_Ecology",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverLife/T_RL_Flow",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverLife/T_RL_HeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverLife/T_RL_Mouth",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverLife/T_RL_Vegetation",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverLife/T_RL_WaterMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverScale/T_RS_DomainFlow",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/RiverScale/T_RS_DomainMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/T_GC_ExtendedBedZones",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/T_RL_Ecology",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/ShoreRefinement/T_SR_Shore",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/T_Gaea_Banks",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/T_Gaea_Flow",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/T_Gaea_HeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/T_Gaea_VegetationMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_FineGravel",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": true,
+   "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_FineGravelH",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_FineGravelN",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_LooseGravel",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": true,
+   "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_LooseGravelH",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_LooseGravelN",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_RoadCoordinates",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_RoadReliefRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/T_Benmore_VergeHeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/T_Benmore_RoadHeightRG",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  },
+  {
+   "path": "/Game/GrandTour/Demo/BenmoreRoads/T_Benmore_RoadMask",
+   "size": [
+    32,
+    32
+   ],
+   "srgb": false,
+   "compression": "<TextureCompressionSettings.TC_VECTOR_DISPLACEMENTMAP: 5>"
+  }
+ ],
+ "surfaces": {
+  "/Game/GrandTour/Terrain/Surfaces/PM_Dirt": {
+   "friction": 0.6200000047683716,
+   "static_friction": 0.0,
+   "restitution": 0.30000001192092896,
+   "surface_type": "<PhysicalSurface.SURFACE_TYPE_DEFAULT: 0>",
+   "wet_friction_scale": 0.800000011920929,
+   "wet_rolling_resistance_scale": 1.600000023841858,
+   "wet_sinkage_scale": 3.0,
+   "rolling_resistance": 0.029999999329447746,
+   "sinkage_rate": 0.009999999776482582,
+   "max_sinkage": 0.05000000074505806,
+   "sinkage_drag_scale": 1.0,
+   "plough_drag": 0.019999999552965164,
+   "sinkage_grip_loss": 0.10000000149011612,
+   "track_depth": 0.30000001192092896,
+   "tag": "<Struct 'GameplayTag' (0x00000215B29BD3B0) {}>"
+  },
+  "/Game/GrandTour/Terrain/Surfaces/PM_Mud": {
+   "friction": 0.41999998688697815,
+   "static_friction": 0.0,
+   "restitution": 0.30000001192092896,
+   "surface_type": "<PhysicalSurface.SURFACE_TYPE_DEFAULT: 0>",
+   "wet_friction_scale": 0.949999988079071,
+   "wet_rolling_resistance_scale": 1.2000000476837158,
+   "wet_sinkage_scale": 1.2999999523162842,
+   "rolling_resistance": 0.05999999865889549,
+   "sinkage_rate": 0.07999999821186066,
+   "max_sinkage": 0.2199999988079071,
+   "sinkage_drag_scale": 1.0,
+   "plough_drag": 0.25,
+   "sinkage_grip_loss": 0.30000001192092896,
+   "track_depth": 1.0,
+   "tag": "<Struct 'GameplayTag' (0x00000215B29BD4B0) {}>"
+  },
+  "/Game/GrandTour/Terrain/Surfaces/PM_Bog": {
+   "friction": 0.36000001430511475,
+   "static_friction": 0.0,
+   "restitution": 0.30000001192092896,
+   "surface_type": "<PhysicalSurface.SURFACE_TYPE_DEFAULT: 0>",
+   "wet_friction_scale": 0.949999988079071,
+   "wet_rolling_resistance_scale": 1.2000000476837158,
+   "wet_sinkage_scale": 1.2999999523162842,
+   "rolling_resistance": 0.03999999910593033,
+   "sinkage_rate": 0.14000000059604645,
+   "max_sinkage": 0.4000000059604645,
+   "sinkage_drag_scale": 0.800000011920929,
+   "plough_drag": 0.44999998807907104,
+   "sinkage_grip_loss": 0.25,
+   "track_depth": 1.0,
+   "tag": "<Struct 'GameplayTag' (0x00000215C65EDEB0) {}>"
+  },
+  "/Game/GrandTour/Terrain/Surfaces/PM_Tarmac": {
+   "friction": 0.949999988079071,
+   "static_friction": 0.0,
+   "restitution": 0.30000001192092896,
+   "surface_type": "<PhysicalSurface.SURFACE_TYPE_DEFAULT: 0>",
+   "wet_friction_scale": 0.75,
+   "wet_rolling_resistance_scale": 1.0,
+   "wet_sinkage_scale": 1.0,
+   "rolling_resistance": 0.012000000104308128,
+   "sinkage_rate": 0.0,
+   "max_sinkage": 0.0,
+   "sinkage_drag_scale": 0.0,
+   "plough_drag": 0.0,
+   "sinkage_grip_loss": 0.0,
+   "track_depth": 0.0,
+   "tag": "<Struct 'GameplayTag' (0x00000215B29BE3B0) {}>"
+  },
+  "/Game/GrandTour/Demo/BenmoreRoads/Gaea/PM_Benmore_FirmGround": {
+   "friction": 0.6200000047683716,
+   "static_friction": 0.0,
+   "restitution": 0.30000001192092896,
+   "surface_type": "<PhysicalSurface.SURFACE_TYPE_DEFAULT: 0>",
+   "wet_friction_scale": 0.800000011920929,
+   "wet_rolling_resistance_scale": 1.600000023841858,
+   "wet_sinkage_scale": 3.0,
+   "rolling_resistance": 0.029999999329447746,
+   "sinkage_rate": 0.0,
+   "max_sinkage": 0.05000000074505806,
+   "sinkage_drag_scale": 1.0,
+   "plough_drag": 0.019999999552965164,
+   "sinkage_grip_loss": 0.10000000149011612,
+   "track_depth": 0.30000001192092896,
+   "tag": "<Struct 'GameplayTag' (0x000002161692C5B0) {}>"
+  }
+ },
+ "mpcs": {
+  "/Game/GrandTour/Terrain/MPC_TrackPaint": {
+   "scalars": [
+    "TrackDepthCm",
+    "PatchCount",
+    "PatchVariant0",
+    "PatchVariant1",
+    "PatchVariant2",
+    "PatchVariant3",
+    "MudCover",
+    "GrassMud",
+    "MudPBR",
+    "MudPOM",
+    "MudPOMShadow",
+    "GravelPOM",
+    "GravelDebug",
+    "GroundDetail",
+    "MudDeformDetail",
+    "MudWaterMotion"
+   ],
+   "vectors": [
+    "TrackOrigin",
+    "Patch0",
+    "Patch1",
+    "Patch2",
+    "Patch3"
+   ]
+  },
+  "/Game/GrandTour/Materials/MPC_Weather": {
+   "scalars": [
+    "Wetness",
+    "RainIntensity",
+    "SnowAmount",
+    "WindStrength",
+    "Temperature",
+    "OcclusionEnabled"
+   ],
+   "vectors": [
+    "WindDirection",
+    "OcclusionBounds"
+   ]
+  },
+  "/Game/GrandTour/Demo/BenmoreRoads/ReferenceSurface/MPC_Benmore_GravelPOM": {
+   "scalars": [
+    "Enabled"
+   ],
+   "vectors": []
+  }
+ }
+}

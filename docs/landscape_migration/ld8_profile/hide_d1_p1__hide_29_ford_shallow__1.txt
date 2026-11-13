@@ -1,0 +1,224 @@
+# hide_d1_p1  hide_29_ford_shallow  dressing 1  res 1280x720  sp 0.0  gpu 86, 0x0000000000000020, 1695 MHz
+# dressing ISMs 248: None=573 Soft.Brush=110290 Soft.Sapling=8211 Soft.Young=2051 Solid=9370; landscape grass 77340 instances to render on 57 components (77340 on visible ones), grass.Enable 1
+# frame 18.047 ms (graphics), async compute 12.330 ms
+<root>                                                                   18.067 ms  draws 556  dispatches 436  prims 1121751
+   Frame 12059                                                              18.047 ms  draws 556  dispatches 436  prims 1121751
+      WorldTick                                                                 0.042 ms  draws 0  dispatches 0  prims 0
+      SceneRender - ViewFamilies                                               17.933 ms  draws 556  dispatches 436  prims 1121751
+         RenderGraphExecute - /ViewFamilies                                       17.824 ms  draws 556  dispatches 431  prims 1121751
+            FRDGBuilder::SubmitBufferUploads                                          0.046 ms  draws 0  dispatches 0  prims 0
+            UpdateAllPrimitiveSceneInfos                                              0.014 ms  draws 0  dispatches 6  prims 0
+            "DistanceFields"                                                          0.092 ms  draws 0  dispatches 4  prims 0
+               UpdateDistanceFieldObjectBuffers                                          0.016 ms  draws 0  dispatches 2  prims 0
+                  ScatterUpload (Resource: DistanceFields.DFObjectBounds)                   0.012 ms  draws 0  dispatches 1  prims 0
+               UpdateDistanceFieldAtlas                                                  0.073 ms  draws 0  dispatches 2  prims 0
+                  ComputeWantedMips                                                         0.042 ms  draws 0  dispatches 1  prims 0
+                  DistanceFieldAssetReadback                                                0.020 ms  draws 0  dispatches 0  prims 0
+            Nanite::Streaming                                                         0.087 ms  draws 0  dispatches 1  prims 0
+               Nanite::Readback                                                          0.086 ms  draws 0  dispatches 1  prims 0
+                  Readback                                                                  0.075 ms  draws 0  dispatches 0  prims 0
+            Scene                                                                    17.496 ms  draws 556  dispatches 418  prims 1121751
+               GPUSceneUpdate                                                            0.021 ms  draws 0  dispatches 3  prims 0
+                  GPUScene.UploadDynamicPrimitiveShaderDataForView                          0.015 ms  draws 0  dispatches 3  prims 0
+               ScatterUpload (Resource: SceneCulling.CellBlockData)                      0.012 ms  draws 0  dispatches 1  prims 0
+               BuildRenderingCommandsDeferred(Culling=On)                                0.027 ms  draws 0  dispatches 3  prims 0
+                  CullInstances(Generic). Bin 1                                             0.013 ms  draws 0  dispatches 1  prims 0
+               PrePass DDM_AllOpaqueNoVelocity (Forced by Nanite)                        0.062 ms  draws 56  dispatches 0  prims 608
+                  DepthPassParallel                                                         0.057 ms  draws 56  dispatches 0  prims 608
+                     ParallelDraw (Index: 0, Num: 2)                                           0.011 ms  draws 28  dispatches 0  prims 608
+                     ParallelDraw (Index: 1, Num: 2)                                           0.013 ms  draws 28  dispatches 0  prims 0
+               RenderVelocities(Opaque)                                                  0.360 ms  draws 65  dispatches 0  prims 444022
+                  VelocityParallel                                                          0.354 ms  draws 65  dispatches 0  prims 444022
+                     ParallelDraw (Index: 0, Num: 2)                                           0.241 ms  draws 33  dispatches 0  prims 226246
+                     ParallelDraw (Index: 1, Num: 2)                                           0.078 ms  draws 32  dispatches 0  prims 217776
+               Nanite::VisBuffer                                                         0.028 ms  draws 0  dispatches 1  prims 0
+                  Nanite::InitContext                                                       0.026 ms  draws 0  dispatches 1  prims 0
+                     RasterClear                                                               0.025 ms  draws 0  dispatches 1  prims 0
+               Nanite::VisBuffer                                                         1.131 ms  draws 48  dispatches 94  prims 0
+                  Nanite::DrawGeometry                                                      1.129 ms  draws 48  dispatches 94  prims 0
+                     MainPass                                                                  0.850 ms  draws 24  dispatches 44  prims 0
+                     BuildPreviousOccluderHZB                                                  0.037 ms  draws 0  dispatches 3  prims 0
+                     PostPass                                                                  0.215 ms  draws 24  dispatches 44  prims 0
+               NaniteBasePass                                                            0.123 ms  draws 2  dispatches 0  prims 2
+                  Nanite::EmitDepthTargets                                                  0.121 ms  draws 2  dispatches 0  prims 2
+                     Emit Scene Depth/Resolve/Velocity                                         0.097 ms  draws 1  dispatches 0  prims 1
+                     Emit Scene Stencil                                                        0.019 ms  draws 1  dispatches 0  prims 1
+               HZB                                                                       0.021 ms  draws 71  dispatches 0  prims 1296
+                  BeginOcclusionTests                                                       0.021 ms  draws 71  dispatches 0  prims 1296
+                     BeginOcclusionTests                                                       0.021 ms  draws 71  dispatches 0  prims 1296
+               HZB                                                                       0.046 ms  draws 0  dispatches 5  prims 0
+                  BuildHZB(ViewId=0)                                                        0.046 ms  draws 0  dispatches 5  prims 0
+                     BuildHZB                                                                  0.045 ms  draws 0  dispatches 5  prims 0
+               ComputeLightGrid                                                          0.025 ms  draws 0  dispatches 2  prims 0
+                  CullLights 20x12x32 NumLights 0 NumCaptures 0                             0.023 ms  draws 0  dispatches 2  prims 0
+                     LightGridInject LinkedList  UseHZBCull  SingleThread                      0.010 ms  draws 0  dispatches 1  prims 0
+               SkyAtmosphereLUTs                                                         0.073 ms  draws 0  dispatches 4  prims 0
+                  SkyAtmosphere::RealTimeCaptureSkyViewLut                                  0.018 ms  draws 0  dispatches 1  prims 0
+                     RealTimeCaptureSkyViewLut                                                 0.017 ms  draws 0  dispatches 1  prims 0
+                  SkyAtmosphere::SkyViewLut                                                 0.017 ms  draws 0  dispatches 1  prims 0
+                     SkyViewLut                                                                0.016 ms  draws 0  dispatches 1  prims 0
+                  SkyAtmosphere::CameraVolumeLut                                            0.030 ms  draws 0  dispatches 1  prims 0
+                     CameraVolumeLut                                                           0.028 ms  draws 0  dispatches 1  prims 0
+               CaptureConvolveSkyEnvMap                                                  0.026 ms  draws 0  dispatches 1  prims 0
+                  ConvolutionMip1                                                           0.025 ms  draws 0  dispatches 1  prims 0
+                     Convolve                                                                  0.022 ms  draws 0  dispatches 1  prims 0
+               LumenSceneUpdate: 37 card captures 0.002M texels                          0.206 ms  draws 17  dispatches 37  prims 666
+                  Nanite::RasterizeLumenCards                                               0.108 ms  draws 8  dispatches 25  prims 0
+                     Nanite::DrawGeometry                                                      0.107 ms  draws 8  dispatches 25  prims 0
+                  Nanite::LumenMeshCapturePass                                              0.023 ms  draws 2  dispatches 8  prims 148
+                     LumenShadeCS                                                              0.017 ms  draws 0  dispatches 8  prims 0
+                  CopyCardsToSurfaceCache                                                   0.047 ms  draws 5  dispatches 0  prims 370
+                     CompressToSurfaceCache Emissive                                           0.014 ms  draws 1  dispatches 0  prims 74
+                     CopyCardCaptureLightingToAtlas                                            0.018 ms  draws 1  dispatches 0  prims 74
+               RayTracingDynamicGeometry                                                 0.156 ms  draws 0  dispatches 32  prims 0
+                  RayTracingDynamicUpdate                                                   0.047 ms  draws 0  dispatches 32  prims 0
+                     RayTracingDynamicGeometryUpdate                                           0.044 ms  draws 0  dispatches 32  prims 0
+                  RayTracingDynamicUpdateBuild                                              0.106 ms  draws 0  dispatches 0  prims 0
+                     Build                                                                     0.106 ms  draws 0  dispatches 0  prims 0
+               RayTracingScene                                                           0.703 ms  draws 0  dispatches 2  prims 0
+                  RayTracingBuildInstanceBuffer                                             0.097 ms  draws 0  dispatches 2  prims 0
+                  RayTracingBuildScene                                                      0.567 ms  draws 0  dispatches 0  prims 0
+               SetRayTracingBindingsInline                                               0.014 ms  draws 0  dispatches 0  prims 0
+               LumenScreenProbeGather                                                    0.056 ms  draws 2  dispatches 1  prims 114652
+                  TranslucentSurfacesMarkPass                                               0.047 ms  draws 2  dispatches 0  prims 114652
+               BasePass                                                                  2.219 ms  draws 122  dispatches 32  prims 444630
+                  BasePassParallel                                                          1.864 ms  draws 122  dispatches 0  prims 444630
+                     ParallelDraw (Index: 0, Num: 3)                                           0.656 ms  draws 41  dispatches 0  prims 274974
+                     ParallelDraw (Index: 1, Num: 3)                                           0.128 ms  draws 41  dispatches 0  prims 160360
+                     ParallelDraw (Index: 2, Num: 3)                                           0.032 ms  draws 40  dispatches 0  prims 9296
+                  NaniteBasePass                                                            0.324 ms  draws 0  dispatches 32  prims 0
+                     Nanite::BasePass                                                          0.324 ms  draws 0  dispatches 32  prims 0
+                  EditorPrimitives                                                          0.016 ms  draws 0  dispatches 0  prims 0
+                     EditorPrimitives: SDPG_World                                              0.013 ms  draws 0  dispatches 0  prims 0
+               StochasticLighting                                                        0.209 ms  draws 0  dispatches 1  prims 0
+                  TileClassificationMark                                                    0.206 ms  draws 0  dispatches 1  prims 0
+               GPUScene.UploadDynamicPrimitiveShaderDataForView                          0.041 ms  draws 0  dispatches 3  prims 0
+                  GPUScene::SetInstancePrimitiveIdCS                                        0.021 ms  draws 0  dispatches 1  prims 0
+                  UpdateGPUScene NumPrimitiveDataUploads 1                                  0.017 ms  draws 0  dispatches 2  prims 0
+                     ScatterUpload (Resource: GPUScene.InstanceSceneData)                      0.015 ms  draws 0  dispatches 1  prims 0
+               VirtualShadowMapMarkPages                                                 0.190 ms  draws 0  dispatches 9  prims 0
+                  FVirtualShadowMapArray::BeginMarkPages                                    0.187 ms  draws 0  dispatches 9  prims 0
+                     ClearPageTableDir(Shadow.Virtual.PageReceiverMasks Size=4608x384 texel    0.047 ms  draws 0  dispatches 1  prims 0
+                     GeneratePageFlagsFromPixels(Substrate,NumShadowMaps=17,{80,45})           0.083 ms  draws 0  dispatches 1  prims 0
+               ShadowDepths                                                              4.908 ms  draws 154  dispatches 126  prims 0
+                  BuildRenderingCommandsDeferred(Culling=On)                                0.031 ms  draws 0  dispatches 2  prims 0
+                     CullInstances(UnCulled). Bin 0                                            0.011 ms  draws 0  dispatches 1  prims 0
+                  FVirtualShadowMapArray::BuildPageAllocation                               0.612 ms  draws 0  dispatches 13  prims 0
+                     UpdatePhysicalPages                                                       0.011 ms  draws 0  dispatches 1  prims 0
+                     PackAvailablePages                                                        0.010 ms  draws 0  dispatches 1  prims 0
+                     AllocateNewPageMappings                                                   0.012 ms  draws 0  dispatches 1  prims 0
+                     PropagateMappedMips                                                       0.016 ms  draws 0  dispatches 1  prims 0
+                     InitializePhysicalPages                                                   0.528 ms  draws 0  dispatches 2  prims 0
+                  RenderVirtualShadowMaps(Nanite)                                           2.346 ms  draws 48  dispatches 102  prims 0
+                     CompactViewsVSM                                                           0.021 ms  draws 0  dispatches 1  prims 0
+                     Nanite::DrawGeometry                                                      2.300 ms  draws 48  dispatches 97  prims 0
+                  RenderVirtualShadowMaps(Non-Nanite)                                       1.899 ms  draws 106  dispatches 5  prims 0
+                     Batched                                                                   1.899 ms  draws 106  dispatches 5  prims 0
+               RenderDeferredLighting                                                    2.781 ms  draws 10  dispatches 25  prims 258
+                  DiffuseIndirectAndAO                                                      0.207 ms  draws 0  dispatches 14  prims 0
+                     LumenReflections                                                          0.206 ms  draws 0  dispatches 14  prims 0
+                  Lights                                                                    2.140 ms  draws 8  dispatches 8  prims 2
+                     DirectLighting                                                            2.140 ms  draws 8  dispatches 8  prims 2
+                  TranslucencyLightingVolume                                                0.431 ms  draws 2  dispatches 2  prims 256
+                     InjectTranslucencyLightingVolume(View=0)                                  0.109 ms  draws 2  dispatches 0  prims 256
+                     FilterTranslucentVolume 64x64x64 Cascades:2                               0.322 ms  draws 0  dispatches 2  prims 0
+               RenderDeferredLighting                                                    0.170 ms  draws 2  dispatches 0  prims 0
+                  DiffuseIndirectAndAO                                                      0.170 ms  draws 2  dispatches 0  prims 0
+                     DiffuseIndirectComposite(ScreenProbeGather)(Single) 1280x720              0.058 ms  draws 1  dispatches 0  prims 0
+                     DiffuseIndirectComposite(ScreenProbeGather)(Simple) 1280x720              0.111 ms  draws 1  dispatches 0  prims 0
+               TemporalSuperResolution                                                   0.038 ms  draws 0  dispatches 1  prims 0
+                  TSR MeasureFlickeringLuma 1280x720                                        0.038 ms  draws 0  dispatches 1  prims 0
+               SkyAtmosphere                                                             0.150 ms  draws 1  dispatches 0  prims 1
+                                                                          0.150 ms  draws 1  dispatches 0  prims 1
+               ExponentialHeightFog                                                      0.061 ms  draws 1  dispatches 0  prims 2
+                  Fog                                                                       0.061 ms  draws 1  dispatches 0  prims 2
+               PostRenderOpsFX                                                           0.016 ms  draws 0  dispatches 0  prims 0
+               Translucency                                                              0.771 ms  draws 3  dispatches 0  prims 115612
+                  RenderTranslucency                                                        0.768 ms  draws 3  dispatches 0  prims 115612
+                     Translucency(BeforeDistortion Parallel) 1280x720                          0.084 ms  draws 1  dispatches 0  prims 960
+                     Translucency(AfterDOF Parallel) 1280x720                                  0.673 ms  draws 2  dispatches 0  prims 114652
+               PostProcessing                                                            2.441 ms  draws 2  dispatches 16  prims 2
+                  PostProcessMaterial 1280x720 Material=M_GT_PostLook                       0.118 ms  draws 1  dispatches 0  prims 1
+                     M_GT_PostLook                                                             0.118 ms  draws 1  dispatches 0  prims 1
+                  TemporalSuperResolution(sg.AntiAliasingQuality=3) 1280x720 -> 1280x720    2.100 ms  draws 0  dispatches 4  prims 0
+                     TSR RejectShading(#49 TileSize=26 PaddingCostMultiplier=1.5 WaveSize=3    1.172 ms  draws 0  dispatches 1  prims 0
+                     TSR SpatialAntiAliasing(#2 Quality=2) 1280x720                            0.024 ms  draws 0  dispatches 1  prims 0
+                     TSR UpdateHistory(#3 Quality=Epic R11G11B10 ReprojectionField SupportL    0.807 ms  draws 0  dispatches 1  prims 0
+                     TSR ResolveHistory(#0 WaveSize=32 OutputMip1) 1280x720                    0.096 ms  draws 0  dispatches 1  prims 0
+                  MotionBlur                                                                0.121 ms  draws 0  dispatches 8  prims 0
+                     Velocity Flatten(CameraMotionBlurOn) 1280x720                             0.072 ms  draws 0  dispatches 1  prims 0
+                     MotionBlur FullResFilter(BlurDirections=1 MaxSamples=16 OutputMip1) 12    0.028 ms  draws 0  dispatches 4  prims 0
+                  Histogram                                                                 0.024 ms  draws 0  dispatches 3  prims 0
+                     Histogram Atomic 640x360 (CS)                                             0.015 ms  draws 0  dispatches 1  prims 0
+                  EnqueueCopy(EyeAdaptationBuffer)                                          0.019 ms  draws 0  dispatches 0  prims 0
+                  Tonemap 1280x720 (PS GammaOnly=0)                                         0.049 ms  draws 1  dispatches 0  prims 1
+               VirtualTextureUpdate                                                      0.057 ms  draws 0  dispatches 3  prims 0
+                  VirtualTextureFeedbackCopy                                                0.016 ms  draws 0  dispatches 0  prims 0
+               Submit Lumen surface cache feedback                                       0.031 ms  draws 0  dispatches 3  prims 0
+                  Readback                                                                  0.012 ms  draws 0  dispatches 0  prims 0
+               FRayTracingScene::StatsReadback                                           0.013 ms  draws 0  dispatches 0  prims 0
+            EnqueueCopy(GPUMessageManager.MessageBuffer)                              0.035 ms  draws 0  dispatches 0  prims 0
+      RenderGraphExecute - Slate                                                0.017 ms  draws 0  dispatches 0  prims 0
+# async compute pipeline (overlaps the graphics one)
+<root>                                                                   12.330 ms  draws 0  dispatches 95  prims 0
+   Frame 12059                                                              12.327 ms  draws 0  dispatches 95  prims 0
+      SceneRender - ViewFamilies                                               12.327 ms  draws 0  dispatches 95  prims 0
+         RenderGraphExecute - /ViewFamilies                                       12.324 ms  draws 0  dispatches 95  prims 0
+            Scene                                                                    12.322 ms  draws 0  dispatches 95  prims 0
+               PrepareImageBasedVRS                                                      0.054 ms  draws 0  dispatches 2  prims 0
+                  ContrastAdaptiveShading                                                   0.050 ms  draws 0  dispatches 2  prims 0
+                     CreateShadingRateImage                                                    0.031 ms  draws 0  dispatches 1  prims 0
+                     ReprojectShadingRateImage                                                 0.018 ms  draws 0  dispatches 1  prims 0
+               LumenSceneLighting                                                        3.201 ms  draws 0  dispatches 25  prims 0
+                  BuildCardUpdateContext                                                    0.045 ms  draws 0  dispatches 5  prims 0
+                     BuildPageUpdatePriorityHistogram                                          0.019 ms  draws 0  dispatches 1  prims 0
+                     Build cards update list                                                   0.013 ms  draws 0  dispatches 1  prims 0
+                  DirectLighting                                                            1.299 ms  draws 0  dispatches 13  prims 0
+                     CullTiles 1 lights                                                        0.316 ms  draws 0  dispatches 7  prims 0
+                     Light Attenuation ShadowMask                                              0.092 ms  draws 0  dispatches 1  prims 0
+                     Offscreen shadows                                                         0.657 ms  draws 0  dispatches 2  prims 0
+                     Lights                                                                    0.186 ms  draws 0  dispatches 1  prims 0
+                     CombineLighting CS                                                        0.036 ms  draws 0  dispatches 1  prims 0
+                  Radiosity                                                                 1.857 ms  draws 0  dispatches 7  prims 0
+                     ClearBuffer(Lumen.CardTileAllocator Size=4bytes)                          0.013 ms  draws 0  dispatches 0  prims 0
+                     BuildRadiosityTiles                                                       1.037 ms  draws 0  dispatches 1  prims 0
+                     IndirectArgs                                                              0.013 ms  draws 0  dispatches 1  prims 0
+                     HardwareRayTracingCS <indirect> 4x4 probes at 4 spacing                   0.599 ms  draws 0  dispatches 1  prims 0
+                     SpatialFilterProbes                                                       0.062 ms  draws 0  dispatches 1  prims 0
+                     ConvertToSH                                                               0.014 ms  draws 0  dispatches 1  prims 0
+                     Integrate                                                                 0.093 ms  draws 0  dispatches 1  prims 0
+                     CombineLighting CS                                                        0.017 ms  draws 0  dispatches 1  prims 0
+               DiffuseIndirectAndAO                                                      7.833 ms  draws 0  dispatches 65  prims 0
+                  LumenScreenProbeGather                                                    7.122 ms  draws 0  dispatches 60  prims 0
+                     UniformPlacement DownsampleFactor=16                                      0.016 ms  draws 0  dispatches 1  prims 0
+                     AdaptivePlacementMark 4x2                                                 0.026 ms  draws 0  dispatches 1  prims 0
+                     AdaptivePlacementSpawn                                                    0.011 ms  draws 0  dispatches 1  prims 0
+                     ScreenProbeGatherScreenData                                               0.126 ms  draws 0  dispatches 1  prims 0
+                     UpdateWorldRadianceCaches                                                 0.796 ms  draws 0  dispatches 26  prims 0
+                     ComputeLightingPDF                                                        0.099 ms  draws 0  dispatches 1  prims 0
+                     GenerateRays 8x8                                                          0.147 ms  draws 0  dispatches 1  prims 0
+                     TraceScreen(Scene)                                                        0.365 ms  draws 0  dispatches 1  prims 0
+                     CompactTraces WaveOps:1                                                   0.040 ms  draws 0  dispatches 1  prims 0
+                     HardwareRayTracingCS default                                              0.985 ms  draws 0  dispatches 1  prims 0
+                     CompactTraces WaveOps:1                                                   0.024 ms  draws 0  dispatches 1  prims 0
+                     TraceGlobalSDFAndApplyRadianceCache                                       0.123 ms  draws 0  dispatches 1  prims 0
+                     CompositeTraces                                                           0.024 ms  draws 0  dispatches 1  prims 0
+                     CalculateMoving                                                           0.013 ms  draws 0  dispatches 1  prims 0
+                     FilterRadianceWithGather                                                  0.051 ms  draws 0  dispatches 1  prims 0
+                     FilterRadianceWithGather                                                  0.047 ms  draws 0  dispatches 1  prims 0
+                     FilterRadianceWithGather                                                  0.044 ms  draws 0  dispatches 1  prims 0
+                     ScreenProbeConvertToIrradiance Format:0 WaveOpWaveSize:32 AO:0            0.078 ms  draws 0  dispatches 1  prims 0
+                     ShortRangeAO_ScreenSpace_HorizonSearch(Rays=2, Steps=3, DownsampleFact    1.908 ms  draws 0  dispatches 1  prims 0
+                     Integrate                                                                 1.554 ms  draws 0  dispatches 6  prims 0
+                     TemporalReprojection(1280x720)                                            0.596 ms  draws 0  dispatches 1  prims 0
+                  TranslucencyVolumeLighting                                                0.707 ms  draws 0  dispatches 5  prims 0
+                     HardwareRayTracing (inline) 3120x69                                       0.509 ms  draws 0  dispatches 1  prims 0
+                     SpatialFilter                                                             0.080 ms  draws 0  dispatches 1  prims 0
+                     SpatialFilter                                                             0.064 ms  draws 0  dispatches 1  prims 0
+                     SpatialFilter                                                             0.035 ms  draws 0  dispatches 1  prims 0
+                     Integrate 40x23x26                                                        0.015 ms  draws 0  dispatches 1  prims 0
+               PostProcessing                                                            1.213 ms  draws 0  dispatches 3  prims 0
+                  TemporalSuperResolution(sg.AntiAliasingQuality=3) 1280x720 -> 1280x720    1.206 ms  draws 0  dispatches 3  prims 0
+                     TSR ClearPrevTextures 1280x720                                            0.137 ms  draws 0  dispatches 1  prims 0
+                     TSR DilateVelocity(#0 MotionBlurDirections=0 ReprojectionField OutputI    0.250 ms  draws 0  dispatches 1  prims 0
+                     TSR DecimateHistory(#3 ReprojectMoire ReprojectResurrection) 1280x720     0.816 ms  draws 0  dispatches 1  prims 0

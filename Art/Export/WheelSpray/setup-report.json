@@ -1,0 +1,259 @@
+{
+  "ok": true,
+  "textures": {
+    "T_GT_SprayMud": {
+      "asset": "/Game/GrandTour/FX/Textures/T_GT_SprayMud.T_GT_SprayMud",
+      "size": [
+        1024,
+        1024
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    },
+    "T_GT_SprayGrit": {
+      "asset": "/Game/GrandTour/FX/Textures/T_GT_SprayGrit.T_GT_SprayGrit",
+      "size": [
+        1024,
+        1024
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>"
+    },
+    "T_GT_SprayDust": {
+      "asset": "/Game/GrandTour/FX/Textures/T_GT_SprayDust.T_GT_SprayDust",
+      "size": [
+        1024,
+        1024
+      ],
+      "srgb": false,
+      "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>"
+    }
+  },
+  "clumps": [
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_0.SM_GT_SprayClump_0",
+      "family": "blob",
+      "triangles": 276,
+      "size_cm": [
+        1.6,
+        1.31,
+        1.18
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_1.SM_GT_SprayClump_1",
+      "family": "string",
+      "triangles": 276,
+      "size_cm": [
+        1.9,
+        0.68,
+        0.55
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_2.SM_GT_SprayClump_2",
+      "family": "blob",
+      "triangles": 276,
+      "size_cm": [
+        1.99,
+        2.2,
+        1.16
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_3.SM_GT_SprayClump_3",
+      "family": "flake",
+      "triangles": 276,
+      "size_cm": [
+        2.6,
+        2.0,
+        0.82
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_4.SM_GT_SprayClump_4",
+      "family": "string",
+      "triangles": 276,
+      "size_cm": [
+        3.1,
+        1.16,
+        0.89
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_5.SM_GT_SprayClump_5",
+      "family": "blob",
+      "triangles": 276,
+      "size_cm": [
+        3.8,
+        2.92,
+        1.64
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_6.SM_GT_SprayClump_6",
+      "family": "string",
+      "triangles": 276,
+      "size_cm": [
+        4.7,
+        1.34,
+        0.85
+      ]
+    },
+    {
+      "asset": "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_7.SM_GT_SprayClump_7",
+      "family": "flake",
+      "triangles": 276,
+      "size_cm": [
+        6.0,
+        5.31,
+        2.07
+      ]
+    }
+  ],
+  "clump_material": {
+    "material": "/Game/GrandTour/Materials/M_GT_SprayClump.M_GT_SprayClump",
+    "scalars": {
+      "ClodScaleCm": 25.0,
+      "RoughDry": 0.85,
+      "RoughWet": 0.45,
+      "WetDarken": 0.25,
+      "TintRange": 0.12,
+      "FreshDarken": 0.2,
+      "FreshRough": 0.5
+    },
+    "slice": "PerInstanceCustomData 0 (0 Standard)",
+    "arrays": [
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+      "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal"
+    ],
+    "meshes": [
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_0",
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_1",
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_2",
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_3",
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_4",
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_5",
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_6",
+      "/Game/GrandTour/FX/Clumps/SM_GT_SprayClump_7"
+    ],
+    "compile_errors": [],
+    "fresh": "1 (wet)",
+    "rand": "PerInstanceRandom"
+  },
+  "muddy_splash": {
+    "material": "/Game/GrandTour/Materials/M_GT_WaterSpray.M_GT_WaterSpray",
+    "already": true
+  },
+  "dust_light": {
+    "collection": "/Game/GrandTour/FX/MPC_GT_Spray.MPC_GT_Spray",
+    "DustLit": 0.7,
+    "DustFloor": 1.4,
+    "DustFloorDisplay": 2.5
+  },
+  "sprite_materials": {
+    "paths": {
+      "M_GT_SprayMud": "/Game/GrandTour/FX/M_GT_SprayMud.M_GT_SprayMud",
+      "M_GT_SprayGrit": "/Game/GrandTour/FX/M_GT_SprayGrit.M_GT_SprayGrit",
+      "M_GT_SprayDust": "/Game/GrandTour/FX/M_GT_SprayDust.M_GT_SprayDust"
+    },
+    "compile_errors": {
+      "M_GT_SprayMud": [],
+      "M_GT_SprayGrit": [],
+      "M_GT_SprayDust": []
+    }
+  },
+  "niagara_log": [
+    "  MudDroplets.SpawnRate.SpawnRate -> User.MudRate",
+    "  MudDroplets.InitializeParticle.Lifetime Mode = Random (switch)",
+    "  MudDroplets.InitializeParticle.Lifetime Min set (NiagaraFloat)",
+    "  MudDroplets.InitializeParticle.Lifetime Max set (NiagaraFloat)",
+    "  MudDroplets.InitializeParticle.Write Material Random set (NiagaraBool)",
+    "  MudDroplets.InitializeParticle.Material Random = rand(1.0f)",
+    "  MudDroplets.InitializeParticle.Sprite Size Mode = Uniform (switch)",
+    "  MudDroplets.InitializeParticle.Uniform Sprite Size = User.SizeScale * (2.0f + 6.0f * pow(rand(1.0f), 2.5f))",
+    "  MudDroplets.InitializeParticle.Sprite Rotation Mode = Random (switch)",
+    "  MudDroplets.ShapeLocation.Shape Primitive = Sphere (switch)",
+    "  MudDroplets.ShapeLocation.Sphere Radius set (NiagaraFloat)",
+    "  MudDroplets.AddVelocity.Velocity Mode = In Cone (switch)",
+    "  MudDroplets.AddVelocity.Rotation Mode = None (switch)",
+    "  MudDroplets.AddVelocity.Cone Axis = normalize(User.BaseVelocity + float3(0.0f, 0.0f, 0.001f))",
+    "  MudDroplets.AddVelocity.Cone Angle set (NiagaraFloat)",
+    "  MudDroplets.AddVelocity.Velocity Speed = length(User.BaseVelocity) * (0.6f + 0.8f * rand(1.0f))",
+    "  MudDroplets.GravityForce.Gravity set (Vector3f)",
+    "  MudDroplets.Drag.Use Linear Drag set (NiagaraBool)",
+    "  MudDroplets.Drag.Drag set (NiagaraFloat)",
+    "emitter MudDroplets set",
+    "  MudDroplets.AddVelocity.Cone Axis = normalize(normalize((User.BaseVelocity * float3(1.0f, 1.0f, 1.3f)) + float3(0.0f, 0.0f, 0.001f)) + 0.268f * 0.577f * ((float3(frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 12.9898f + User.ClumpSeed * 78.233f) * 43758.5453f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 39.3468f + User.ClumpSeed * 11.135f) * 24634.6345f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 73.156f + User.ClumpSeed * 52.235f) * 96321.854f)) * 2.0f - 1.0f) - dot((float3(frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 12.9898f + User.ClumpSeed * 78.233f) * 43758.5453f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 39.3468f + User.ClumpSeed * 11.135f) * 24634.6345f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 73.156f + User.ClumpSeed * 52.235f) * 96321.854f)) * 2.0f - 1.0f), normalize((User.BaseVelocity * float3(1.0f, 1.0f, 1.3f)) + float3(0.0f, 0.0f, 0.001f))) * normalize((User.BaseVelocity * float3(1.0f, 1.0f, 1.3f)) + float3(0.0f, 0.0f, 0.001f))))",
+    "  MudDroplets.AddVelocity.Cone Angle set (NiagaraFloat)",
+    "  MudDroplets.AddVelocity.Velocity Speed = min(length((User.BaseVelocity * float3(1.0f, 1.0f, 1.3f))) * (0.8f + 0.4f * frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 27.619f + User.ClumpSeed * 63.761f) * 51729.38f)) * (0.92f + 0.16f * rand(1.0f)), 700.0f / max((normalize(normalize((User.BaseVelocity * float3(1.0f, 1.0f, 1.3f)) + float3(0.0f, 0.0f, 0.001f)) + 0.268f * 0.577f * ((float3(frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 12.9898f + User.ClumpSeed * 78.233f) * 43758.5453f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 39.3468f + User.ClumpSeed * 11.135f) * 24634.6345f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 73.156f + User.ClumpSeed * 52.235f) * 96321.854f)) * 2.0f - 1.0f) - dot((float3(frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 12.9898f + User.ClumpSeed * 78.233f) * 43758.5453f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 39.3468f + User.ClumpSeed * 11.135f) * 24634.6345f), frac(sin(floor(Emitter.Age * max(User.MudRate, 1.0f) * 0.1f) * 73.156f + User.ClumpSeed * 52.235f) * 96321.854f)) * 2.0f - 1.0f), normalize((User.BaseVelocity * float3(1.0f, 1.0f, 1.3f)) + float3(0.0f, 0.0f, 0.001f))) * normalize((User.BaseVelocity * float3(1.0f, 1.0f, 1.3f)) + float3(0.0f, 0.0f, 0.001f))))).z, 0.05f))",
+    "  GravelGrit.SpawnRate.SpawnRate -> User.GritRate",
+    "  GravelGrit.InitializeParticle.Lifetime Mode = Random (switch)",
+    "  GravelGrit.InitializeParticle.Lifetime Min set (NiagaraFloat)",
+    "  GravelGrit.InitializeParticle.Lifetime Max set (NiagaraFloat)",
+    "  GravelGrit.InitializeParticle.Write Material Random set (NiagaraBool)",
+    "  GravelGrit.InitializeParticle.Material Random = rand(1.0f)",
+    "  GravelGrit.InitializeParticle.Sprite Size Mode = Uniform (switch)",
+    "  GravelGrit.InitializeParticle.Uniform Sprite Size = User.SizeScale * (User.GritSizeMin + User.GritSizeSpan * pow(rand(1.0f), 2.5f))",
+    "  GravelGrit.InitializeParticle.Sprite Rotation Mode = Random (switch)",
+    "  GravelGrit.ShapeLocation.Shape Primitive = Sphere (switch)",
+    "  GravelGrit.ShapeLocation.Sphere Radius set (NiagaraFloat)",
+    "  GravelGrit.AddVelocity.Velocity Mode = In Cone (switch)",
+    "  GravelGrit.AddVelocity.Rotation Mode = None (switch)",
+    "  GravelGrit.AddVelocity.Cone Axis = normalize(User.BaseVelocity + float3(0.0f, 0.0f, 0.001f))",
+    "  GravelGrit.AddVelocity.Cone Angle set (NiagaraFloat)",
+    "  GravelGrit.AddVelocity.Velocity Speed = length(User.BaseVelocity) * (0.6f + 0.8f * rand(1.0f))",
+    "  GravelGrit.GravityForce.Gravity set (Vector3f)",
+    "  GravelGrit.Drag.Use Linear Drag set (NiagaraBool)",
+    "  GravelGrit.Drag.Drag set (NiagaraFloat)",
+    "emitter GravelGrit set",
+    "  GravelDust.SpawnRate.SpawnRate -> User.DustRate",
+    "  GravelDust.InitializeParticle.Lifetime Mode = Random (switch)",
+    "  GravelDust.InitializeParticle.Lifetime Min set (NiagaraFloat)",
+    "  GravelDust.InitializeParticle.Lifetime Max set (NiagaraFloat)",
+    "  GravelDust.InitializeParticle.Write Material Random set (NiagaraBool)",
+    "  GravelDust.InitializeParticle.Material Random = rand(1.0f)",
+    "  GravelDust.InitializeParticle.Sprite Size Mode = Uniform (switch)",
+    "  GravelDust.InitializeParticle.Uniform Sprite Size = User.SizeScale * (60.0f + 140.0f * pow(rand(1.0f), 2.0f))",
+    "  GravelDust.InitializeParticle.Sprite Rotation Mode = Random (switch)",
+    "  GravelDust.ShapeLocation.Shape Primitive = Sphere (switch)",
+    "  GravelDust.ShapeLocation.Sphere Radius set (NiagaraFloat)",
+    "  GravelDust.AddVelocity.Velocity Mode = In Cone (switch)",
+    "  GravelDust.AddVelocity.Rotation Mode = None (switch)",
+    "  GravelDust.AddVelocity.Cone Axis = normalize(User.BaseVelocity + float3(0.0f, 0.0f, 0.001f))",
+    "  GravelDust.AddVelocity.Cone Angle set (NiagaraFloat)",
+    "  GravelDust.AddVelocity.Velocity Speed = length(User.BaseVelocity) * 0.25f * (0.6f + 0.8f * rand(1.0f))",
+    "  GravelDust.GravityForce.Gravity set (Vector3f)",
+    "  GravelDust.Drag.Use Linear Drag set (NiagaraBool)",
+    "  GravelDust.Drag.Drag set (NiagaraFloat)",
+    "emitter GravelDust set",
+    "  MudDroplets.InitializeParticle.Color Mode = Direct Set (switch)",
+    "  MudDroplets.InitializeParticle.Color -> User.MudTint",
+    "  GravelDust.InitializeParticle.Color Mode = Direct Set (switch)",
+    "  GravelDust.InitializeParticle.Color -> User.DustTint",
+    "  GravelGrit.InitializeParticle.Color Mode = Random Range (switch)",
+    "  GravelGrit.InitializeParticle.Color Channel Mode = Link RGBA (switch)",
+    "  GravelGrit.InitializeParticle.Color Minimum -> User.GritTintA",
+    "  GravelGrit.InitializeParticle.Color Maximum -> User.GritTintB",
+    "module Collision added to MudDroplets.ParticleUpdateScript",
+    "  MudDroplets.Collision.GPU Collision Type = GPU Depth Buffer (switch)",
+    "  MudDroplets.Collision.Kill Occluded Particles set (NiagaraBool)",
+    "  MudDroplets.Collision.Kill Offscreen Particles set (NiagaraBool)",
+    "  MudDroplets.Collision.Restitution set (NiagaraFloat)",
+    "  MudDroplets.Collision.KillOnCollision set (NiagaraBool)",
+    "  MudDroplets.Collision.Kill On Collision set (NiagaraInt32)",
+    "module Collision added to GravelGrit.ParticleUpdateScript",
+    "  GravelGrit.Collision.GPU Collision Type = GPU Depth Buffer (switch)",
+    "  GravelGrit.Collision.Kill Occluded Particles set (NiagaraBool)",
+    "  GravelGrit.Collision.Kill Offscreen Particles set (NiagaraBool)",
+    "  GravelGrit.Collision.Restitution set (NiagaraFloat)",
+    "  GravelGrit.Collision.KillOnCollision set (NiagaraBool)",
+    "  GravelGrit.Collision.Kill On Collision set (NiagaraInt32)",
+    "module ScaleSpriteSize added to GravelDust.ParticleUpdateScript",
+    "  GravelDust.ScaleSpriteSize.Scale Sprite Size Mode = Uniform (switch)",
+    "  GravelDust.ScaleSpriteSize.Uniform Scale Factor = 1.0f + 1.5f * Particles.NormalizedAge",
+    "compiled: valid 1 ready 1 errors 0 warnings 0",
+    "BUILD OK"
+  ],
+  "niagara_saved": true
+}

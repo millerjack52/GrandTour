@@ -1,0 +1,144 @@
+FLIPPEDNORMALS / PROJECT INVENTORY — 12 November 2026
+==================================================
+Checked local extracted files under D:/GrandTourAssets/FlippedNormals,
+Saved/LidarAuthoringQA/AssetIntake intake/audit records, and current scene manifests.
+Eleven supplied downloads are present. File counts include previews and variants;
+they must not be quoted as unique game-ready assets.
+
+PACK                                  CURRENT USE / BEST NEXT USE
+Flora Paint Assets Library v1.3 PRO    Existing conversion pipeline. Main-library
+                                      audit: 647 asset-marked mesh/curve objects.
+                                      Broaden selected grasses, shrubs, small
+                                      plants, moss, litter and wetland margins.
+Flora Paint Bonus Project Files       Three source scenes. Image-2 forest source
+                                      supplied the current 95-mesh conversion,
+                                      including seven tree meshes. Use source
+                                      scenes to judge composition/materials.
+Flora Paint GeoScatter Biomes         .scatpack + PDF present. Not imported into
+                                      Unreal. Candidate reference for grouped
+                                      plant distribution; needs inspection and
+                                      translation to our placement rules.
+Lazy Forest Gen v2.0.5                Three ground colour/normal pairs in use.
+                                      Catalog also contains deadwood, branches,
+                                      leaves, bushes, trees, rocks and small plants.
+                                      Prioritize ground-to-tree transitions.
+Rock Master Tools PRO                Models in small/medium/large categories,
+                                      procedural tools and rock shaders present.
+                                      Five source meshes converted for a demo
+                                      trial: twenty bank/outcrop placements,
+                                      three LODs, baked colour/normal/roughness.
+                                      Rendered trial and driving checks pass;
+                                      whole-map visual approval remains pending.
+Trees Assets Library v1.0 +           Library and v1.1.1 helper addon present.
+Trees Library Addon v1.1.1            Additional silhouettes and wood materials.
+                                      Audit selected candidates before export;
+                                      do not assume supplied animation is an
+                                      Unreal-ready wind implementation.
+Stylized Forest Generator             Addon and GrassPaint asset pack extracted.
+                                      Alternative shapes for later trials;
+                                      assess against Flora Paint before mixing.
+Cloud Paint v2.0.0                    Three creator assets rendered to eight
+                                      distant cards in FloraDrive. Expand sky
+                                      silhouettes/time-of-day source renders.
+                                      Current cards have fixed daylight shading.
+Lazy Cloud v2.0.1                     Source library and addon present, unused
+                                      in the current demo. Compare as an
+                                      alternative sky-authoring route.
+Sample File 4.4                       Standalone .blend present; purpose and
+                                      suitability not yet audited. No claimed use.
+
+Priority for the current project
+-------------------------------
+1. Align the mud presentation/conditions with the intended LiDAR baseline.
+2. Rock Master outcrops/banks plus small rocks that share their colour/material.
+3. Flora Paint + Lazy Forest grouped ground cover, litter, roots/deadwood where
+   actually available. Avoid uniform species, spacing or continuous fern carpets.
+4. Curated additional tree silhouettes with LOD, masked-overdraw and shadow checks.
+5. Sky variations after the ground/canopy composition is coherent.
+Use a small representative road-and-bank section before broad map application.
+
+Transfer boundaries
+-------------------
+These are Blender source libraries/tools, not native Unreal plugins. Evaluate
+geometry, bake procedural materials where needed, retain source textures,
+then validate Unreal lighting, opacity, normals, wind, LOD and collision.
+Cloud Paint's creator documentation specifies Eevee; the current Unreal sky is
+our rendered-card adaptation, not the source procedural cloud shader.
+GeoScatter layouts are not assumed to run directly in Unreal.
+
+Original saved-map mud comparison (before the current transfer)
+-------------------------------------------------------------
+FloraDrive inherits MudRoad's demo setup, not the LiDAR configuration.
+Both use GTLandscapeSurface with wheel support, soil shear response, rut
+interaction and native mud shader updates enabled. The core system is shared.
+
+Confirmed differences:
+* Ground/tread materials: FloraDrive M_FloraSoil/M_FloraTread; LiDAR
+  CohesiveStyle/M_EvergreenDetail and M_Tread. Both ground shaders are Default
+  Lit, but the LiDAR tread is Unlit while FloraDrive tread is Default Lit.
+  FloraDrive adds purchased ground textures, reconstructed POM height,
+  authored road-mask colour/roughness and the newly shaped rest-height bed.
+* Soil character: different paint/rest maps and road authoring. The four
+  established LiDAR gravel roads have firm_gravel=true and mud_depth_cm=0.
+  Its saved logging mud track has base mud_depth_cm=5 (conditions can override
+  local values). FloraDrive is a deliberately yielding, rutted test route.
+* Grass handling: grass_is_visual_cover=false in FloraDrive, true in LiDAR.
+  In the shared code, grass cover can reduce settlement and cutting when
+  false; it does not provide that reinforcement when true. This can change
+  driving response in grassy areas even if the visible texture is similar.
+* Presentation scale: FloraDrive has a fixed visual grid on a 63 m paint
+  domain; LiDAR follows the player across a 3.7 km paint domain. Those paint
+  extents/resolutions are authoring data, not a direct physics-grid comparison.
+* Tyre presentation: FloraDrive explicitly assigns M_ProvingTyre; LiDAR has
+  no surface-level tyre coating override. This is not itself a grip setting.
+* Water integration: FloraDrive's native visual actor binds water/sediment
+  update materials. The equivalent LiDAR actor has these slots empty and
+  extend_water_response_to_domain=true on its surface. LiDAR has its own
+  water integration; empty slots here do not imply all LiDAR water is absent.
+
+Conclusion: appearance differs and some response settings differ. This audit
+does not quantify a matched driving/traction delta. Before map integration,
+pick a representative LiDAR mud section and compare identical vehicle/input,
+soil condition and lighting, then carry over the chosen visual improvements
+while preserving the intended LiDAR gameplay settings.
+
+Sources / audit evidence
+------------------------
+Saved/LidarAuthoringQA/AssetIntake/intake.json
+Saved/LidarAuthoringQA/AssetIntake/flora-audit.json
+Saved/LidarAuthoringQA/AssetIntake/flora-lidar-mud-comparison.json
+Art/Export/LidarStudy/FloraPath/scene-manifest.json
+Art/Export/FloraDrive/build-report.json
+https://flippednormals.com/products/the-blender-nature-vfx-flipbox
+https://superhivemarket.com/products/cloud-paint/docs
+
+Current isolated transfer / 13 November 2026 UTC
+------------------------------------------------
+The FloraDrive build now uses local copies of LiDAR mud/tread materials and
+its exported response settings, retaining the demo rest heights and close POM.
+Source-map hashes are unchanged. Five Rock Master assets are in the demo.
+Build and static invariants pass. The first rendered check could not begin:
+Unreal ran out of video memory while Wardogs was also running (local budget
+941 MB; allocation about 2762 MB). Driving, appearance and performance of this
+new trial remain unverified until a successful rendered check/capture.
+See docs/FLORA_LIDAR_MUD_ROCK_TRIAL.txt for transfer boundaries and workflow.
+
+Offline follow-up: saved-map/material/rock checks and 125 independent CPU soil
+samples now pass. Actual rendering, driving and GPU performance remain pending.
+The texture memory estimate is about 20 MiB for the five trial rocks; NullRHI
+cannot measure their GPU residency. The full validation workflow is prepared
+in Art/review_flora_lidar_trial.ps1 for when GPU memory becomes available.
+
+Latest result: rendered driving/reset and actual mud/rock/foliage captures
+now pass (13 November UTC). Five Rock Master meshes are active in FloraDrive.
+Broadleaf shadows are restored; whole LiDARStudy remains unchanged. See
+Art/Export/FloraDrive/lidar-mud-rocks-review.html for the inspected comparisons.
+GPU medians about 34.4 ms at 1274 x 682 in stationary PIE; not a packaged FPS
+claim. Historical pending notes above describe the earlier GPU-memory block.
+
+Correction, 12 November Edmonton: misplaced copied MR_VisualWindow suppressed
+visible mud deformation despite passing CPU checks. Fixed in both local mud
+and tread materials and in the rebuild helper. Actual rendered ground-depth
+checks now prove up to 8.14 cm depression after driving; reset passes. Earlier
+full-scene images/timings predate this correction. See rendered-ruts-comparison.jpg
+and the latest functional-report.json for current deformation evidence.

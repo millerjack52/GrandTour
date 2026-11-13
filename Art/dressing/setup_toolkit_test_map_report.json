@@ -1,0 +1,364 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Test/L_OWToolkitTest",
+  "overwrite": true,
+  "steps": {
+    "level": {
+      "ok": true,
+      "value": {
+        "replaced_existing": true,
+        "actors_removed": 18,
+        "world": "L_OWToolkitTest",
+        "actors_at_start": []
+      }
+    },
+    "lighting": {
+      "ok": true,
+      "value": {
+        "sun_atmosphere": true,
+        "sky_real_time_capture": true
+      }
+    },
+    "landscape": {
+      "ok": true,
+      "value": {
+        "ok": true,
+        "verts": 255025,
+        "vertsPerSide": 505,
+        "components": 64,
+        "weightmapTextures": 38,
+        "heightMinCm": -149.6,
+        "heightMaxCm": 7017.5,
+        "painted": {
+          "OW_Meadow": 29584,
+          "OW_MeadowLush": 30272,
+          "OW_MeadowDry": 29756,
+          "OW_Bare": 60531,
+          "OW_Alpine": 19712,
+          "OW_Snow": 3817,
+          "OW_Forest": 30272,
+          "OW_ForestBeech": 16192,
+          "OW_ForestBirch": 16192,
+          "OW_ForestFir": 15916,
+          "OW_ForestOak": 15916,
+          "OW_Scree": 14089,
+          "OW_RoadVerge": 0
+        }
+      }
+    },
+    "rvt_volume": {
+      "ok": true,
+      "value": {
+        "landscape_origin": [
+          25200,
+          25200,
+          3434
+        ],
+        "landscape_extent": [
+          25200,
+          25200,
+          3583
+        ],
+        "min_corner": [
+          0,
+          0,
+          -2649
+        ],
+        "size": [
+          50400,
+          50400,
+          12166
+        ],
+        "landscape_rvts": [
+          "/Game/ANGRY_MESH/StylizedPack_Common/Textures/RVT_AM_01_Material"
+        ]
+      }
+    },
+    "biome_volumes": {
+      "ok": true,
+      "value": [
+        {
+          "label": "OWTEST_PCG_Forest",
+          "tag": "OWBiome.Forest",
+          "graph": "PCG_OWForest",
+          "unit_brush_extent": 100.0,
+          "center": [
+            25200,
+            25200,
+            3000
+          ],
+          "size": [
+            50400,
+            50400,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "OWTEST_PCG_Meadow",
+          "tag": "OWBiome.Meadow",
+          "graph": "PCG_OWMeadow",
+          "unit_brush_extent": 100.0,
+          "center": [
+            25200,
+            25200,
+            3000
+          ],
+          "size": [
+            50400,
+            50400,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "OWTEST_PCG_Scree",
+          "tag": "OWBiome.Scree",
+          "graph": "PCG_OWScree",
+          "unit_brush_extent": 100.0,
+          "center": [
+            25200,
+            25200,
+            3000
+          ],
+          "size": [
+            50400,
+            50400,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "OWTEST_PCG_Road",
+          "tag": "OWBiome.Road",
+          "graph": "PCG_OWRoad",
+          "unit_brush_extent": 100.0,
+          "center": [
+            25200,
+            25200,
+            3000
+          ],
+          "size": [
+            50400,
+            50400,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "OWTEST_PCG_Cliff",
+          "tag": "OWBiome.Cliff",
+          "graph": "PCG_OWCliff",
+          "unit_brush_extent": 100.0,
+          "center": [
+            25200,
+            25200,
+            3000
+          ],
+          "size": [
+            50400,
+            50400,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "OWTEST_PCG_Alpine",
+          "tag": "OWBiome.Alpine",
+          "graph": "PCG_OWAlpine",
+          "unit_brush_extent": 100.0,
+          "center": [
+            25200,
+            25200,
+            3000
+          ],
+          "size": [
+            50400,
+            50400,
+            10000
+          ],
+          "partitioned": false,
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        }
+      ]
+    },
+    "roads": {
+      "ok": true,
+      "value": [
+        {
+          "label": "OWTEST_BP_OWRoad",
+          "class": "BP_OWRoad_C",
+          "default_points_cleared": 2,
+          "override_construction_script": true,
+          "points": [
+            [
+              3000,
+              2000,
+              90.5
+            ],
+            [
+              6000,
+              12000,
+              -5.2
+            ],
+            [
+              9000,
+              22000,
+              -100.8
+            ],
+            [
+              7000,
+              31000,
+              -95.5
+            ]
+          ],
+          "length_cm": 30182,
+          "road_bed": "/Script/GrandTour.OWRoadBedComponent"
+        },
+        {
+          "label": "OWTEST_BP_OWRoad_Dusty",
+          "class": "BP_OWRoad_Dusty_C",
+          "default_points_cleared": 2,
+          "override_construction_script": true,
+          "points": [
+            [
+              22000,
+              2000,
+              49.6
+            ],
+            [
+              26000,
+              12000,
+              -27.9
+            ],
+            [
+              24000,
+              22000,
+              59.9
+            ],
+            [
+              27000,
+              31000,
+              55.6
+            ]
+          ],
+          "length_cm": 30622,
+          "road_bed": "/Script/GrandTour.OWRoadBedComponent"
+        },
+        {
+          "label": "OWTEST_BP_OWRoad_Gravel",
+          "class": "BP_OWRoad_Gravel_C",
+          "default_points_cleared": 2,
+          "override_construction_script": true,
+          "points": [
+            [
+              39000,
+              2000,
+              -33.1
+            ],
+            [
+              43000,
+              12000,
+              -48.0
+            ],
+            [
+              41000,
+              22000,
+              81.4
+            ],
+            [
+              44000,
+              31000,
+              -40.6
+            ]
+          ],
+          "length_cm": 30623,
+          "road_bed": "/Script/GrandTour.OWRoadBedComponent"
+        }
+      ]
+    },
+    "cliff": {
+      "ok": true,
+      "value": {
+        "label": "OWTEST_BP_OWCliffWall",
+        "class": "BP_OWCliffWall_C",
+        "default_points_cleared": 2,
+        "override_construction_script": true,
+        "points": [
+          [
+            20314,
+            40221,
+            304.3
+          ],
+          [
+            22217,
+            37740,
+            303.8
+          ],
+          [
+            25200,
+            36800,
+            350.1
+          ],
+          [
+            28183,
+            37740,
+            350.2
+          ],
+          [
+            30086,
+            40221,
+            268.9
+          ]
+        ],
+        "length_cm": 12634
+      }
+    },
+    "player_start": {
+      "ok": true,
+      "value": [
+        8400.0,
+        8400.0,
+        317.5
+      ]
+    },
+    "game_mode": {
+      "ok": true,
+      "value": "no override (GTRunGameMode, the global default)"
+    },
+    "save": {
+      "ok": true,
+      "value": "saved"
+    },
+    "gate": {
+      "ok": true,
+      "value": {
+        "roads": 3,
+        "road_classes": [
+          "BP_OWRoad_C",
+          "BP_OWRoad_Dusty_C",
+          "BP_OWRoad_Gravel_C"
+        ],
+        "cliff_walls": 1,
+        "tagged_volumes": {
+          "Forest": 1,
+          "Meadow": 1,
+          "Scree": 1,
+          "Road": 1,
+          "Cliff": 1,
+          "Alpine": 1
+        },
+        "rvt_volumes": 1,
+        "landscape_rvt_set": true,
+        "painted_non_verge_min": 3817,
+        "painted_verge": 0,
+        "actors_total": 17
+      }
+    }
+  }
+}

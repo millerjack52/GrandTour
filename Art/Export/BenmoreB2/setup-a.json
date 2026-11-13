@@ -1,0 +1,48 @@
+{
+ "ok": true,
+ "stage": "a",
+ "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+ "timings_collected": false,
+ "coverage_default": "/Game/GrandTour/Terrain/DeformZones/T_GT_DeformCoverageNone.T_GT_DeformCoverageNone",
+ "gravel_zone_material": {
+  "material": "/Game/GrandTour/Terrain/DeformZones/M_GT_Gravel_Zone.M_GT_Gravel_Zone",
+  "source": "/Game/GrandTour/ArtTests/DeformableGravel/M_GT_Gravel",
+  "base_colour_from": "MaterialExpressionCustom_1.return"
+ },
+ "terrain_before": {
+  "pixel": 1827,
+  "vertex": 148,
+  "samplers": 28,
+  "pixel_texture_samples": 44
+ },
+ "attach": {
+  "unwrapped": [],
+  "wrapped": {
+   "MP_OPACITY_MASK": "MaterialExpressionCustom_23.(main)",
+   "MP_BASE_COLOR": "MaterialExpressionCustom_26.return",
+   "MP_ROUGHNESS": "MaterialExpressionCustom_26.Rough"
+  },
+  "vegetation": [
+   "/Game/GrandTour/Demo/BenmoreRoads/Gaea/Morphology/T_RL_Vegetation.T_RL_Vegetation"
+  ]
+ },
+ "terrain_after": {
+  "pixel": 1874,
+  "vertex": 148,
+  "samplers": 29,
+  "pixel_texture_samples": 44
+ },
+ "terrain_blend_mode": "<BlendMode.BLEND_MASKED: 1>",
+ "gravel_tints": {
+  "loose": [
+   1.071,
+   1.005,
+   1.027
+  ],
+  "firm": [
+   0.983,
+   0.918,
+   0.922
+  ]
+ }
+}

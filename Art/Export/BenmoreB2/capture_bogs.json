@@ -1,0 +1,1114 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+  "timings_collected": false,
+  "pictures": [
+    {
+      "name": "B2_Bog_1",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Bog_1.png",
+      "view": {
+        "eye": [
+          21265,
+          -22863,
+          4472
+        ],
+        "target": [
+          21820,
+          -26010,
+          4270
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 20.4
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 6,
+        "live_cells": 314806,
+        "cap_tiles": 9,
+        "activations": 14,
+        "releases": 8,
+        "restores": 0,
+        "cache_entries": 1,
+        "cache_bytes": 21497,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          21800,
+          -26000
+        ],
+        "coverage_texels_hole": 13367,
+        "coverage_writes": 10,
+        "live_units": [
+          {
+            "zone": 66,
+            "label": "Hillside branch 927-1020 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              9,
+              -10
+            ],
+            "cells": 37636,
+            "quads": 6108,
+            "distance_m": 3.3
+          },
+          {
+            "zone": 66,
+            "label": "Hillside branch 927-1020 m gravel",
+            "slot": 1,
+            "whole": false,
+            "tile": [
+              9,
+              -9
+            ],
+            "cells": 37636,
+            "quads": 3099,
+            "distance_m": 13.1
+          },
+          {
+            "zone": 67,
+            "label": "Hillside branch 1020-1050 m MudRoad",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 59286,
+            "quads": 9158,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 68,
+            "label": "Hillside branch 1050-1083 m gravel",
+            "slot": 1,
+            "whole": false,
+            "tile": [
+              7,
+              -11
+            ],
+            "cells": 37636,
+            "quads": 2187,
+            "distance_m": 23.6
+          },
+          {
+            "zone": 68,
+            "label": "Hillside branch 1050-1083 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              8,
+              -11
+            ],
+            "cells": 37636,
+            "quads": 2867,
+            "distance_m": 2.2
+          },
+          {
+            "zone": 71,
+            "label": "Bog 1 (Firm)",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 104976,
+            "quads": 32565,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "bog": {
+        "label": "Bog 1 (Firm)",
+        "centre_m": [
+          218.2,
+          -260.1
+        ],
+        "half_m": [
+          17.2,
+          9.1
+        ],
+        "variant": "Firm",
+        "nearest_camera": [
+          "Benmore_Gaea_Camera_Creek_Reach",
+          828.4
+        ]
+      },
+      "written": true
+    },
+    {
+      "name": "B2_Bog_2",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Bog_2.png",
+      "view": {
+        "eye": [
+          -48325,
+          -59053,
+          2787
+        ],
+        "target": [
+          -47770,
+          -62200,
+          2664
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 21.8
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 7,
+        "live_cells": 330792,
+        "cap_tiles": 9,
+        "activations": 21,
+        "releases": 14,
+        "restores": 0,
+        "cache_entries": 1,
+        "cache_bytes": 21497,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          -47800,
+          -62200
+        ],
+        "coverage_texels_hole": 12285,
+        "coverage_writes": 14,
+        "live_units": [
+          {
+            "zone": 40,
+            "label": "Terrace loop 2128-2198 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              -20,
+              -26
+            ],
+            "cells": 37636,
+            "quads": 6411,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 40,
+            "label": "Terrace loop 2128-2198 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              -20,
+              -25
+            ],
+            "cells": 37636,
+            "quads": 3306,
+            "distance_m": 3.2
+          },
+          {
+            "zone": 41,
+            "label": "Terrace loop 2198-2269 m gravel",
+            "slot": 1,
+            "whole": false,
+            "tile": [
+              -21,
+              -26
+            ],
+            "cells": 37636,
+            "quads": 6378,
+            "distance_m": 2.3
+          },
+          {
+            "zone": 41,
+            "label": "Terrace loop 2198-2269 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              -20,
+              -26
+            ],
+            "cells": 37636,
+            "quads": 420,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 41,
+            "label": "Terrace loop 2198-2269 m gravel",
+            "slot": 5,
+            "whole": false,
+            "tile": [
+              -21,
+              -25
+            ],
+            "cells": 37636,
+            "quads": 3918,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 41,
+            "label": "Terrace loop 2198-2269 m gravel",
+            "slot": 6,
+            "whole": false,
+            "tile": [
+              -20,
+              -25
+            ],
+            "cells": 37636,
+            "quads": 131,
+            "distance_m": 3.2
+          },
+          {
+            "zone": 72,
+            "label": "Bog 2 (Stony)",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 104976,
+            "quads": 29667,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "bog": {
+        "label": "Bog 2 (Stony)",
+        "centre_m": [
+          -477.7,
+          -622.0
+        ],
+        "half_m": [
+          17.2,
+          8.3
+        ],
+        "variant": "Stony",
+        "nearest_camera": [
+          "Benmore_Fleet_Overview",
+          352.9
+        ]
+      },
+      "written": true
+    },
+    {
+      "name": "B2_Bog_3",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Bog_3.png",
+      "view": {
+        "eye": [
+          -60105,
+          -56323,
+          2219
+        ],
+        "target": [
+          -59550,
+          -59470,
+          2124
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 22.3
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 6,
+        "live_cells": 315870,
+        "cap_tiles": 9,
+        "activations": 27,
+        "releases": 21,
+        "restores": 0,
+        "cache_entries": 1,
+        "cache_bytes": 21497,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          -59600,
+          -59400
+        ],
+        "coverage_texels_hole": 15202,
+        "coverage_writes": 19,
+        "live_units": [
+          {
+            "zone": 42,
+            "label": "Terrace loop 2269-2299 m MudRoad",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 60350,
+            "quads": 12879,
+            "distance_m": 12.0
+          },
+          {
+            "zone": 43,
+            "label": "Terrace loop 2299-2365 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              -25,
+              -25
+            ],
+            "cells": 37636,
+            "quads": 1670,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 43,
+            "label": "Terrace loop 2299-2365 m gravel",
+            "slot": 3,
+            "whole": false,
+            "tile": [
+              -26,
+              -24
+            ],
+            "cells": 37636,
+            "quads": 11335,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 43,
+            "label": "Terrace loop 2299-2365 m gravel",
+            "slot": 4,
+            "whole": false,
+            "tile": [
+              -25,
+              -24
+            ],
+            "cells": 37636,
+            "quads": 9678,
+            "distance_m": 1.0
+          },
+          {
+            "zone": 43,
+            "label": "Terrace loop 2299-2365 m gravel",
+            "slot": 7,
+            "whole": false,
+            "tile": [
+              -26,
+              -23
+            ],
+            "cells": 37636,
+            "quads": 425,
+            "distance_m": 11.2
+          },
+          {
+            "zone": 73,
+            "label": "Bog 3 (Firm)",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 104976,
+            "quads": 26869,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "bog": {
+        "label": "Bog 3 (Firm)",
+        "centre_m": [
+          -595.5,
+          -594.7
+        ],
+        "half_m": [
+          17.2,
+          7.5
+        ],
+        "variant": "Firm",
+        "nearest_camera": [
+          "Benmore_Fleet_Overview",
+          246.8
+        ]
+      },
+      "written": true
+    },
+    {
+      "name": "B2_Bog_4",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Bog_4.png",
+      "view": {
+        "eye": [
+          -9835,
+          -21933,
+          2868
+        ],
+        "target": [
+          -9280,
+          -25080,
+          2792
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 22.6
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 6,
+        "live_cells": 325616,
+        "cap_tiles": 9,
+        "activations": 33,
+        "releases": 27,
+        "restores": 0,
+        "cache_entries": 1,
+        "cache_bytes": 21497,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          -9200,
+          -25000
+        ],
+        "coverage_texels_hole": 18338,
+        "coverage_writes": 22,
+        "live_units": [
+          {
+            "zone": 21,
+            "label": "Terrace loop 1131-1161 m MudRoad",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 70096,
+            "quads": 12934,
+            "distance_m": 9.3
+          },
+          {
+            "zone": 22,
+            "label": "Terrace loop 1161-1277 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              -4,
+              -11
+            ],
+            "cells": 37636,
+            "quads": 1267,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 22,
+            "label": "Terrace loop 1161-1277 m gravel",
+            "slot": 3,
+            "whole": false,
+            "tile": [
+              -3,
+              -11
+            ],
+            "cells": 37636,
+            "quads": 10869,
+            "distance_m": 20.8
+          },
+          {
+            "zone": 22,
+            "label": "Terrace loop 1161-1277 m gravel",
+            "slot": 6,
+            "whole": false,
+            "tile": [
+              -5,
+              -10
+            ],
+            "cells": 37636,
+            "quads": 9442,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 22,
+            "label": "Terrace loop 1161-1277 m gravel",
+            "slot": 7,
+            "whole": false,
+            "tile": [
+              -4,
+              -10
+            ],
+            "cells": 37636,
+            "quads": 10254,
+            "distance_m": 2.3
+          },
+          {
+            "zone": 74,
+            "label": "Bog 4 (Stony)",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 104976,
+            "quads": 31090,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "bog": {
+        "label": "Bog 4 (Stony)",
+        "centre_m": [
+          -92.8,
+          -250.8
+        ],
+        "half_m": [
+          17.2,
+          8.7
+        ],
+        "variant": "Stony",
+        "nearest_camera": [
+          "Benmore_RL_Camera_River_Reach",
+          588.9
+        ]
+      },
+      "written": true
+    },
+    {
+      "name": "B2_Bog_5",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Bog_5.png",
+      "view": {
+        "eye": [
+          12897,
+          -25983,
+          3947
+        ],
+        "target": [
+          13410,
+          -28890,
+          3880
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 22.7
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 7,
+        "live_cells": 328677,
+        "cap_tiles": 9,
+        "activations": 40,
+        "releases": 33,
+        "restores": 0,
+        "cache_entries": 1,
+        "cache_bytes": 21497,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          13400,
+          -28800
+        ],
+        "coverage_texels_hole": 14481,
+        "coverage_writes": 27,
+        "live_units": [
+          {
+            "zone": 68,
+            "label": "Hillside branch 1050-1083 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              7,
+              -12
+            ],
+            "cells": 37636,
+            "quads": 4984,
+            "distance_m": 33.9
+          },
+          {
+            "zone": 69,
+            "label": "Hillside branch 1083-1113 m MudRoad",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 59272,
+            "quads": 9131,
+            "distance_m": 14.8
+          },
+          {
+            "zone": 70,
+            "label": "Hillside branch 1113-1189 m gravel",
+            "slot": 1,
+            "whole": false,
+            "tile": [
+              4,
+              -14
+            ],
+            "cells": 37636,
+            "quads": 3145,
+            "distance_m": 27.1
+          },
+          {
+            "zone": 70,
+            "label": "Hillside branch 1113-1189 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              5,
+              -14
+            ],
+            "cells": 37636,
+            "quads": 7244,
+            "distance_m": 23.1
+          },
+          {
+            "zone": 70,
+            "label": "Hillside branch 1113-1189 m gravel",
+            "slot": 3,
+            "whole": false,
+            "tile": [
+              5,
+              -13
+            ],
+            "cells": 37636,
+            "quads": 2914,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 70,
+            "label": "Hillside branch 1113-1189 m gravel",
+            "slot": 4,
+            "whole": false,
+            "tile": [
+              6,
+              -13
+            ],
+            "cells": 37636,
+            "quads": 4026,
+            "distance_m": 9.9
+          },
+          {
+            "zone": 75,
+            "label": "Bog 5 (Firm)",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 81225,
+            "quads": 29531,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "bog": {
+        "label": "Bog 5 (Firm)",
+        "centre_m": [
+          134.1,
+          -288.9
+        ],
+        "half_m": [
+          15.1,
+          9.4
+        ],
+        "variant": "Firm",
+        "nearest_camera": [
+          "Benmore_RL_Camera_River_Reach",
+          798.5
+        ]
+      },
+      "written": true
+    },
+    {
+      "name": "B2_Bog_6",
+      "image": "C:\\GrandTour\\Art\\Export\\BenmoreB2\\B2_Bog_6.png",
+      "view": {
+        "eye": [
+          -30205,
+          -743,
+          2098
+        ],
+        "target": [
+          -29650,
+          -3890,
+          1921
+        ],
+        "fov": 65.0,
+        "sun_angle_deg": 20.8
+      },
+      "zones": {
+        "zones": 76,
+        "units": 259,
+        "live": 7,
+        "live_cells": 330792,
+        "cap_tiles": 9,
+        "activations": 47,
+        "releases": 40,
+        "restores": 0,
+        "cache_entries": 1,
+        "cache_bytes": 21497,
+        "cache_cap_bytes": 134217728,
+        "cache_evicted": 0,
+        "coverage_size": 1024,
+        "coverage_texel_cm": 25.0,
+        "coverage_origin": [
+          -29600,
+          -3800
+        ],
+        "coverage_texels_hole": 15541,
+        "coverage_writes": 31,
+        "live_units": [
+          {
+            "zone": 50,
+            "label": "Hillside branch 57-130 m gravel",
+            "slot": 0,
+            "whole": false,
+            "tile": [
+              -14,
+              -2
+            ],
+            "cells": 37636,
+            "quads": 2654,
+            "distance_m": 15.5
+          },
+          {
+            "zone": 50,
+            "label": "Hillside branch 57-130 m gravel",
+            "slot": 1,
+            "whole": false,
+            "tile": [
+              -13,
+              -2
+            ],
+            "cells": 37636,
+            "quads": 826,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 50,
+            "label": "Hillside branch 57-130 m gravel",
+            "slot": 2,
+            "whole": false,
+            "tile": [
+              -14,
+              -1
+            ],
+            "cells": 37636,
+            "quads": 110,
+            "distance_m": 10.0
+          },
+          {
+            "zone": 50,
+            "label": "Hillside branch 57-130 m gravel",
+            "slot": 3,
+            "whole": false,
+            "tile": [
+              -13,
+              -1
+            ],
+            "cells": 37636,
+            "quads": 8806,
+            "distance_m": 0.0
+          },
+          {
+            "zone": 50,
+            "label": "Hillside branch 57-130 m gravel",
+            "slot": 4,
+            "whole": false,
+            "tile": [
+              -13,
+              0
+            ],
+            "cells": 37636,
+            "quads": 3046,
+            "distance_m": 7.4
+          },
+          {
+            "zone": 50,
+            "label": "Hillside branch 57-130 m gravel",
+            "slot": 5,
+            "whole": false,
+            "tile": [
+              -12,
+              0
+            ],
+            "cells": 37636,
+            "quads": 5892,
+            "distance_m": 15.9
+          },
+          {
+            "zone": 76,
+            "label": "Bog 6 (Stony)",
+            "slot": 0,
+            "whole": true,
+            "tile": [
+              0,
+              0
+            ],
+            "cells": 104976,
+            "quads": 43061,
+            "distance_m": 0.0
+          }
+        ]
+      },
+      "bog": {
+        "label": "Bog 6 (Stony)",
+        "centre_m": [
+          -296.5,
+          -38.9
+        ],
+        "half_m": [
+          17.2,
+          12.1
+        ],
+        "variant": "Stony",
+        "nearest_camera": [
+          "Benmore_RL_Camera_River_Reach",
+          300.6
+        ]
+      },
+      "written": true
+    }
+  ],
+  "car": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/UEDPIE_0_L_Benmore_GaeaReview.L_Benmore_GaeaReview:PersistentLevel.GTCarPawn_1",
+  "sun": {
+    "actor": "Sun",
+    "direction": [
+      0.159,
+      -0.9,
+      -0.407
+    ]
+  },
+  "zones_at_start": {
+    "zones": 76,
+    "units": 259,
+    "live": 7,
+    "live_cells": 300298,
+    "cap_tiles": 9,
+    "activations": 7,
+    "releases": 0,
+    "restores": 0,
+    "cache_entries": 0,
+    "cache_bytes": 0,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      -77400,
+      -41800
+    ],
+    "coverage_texels_hole": 9868,
+    "coverage_writes": 7,
+    "live_units": [
+      {
+        "zone": 1,
+        "label": "Terrace loop 0-29 m MudRoad",
+        "slot": 0,
+        "whole": true,
+        "tile": [
+          0,
+          0
+        ],
+        "cells": 71222,
+        "quads": 12564,
+        "distance_m": 4.4
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 0,
+        "whole": false,
+        "tile": [
+          -33,
+          -18
+        ],
+        "cells": 37636,
+        "quads": 8851,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 1,
+        "whole": false,
+        "tile": [
+          -32,
+          -18
+        ],
+        "cells": 37636,
+        "quads": 815,
+        "distance_m": 6.2
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 2,
+        "whole": false,
+        "tile": [
+          -34,
+          -17
+        ],
+        "cells": 37636,
+        "quads": 1329,
+        "distance_m": 19.2
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 3,
+        "whole": false,
+        "tile": [
+          -33,
+          -17
+        ],
+        "cells": 37636,
+        "quads": 10540,
+        "distance_m": 7.5
+      },
+      {
+        "zone": 2,
+        "label": "Terrace loop 29-142 m gravel",
+        "slot": 5,
+        "whole": false,
+        "tile": [
+          -33,
+          -16
+        ],
+        "cells": 37636,
+        "quads": 524,
+        "distance_m": 31.5
+      },
+      {
+        "zone": 47,
+        "label": "Terrace loop 2501-2517 m MudRoad",
+        "slot": 0,
+        "whole": true,
+        "tile": [
+          0,
+          0
+        ],
+        "cells": 40896,
+        "quads": 6921,
+        "distance_m": 32.2
+      }
+    ]
+  },
+  "zone_count": 76,
+  "unit_count": 259,
+  "car_parked_cm": [
+    12000,
+    24000,
+    15139
+  ],
+  "zones_at_end": {
+    "zones": 76,
+    "units": 259,
+    "live": 7,
+    "live_cells": 330792,
+    "cap_tiles": 9,
+    "activations": 47,
+    "releases": 40,
+    "restores": 0,
+    "cache_entries": 1,
+    "cache_bytes": 21497,
+    "cache_cap_bytes": 134217728,
+    "cache_evicted": 0,
+    "coverage_size": 1024,
+    "coverage_texel_cm": 25.0,
+    "coverage_origin": [
+      -29600,
+      -3800
+    ],
+    "coverage_texels_hole": 15541,
+    "coverage_writes": 31,
+    "live_units": [
+      {
+        "zone": 50,
+        "label": "Hillside branch 57-130 m gravel",
+        "slot": 0,
+        "whole": false,
+        "tile": [
+          -14,
+          -2
+        ],
+        "cells": 37636,
+        "quads": 2654,
+        "distance_m": 15.5
+      },
+      {
+        "zone": 50,
+        "label": "Hillside branch 57-130 m gravel",
+        "slot": 1,
+        "whole": false,
+        "tile": [
+          -13,
+          -2
+        ],
+        "cells": 37636,
+        "quads": 826,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 50,
+        "label": "Hillside branch 57-130 m gravel",
+        "slot": 2,
+        "whole": false,
+        "tile": [
+          -14,
+          -1
+        ],
+        "cells": 37636,
+        "quads": 110,
+        "distance_m": 10.0
+      },
+      {
+        "zone": 50,
+        "label": "Hillside branch 57-130 m gravel",
+        "slot": 3,
+        "whole": false,
+        "tile": [
+          -13,
+          -1
+        ],
+        "cells": 37636,
+        "quads": 8806,
+        "distance_m": 0.0
+      },
+      {
+        "zone": 50,
+        "label": "Hillside branch 57-130 m gravel",
+        "slot": 4,
+        "whole": false,
+        "tile": [
+          -13,
+          0
+        ],
+        "cells": 37636,
+        "quads": 3046,
+        "distance_m": 7.4
+      },
+      {
+        "zone": 50,
+        "label": "Hillside branch 57-130 m gravel",
+        "slot": 5,
+        "whole": false,
+        "tile": [
+          -12,
+          0
+        ],
+        "cells": 37636,
+        "quads": 5892,
+        "distance_m": 15.9
+      },
+      {
+        "zone": 76,
+        "label": "Bog 6 (Stony)",
+        "slot": 0,
+        "whole": true,
+        "tile": [
+          0,
+          0
+        ],
+        "cells": 104976,
+        "quads": 43061,
+        "distance_m": 0.0
+      }
+    ]
+  }
+}

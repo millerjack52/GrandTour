@@ -1,0 +1,190 @@
+{
+  "report": "C:\\GrandTour\\Art\\Export\\MudVariants\\drive-report.json",
+  "encoding": {
+    "file_type": "exr",
+    "gravel_roughness_median": 0.898,
+    "expected": 0.9,
+    "verdict": "linear"
+  },
+  "captures": [
+    {
+      "name": "PBR_Car",
+      "kind": "car",
+      "variant": null,
+      "file_type": "exr",
+      "box_pixels": 39819,
+      "mud_pixels": 15050,
+      "paint_pixels": 24769,
+      "mud_wet": 0.0,
+      "mud_rough_p5_50_95": [
+        0.671,
+        0.898,
+        0.91
+      ],
+      "paint_rough_median": 0.898,
+      "mud_base_colour_mean": [
+        0.1093,
+        0.0647,
+        0.0354
+      ],
+      "mud_base_luminance_mean": 0.0721,
+      "mud_ao_mean": 0.864,
+      "wet": false,
+      "pass_rough": true
+    },
+    {
+      "name": "PBR_Firm_Ground",
+      "kind": "ground",
+      "variant": "Firm",
+      "file_type": "exr",
+      "pixels": 571536,
+      "rough_p5_50_95": [
+        0.741,
+        0.878,
+        0.945
+      ],
+      "rough_under_040": 0.0,
+      "base_colour_mean": [
+        0.088,
+        0.0589,
+        0.0344
+      ],
+      "base_luminance_mean": 0.0633,
+      "ao_mean": 0.859,
+      "ao_p5": 0.714,
+      "pass_rough_p5": true,
+      "pass_soil_range": true
+    },
+    {
+      "name": "PBR_Standard_Ground",
+      "kind": "ground",
+      "variant": "Standard",
+      "file_type": "exr",
+      "pixels": 571536,
+      "rough_p5_50_95": [
+        0.502,
+        0.608,
+        0.918
+      ],
+      "rough_under_040": 0.0,
+      "base_colour_mean": [
+        0.0678,
+        0.0388,
+        0.0183
+      ],
+      "base_luminance_mean": 0.0435,
+      "ao_mean": 0.883,
+      "ao_p5": 0.667,
+      "pass_rough_p5": true,
+      "pass_soil_range": true
+    },
+    {
+      "name": "PBR_Deep_Ground",
+      "kind": "ground",
+      "variant": "Deep",
+      "file_type": "exr",
+      "pixels": 571536,
+      "rough_p5_50_95": [
+        0.451,
+        0.494,
+        0.635
+      ],
+      "rough_under_040": 0.0,
+      "base_colour_mean": [
+        0.0488,
+        0.0294,
+        0.0137
+      ],
+      "base_luminance_mean": 0.0323,
+      "ao_mean": 0.973,
+      "ao_p5": 0.914,
+      "pass_rough_p5": true,
+      "pass_soil_range": false
+    },
+    {
+      "name": "PBR_Stony_Ground",
+      "kind": "ground",
+      "variant": "Stony",
+      "file_type": "exr",
+      "pixels": 571536,
+      "rough_p5_50_95": [
+        0.494,
+        0.573,
+        0.914
+      ],
+      "rough_under_040": 0.0,
+      "base_colour_mean": [
+        0.0637,
+        0.0404,
+        0.0204
+      ],
+      "base_luminance_mean": 0.0439,
+      "ao_mean": 0.909,
+      "ao_p5": 0.757,
+      "pass_rough_p5": true,
+      "pass_soil_range": true
+    },
+    {
+      "name": "PBR_CarryWet",
+      "kind": "carry",
+      "variant": null,
+      "file_type": "exr",
+      "wetness": 1.0,
+      "mud_pixels": 35348,
+      "gravel_pixels": 699208,
+      "mud_rough_p5_50_95": [
+        0.165,
+        0.451,
+        0.455
+      ],
+      "gravel_rough_p5_50_95": [
+        0.031,
+        0.157,
+        0.333
+      ],
+      "mud_under_045": 0.3535,
+      "mud_in_puddle_share": 0.0342,
+      "mud_unpuddled_pixels": 34138,
+      "mud_unpuddled_rough_p5_25_50_75_95": [
+        0.286,
+        0.443,
+        0.451,
+        0.451,
+        0.455
+      ],
+      "mud_unpuddled_floor_share": 0.736,
+      "gravel_in_puddle_share": 0.4313,
+      "floor_gate": "p75 of the unpuddled mud >= 0.446 (0.45 less one 8-bit step), at least 5000 of them",
+      "pass_floor": true
+    }
+  ],
+  "water": {
+    "model": "live_mud_style MUDDY_HLSL with gt.Mud.PBR 1: lerp(SettledRoughPBR, TurbidRoughPBR, turbidity) (froth off: settled)",
+    "cells": 121,
+    "turbidity_mean": 0.206,
+    "rough_median": 0.235,
+    "rough_min": 0.15,
+    "pass_median": true
+  },
+  "passes": {
+    "ground": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "soil": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "car": [
+      true
+    ],
+    "carry_wet": [
+      true
+    ],
+    "water": true
+  }
+}

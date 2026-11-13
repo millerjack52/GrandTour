@@ -1,0 +1,35 @@
+{
+  "gp2c_chase": {
+    "car_cm": [
+      -31225.273264152842,
+      -10773.539092156028,
+      12284.56799986544
+    ],
+    "car_yaw_deg": -82.67369711787124,
+    "camera_cm": [
+      -31340.04121560542,
+      -9880.886686502305,
+      12784.56799986544
+    ],
+    "aim_cm": [
+      -31224.468895490183,
+      -10779.795382458935,
+      12361.94973812474
+    ]
+  },
+  "lp3_captures": {
+    "Paddock_middle": {
+      "camera_cm": [
+        -32198.80517050233,
+        -10291.788553819619,
+        12423.4345703125
+      ],
+      "target_cm": [
+        -30270.34,
+        -20295.89,
+        12280.4462890625
+      ]
+    }
+  },
+  "source": "Camera coordinates retained from Art/Export/LidarStudy/Place/before_GS1/check.json; no old performance or validation results."
+}

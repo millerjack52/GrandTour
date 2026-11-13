@@ -1,0 +1,145 @@
+{
+  "ok": true,
+  "steps": {
+    "meadow_grass_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_02: d=450.0 h=1.0 cull=(6000, 8000)",
+        "SM_Grass_03_Summer_02: d=40.0 h=1.0 cull=(6000, 8000)",
+        "SM_CoverPlant_04_Summer: d=40.0 h=1.0 cull=(6000, 8000)"
+      ]
+    },
+    "meadow_flowers_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Flower_07_02: d=120.0",
+        "SM_Flower_08_02: d=70.0",
+        "SM_Flower_03_02: d=40.0",
+        "SM_Flower_05_02: d=30.0",
+        "SM_Flower_06_02: d=20.0",
+        "SM_Grass_02_Summer_02: d=25.0"
+      ]
+    },
+    "lush_grass_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_02: d=600.0",
+        "SM_Grass_03_Summer_02: d=90.0",
+        "SM_CoverPlant_04_Summer: d=70.0",
+        "SM_Leaves_BirchTree_02_Summer: d=12.0"
+      ]
+    },
+    "lush_flowers_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Flower_07_02: d=240.0",
+        "SM_Flower_08_02: d=140.0",
+        "SM_Flower_03_02: d=80.0",
+        "SM_Flower_05_02: d=60.0",
+        "SM_Flower_06_02: d=40.0",
+        "SM_Grass_02_Summer_02: d=50.0"
+      ]
+    },
+    "dry_grass_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_03: d=250.0",
+        "SM_Grass_02_Summer_02: d=60.0",
+        "SM_Flower_06_02: d=8.0"
+      ]
+    },
+    "floor_deciduous_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_02: d=420.0",
+        "SM_Grass_02_Summer_01: d=150.0",
+        "SM_CoverPlant_01_Summer: d=45.0",
+        "SM_CoverPlant_03_Summer: d=30.0",
+        "SM_Mushroom_Brown_12_Summer: d=4.0"
+      ]
+    },
+    "floor_fir_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_03: d=240.0",
+        "SM_Grass_02_Summer_02: d=70.0",
+        "SM_CoverPlant_02_Summer: d=30.0",
+        "SM_Mushroom_Red_12_Summer: d=3.0"
+      ]
+    },
+    "floor_oak_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_02: d=330.0",
+        "SM_CoverPlant_04_Summer: d=100.0",
+        "SM_Grass_03_Summer_02: d=55.0",
+        "SM_Mushroom_Brown_12_Summer: d=6.0"
+      ]
+    },
+    "forest_floor_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_02: d=420.0",
+        "SM_Grass_02_Summer_01: d=160.0",
+        "SM_Grass_02_Summer_02: d=120.0",
+        "SM_CoverPlant_01_Summer: d=55.0",
+        "SM_CoverPlant_02_Summer: d=55.0"
+      ]
+    },
+    "alpine_grass_lgt": {
+      "ok": true,
+      "value": [
+        "SM_Grass_01_Summer_03: d=120.0",
+        "SM_Grass_02_Summer_02: d=30.0",
+        "SM_CoverPlant_02_Summer: d=8.0"
+      ]
+    },
+    "meadow_bush_density": {
+      "ok": true,
+      "value": [
+        "0.0006000000284984708 -> 0.0006",
+        "0.00039999998989515007 -> 0.0004",
+        "7.999999797903001e-05 -> 8e-05"
+      ]
+    },
+    "dab_density": {
+      "ok": true,
+      "value": [
+        "0.0003000000142492354 -> 0.0003",
+        "0.0003000000142492354 -> 0.0003"
+      ]
+    },
+    "road_dressing_spacing": {
+      "ok": true,
+      "value": [
+        "Rock_02_Summer/gravel: 350.0 -> 350.0",
+        "Rock_02_Summer/mud: 700.0 -> 700.0",
+        "Rock_02_Summer/dusty: 1000.0 -> 1000.0",
+        "Grass_01_Summer_03/dusty: 80.0 -> 80.0",
+        "Grass_01_Summer_03/mud: 250.0 -> 250.0",
+        "GroundCoverRVT_Plank/mud_onroad: 1200.0 -> 1200.0",
+        "GroundCoverRVT_Plank/dusty_onroad: 2500.0 -> 2500.0",
+        "GroundCoverRVT_Rock_05/mud_verge: 500.0 -> 500.0",
+        "GroundCoverRVT_Rock_04/gravel: 400.0 -> 400.0",
+        "GroundCoverRVT_Rock_04/mud: 900.0 -> 900.0",
+        "GroundCoverRVT_Rock_04/dusty: 1800.0 -> 1800.0"
+      ]
+    },
+    "oak_tier_density": {
+      "ok": true,
+      "value": [
+        "0.00699999975040555 -> 0.006999999999999999",
+        "0.003499999875202775 -> 0.0034999999999999996",
+        "0.0012250000145286322 -> 0.001225"
+      ]
+    },
+    "oak_wind": {
+      "ok": true,
+      "value": "evaluate_world_position_offset=True on 30 mesh entries across 3 oak spawners (read-back verified)"
+    },
+    "refresh": {
+      "ok": true,
+      "value": "grass cache flushed; no biome actors in Untitled - Generate skipped"
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "note": "MudRunner MRP item 2 (docs/MUDRUNNER_LESSONS_PLAN.md MRP): the bog variants' packed ORH maps.",
+  "ao": {
+    "radius_cm": 6.0,
+    "directions": 16,
+    "steps_px": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      10,
+      14,
+      19,
+      25,
+      32,
+      41
+    ]
+  },
+  "rough_remap": {
+    "bake": [
+      0.14,
+      0.91
+    ],
+    "pbr": [
+      0.45,
+      0.95
+    ],
+    "formula": "r' = 0.45 + (r - 0.14) x 0.5 / 0.77, clamped 0.45-0.95",
+    "inverse": "r = 0.14 + (r' - 0.45) x 1.54"
+  },
+  "variants": {
+    "Standard": {
+      "height_range_cm": [
+        -0.744,
+        3.537
+      ],
+      "size": 2048,
+      "px_cm": 0.1465,
+      "ao": {
+        "mean": 0.868,
+        "p1_5_50_95": [
+          0.461,
+          0.608,
+          0.907,
+          0.996
+        ],
+        "under_0_7": 0.1095
+      },
+      "rough_bake": {
+        "min_max": [
+          0.22,
+          0.859
+        ],
+        "p5_50_95": [
+          0.22,
+          0.38,
+          0.859
+        ]
+      },
+      "rough_pbr": {
+        "min_max": [
+          0.502,
+          0.917
+        ],
+        "p5_50_95": [
+          0.502,
+          0.606,
+          0.917
+        ],
+        "roundtrip_max_err": 0.0
+      },
+      "colour_linear_mean": [
+        0.0714,
+        0.0399,
+        0.0186
+      ],
+      "luminance_mean": 0.045,
+      "luminance_p5_95": [
+        0.031,
+        0.065
+      ],
+      "luminance_mean_with_cavity": 0.0441,
+      "parallax_height": {
+        "max_slope_per_texel_pct_before": 23.61,
+        "max_slope_per_texel_pct_after": 1.5,
+        "cap_pct": 1.5,
+        "sigma_texels": 1.5,
+        "mean_abs_change": 0.0423,
+        "p99_abs_change": 0.1851
+      },
+      "files": {
+        "ao": "Art/Export/MudStyleUE/T_MS_BogStandardAO.png",
+        "orh": "Art/Export/MudStyleUE/T_MS_BogStandardORH.png"
+      },
+      "seconds": 13.7
+    },
+    "Firm": {
+      "height_range_cm": [
+        -0.297,
+        2.132
+      ],
+      "size": 2048,
+      "px_cm": 0.1465,
+      "ao": {
+        "mean": 0.859,
+        "p1_5_50_95": [
+          0.611,
+          0.695,
+          0.875,
+          0.97
+        ],
+        "under_0_7": 0.0541
+      },
+      "rough_bake": {
+        "min_max": [
+          0.549,
+          0.902
+        ],
+        "p5_50_95": [
+          0.58,
+          0.749,
+          0.902
+        ]
+      },
+      "rough_pbr": {
+        "min_max": [
+          0.716,
+          0.945
+        ],
+        "p5_50_95": [
+          0.736,
+          0.845,
+          0.945
+        ],
+        "roundtrip_max_err": 0.0
+      },
+      "colour_linear_mean": [
+        0.0879,
+        0.0576,
+        0.0334
+      ],
+      "luminance_mean": 0.0628,
+      "luminance_p5_95": [
+        0.052,
+        0.081
+      ],
+      "luminance_mean_with_cavity": 0.0615,
+      "parallax_height": {
+        "max_slope_per_texel_pct_before": 23.12,
+        "max_slope_per_texel_pct_after": 1.5,
+        "cap_pct": 1.5,
+        "sigma_texels": 1.5,
+        "mean_abs_change": 0.0548,
+        "p99_abs_change": 0.1641
+      },
+      "files": {
+        "ao": "Art/Export/MudStyleUE/T_MS_BogFirmAO.png",
+        "orh": "Art/Export/MudStyleUE/T_MS_BogFirmORH.png"
+      },
+      "seconds": 14.1
+    },
+    "Deep": {
+      "height_range_cm": [
+        -0.448,
+        1.753
+      ],
+      "size": 2048,
+      "px_cm": 0.1465,
+      "ao": {
+        "mean": 0.966,
+        "p1_5_50_95": [
+          0.817,
+          0.893,
+          0.977,
+          0.998
+        ],
+        "under_0_7": 0.0019
+      },
+      "rough_bake": {
+        "min_max": [
+          0.149,
+          0.659
+        ],
+        "p5_50_95": [
+          0.149,
+          0.251,
+          0.616
+        ]
+      },
+      "rough_pbr": {
+        "min_max": [
+          0.456,
+          0.787
+        ],
+        "p5_50_95": [
+          0.456,
+          0.522,
+          0.759
+        ],
+        "roundtrip_max_err": 0.0
+      },
+      "colour_linear_mean": [
+        0.0492,
+        0.0287,
+        0.0135
+      ],
+      "luminance_mean": 0.0322,
+      "luminance_p5_95": [
+        0.029,
+        0.038
+      ],
+      "luminance_mean_with_cavity": 0.032,
+      "parallax_height": {
+        "max_slope_per_texel_pct_before": 22.06,
+        "max_slope_per_texel_pct_after": 1.5,
+        "cap_pct": 1.5,
+        "sigma_texels": 1.5,
+        "mean_abs_change": 0.0049,
+        "p99_abs_change": 0.0771
+      },
+      "files": {
+        "ao": "Art/Export/MudStyleUE/T_MS_BogDeepAO.png",
+        "orh": "Art/Export/MudStyleUE/T_MS_BogDeepORH.png"
+      },
+      "seconds": 14.4
+    },
+    "Stony": {
+      "height_range_cm": [
+        -0.424,
+        2.471
+      ],
+      "size": 2048,
+      "px_cm": 0.1465,
+      "ao": {
+        "mean": 0.898,
+        "p1_5_50_95": [
+          0.621,
+          0.722,
+          0.92,
+          0.995
+        ],
+        "under_0_7": 0.0362
+      },
+      "rough_bake": {
+        "min_max": [
+          0.22,
+          0.859
+        ],
+        "p5_50_95": [
+          0.22,
+          0.38,
+          0.859
+        ]
+      },
+      "rough_pbr": {
+        "min_max": [
+          0.502,
+          0.917
+        ],
+        "p5_50_95": [
+          0.502,
+          0.606,
+          0.917
+        ],
+        "roundtrip_max_err": 0.0
+      },
+      "colour_linear_mean": [
+        0.0697,
+        0.0442,
+        0.0227
+      ],
+      "luminance_mean": 0.0479,
+      "luminance_p5_95": [
+        0.039,
+        0.084
+      ],
+      "luminance_mean_with_cavity": 0.0471,
+      "parallax_height": {
+        "max_slope_per_texel_pct_before": 17.7,
+        "max_slope_per_texel_pct_after": 1.5,
+        "cap_pct": 1.5,
+        "sigma_texels": 1.5,
+        "mean_abs_change": 0.026,
+        "p99_abs_change": 0.1228
+      },
+      "files": {
+        "ao": "Art/Export/MudStyleUE/T_MS_BogStonyAO.png",
+        "orh": "Art/Export/MudStyleUE/T_MS_BogStonyORH.png"
+      },
+      "seconds": 14.1
+    }
+  }
+}

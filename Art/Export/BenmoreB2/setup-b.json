@@ -1,0 +1,1277 @@
+{
+ "ok": true,
+ "stage": "b",
+ "level": "/Game/GrandTour/Demo/BenmoreRoads/Gaea/L_Benmore_GaeaReview",
+ "timings_collected": false,
+ "umap_mtime_at_load": 1791858607.862312,
+ "zones_removed": 76,
+ "vegetation_copy": "/Game/GrandTour/Terrain/DeformZones/T_RL_Vegetation.T_RL_Vegetation",
+ "attach": {
+  "unwrapped": [
+   "MP_OPACITY_MASK",
+   "MP_BASE_COLOR",
+   "MP_ROUGHNESS"
+  ],
+  "wrapped": {
+   "MP_OPACITY_MASK": "MaterialExpressionCustom_23.(main)",
+   "MP_BASE_COLOR": "MaterialExpressionCustom_26.return",
+   "MP_ROUGHNESS": "MaterialExpressionCustom_26.Rough"
+  },
+  "vegetation": [
+   "/Game/GrandTour/Terrain/DeformZones/T_RL_Vegetation.T_RL_Vegetation"
+  ]
+ },
+ "terrain_after": {
+  "pixel": 1874,
+  "vertex": 148,
+  "samplers": 29,
+  "pixel_texture_samples": 44
+ },
+ "zones": [
+  {
+   "id": 1,
+   "label": "Terrace loop 0-29 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 28.99,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 0-29 m MudRoad"
+  },
+  {
+   "id": 2,
+   "label": "Terrace loop 29-142 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 112.93,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 29-142 m gravel"
+  },
+  {
+   "id": 3,
+   "label": "Terrace loop 142-172 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 142-172 m MudRoad"
+  },
+  {
+   "id": 4,
+   "label": "Terrace loop 172-222 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 49.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 172-222 m gravel"
+  },
+  {
+   "id": 5,
+   "label": "Terrace loop 222-252 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 222-252 m MudRoad"
+  },
+  {
+   "id": 6,
+   "label": "Terrace loop 252-307 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 54.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 252-307 m gravel"
+  },
+  {
+   "id": 7,
+   "label": "Terrace loop 307-337 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 307-337 m MudRoad"
+  },
+  {
+   "id": 8,
+   "label": "Terrace loop 337-395 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 57.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 337-395 m gravel"
+  },
+  {
+   "id": 9,
+   "label": "Terrace loop 395-425 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 395-425 m MudRoad"
+  },
+  {
+   "id": 10,
+   "label": "Terrace loop 425-463 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 37.97,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 425-463 m gravel"
+  },
+  {
+   "id": 11,
+   "label": "Terrace loop 463-493 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 463-493 m MudRoad"
+  },
+  {
+   "id": 12,
+   "label": "Terrace loop 493-544 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 50.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 493-544 m gravel"
+  },
+  {
+   "id": 13,
+   "label": "Terrace loop 544-598 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 53.97,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 544-598 m MudRoad"
+  },
+  {
+   "id": 14,
+   "label": "Terrace loop 598-697 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 99.44,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 598-697 m gravel"
+  },
+  {
+   "id": 15,
+   "label": "Terrace loop 697-797 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 99.45,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 697-797 m gravel"
+  },
+  {
+   "id": 16,
+   "label": "Terrace loop 797-827 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 797-827 m MudRoad"
+  },
+  {
+   "id": 17,
+   "label": "Terrace loop 827-865 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 37.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 827-865 m gravel"
+  },
+  {
+   "id": 18,
+   "label": "Terrace loop 865-895 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 865-895 m MudRoad"
+  },
+  {
+   "id": 19,
+   "label": "Terrace loop 895-1013 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 118.43,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 895-1013 m gravel"
+  },
+  {
+   "id": 20,
+   "label": "Terrace loop 1013-1131 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 118.43,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1013-1131 m gravel"
+  },
+  {
+   "id": 21,
+   "label": "Terrace loop 1131-1161 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1131-1161 m MudRoad"
+  },
+  {
+   "id": 22,
+   "label": "Terrace loop 1161-1277 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 115.92,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1161-1277 m gravel"
+  },
+  {
+   "id": 23,
+   "label": "Terrace loop 1277-1307 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1277-1307 m MudRoad"
+  },
+  {
+   "id": 24,
+   "label": "Terrace loop 1307-1349 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 41.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1307-1349 m gravel"
+  },
+  {
+   "id": 25,
+   "label": "Terrace loop 1349-1379 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1349-1379 m MudRoad"
+  },
+  {
+   "id": 26,
+   "label": "Terrace loop 1379-1429 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 49.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1379-1429 m gravel"
+  },
+  {
+   "id": 27,
+   "label": "Terrace loop 1429-1459 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1429-1459 m MudRoad"
+  },
+  {
+   "id": 28,
+   "label": "Terrace loop 1459-1565 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 105.93,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1459-1565 m gravel"
+  },
+  {
+   "id": 29,
+   "label": "Terrace loop 1565-1595 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1565-1595 m MudRoad"
+  },
+  {
+   "id": 30,
+   "label": "Terrace loop 1595-1678 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 82.94,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1595-1678 m gravel"
+  },
+  {
+   "id": 31,
+   "label": "Terrace loop 1678-1761 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 82.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1678-1761 m gravel"
+  },
+  {
+   "id": 32,
+   "label": "Terrace loop 1761-1791 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1761-1791 m MudRoad"
+  },
+  {
+   "id": 33,
+   "label": "Terrace loop 1791-1879 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 87.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1791-1879 m gravel"
+  },
+  {
+   "id": 34,
+   "label": "Terrace loop 1879-1913 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 33.98,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1879-1913 m MudRoad"
+  },
+  {
+   "id": 35,
+   "label": "Terrace loop 1913-1947 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 33.98,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1913-1947 m MudRoad"
+  },
+  {
+   "id": 36,
+   "label": "Terrace loop 1947-2013 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 65.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 1947-2013 m gravel"
+  },
+  {
+   "id": 37,
+   "label": "Terrace loop 2013-2043 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2013-2043 m MudRoad"
+  },
+  {
+   "id": 38,
+   "label": "Terrace loop 2043-2098 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 54.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2043-2098 m gravel"
+  },
+  {
+   "id": 39,
+   "label": "Terrace loop 2098-2128 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2098-2128 m MudRoad"
+  },
+  {
+   "id": 40,
+   "label": "Terrace loop 2128-2198 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 70.45,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2128-2198 m gravel"
+  },
+  {
+   "id": 41,
+   "label": "Terrace loop 2198-2269 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 70.46,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2198-2269 m gravel"
+  },
+  {
+   "id": 42,
+   "label": "Terrace loop 2269-2299 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2269-2299 m MudRoad"
+  },
+  {
+   "id": 43,
+   "label": "Terrace loop 2299-2365 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 65.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2299-2365 m gravel"
+  },
+  {
+   "id": 44,
+   "label": "Terrace loop 2365-2431 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 65.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2365-2431 m gravel"
+  },
+  {
+   "id": 45,
+   "label": "Terrace loop 2431-2461 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2431-2461 m MudRoad"
+  },
+  {
+   "id": 46,
+   "label": "Terrace loop 2461-2501 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 39.97,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2461-2501 m gravel"
+  },
+  {
+   "id": 47,
+   "label": "Terrace loop 2501-2517 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 15.99,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Terrace loop 2501-2517 m MudRoad"
+  },
+  {
+   "id": 48,
+   "label": "Hillside branch 0-27 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 26.98,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 0-27 m gravel"
+  },
+  {
+   "id": 49,
+   "label": "Hillside branch 27-57 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 27-57 m MudRoad"
+  },
+  {
+   "id": 50,
+   "label": "Hillside branch 57-130 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 73.44,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 57-130 m gravel"
+  },
+  {
+   "id": 51,
+   "label": "Hillside branch 130-204 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 73.45,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 130-204 m gravel"
+  },
+  {
+   "id": 52,
+   "label": "Hillside branch 204-234 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 204-234 m MudRoad"
+  },
+  {
+   "id": 53,
+   "label": "Hillside branch 234-311 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 76.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 234-311 m gravel"
+  },
+  {
+   "id": 54,
+   "label": "Hillside branch 311-388 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 76.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 311-388 m gravel"
+  },
+  {
+   "id": 55,
+   "label": "Hillside branch 388-418 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 388-418 m MudRoad"
+  },
+  {
+   "id": 56,
+   "label": "Hillside branch 418-451 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 32.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 418-451 m gravel"
+  },
+  {
+   "id": 57,
+   "label": "Hillside branch 451-481 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 451-481 m MudRoad"
+  },
+  {
+   "id": 58,
+   "label": "Hillside branch 481-559 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 78.44,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 481-559 m gravel"
+  },
+  {
+   "id": 59,
+   "label": "Hillside branch 559-638 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 78.45,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 559-638 m gravel"
+  },
+  {
+   "id": 60,
+   "label": "Hillside branch 638-668 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 638-668 m MudRoad"
+  },
+  {
+   "id": 61,
+   "label": "Hillside branch 668-721 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 52.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 668-721 m gravel"
+  },
+  {
+   "id": 62,
+   "label": "Hillside branch 721-751 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 721-751 m MudRoad"
+  },
+  {
+   "id": 63,
+   "label": "Hillside branch 751-804 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 52.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 751-804 m gravel"
+  },
+  {
+   "id": 64,
+   "label": "Hillside branch 804-834 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 804-834 m MudRoad"
+  },
+  {
+   "id": 65,
+   "label": "Hillside branch 834-927 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 93.44,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 834-927 m gravel"
+  },
+  {
+   "id": 66,
+   "label": "Hillside branch 927-1020 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 93.44,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 927-1020 m gravel"
+  },
+  {
+   "id": 67,
+   "label": "Hillside branch 1020-1050 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 1020-1050 m MudRoad"
+  },
+  {
+   "id": 68,
+   "label": "Hillside branch 1050-1083 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 32.96,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 1050-1083 m gravel"
+  },
+  {
+   "id": 69,
+   "label": "Hillside branch 1083-1113 m MudRoad",
+   "kind": "mud",
+   "profile": null,
+   "length_m": 30.0,
+   "tint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 1083-1113 m MudRoad"
+  },
+  {
+   "id": 70,
+   "label": "Hillside branch 1113-1189 m gravel",
+   "kind": "gravel",
+   "profile": "loose",
+   "length_m": 75.95,
+   "tint": [
+    1.345,
+    1.439,
+    1.889
+   ],
+   "section_variant": "<GTMudVariant.STANDARD: 0>",
+   "actor": "Hillside branch 1113-1189 m gravel"
+  }
+ ],
+ "gravel_tints": {
+  "loose": [
+   1.345,
+   1.439,
+   1.889
+  ],
+  "firm": [
+   1.235,
+   1.314,
+   1.696
+  ]
+ },
+ "gravel_palette_tints": {
+  "loose": [
+   1.071,
+   1.005,
+   1.027
+  ],
+  "firm": [
+   0.983,
+   0.918,
+   0.922
+  ]
+ },
+ "bogs": [
+  {
+   "centre_m": [
+    218.2,
+    -260.1
+   ],
+   "z_m": 42.69,
+   "yaw_deg": -142.4,
+   "half_m": [
+    17.2,
+    9.1
+   ],
+   "area_m2": 489.6,
+   "region_m2": 1416.3,
+   "slope_max_deg": 10.21,
+   "slope_mean_deg": 3.55,
+   "to_road_m": 19.7,
+   "to_water_m": 903.1,
+   "to_mudroad_m": 20.0,
+   "vegetation": 1.207,
+   "flow_log": 10.36,
+   "nearest_camera": [
+    "Benmore_Gaea_Camera_Creek_Reach",
+    828.4
+   ],
+   "variant": "Firm",
+   "id": 71,
+   "label": "Bog 1 (Firm)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    4176,
+    4377
+   ],
+   "placed": true,
+   "actor": "Bog 1 (Firm)",
+   "section_variant": "<GTMudVariant.FIRM: 1>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0
+  },
+  {
+   "centre_m": [
+    -477.7,
+    -622.0
+   ],
+   "z_m": 26.66,
+   "yaw_deg": 179.9,
+   "half_m": [
+    17.2,
+    8.3
+   ],
+   "area_m2": 448.5,
+   "region_m2": 1683.9,
+   "slope_max_deg": 3.42,
+   "slope_mean_deg": 2.59,
+   "to_road_m": 21.0,
+   "to_water_m": 674.5,
+   "to_mudroad_m": 88.6,
+   "vegetation": 1.509,
+   "flow_log": 3.09,
+   "nearest_camera": [
+    "Benmore_Fleet_Overview",
+    352.9
+   ],
+   "variant": "Stony",
+   "id": 72,
+   "label": "Bog 2 (Stony)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    2576,
+    2751
+   ],
+   "placed": true,
+   "actor": "Bog 2 (Stony)",
+   "section_variant": "<GTMudVariant.STONY: 3>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0
+  },
+  {
+   "centre_m": [
+    -595.5,
+    -594.7
+   ],
+   "z_m": 21.25,
+   "yaw_deg": 155.6,
+   "half_m": [
+    17.2,
+    7.5
+   ],
+   "area_m2": 405.3,
+   "region_m2": 772.0,
+   "slope_max_deg": 3.27,
+   "slope_mean_deg": 2.26,
+   "to_road_m": 24.3,
+   "to_water_m": 566.0,
+   "to_mudroad_m": 35.1,
+   "vegetation": 1.568,
+   "flow_log": 0.69,
+   "nearest_camera": [
+    "Benmore_Fleet_Overview",
+    246.8
+   ],
+   "variant": "Firm",
+   "id": 73,
+   "label": "Bog 3 (Firm)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    2049,
+    2197
+   ],
+   "placed": true,
+   "actor": "Bog 3 (Firm)",
+   "section_variant": "<GTMudVariant.FIRM: 1>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0
+  },
+  {
+   "centre_m": [
+    -92.8,
+    -250.8
+   ],
+   "z_m": 27.91,
+   "yaw_deg": 142.8,
+   "half_m": [
+    17.2,
+    8.7
+   ],
+   "area_m2": 469.3,
+   "region_m2": 1158.0,
+   "slope_max_deg": 16.62,
+   "slope_mean_deg": 2.83,
+   "to_road_m": 18.1,
+   "to_water_m": 670.0,
+   "to_mudroad_m": 52.0,
+   "vegetation": 1.582,
+   "flow_log": 2.08,
+   "nearest_camera": [
+    "Benmore_RL_Camera_River_Reach",
+    588.9
+   ],
+   "variant": "Stony",
+   "id": 74,
+   "label": "Bog 4 (Stony)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    2739,
+    2876
+   ],
+   "placed": true,
+   "actor": "Bog 4 (Stony)",
+   "section_variant": "<GTMudVariant.STONY: 3>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0
+  },
+  {
+   "centre_m": [
+    134.1,
+    -288.9
+   ],
+   "z_m": 38.8,
+   "yaw_deg": -141.3,
+   "half_m": [
+    15.1,
+    9.4
+   ],
+   "area_m2": 446.5,
+   "region_m2": 1073.4,
+   "slope_max_deg": 10.12,
+   "slope_mean_deg": 2.89,
+   "to_road_m": 18.9,
+   "to_water_m": 860.0,
+   "to_mudroad_m": 29.7,
+   "vegetation": 1.637,
+   "flow_log": 0.69,
+   "nearest_camera": [
+    "Benmore_RL_Camera_River_Reach",
+    798.5
+   ],
+   "variant": "Firm",
+   "id": 75,
+   "label": "Bog 5 (Firm)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    3826,
+    3935
+   ],
+   "placed": true,
+   "actor": "Bog 5 (Firm)",
+   "section_variant": "<GTMudVariant.FIRM: 1>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0
+  },
+  {
+   "centre_m": [
+    -296.5,
+    -38.9
+   ],
+   "z_m": 19.2,
+   "yaw_deg": 60.3,
+   "half_m": [
+    17.2,
+    12.1
+   ],
+   "area_m2": 653.9,
+   "region_m2": 807.3,
+   "slope_max_deg": 11.84,
+   "slope_mean_deg": 2.99,
+   "to_road_m": 20.0,
+   "to_water_m": 376.2,
+   "to_mudroad_m": 28.6,
+   "vegetation": 1.685,
+   "flow_log": 1.61,
+   "nearest_camera": [
+    "Benmore_RL_Camera_River_Reach",
+    300.6
+   ],
+   "variant": "Stony",
+   "id": 76,
+   "label": "Bog 6 (Stony)",
+   "samples": 441,
+   "mesh_hits": {},
+   "ground_z_range_cm": [
+    1828,
+    1978
+   ],
+   "placed": true,
+   "actor": "Bog 6 (Stony)",
+   "section_variant": "<GTMudVariant.STONY: 3>",
+   "water_table_cm": -25.0,
+   "pre_churn": 1.0
+  }
+ ],
+ "umap_mtime_before_save": 1791858607.862312,
+ "saved": true,
+ "surface_effects_actors": [
+  "Benmore_VehicleSurfaceEffects"
+ ]
+}

@@ -1,0 +1,21 @@
+// PaletteFinish: coherent SDR colour families, preserving dark shadow detail.
+float3 source=Composed;
+float lum=dot(source,float3(.2126,.7152,.0722));
+// Pull excess electric green towards muted olive without tinting warm soil.
+float excess=max(0,source.g-max(source.r,source.b));
+float3 restrained=source+GreenRestraint*excess*float3(.38,-.18,.08);
+float neutral=dot(restrained,float3(.2126,.7152,.0722));
+float3 colour=lerp(neutral.xxx,restrained,FinishSaturation);
+// Reduce bright pasture and sky glare; leave low shadow values readable.
+float gain=lerp(1,MidtoneGain,smoothstep(.055,.24,lum));
+float shoulder=1-HighlightCompression*smoothstep(.32,.9,lum);
+colour*=gain*shoulder;
+// Tonal split: protect low shadows and the sky. Fade out before the distant
+// haze so the atmosphere keeps its cool separation. This is a luminance mask,
+// not a direct-light visibility test; material sunlit colours supply that role.
+float upper=smoothstep(.075,.28,lum)*(1-smoothstep(65000,160000,SceneDepth));
+float warm=SunlightWarmth*upper;
+float grey=dot(colour,float3(.2126,.7152,.0722));
+colour=lerp(grey.xxx,colour,1+.18*warm);
+colour*=float3(1+.16*warm,1+.045*warm,1-.10*warm)*(1+SunlightLift*upper);
+return lerp(source,colour,saturate(FinishStrength));

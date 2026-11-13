@@ -1,0 +1,20 @@
+[
+  {
+    "asset": "gravel_floor_02",
+    "channel": "Displacement",
+    "file": "gravel_floor_02_disp_2k.png",
+    "api": "https://api.polyhaven.com/files/gravel_floor_02",
+    "size": 7098121,
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/gravel_floor_02/gravel_floor_02_disp_2k.png",
+    "md5": "68ed8323e660e7857378688882d4e5ff"
+  },
+  {
+    "asset": "gravel_floor_04",
+    "channel": "Displacement",
+    "file": "gravel_floor_04_disp_2k.png",
+    "api": "https://api.polyhaven.com/files/gravel_floor_04",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/gravel_floor_04/gravel_floor_04_disp_2k.png",
+    "md5": "b011417296082aee399165211743b20b",
+    "size": 7476479
+  }
+]

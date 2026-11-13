@@ -1,0 +1,36 @@
+﻿[
+    {
+        "name":  "hide_d0",
+        "pair":  1,
+        "kind":  "hide",
+        "log":  "ld8c_hide_d0.log",
+        "exit":  0,
+        "seconds":  246,
+        "gpu_before_c":  60,
+        "waited_s":  101,
+        "cooled":  true,
+        "reasons_before":  "0x0000000000000001",
+        "gpu_after_c":  79,
+        "reasons_after":  "0x0000000000000001",
+        "util_after":  57,
+        "result":  "[2026.09.28-21.54.22:706][579]LogTemp: Display: GTDRIVETEST_RESULT PASS screenshots: 33/33 written (33 expected): hide_1_valley=1121219 hide_2_climb=1333056 hid",
+        "finished":  "2026-09-28T15:54:32"
+    },
+    {
+        "name":  "hide_d1",
+        "pair":  1,
+        "kind":  "hide",
+        "log":  "ld8c_hide_d1.log",
+        "exit":  0,
+        "seconds":  316,
+        "gpu_before_c":  65,
+        "waited_s":  181,
+        "cooled":  false,
+        "reasons_before":  "0x0000000000000001",
+        "gpu_after_c":  79,
+        "reasons_after":  "0x0000000000000001",
+        "util_after":  45,
+        "result":  "[2026.09.28-22.02.42:777][388]LogTemp: Display: GTDRIVETEST_RESULT PASS screenshots: 41/41 written (41 expected): hide_1_valley=1238767 hide_2_climb=1423952 hid",
+        "finished":  "2026-09-28T16:02:54"
+    }
+]

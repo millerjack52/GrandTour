@@ -1,0 +1,6700 @@
+[
+  {
+    "name": "RET | L front wing",
+    "v": 77,
+    "f": 66,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L Front door skin",
+    "v": 102,
+    "f": 80,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L Rear door skin",
+    "v": 111,
+    "f": 97,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L rear quarter",
+    "v": 101,
+    "f": 87,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L scuttle cheek",
+    "v": 24,
+    "f": 11,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L Front arch flare",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L Rear arch flare",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R front wing",
+    "v": 77,
+    "f": 66,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R Front door skin",
+    "v": 102,
+    "f": 80,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R Rear door skin",
+    "v": 111,
+    "f": 97,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R rear quarter",
+    "v": 101,
+    "f": 87,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R scuttle cheek",
+    "v": 24,
+    "f": 11,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R Front arch flare",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R Rear arch flare",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Bonnet main pressing",
+    "v": 117,
+    "f": 96,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Bonnet side return -1",
+    "v": 18,
+    "f": 8,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Wing top return -1",
+    "v": 18,
+    "f": 8,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Bonnet side return 1",
+    "v": 18,
+    "f": 8,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Wing top return 1",
+    "v": 18,
+    "f": 8,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Bonnet nose return",
+    "v": 26,
+    "f": 12,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Bonnet rear return",
+    "v": 26,
+    "f": 12,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Roof crown",
+    "v": 104,
+    "f": 84,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L Front window frame",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L Front door jamb",
+    "v": 219,
+    "f": 144,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L Rear window frame",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L B pillar",
+    "v": 26,
+    "f": 12,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L C pillar",
+    "v": 8,
+    "f": 3,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L cargo window frame",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L D pillar",
+    "v": 10,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L roof rebate",
+    "v": 8,
+    "f": 3,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R Front window frame",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R Front door jamb",
+    "v": 219,
+    "f": 144,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R Rear window frame",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R B pillar",
+    "v": 26,
+    "f": 12,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R C pillar",
+    "v": 8,
+    "f": 3,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R cargo window frame",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R D pillar",
+    "v": 10,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R roof rebate",
+    "v": 8,
+    "f": 3,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Windscreen frame",
+    "v": 52,
+    "f": 26,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L A pillar return",
+    "v": 12,
+    "f": 5,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R A pillar return",
+    "v": 12,
+    "f": 5,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Roof front header",
+    "v": 22,
+    "f": 10,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Roof rear header",
+    "v": 22,
+    "f": 10,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Roof gutter -1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Roof side closure -1",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Roof gutter 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Roof side closure 1",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Rear glazing frame",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L Rear door jamb",
+    "v": 321,
+    "f": 212,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R Rear door jamb",
+    "v": 321,
+    "f": 212,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L Front window gasket",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | L Front window glass",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | L Rear window gasket",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | L Rear window glass",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | L cargo window gasket",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | L cargo window glass",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | R Front window gasket",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | R Front window glass",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | R Rear window gasket",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | R Rear window glass",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | R cargo window gasket",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | R cargo window glass",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | Windscreen gasket",
+    "v": 52,
+    "f": 26,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | Windscreen glass",
+    "v": 54,
+    "f": 40,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | Rear glazing gasket",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | Rear glazing glass",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Glass"
+    ]
+  },
+  {
+    "name": "RET | L headlamp panel",
+    "v": 70,
+    "f": 35,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L headlight bezel",
+    "v": 120,
+    "f": 96,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | L headlight lens",
+    "v": 24,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L front indicator 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L front indicator 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R headlamp panel",
+    "v": 70,
+    "f": 35,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R headlight bezel",
+    "v": 120,
+    "f": 96,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | R headlight lens",
+    "v": 24,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R front indicator 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R front indicator 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | Grille recess",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.007000000216066837,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Grille slat 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Grille slat 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Grille slat 2",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Grille slat 3",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Grille slat 4",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Grille border -0.125",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Grille border 0.125",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Grille edge 0.188",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Front recovery bumper",
+    "v": 16,
+    "f": 10,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.008999999612569809,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Winch cradle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.006000000052154064,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Winch drum",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Winch cheek -0.049",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004000000189989805,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Winch cheek 0.049",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004000000189989805,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Fairlead roller -0.06",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Fairlead roller 0.06",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Fairlead roller 0.15",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Fairlead roller 0.185",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Tow mount -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Recovery shackle -1",
+    "v": 200,
+    "f": 194,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Shackle pin -1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Bumper fog -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004000000189989805,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | Tow mount 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Recovery shackle 1",
+    "v": 200,
+    "f": 194,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Shackle pin 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Bumper fog 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004000000189989805,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | Recovery strap",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Roof spot -1 bezel",
+    "v": 120,
+    "f": 96,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Roof spot -1 lens",
+    "v": 24,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | Roof spot 1 bezel",
+    "v": 120,
+    "f": 96,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Roof spot 1 lens",
+    "v": 24,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L nose corner",
+    "v": 30,
+    "f": 20,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R nose corner",
+    "v": 30,
+    "f": 20,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Grille edge 0.259",
+    "v": 63,
+    "f": 40,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp cassette bezel",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp lens 0",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 0 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 0 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 0 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 0 4",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 0 5",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 0 6",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 0 7",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp lens 1",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 1 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 1 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 1 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 1 4",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 1 5",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 1 6",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 1 7",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp lens 2",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 2 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 2 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 2 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 2 4",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 2 5",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 2 6",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L tail lens rib 2 7",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L cassette divider 0.192",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L cassette divider 0.208",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L cassette divider 0.23",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L cassette divider 0.248",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp cassette bezel",
+    "v": 8,
+    "f": 4,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp lens 0",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 0 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 0 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 0 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 0 4",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 0 5",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 0 6",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 0 7",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Light"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp lens 1",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 1 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 1 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 1 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 1 4",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 1 5",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 1 6",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 1 7",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | red tail lens"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp lens 2",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ],
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 2 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 2 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 2 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 2 4",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 2 5",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 2 6",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R tail lens rib 2 7",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R cassette divider 0.192",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R cassette divider 0.208",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R cassette divider 0.23",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R cassette divider 0.248",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Tailgate jamb -0.1675",
+    "v": 16,
+    "f": 7,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Tailgate jamb 0.1675",
+    "v": 16,
+    "f": 7,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp aperture bottom",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp aperture top",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp aperture inner",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L rear lamp aperture outer",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp aperture bottom",
+    "v": 4,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp aperture top",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp aperture inner",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | R rear lamp aperture outer",
+    "v": 14,
+    "f": 6,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Rear lower apron",
+    "v": 25,
+    "f": 16,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Lower tailgate",
+    "v": 40,
+    "f": 28,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Rear bumper",
+    "v": 20,
+    "f": 12,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.007000000216066837,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L Front handle cup",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L Front handle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | L mirror bracket",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | L mirror casing",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.008999999612569809,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L mirror glass",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Doors | mirror silver"
+    ]
+  },
+  {
+    "name": "RET | L Rear handle cup",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L Rear handle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | L front marker",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | L D pillar vent 0",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L D pillar vent 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L D pillar vent 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L D pillar vent 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R Front handle cup",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R Front handle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | R mirror bracket",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | R mirror casing",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.008999999612569809,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R mirror glass",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Doors | mirror silver"
+    ]
+  },
+  {
+    "name": "RET | R Rear handle cup",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R Rear handle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | R front marker",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "GA | amber indicator lens"
+    ]
+  },
+  {
+    "name": "RET | R D pillar vent 0",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R D pillar vent 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R D pillar vent 2",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R D pillar vent 3",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Bonnet scuttle vent",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004000000189989805,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Vent divider -0.075",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Vent divider 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | Vent divider 0.075",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Body"
+    ]
+  },
+  {
+    "name": "RET | L wiper spindle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L wiper",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | L wiper blade",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | L wiper rubber",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | R wiper spindle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R wiper",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | R wiper blade",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | R wiper rubber",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | Tailgate latch",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rear wiper spindle",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rear wiper",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Rear wiper carrier",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Rear wiper rubber",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0010000000474974513,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | Aerial base",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Aerial mounting foot",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Aerial whip",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L Front enclosed wheelhouse",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L rear arch seating return",
+    "v": 12,
+    "f": 5,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L Rear enclosed wheelhouse",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L sill return",
+    "v": 6,
+    "f": 2,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L cargo floor return",
+    "v": 6,
+    "f": 2,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R Front enclosed wheelhouse",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R rear arch seating return",
+    "v": 12,
+    "f": 5,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R Rear enclosed wheelhouse",
+    "v": 24,
+    "f": 15,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R sill return",
+    "v": 6,
+    "f": 2,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R cargo floor return",
+    "v": 6,
+    "f": 2,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Bonnet seating flange -1",
+    "v": 18,
+    "f": 8,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Bonnet seating flange 1",
+    "v": 18,
+    "f": 8,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Firewall",
+    "v": 60,
+    "f": 44,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Front skid plate",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.006000000052154064,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Fitted cabin floor",
+    "v": 12,
+    "f": 1,
+    "modifiers": [
+      [
+        "Panel thickness",
+        "SOLIDIFY",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Engine bay undertray",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Chassis rail -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Axle -1 -0.31226",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Axle -1 0.26343",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Chassis rail 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Axle 1 -0.31226",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Axle 1 0.26343",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Body crossmember -0.18",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Body crossmember 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Body crossmember 0.14",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Body crossmember 0.405",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Differential -0.31226",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.03500000014901161,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Differential 0.26343",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.03500000014901161,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Transmission",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.019999999552965164,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | L rocker",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | R rocker",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | LF tyre",
+    "v": 384,
+    "f": 384,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | LF rim barrel",
+    "v": 192,
+    "f": 192,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF rim face",
+    "v": 288,
+    "f": 288,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF hub",
+    "v": 48,
+    "f": 26,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | LF lug mounting disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF brake disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF brake caliper",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.006000000052154064,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | LF spoke 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF spoke 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF spoke 2",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF spoke 3",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF spoke 4",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF spoke 5",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF bolt 0",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF bolt 1",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF bolt 2",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF bolt 3",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF bolt 4",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LF tread",
+    "v": 864,
+    "f": 648,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | RF tyre",
+    "v": 384,
+    "f": 384,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | RF rim barrel",
+    "v": 192,
+    "f": 192,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF rim face",
+    "v": 288,
+    "f": 288,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF hub",
+    "v": 48,
+    "f": 26,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | RF lug mounting disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF brake disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF brake caliper",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.006000000052154064,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | RF spoke 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF spoke 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF spoke 2",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF spoke 3",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF spoke 4",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF spoke 5",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF bolt 0",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF bolt 1",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF bolt 2",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF bolt 3",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF bolt 4",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RF tread",
+    "v": 864,
+    "f": 648,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | LR tyre",
+    "v": 384,
+    "f": 384,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | LR rim barrel",
+    "v": 192,
+    "f": 192,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR rim face",
+    "v": 288,
+    "f": 288,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR hub",
+    "v": 48,
+    "f": 26,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | LR lug mounting disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR brake disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR brake caliper",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.006000000052154064,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | LR spoke 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR spoke 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR spoke 2",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR spoke 3",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR spoke 4",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR spoke 5",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR bolt 0",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR bolt 1",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR bolt 2",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR bolt 3",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR bolt 4",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | LR tread",
+    "v": 864,
+    "f": 648,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | RR tyre",
+    "v": 384,
+    "f": 384,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | RR rim barrel",
+    "v": 192,
+    "f": 192,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR rim face",
+    "v": 288,
+    "f": 288,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR hub",
+    "v": 48,
+    "f": 26,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | RR lug mounting disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR brake disc",
+    "v": 64,
+    "f": 34,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR brake caliper",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.006000000052154064,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | RR spoke 0",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR spoke 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR spoke 2",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR spoke 3",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR spoke 4",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR spoke 5",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR bolt 0",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR bolt 1",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR bolt 2",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR bolt 3",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR bolt 4",
+    "v": 12,
+    "f": 8,
+    "modifiers": [],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | RR tread",
+    "v": 864,
+    "f": 648,
+    "modifiers": [],
+    "materials": [
+      "Rubber"
+    ]
+  },
+  {
+    "name": "RET | Rack foot -1 -0.035",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack foot -1 0.345",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack rail -1 0.461",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack rail -1 0.491",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright -1 -0.048",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright -1 0.045",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright -1 0.15",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright -1 0.26",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright -1 0.365",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack foot 1 -0.035",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack foot 1 0.345",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.004999999888241291,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack rail 1 0.461",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack rail 1 0.491",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright 1 -0.048",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright 1 0.045",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright 1 0.15",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright 1 0.26",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack upright 1 0.365",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack cross rail -0.048 0.461",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack cross rail -0.048 0.491",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack cross rail 0.365 0.461",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack cross rail 0.365 0.491",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack deck -0.032",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack deck 0.045",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack deck 0.12",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack deck 0.2",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack deck 0.28",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rack deck 0.35",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Roof lamp mount -1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Roof lamp housing -1",
+    "v": 48,
+    "f": 26,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Roof lamp mount 1",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Roof lamp housing 1",
+    "v": 48,
+    "f": 26,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Front cargo base",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.02500000037252903,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Cargo"
+    ]
+  },
+  {
+    "name": "RET | Front cargo lid",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.012000000104308128,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Cargo"
+    ]
+  },
+  {
+    "name": "RET | Front strap top 0.009799998626112937",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Front strap side 0.009799998626112937 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Front buckle 0.009799998626112937 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Front strap side 0.009799998626112937 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Front buckle 0.009799998626112937 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Front strap top 0.08519999645650386",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Front strap side 0.08519999645650386 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Front buckle 0.08519999645650386 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Front strap side 0.08519999645650386 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Front buckle 0.08519999645650386 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Front luggage handle",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Front handle mount -0.04849999985098839",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Front handle mount -0.006499999850988387",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Right cargo base",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.02500000037252903,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Cargo"
+    ]
+  },
+  {
+    "name": "RET | Right cargo lid",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.012000000104308128,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Cargo"
+    ]
+  },
+  {
+    "name": "RET | Right strap top 0.12579999774694442",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Right strap side 0.12579999774694442 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Right buckle 0.12579999774694442 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Right strap side 0.12579999774694442 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Right buckle 0.12579999774694442 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Right strap top 0.21419999092817307",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Right strap side 0.21419999092817307 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Right buckle 0.21419999092817307 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Right strap side 0.21419999092817307 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Right buckle 0.21419999092817307 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Right luggage handle",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Right handle mount 0.054000002980232234",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Right handle mount 0.09600000298023224",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rear cargo base",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.02500000037252903,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Cargo"
+    ]
+  },
+  {
+    "name": "RET | Rear cargo lid",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.012000000104308128,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Cargo"
+    ]
+  },
+  {
+    "name": "RET | Rear strap top 0.16939999997615815",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Rear strap side 0.16939999997615815 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Rear buckle 0.16939999997615815 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Rear strap side 0.16939999997615815 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Rear buckle 0.16939999997615815 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Rear strap top 0.25260000586509707",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Rear strap side 0.25260000586509707 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Rear buckle 0.25260000586509707 -1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Rear strap side 0.25260000586509707 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Strap"
+    ]
+  },
+  {
+    "name": "RET | Rear buckle 0.25260000586509707 1",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.003000000026077032,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Metal"
+    ]
+  },
+  {
+    "name": "RET | Rear luggage handle",
+    "v": 24,
+    "f": 14,
+    "modifiers": [],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rear handle mount -0.08599999761581421",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  },
+  {
+    "name": "RET | Rear handle mount -0.043999997615814204",
+    "v": 8,
+    "f": 6,
+    "modifiers": [
+      [
+        "Controlled edge radius",
+        "BEVEL",
+        0.0020000000949949026,
+        2
+      ],
+      [
+        "Planar face normals",
+        "WEIGHTED_NORMAL",
+        null,
+        null
+      ]
+    ],
+    "materials": [
+      "Inner"
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "name": "LiDAR balanced visual quality",
+  "version": 7,
+  "output_resolution": [
+    1600,
+    900
+  ],
+  "target_hardware": "RTX 4050 Laptop 6GB; Development standalone",
+  "notes": "FloraWorld whole-map canopy uses authored near/far thresholds, so mesh LOD scale is 1 instead of the legacy 4. TSR 75%, virtual-shadow bias 1, four directional shadow rays and exclusion of non-Nanite foliage from coarse pages retained. Ray-traced effects and Lumen reflection policy follow project settings. CPU optimizations, 0.5 ms mud upload budget and 120 fps cap retained; 60 fps is the next measured target; the 120 fps cap is retained for headroom measurement. Full vegetation placement, native grass and driving physics retained. See FloraWorld review-report for actual runtime settings and offscreen comparative timings; standalone target-device performance remains unverified.",
+  "commands": [
+    "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+    "r.AntiAliasingMethod 4",
+    "r.DynamicRes.OperationMode 0",
+    "r.ScreenPercentage 75",
+    "r.Shadow.Virtual.Enable 1",
+    "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+    "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+    "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+    "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+    "r.Shadow.Virtual.Clipmap.LastLevel 17",
+    "r.StaticMeshLODDistanceScale 1",
+    "r.HZBOcclusion 1",
+    "r.VSync 0",
+    "t.MaxFPS 120",
+    "gt.LandscapeMud.UploadBudgetMs 0.5"
+  ],
+  "target_fps": 60
+}

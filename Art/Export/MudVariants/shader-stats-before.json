@@ -1,0 +1,116 @@
+{
+  "tag": "before",
+  "ok": true,
+  "rows": [
+    {
+      "role": "mud ground",
+      "material": "/Game/GrandTour/Materials/M_GT_Mud",
+      "pixel_instructions": 503,
+      "vertex_instructions": 264,
+      "samplers": 7,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "rut water",
+      "material": "/Game/GrandTour/Materials/M_GT_MudWater",
+      "pixel_instructions": 2515,
+      "vertex_instructions": 339,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "car body",
+      "material": "/Game/GrandTour/Materials/M_GT_Vehicle",
+      "pixel_instructions": 731,
+      "vertex_instructions": 245,
+      "samplers": 11,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 3,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "tyre",
+      "material": "/Game/GrandTour/Materials/M_GT_Tyre",
+      "pixel_instructions": 321,
+      "vertex_instructions": 314,
+      "samplers": 5,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 6
+    },
+    {
+      "role": "glass",
+      "material": "/Game/GrandTour/Materials/M_GT_Glass",
+      "pixel_instructions": 443,
+      "vertex_instructions": 339,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/Materials/M_GT_Landscape",
+      "pixel_instructions": 305,
+      "vertex_instructions": 155,
+      "samplers": 7,
+      "pixel_texture_samples": 12,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/Materials/M_GT_Environment",
+      "pixel_instructions": 357,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/ArtTests/LiveMudDrive/M_LiveLandscape",
+      "pixel_instructions": 477,
+      "vertex_instructions": 155,
+      "samplers": 10,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "MF_MudCover user",
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape",
+      "pixel_instructions": 477,
+      "vertex_instructions": 155,
+      "samplers": 10,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "splat decal",
+      "material": "/Game/GrandTour/Mud/Splats/M_GT_MudSplatDecal",
+      "pixel_instructions": 405,
+      "vertex_instructions": 344,
+      "samplers": 5,
+      "pixel_texture_samples": 0,
+      "vertex_texture_samples": 3,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "clods",
+      "material": "/Game/GrandTour/Materials/M_GT_Clod",
+      "pixel_instructions": 262,
+      "vertex_instructions": 148,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    }
+  ]
+}

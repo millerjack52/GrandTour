@@ -1,0 +1,270 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Legs/L_Leg03",
+  "push_spec": true,
+  "steps": {
+    "spec": {
+      "ok": true,
+      "value": {
+        "pushed": true,
+        "rules": [
+          [
+            "OW_Scree",
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            "OW_Alpine",
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            "Thicket",
+            0.4,
+            1.0,
+            40.0
+          ],
+          [
+            "OW_ForestFir",
+            0.7,
+            1.0,
+            0.0
+          ],
+          [
+            "OW_Forest",
+            0.7,
+            1.0,
+            0.0
+          ],
+          [
+            "Thicket",
+            0.64,
+            0.7,
+            0.0
+          ],
+          [
+            "OW_MeadowLush",
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            "OW_MeadowDry",
+            0.65,
+            1.0,
+            0.0
+          ]
+        ],
+        "fallback": "OW_Meadow",
+        "cpp_default_rules": 8,
+        "same_rule_layers_as_cpp": true
+      }
+    },
+    "level": {
+      "ok": true,
+      "value": {
+        "world": "L_Leg03",
+        "actors": 179
+      }
+    },
+    "rebuild": {
+      "ok": true,
+      "value": {
+        "message": "rebuilt The Hide: 1 old landscape removed, 162 actors re-grounded, 130 stones and posts placed",
+        "witness": "12 gameplay actors, none moved over 1 m against the spec's ground; moved over 1 cm (cm, put back): {'GTHarvestNode_4': 1.8, 'GTWinchAnchor_3': -2.1, 'GTWinchAnchor_4': 25.3}; the lowest -10 cm over it",
+        "regrounded": 162,
+        "rebuilds": 79,
+        "landscape": "Landscape_TheHide",
+        "stone_count": 88,
+        "post_count": 30,
+        "ford_rock_count": 12,
+        "foliage_count": 0,
+        "weight_layers": []
+      }
+    },
+    "rvt": {
+      "ok": true,
+      "value": {
+        "replaced": 1,
+        "landscape_rvts": [
+          "/Game/ANGRY_MESH/StylizedPack_Common/Textures/RVT_AM_01_Material"
+        ],
+        "landscape_origin": [
+          70800,
+          0,
+          3519
+        ],
+        "landscape_extent": [
+          100800,
+          100800,
+          5704
+        ],
+        "min_corner": [
+          -30000,
+          -100800,
+          -4685
+        ],
+        "size": [
+          201600,
+          201600,
+          16408
+        ]
+      }
+    },
+    "exclusion": {
+      "ok": true,
+      "value": {
+        "replaced": 1,
+        "boxes": 263,
+        "message": "263 boxes from DA_Terrain_Hide: main route 164 (1631 m of 1631), alt routes 73 (724 m), Mud/Ford sections 2, patches 3, gameplay 21 (largest GTWaterSheet_0, 87 m on its longest side)",
+        "route": 164,
+        "alt": 73,
+        "sections": 2,
+        "patches": 3,
+        "gameplay": 21,
+        "tags": [
+          "OWDressing.Exclude"
+        ]
+      }
+    },
+    "volumes": {
+      "ok": true,
+      "value": [
+        {
+          "label": "GTHIDE_PCG_Forest",
+          "replaced": 1,
+          "tag": "GTBiome.Forest",
+          "graph": "PCG_GT_Forest",
+          "center": [
+            70800,
+            0,
+            3519
+          ],
+          "size": [
+            201800,
+            201800,
+            21408
+          ],
+          "partitioned": false,
+          "brush_collision": [
+            "NoCollision",
+            "<CollisionEnabled.NO_COLLISION: 0>"
+          ],
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTHIDE_PCG_Meadow",
+          "replaced": 1,
+          "tag": "GTBiome.Meadow",
+          "graph": "PCG_GT_Meadow",
+          "center": [
+            70800,
+            0,
+            3519
+          ],
+          "size": [
+            201800,
+            201800,
+            21408
+          ],
+          "partitioned": false,
+          "brush_collision": [
+            "NoCollision",
+            "<CollisionEnabled.NO_COLLISION: 0>"
+          ],
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTHIDE_PCG_Scree",
+          "replaced": 1,
+          "tag": "GTBiome.Scree",
+          "graph": "PCG_GT_Scree",
+          "center": [
+            70800,
+            0,
+            3519
+          ],
+          "size": [
+            201800,
+            201800,
+            21408
+          ],
+          "partitioned": false,
+          "brush_collision": [
+            "NoCollision",
+            "<CollisionEnabled.NO_COLLISION: 0>"
+          ],
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTHIDE_PCG_Alpine",
+          "replaced": 1,
+          "tag": "GTBiome.Alpine",
+          "graph": "PCG_GT_Alpine",
+          "center": [
+            70800,
+            0,
+            3519
+          ],
+          "size": [
+            201800,
+            201800,
+            21408
+          ],
+          "partitioned": false,
+          "brush_collision": [
+            "NoCollision",
+            "<CollisionEnabled.NO_COLLISION: 0>"
+          ],
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        },
+        {
+          "label": "GTHIDE_PCG_Brush",
+          "replaced": 1,
+          "tag": "GTBiome.Brush",
+          "graph": "PCG_GT_Brush",
+          "center": [
+            70800,
+            0,
+            3519
+          ],
+          "size": [
+            201800,
+            201800,
+            21408
+          ],
+          "partitioned": false,
+          "brush_collision": [
+            "NoCollision",
+            "<CollisionEnabled.NO_COLLISION: 0>"
+          ],
+          "trigger": "<PCGComponentGenerationTrigger.GENERATE_ON_DEMAND: 1>"
+        }
+      ]
+    },
+    "save": {
+      "ok": true,
+      "value": "saved"
+    },
+    "gate": {
+      "ok": true,
+      "value": {
+        "tagged_volumes": {
+          "Forest": 1,
+          "Meadow": 1,
+          "Scree": 1,
+          "Alpine": 1,
+          "Brush": 1
+        },
+        "exclusions": 1,
+        "rvt_volumes": 1,
+        "landscape_rvts": [
+          "/Game/ANGRY_MESH/StylizedPack_Common/Textures/RVT_AM_01_Material"
+        ],
+        "actors_total": 179
+      }
+    }
+  }
+}

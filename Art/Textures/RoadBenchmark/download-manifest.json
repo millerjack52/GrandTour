@@ -1,0 +1,26 @@
+[
+  {
+    "channel": "Diffuse",
+    "file": "gravel_floor_04_diff_2k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/gravel_floor_04/gravel_floor_04_diff_2k.jpg",
+    "md5": "f6bf2949038a5d8f445c67ad59c77007"
+  },
+  {
+    "channel": "nor_gl",
+    "file": "gravel_floor_04_nor_gl_2k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/gravel_floor_04/gravel_floor_04_nor_gl_2k.jpg",
+    "md5": "bae4fc4a9d6ef4afbf33451a34ee3329"
+  },
+  {
+    "channel": "nor_dx",
+    "file": "gravel_floor_04_nor_dx_2k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/gravel_floor_04/gravel_floor_04_nor_dx_2k.jpg",
+    "md5": "15d141db4607099cb9bd9358597d1873"
+  },
+  {
+    "channel": "Rough",
+    "file": "gravel_floor_04_rough_2k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/gravel_floor_04/gravel_floor_04_rough_2k.jpg",
+    "md5": "25afd9258b98b21f5c100caf17dd4c72"
+  }
+]

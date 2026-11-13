@@ -1,0 +1,43 @@
+{
+  "name": "Range Rover audio direction - recording-led V8 hybrid H1",
+  "sample_rate": 48000,
+  "crossfade_seconds": 0.25,
+  "source_highpass_hz": 35,
+  "source_lowpass_hz": 6500,
+  "stereo_width": 0.65,
+  "procedural_support_band_hz": [32, 125],
+  "procedural_to_recorded_bass_db": -16,
+  "maximum_true_peak_dbfs": -6,
+  "sources": {
+    "idle": {
+      "file": "Art/Audio/References/SketchyDog_DodgeRAM_V8/760152_idle_hq_preview.mp3",
+      "metadata": "Art/Audio/References/SketchyDog_DodgeRAM_V8/sources.json",
+      "id": "760152",
+      "title": "V8 Dodge RAM 1500 Engine Starting & Idling",
+      "creator": "sketchy.dog",
+      "page": "https://freesound.org/people/sketchy.dog/sounds/760152/",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "gain_reference_seconds": [9.5, 10.5]
+    },
+    "revs": {
+      "file": "Art/Audio/References/V8_Hybrid_Candidates/49988_dodge318_revs_hq_preview.mp3",
+      "metadata": "Art/Audio/References/V8_Hybrid_Candidates/sources.json",
+      "id": "49988",
+      "title": "080316 Dodge truck revving in driveway.wav",
+      "creator": "BoilingSand",
+      "page": "https://freesound.org/people/BoilingSand/sounds/49988/",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "gain_reference_seconds": [9.5, 10.5]
+    }
+  },
+  "segments": [
+    {"source": "idle", "start": 6, "end": 10, "label": "idle", "rpm_hints": [[6,800],[10,800]]},
+    {"source": "revs", "start": 3.3, "end": 9.5, "label": "first rev and release", "rpm_hints": [[3.3,1100],[4.6,1800],[5.5,3100],[6.4,2800],[8.2,2700],[9.5,1000]]},
+    {"source": "revs", "start": 11.6, "end": 16.5, "label": "second rev and release", "rpm_hints": [[11.6,1000],[12.5,1400],[14.4,2300],[15.1,3300],[15.8,1300],[16.5,1300]]},
+    {"source": "revs", "start": 18, "end": 23.5, "label": "sustained note and release", "rpm_hints": [[18,2100],[22,2100],[23.5,900]]},
+    {"source": "idle", "start": 12, "end": 15, "label": "return to idle", "rpm_hints": [[12,800],[15,800]]}
+  ],
+  "limitations": "Source-led audition; recordings play at original speed. RPM hints drive only quiet procedural support and are not measured telemetry. This is not yet arbitrary RPM resynthesis or an exact Rover recording. Public HQ MP3 previews, not the original lossless WAVs."
+}

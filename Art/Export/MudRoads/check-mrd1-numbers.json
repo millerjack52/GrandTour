@@ -1,0 +1,275 @@
+{
+  "report": "C:\\GrandTour\\Art\\Export\\MudRoads\\check-mrd.json",
+  "error": null,
+  "roads": [
+    {
+      "level": "L_MudVariants",
+      "section": 1,
+      "tracks": 7,
+      "visible_m": 35.25,
+      "layout_try": 1,
+      "crossings_per_20m": 5.11,
+      "crossings_min_window": 5.0,
+      "crossings_pass": true,
+      "heading_sd_min_window_deg": 7.48,
+      "heading_pass": true,
+      "depth_asked": {
+        "bins_cm": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12,
+          15,
+          20,
+          25
+        ],
+        "counts": [
+          0,
+          76,
+          126,
+          77,
+          73,
+          105,
+          61,
+          36,
+          48,
+          61,
+          70,
+          16
+        ],
+        "samples": 749,
+        "median_cm": 6.25,
+        "p90_cm": 20.67,
+        "share_15cm_plus": 0.196
+      },
+      "depth_settled": {
+        "bins_cm": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12,
+          15,
+          20,
+          25
+        ],
+        "counts": [
+          132,
+          132,
+          122,
+          68,
+          50,
+          66,
+          43,
+          47,
+          71,
+          6,
+          0,
+          0
+        ],
+        "samples": 749,
+        "median_cm": 3.74,
+        "p90_cm": 12.06,
+        "share_15cm_plus": 0.008
+      },
+      "puddle_share": 0.0442,
+      "puddle_target": 0.1149,
+      "puddle_pass": false,
+      "puddle_basins": 35,
+      "churn_zones": [
+        [
+          9088,
+          41,
+          161,
+          306
+        ]
+      ],
+      "clods": 110,
+      "chunks": 3,
+      "debris": 9,
+      "debris_per_m2": 0.05,
+      "tread_tracks": 2,
+      "tread_share": 0.4,
+      "wall_cells": 1173,
+      "lip_block_cells": 2200,
+      "lip_lean_cells": 704
+    },
+    {
+      "level": "L_MudDrive",
+      "section": 2,
+      "tracks": 7,
+      "visible_m": 70.25,
+      "layout_try": 23,
+      "crossings_per_20m": 6.26,
+      "crossings_min_window": 3.0,
+      "crossings_pass": true,
+      "heading_sd_min_window_deg": 6.72,
+      "heading_pass": true,
+      "depth_asked": {
+        "bins_cm": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12,
+          15,
+          20,
+          25
+        ],
+        "counts": [
+          0,
+          112,
+          128,
+          127,
+          112,
+          224,
+          199,
+          133,
+          140,
+          134,
+          117,
+          29
+        ],
+        "samples": 1455,
+        "median_cm": 8.23,
+        "p90_cm": 20.03,
+        "share_15cm_plus": 0.192
+      },
+      "depth_settled": {
+        "bins_cm": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12,
+          15,
+          20,
+          25
+        ],
+        "counts": [
+          205,
+          165,
+          213,
+          172,
+          134,
+          221,
+          118,
+          93,
+          98,
+          10,
+          0,
+          0
+        ],
+        "samples": 1455,
+        "median_cm": 4.69,
+        "p90_cm": 11.22,
+        "share_15cm_plus": 0.007
+      },
+      "puddle_share": 0.0447,
+      "puddle_target": 0.1331,
+      "puddle_pass": false,
+      "puddle_basins": 75,
+      "churn_zones": [
+        [
+          13488,
+          136,
+          170,
+          394
+        ],
+        [
+          16153,
+          -129,
+          101,
+          327
+        ],
+        [
+          17477,
+          -51,
+          170,
+          227
+        ],
+        [
+          14308,
+          134,
+          138,
+          272
+        ]
+      ],
+      "clods": 456,
+      "chunks": 14,
+      "debris": 19,
+      "debris_per_m2": 0.05,
+      "tread_tracks": 2,
+      "tread_share": 0.381,
+      "wall_cells": 3506,
+      "lip_block_cells": 6203,
+      "lip_lean_cells": 1723
+    }
+  ],
+  "mud_glare": {
+    "mud_pixels": 683356,
+    "over_09_share": 0.0001,
+    "over_08_share": 0.0002,
+    "mean_lum": 0.2896,
+    "gate": "<= 0.03 over 0.9",
+    "pass": true
+  },
+  "water_glare": {
+    "water_pixels": 32422,
+    "over_095_share": 0.0,
+    "mean_lum": 0.2493
+  },
+  "motion": {
+    "water_pixels": 150076,
+    "pairs": [
+      {
+        "mean_abs_dl": 1.392,
+        "share_over_4": 0.053
+      },
+      {
+        "mean_abs_dl": 1.289,
+        "share_over_4": 0.0343
+      }
+    ],
+    "gate": "mean |dL| >= 2/255 and >= 15 % of the water over 4/255",
+    "pass_": false
+  },
+  "chase": {
+    "shot_kmh": 21.15,
+    "reached_shot": true,
+    "game_s": 5.47,
+    "fine_rates": [
+      864.12,
+      595.5,
+      953.18,
+      719.71
+    ]
+  },
+  "pictures": [
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Ref1.png",
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Ref2.png",
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Ref3.png",
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Ref4.png",
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Top.png",
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Ref5.png",
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Ref1_MudDrive.png",
+    "C:/GrandTour/Art/Export/MudRoads/MRD_Top_MudDrive.png"
+  ]
+}

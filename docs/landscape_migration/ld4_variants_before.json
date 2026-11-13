@@ -1,0 +1,1008 @@
+{
+ "errors": [],
+ "finished": "2026-09-27 14:22:26",
+ "ok": true,
+ "started": "2026-09-27 14:22:24",
+ "variants": {
+  "SM_OWBeech": {
+   "_timing_note": 0.1,
+   "bounds_max": [
+    215.5,
+    220.7,
+    847.0
+   ],
+   "bounds_min": [
+    -242.7,
+    -226.8,
+    -92.7
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 7044,
+   "lod0_vertices": 12525,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Beech.MI_OWTrunk_Beech"
+    ],
+    [
+     "MI_OWFoliage_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Beech.MI_OWFoliage_Beech"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 10389,
+   "nanite_vertices": 16009,
+   "src_polygons": 10389,
+   "src_position_sum": [
+    -197977.6,
+    -63430.2,
+    4146251.1
+   ],
+   "src_position_sumsq": 2776157700.0,
+   "src_triangles": 10389,
+   "src_valid_vertices": 7988,
+   "src_vertices": 7988
+  },
+  "SM_OWBeech_Stump_A": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    59.7,
+    56.6,
+    42.1
+   ],
+   "bounds_min": [
+    -189.0,
+    -57.5,
+    -92.7
+   ],
+   "lod0_sections": 1,
+   "lod0_triangles": 572,
+   "lod0_vertices": 664,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Beech.MI_OWTrunk_Beech"
+    ],
+    [
+     "MI_OWFoliage_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Beech.MI_OWFoliage_Beech"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 762,
+   "nanite_vertices": 818,
+   "src_polygons": 762,
+   "src_position_sum": [
+    -5327.8,
+    822.0,
+    -4654.9
+   ],
+   "src_position_sumsq": 1581900.0,
+   "src_triangles": 762,
+   "src_valid_vertices": 399,
+   "src_vertices": 399
+  },
+  "SM_OWBeech_Stump_B": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    72.8,
+    73.0,
+    42.1
+   ],
+   "bounds_min": [
+    -189.0,
+    -57.5,
+    -92.7
+   ],
+   "lod0_sections": 1,
+   "lod0_triangles": 578,
+   "lod0_vertices": 672,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Beech.MI_OWTrunk_Beech"
+    ],
+    [
+     "MI_OWFoliage_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Beech.MI_OWFoliage_Beech"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 780,
+   "nanite_vertices": 836,
+   "src_polygons": 780,
+   "src_position_sum": [
+    -5438.4,
+    904.7,
+    -4916.8
+   ],
+   "src_position_sumsq": 1649600.0,
+   "src_triangles": 780,
+   "src_valid_vertices": 408,
+   "src_vertices": 408
+  },
+  "SM_OWBirch": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    174.4,
+    374.6,
+    1580.4
+   ],
+   "bounds_min": [
+    -438.1,
+    -344.9,
+    -55.8
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 3264,
+   "lod0_vertices": 4100,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Birch.MI_OWTrunk_Birch"
+    ],
+    [
+     "MI_OWFoliage_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Birch.MI_OWFoliage_Birch"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 7296,
+   "nanite_vertices": 8430,
+   "src_polygons": 7296,
+   "src_position_sum": [
+    -455894.3,
+    59475.6,
+    4005523.8
+   ],
+   "src_position_sumsq": 4645203800.0,
+   "src_triangles": 7296,
+   "src_valid_vertices": 3903,
+   "src_vertices": 3903
+  },
+  "SM_OWBirch_Sparse_A": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    178.7,
+    404.9,
+    1887.4
+   ],
+   "bounds_min": [
+    -476.9,
+    -377.0,
+    -66.9
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 2764,
+   "lod0_vertices": 3462,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Birch.MI_OWTrunk_Birch"
+    ],
+    [
+     "MI_OWFoliage_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Birch.MI_OWFoliage_Birch"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 6768,
+   "nanite_vertices": 7761,
+   "src_polygons": 6768,
+   "src_position_sum": [
+    -519763.1,
+    76220.1,
+    4588434.5
+   ],
+   "src_position_sumsq": 6479727300.0,
+   "src_triangles": 6768,
+   "src_valid_vertices": 3625,
+   "src_vertices": 3625
+  },
+  "SM_OWBirch_Sparse_B": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    188.8,
+    404.9,
+    1887.4
+   ],
+   "bounds_min": [
+    -476.9,
+    -377.0,
+    -66.9
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 2807,
+   "lod0_vertices": 3489,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Birch.MI_OWTrunk_Birch"
+    ],
+    [
+     "MI_OWFoliage_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Birch.MI_OWFoliage_Birch"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 6803,
+   "nanite_vertices": 7781,
+   "src_polygons": 6803,
+   "src_position_sum": [
+    -425565.8,
+    75149.0,
+    4507149.6
+   ],
+   "src_position_sumsq": 6279425800.0,
+   "src_triangles": 6803,
+   "src_valid_vertices": 3644,
+   "src_vertices": 3644
+  },
+  "SM_OWBush_Beech_A": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    67.2,
+    74.6,
+    38.8
+   ],
+   "bounds_min": [
+    -54.3,
+    -79.4,
+    -42.8
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 30,
+   "lod0_vertices": 59,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Beech.MI_OWTrunk_Beech"
+    ],
+    [
+     "MI_OWFoliage_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Beech.MI_OWFoliage_Beech"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 30,
+   "nanite_vertices": 59,
+   "src_polygons": 30,
+   "src_position_sum": [
+    -187.0,
+    77.2,
+    -6.2
+   ],
+   "src_position_sumsq": 88200.0,
+   "src_triangles": 30,
+   "src_valid_vertices": 34,
+   "src_vertices": 34
+  },
+  "SM_OWBush_Beech_B": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    54.5,
+    50.5,
+    46.5
+   ],
+   "bounds_min": [
+    -40.1,
+    -65.7,
+    -37.5
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 30,
+   "lod0_vertices": 60,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Beech.MI_OWTrunk_Beech"
+    ],
+    [
+     "MI_OWFoliage_Beech",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Beech.MI_OWFoliage_Beech"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 30,
+   "nanite_vertices": 60,
+   "src_polygons": 30,
+   "src_position_sum": [
+    -243.3,
+    -55.3,
+    173.9
+   ],
+   "src_position_sumsq": 52300.0,
+   "src_triangles": 30,
+   "src_valid_vertices": 36,
+   "src_vertices": 36
+  },
+  "SM_OWBush_Birch_A": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    245.1,
+    342.2,
+    332.9
+   ],
+   "bounds_min": [
+    -331.4,
+    -493.8,
+    -77.2
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 3075,
+   "lod0_vertices": 3926,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Birch.MI_OWTrunk_Birch"
+    ],
+    [
+     "MI_OWFoliage_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Birch.MI_OWFoliage_Birch"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 3083,
+   "nanite_vertices": 3934,
+   "src_polygons": 3083,
+   "src_position_sum": [
+    -49540.5,
+    -120123.9,
+    143627.6
+   ],
+   "src_position_sumsq": 105420900.0,
+   "src_triangles": 3083,
+   "src_valid_vertices": 1623,
+   "src_vertices": 1623
+  },
+  "SM_OWBush_Birch_B": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    139.9,
+    369.1,
+    332.9
+   ],
+   "bounds_min": [
+    -445.2,
+    -339.9,
+    -77.2
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 3075,
+   "lod0_vertices": 3926,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWTrunk_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_Birch.MI_OWTrunk_Birch"
+    ],
+    [
+     "MI_OWFoliage_Birch",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_Birch.MI_OWFoliage_Birch"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 3083,
+   "nanite_vertices": 3934,
+   "src_polygons": 3083,
+   "src_position_sum": [
+    -175362.3,
+    37971.8,
+    143627.6
+   ],
+   "src_position_sumsq": 116191700.0,
+   "src_triangles": 3083,
+   "src_valid_vertices": 1623,
+   "src_vertices": 1623
+  },
+  "SM_OWFirTree": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    190.8,
+    222.3,
+    610.8
+   ],
+   "bounds_min": [
+    -198.4,
+    -207.1,
+    -50.2
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 2954,
+   "lod0_vertices": 3389,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 27268,
+   "nanite_vertices": 28418,
+   "src_polygons": 27268,
+   "src_position_sum": [
+    3131.2,
+    4784.5,
+    5246635.3
+   ],
+   "src_position_sumsq": 2145245900.0,
+   "src_triangles": 27268,
+   "src_valid_vertices": 16539,
+   "src_vertices": 16539
+  },
+  "SM_OWFir_AncientSparse_A": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    353.0,
+    411.2,
+    1343.8
+   ],
+   "bounds_min": [
+    -367.0,
+    -383.2,
+    -110.5
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1743,
+   "lod0_vertices": 2280,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 22020,
+   "nanite_vertices": 24318,
+   "src_polygons": 22020,
+   "src_position_sum": [
+    12092.3,
+    20726.6,
+    8520035.1
+   ],
+   "src_position_sumsq": 7490749800.0,
+   "src_triangles": 22020,
+   "src_valid_vertices": 12439,
+   "src_vertices": 12439
+  },
+  "SM_OWFir_AncientSparse_B": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    353.0,
+    411.2,
+    1343.8
+   ],
+   "bounds_min": [
+    -367.0,
+    -383.2,
+    -110.5
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1652,
+   "lod0_vertices": 1979,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 21988,
+   "nanite_vertices": 24293,
+   "src_polygons": 21988,
+   "src_position_sum": [
+    -25372.2,
+    15808.8,
+    8471318.9
+   ],
+   "src_position_sumsq": 7353828000.0,
+   "src_triangles": 21988,
+   "src_valid_vertices": 12414,
+   "src_vertices": 12414
+  },
+  "SM_OWFir_BareGiant_A": {
+   "_timing_note": 0.1,
+   "bounds_max": [
+    302.8,
+    338.7,
+    1496.5
+   ],
+   "bounds_min": [
+    -286.3,
+    -310.0,
+    -123.0
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1601,
+   "lod0_vertices": 2031,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 15868,
+   "nanite_vertices": 17172,
+   "src_polygons": 15868,
+   "src_position_sum": [
+    -31145.6,
+    25342.4,
+    8928895.6
+   ],
+   "src_position_sumsq": 9467487700.0,
+   "src_triangles": 15868,
+   "src_valid_vertices": 9194,
+   "src_vertices": 9194
+  },
+  "SM_OWFir_BareGiant_B": {
+   "_timing_note": 0.1,
+   "bounds_max": [
+    302.8,
+    338.7,
+    1496.5
+   ],
+   "bounds_min": [
+    -286.3,
+    -228.1,
+    -123.0
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1637,
+   "lod0_vertices": 2084,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 15746,
+   "nanite_vertices": 17219,
+   "src_polygons": 15746,
+   "src_position_sum": [
+    -24248.4,
+    38981.7,
+    8807789.7
+   ],
+   "src_position_sumsq": 9339776700.0,
+   "src_triangles": 15746,
+   "src_valid_vertices": 9091,
+   "src_vertices": 9091
+  },
+  "SM_OWFir_BareGiant_C": {
+   "_timing_note": 0.1,
+   "bounds_max": [
+    302.8,
+    266.2,
+    1496.5
+   ],
+   "bounds_min": [
+    -286.3,
+    -263.0,
+    -123.0
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1519,
+   "lod0_vertices": 1991,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 14956,
+   "nanite_vertices": 16428,
+   "src_polygons": 14956,
+   "src_position_sum": [
+    -25806.9,
+    29839.8,
+    8493631.7
+   ],
+   "src_position_sumsq": 9129794000.0,
+   "src_triangles": 14956,
+   "src_valid_vertices": 8630,
+   "src_vertices": 8630
+  },
+  "SM_OWFir_BareTall_A": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    234.7,
+    214.4,
+    1191.1
+   ],
+   "bounds_min": [
+    -221.9,
+    -240.3,
+    -97.9
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1989,
+   "lod0_vertices": 2420,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 17426,
+   "nanite_vertices": 18443,
+   "src_polygons": 17426,
+   "src_position_sum": [
+    -32241.9,
+    28658.8,
+    7988623.3
+   ],
+   "src_position_sumsq": 6710020700.0,
+   "src_triangles": 17426,
+   "src_valid_vertices": 10393,
+   "src_vertices": 10393
+  },
+  "SM_OWFir_BareTall_B": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    234.7,
+    214.4,
+    1191.1
+   ],
+   "bounds_min": [
+    -224.0,
+    -247.8,
+    -97.9
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 2182,
+   "lod0_vertices": 2691,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 18786,
+   "nanite_vertices": 19877,
+   "src_polygons": 18786,
+   "src_position_sum": [
+    -13568.0,
+    8023.8,
+    8382671.2
+   ],
+   "src_position_sumsq": 6917962400.0,
+   "src_triangles": 18786,
+   "src_valid_vertices": 11224,
+   "src_vertices": 11224
+  },
+  "SM_OWFir_BareTall_C": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    234.7,
+    262.5,
+    1191.1
+   ],
+   "bounds_min": [
+    -224.0,
+    -247.8,
+    -97.9
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 2029,
+   "lod0_vertices": 2435,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 18266,
+   "nanite_vertices": 19397,
+   "src_polygons": 18266,
+   "src_position_sum": [
+    4468.7,
+    2659.0,
+    8174964.7
+   ],
+   "src_position_sumsq": 6757335200.0,
+   "src_triangles": 18266,
+   "src_valid_vertices": 10887,
+   "src_vertices": 10887
+  },
+  "SM_OWFir_Dead_A": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    54.2,
+    55.0,
+    855.1
+   ],
+   "bounds_min": [
+    -52.3,
+    -51.4,
+    -70.3
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1852,
+   "lod0_vertices": 2565,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 4840,
+   "nanite_vertices": 5753,
+   "src_polygons": 4840,
+   "src_position_sum": [
+    -1728.5,
+    -2418.1,
+    1209471.9
+   ],
+   "src_position_sumsq": 669656700.0,
+   "src_triangles": 4840,
+   "src_valid_vertices": 2568,
+   "src_vertices": 2568
+  },
+  "SM_OWFir_Dead_B": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    54.2,
+    57.0,
+    855.1
+   ],
+   "bounds_min": [
+    -54.5,
+    -54.8,
+    -70.3
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 1864,
+   "lod0_vertices": 2547,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 5122,
+   "nanite_vertices": 6081,
+   "src_polygons": 5122,
+   "src_position_sum": [
+    -3041.2,
+    -3201.8,
+    1289735.8
+   ],
+   "src_position_sumsq": 716696800.0,
+   "src_triangles": 5122,
+   "src_valid_vertices": 2718,
+   "src_vertices": 2718
+  },
+  "SM_OWFir_Stump_A": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    26.5,
+    26.7,
+    10.5
+   ],
+   "bounds_min": [
+    -25.3,
+    -23.5,
+    -50.2
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 44,
+   "lod0_vertices": 60,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 44,
+   "nanite_vertices": 60,
+   "src_polygons": 44,
+   "src_position_sum": [
+    -10.6,
+    -14.5,
+    -516.0
+   ],
+   "src_position_sumsq": 37400.0,
+   "src_triangles": 44,
+   "src_valid_vertices": 24,
+   "src_vertices": 24
+  },
+  "SM_OWFir_Stump_B": {
+   "_timing_note": 0.0,
+   "bounds_max": [
+    26.5,
+    26.7,
+    10.5
+   ],
+   "bounds_min": [
+    -25.3,
+    -23.5,
+    -50.2
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 44,
+   "lod0_vertices": 60,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 44,
+   "nanite_vertices": 60,
+   "src_polygons": 44,
+   "src_position_sum": [
+    -10.6,
+    -14.5,
+    -516.0
+   ],
+   "src_position_sumsq": 37400.0,
+   "src_triangles": 44,
+   "src_valid_vertices": 24,
+   "src_vertices": 24
+  },
+  "SM_OWFir_TallSparse_A": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    276.7,
+    322.3,
+    1099.5
+   ],
+   "bounds_min": [
+    -287.7,
+    -300.4,
+    -90.4
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 2164,
+   "lod0_vertices": 2436,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 23940,
+   "nanite_vertices": 25818,
+   "src_polygons": 23940,
+   "src_position_sum": [
+    -5113.1,
+    1267.7,
+    7876196.8
+   ],
+   "src_position_sumsq": 5645646400.0,
+   "src_triangles": 23940,
+   "src_valid_vertices": 13939,
+   "src_vertices": 13939
+  },
+  "SM_OWFir_TallSparse_B": {
+   "_timing_note": 0.2,
+   "bounds_max": [
+    276.7,
+    322.3,
+    1099.5
+   ],
+   "bounds_min": [
+    -287.7,
+    -300.4,
+    -90.4
+   ],
+   "lod0_sections": 2,
+   "lod0_triangles": 2252,
+   "lod0_vertices": 2756,
+   "lods": 1,
+   "materials": [
+    [
+     "MI_OWFoliage_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWFoliage_FirTree.MI_OWFoliage_FirTree"
+    ],
+    [
+     "MI_OWTrunk_FirTree",
+     "/Game/OWGame/Dev/DressingLab/TreeMIs/MI_OWTrunk_FirTree.MI_OWTrunk_FirTree"
+    ]
+   ],
+   "nanite_enabled": true,
+   "nanite_triangles": 23908,
+   "nanite_vertices": 25793,
+   "src_polygons": 23908,
+   "src_position_sum": [
+    24483.8,
+    2822.2,
+    7918842.1
+   ],
+   "src_position_sumsq": 5665572500.0,
+   "src_triangles": 23908,
+   "src_valid_vertices": 13914,
+   "src_vertices": 13914
+  }
+ }
+}

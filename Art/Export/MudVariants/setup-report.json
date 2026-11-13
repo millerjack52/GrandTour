@@ -1,0 +1,652 @@
+{
+  "ok": true,
+  "materials": [
+    {
+      "collection": "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "added": [],
+      "scalars": [
+        "TrackDepthCm",
+        "PatchCount",
+        "PatchVariant0",
+        "PatchVariant1",
+        "PatchVariant2",
+        "PatchVariant3",
+        "MudCover",
+        "GrassMud",
+        "MudPBR",
+        "MudPOM",
+        "MudPOMShadow",
+        "GravelPOM",
+        "GravelDebug",
+        "GroundDetail",
+        "MudDeformDetail",
+        "MudWaterMotion",
+        "MudOldTread"
+      ]
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_Mud.M_GT_Mud",
+      "surface": "Mud surface (PS)",
+      "approved_textures": [
+        "T_MS_ClayColor",
+        "T_MS_ClayNormal",
+        "T_MS_WorkedColor",
+        "T_MS_WorkedNormal"
+      ],
+      "bog": {
+        "arrays": {
+          "BogC": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+          "BogN": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal",
+          "BogORH": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogORH"
+        },
+        "scalars": {
+          "BogTileCm": 300.0,
+          "BogTile2Cm": 430.0,
+          "BogTile2Deg": 37.0,
+          "BogMixCm": 260.0,
+          "BogBlendSharp": 0.2,
+          "FarGlossNearCm": 600.0,
+          "FarGlossFarCm": 1200.0,
+          "FarGlossRough": 0.65,
+          "MudVariant": 0.0,
+          "MudPomDepthCm": 3.0,
+          "MudPomNearM": 6.0,
+          "MudPomFarM": 14.0,
+          "MudPomMinSteps": 8.0,
+          "MudPomMaxSteps": 16.0,
+          "MudPomShadowM": 4.0,
+          "MudPomGrazingMinSteps": 12.0,
+          "MudPomRefine": 5.0,
+          "MudPomSteepCap": 0.0,
+          "MudPomShadowSlopeLo": 15.0,
+          "MudPomShadowSlopeHi": 30.0,
+          "MudPomShadowSlopeMin": 0.3,
+          "MudPomShadowStrength": 0.45,
+          "MudAOStrength": 1.0,
+          "MudCavityTint": 0.15,
+          "MudWetRoughLo": 0.45,
+          "MudWetRoughHi": 0.65,
+          "MudWaterTableCm": -10000.0
+        },
+        "retired": [],
+        "far_gloss_fade": "static switch FarGlossFade, off (MRP); gt.Mud.PBR 0 applies the fade as before",
+        "switches": "MPC_TrackPaint MudPBR, MudPOM, MudPOMShadow"
+      },
+      "fresh_wet": 0.12,
+      "ambient_occlusion": "Occl -> OneMinus -> Ambient Occlusion",
+      "pom": "POM_HLSL (gt.Mud.POM, gt.Mud.POMShadow)",
+      "soft_spots": "MR4 SOFT_HLSL: MudLayer G, toward the Deep slice (gt.Mud.SoftSpots)",
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_Landscape.M_GT_Landscape",
+      "surface": "Landscape:mudtex",
+      "approved_textures": [
+        "T_MS_ClayColor",
+        "T_MS_ClayNormal",
+        "T_MS_WorkedColor",
+        "T_MS_WorkedNormal"
+      ],
+      "bog": {
+        "arrays": {
+          "BogC": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+          "BogN": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal",
+          "BogORH": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogORH"
+        },
+        "scalars": {
+          "BogTileCm": 300.0,
+          "BogTile2Cm": 430.0,
+          "BogTile2Deg": 37.0,
+          "BogMixCm": 260.0,
+          "BogBlendSharp": 0.2,
+          "FarGlossNearCm": 600.0,
+          "FarGlossFarCm": 1200.0,
+          "FarGlossRough": 0.65,
+          "MudApronCm": 300.0,
+          "MudCavityTint": 0.15
+        },
+        "retired": [],
+        "far_gloss_fade": "static switch FarGlossFade, off (MRP); gt.Mud.PBR 0 applies the fade as before",
+        "switches": "MPC_TrackPaint MudPBR"
+      },
+      "fresh_wet": null,
+      "ambient_occlusion": null,
+      "pom": null,
+      "soft_spots": null,
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_Landscape.M_GT_Landscape",
+      "weather": true,
+      "tangent": false,
+      "BaseColor": "kept",
+      "Roughness": "kept",
+      "Normal": "kept",
+      "AmbientOcclusion": "kept",
+      "RainFloor": "moved nothing (kept)",
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_MudWater.M_GT_MudWater",
+      "deep_color": [
+        0.06,
+        0.041,
+        0.025
+      ],
+      "scalars": {
+        "DeepOpacity": 0.78,
+        "WaterRoughness": 0.12,
+        "GlossRoughness": 0.08
+      },
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_MudWater.M_GT_MudWater",
+      "muddy_water": "Muddy water (MR3)",
+      "turbid_mean": [
+        0.0705,
+        0.0401,
+        0.0186
+      ],
+      "vectors": {
+        "FrothColor": [
+          0.28,
+          0.23,
+          0.15
+        ],
+        "BodyWarm": [
+          1.08,
+          0.95,
+          0.78
+        ]
+      },
+      "scalars": {
+        "MuddyWater": 1.0,
+        "SettledDarken": 0.8,
+        "SettledOpacity": 0.6,
+        "SettledRimOpacity": 0.3,
+        "SettledDeepCm": 8.0,
+        "SettledFresnel": 0.45,
+        "SettledRough": 0.07,
+        "SettledGlossRough": 0.03,
+        "TurbidLighten": 2.3,
+        "TurbidMottle": 0.45,
+        "TurbidMip": 5.0,
+        "TurbidTileCm": 300.0,
+        "TurbidOpacity": 0.95,
+        "TurbidRimOpacity": 0.75,
+        "TurbidOpaqueCm": 3.0,
+        "TurbidRough": 0.35,
+        "FrothTurbidLo": 0.5,
+        "FrothTurbidHi": 0.85,
+        "FrothAmount": 1.0,
+        "FrothClusterCm": 25.0,
+        "FrothClumpLo": 0.35,
+        "FrothClumpHi": 0.75,
+        "FrothBubbleCm": 1.6,
+        "FrothNearCm": 400.0,
+        "FrothFarCm": 900.0,
+        "FrothFarCover": 0.55,
+        "FrothGlint": 0.35,
+        "FrothRough": 0.3,
+        "WaterSpecular": 0.25,
+        "SettledRoughPBR": 0.15,
+        "TurbidRoughPBR": 0.5,
+        "FrothRoughPBR": 0.6,
+        "RippleCm": 6.0,
+        "RippleSlope": 0.05,
+        "RippleSpeedCm": 0.6
+      },
+      "inputs_from": {
+        "WorldPos": "MaterialExpressionWorldPosition_0",
+        "PatchMin": "MaterialExpressionVectorParameter_0",
+        "PatchSize": "MaterialExpressionVectorParameter_1",
+        "Field": "MaterialExpressionTextureObjectParameter_0",
+        "TableCm": "MaterialExpressionScalarParameter_0",
+        "EdgeFadeCm": "MaterialExpressionScalarParameter_7",
+        "CameraVec": "MaterialExpressionCameraVectorWS_0",
+        "VertexNormal": "MaterialExpressionVertexNormalWS_0"
+      },
+      "retired": [],
+      "far_gloss_fade_params_on_water": [],
+      "blend_mode": "<BlendMode.BLEND_MASKED: 1>",
+      "pbr": "gt.Mud.PBR (MudPBR): Specular, ripple Normal (tangent True), settled/churned/froth roughness",
+      "compile_errors": []
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_Clod.M_GT_Clod",
+      "scalars": {
+        "ClodScaleCm": 150.0,
+        "RoughDry": 0.85,
+        "RoughWet": 0.45,
+        "WetDarken": 0.25,
+        "TintRange": 0.12,
+        "FreshDarken": 0.2,
+        "FreshRough": 0.5
+      },
+      "slice": "MudVariant (0 Standard)",
+      "arrays": [
+        "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+        "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal"
+      ],
+      "meshes": [
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_0",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_1",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_2",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_3",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_4",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_5",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_6",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_7",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_8",
+        "/Game/GrandTour/Mud/Clods/SM_GT_Clod_9"
+      ],
+      "compile_errors": [],
+      "fresh": "PerInstanceCustomData 0 (default 0.3)",
+      "rand": "PerInstanceRandom"
+    },
+    {
+      "material": "/Game/GrandTour/Materials/M_GT_MudChunk.M_GT_MudChunk",
+      "scalars": {
+        "ClodScaleCm": 150.0,
+        "RoughDry": 0.85,
+        "RoughWet": 0.45,
+        "WetDarken": 0.25,
+        "TintRange": 0.12,
+        "FreshDarken": 0.2,
+        "FreshRough": 0.5
+      },
+      "slice": "MudVariant (0 Standard)",
+      "arrays": [
+        "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+        "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal"
+      ],
+      "meshes": [
+        "/Game/GrandTour/Mud/Chunks/SM_GT_MudChunk_0",
+        "/Game/GrandTour/Mud/Chunks/SM_GT_MudChunk_1",
+        "/Game/GrandTour/Mud/Chunks/SM_GT_MudChunk_2",
+        "/Game/GrandTour/Mud/Chunks/SM_GT_MudChunk_3",
+        "/Game/GrandTour/Mud/Chunks/SM_GT_MudChunk_4",
+        "/Game/GrandTour/Mud/Chunks/SM_GT_MudChunk_5"
+      ],
+      "compile_errors": [],
+      "fresh": "0 (MR5: dry crust)",
+      "rand": "ChunkRand (custom primitive data 0)"
+    }
+  ],
+  "mud_road_branches": [
+    {
+      "name": "SM_MRD_Branch0",
+      "asset": "/Game/GrandTour/ArtTests/MudRoads/SM_MRD_Branch0.SM_MRD_Branch0",
+      "triangles": 258,
+      "length_cm": 60,
+      "size_cm": [
+        58.9,
+        30.4,
+        2.4
+      ],
+      "material": "/Game/GrandTour/ArtTests/GroundDetail/MI_GD_Twig.MI_GD_Twig"
+    },
+    {
+      "name": "SM_MRD_Branch1",
+      "asset": "/Game/GrandTour/ArtTests/MudRoads/SM_MRD_Branch1.SM_MRD_Branch1",
+      "triangles": 337,
+      "length_cm": 105,
+      "size_cm": [
+        82.2,
+        81.1,
+        4.8
+      ],
+      "material": "/Game/GrandTour/ArtTests/GroundDetail/MI_GD_Twig.MI_GD_Twig"
+    }
+  ],
+  "landscape_material": {
+    "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape.M_VariantsLandscape",
+    "apron": "the live patches' boxes (MPC_TrackPaint), the variant slice, 300 cm feather",
+    "mudtex": {
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape.M_VariantsLandscape",
+      "surface": "Landscape:mudtex",
+      "approved_textures": [
+        "T_MS_ClayColor",
+        "T_MS_ClayNormal",
+        "T_MS_WorkedColor",
+        "T_MS_WorkedNormal"
+      ],
+      "bog": {
+        "arrays": {
+          "BogC": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogColor",
+          "BogN": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogNormal",
+          "BogORH": "/Game/GrandTour/ArtTests/MudStyle/TA_MS_BogORH"
+        },
+        "scalars": {
+          "BogTileCm": 300.0,
+          "BogTile2Cm": 430.0,
+          "BogTile2Deg": 37.0,
+          "BogMixCm": 260.0,
+          "BogBlendSharp": 0.2,
+          "FarGlossNearCm": 600.0,
+          "FarGlossFarCm": 1200.0,
+          "FarGlossRough": 0.65,
+          "MudApronCm": 300.0,
+          "MudCavityTint": 0.15
+        },
+        "retired": [],
+        "far_gloss_fade": "static switch FarGlossFade, off (MRP); gt.Mud.PBR 0 applies the fade as before",
+        "switches": "MPC_TrackPaint MudPBR"
+      },
+      "fresh_wet": null,
+      "ambient_occlusion": null,
+      "pom": null,
+      "soft_spots": null,
+      "compile_errors": []
+    },
+    "compile_errors": [],
+    "mud_cover": {
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape.M_VariantsLandscape",
+      "weather": true,
+      "tangent": false,
+      "BaseColor": "kept",
+      "Roughness": "kept",
+      "Normal": "spliced",
+      "AmbientOcclusion": "kept",
+      "RainFloor": "moved nothing (kept)",
+      "compile_errors": []
+    }
+  },
+  "splat_post": {
+    "location_m": [
+      121.6,
+      -4.2
+    ],
+    "height_m": 1.6,
+    "diameter_m": 0.3,
+    "material": "/Game/GrandTour/ArtTests/MudVariants/MI_SplatPost"
+  },
+  "grass_variation": {
+    "SM_TS_Straw": {
+      "in": 1867,
+      "bare": 316,
+      "out": 1750,
+      "crest_extra": 199,
+      "bare_share": 0.1693,
+      "scale_min": 0.552,
+      "scale_max": 1.449,
+      "tilt_max_deg": 12.0
+    },
+    "SM_TS_Rust": {
+      "in": 1742,
+      "bare": 337,
+      "out": 1573,
+      "crest_extra": 168,
+      "bare_share": 0.1935,
+      "scale_min": 0.55,
+      "scale_max": 1.449,
+      "tilt_max_deg": 12.0
+    },
+    "SM_TS_Weathered": {
+      "in": 560,
+      "bare": 110,
+      "out": 501,
+      "crest_extra": 51,
+      "bare_share": 0.1964,
+      "scale_min": 0.556,
+      "scale_max": 1.448,
+      "tilt_max_deg": 12.0
+    },
+    "SM_TS_Fine": {
+      "in": 9512,
+      "bare": 1776,
+      "out": 7736,
+      "crest_extra": 0,
+      "bare_share": 0.1867,
+      "scale_min": 0.55,
+      "scale_max": 1.45,
+      "tilt_max_deg": 12.0
+    }
+  },
+  "ground_detail": {
+    "ensure_mpc": {
+      "mpc": "/Game/GrandTour/Terrain/MPC_TrackPaint",
+      "added": [],
+      "scalars": 17
+    },
+    "grass_map": {
+      "texture": "/Game/GrandTour/ArtTests/GroundDetail/T_GD_Grass_MudVariants.T_GD_Grass_MudVariants",
+      "png": "Art/Export/GroundDetailGR2/T_GD_Grass_MudVariants.png",
+      "cells": 504,
+      "cell_cm": 50.0,
+      "instances": 11560,
+      "dense_share": 0.0217,
+      "blur_cm": 100.0,
+      "cover_smoothstep": [
+        0.2,
+        0.5
+      ]
+    },
+    "landscape": {
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape",
+      "kind": "live",
+      "where": "the Scrub row of the colour, roughness and normal layer blends (apron excluded by groundtex ClayBlend)",
+      "switch": "GroundDetail (static, off in the parent)"
+    },
+    "mi": {
+      "path": "/Game/GrandTour/ArtTests/MudVariants/MI_GT_Landscape_Strips.MI_GT_Landscape_Strips",
+      "landscapes": 1,
+      "grass_bounds": [
+        -2000.0,
+        -12600.0,
+        3.968253968253968e-05,
+        3.968253968253968e-05
+      ]
+    },
+    "scatter": {
+      "ok": true,
+      "instances": 130784,
+      "meshes": {
+        "SM_GD_Clod0": 10637,
+        "SM_GD_Clod1": 11984,
+        "SM_GD_Clod2": 6156,
+        "SM_GD_Clod3": 3680,
+        "SM_GD_Clod4": 2092,
+        "SM_GD_Clod5": 733,
+        "SM_GD_Pebble0": 49861,
+        "SM_GD_Pebble1": 25934,
+        "SM_GD_Pebble2": 9643,
+        "SM_GD_Pebble3": 2664,
+        "SM_GD_Litter0": 363,
+        "SM_GD_Litter1": 332,
+        "SM_GD_Litter2": 325,
+        "SM_GD_Litter3": 358,
+        "SM_GD_Twig0": 1014,
+        "SM_GD_Twig1": 970,
+        "SM_GD_Twig2": 1013,
+        "SM_GD_TussockBase0": 4,
+        "SM_GD_TussockBase1": 722,
+        "SM_GD_TussockBase2": 2299
+      },
+      "families": {
+        "Clods": {
+          "instances": 35282,
+          "per_m2": 0.6024
+        },
+        "Pebbles": {
+          "instances": 88102,
+          "per_m2": 1.5043
+        },
+        "Litter": {
+          "instances": 1378,
+          "per_m2": 0.2704
+        },
+        "Twigs": {
+          "instances": 2997,
+          "per_m2": 0.0512
+        },
+        "TussockBases": {
+          "instances": 3025,
+          "per_m2": 0.0
+        }
+      },
+      "open_area_m2": 58568,
+      "litter_area_m2": 5097.0,
+      "tussocks": 3824,
+      "tussocks_under_footprint": 0,
+      "rejected": 9451,
+      "missed_traces": 0,
+      "cluster": [
+        300.0,
+        0.1,
+        2.5,
+        0.25
+      ],
+      "cull_cm": [
+        3000,
+        4000,
+        1800,
+        2500
+      ]
+    },
+    "switches": "gt.Ground.Detail 0/1, gt.Ground.Scatter 0/1, gt.Ground.ScatterDensity 0-1"
+  },
+  "relief": {
+    "route": {
+      "samples": 423,
+      "grade_pct": {
+        "p50": 3.25,
+        "p95": 7.32,
+        "max": 10.91
+      },
+      "cross_pct": {
+        "p50": 0.3,
+        "p95": 3.96,
+        "max": 5.19
+      },
+      "off_ford_p95_pct": {
+        "grade": 7.32,
+        "cross": 3.96
+      }
+    },
+    "hummocks": {
+      "raw": 5146,
+      "stamped": 4774,
+      "density_per_100m2": 8.1,
+      "nearest_mean_m": 1.716,
+      "nearest_cv": 0.559,
+      "stamped_nearest_cv": 0.574,
+      "pair_peak": 1.157,
+      "pair_peak_at_m": 2.25,
+      "pair_bins_0_5m": [
+        1.176,
+        1.15,
+        1.186,
+        1.142,
+        1.157,
+        1.113,
+        1.102,
+        1.103,
+        1.125,
+        1.146,
+        1.094,
+        1.066,
+        1.064,
+        1.057,
+        1.1,
+        1.061,
+        1.056,
+        1.065,
+        1.063,
+        1.066,
+        1.06,
+        1.03,
+        1.034,
+        1.054,
+        1.04,
+        1.026,
+        1.012,
+        1.001,
+        1.016,
+        1.033
+      ],
+      "field_slope_max_deg": 33.59,
+      "ground_slope_max_deg": 38.22,
+      "ground_slope_p99_deg": 27.06,
+      "hummock_max_m": 0.56
+    }
+  },
+  "relief_numbers": {
+    "land": {
+      "base_amplitude_m": 3.5,
+      "base_wavelength_m": 60.0,
+      "octaves": 4,
+      "persistence": 0.5
+    },
+    "relief": {
+      "roughness_octaves": 3,
+      "roughness_wavelength_m": 6.0,
+      "scrub_roughness_m": 0.45,
+      "mud_roughness_m": 0.22
+    },
+    "hummocks": {
+      "density": 8.0,
+      "cluster_wavelength_m": 12.0,
+      "cluster_min": 0.1,
+      "cluster_max": 2.2,
+      "radius_min_m": 1.0,
+      "radius_max_m": 2.8,
+      "radius_power": 2.0,
+      "height_min_m": 0.15,
+      "height_max_m": 0.5,
+      "rim_warp": 0.25,
+      "crest_offset": 0.3,
+      "seed": 0
+    },
+    "grass": {
+      "height_jitter": 0.45,
+      "height_wavelength_m": 3.0,
+      "height_fine_wavelength_m": 0.8,
+      "bare_share_min": 0.1,
+      "bare_share_max": 0.25,
+      "bare_wavelength_m": 2.0,
+      "bare_share_wavelength_m": 12.0,
+      "tilt_degrees": 12.0,
+      "slope_follow": 0.5,
+      "crest_tussock_weight": 2.0,
+      "seed": 0
+    },
+    "pre_churn_scale": 1.0
+  },
+  "level": "/Game/GrandTour/ArtTests/MudVariants/L_MudVariants",
+  "spec": "/Game/GrandTour/ArtTests/MudVariants/DA_MudVariants",
+  "grass_instances": 11560,
+  "route_m": 215.0,
+  "start_m": 5.0,
+  "sections": [
+    {
+      "variant": "Firm",
+      "start_m": 30.0,
+      "end_m": 55.0
+    },
+    {
+      "variant": "Standard",
+      "start_m": 75.0,
+      "end_m": 100.0
+    },
+    {
+      "variant": "Deep",
+      "start_m": 120.0,
+      "end_m": 145.0
+    },
+    {
+      "variant": "Stony",
+      "start_m": 165.0,
+      "end_m": 190.0
+    }
+  ],
+  "physics": "The four variants' profiles (FGTDeformProfile::MudVariantDefaults); Standard has none (the bog as before)",
+  "mud_road": {
+    "section": "Standard",
+    "pre_churn_style": "Braided",
+    "water_table_cm": -10.0,
+    "mud_road_spray_scale": 2.0,
+    "debris_per_m2": 0.05
+  }
+}

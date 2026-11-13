@@ -1,0 +1,15 @@
+T_GT_DabTile_N.png - the painted-dab normal tile of Look stage L6 (docs/LOOK_PLAN.md L6, docs/VEHICLE_BUILD_SYSTEM.md section 57).
+
+Made, not sourced: no licence applies. It is the owner's own tooling output - a flat 2 x 2 m plane (one quad, its UV 0..1
+over the whole texture) put through the GT Paint addon's Apply Style and Bake (Art/Blender/gt_paint, unchanged) with the
+preset Art/Blender/gt_paint_preset.json as it stood on 2026-09-25 (unchanged), so the dabs are the owner's OW Painterly
+Normal Baker's (%APPDATA%\Blender Foundation\Blender\5.1\extensions\user_default\ow_painterly_normal_baker) at the
+preset's numbers: dab 55 cm (x 0.7-2.4), aspect 2, coverage 2, normal jitter 8 deg, rot jitter 20 deg, the detail pass
+(1.8 cm), seed 7, the baker's bundled oil_knife.png brush. 1024 x 1024, DirectX tangent normal, 2 mm a texel.
+
+Remake: bash Art/make_dab_tile.sh (Blender 5.1 in the background, --factory-startup; about 5 minutes; the log in
+Saved/Logs/make_dab_tile.log). It prints the seam: the mean absolute difference across the wrapped edge against the
+mean between neighbouring texels inside. 2026-09-25: 0.0264 against 0.0061 across the vertical edge (4.31 x) and 0.0329
+against 0.0095 across the horizontal one (3.47 x) - the bake does not wrap, so M_GT_Painterly ships the procedural dab
+(DabTile 0) and keeps this tile behind DabTile 1 at DabTileCm 200.
+Unreal: /Game/GrandTour/Textures/Painted/T_GT_DabTile_N (Art/setup_look_l6.bat), TC_Normalmap, sRGB off, no green flip.

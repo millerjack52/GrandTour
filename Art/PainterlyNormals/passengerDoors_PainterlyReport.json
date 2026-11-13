@@ -1,0 +1,12 @@
+{
+ "object": "passengerDoors",
+ "resolution": 2048,
+ "seed": 7,
+ "dabs_per_pass": [
+  269,
+  606
+ ],
+ "ink_mask": false,
+ "painted_color": false,
+ "brush": "bundled oil_knife"
+}

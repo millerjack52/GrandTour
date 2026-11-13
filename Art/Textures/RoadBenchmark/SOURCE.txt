@@ -1,0 +1,19 @@
+Gravel Floor 04 — Poly Haven
+Page: https://polyhaven.com/a/gravel_floor_04
+Licence: CC0, as stated on the asset page. https://polyhaven.com/license
+Downloaded: 2026-09-28 via https://api.polyhaven.com/files/gravel_floor_04
+Maps: Diffuse, OpenGL normal, DirectX normal, Roughness; 2K JPG.
+Exact download URLs and verified API MD5 hashes: download-manifest.json.
+Original image files are untouched. The benchmark material remaps diffuse values
+to a restricted warm palette and reduces normal strength. This is an initial
+gravel surface study, not approval of a photoreal texture treatment.
+
+Coarse layer: Gravel Floor 02, https://polyhaven.com/a/gravel_floor_02
+Licence: CC0, as stated on its asset page. Same download date.
+Diffuse and OpenGL/DirectX normal maps, 2K JPG; original files untouched.
+URLs and verified API MD5 hashes: coarse-download-manifest.json.
+
+Benmore POM additions, 2026-10-07: matching 2K 16-bit PNG displacement maps
+for Gravel Floor 02 and Gravel Floor 04. Same Poly Haven CC0 provenance.
+Original source files untouched; API download URLs and verified MD5 hashes
+are retained in pom-download-manifest.json.

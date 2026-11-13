@@ -1,0 +1,273 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/Test/L_VegTest",
+  "overwrite": true,
+  "steps": {
+    "level": {
+      "ok": true,
+      "value": {
+        "replaced_existing": true,
+        "actors_removed": 7,
+        "world": "L_VegTest"
+      }
+    },
+    "lighting": {
+      "ok": true,
+      "value": "sun, sky light, sky atmosphere, height fog"
+    },
+    "floor": {
+      "ok": true,
+      "value": {
+        "centre_m": [
+          70.0,
+          50.0
+        ],
+        "size_m": [
+          200.0,
+          160.0
+        ],
+        "top_cm": 0.0
+      }
+    },
+    "player_start": {
+      "ok": true,
+      "value": {
+        "at_m": [
+          9.0,
+          -15.0
+        ]
+      }
+    },
+    "dressing": {
+      "ok": true,
+      "value": {
+        "components": [
+          {
+            "mesh": "SM_GTN_SM_BirchBush_01_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 7,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_BirchBush_05_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 5,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBush_Birch_A",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 10,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBush_Birch_B",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 3,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_BirchBush_03_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 7,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBush_Beech_B",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 4,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_BirchBush_02_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 4,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBush_Beech_A",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 5,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_BirchBush_04_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 3,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_CoverPlant_03_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 17,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_CoverPlant_02_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 19,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_CoverPlant_01_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 18,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_GTN_SM_CoverPlant_04_Summer",
+            "tag": "GTVeg.Soft.Brush",
+            "profile": "NoCollision",
+            "instances": 6,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBeech",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBirch",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFirTree",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFir_TallSparse_A",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFir_TallSparse_B",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFir_BareTall_A",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFir_BareTall_B",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFir_BareTall_C",
+            "tag": "GTVeg.Soft.Sapling",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBeech",
+            "tag": "GTVeg.Soft.Young",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBirch",
+            "tag": "GTVeg.Soft.Young",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFirTree",
+            "tag": "GTVeg.Soft.Young",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWFir_TallSparse_A",
+            "tag": "GTVeg.Soft.Young",
+            "profile": "NoCollision",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          },
+          {
+            "mesh": "SM_OWBirch",
+            "tag": "GTVeg.Solid",
+            "profile": "BlockAll",
+            "instances": 1,
+            "class": "InstancedStaticMeshComponent"
+          }
+        ],
+        "brush_streams": [
+          {
+            "meshes": 9,
+            "per_m2": 0.08,
+            "count": 48,
+            "scale": [
+              0.7,
+              1.4
+            ]
+          },
+          {
+            "meshes": 4,
+            "per_m2": 0.1,
+            "count": 60,
+            "scale": [
+              0.75,
+              1.2
+            ]
+          }
+        ],
+        "brush_instances": 108,
+        "tags": [
+          "GTBiome.Test"
+        ]
+      }
+    },
+    "save": {
+      "ok": true,
+      "value": "saved"
+    },
+    "gate": {
+      "ok": true,
+      "value": {
+        "instances_by_tag": {
+          "GTVeg.Soft.Brush": 108,
+          "GTVeg.Soft.Sapling": 8,
+          "GTVeg.Soft.Young": 4,
+          "GTVeg.Solid": 1
+        },
+        "ism_components": 26,
+        "hism_components": 0,
+        "actors_total": 7
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "banks": [{
+    "name": "Logging crossing gravel point",
+    "route_id": "fce56694-1591-406d-8ac5-75b330a90436",
+    "route_station_range_m": [98, 125],
+    "attachment_polygon_m": [[-489,-337],[-478,-332],[-471,-338],[-470,-349],[-484,-363],[-501,-355],[-500,-347]],
+    "mainland_probe_m": [-492,-361],
+    "bank_probe_m": [-479,-342],
+    "edge_blend_m": 2.5,
+    "bank_height_m": 0.35,
+    "rear_rise_m": 1.4,
+    "guide_station_range_m": [3284,3372],
+    "guide_end_blend_m": 18,
+    "guide_offset_m": -8.0
+  }]
+}

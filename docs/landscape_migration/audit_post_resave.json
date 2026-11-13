@@ -1,0 +1,280 @@
+{
+ "ok": true,
+ "tag": "post_resave",
+ "resave_requested": false,
+ "steps": [
+  {
+   "name": "registry",
+   "ok": true,
+   "err": null,
+   "count": 1,
+   "secs": 0.18
+  },
+  {
+   "name": "roots",
+   "ok": true,
+   "err": null,
+   "count": 334,
+   "secs": 0.02
+  },
+  {
+   "name": "deps",
+   "ok": true,
+   "err": null,
+   "count": 0,
+   "secs": 0.01
+  },
+  {
+   "name": "water",
+   "ok": true,
+   "err": null,
+   "count": 0,
+   "secs": 0.0
+  },
+  {
+   "name": "script_refs",
+   "ok": true,
+   "err": null,
+   "count": 0,
+   "secs": 0.0
+  },
+  {
+   "name": "road_bps",
+   "ok": true,
+   "err": null,
+   "count": 3,
+   "secs": 0.11
+  },
+  {
+   "name": "graphs",
+   "ok": true,
+   "err": null,
+   "count": 0,
+   "secs": 0.0
+  },
+  {
+   "name": "resave",
+   "ok": true,
+   "err": null,
+   "count": 0,
+   "secs": 0.0
+  }
+ ],
+ "started": "2026-09-26 18:37:50",
+ "root_packages_per_folder": {
+  "/Game/OWGame": 90,
+  "/Game/3DAssets": 3,
+  "/Game/Materials": 12,
+  "/Game/Textures": 9,
+  "/Game/ANGRY_MESH": 202,
+  "/Game/MWLandscapeAutoMaterial": 18
+ },
+ "root_packages_total": 334,
+ "missing_game_deps": [],
+ "missing_game_deps_count": 0,
+ "resolved_game_deps_outside_roots": {},
+ "missing_nongame_deps": [],
+ "missing_nongame_deps_count": 0,
+ "script_modules_union": {
+  "/Script/NavigationSystem": 95,
+  "/Script/Landscape": 25,
+  "/Script/StaticMeshDescription": 25,
+  "/Script/InterchangePipelines": 9,
+  "/Script/InterchangeEngine": 9,
+  "/Script/InterchangeFactoryNodes": 9,
+  "/Script/InterchangeCore": 9,
+  "/Script/GrandTour": 3,
+  "/Script/PCG": 1,
+  "/Script/StructUtilsEditor": 1
+ },
+ "mounts_union": {
+  "/Engine": 40
+ },
+ "water_hits": [],
+ "water_hits_count": 0,
+ "owgameue_script_refs": [],
+ "owgameue_script_refs_count": 0,
+ "owgameue_refs_only_on_road_bps": true,
+ "road_bps": {
+  "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad": {
+   "parent_class": null,
+   "components": [
+    {
+     "var": "None",
+     "name": "Default__BP_OWRoad_C",
+     "class": "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad.BP_OWRoad_C"
+    },
+    {
+     "var": "Spline",
+     "name": "Spline_GEN_VARIABLE",
+     "class": "/Script/Engine.SplineComponent"
+    },
+    {
+     "var": "Billboard",
+     "name": "Billboard_GEN_VARIABLE",
+     "class": "/Script/Engine.BillboardComponent"
+    },
+    {
+     "var": "Billboard",
+     "name": "Billboard_GEN_VARIABLE",
+     "class": "/Script/Engine.BillboardComponent"
+    },
+    {
+     "var": "OWRoadBed",
+     "name": "OWRoadBed_GEN_VARIABLE",
+     "class": "/Script/GrandTour.OWRoadBedComponent"
+    }
+   ],
+   "err": null,
+   "roadbed": [
+    {
+     "var": "OWRoadBed",
+     "name": "OWRoadBed_GEN_VARIABLE",
+     "class": "/Script/GrandTour.OWRoadBedComponent"
+    }
+   ],
+   "roadbed_ok": true,
+   "script_deps": [
+    "/Script/GrandTour"
+   ]
+  },
+  "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty": {
+   "parent_class": null,
+   "components": [
+    {
+     "var": "None",
+     "name": "Default__BP_OWRoad_Dusty_C",
+     "class": "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty.BP_OWRoad_Dusty_C"
+    },
+    {
+     "var": "Spline",
+     "name": "Spline_GEN_VARIABLE",
+     "class": "/Script/Engine.SplineComponent"
+    },
+    {
+     "var": "Billboard",
+     "name": "Billboard_GEN_VARIABLE",
+     "class": "/Script/Engine.BillboardComponent"
+    },
+    {
+     "var": "Billboard",
+     "name": "Billboard_GEN_VARIABLE",
+     "class": "/Script/Engine.BillboardComponent"
+    },
+    {
+     "var": "OWRoadBed",
+     "name": "OWRoadBed_GEN_VARIABLE",
+     "class": "/Script/GrandTour.OWRoadBedComponent"
+    }
+   ],
+   "err": null,
+   "roadbed": [
+    {
+     "var": "OWRoadBed",
+     "name": "OWRoadBed_GEN_VARIABLE",
+     "class": "/Script/GrandTour.OWRoadBedComponent"
+    }
+   ],
+   "roadbed_ok": true,
+   "script_deps": [
+    "/Script/GrandTour"
+   ]
+  },
+  "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel": {
+   "parent_class": null,
+   "components": [
+    {
+     "var": "None",
+     "name": "Default__BP_OWRoad_Gravel_C",
+     "class": "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel.BP_OWRoad_Gravel_C"
+    },
+    {
+     "var": "Spline",
+     "name": "Spline_GEN_VARIABLE",
+     "class": "/Script/Engine.SplineComponent"
+    },
+    {
+     "var": "Billboard",
+     "name": "Billboard_GEN_VARIABLE",
+     "class": "/Script/Engine.BillboardComponent"
+    },
+    {
+     "var": "Billboard",
+     "name": "Billboard_GEN_VARIABLE",
+     "class": "/Script/Engine.BillboardComponent"
+    },
+    {
+     "var": "OWRoadBed",
+     "name": "OWRoadBed_GEN_VARIABLE",
+     "class": "/Script/GrandTour.OWRoadBedComponent"
+    }
+   ],
+   "err": null,
+   "roadbed": [
+    {
+     "var": "OWRoadBed",
+     "name": "OWRoadBed_GEN_VARIABLE",
+     "class": "/Script/GrandTour.OWRoadBedComponent"
+    }
+   ],
+   "roadbed_ok": true,
+   "script_deps": [
+    "/Script/GrandTour"
+   ]
+  }
+ },
+ "road_bps_roadbed_ok": true,
+ "graphs": {
+  "/Game/OWGame/Dev/DressingLab/PCG_OWForest": {
+   "present": false
+  },
+  "/Game/OWGame/Dev/DressingLab/PCG_OWMeadow": {
+   "present": false
+  },
+  "/Game/OWGame/Dev/DressingLab/PCG_OWScree": {
+   "present": false
+  },
+  "/Game/OWGame/Dev/DressingLab/PCG_OWRoad": {
+   "present": false
+  },
+  "/Game/OWGame/Dev/DressingLab/PCG_OWCliff": {
+   "present": false
+  },
+  "/Game/OWGame/Dev/DressingLab/PCG_OWAlpine": {
+   "present": false
+  }
+ },
+ "resave": "not requested",
+ "summary": {
+  "root_packages": 334,
+  "missing_game_deps": 0,
+  "missing_nongame_deps": 0,
+  "water_hits": 0,
+  "owgameue_script_ref_packages": [],
+  "road_bps_roadbed_ok": true,
+  "road_bp_roadbed_classes": {
+   "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad": [
+    "/Script/GrandTour.OWRoadBedComponent"
+   ],
+   "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty": [
+    "/Script/GrandTour.OWRoadBedComponent"
+   ],
+   "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel": [
+    "/Script/GrandTour.OWRoadBedComponent"
+   ]
+  },
+  "road_bp_script_deps": {
+   "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad": [
+    "/Script/GrandTour"
+   ],
+   "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Dusty": [
+    "/Script/GrandTour"
+   ],
+   "/Game/OWGame/Dev/DressingLab/Roads/BP_OWRoad_Gravel": [
+    "/Script/GrandTour"
+   ]
+  },
+  "graphs_present": []
+ },
+ "finished": "2026-09-26 18:37:51"
+}

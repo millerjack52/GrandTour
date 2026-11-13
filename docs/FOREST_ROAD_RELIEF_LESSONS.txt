@@ -1,0 +1,129 @@
+FOREST ROAD RELIEF — implementation and transfer notes
+=====================================================
+
+Scope
+-----
+Implemented first in /Game/GrandTour/ArtTests/FloraDrive/L_FloraDrive.
+Production LiDAR, MudRoad, MudLab and FloraPath maps remain protected.
+The companion Art/Export/FloraDrive/road-relief-review.json records the
+actual validation results; do not treat this document alone as a pass.
+
+Why the previous ground failed
+-----------------------------
+The close-up POM image showed texture depth, but the driving camera saw a
+broad smooth surface. Soil POM was only about 1.54 cm deep, faded over
+7–18 m and weakened at grazing angles. It cannot create terrain silhouettes,
+tyre support or road-scale cast shadows. Normal strength was not the missing
+road shape. Regular rows of loose stones reinforced the flat underlying plane.
+Accepting a close-up as proof of driving-camera quality was the review error.
+
+Implemented layers
+------------------
+1. Actual rest-height geometry: two wandering wheel troughs, broken crown,
+   raised shoulders and irregular 25–100 cm surface forms. Keep small grains
+   in the material; the native surface is sampled at approximately 12.3 cm.
+2. Material variation: the same authored masks describe compacted channels
+   and drier aggregate patches. Soil texture contribution is 76% rather than
+   48%. Channel colour multiplier is 0.72; aggregate multiplier is up to 1.10.
+   Roughness varies from 0.66 to 0.92. These are material differences, not
+   baked directional shadows. Approved sunlight, exposure and palette remain.
+3. Close detail: existing matching source-pack normals and 10–24-step POM.
+   Height is reconstructed from normals, not supplied creator displacement.
+4. Silhouette detail: grouped, partially buried instanced pack stones outside
+   wheel channels. 64 interactive native clods replace 275 inherited clods.
+   Decorative stones have no collision; native clods retain physical behaviour.
+
+Single height source — essential
+-------------------------------
+Art/tools/road_relief_profile.py takes road station and lateral distance in cm.
+Art/tools/make_flora_road_relief.py applies it to this demo's authored bed.
+The resulting world-rest.png is imported into GTLandscapeSurface CPU rest
+heights AND bound to GTLS_Rest in local rendering/water materials. Updating
+only one causes floating tyres, incorrect water depth or visual/physics mismatch.
+The existing live tyre deformation remains layered onto the authored rest bed.
+Reset must return to the new authored bed, not flatten it back to zero.
+
+The present encoding is RG16 with range -50..+15 cm. This pass clamps authored
+road heights to -42..+14 cm and validates the soil thickness bound. These are
+not general landscape elevation limits: the rest field is a local offset from
+the base terrain. Do not put metres of landscape relief into this encoding.
+Numeric textures need sRGB off; the packed rest field is uncompressed numeric
+data with no mipmaps. Colour textures and the material control mask have their
+own appropriate sampling settings. Do not copy colour-import settings to rest.
+
+Reproduce the isolated demo
+---------------------------
+From C:/GrandTour, with no other Unreal or Blender process using the slot:
+  python Art/tools/make_flora_drive_pond.py
+  python Art/tools/make_flora_road_relief.py
+  powershell -ExecutionPolicy Bypass -File Art/run_flora_drive.ps1 -Stage build
+  powershell -ExecutionPolicy Bypass -File Art/run_flora_drive.ps1 -Stage check
+  [After a clean successful check, archive check-report.json as functional-report.json.]
+  powershell -ExecutionPolicy Bypass -File Art/run_flora_drive.ps1 -Stage capture
+  python Art/tools/review_flora_road_relief.py
+The pond authoring resets the base first: applying road deltas repeatedly to
+an already modified bed would accumulate them. The scatter seed is fixed.
+
+Transfer to actual game maps
+---------------------------
+* Use the actual road spline to compute closest station/lateral coordinates.
+  Replace this demo's sine-road adapter and hard-coded shader world bounds.
+* Fit trough spacing to vehicle track width; the fixture uses +/-83 cm centres
+  with 39 cm trough half-width and small lateral wander. Crown, shoulder,
+  depth, footprint, seed, tile origin/extent and entry/exit blending belong
+  in per-map authoring settings before broad deployment.
+* Blend offsets into the existing LiDAR height, keeping junctions, bridges,
+  hard surfaces and stream crossings explicitly masked. Water placement must
+  be checked again after any roadbed edit; lowered ground can reveal water.
+* Export rest data and material masks together. Bind actual assigned material
+  instances and their parents, not a similarly named unused parent material.
+* Derive scatter height from the same terrain, bury stones, preserve wheels'
+  usable channels, and keep colliders only where gameplay needs them.
+* Review dry, damp and submerged stretches plus slope transitions. Plants
+  must root into the resulting surface rather than retain the old height.
+* Trial one representative production road section before map-wide generation.
+
+Acceptance gate for every map
+----------------------------
+VISUAL: full-size chase-camera before/after at fixed recovery points, plus a
+fixed world camera. Keep lighting, exposure, resolution and lens unchanged.
+Chase camera may settle slightly differently on new terrain; disclose this.
+Confirm broad relief remains visible with POM disabled. Close-ups supplement
+this check; they cannot replace it. Inspect moving footage in the map-wide
+rollout for shimmer, LOD changes, clipping and wet-surface artefacts.
+FUNCTIONAL: continuous route drive, recovery spawns, suspension contact,
+live compression, water depth and reset to authored heights. Shader-oracle
+checks must still pass. A completed report with a crashing process is not a
+clean automation pass; investigate and record retries separately.
+PERFORMANCE: compare same-resolution, warmed, uncapped views without capture
+or pause inside the timing window. Record GPU and frame medians/p95, counts
+and hardware contention. Existing grid geometry is reused; one mask sample
+and additional instanced stones still cost something. No claim of a free
+effect or packaged 60 FPS from an editor spot check.
+
+Review provenance
+-----------------
+BeforeRoadRelief contains the preserved previous captures and authored data.
+All comparison views are rendered by Unreal. No generated replacement images.
+See road-relief-review.html and road-relief-review.json for the current result.
+
+Validation lesson from this pass
+-------------------------------
+The first functional run traversed the route but failed the 0.5 cm parked-tyre
+sink comparison on reset. It compared 16.48 seconds of fresh-world simulation
+against 11.93 seconds after reset. The car also settled several centimetres
+away on the soft entry. The test now waits for matching simulated age before
+comparing; its thresholds and exact world-space reset-height check are retained.
+The rerun passed with 51.4 m driven, 9.47 cm maximum compression, 26.06 cm
+maximum water depth and zero reset-height error. Five native shader oracle
+errors were all below 0.00060, against the existing 0.005 tolerance.
+The failed report and shutdown exit are retained separately; the passing
+rerun finished with process exit zero. Do not overwrite failure evidence.
+
+Final visual capture also exited cleanly. The runtime crown-to-trough minimum
+across the eight checked sections was 16.33 cm. Warming and sampling 300 frames
+per view at 1274x682 gave GPU medians 30.89 ms (road) and 30.90 ms (pond), versus
+32.43 / 32.62 ms in the saved previous pass. This observation shows no regression
+in these samples; it does not isolate individual costs or establish a general
+speedup. Frame timing remains variable, and a packaged performance pass is
+still required before broad map deployment.

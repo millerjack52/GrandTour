@@ -1,0 +1,38 @@
+{
+  "PM_Benmore_GravelFirm": {
+    "saved": true,
+    "spray_tint_a": [
+      0.2476,
+      0.2426,
+      0.2277
+    ],
+    "spray_tint_b": [
+      0.183,
+      0.1793,
+      0.1683
+    ],
+    "dust_tint": [
+      0.2433,
+      0.2384,
+      0.2238
+    ]
+  },
+  "PM_Benmore_GravelLoose": {
+    "saved": true,
+    "spray_tint_a": [
+      0.3796,
+      0.374,
+      0.3568
+    ],
+    "spray_tint_b": [
+      0.2806,
+      0.2764,
+      0.2638
+    ],
+    "dust_tint": [
+      0.2433,
+      0.2384,
+      0.2238
+    ]
+  }
+}

@@ -1,0 +1,1013 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/ArtTests/NativePlants/L_NativePlants",
+  "images": [
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Lineup.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_LineupFar.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Driver.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_FernMass.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_TowardSun.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_EdgeWall.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Top.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_FloorLogs.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Riverbed.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_DenseFloor.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_EdgeBand.png",
+    "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Shelterbelt.png"
+  ],
+  "assets": [
+    {
+      "name": "Beech_Mature",
+      "lods": 3,
+      "hulls": 3,
+      "manifest_hulls": 3,
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Beech_Pole",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Beech_Edge",
+      "lods": 3,
+      "hulls": 3,
+      "manifest_hulls": 3,
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "DeadSpar",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "CrownFern_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "CrownFern_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "CrownFern_C",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "TreeFern_A",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "TreeFern_B",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "TreeFern_Young",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Harakeke_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Harakeke_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Coprosma_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Coprosma_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Matagouri_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Matagouri_B",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "TiKouka_A",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "TiKouka_B",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Kanuka_A",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Kanuka_B",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": null,
+      "ok": true
+    },
+    {
+      "name": "Kiokio_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Kiokio_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Log_A",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Log_B",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Stump_A",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "MossHummock_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "MossHummock_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Cobble_Cluster_S",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Cobble_Cluster_M",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Cobble_Cluster_L",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "CobbleBar",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Driftwood_A",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "LogJam",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Boulder_A",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Boulder_B",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Gorse_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Gorse_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Broom_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Rush_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Rush_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Thistle_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "VergeTussock_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "VergeTussock_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Radiata_Young",
+      "lods": 3,
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Radiata_Mature",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "Macrocarpa",
+      "lods": 3,
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": [
+        2,
+        2,
+        2
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "TwigLitter_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "TwigLitter_B",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "RootTangle_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    },
+    {
+      "name": "LeafLitter_A",
+      "lods": 3,
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": [
+        1,
+        1,
+        1
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX",
+      "ok": true
+    }
+  ],
+  "assets_ok": true,
+  "shader_wait_s": 30.4,
+  "post_mode": 2,
+  "kuwahara": 0,
+  "actors": {
+    "NZ_BushStand": 9,
+    "NZ_BushFerns": 10,
+    "NZ_EdgeStand": 8,
+    "NZ_EdgeScrub": 5,
+    "NZ_RiverStand": 5,
+    "NZ_RiverScatter": 6,
+    "NZ_EdgeBandScrub": 8,
+    "NZ_ShelterStand": 3,
+    "NZ_ShelterFoot": 2,
+    "NZ_EdgeWall": 0,
+    "NZ_Riverbed": 0,
+    "NZ_EdgeBand": 0,
+    "NZ_Shelterbelt": 0
+  },
+  "captures": [
+    {
+      "view": "Lineup",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Lineup.png",
+      "mean": 104.23,
+      "usable": true
+    },
+    {
+      "view": "LineupFar",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_LineupFar.png",
+      "mean": 130.25,
+      "usable": true
+    },
+    {
+      "view": "Driver",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Driver.png",
+      "mean": 117.59,
+      "usable": true
+    },
+    {
+      "view": "FernMass",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_FernMass.png",
+      "mean": 45.42,
+      "usable": true
+    },
+    {
+      "view": "TowardSun",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_TowardSun.png",
+      "mean": 34.27,
+      "usable": false
+    },
+    {
+      "view": "EdgeWall",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_EdgeWall.png",
+      "mean": 41.17,
+      "usable": true
+    },
+    {
+      "view": "Top",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Top.png",
+      "mean": 75.47,
+      "usable": true
+    },
+    {
+      "view": "FloorLogs",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_FloorLogs.png",
+      "mean": 36.7,
+      "usable": false
+    },
+    {
+      "view": "Riverbed",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Riverbed.png",
+      "mean": 95.0,
+      "usable": true
+    },
+    {
+      "view": "DenseFloor",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_DenseFloor.png",
+      "mean": 28.86,
+      "usable": false
+    },
+    {
+      "view": "EdgeBand",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_EdgeBand.png",
+      "mean": 50.86,
+      "usable": true
+    },
+    {
+      "view": "Shelterbelt",
+      "path": "C:\\GrandTour\\Art\\Export\\NativePlants\\v01\\UE_Shelterbelt.png",
+      "mean": 114.05,
+      "usable": true
+    }
+  ]
+}

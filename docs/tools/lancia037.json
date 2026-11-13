@@ -1,0 +1,11 @@
+{
+  "name": "Lancia037",
+  "ref_px": 175.5, "ref_mm": 2445,
+  "views": {
+    "side_left":  {"kind": "side_left",  "box": [35,  23, 345, 112], "anchor": [200.75, 109]},
+    "front":      {"kind": "front",      "box": [355, 23, 512, 112], "anchor": [434.5, 109]},
+    "side_right": {"kind": "side_right", "box": [35, 138, 345, 228], "anchor": [186.0, 224]},
+    "rear":       {"kind": "rear",       "box": [355, 138, 512, 228], "anchor": [434.5, 224]},
+    "top":        {"kind": "top",        "box": [35, 245, 345, 400], "anchor": [200.75, 322]}
+  }
+}

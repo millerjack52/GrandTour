@@ -1,0 +1,101 @@
+FLORA PAINT SHADER PARITY - IMPLEMENTATION CHECKPOINT
+2026-11-13
+
+Scope
+Started the accepted parity plan. Work is isolated in
+/Game/GrandTour/ArtTests/FloraParity. This checkpoint is not approval for a
+woodland rollout or a claim that Blender and Unreal now match.
+
+Implemented
+- Indexed source audit: original shader graphs, duplicate socket names,
+  operations, material settings, source texture colour spaces and hashes.
+- Shared frozen mesh/camera/light recipe for fern, shrub and tree comparisons.
+- Blender source shader renders, current Unreal renders, isolated coverage
+  candidate renders; linear buffers and native display images retained.
+- Source-facing coverage uses each family's Input_17 value, not one global
+  softness setting or the other source sockets also labelled Soft.
+- Separate settled TAA review, with Unreal SceneCapture's normally disabled
+  TemporalAA flag explicitly enabled. Motion and TSR tests remain pending.
+- Baseline/production map, reference map, configuration and purchased source
+  hash checks. No production rollout.
+
+Confirmed causes / differences
+1. Source Shadow mixes translucent and diffuse BSDFs. It is not just shadow
+   opacity. Leaf_0 uses diffuse weight 0; Fern_1 uses about 0.766.
+2. The source uses different normals for diffuse and translucent lobes.
+   The current native Unreal foliage model plus adjusted normals is an
+   approximation and must be tested separately from coverage.
+3. Source coverage depends on view angle and family-specific softness.
+   Current PathPainterlyCoverage is a different threshold/filter-width operation.
+4. Current map materials add independent pigment/normal wrappers. They cannot
+   be assumed to reproduce the original source colour pipeline exactly.
+
+Lessons from verification
+- Replacing Blender material slots resets polygon material indices: preserve
+  indices and restore slots by imported names. Otherwise leaves can get bark.
+- Camera/object switching in SceneCapture needs render-frame warmup. Waiting
+  by wall-clock alone produced missing objects in the first HDR capture even
+  when the later LDR capture was correct. Disable occlusion history for this
+  diagnostic and warm the same target across several frames.
+- Release capture targets, destroy the capture actor and clear references
+  before editor shutdown. Do not accept a successful image report when the
+  renderer process returns a failure exit code.
+- A compiler-statistics query session completed its captures but subsequently
+  returned a nonzero teardown exit. Statistics were saved with this caveat;
+  they are not runtime measurements. Fresh capture runs omit that query.
+- A fractional coverage candidate without temporal filtering looks stippled.
+  Assess the settled result and later motion, not only raw opacity screenshots.
+- All source FILE images were present. The two non-file image records are
+  Blender Render Result and Viewer Node, not missing texture dependencies.
+
+Acceptance status
+Latest fresh runner results: build, candidate, temporal_baseline and
+temporal_candidate all passed with exit code 0 and valid fresh reports.
+28 cases each for Blender/source, Unreal/current and Unreal/coverage, plus
+6 settled TAA captures for each Unreal variant. These are diagnostic captures,
+not gameplay FPS measurements.
+Visual review: fern edges are softer and more separated in the candidate.
+It is still too sparse in places, and lighting remains different. Keep the
+candidate experimental; no woodland rollout at this checkpoint.
+Source audit implemented. Paired capture harness implemented.
+First source-facing coverage candidate implemented only in the test namespace.
+Lighting calibration remains open: a single front neutral-chart gain leaves
+materially different side/back/environment receiver responses. Do not disguise
+this with a separate colour fit for each plant. Exact shader parity is not passed.
+Source mask blur, procedural coordinates/randomisation, diffuse/transmission,
+motion, distance/mip checks and existing scene review remain open.
+60fps / full-map performance: unverified.
+
+Next work
+1. Complete light/display calibration with controlled diffuse receiver settings.
+2. Add pigment-only, alpha-only and normal diagnostic passes. Reproduce source
+   mask blur and lock random/procedural coordinates before measuring colour.
+3. Test native/Substrate implementations of separate diffuse and transmitted
+   responses against the same source, cameras and lighting cases.
+4. Combine only improvements that pass static, motion, shadows and distance
+   checks, then validate in the existing forest path before LiDAR integration.
+
+Evidence
+Art/Export/LidarStudy/FloraParity/source-contract.json
+Art/Export/LidarStudy/FloraParity/recipe.json
+Art/Export/LidarStudy/FloraParity/comparison-report.json
+Art/Export/LidarStudy/FloraParity/FIRST_IMPLEMENTATION.txt
+Art/Export/LidarStudy/FloraParity/shader-diagnostics.jpg
+Art/Export/LidarStudy/FloraParity/coverage-temporal-check.jpg
+
+Reproduce sequentially (run from C:/GrandTour):
+./Art/run_flora_parity.ps1 audit
+./Art/run_flora_parity.ps1 reference
+./Art/run_flora_parity.ps1 build
+./Art/run_flora_parity.ps1 candidate
+./Art/run_flora_parity.ps1 temporal_baseline
+./Art/run_flora_parity.ps1 temporal_candidate
+python Art/analyze_flora_parity.py
+
+Source equation checked against Blender 5.1.2:
+https://github.com/blender/blender/blob/v5.1.2/source/blender/gpu/shaders/material/gpu_shader_material_layer_weight.glsl
+
+SOURCE-ASSET FOLLOW-UP (13 November 2026)
+See docs/FLORA_ASSET_MATCH_CHECKPOINT.txt for the subsequent full source-asset
+conversion and lighting/display investigations. The earlier coverage-only
+checkpoint above is retained as history, not the latest candidate status.

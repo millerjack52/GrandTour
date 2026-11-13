@@ -1,0 +1,353 @@
+{
+  "rear_pillar_join": {
+    "passed": false,
+    "samples": [
+      {
+        "side": "Left",
+        "point": [
+          0.8560000061988831,
+          2.160161256790161,
+          1.2300000190734863
+        ],
+        "gap_m": 0.030338088050484657
+      },
+      {
+        "side": "Left",
+        "point": [
+          0.8441705703735352,
+          2.1602132320404053,
+          1.2279847860336304
+        ],
+        "gap_m": 0.018817245960235596
+      },
+      {
+        "side": "Right",
+        "point": [
+          -0.8560000061988831,
+          2.160161256790161,
+          1.2300000190734863
+        ],
+        "gap_m": 0.030338142067193985
+      },
+      {
+        "side": "Right",
+        "point": [
+          -0.8441705703735352,
+          2.1602132320404053,
+          1.2279847860336304
+        ],
+        "gap_m": 0.018817266449332237
+      }
+    ]
+  },
+  "arch_joins": {
+    "passed": false,
+    "arches": [
+      {
+        "side": -1,
+        "arch": "front_arch_uv",
+        "max_lip_liner_gap_m": 0.042332351207733154,
+        "max_seat_gap_m": null
+      },
+      {
+        "side": -1,
+        "arch": "rear_arch_uv",
+        "max_lip_liner_gap_m": 0.04228419065475464,
+        "max_seat_gap_m": null
+      },
+      {
+        "side": 1,
+        "arch": "front_arch_uv",
+        "max_lip_liner_gap_m": 0.042332351207733154,
+        "max_seat_gap_m": null
+      },
+      {
+        "side": 1,
+        "arch": "rear_arch_uv",
+        "max_lip_liner_gap_m": 0.04228419065475464,
+        "max_seat_gap_m": null
+      }
+    ]
+  },
+  "mudflap_attachment": {
+    "passed": false,
+    "mounts": [
+      {
+        "flap": "Mudflap | flexible rubber",
+        "contacts": {},
+        "attached": false
+      },
+      {
+        "flap": "Mudflap | flexible rubber.001",
+        "contacts": {},
+        "attached": false
+      },
+      {
+        "flap": "Mudflap | flexible rubber.002",
+        "contacts": {},
+        "attached": false
+      },
+      {
+        "flap": "Mudflap | flexible rubber.003",
+        "contacts": {},
+        "attached": false
+      }
+    ]
+  },
+  "rear_seat_wheelhouse": {
+    "passed": false,
+    "surface_intersections": [
+      [
+        "Bench | cushion bolster",
+        "-1 | rear_arch_uv inner well"
+      ],
+      [
+        "Bench | cushion bolster",
+        "-1 | rear_arch_uv recessed backing"
+      ],
+      [
+        "Bench | reclined back pad",
+        "-1 | rear_arch_uv inner well"
+      ],
+      [
+        "Bench | reclined back pad",
+        "-1 | rear_arch_uv recessed backing"
+      ],
+      [
+        "Bench | cushion bolster.002",
+        "1 | rear_arch_uv inner well"
+      ],
+      [
+        "Bench | cushion bolster.002",
+        "1 | rear_arch_uv recessed backing"
+      ],
+      [
+        "Bench | reclined back pad.002",
+        "1 | rear_arch_uv inner well"
+      ],
+      [
+        "Bench | reclined back pad.002",
+        "1 | rear_arch_uv recessed backing"
+      ]
+    ],
+    "keepout_violations": [
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.7114999890327454,
+          1.2005000114440918,
+          0.8755000233650208
+        ],
+        "clearance_m": -0.11149998903274538
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.6865000128746033,
+          1.2254999876022339,
+          0.8755000233650208
+        ],
+        "clearance_m": -0.0865000128746033
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.6865000128746033,
+          1.2005000114440918,
+          0.8505000472068787
+        ],
+        "clearance_m": -0.0865000128746033
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.704177737236023,
+          1.2181775569915771,
+          0.8755000233650208
+        ],
+        "clearance_m": -0.10417773723602297
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.7009338140487671,
+          1.2149336338043213,
+          0.8610662817955017
+        ],
+        "clearance_m": -0.10093381404876711
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.686500072479248,
+          1.2181775569915771,
+          0.8578223586082458
+        ],
+        "clearance_m": -0.08650007247924807
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.704177737236023,
+          1.2004998922348022,
+          0.8578223586082458
+        ],
+        "clearance_m": -0.10417773723602297
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.7114999890327454,
+          1.2005000114440918,
+          0.9105000495910645
+        ],
+        "clearance_m": -0.11149998903274538
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.6865000128746033,
+          1.2005000114440918,
+          0.9355000257492065
+        ],
+        "clearance_m": -0.0865000128746033
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.6865000128746033,
+          1.2254999876022339,
+          0.9105000495910645
+        ],
+        "clearance_m": -0.0865000128746033
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.704177737236023,
+          1.2005000114440918,
+          0.9281776547431946
+        ],
+        "clearance_m": -0.10417773723602297
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.7009338140487671,
+          1.2149337530136108,
+          0.9249337315559387
+        ],
+        "clearance_m": -0.10093381404876711
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.686500072479248,
+          1.2181776762008667,
+          0.9281776547431946
+        ],
+        "clearance_m": -0.08650007247924807
+      },
+      {
+        "object": "Bench | cushion bolster",
+        "point": [
+          -0.704177737236023,
+          1.2181776762008667,
+          0.9104999899864197
+        ],
+        "clearance_m": -0.10417773723602297
+      },
+      {
+        "object": "Bench | inset cloth cushion",
+        "point": [
+          -0.6460000276565552,
+          1.157500147819519,
+          0.9310000538825989
+        ],
+        "clearance_m": -0.0460000276565552
+      },
+      {
+        "object": "Bench | inset cloth cushion",
+        "point": [
+          -0.6460000276565552,
+          1.1617426872253418,
+          0.9327574372291565
+        ],
+        "clearance_m": -0.0460000276565552
+      },
+      {
+        "object": "Bench | reclined back pad",
+        "point": [
+          -0.7089999914169312,
+          1.1929999589920044,
+          0.8980000019073486
+        ],
+        "clearance_m": -0.10899999141693117
+      },
+      {
+        "object": "Bench | reclined back pad",
+        "point": [
+          -0.7089999914169312,
+          1.2730000019073486,
+          0.8980000019073486
+        ],
+        "clearance_m": -0.10899999141693117
+      },
+      {
+        "object": "Bench | cushion bolster.002",
+        "point": [
+          0.7114999890327454,
+          1.2005000114440918,
+          0.8755000233650208
+        ],
+        "clearance_m": -0.11149998903274538
+      },
+      {
+        "object": "Bench | cushion bolster.002",
+        "point": [
+          0.6865000128746033,
+          1.2005000114440918,
+          0.8505000472068787
+        ],
+        "clearance_m": -0.0865000128746033
+      }
+    ],
+    "violation_count": 36,
+    "minimum_lateral_clearance_m": -0.11149998903274538
+  },
+  "tyre_rim_fit": {
+    "passed": false,
+    "wheels": [
+      {
+        "wheel": "Front L | Detailed wheel",
+        "tyre_width_m": 0.24000000953674316,
+        "rim_hardware_width_m": 0.30049997568130493,
+        "minimum_sidewall_margin_m": -0.03249996900558472,
+        "bead_barrel_contact": false
+      },
+      {
+        "wheel": "Front R | Detailed wheel",
+        "tyre_width_m": 0.24000000953674316,
+        "rim_hardware_width_m": 0.30049997568130493,
+        "minimum_sidewall_margin_m": -0.03249996900558472,
+        "bead_barrel_contact": false
+      },
+      {
+        "wheel": "Rear L | Detailed wheel",
+        "tyre_width_m": 0.24000000953674316,
+        "rim_hardware_width_m": 0.30049997568130493,
+        "minimum_sidewall_margin_m": -0.03249996900558472,
+        "bead_barrel_contact": false
+      },
+      {
+        "wheel": "Rear R | Detailed wheel",
+        "tyre_width_m": 0.24000000953674316,
+        "rim_hardware_width_m": 0.30049997568130493,
+        "minimum_sidewall_margin_m": -0.03249996900558472,
+        "bead_barrel_contact": false
+      }
+    ]
+  },
+  "passed": false,
+  "scope": "Five specific static assembly contracts. Not a global solid-intersection or vehicle-engineering certification."
+}

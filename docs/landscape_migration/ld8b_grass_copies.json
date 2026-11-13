@@ -1,0 +1,532 @@
+{
+ "ok": true,
+ "started": "2026-09-28 15:12:38",
+ "flags": {
+  "cast_dynamic_shadow": false,
+  "cast_contact_shadow": true,
+  "affect_distance_field_lighting": false
+ },
+ "copies": {
+  "LGT_GT_AlpineGrass": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWAlpineGrass",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_AlpineGrass",
+   "varieties": 3,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_FloorDeciduous": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWFloorDeciduous",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_FloorDeciduous",
+   "varieties": 5,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_FloorFir": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWFloorFir",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_FloorFir",
+   "varieties": 4,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_FloorOak": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWFloorOak",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_FloorOak",
+   "varieties": 4,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_ForestFloor": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWForestFloor",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_ForestFloor",
+   "varieties": 5,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_MeadowDryGrass": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWMeadowDryGrass",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_MeadowDryGrass",
+   "varieties": 3,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_MeadowFlowers": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWMeadowFlowers",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_MeadowFlowers",
+   "varieties": 6,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_MeadowGrass": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWMeadowGrass",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_MeadowGrass",
+   "varieties": 3,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_MeadowLushFlowers": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWMeadowLushFlowers",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_MeadowLushFlowers",
+   "varieties": 6,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  },
+  "LGT_GT_MeadowLushGrass": {
+   "source": "/Game/OWGame/Dev/DressingLab/LGT_OWMeadowLushGrass",
+   "copy": "/Game/GrandTour/Dressing/Grass/LGT_GT_MeadowLushGrass",
+   "varieties": 4,
+   "before": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ],
+   "after": [
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    },
+    {
+     "cast_dynamic_shadow": false,
+     "cast_contact_shadow": true,
+     "affect_distance_field_lighting": false
+    }
+   ]
+  }
+ },
+ "finished": "2026-09-28 15:12:38"
+}

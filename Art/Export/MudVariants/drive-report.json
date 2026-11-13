@@ -1,0 +1,2923 @@
+{
+  "ok": true,
+  "images": [
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Firm.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Standard.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Deep.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Stony.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Soft_Standard_Before.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Soft_Firm_Before.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Soft_Top.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Chunks_Before.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Chunks_Close.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Chunks_Firm.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Firm_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Firm_Close.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Standard_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Standard_Close.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Deep_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Deep_Close.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Stony_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\MudVariants_Stony_Close.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Soft_Standard_After.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Chunks_After.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Carry_Exit.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Carry_Grass.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Carry_Grass_Off.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Splat_Post.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Car_Muddy_Side.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Car_Muddy_Rear.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Rut_Muddy.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Rut_Muddy_Low.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Rut_Settled.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Rut_Settled_Low.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Mud_PBR_OnFoot_POM0.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Mud_PBR_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Mud_PBR_Close_POM0.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Mud_PBR_Close.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Mud_PBR_Close_Steep.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Mud_PBR_Close_Steep_NoShadow.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Rut_Settled_PBR.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Car_Muddy_PBR.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Carry_Wet_PBR.png"
+  ],
+  "viewports": [
+    [
+      1274,
+      682
+    ],
+    [
+      1440,
+      868
+    ]
+  ],
+  "sections": [
+    {
+      "variant": "Firm",
+      "start_m": 30.0,
+      "end_m": 55.0,
+      "crossed": true,
+      "time_s": 3.02,
+      "mean_speed_mps": 8.287,
+      "mean_speed_kmh": 29.83,
+      "min_speed_mps": 6.031,
+      "max_sinkage_cm": 26.85,
+      "mean_sinkage_cm": 21.39,
+      "wheel_samples": 47,
+      "lowered_cm3_while_inside": 6755021.0,
+      "mean_friction_scale": 0.8294,
+      "traction_means": {
+        "rolling_resistance": 0.3157,
+        "plough": 0.231,
+        "belly": 0.0086,
+        "surface": 0.0678,
+        "rut_depth": 0.4464,
+        "rut_climb": 0.0247,
+        "tyre_load_n": 5169.5196,
+        "slip": 42.0457,
+        "slipping_share": 0.3043,
+        "samples": 12
+      }
+    },
+    {
+      "variant": "Standard",
+      "start_m": 75.0,
+      "end_m": 100.0,
+      "crossed": true,
+      "time_s": 3.27,
+      "mean_speed_mps": 7.653,
+      "mean_speed_kmh": 27.55,
+      "min_speed_mps": 4.492,
+      "max_sinkage_cm": 43.96,
+      "mean_sinkage_cm": 30.85,
+      "wheel_samples": 54,
+      "lowered_cm3_while_inside": 12711802.0,
+      "mean_friction_scale": 0.7261,
+      "traction_means": {
+        "rolling_resistance": 0.3625,
+        "plough": 0.2033,
+        "belly": 0.0344,
+        "surface": 0.0661,
+        "rut_depth": 0.4022,
+        "rut_climb": 0.0513,
+        "tyre_load_n": 5234.6,
+        "slip": 116.272,
+        "slipping_share": 0.52,
+        "samples": 13
+      }
+    },
+    {
+      "variant": "Deep",
+      "start_m": 120.0,
+      "end_m": 145.0,
+      "crossed": true,
+      "time_s": 52.37,
+      "mean_speed_mps": 0.477,
+      "mean_speed_kmh": 1.72,
+      "min_speed_mps": 0.023,
+      "max_sinkage_cm": 65.88,
+      "mean_sinkage_cm": 55.44,
+      "wheel_samples": 772,
+      "lowered_cm3_while_inside": 30774127.0,
+      "mean_friction_scale": 0.5846,
+      "traction_means": {
+        "rolling_resistance": 0.2441,
+        "plough": 0.0136,
+        "belly": 0.0915,
+        "surface": 0.0717,
+        "rut_depth": 0.5186,
+        "rut_climb": 0.1987,
+        "tyre_load_n": 5161.3714,
+        "slip": 48.4677,
+        "slipping_share": 0.503,
+        "samples": 210
+      }
+    },
+    {
+      "variant": "Stony",
+      "start_m": 165.0,
+      "end_m": 190.0,
+      "crossed": true,
+      "time_s": 5.53,
+      "mean_speed_mps": 4.518,
+      "mean_speed_kmh": 16.27,
+      "min_speed_mps": 1.607,
+      "max_sinkage_cm": 37.84,
+      "mean_sinkage_cm": 31.18,
+      "wheel_samples": 89,
+      "lowered_cm3_while_inside": 11777107.0,
+      "mean_friction_scale": 0.7889,
+      "traction_means": {
+        "rolling_resistance": 0.2778,
+        "plough": 0.1418,
+        "belly": 0.0298,
+        "surface": 0.0706,
+        "rut_depth": 0.4685,
+        "rut_climb": 0.0816,
+        "tyre_load_n": 5262.2917,
+        "slip": 38.7786,
+        "slipping_share": 0.4881,
+        "samples": 22
+      }
+    }
+  ],
+  "patches": [
+    {
+      "variant": "Firm",
+      "section": 0,
+      "slot": 0,
+      "mud_variant": "<GTMudVariant.FIRM: 1>",
+      "bounds_min": [
+        2320.0,
+        -680.0
+      ],
+      "bounds_max": [
+        6182.5,
+        682.5
+      ],
+      "cells": [
+        309,
+        109
+      ],
+      "has_profile": false,
+      "max_sinkage_scale": 0.6000000238418579,
+      "sinkage_rate_scale": 0.6000000238418579,
+      "friction_scale": 1.100000023841858,
+      "recover_share": 0.25,
+      "lump_share": 0.25,
+      "throw_max": 0.30000001192092896,
+      "water_table_cm": -25.0,
+      "material": true,
+      "mesh_material_parent": "/Game/GrandTour/Materials/M_GT_Mud.M_GT_Mud",
+      "mesh_mud_variant": 1.0,
+      "clod_meshes": 10,
+      "clod_instance": true,
+      "clod_mud_variant": 1.0,
+      "mesh_slice_ok": true,
+      "clod_slice_ok": true
+    },
+    {
+      "variant": "Standard",
+      "section": 1,
+      "slot": 1,
+      "mud_variant": "<GTMudVariant.STANDARD: 0>",
+      "bounds_min": [
+        6820.0,
+        -680.0
+      ],
+      "bounds_max": [
+        10682.5,
+        682.5
+      ],
+      "cells": [
+        309,
+        109
+      ],
+      "has_profile": false,
+      "max_sinkage_scale": 1.0,
+      "sinkage_rate_scale": 1.0,
+      "friction_scale": 1.0,
+      "recover_share": 0.4000000059604645,
+      "lump_share": 0.3499999940395355,
+      "throw_max": 0.5,
+      "water_table_cm": -25.0,
+      "material": true,
+      "mesh_material_parent": "/Game/GrandTour/Materials/M_GT_Mud.M_GT_Mud",
+      "mesh_mud_variant": 0.0,
+      "clod_meshes": 10,
+      "clod_instance": false,
+      "clod_mud_variant": null,
+      "mesh_slice_ok": true,
+      "clod_slice_ok": true
+    },
+    {
+      "variant": "Deep",
+      "section": 2,
+      "slot": 2,
+      "mud_variant": "<GTMudVariant.DEEP: 2>",
+      "bounds_min": [
+        11320.0,
+        -680.0
+      ],
+      "bounds_max": [
+        15182.5,
+        682.5
+      ],
+      "cells": [
+        309,
+        109
+      ],
+      "has_profile": false,
+      "max_sinkage_scale": 1.5,
+      "sinkage_rate_scale": 1.5,
+      "friction_scale": 0.8999999761581421,
+      "recover_share": 0.550000011920929,
+      "lump_share": 0.3499999940395355,
+      "throw_max": 0.6000000238418579,
+      "water_table_cm": -15.0,
+      "material": true,
+      "mesh_material_parent": "/Game/GrandTour/Materials/M_GT_Mud.M_GT_Mud",
+      "mesh_mud_variant": 2.0,
+      "clod_meshes": 10,
+      "clod_instance": true,
+      "clod_mud_variant": 2.0,
+      "mesh_slice_ok": true,
+      "clod_slice_ok": true
+    },
+    {
+      "variant": "Stony",
+      "section": 3,
+      "slot": 3,
+      "mud_variant": "<GTMudVariant.STONY: 3>",
+      "bounds_min": [
+        15820.0,
+        -680.0
+      ],
+      "bounds_max": [
+        19682.5,
+        682.5
+      ],
+      "cells": [
+        309,
+        109
+      ],
+      "has_profile": false,
+      "max_sinkage_scale": 0.800000011920929,
+      "sinkage_rate_scale": 0.800000011920929,
+      "friction_scale": 1.149999976158142,
+      "recover_share": 0.30000001192092896,
+      "lump_share": 0.20000000298023224,
+      "throw_max": 0.5,
+      "water_table_cm": -25.0,
+      "material": true,
+      "mesh_material_parent": "/Game/GrandTour/Materials/M_GT_Mud.M_GT_Mud",
+      "mesh_mud_variant": 3.0,
+      "clod_meshes": 10,
+      "clod_instance": true,
+      "clod_mud_variant": 3.0,
+      "mesh_slice_ok": true,
+      "clod_slice_ok": true
+    }
+  ],
+  "play_mode": "new window 1440x900",
+  "viewport_retry": [
+    1274,
+    682
+  ],
+  "play_mode_retry": "new window 1440x900",
+  "viewport_size": [
+    1440,
+    868
+  ],
+  "mode": "Play In Editor, actual possessed cockpit",
+  "weather": "Clear",
+  "box_gaps_cm": [
+    637.5,
+    637.5,
+    637.5
+  ],
+  "soft": {
+    "baseline_from": "git HEAD",
+    "patches": [
+      {
+        "variant": "Firm",
+        "has_soft_spots": true,
+        "amplitude": 0.5,
+        "mean_sink_lerp": 1.1046,
+        "mean_friction_lerp": 0.9791,
+        "switch": 1,
+        "share": 0.1163,
+        "blobs": 6,
+        "map": "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Firm.png",
+        "wheel_path_share_section": 0.2913,
+        "wheel_path_share_box": 0.2267
+      },
+      {
+        "variant": "Standard",
+        "has_soft_spots": true,
+        "amplitude": 1.0,
+        "mean_sink_lerp": 1.1029,
+        "mean_friction_lerp": 0.9794,
+        "switch": 1,
+        "share": 0.2038,
+        "blobs": 4,
+        "map": "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Standard.png",
+        "wheel_path_share_section": 0.1856,
+        "wheel_path_share_box": 0.158
+      },
+      {
+        "variant": "Deep",
+        "has_soft_spots": true,
+        "amplitude": 0.6,
+        "mean_sink_lerp": 1.1061,
+        "mean_friction_lerp": 0.9788,
+        "switch": 1,
+        "share": 0.165,
+        "blobs": 2,
+        "map": "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Deep.png",
+        "wheel_path_share_section": 0.1803,
+        "wheel_path_share_box": 0.1495
+      },
+      {
+        "variant": "Stony",
+        "has_soft_spots": true,
+        "amplitude": 0.6,
+        "mean_sink_lerp": 1.1072,
+        "mean_friction_lerp": 0.9786,
+        "switch": 1,
+        "share": 0.128,
+        "blobs": 3,
+        "map": "C:\\GrandTour\\Art\\Export\\MudVariants\\soft-Stony.png",
+        "wheel_path_share_section": 0.1434,
+        "wheel_path_share_box": 0.1883
+      }
+    ],
+    "maps": [],
+    "cameras": {
+      "Soft_Standard_Before": {
+        "location": [
+          7080.3,
+          474.6,
+          214.8
+        ],
+        "target": [
+          8032.9,
+          -75.4,
+          -18.9
+        ],
+        "fov": 65.0
+      },
+      "Soft_Firm_Before": {
+        "location": [
+          2613.5,
+          579.1,
+          153.6
+        ],
+        "target": [
+          3566.2,
+          29.1,
+          -19.9
+        ],
+        "fov": 65.0
+      },
+      "Soft_Top": {
+        "location": [
+          6500.0,
+          -2000.0,
+          2077.9
+        ],
+        "target": [
+          6500.0,
+          0.0,
+          32.8
+        ],
+        "fov": 90.0
+      }
+    },
+    "blobs": {
+      "Standard": {
+        "cells": 5005,
+        "area_m2": 78.2,
+        "x_cm": 8032.9,
+        "y_cm": -75.4
+      },
+      "Firm": {
+        "cells": 1502,
+        "area_m2": 23.47,
+        "x_cm": 3566.2,
+        "y_cm": 29.1
+      }
+    },
+    "sections": [
+      {
+        "variant": "Firm",
+        "mean_speed_mps": 8.287,
+        "committed_mean_speed_mps": 8.242,
+        "speed_ratio": 1.005,
+        "mean_sinkage_cm": 21.39,
+        "committed_mean_sinkage_cm": 21.73,
+        "wheel_path_soft_share": 0.2913
+      },
+      {
+        "variant": "Standard",
+        "mean_speed_mps": 7.653,
+        "committed_mean_speed_mps": 7.812,
+        "speed_ratio": 0.98,
+        "mean_sinkage_cm": 30.85,
+        "committed_mean_sinkage_cm": 30.04,
+        "wheel_path_soft_share": 0.1856
+      },
+      {
+        "variant": "Deep",
+        "mean_speed_mps": 0.477,
+        "committed_mean_speed_mps": 0.476,
+        "speed_ratio": 1.002,
+        "mean_sinkage_cm": 55.44,
+        "committed_mean_sinkage_cm": 55.36,
+        "wheel_path_soft_share": 0.1803
+      },
+      {
+        "variant": "Stony",
+        "mean_speed_mps": 4.518,
+        "committed_mean_speed_mps": 2.609,
+        "speed_ratio": 1.732,
+        "mean_sinkage_cm": 31.18,
+        "committed_mean_sinkage_cm": 32.99,
+        "wheel_path_soft_share": 0.1434
+      }
+    ]
+  },
+  "chunks": {
+    "cameras": {
+      "Chunks_Before": {
+        "location": [
+          7300.0,
+          -750.0,
+          331.4
+        ],
+        "target": [
+          8300.0,
+          50.0,
+          -36.9
+        ],
+        "fov": 60.0
+      },
+      "Chunks_Close": {
+        "location": [
+          9860.0,
+          -539.0,
+          93.1
+        ],
+        "target": [
+          10163.1,
+          -364.0,
+          -88.2
+        ],
+        "fov": 65.0
+      },
+      "Chunks_Firm": {
+        "location": [
+          2800.0,
+          -750.0,
+          221.0
+        ],
+        "target": [
+          3800.0,
+          50.0,
+          -35.2
+        ],
+        "fov": 60.0
+      }
+    },
+    "before": {
+      "sections": [
+        {
+          "section": 0,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 261.84,
+          "density_scale": 0.5,
+          "target": 5,
+          "planned": 5,
+          "live": 5,
+          "spawned": 5,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Firm"
+        },
+        {
+          "section": 1,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 218.78,
+          "density_scale": 1.0,
+          "target": 9,
+          "planned": 9,
+          "live": 9,
+          "spawned": 9,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Standard"
+        },
+        {
+          "section": 2,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 233.2,
+          "density_scale": 1.5,
+          "target": 14,
+          "planned": 14,
+          "live": 14,
+          "spawned": 14,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Deep"
+        },
+        {
+          "section": 3,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 236.06,
+          "density_scale": 1.0,
+          "target": 9,
+          "planned": 9,
+          "live": 9,
+          "spawned": 9,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Stony"
+        }
+      ],
+      "awake_peak_world": 0,
+      "awake_now_world": 0,
+      "capped": 0
+    },
+    "cluster": {
+      "count": 2,
+      "x_cm": 10163.1,
+      "y_cm": -364.0,
+      "sizes_cm": [
+        46.3,
+        20.0
+      ],
+      "chunks_in_patch": 9
+    },
+    "after_drive": {
+      "sections": [
+        {
+          "section": 0,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 261.84,
+          "density_scale": 0.5,
+          "target": 5,
+          "planned": 5,
+          "live": 4,
+          "spawned": 5,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 1,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 2950.6,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 4,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Firm"
+        },
+        {
+          "section": 1,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 218.78,
+          "density_scale": 1.0,
+          "target": 9,
+          "planned": 9,
+          "live": 9,
+          "spawned": 9,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Standard"
+        },
+        {
+          "section": 2,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 233.2,
+          "density_scale": 1.5,
+          "target": 14,
+          "planned": 14,
+          "live": 14,
+          "spawned": 14,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 2,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 50.2,
+          "variant": "Deep"
+        },
+        {
+          "section": 3,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 236.06,
+          "density_scale": 1.0,
+          "target": 9,
+          "planned": 9,
+          "live": 9,
+          "spawned": 9,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 1,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 54.7,
+          "variant": "Stony"
+        }
+      ],
+      "awake_peak_world": 2,
+      "awake_now_world": 0,
+      "capped": 0
+    },
+    "end": {
+      "sections": [
+        {
+          "section": 0,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 261.84,
+          "density_scale": 0.5,
+          "target": 5,
+          "planned": 5,
+          "live": 4,
+          "spawned": 5,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 1,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 2950.6,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 4,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Firm"
+        },
+        {
+          "section": 1,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 218.78,
+          "density_scale": 1.0,
+          "target": 9,
+          "planned": 9,
+          "live": 9,
+          "spawned": 9,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 0,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 0.0,
+          "variant": "Standard"
+        },
+        {
+          "section": 2,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 233.2,
+          "density_scale": 1.5,
+          "target": 14,
+          "planned": 14,
+          "live": 14,
+          "spawned": 14,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 2,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 69.7,
+          "variant": "Deep"
+        },
+        {
+          "section": 3,
+          "on": 1,
+          "meshes": 6,
+          "candidate_m2": 236.06,
+          "density_scale": 1.0,
+          "target": 9,
+          "planned": 9,
+          "live": 9,
+          "spawned": 9,
+          "no_ground": 0,
+          "breaks": {
+            "wheel": 0,
+            "impulse": 0,
+            "landing": 0,
+            "test": 0
+          },
+          "lost": 0,
+          "switched_off": 0,
+          "deposited_cm3": 0.0,
+          "lost_cm3": 0.0,
+          "awake_now": 0,
+          "awake_peak": 1,
+          "clods": 0,
+          "max_chassis_impulse": 0.0,
+          "max_land_cm_s": 54.7,
+          "variant": "Stony"
+        }
+      ],
+      "awake_peak_world": 2,
+      "awake_now_world": 0,
+      "capped": 0
+    }
+  },
+  "cameras": {
+    "Soft_Standard_Before": {
+      "location": [
+        7080.3,
+        474.6,
+        214.8
+      ],
+      "target": [
+        8032.9,
+        -75.4,
+        -18.9
+      ],
+      "fov": 65.0
+    },
+    "Soft_Firm_Before": {
+      "location": [
+        2613.5,
+        579.1,
+        153.6
+      ],
+      "target": [
+        3566.2,
+        29.1,
+        -19.9
+      ],
+      "fov": 65.0
+    },
+    "Soft_Top": {
+      "location": [
+        6500.0,
+        -2000.0,
+        2077.9
+      ],
+      "target": [
+        6500.0,
+        0.0,
+        32.8
+      ],
+      "fov": 90.0
+    },
+    "Chunks_Before": {
+      "location": [
+        7300.0,
+        -750.0,
+        331.4
+      ],
+      "target": [
+        8300.0,
+        50.0,
+        -36.9
+      ],
+      "fov": 60.0
+    },
+    "Chunks_Close": {
+      "location": [
+        9860.0,
+        -539.0,
+        93.1
+      ],
+      "target": [
+        10163.1,
+        -364.0,
+        -88.2
+      ],
+      "fov": 65.0
+    },
+    "Chunks_Firm": {
+      "location": [
+        2800.0,
+        -750.0,
+        221.0
+      ],
+      "target": [
+        3800.0,
+        50.0,
+        -35.2
+      ],
+      "fov": 60.0
+    },
+    "MudVariants_Firm_OnFoot": {
+      "location": [
+        3300.0,
+        -95.0,
+        145.2
+      ],
+      "target": [
+        4500.0,
+        -95.0,
+        -52.7
+      ],
+      "fov": 65.0
+    },
+    "MudVariants_Firm_Close": {
+      "location": [
+        4110.0,
+        -5.0,
+        60.1
+      ],
+      "target": [
+        4280.0,
+        -95.0,
+        -66.7
+      ],
+      "fov": 50.0
+    },
+    "MudVariants_Standard_OnFoot": {
+      "location": [
+        7800.0,
+        -50.0,
+        150.5
+      ],
+      "target": [
+        9000.0,
+        -50.0,
+        -113.8
+      ],
+      "fov": 65.0
+    },
+    "MudVariants_Standard_Close": {
+      "location": [
+        8610.0,
+        40.0,
+        17.0
+      ],
+      "target": [
+        8780.0,
+        -50.0,
+        -114.3
+      ],
+      "fov": 50.0
+    },
+    "MudVariants_Deep_OnFoot": {
+      "location": [
+        12300.0,
+        -75.0,
+        -52.2
+      ],
+      "target": [
+        13500.0,
+        -75.0,
+        -254.8
+      ],
+      "fov": 65.0
+    },
+    "MudVariants_Deep_Close": {
+      "location": [
+        13110.0,
+        15.0,
+        -156.6
+      ],
+      "target": [
+        13280.0,
+        -75.0,
+        -280.0
+      ],
+      "fov": 50.0
+    },
+    "MudVariants_Stony_OnFoot": {
+      "location": [
+        16800.0,
+        -70.0,
+        52.9
+      ],
+      "target": [
+        18000.0,
+        -70.0,
+        -137.3
+      ],
+      "fov": 65.0
+    },
+    "MudVariants_Stony_Close": {
+      "location": [
+        17610.0,
+        20.0,
+        -29.9
+      ],
+      "target": [
+        17780.0,
+        -70.0,
+        -155.9
+      ],
+      "fov": 50.0
+    },
+    "Soft_Standard_After": {
+      "location": [
+        7080.3,
+        474.6,
+        214.8
+      ],
+      "target": [
+        8032.9,
+        -75.4,
+        -18.9
+      ],
+      "fov": 65.0
+    },
+    "Chunks_After": {
+      "location": [
+        7300.0,
+        -750.0,
+        331.4
+      ],
+      "target": [
+        8300.0,
+        50.0,
+        -36.9
+      ],
+      "fov": 60.0
+    },
+    "Carry_Exit": {
+      "location": [
+        22670.4,
+        61.1,
+        91.9
+      ],
+      "target": [
+        20050.0,
+        21.1,
+        10.4
+      ],
+      "fov": 35.0
+    },
+    "Carry_Grass": {
+      "location": [
+        19870.4,
+        -721.9,
+        127.2
+      ],
+      "target": [
+        19985.4,
+        -801.9,
+        77.9
+      ],
+      "fov": 60.0
+    },
+    "Carry_Grass_Off": {
+      "location": [
+        19870.4,
+        -721.9,
+        127.2
+      ],
+      "target": [
+        19985.4,
+        -801.9,
+        77.9
+      ],
+      "fov": 60.0
+    },
+    "Splat_Post": {
+      "location": [
+        12330.0,
+        -190.0,
+        -44.4
+      ],
+      "target": [
+        12160.0,
+        -420.0,
+        -109.0
+      ],
+      "fov": 55.0
+    },
+    "Car_Muddy_Side": {
+      "location": [
+        21171.8,
+        639.8,
+        150.4
+      ],
+      "target": [
+        21171.8,
+        -0.2,
+        115.4
+      ],
+      "fov": 50.0
+    },
+    "Car_Muddy_Rear": {
+      "location": [
+        20632.7,
+        170.2,
+        175.3
+      ],
+      "target": [
+        21072.7,
+        0.2,
+        115.3
+      ],
+      "fov": 50.0
+    },
+    "Rut_Muddy": {
+      "location": [
+        12469.4,
+        345.0,
+        -74.4
+      ],
+      "target": [
+        12689.4,
+        85.0,
+        -269.4
+      ],
+      "fov": 45.0
+    },
+    "Rut_Muddy_Low": {
+      "location": [
+        12569.4,
+        360.0,
+        -11.7
+      ],
+      "target": [
+        12689.4,
+        85.0,
+        -268.6
+      ],
+      "fov": 50.0
+    },
+    "Rut_Settled": {
+      "location": [
+        12469.4,
+        345.0,
+        -73.5
+      ],
+      "target": [
+        12689.4,
+        85.0,
+        -268.5
+      ],
+      "fov": 45.0
+    },
+    "Rut_Settled_Low": {
+      "location": [
+        12569.4,
+        360.0,
+        -11.7
+      ],
+      "target": [
+        12689.4,
+        85.0,
+        -268.5
+      ],
+      "fov": 50.0
+    },
+    "Mud_PBR_OnFoot_POM0": {
+      "location": [
+        7800.0,
+        -50.0,
+        150.5
+      ],
+      "target": [
+        9000.0,
+        -50.0,
+        -113.8
+      ],
+      "fov": 65.0
+    },
+    "Mud_PBR_OnFoot": {
+      "location": [
+        7800.0,
+        -50.0,
+        150.5
+      ],
+      "target": [
+        9000.0,
+        -50.0,
+        -113.8
+      ],
+      "fov": 65.0
+    },
+    "Mud_PBR_Close_POM0": {
+      "location": [
+        8745.0,
+        320.0,
+        -26.5
+      ],
+      "target": [
+        8800.0,
+        320.0,
+        -51.5
+      ],
+      "fov": 50.0
+    },
+    "Mud_PBR_Close": {
+      "location": [
+        8745.0,
+        320.0,
+        -26.5
+      ],
+      "target": [
+        8800.0,
+        320.0,
+        -51.5
+      ],
+      "fov": 50.0
+    },
+    "Mud_PBR_Close_Steep": {
+      "location": [
+        8720.0,
+        320.0,
+        -22.5
+      ],
+      "target": [
+        8800.0,
+        320.0,
+        -51.5
+      ],
+      "fov": 45.0
+    },
+    "Mud_PBR_Close_Steep_NoShadow": {
+      "location": [
+        8720.0,
+        320.0,
+        -22.5
+      ],
+      "target": [
+        8800.0,
+        320.0,
+        -51.5
+      ],
+      "fov": 45.0
+    },
+    "Rut_Settled_PBR": {
+      "location": [
+        12469.4,
+        345.0,
+        -73.5
+      ],
+      "target": [
+        12689.4,
+        85.0,
+        -268.5
+      ],
+      "fov": 45.0
+    },
+    "Car_Muddy_PBR": {
+      "location": [
+        21171.5,
+        640.1,
+        150.4
+      ],
+      "target": [
+        21171.5,
+        0.1,
+        115.4
+      ],
+      "fov": 50.0
+    },
+    "PBR_Car": {
+      "location": [
+        21171.5,
+        640.1,
+        150.4
+      ],
+      "target": [
+        21171.5,
+        0.1,
+        115.4
+      ],
+      "fov": 50.0
+    },
+    "PBR_Calib": {
+      "location": [
+        6350.0,
+        260.0,
+        233.0
+      ],
+      "target": [
+        6530.0,
+        260.0,
+        33.0
+      ],
+      "fov": 50.0
+    },
+    "PBR_Firm_Ground": {
+      "location": [
+        4100.0,
+        -55.0,
+        163.3
+      ],
+      "target": [
+        4270.0,
+        -95.0,
+        -56.7
+      ],
+      "fov": 50.0
+    },
+    "PBR_Standard_Ground": {
+      "location": [
+        8600.0,
+        -10.0,
+        115.7
+      ],
+      "target": [
+        8770.0,
+        -50.0,
+        -104.3
+      ],
+      "fov": 50.0
+    },
+    "PBR_Deep_Ground": {
+      "location": [
+        13100.0,
+        -35.0,
+        -50.0
+      ],
+      "target": [
+        13270.0,
+        -75.0,
+        -270.0
+      ],
+      "fov": 50.0
+    },
+    "PBR_Stony_Ground": {
+      "location": [
+        17600.0,
+        -30.0,
+        74.1
+      ],
+      "target": [
+        17770.0,
+        -70.0,
+        -145.9
+      ],
+      "fov": 50.0
+    },
+    "Carry_Wet_PBR": {
+      "location": [
+        19850.0,
+        -60.0,
+        193.3
+      ],
+      "target": [
+        20020.0,
+        -100.0,
+        9.8
+      ],
+      "fov": 50.0
+    },
+    "PBR_CarryWet": {
+      "location": [
+        19850.0,
+        -60.0,
+        193.3
+      ],
+      "target": [
+        20020.0,
+        -100.0,
+        9.8
+      ],
+      "fov": 50.0
+    }
+  },
+  "drive": {
+    "ended": "reached 200 m",
+    "completed": true,
+    "end_x_m": 200.01,
+    "elapsed_s": 94.23,
+    "time_base": "simulated (physics) seconds",
+    "real_s": 60.9,
+    "frames": 5662,
+    "fps": 92.92,
+    "game_per_real": 1.546,
+    "max_lateral_m": 0.557,
+    "longest_stop_s": 7.62,
+    "longest_stop_at_m": 144.29,
+    "lowered_cm3": 64823423.0,
+    "dry": true,
+    "throttle": "full, low range, diff lock",
+    "splats_per_second": {
+      "play_s": 94.2,
+      "real_s": 60.9,
+      "frames": 5662,
+      "fps": 92.9,
+      "refused_per_frame": 2.87,
+      "traces_per_frame": 21.15,
+      "traces_per_s": 1270.7,
+      "refused_per_s": 172.7,
+      "skipped_per_s": 592.6,
+      "height_splats": 22,
+      "body_traces_per_s": 488.0,
+      "body_refused_per_s": 48.5,
+      "blobs_on_car": 2
+    },
+    "body": {
+      "describe": "wet=0.98 snow=0.00 dirt: F=1.00 R=1.00 aFL=1.00 aFR=1.00 aRL=1.00 aRR=1.00 sL=1.00 sR=1.00 roof=0.00 glass=0.00 | mud line 88 coat line 116 wash 0 cm @0.00 mudwet 0.98 tyres 1.00 1.00 1.00 1.00 fans 1.00b 1.00b 1.00b 1.00b hits 4458 (glass 0)",
+      "regions": {
+        "front": 1.0,
+        "rear": 1.0,
+        "arch_fl": 1.0,
+        "arch_fr": 1.0,
+        "arch_rl": 1.0,
+        "arch_rr": 1.0,
+        "side_l": 1.0,
+        "side_r": 1.0,
+        "roof": 0.0,
+        "glass": 0.0
+      },
+      "mud_line_cm": 87.8,
+      "coat_line_cm": 116.4,
+      "wash_cm": 0.0,
+      "wash_amount": 0.0,
+      "mud_wet": 0.978,
+      "tyres": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "hits": 4458,
+      "glass_hits": 0,
+      "mud_base_z": -0.1,
+      "wheel_geom": [
+        160.2,
+        -114.9,
+        37.9,
+        38.0
+      ],
+      "tyre_slots": 1,
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "ruts": {
+    "Firm": {
+      "x_cm": 4250.0,
+      "y_cm": -95.0,
+      "field_cm": -18.89
+    },
+    "Standard": {
+      "x_cm": 8750.0,
+      "y_cm": -50.0,
+      "field_cm": -31.07
+    },
+    "Deep": {
+      "x_cm": 13250.0,
+      "y_cm": -75.0,
+      "field_cm": -55.61
+    },
+    "Stony": {
+      "x_cm": 17750.0,
+      "y_cm": -70.0,
+      "field_cm": -27.86
+    }
+  },
+  "fan_trace": [
+    {
+      "at": "mr1_start",
+      "x_m": 196.85,
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_side": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "at": "mr1_grass_place",
+      "x_m": 229.55,
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_side": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "at": "mr1_grass_wait",
+      "x_m": 203.19,
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_side": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "at": "mr1_spin_place",
+      "x_m": 209.42,
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_side": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "at": "mr1_spin",
+      "x_m": 124.46,
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_side": [
+        1.0,
+        0.99,
+        1.0,
+        0.99
+      ],
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "at": "mr1_spin_wait",
+      "x_m": 126.64,
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_side": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "at": "mr1_done",
+      "x_m": 126.82,
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_side": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "mr1": {
+    "loads_at_stop": [
+      0.499,
+      0.507,
+      0.563,
+      0.57
+    ],
+    "stop_x_m": 196.85,
+    "counts_before": {
+      "landscape_splats": 73,
+      "decal_splats": 0,
+      "live_decals": 0,
+      "traces": 119734,
+      "capped_traces": 16278,
+      "ignored_hits": 0,
+      "skipped_traces": 55840,
+      "height_splats": 22,
+      "held_decals": 0,
+      "pending_decals": 0,
+      "paint_splats": 73,
+      "carried_blots": 1485,
+      "carried_gaps": 219,
+      "thrown_blobs": 12210,
+      "landed_blobs": 12131,
+      "lost_blobs": 79,
+      "splatted_blobs": 73,
+      "splatted_cm3": 16754.0,
+      "body_traces": 45985,
+      "body_capped": 4569,
+      "blobs_on_car": 2,
+      "on_car_cm3": 245.0,
+      "play_s": 174.67,
+      "frames": 13170,
+      "real_s": 204735.59
+    },
+    "fast": false,
+    "exit": {
+      "reached": true,
+      "x_m": 223.02,
+      "loads": [
+        0.149,
+        0.151,
+        0.168,
+        0.17
+      ],
+      "s": 4.8,
+      "profile": [
+        {
+          "side": "left (-y)",
+          "mean_by_5m": [
+            0.357,
+            0.302,
+            0.073,
+            0.116,
+            0.111
+          ],
+          "gap_share": 0.124,
+          "max_g": 0.461,
+          "cells": 97,
+          "cpu_gpu_g_b": [
+            [
+              0.461,
+              0.438,
+              0.828
+            ],
+            [
+              0.386,
+              0.057,
+              0.098
+            ],
+            [
+              0.259,
+              0.259,
+              0.943
+            ],
+            [
+              0.199,
+              0.198,
+              0.954
+            ],
+            [
+              0.15,
+              0.054,
+              0.341
+            ]
+          ]
+        },
+        {
+          "side": "right (+y)",
+          "mean_by_5m": [
+            0.356,
+            0.234,
+            0.093,
+            0.113,
+            0.067
+          ],
+          "gap_share": 0.196,
+          "max_g": 0.501,
+          "cells": 97,
+          "cpu_gpu_g_b": [
+            [
+              0.501,
+              0.441,
+              0.809
+            ],
+            [
+              0.337,
+              0.337,
+              0.931
+            ],
+            [
+              0.251,
+              0.25,
+              0.943
+            ],
+            [
+              0.191,
+              0.003,
+              0.015
+            ],
+            [
+              0.136,
+              0.137,
+              0.965
+            ]
+          ]
+        }
+      ]
+    },
+    "grass": {
+      "reached": true,
+      "end_m": [
+        203.07,
+        -10.54
+      ],
+      "loads": [
+        0.394,
+        0.54,
+        0.448,
+        0.579
+      ],
+      "s": 10.1,
+      "verge_points": 21,
+      "verge_with_mud": 17,
+      "verge_mean_g": 0.261,
+      "verge_mean_gpu_g": 0.26,
+      "verge_load_first": 0.627,
+      "verge_load_last": 0.605,
+      "verge_points_crossed": 21,
+      "parked_at_m": [
+        209.42,
+        -13.16
+      ],
+      "camera_at_m": [
+        199.85,
+        -8.02,
+        0.54
+      ],
+      "camera_g_wet": [
+        0.54,
+        0.957
+      ],
+      "camera": {
+        "location": [
+          19870.4,
+          -721.9
+        ],
+        "target": [
+          19985.4,
+          -801.9
+        ]
+      },
+      "grass_material": "/Game/GrandTour/ArtTests/TussockStyle/M_TS_Grass.M_TS_Grass",
+      "near_instances": [
+        {
+          "d_cm": 35.3,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.08,
+          "g": 0.507
+        },
+        {
+          "d_cm": 45.6,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.4,
+          "g": 0.0
+        },
+        {
+          "d_cm": 46.4,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.34,
+          "g": 0.0
+        },
+        {
+          "d_cm": 75.9,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.42,
+          "g": 0.0
+        },
+        {
+          "d_cm": 84.4,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.01,
+          "g": 0.0
+        },
+        {
+          "d_cm": 101.2,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.2,
+          "g": 0.0
+        },
+        {
+          "d_cm": 106.2,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.29,
+          "g": 0.0
+        },
+        {
+          "d_cm": 117.9,
+          "z_minus_ground_cm": 0.0,
+          "scale": 1.13,
+          "g": 0.0
+        }
+      ],
+      "mpc_grass_mud": 1.0
+    },
+    "spin": {
+      "before": {
+        "landscape_splats": 78,
+        "decal_splats": 0,
+        "live_decals": 0,
+        "traces": 133380,
+        "capped_traces": 17739,
+        "ignored_hits": 0,
+        "skipped_traces": 64209,
+        "height_splats": 22,
+        "held_decals": 0,
+        "pending_decals": 0,
+        "paint_splats": 78,
+        "carried_blots": 3978,
+        "carried_gaps": 1427,
+        "thrown_blobs": 13797,
+        "landed_blobs": 13713,
+        "lost_blobs": 84,
+        "splatted_blobs": 78,
+        "splatted_cm3": 17872.0,
+        "body_traces": 52100,
+        "body_capped": 6233,
+        "blobs_on_car": 2,
+        "on_car_cm3": 245.0,
+        "play_s": 211.15,
+        "frames": 15374,
+        "real_s": 204763.53
+      },
+      "blobs0": 14000,
+      "end_x_m": 126.64,
+      "loads": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": {
+        "landscape_splats": 78,
+        "decal_splats": 0,
+        "live_decals": 0,
+        "traces": 146412,
+        "capped_traces": 19115,
+        "ignored_hits": 0,
+        "skipped_traces": 71341,
+        "height_splats": 22,
+        "held_decals": 0,
+        "pending_decals": 0,
+        "paint_splats": 78,
+        "carried_blots": 3978,
+        "carried_gaps": 1427,
+        "thrown_blobs": 14887,
+        "landed_blobs": 14803,
+        "lost_blobs": 84,
+        "splatted_blobs": 78,
+        "splatted_cm3": 17872.0,
+        "body_traces": 57232,
+        "body_capped": 8284,
+        "blobs_on_car": 2,
+        "on_car_cm3": 245.0,
+        "play_s": 223.18,
+        "frames": 16096,
+        "real_s": 204770.98
+      },
+      "decals_on": [],
+      "decal_material_ready": true,
+      "per_second": {
+        "play_s": 12.0,
+        "real_s": 7.5,
+        "frames": 722,
+        "fps": 96.91,
+        "refused_per_frame": 1.91,
+        "traces_per_frame": 18.05,
+        "traces_per_s": 1083.3,
+        "refused_per_s": 114.4,
+        "skipped_per_s": 592.9,
+        "height_splats": 0,
+        "body_traces_per_s": 426.6,
+        "body_refused_per_s": 170.5,
+        "blobs_on_car": 0
+      },
+      "synthetic": {
+        "paths": 24,
+        "splats": 24,
+        "decals_on": [
+          "SplatPost_Deep"
+        ]
+      }
+    },
+    "counts_after": {
+      "landscape_splats": 78,
+      "decal_splats": 24,
+      "live_decals": 24,
+      "traces": 146412,
+      "capped_traces": 19115,
+      "ignored_hits": 0,
+      "skipped_traces": 71341,
+      "height_splats": 22,
+      "held_decals": 0,
+      "pending_decals": 0,
+      "paint_splats": 78,
+      "carried_blots": 3978,
+      "carried_gaps": 1427,
+      "thrown_blobs": 14887,
+      "landed_blobs": 14803,
+      "lost_blobs": 84,
+      "splatted_blobs": 78,
+      "splatted_cm3": 17872.0,
+      "body_traces": 57232,
+      "body_capped": 8284,
+      "blobs_on_car": 2,
+      "on_car_cm3": 245.0,
+      "play_s": 226.68,
+      "frames": 16311,
+      "real_s": 204774.97
+    },
+    "whole_run_per_second": {
+      "play_s": 182.3,
+      "real_s": 136.6,
+      "frames": 11014,
+      "fps": 80.65,
+      "refused_per_frame": 1.74,
+      "traces_per_frame": 13.29,
+      "traces_per_s": 803.3,
+      "refused_per_s": 104.9,
+      "skipped_per_s": 391.4,
+      "height_splats": 22,
+      "body_traces_per_s": 314.0,
+      "body_refused_per_s": 45.5,
+      "blobs_on_car": 2
+    }
+  },
+  "mr2": {
+    "before_place": {
+      "describe": "wet=1.00 snow=0.00 dirt: F=1.00 R=1.00 aFL=1.00 aFR=1.00 aRL=1.00 aRR=1.00 sL=1.00 sR=1.00 roof=0.00 glass=0.00 | mud line 90 coat line 116 wash 0 cm @0.00 mudwet 1.00 tyres 1.00 1.00 1.00 1.00 fans 1.00b 1.00b 1.00b 1.00b hits 5455 (glass 0)",
+      "regions": {
+        "front": 1.0,
+        "rear": 1.0,
+        "arch_fl": 1.0,
+        "arch_fr": 1.0,
+        "arch_rl": 1.0,
+        "arch_rr": 1.0,
+        "side_l": 1.0,
+        "side_r": 1.0,
+        "roof": 0.0,
+        "glass": 0.0
+      },
+      "mud_line_cm": 89.6,
+      "coat_line_cm": 116.4,
+      "wash_cm": 0.0,
+      "wash_amount": 0.0,
+      "mud_wet": 1.0,
+      "tyres": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "hits": 5455,
+      "glass_hits": 0,
+      "mud_base_z": -0.1,
+      "wheel_geom": [
+        160.2,
+        -114.9,
+        37.9,
+        38.0
+      ],
+      "tyre_slots": 1,
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "car_at_m": [
+      211.97,
+      -0.0
+    ],
+    "state": {
+      "describe": "wet=0.98 snow=0.00 dirt: F=1.00 R=1.00 aFL=1.00 aFR=1.00 aRL=1.00 aRR=1.00 sL=1.00 sR=1.00 roof=0.00 glass=0.00 | mud line 90 coat line 116 wash 0 cm @0.00 mudwet 0.98 tyres 1.00 1.00 1.00 1.00 fans 1.00b 1.00b 1.00b 1.00b hits 5455 (glass 0)",
+      "regions": {
+        "front": 1.0,
+        "rear": 1.0,
+        "arch_fl": 1.0,
+        "arch_fr": 1.0,
+        "arch_rl": 1.0,
+        "arch_rr": 1.0,
+        "side_l": 1.0,
+        "side_r": 1.0,
+        "roof": 0.0,
+        "glass": 0.0
+      },
+      "mud_line_cm": 89.6,
+      "coat_line_cm": 116.4,
+      "wash_cm": 0.0,
+      "wash_amount": 0.0,
+      "mud_wet": 0.978,
+      "tyres": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "hits": 5455,
+      "glass_hits": 0,
+      "mud_base_z": -0.1,
+      "wheel_geom": [
+        160.2,
+        -114.9,
+        37.9,
+        38.0
+      ],
+      "tyre_slots": 1,
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "droplet_boxes": {
+      "camera": {
+        "location": [
+          21171.825289355376,
+          639.8323992843272,
+          150.3745880126953
+        ],
+        "target": [
+          21171.825289355376,
+          -0.16760071567289614,
+          115.37458801269531
+        ],
+        "fov": 50.0
+      },
+      "view": [
+        1440,
+        900
+      ],
+      "z_band_cm": [
+        92.0,
+        114.0
+      ],
+      "side_y_cm": 85.0,
+      "boxes": {
+        "behind_rear_arch": {
+          "car_x_cm": [
+            -202.9,
+            -157.9
+          ],
+          "world_corners": [
+            [
+              20992.93,
+              85.64,
+              116.06
+            ],
+            [
+              21037.93,
+              85.59,
+              116.59
+            ],
+            [
+              21037.67,
+              85.73,
+              138.58
+            ],
+            [
+              20992.67,
+              85.78,
+              138.06
+            ]
+          ]
+        },
+        "mid_door": {
+          "car_x_cm": [
+            -2.4,
+            47.6
+          ],
+          "world_corners": [
+            [
+              21193.47,
+              85.4,
+              118.4
+            ],
+            [
+              21243.46,
+              85.34,
+              118.99
+            ],
+            [
+              21243.21,
+              85.48,
+              140.98
+            ],
+            [
+              21193.21,
+              85.54,
+              140.4
+            ]
+          ]
+        }
+      }
+    },
+    "after_pictures": {
+      "describe": "wet=0.97 snow=0.00 dirt: F=1.00 R=1.00 aFL=1.00 aFR=1.00 aRL=1.00 aRR=1.00 sL=1.00 sR=1.00 roof=0.00 glass=0.00 | mud line 35 coat line 121 wash 0 cm @0.00 mudwet 0.96 tyres 1.00 1.00 1.00 1.00 fans 1.00b 1.00b 1.00b 1.00b hits 6114 (glass 0)",
+      "regions": {
+        "front": 1.0,
+        "rear": 1.0,
+        "arch_fl": 1.0,
+        "arch_fr": 1.0,
+        "arch_rl": 1.0,
+        "arch_rr": 1.0,
+        "side_l": 1.0,
+        "side_r": 1.0,
+        "roof": 0.0,
+        "glass": 0.0
+      },
+      "mud_line_cm": 35.0,
+      "coat_line_cm": 121.3,
+      "wash_cm": 0.0,
+      "wash_amount": 0.0,
+      "mud_wet": 0.961,
+      "tyres": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "hits": 6114,
+      "glass_hits": 0,
+      "mud_base_z": -0.1,
+      "wheel_geom": [
+        160.2,
+        -114.9,
+        37.9,
+        38.0
+      ],
+      "tyre_slots": 1,
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "mr3": {
+    "placed_m": [
+      122.5,
+      0.0
+    ],
+    "before_churn": "wet 1340, turbid 279, max 1.000, wet mean 0.226, froth 66, turbid tiles 42, table -15.0 cm, switch 1",
+    "churn": {
+      "game_s": 4.0,
+      "real_s": 4.0,
+      "from_m": 122.49,
+      "end_m": [
+        125.24,
+        0.02
+      ],
+      "wheels_m": [
+        [
+          126.85,
+          -0.66
+        ],
+        [
+          126.76,
+          0.86
+        ],
+        [
+          124.11,
+          -0.8
+        ],
+        [
+          124.02,
+          0.72
+        ]
+      ],
+      "slip": [
+        184.0,
+        98.6,
+        97.9,
+        181.5
+      ],
+      "sink_cm": [
+        71.3,
+        70.4,
+        64.4,
+        64.5
+      ]
+    },
+    "spot": {
+      "x_m": 126.89,
+      "y_m": 0.85,
+      "box_turbidity": 18.0,
+      "cell": 1.0,
+      "water_table_cm": -15.0,
+      "mud_cm": -63.41
+    },
+    "at_muddy": "wet 74, turbid 65, max 1.000, wet mean 0.888, froth 65, turbid tiles 43, table -15.0 cm, switch 1",
+    "tiles_at_muddy": 43,
+    "at_muddy_low": "wet 74, turbid 66, max 0.954, wet mean 0.833, froth 66, turbid tiles 43, table -15.0 cm, switch 1",
+    "muddy_low_after_game_s": 3.5,
+    "settled_after": {
+      "game_s": 60.0,
+      "real_s": 56.5
+    },
+    "at_settled": "wet 74, turbid 0, max 0.376, wet mean 0.295, froth 0, turbid tiles 43, table -15.0 cm, switch 1",
+    "cell_settled": 0.306,
+    "tiles_at_settled": 43,
+    "at_settled_low": "wet 74, turbid 0, max 0.355, wet mean 0.278, froth 0, turbid tiles 43, table -15.0 cm, switch 1"
+  },
+  "mrp": {
+    "at_rut_settled_pbr": "wet 74, turbid 0, max 0.335, wet mean 0.262, froth 0, turbid tiles 43, table -15.0 cm, switch 1",
+    "water_model": {
+      "note": "live_mud_style MUDDY_HLSL with gt.Mud.PBR 1: lerp(SettledRoughPBR, TurbidRoughPBR, turbidity) (froth off: settled)",
+      "settled_rough": 0.15,
+      "turbid_rough": 0.5,
+      "turbidity": [
+        0.3372,
+        0.3376,
+        0.339,
+        0.3413,
+        0.3437,
+        0.3455,
+        0.3463,
+        0.3462,
+        0.3456,
+        0.3107,
+        0.0,
+        0.3234,
+        0.324,
+        0.3266,
+        0.331,
+        0.3359,
+        0.3402,
+        0.343,
+        0.3443,
+        0.3444,
+        0.3099,
+        0.0,
+        0.303,
+        0.3038,
+        0.3081,
+        0.3153,
+        0.3235,
+        0.331,
+        0.3366,
+        0.3399,
+        0.3413,
+        0.3415,
+        0.1023,
+        0.2755,
+        0.2765,
+        0.2827,
+        0.2932,
+        0.3054,
+        0.317,
+        0.326,
+        0.3322,
+        0.3356,
+        0.3374,
+        0.1014,
+        0.2412,
+        0.2427,
+        0.2508,
+        0.2646,
+        0.2809,
+        0.2968,
+        0.3101,
+        0.3201,
+        0.3267,
+        0.3312,
+        0.1001,
+        0.2026,
+        0.2047,
+        0.2144,
+        0.2309,
+        0.2506,
+        0.2706,
+        0.2885,
+        0.3033,
+        0.3141,
+        0.2881,
+        0.0,
+        0.1623,
+        0.165,
+        0.1756,
+        0.1933,
+        0.2148,
+        0.2377,
+        0.2598,
+        0.2804,
+        0.2978,
+        0.2789,
+        0.0,
+        0.1239,
+        0.1272,
+        0.1376,
+        0.1548,
+        0.176,
+        0.1994,
+        0.2241,
+        0.2512,
+        0.2424,
+        0.0,
+        0.0,
+        0.0905,
+        0.094,
+        0.1032,
+        0.1181,
+        0.1365,
+        0.1572,
+        0.1802,
+        0.2143,
+        0.0186,
+        0.0,
+        0.0,
+        0.0647,
+        0.0677,
+        0.075,
+        0.0864,
+        0.1004,
+        0.1153,
+        0.1284,
+        0.0133,
+        0.0,
+        0.0,
+        0.0,
+        0.046,
+        0.0484,
+        0.0535,
+        0.0613,
+        0.0706,
+        0.08,
+        0.087,
+        0.0089,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "at": [
+        12689.4,
+        85.0
+      ]
+    },
+    "pictures": [
+      {
+        "name": "Mud_PBR_OnFoot_POM0",
+        "pom": 0,
+        "pbr": 1,
+        "shadow": 1
+      },
+      {
+        "name": "Mud_PBR_OnFoot",
+        "pom": 2,
+        "pbr": 1,
+        "shadow": 1
+      },
+      {
+        "name": "Mud_PBR_Close_POM0",
+        "pom": 0,
+        "pbr": 1,
+        "shadow": 1
+      },
+      {
+        "name": "Mud_PBR_Close",
+        "pom": 2,
+        "pbr": 1,
+        "shadow": 1
+      },
+      {
+        "name": "Mud_PBR_Close_Steep",
+        "pom": 2,
+        "pbr": 1,
+        "shadow": 1
+      },
+      {
+        "name": "Mud_PBR_Close_Steep_NoShadow",
+        "pom": 2,
+        "pbr": 1,
+        "shadow": 0
+      },
+      {
+        "name": "Rut_Settled_PBR",
+        "pom": 2,
+        "pbr": 1,
+        "shadow": 1
+      },
+      {
+        "name": "Carry_Wet_PBR",
+        "pom": 2,
+        "pbr": 1,
+        "shadow": 1,
+        "wetness": 1
+      }
+    ],
+    "car": {
+      "describe": "wet=0.00 snow=0.00 dirt: F=1.00 R=1.00 aFL=1.00 aFR=1.00 aRL=1.00 aRR=1.00 sL=1.00 sR=1.00 roof=0.00 glass=0.00 | mud line 51 coat line 121 wash 0 cm @0.00 mudwet 0.00 tyres 1.00 1.00 1.00 1.00 fans 1.00b 1.00b 1.00b 1.00b hits 6070 (glass 0)",
+      "regions": {
+        "front": 1.0,
+        "rear": 1.0,
+        "arch_fl": 1.0,
+        "arch_fr": 1.0,
+        "arch_rl": 1.0,
+        "arch_rr": 1.0,
+        "side_l": 1.0,
+        "side_r": 1.0,
+        "roof": 0.0,
+        "glass": 0.0
+      },
+      "mud_line_cm": 51.4,
+      "coat_line_cm": 121.3,
+      "wash_cm": 0.0,
+      "wash_amount": 0.0,
+      "mud_wet": 0.0,
+      "tyres": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "hits": 6070,
+      "glass_hits": 0,
+      "mud_base_z": -0.1,
+      "wheel_geom": [
+        160.2,
+        -114.9,
+        37.9,
+        38.0
+      ],
+      "tyre_slots": 1,
+      "fan_coat": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fan_dir": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "car_at_m": [
+      211.97,
+      0.0
+    ],
+    "dumps": [
+      {
+        "name": "PBR_Car",
+        "kind": "car",
+        "base": "C:/GrandTour/Art/Export/MudVariants/PBR_Car",
+        "camera": {
+          "location": [
+            21171.5,
+            640.1,
+            150.4
+          ],
+          "target": [
+            21171.5,
+            0.1,
+            115.4
+          ],
+          "fov": 50.0
+        },
+        "box_world": [
+          [
+            21127.15,
+            85.08,
+            60.6
+          ],
+          [
+            21302.23,
+            85.12,
+            62.57
+          ],
+          [
+            21301.9,
+            85.12,
+            92.57
+          ],
+          [
+            21126.81,
+            85.08,
+            90.6
+          ]
+        ],
+        "mud_wet": 0.0
+      },
+      {
+        "name": "PBR_Calib",
+        "kind": "calib",
+        "base": "C:/GrandTour/Art/Export/MudVariants/PBR_Calib",
+        "camera": {
+          "location": [
+            6350.0,
+            260.0,
+            233.0
+          ],
+          "target": [
+            6530.0,
+            260.0,
+            33.0
+          ],
+          "fov": 50.0
+        }
+      },
+      {
+        "name": "PBR_Firm_Ground",
+        "kind": "ground",
+        "base": "C:/GrandTour/Art/Export/MudVariants/PBR_Firm_Ground",
+        "camera": {
+          "location": [
+            4100.0,
+            -55.0,
+            163.3
+          ],
+          "target": [
+            4270.0,
+            -95.0,
+            -56.7
+          ],
+          "fov": 50.0
+        },
+        "variant": "Firm"
+      },
+      {
+        "name": "PBR_Standard_Ground",
+        "kind": "ground",
+        "base": "C:/GrandTour/Art/Export/MudVariants/PBR_Standard_Ground",
+        "camera": {
+          "location": [
+            8600.0,
+            -10.0,
+            115.7
+          ],
+          "target": [
+            8770.0,
+            -50.0,
+            -104.3
+          ],
+          "fov": 50.0
+        },
+        "variant": "Standard"
+      },
+      {
+        "name": "PBR_Deep_Ground",
+        "kind": "ground",
+        "base": "C:/GrandTour/Art/Export/MudVariants/PBR_Deep_Ground",
+        "camera": {
+          "location": [
+            13100.0,
+            -35.0,
+            -50.0
+          ],
+          "target": [
+            13270.0,
+            -75.0,
+            -270.0
+          ],
+          "fov": 50.0
+        },
+        "variant": "Deep"
+      },
+      {
+        "name": "PBR_Stony_Ground",
+        "kind": "ground",
+        "base": "C:/GrandTour/Art/Export/MudVariants/PBR_Stony_Ground",
+        "camera": {
+          "location": [
+            17600.0,
+            -30.0,
+            74.1
+          ],
+          "target": [
+            17770.0,
+            -70.0,
+            -145.9
+          ],
+          "fov": 50.0
+        },
+        "variant": "Stony"
+      },
+      {
+        "name": "PBR_CarryWet",
+        "kind": "carry",
+        "base": "C:/GrandTour/Art/Export/MudVariants/PBR_CarryWet",
+        "camera": {
+          "location": [
+            19850.0,
+            -60.0,
+            193.3
+          ],
+          "target": [
+            20020.0,
+            -100.0,
+            9.8
+          ],
+          "fov": 50.0
+        },
+        "wetness": 1.0
+      }
+    ],
+    "wet_drive": {
+      "end_m": 215.06,
+      "s": 40.2,
+      "loads": [
+        0.288,
+        0.292,
+        0.327,
+        0.329
+      ]
+    },
+    "wet_spot": {
+      "x_m": 200.0,
+      "y_m": -1.0,
+      "coverage": 0.483,
+      "wetness_b": 0.956
+    },
+    "wet_mirror": [
+      {
+        "tag": "spot",
+        "rendering": false,
+        "game_s": 396.17,
+        "cells": 325,
+        "cells_with_mud": 73,
+        "weather": {
+          "mpc_wetness": 0.0,
+          "occlusion_enabled": 1.0,
+          "bounds": [
+            17601.6,
+            -35.2,
+            3074.1,
+            3000.0
+          ],
+          "emitter": "rain=0.00 temp=18.0 live=0 spawned=0 rejectedUnderCover=0 splashes=0 captures=3429 centre=(17602, -35) top=3074 gpu=1 rt=asset",
+          "rt_size": 512,
+          "cover_minus_ground_cm": [
+            0.9,
+            1.1,
+            1.2,
+            1.2,
+            1.4,
+            1.7,
+            1.9,
+            0.2,
+            0.4,
+            0.4,
+            0.9,
+            0.9,
+            1.1,
+            1.3,
+            1.3,
+            -0.2,
+            -0.1,
+            0.2,
+            0.3,
+            0.1,
+            0.7,
+            0.9,
+            1.2,
+            1.3,
+            1.0,
+            1.8,
+            1.8,
+            2.0,
+            2.0,
+            1.6,
+            1.4,
+            1.4,
+            1.5,
+            1.5,
+            1.3
+          ],
+          "open_min": 1.0,
+          "open_mean": 1.0,
+          "fill_min": 0.0
+        },
+        "cpu_g_mean": 0.2853,
+        "gpu_g_mean": 0.2931,
+        "cpu_b_mean": 0.7652,
+        "gpu_b_mean": 0.7669,
+        "g_abs_diff_mean": 0.0824,
+        "g_abs_diff_max": 0.4352,
+        "b_abs_diff_mean": 0.1953,
+        "b_abs_diff_max": 0.9532,
+        "cpu_g_over": [
+          58,
+          48,
+          43,
+          24
+        ]
+      },
+      {
+        "tag": "after_dump",
+        "rendering": false,
+        "game_s": 406.17,
+        "cells": 325,
+        "cells_with_mud": 73,
+        "weather": {
+          "mpc_wetness": 0.9998,
+          "occlusion_enabled": 1.0,
+          "bounds": [
+            19851.6,
+            -58.6,
+            3193.3,
+            3000.0
+          ],
+          "emitter": "rain=0.00 temp=18.0 live=0 spawned=0 rejectedUnderCover=0 splashes=0 captures=3470 centre=(19852, -59) top=3193 gpu=1 rt=asset",
+          "rt_size": 512,
+          "cover_minus_ground_cm": [
+            2.1,
+            0.3,
+            0.4,
+            0.4,
+            0.6,
+            0.9,
+            1.1,
+            1.4,
+            1.6,
+            1.6,
+            0.1,
+            0.1,
+            0.3,
+            0.4,
+            0.5,
+            0.9,
+            1.1,
+            1.4,
+            1.5,
+            1.3,
+            -0.1,
+            0.0,
+            0.4,
+            0.5,
+            0.2,
+            0.9,
+            1.0,
+            1.2,
+            1.2,
+            0.8,
+            0.6,
+            0.6,
+            0.6,
+            0.7,
+            0.5
+          ],
+          "open_min": 1.0,
+          "open_mean": 1.0,
+          "fill_min": 1.0
+        },
+        "cpu_g_mean": 0.2797,
+        "gpu_g_mean": 0.2872,
+        "cpu_b_mean": 0.6835,
+        "gpu_b_mean": 0.6814,
+        "g_abs_diff_mean": 0.0808,
+        "g_abs_diff_max": 0.4266,
+        "b_abs_diff_mean": 0.1766,
+        "b_abs_diff_max": 0.8509,
+        "cpu_g_over": [
+          58,
+          48,
+          43,
+          20
+        ]
+      }
+    ],
+    "wet": {
+      "wetness": 1.0
+    }
+  },
+  "missing_images": [],
+  "check_run": {
+    "fixed_dt": {
+      "ok": true,
+      "frames": 300,
+      "asked": 0.016667,
+      "min": 0.016667,
+      "max": 0.016667
+    },
+    "render": {
+      "always": false,
+      "windows": 42,
+      "frames": 28352,
+      "frames_rendered": 3884
+    },
+    "pipeline": {
+      "wall_s": 353.2,
+      "frames": 28352,
+      "fps": 80.27,
+      "note": "the check run's own wall clock and frame rate (tooling), not game performance"
+    }
+  }
+}

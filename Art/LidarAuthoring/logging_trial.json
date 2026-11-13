@@ -1,0 +1,376 @@
+{
+  "version": "LT3",
+  "design_id": "fce56694-1591-406d-8ac5-75b330a90436",
+  "length_m": 713.7212957760393,
+  "control_points": 96,
+  "width_range_m": [
+    2.2146,
+    4.3344
+  ],
+  "natural_hollows_m": [
+    214.0,
+    290.0,
+    552.0,
+    667.0
+  ],
+  "obstacles": [
+    {
+      "kind": "log",
+      "station_m": 239,
+      "across_m": 0.15,
+      "size_cm": 190,
+      "yaw_offset": 65,
+      "mass_kg": 38,
+      "variant": 0
+    },
+    {
+      "kind": "log",
+      "station_m": 335,
+      "across_m": -0.5,
+      "size_cm": 260,
+      "yaw_offset": -35,
+      "mass_kg": 70,
+      "variant": 1
+    },
+    {
+      "kind": "log",
+      "station_m": 485,
+      "across_m": 0.65,
+      "size_cm": 150,
+      "yaw_offset": 80,
+      "mass_kg": 24,
+      "variant": 0
+    },
+    {
+      "kind": "log",
+      "station_m": 579,
+      "across_m": -0.25,
+      "size_cm": 220,
+      "yaw_offset": 42,
+      "mass_kg": 52,
+      "variant": 1
+    },
+    {
+      "kind": "log",
+      "station_m": 621,
+      "across_m": 1.1,
+      "size_cm": 170,
+      "yaw_offset": -65,
+      "mass_kg": 32,
+      "variant": 0
+    },
+    {
+      "kind": "log",
+      "station_m": 700,
+      "across_m": 0.2,
+      "size_cm": 240,
+      "yaw_offset": 70,
+      "mass_kg": 60,
+      "variant": 1
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 203.25,
+      "across_m": 3.2,
+      "size_cm": 39.6,
+      "yaw_offset": 179,
+      "mass_kg": 19.2,
+      "variant": 3
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 205.3,
+      "across_m": -3.22,
+      "size_cm": 37.4,
+      "yaw_offset": 284,
+      "mass_kg": 16.5,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 217.24,
+      "across_m": 3.19,
+      "size_cm": 37.0,
+      "yaw_offset": 329,
+      "mass_kg": 16.1,
+      "variant": 1
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 215.12,
+      "across_m": -3.58,
+      "size_cm": 37.3,
+      "yaw_offset": 223,
+      "mass_kg": 16.4,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 217.75,
+      "across_m": 3.55,
+      "size_cm": 33.2,
+      "yaw_offset": 342,
+      "mass_kg": 12.4,
+      "variant": 1
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 285.9,
+      "across_m": -3.23,
+      "size_cm": 29.3,
+      "yaw_offset": 288,
+      "mass_kg": 9.5,
+      "variant": 3
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 285.82,
+      "across_m": 3.07,
+      "size_cm": 32.3,
+      "yaw_offset": 260,
+      "mass_kg": 11.8,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 283.28,
+      "across_m": -3.32,
+      "size_cm": 29.0,
+      "yaw_offset": 358,
+      "mass_kg": 9.4,
+      "variant": 4
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 282.95,
+      "across_m": 3.21,
+      "size_cm": 38.7,
+      "yaw_offset": 140,
+      "mass_kg": 18.0,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 299.55,
+      "across_m": -3.29,
+      "size_cm": 31.2,
+      "yaw_offset": 143,
+      "mass_kg": 10.9,
+      "variant": 4
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 300.7,
+      "across_m": 3.17,
+      "size_cm": 29.4,
+      "yaw_offset": 17,
+      "mass_kg": 9.6,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 298.89,
+      "across_m": -3.0,
+      "size_cm": 39.2,
+      "yaw_offset": 246,
+      "mass_kg": 18.6,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 434.0,
+      "across_m": 0.7,
+      "size_cm": 38.0,
+      "yaw_offset": 143,
+      "mass_kg": 17.2,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 501.26,
+      "across_m": -3.08,
+      "size_cm": 26.7,
+      "yaw_offset": 61,
+      "mass_kg": 8.0,
+      "variant": 3
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 501.21,
+      "across_m": 3.0,
+      "size_cm": 36.9,
+      "yaw_offset": 316,
+      "mass_kg": 16.0,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 500.65,
+      "across_m": -3.07,
+      "size_cm": 33.0,
+      "yaw_offset": 42,
+      "mass_kg": 12.3,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 546.16,
+      "across_m": 3.44,
+      "size_cm": 26.0,
+      "yaw_offset": 151,
+      "mass_kg": 7.6,
+      "variant": 4
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 543.13,
+      "across_m": -3.27,
+      "size_cm": 27.7,
+      "yaw_offset": 157,
+      "mass_kg": 8.5,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 543.83,
+      "across_m": 3.43,
+      "size_cm": 41.2,
+      "yaw_offset": 247,
+      "mass_kg": 21.1,
+      "variant": 1
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 562.31,
+      "across_m": -3.02,
+      "size_cm": 33.0,
+      "yaw_offset": 191,
+      "mass_kg": 12.3,
+      "variant": 2
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 561.96,
+      "across_m": 3.18,
+      "size_cm": 38.2,
+      "yaw_offset": 103,
+      "mass_kg": 17.5,
+      "variant": 4
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 559.04,
+      "across_m": -3.06,
+      "size_cm": 27.1,
+      "yaw_offset": 305,
+      "mass_kg": 8.2,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 614.21,
+      "across_m": 2.81,
+      "size_cm": 42.6,
+      "yaw_offset": 126,
+      "mass_kg": 23.1,
+      "variant": 4
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 611.22,
+      "across_m": -3.0,
+      "size_cm": 34.8,
+      "yaw_offset": 332,
+      "mass_kg": 13.9,
+      "variant": 2
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 655.9,
+      "across_m": 3.46,
+      "size_cm": 34.8,
+      "yaw_offset": 124,
+      "mass_kg": 13.9,
+      "variant": 3
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 653.82,
+      "across_m": -3.45,
+      "size_cm": 38.8,
+      "yaw_offset": 218,
+      "mass_kg": 18.1,
+      "variant": 0
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 674.81,
+      "across_m": 3.61,
+      "size_cm": 26.1,
+      "yaw_offset": 85,
+      "mass_kg": 7.6,
+      "variant": 3
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 677.11,
+      "across_m": -3.53,
+      "size_cm": 39.7,
+      "yaw_offset": 336,
+      "mass_kg": 19.2,
+      "variant": 4
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 678.48,
+      "across_m": 3.47,
+      "size_cm": 35.1,
+      "yaw_offset": 331,
+      "mass_kg": 14.2,
+      "variant": 1
+    },
+    {
+      "kind": "mud_clump",
+      "station_m": 676.03,
+      "across_m": -3.39,
+      "size_cm": 36.6,
+      "yaw_offset": 351,
+      "mass_kg": 15.7,
+      "variant": 0
+    }
+  ],
+  "captures": [
+    [
+      "Logging_dirt",
+      35
+    ],
+    [
+      "Logging_crossings",
+      126
+    ],
+    [
+      "Logging_first_hollow",
+      213
+    ],
+    [
+      "Logging_rutted_hollow",
+      291
+    ],
+    [
+      "Logging_dry_crest",
+      430
+    ],
+    [
+      "Logging_wet_pockets",
+      551
+    ],
+    [
+      "Logging_deep_gully",
+      665
+    ],
+    [
+      "Logging_log",
+      239
+    ]
+  ]
+}

@@ -1,0 +1,511 @@
+{
+  "ok": true,
+  "set": "open",
+  "fbx_roundtrips": [
+    {
+      "name": "SM_NZ_Harakeke_A_LOD0",
+      "triangles": 2376,
+      "dimensions_m": [
+        1.9671,
+        1.7047,
+        1.6895
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 225144
+    },
+    {
+      "name": "SM_NZ_Harakeke_A_LOD1",
+      "triangles": 504,
+      "dimensions_m": [
+        1.967,
+        1.7047,
+        1.6896
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 52032
+    },
+    {
+      "name": "SM_NZ_Harakeke_A_LOD2",
+      "triangles": 180,
+      "dimensions_m": [
+        1.9668,
+        1.7046,
+        1.6898
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 19980
+    },
+    {
+      "name": "SM_NZ_Harakeke_B_LOD0",
+      "triangles": 4426,
+      "dimensions_m": [
+        2.3512,
+        2.293,
+        3.476
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 417584
+    },
+    {
+      "name": "SM_NZ_Harakeke_B_LOD1",
+      "triangles": 1535,
+      "dimensions_m": [
+        2.3511,
+        2.293,
+        3.4175
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 150052
+    },
+    {
+      "name": "SM_NZ_Harakeke_B_LOD2",
+      "triangles": 384,
+      "dimensions_m": [
+        2.351,
+        2.293,
+        3.3965
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 39776
+    },
+    {
+      "name": "SM_NZ_Coprosma_A_LOD0",
+      "triangles": 8464,
+      "dimensions_m": [
+        1.5222,
+        1.5238,
+        1.3223
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 797120
+    },
+    {
+      "name": "SM_NZ_Coprosma_A_LOD1",
+      "triangles": 2568,
+      "dimensions_m": [
+        1.5008,
+        1.4938,
+        1.3117
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 242884
+    },
+    {
+      "name": "SM_NZ_Coprosma_A_LOD2",
+      "triangles": 712,
+      "dimensions_m": [
+        1.5098,
+        1.4892,
+        1.3111
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 68416
+    },
+    {
+      "name": "SM_NZ_Coprosma_B_LOD0",
+      "triangles": 9340,
+      "dimensions_m": [
+        2.3545,
+        2.3189,
+        2.1488
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 879460
+    },
+    {
+      "name": "SM_NZ_Coprosma_B_LOD1",
+      "triangles": 2840,
+      "dimensions_m": [
+        2.3284,
+        2.3279,
+        2.1361
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 268452
+    },
+    {
+      "name": "SM_NZ_Coprosma_B_LOD2",
+      "triangles": 684,
+      "dimensions_m": [
+        2.3446,
+        2.306,
+        2.1145
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 65784
+    },
+    {
+      "name": "SM_NZ_Matagouri_A_LOD0",
+      "triangles": 9598,
+      "dimensions_m": [
+        1.6359,
+        1.4489,
+        1.0183
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 1027800
+    },
+    {
+      "name": "SM_NZ_Matagouri_A_LOD1",
+      "triangles": 2880,
+      "dimensions_m": [
+        1.6326,
+        1.4476,
+        1.0089
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 304424
+    },
+    {
+      "name": "SM_NZ_Matagouri_A_LOD2",
+      "triangles": 534,
+      "dimensions_m": [
+        1.5391,
+        1.3571,
+        0.977
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 1,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 51684
+    },
+    {
+      "name": "SM_NZ_Matagouri_B_LOD0",
+      "triangles": 9598,
+      "dimensions_m": [
+        2.6336,
+        2.4692,
+        2.4582
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 522208
+    },
+    {
+      "name": "SM_NZ_Matagouri_B_LOD1",
+      "triangles": 2880,
+      "dimensions_m": [
+        2.6331,
+        2.4506,
+        2.4582
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 248116
+    },
+    {
+      "name": "SM_NZ_Matagouri_B_LOD2",
+      "triangles": 583,
+      "dimensions_m": [
+        2.3374,
+        2.3541,
+        2.3714
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 56648
+    },
+    {
+      "name": "SM_NZ_TiKouka_A_LOD0",
+      "triangles": 7817,
+      "dimensions_m": [
+        2.8893,
+        2.5979,
+        5.2038
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 2,
+      "ground_origin": true,
+      "glb_bytes": 733404
+    },
+    {
+      "name": "SM_NZ_TiKouka_A_LOD1",
+      "triangles": 2878,
+      "dimensions_m": [
+        2.8894,
+        2.5981,
+        5.1796
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 281352
+    },
+    {
+      "name": "SM_NZ_TiKouka_A_LOD2",
+      "triangles": 766,
+      "dimensions_m": [
+        2.8693,
+        2.5665,
+        5.2039
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 80700
+    },
+    {
+      "name": "SM_NZ_TiKouka_B_LOD0",
+      "triangles": 11109,
+      "dimensions_m": [
+        4.6156,
+        4.2791,
+        7.6911
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 2,
+      "ground_origin": true,
+      "glb_bytes": 1041536
+    },
+    {
+      "name": "SM_NZ_TiKouka_B_LOD1",
+      "triangles": 2879,
+      "dimensions_m": [
+        4.5417,
+        4.0712,
+        7.6661
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 265260
+    },
+    {
+      "name": "SM_NZ_TiKouka_B_LOD2",
+      "triangles": 767,
+      "dimensions_m": [
+        4.4277,
+        4.1086,
+        7.6692
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 76096
+    },
+    {
+      "name": "SM_NZ_Kanuka_A_LOD0",
+      "triangles": 9992,
+      "dimensions_m": [
+        1.8749,
+        1.5687,
+        6.1746
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 1,
+      "ground_origin": true,
+      "glb_bytes": 725876
+    },
+    {
+      "name": "SM_NZ_Kanuka_A_LOD1",
+      "triangles": 4800,
+      "dimensions_m": [
+        1.906,
+        1.5948,
+        6.1385
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 371752
+    },
+    {
+      "name": "SM_NZ_Kanuka_A_LOD2",
+      "triangles": 1152,
+      "dimensions_m": [
+        1.8839,
+        1.6291,
+        6.1278
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 97108
+    },
+    {
+      "name": "SM_NZ_Kanuka_B_LOD0",
+      "triangles": 12870,
+      "dimensions_m": [
+        3.9612,
+        3.3997,
+        10.794
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 2,
+      "ground_origin": true,
+      "glb_bytes": 1071080
+    },
+    {
+      "name": "SM_NZ_Kanuka_B_LOD1",
+      "triangles": 4796,
+      "dimensions_m": [
+        3.8968,
+        3.3069,
+        10.7532
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 391444
+    },
+    {
+      "name": "SM_NZ_Kanuka_B_LOD2",
+      "triangles": 1152,
+      "dimensions_m": [
+        3.8821,
+        3.2852,
+        10.7679
+      ],
+      "vertex_colours": true,
+      "uv": true,
+      "slots": 2,
+      "hulls": 0,
+      "ground_origin": true,
+      "glb_bytes": 97376
+    }
+  ],
+  "lod_triangles": {
+    "SM_NZ_Coprosma_A": [
+      8464,
+      2568,
+      712
+    ],
+    "SM_NZ_Coprosma_B": [
+      9340,
+      2840,
+      684
+    ],
+    "SM_NZ_Harakeke_A": [
+      2376,
+      504,
+      180
+    ],
+    "SM_NZ_Harakeke_B": [
+      4426,
+      1535,
+      384
+    ],
+    "SM_NZ_Kanuka_A": [
+      9992,
+      4800,
+      1152
+    ],
+    "SM_NZ_Kanuka_B": [
+      12870,
+      4796,
+      1152
+    ],
+    "SM_NZ_Matagouri_A": [
+      9598,
+      2880,
+      534
+    ],
+    "SM_NZ_Matagouri_B": [
+      9598,
+      2880,
+      583
+    ],
+    "SM_NZ_TiKouka_A": [
+      7817,
+      2878,
+      766
+    ],
+    "SM_NZ_TiKouka_B": [
+      11109,
+      2879,
+      767
+    ]
+  },
+  "failures": [],
+  "meshes": 10,
+  "files": 30
+}

@@ -1,0 +1,110 @@
+{
+  "car": "E39Touring",
+  "source_revision": "R6",
+  "status": "BLENDER_VALIDATED_UNREAL_PENDING",
+  "triangles": [
+    37460,
+    34634,
+    32750
+  ],
+  "bones": 16,
+  "intersection_pairs": 252,
+  "visual_review": [
+    "front",
+    "rear",
+    "side",
+    "cockpit",
+    "lod2",
+    "articulation",
+    "rear_open"
+  ],
+  "fbx_validation": {
+    "LOD1": {
+      "triangles": 34634,
+      "ratio_requested": 0.58,
+      "weights": "PASS"
+    },
+    "LOD2": {
+      "triangles": 32750,
+      "ratio_requested": 0.3,
+      "weights": "PASS"
+    },
+    "roundtrip_LOD0": {
+      "status": "PASS",
+      "triangles": 37460,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 283.0000000000001,
+      "track_cm": 152.00000000000173,
+      "bounds_cm": [
+        490.9250183105469,
+        215.5,
+        150.39813544158824
+      ],
+      "bones": 16,
+      "fbx_sha256": "666528fa987cc000dd51bd059d612e1fcc9e0623712da4e53ddadee3efce9b17"
+    },
+    "roundtrip_LOD1": {
+      "status": "PASS",
+      "triangles": 34634,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 283.0000000000001,
+      "track_cm": 152.00000000000173,
+      "bounds_cm": [
+        490.9250183105469,
+        215.5,
+        150.39813544158824
+      ],
+      "bones": 16,
+      "fbx_sha256": "8272643da689adfe09cb5a3190c452bd79eb1055d9f88d4f2fa6387374bc753b"
+    },
+    "roundtrip_LOD2": {
+      "status": "PASS",
+      "triangles": 32750,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 283.0000000000001,
+      "track_cm": 152.00000000000173,
+      "bounds_cm": [
+        490.9250183105469,
+        215.5,
+        150.39813544158824
+      ],
+      "bones": 16,
+      "fbx_sha256": "27db0cf3738ae47ca546a6be440e3eeac41a6884ffbd56a3c4c4954f88ab747c"
+    },
+    "collision_template": {
+      "body_boxes": [
+        {
+          "bone": "Root",
+          "centre_cm": [
+            -1.5,
+            1.132468483433513e-07,
+            64.25
+          ],
+          "size_cm": [
+            451.0,
+            168.00000000000003,
+            74.49999999999999
+          ]
+        },
+        {
+          "bone": "Root",
+          "centre_cm": [
+            -97.5,
+            7.361045391007792e-06,
+            123.5
+          ],
+          "size_cm": [
+            200.99999999999997,
+            154.0,
+            44.000000000000014
+          ]
+        }
+      ],
+      "status": "Blender template only; fit and suspension contact require Unreal"
+    }
+  },
+  "limitations": "Engine import, Chaos driving, instrument bindings, steering/suspension clearance and performance remain untested."
+}

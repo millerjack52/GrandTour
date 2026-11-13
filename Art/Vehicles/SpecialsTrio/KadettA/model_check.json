@@ -1,0 +1,110 @@
+{
+  "car": "KadettA",
+  "source_revision": "R6",
+  "status": "BLENDER_VALIDATED_UNREAL_PENDING",
+  "triangles": [
+    33284,
+    31352,
+    30064
+  ],
+  "bones": 12,
+  "intersection_pairs": 193,
+  "visual_review": [
+    "front",
+    "rear",
+    "side",
+    "cockpit",
+    "lod2",
+    "articulation",
+    "rear_open"
+  ],
+  "fbx_validation": {
+    "LOD1": {
+      "triangles": 31352,
+      "ratio_requested": 0.58,
+      "weights": "PASS"
+    },
+    "LOD2": {
+      "triangles": 30064,
+      "ratio_requested": 0.3,
+      "weights": "PASS"
+    },
+    "roundtrip_LOD0": {
+      "status": "PASS",
+      "triangles": 33284,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 232.5000000000005,
+      "track_cm": 121.00000000000367,
+      "bounds_cm": [
+        406.20001220703125,
+        171.0,
+        138.4983459240757
+      ],
+      "bones": 12,
+      "fbx_sha256": "88b36ffdaf0905f087deeca11ae7ab474a14710688b79a8785e8f22b2be50e9f"
+    },
+    "roundtrip_LOD1": {
+      "status": "PASS",
+      "triangles": 31352,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 232.5000000000005,
+      "track_cm": 121.00000000000367,
+      "bounds_cm": [
+        406.20001220703125,
+        171.0,
+        138.4983459240757
+      ],
+      "bones": 12,
+      "fbx_sha256": "e018ac162a3267f3b0feee55c036eea35aa188a33d4a2f0acac66c44bc83561b"
+    },
+    "roundtrip_LOD2": {
+      "status": "PASS",
+      "triangles": 30064,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 232.5000000000005,
+      "track_cm": 121.00000000000367,
+      "bounds_cm": [
+        406.20001220703125,
+        171.0,
+        138.4983459240757
+      ],
+      "bones": 12,
+      "fbx_sha256": "0df2f6c8a14486a8894f9fb10ca7edb6eb013567ba79f6cfc6aeaf7dc19a712d"
+    },
+    "collision_template": {
+      "body_boxes": [
+        {
+          "bone": "Root",
+          "centre_cm": [
+            0.0,
+            0.0,
+            59.750003814697266
+          ],
+          "size_cm": [
+            363.99999999999994,
+            135.0,
+            62.5
+          ]
+        },
+        {
+          "bone": "Root",
+          "centre_cm": [
+            -36.0,
+            2.7179246444575256e-06,
+            114.75
+          ],
+          "size_cm": [
+            115.99999999999999,
+            121.0,
+            47.5
+          ]
+        }
+      ],
+      "status": "Blender template only; fit and suspension contact require Unreal"
+    }
+  },
+  "limitations": "Engine import, Chaos driving, instrument bindings, steering/suspension clearance and performance remain untested."
+}

@@ -1,0 +1,12 @@
+{
+ "object": "pillars",
+ "resolution": 2048,
+ "seed": 7,
+ "dabs_per_pass": [
+  55,
+  123
+ ],
+ "ink_mask": false,
+ "painted_color": false,
+ "brush": "bundled oil_knife"
+}

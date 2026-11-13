@@ -1,0 +1,10 @@
+{
+  "name": "Volvo240",
+  "ref_px": 484, "ref_mm": 4790,
+  "views": {
+    "side":  {"kind": "side_left", "box": [0,   40, 510, 196], "anchor": [253.0, 193]},
+    "front": {"kind": "front",     "box": [520, 40, 712, 196], "anchor": [618.5, 193]},
+    "top":   {"kind": "top",       "box": [0,  272, 510, 464], "anchor": [256.0, 368]},
+    "rear":  {"kind": "rear",      "box": [520, 272, 712, 464], "anchor": [618.0, 437]}
+  }
+}

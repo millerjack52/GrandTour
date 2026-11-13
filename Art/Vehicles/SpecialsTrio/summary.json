@@ -1,0 +1,401 @@
+[
+  {
+    "car": "KadettA",
+    "source_revision": "R6",
+    "status": "BLENDER_VALIDATED_UNREAL_DRIVABLE_PROTOTYPE",
+    "triangles": [
+      33284,
+      31352,
+      30064
+    ],
+    "bones": 12,
+    "intersection_pairs": 193,
+    "visual_review": [
+      "front",
+      "rear",
+      "side",
+      "cockpit",
+      "lod2",
+      "articulation",
+      "rear_open"
+    ],
+    "fbx_validation": {
+      "LOD1": {
+        "triangles": 31352,
+        "ratio_requested": 0.58,
+        "weights": "PASS"
+      },
+      "LOD2": {
+        "triangles": 30064,
+        "ratio_requested": 0.3,
+        "weights": "PASS"
+      },
+      "roundtrip_LOD0": {
+        "status": "PASS",
+        "triangles": 33284,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 232.5000000000005,
+        "track_cm": 121.00000000000367,
+        "bounds_cm": [
+          406.20001220703125,
+          171.0,
+          138.4983459240757
+        ],
+        "bones": 12,
+        "fbx_sha256": "88b36ffdaf0905f087deeca11ae7ab474a14710688b79a8785e8f22b2be50e9f"
+      },
+      "roundtrip_LOD1": {
+        "status": "PASS",
+        "triangles": 31352,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 232.5000000000005,
+        "track_cm": 121.00000000000367,
+        "bounds_cm": [
+          406.20001220703125,
+          171.0,
+          138.4983459240757
+        ],
+        "bones": 12,
+        "fbx_sha256": "e018ac162a3267f3b0feee55c036eea35aa188a33d4a2f0acac66c44bc83561b"
+      },
+      "roundtrip_LOD2": {
+        "status": "PASS",
+        "triangles": 30064,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 232.5000000000005,
+        "track_cm": 121.00000000000367,
+        "bounds_cm": [
+          406.20001220703125,
+          171.0,
+          138.4983459240757
+        ],
+        "bones": 12,
+        "fbx_sha256": "0df2f6c8a14486a8894f9fb10ca7edb6eb013567ba79f6cfc6aeaf7dc19a712d"
+      },
+      "collision_template": {
+        "body_boxes": [
+          {
+            "bone": "Root",
+            "centre_cm": [
+              0.0,
+              0.0,
+              59.750003814697266
+            ],
+            "size_cm": [
+              363.99999999999994,
+              135.0,
+              62.5
+            ]
+          },
+          {
+            "bone": "Root",
+            "centre_cm": [
+              -36.0,
+              2.7179246444575256e-06,
+              114.75
+            ],
+            "size_cm": [
+              115.99999999999999,
+              121.0,
+              47.5
+            ]
+          }
+        ],
+        "status": "Blender template only; fit and suspension contact require Unreal"
+      }
+    },
+    "limitations": "Engine import, Chaos driving, instrument bindings, steering/suspension clearance and performance remain untested.",
+    "unreal": {
+      "mesh": "/Game/GrandTour/Vehicles/Bodies/KadettA/SK_KadettA.SK_KadettA",
+      "pawn": "/Game/GrandTour/Vehicles/Bodies/KadettA/BP_KadettA.BP_KadettA",
+      "map": "/Game/GrandTour/Test/SpecialsTrio/L_KadettA_Test",
+      "lod_count": 3,
+      "physics_bodies": [
+        "Root physicsType=0 boxes=2 spheres=0 capsules=0 convex=0",
+        "constraints=0"
+      ],
+      "driver_eye_cm": [
+        -43.00000000000001,
+        37.485,
+        116.5
+      ],
+      "wheel_radius_cm": 28.499999999999996,
+      "test_mass_kg": 800.0,
+      "test_torque_nm": 95.0,
+      "status": "IMPORTED_DRIVING_SMOKE_TESTED",
+      "maps": [
+        "/Game/GrandTour/Test/SpecialsTrio/L_KadettA_Test",
+        "/Game/GrandTour/Test/SpecialsTrio/L_KadettA_Mud"
+      ]
+    }
+  },
+  {
+    "car": "E39Touring",
+    "source_revision": "R6",
+    "status": "BLENDER_VALIDATED_UNREAL_DRIVABLE_PROTOTYPE",
+    "triangles": [
+      37460,
+      34634,
+      32750
+    ],
+    "bones": 16,
+    "intersection_pairs": 252,
+    "visual_review": [
+      "front",
+      "rear",
+      "side",
+      "cockpit",
+      "lod2",
+      "articulation",
+      "rear_open"
+    ],
+    "fbx_validation": {
+      "LOD1": {
+        "triangles": 34634,
+        "ratio_requested": 0.58,
+        "weights": "PASS"
+      },
+      "LOD2": {
+        "triangles": 32750,
+        "ratio_requested": 0.3,
+        "weights": "PASS"
+      },
+      "roundtrip_LOD0": {
+        "status": "PASS",
+        "triangles": 37460,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 283.0000000000001,
+        "track_cm": 152.00000000000173,
+        "bounds_cm": [
+          490.9250183105469,
+          215.5,
+          150.39813544158824
+        ],
+        "bones": 16,
+        "fbx_sha256": "666528fa987cc000dd51bd059d612e1fcc9e0623712da4e53ddadee3efce9b17"
+      },
+      "roundtrip_LOD1": {
+        "status": "PASS",
+        "triangles": 34634,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 283.0000000000001,
+        "track_cm": 152.00000000000173,
+        "bounds_cm": [
+          490.9250183105469,
+          215.5,
+          150.39813544158824
+        ],
+        "bones": 16,
+        "fbx_sha256": "8272643da689adfe09cb5a3190c452bd79eb1055d9f88d4f2fa6387374bc753b"
+      },
+      "roundtrip_LOD2": {
+        "status": "PASS",
+        "triangles": 32750,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 283.0000000000001,
+        "track_cm": 152.00000000000173,
+        "bounds_cm": [
+          490.9250183105469,
+          215.5,
+          150.39813544158824
+        ],
+        "bones": 16,
+        "fbx_sha256": "27db0cf3738ae47ca546a6be440e3eeac41a6884ffbd56a3c4c4954f88ab747c"
+      },
+      "collision_template": {
+        "body_boxes": [
+          {
+            "bone": "Root",
+            "centre_cm": [
+              -1.5,
+              1.132468483433513e-07,
+              64.25
+            ],
+            "size_cm": [
+              451.0,
+              168.00000000000003,
+              74.49999999999999
+            ]
+          },
+          {
+            "bone": "Root",
+            "centre_cm": [
+              -97.5,
+              7.361045391007792e-06,
+              123.5
+            ],
+            "size_cm": [
+              200.99999999999997,
+              154.0,
+              44.000000000000014
+            ]
+          }
+        ],
+        "status": "Blender template only; fit and suspension contact require Unreal"
+      }
+    },
+    "limitations": "Engine import, Chaos driving, instrument bindings, steering/suspension clearance and performance remain untested.",
+    "unreal": {
+      "mesh": "/Game/GrandTour/Vehicles/Bodies/E39Touring/SK_E39Touring.SK_E39Touring",
+      "pawn": "/Game/GrandTour/Vehicles/Bodies/E39Touring/BP_E39Touring.BP_E39Touring",
+      "map": "/Game/GrandTour/Test/SpecialsTrio/L_E39Touring_Test",
+      "lod_count": 3,
+      "physics_bodies": [
+        "Root physicsType=0 boxes=2 spheres=0 capsules=0 convex=0",
+        "constraints=0"
+      ],
+      "driver_eye_cm": [
+        -35.00000000000001,
+        45.9,
+        123.50000000000001
+      ],
+      "wheel_radius_cm": 32.300000000000004,
+      "test_mass_kg": 1650.0,
+      "test_torque_nm": 245.0,
+      "status": "IMPORTED_DRIVING_SMOKE_TESTED",
+      "maps": [
+        "/Game/GrandTour/Test/SpecialsTrio/L_E39Touring_Test",
+        "/Game/GrandTour/Test/SpecialsTrio/L_E39Touring_Mud"
+      ]
+    }
+  },
+  {
+    "car": "SJ413",
+    "source_revision": "R6",
+    "status": "BLENDER_VALIDATED_UNREAL_DRIVABLE_PROTOTYPE",
+    "triangles": [
+      36580,
+      34190,
+      32598
+    ],
+    "bones": 14,
+    "intersection_pairs": 207,
+    "visual_review": [
+      "front",
+      "rear",
+      "side",
+      "cockpit",
+      "lod2",
+      "articulation",
+      "rear_open"
+    ],
+    "fbx_validation": {
+      "LOD1": {
+        "triangles": 34190,
+        "ratio_requested": 0.58,
+        "weights": "PASS"
+      },
+      "LOD2": {
+        "triangles": 32598,
+        "ratio_requested": 0.3,
+        "weights": "PASS"
+      },
+      "roundtrip_LOD0": {
+        "status": "PASS",
+        "triangles": 36580,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 203.00000000000057,
+        "track_cm": 130.00000000000404,
+        "bounds_cm": [
+          369.6549987792969,
+          181.50000762939453,
+          166.99799617822282
+        ],
+        "bones": 14,
+        "fbx_sha256": "abc4bacda373788b32cbaec413374217fe716b5dc313c2d09066db67fcfbdbaa"
+      },
+      "roundtrip_LOD1": {
+        "status": "PASS",
+        "triangles": 34190,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 203.00000000000057,
+        "track_cm": 130.00000000000404,
+        "bounds_cm": [
+          369.6549987792969,
+          181.50000762939453,
+          166.99799617822282
+        ],
+        "bones": 14,
+        "fbx_sha256": "632140d99bd73ed62426417c4cf6be62340f48bff0cce779682fa532bcce177b"
+      },
+      "roundtrip_LOD2": {
+        "status": "PASS",
+        "triangles": 32598,
+        "meshes": 4,
+        "material_slots": 4,
+        "wheelbase_cm": 203.00000000000057,
+        "track_cm": 130.00000000000404,
+        "bounds_cm": [
+          369.6549987792969,
+          181.50000762939453,
+          166.99799617822282
+        ],
+        "bones": 14,
+        "fbx_sha256": "b4c4a15caa1bfbd66339646de56230aafd55fd4214f4e84cc3ef6f8f098e90fd"
+      },
+      "collision_template": {
+        "body_boxes": [
+          {
+            "bone": "Root",
+            "centre_cm": [
+              0.0,
+              0.0,
+              76.25
+            ],
+            "size_cm": [
+              308.0,
+              134.0,
+              54.49999999999999
+            ]
+          },
+          {
+            "bone": "Root",
+            "centre_cm": [
+              -62.0,
+              4.680870006268378e-06,
+              135.25
+            ],
+            "size_cm": [
+              180.0,
+              120.0,
+              63.5
+            ]
+          }
+        ],
+        "status": "Blender template only; fit and suspension contact require Unreal"
+      }
+    },
+    "limitations": "Engine import, Chaos driving, instrument bindings, steering/suspension clearance and performance remain untested.",
+    "unreal": {
+      "mesh": "/Game/GrandTour/Vehicles/Bodies/SJ413/SK_SJ413.SK_SJ413",
+      "pawn": "/Game/GrandTour/Vehicles/Bodies/SJ413/BP_SJ413.BP_SJ413",
+      "map": "/Game/GrandTour/Test/SpecialsTrio/L_SJ413_Test",
+      "lod_count": 3,
+      "physics_bodies": [
+        "Root physicsType=0 boxes=2 spheres=0 capsules=0 convex=0",
+        "constraints=0"
+      ],
+      "driver_eye_cm": [
+        -52.0,
+        -37.230000000000004,
+        145.0
+      ],
+      "wheel_radius_cm": 34.5,
+      "test_mass_kg": 1000.0,
+      "test_torque_nm": 110.0,
+      "status": "IMPORTED_DRIVING_SMOKE_TESTED",
+      "maps": [
+        "/Game/GrandTour/Test/SpecialsTrio/L_SJ413_Test",
+        "/Game/GrandTour/Test/SpecialsTrio/L_SJ413_Mud"
+      ]
+    }
+  }
+]

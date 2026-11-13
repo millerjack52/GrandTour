@@ -1,0 +1,120 @@
+FLORA PAINT SOURCE-APPEARANCE CHECKPOINT
+13 November 2026. Isolated candidate; no LiDAR promotion.
+
+Scope
+Same purchased fern, flowering shrub and Tree_B_001 geometry in Blender 5.1.2
+Eevee and Unreal 5.8. Original polygon assignments, UV0 and normals retained.
+Unique UV1 stores source procedural pigment. Shared source-mask textures keep
+leaf detail independent of whole-tree atlas resolution. Source blend is never
+saved. Protected map/config hashes are checked by compare_flora_exact.py.
+
+What was repaired
+- Explicit 8-bit sRGB pigment and linear coverage imports. The tested 16-bit
+  colour PNG route did not produce the intended colour interpretation in UE.
+- Preserve the ACTIVE wood/moss shader when baking pigment. Selecting a dormant
+  diffuse node was an error in the first new exporter, not a source-pack defect.
+- Bake actual source Alpha Mask processing (including the noise-UV Blur group),
+  instead of approximating its operation with a texture blur.
+- Port source Layer Weight facing coverage. Use independent per-card coverage,
+  not one correlated screen-pixel threshold for every overlapping leaf.
+- Use a balanced eight-frame sequence and TSR for soft coverage. The TAA-only
+  bench made too many leaf pixels solid. No post-image blur is used.
+- Keep shadow-pass coverage stable so VSM page caching can remain enabled.
+- Remove extra distance-field AO from the diagnostic. It caused a dark blob
+  absent from the source test, and invalidated the earlier light calibration.
+
+A previously missing SOURCE RENDERER BEHAVIOUR
+An unconnected Blender Material Output Thickness is NOT an explicit zero.
+Eevee derives thickness from object bounds for transmission materials. Its
+thick-transmission combine applies the weighted colour twice, and its direct
+light response differs from thin translucency. A diagnostic copy with an
+explicit zero-thickness link becomes substantially brighter; source materials
+were restored and reference captures always retain their original behaviour.
+The reference's shared downward transmission normal also gates the direct
+reflection stack for upper-hemisphere lights in this Blender version.
+
+Current candidate lighting method
+Native UE directional-light visibility and shadows, with an analytic transfer
+for the source's directional sun and uniform environment. Shared SunDirection
+and SkyRadiance live in MPC_SourceLighting. Source diffuse weight is retained.
+No per-plant colour gain is fitted. This is deliberately scoped: it is NOT yet
+a general replacement for arbitrary local lights or nonuniform skylight.
+An engine-native multi-lobe/local-light extension remains necessary before
+claiming whole-game lighting equivalence, including vehicle headlights.
+Source bark pigment is restored; complete procedural bark normal transfer is
+also still open. These limits must not disappear from a batch-converter report.
+
+Lighting validation
+Six recipes: front, side, back, sky-only, warm sunlight with cool sky, cool shade.
+Each is rendered with the same three assets at face and 70-degree viewing
+angles. Neutral diffuse receivers isolate light-unit calibration. The shared
+sun/sky gains are derived from receivers, never separately from each plant.
+Additional pigment-only, white-opacity, no-shadow and explicit-thin diagnostics
+separate colour, coverage, lighting and source thickness effects.
+Beauty boards use native PNG captures: Blender Standard and UE neutral tone
+settings plus M_SourceStandardDisplay_02 replacing the tonemapper, exposure 0.
+The explicit pass removes pre-exposure and writes linear source colour to the
+sRGB capture target. Manual sRGB encoding here double-encoded the image and
+was rejected. Zero tone-curve controls alone did not give a valid native PNG
+match in this capture path. Do not infer a project grading-volume defect: the
+bench audit found no PostProcessVolume actors. Game viewport/backbuffer output
+must be validated separately before reusing this capture-specific display path.
+The production postprocess is not changed. HDR metrics stay scene-linear.
+The pigment diagnostic alone uses a shared +1-stop presentation transform.
+
+Motion and performance
+The motion sequence changes camera and sun continuously. One evolving capture
+per frame, not a settled still at every position. Afterward, two identical
+camera/light positions are held and captured as settled controls to expose
+trailing or unstable coverage. Inspect motion-review.json and motion-review.jpg.
+This is a visual stability test, not an FPS benchmark. 60fps is NOT verified.
+Current foliage uses two texture samples; dense-forest overdraw, wind, mip/LOD
+transitions and memory still need profiling. Unique 2K pigment atlases are proof
+assets, not an approved whole-library memory budget.
+
+Library rollout after visual approval
+1. Inventory shader families and inputs; reject unsupported emission, normals,
+   thickness and shader-version cases rather than silently dropping them.
+2. Convert representative grass, flower, fern, shrub, canopy and bark variants.
+3. Preserve editable controls and source provenance. Use shared textures and
+   material instances where valid; retain per-object colour variation.
+4. Validate close, grazing, mid/far and moving views, plus dynamic local lights.
+5. Build a separate library review level before integrating into LiDAR.
+No automatic all-pack rollout or production-map migration is claimed here.
+
+Reproduce sequentially from C:/GrandTour
+./Art/run_flora_exact.ps1 source
+./Art/run_flora_exact.ps1 build
+./Art/run_flora_exact.ps1 motion
+python Art/compare_flora_exact.py
+python Art/review_flora_exact_motion.py
+
+Evidence directory
+Art/Export/LidarStudy/FloraParity/AssetMatch
+reference-report.json / build-report.json / motion-report.json / comparison.json
+same-assets-front.jpg / same-assets-shade.jpg / lighting-comparison.jpg
+same-assets-pigment.jpg / source-export.json / recipe.json
+
+Primary engine references used to trace the behaviour
+https://github.com/blender/blender/blob/v5.1.2/source/blender/draw/engines/eevee/eevee_shader.cc
+https://github.com/blender/blender/blob/v5.1.2/source/blender/draw/engines/eevee/shaders/eevee_deferred_combine_frag.glsl
+https://github.com/blender/blender/blob/v5.1.2/source/blender/draw/engines/eevee/shaders/eevee_bxdf_diffuse_lib.glsl
+https://github.com/blender/blender/blob/v5.1.2/source/blender/draw/engines/eevee/shaders/eevee_transparency_lib.glsl
+Local Unreal 5.8 MaterialTemplate.ush, ShadowDepthPixelShader.usf and Scene.h.
+
+Shutdown validation note
+Some earlier motion sessions completed every capture, then returned a Windows
+access-violation exit after Unreal had logged its full shutdown. Those runs
+are not recorded as passing process checks. The runner still rejects nonzero
+exits. Final process status is recorded separately in validation-status.json.
+
+Final 13 November validation
+52 still captures completed (51 unique paired cases); the still renderer exited
+with -1073741819 after logging shutdown, so its process gate FAILED. The final
+48-frame motion run plus two held controls exited 0 and PASSED its process gate.
+Neutral receiver differences: 0.46-1.34 percent. Remaining opacity coverage
+deficit: fern 17.0 percent, shrub 9.1 percent, tree 6.3 percent. Do not describe
+this as exact parity. Motion/held mean display differences: 0.0144 and 0.0199.
+All seven new Python scripts pass syntax parsing. Protected maps/config and
+purchased source hashes match the pre-study baseline. See the portable record
+at docs/validation/flora-asset-match.json. No whole-project rebuild is claimed.

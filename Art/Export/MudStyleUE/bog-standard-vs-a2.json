@@ -1,0 +1,98 @@
+{
+  "field F_Paint": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard/fields/F_Paint.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/fields/F_Paint.png",
+    "bytes_identical": true,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "field F_Shape": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard/fields/F_Shape.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/fields/F_Shape.png",
+    "bytes_identical": true,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "field F_Zones": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard/fields/F_Zones.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/fields/F_Zones.png",
+    "bytes_identical": true,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "bake Color": {
+    "new": "Art/Export/MudStyleUE/T_MS_BogStandardColor.png",
+    "a2": "Art/Export/MudStyleUE/T_MS_ChurnColor.png",
+    "bytes_identical": true,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "bake Normal": {
+    "new": "Art/Export/MudStyleUE/T_MS_BogStandardNormal.png",
+    "a2": "Art/Export/MudStyleUE/T_MS_ChurnNormal.png",
+    "bytes_identical": true,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "bake Rough": {
+    "new": "Art/Export/MudStyleUE/T_MS_BogStandardRough.png",
+    "a2": "Art/Export/MudStyleUE/T_MS_ChurnRough.png",
+    "bytes_identical": true,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "bake Height": {
+    "new": "Art/Export/MudStyleUE/T_MS_BogStandardHeight.png",
+    "a2": "Art/Export/MudStyleUE/T_MS_ChurnHeight.png",
+    "bytes_identical": true,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "render ChurnClose.png": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard_A2check/ChurnClose.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/ChurnClose.png",
+    "bytes_identical": false,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "render Tile3x3.png": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard_A2check/Tile3x3.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/Tile3x3.png",
+    "bytes_identical": false,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "render TileClose.png": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard_A2check/TileClose.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/TileClose.png",
+    "bytes_identical": false,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "render Driver_ChurnMask.png": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard_A2check/Driver_ChurnMask.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/Driver_ChurnMask.png",
+    "bytes_identical": false,
+    "max_abs_8bit": 0.0,
+    "mean_abs_8bit": 0.0,
+    "share_pixels_differing": 0.0
+  },
+  "render Driver.png": {
+    "new": "Art/Export/MudStyleStudy/05_variants/Standard_A2check/Driver.png",
+    "a2": "Art/Export/MudStyleStudy/04_wet/Driver_FarGlossFade.png",
+    "bytes_identical": false,
+    "max_abs_8bit": 1.0,
+    "mean_abs_8bit": 1.3e-05,
+    "share_pixels_differing": 0.0039
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "ok": true,
+  "finished": true,
+  "method": {
+    "height": "SystemLibrary.line_trace_single down, TRACE_TYPE_QUERY1 (Visibility), complex, all non-landscape actors ignored",
+    "verge": "LandscapeComponent.editor_get_paint_layer_weight_at_location (0..1)"
+  },
+  "timeline_s": {
+    "world_loaded": 0.3,
+    "measure_before": 6.3,
+    "apply_bed_and_verge": 6.3,
+    "measure_after": 14.3,
+    "generate": 14.3,
+    "generation_poll": 22.4,
+    "save": 23.0,
+    "measure_final": 23.0,
+    "biomes_final": 23.0,
+    "finished": 23.0
+  },
+  "steps": {
+    "measure_before": {
+      "ok": true,
+      "value": {
+        "BP_OWRoad_C": {
+          "mid_point_2": {
+            "xy": [
+              9000,
+              22000
+            ],
+            "spline_z": -100.8,
+            "ground_z": -100.8,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": -100.8
+          },
+          "half_length": {
+            "xy": [
+              7563,
+              16379
+            ],
+            "spline_z": -51.9,
+            "ground_z": 27.5,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 27.8
+          }
+        },
+        "BP_OWRoad_Dusty_C": {
+          "mid_point_2": {
+            "xy": [
+              24000,
+              22000
+            ],
+            "spline_z": 59.9,
+            "ground_z": 60.2,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 59.9
+          },
+          "half_length": {
+            "xy": [
+              25281,
+              16399
+            ],
+            "spline_z": 3.7,
+            "ground_z": 49.7,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 49.8
+          }
+        },
+        "BP_OWRoad_Gravel_C": {
+          "mid_point_2": {
+            "xy": [
+              41000,
+              22000
+            ],
+            "spline_z": 81.4,
+            "ground_z": 81.2,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 81.4
+          },
+          "half_length": {
+            "xy": [
+              42281,
+              16400
+            ],
+            "spline_z": 11.6,
+            "ground_z": 9.8,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 10.0
+          }
+        }
+      }
+    },
+    "apply_bed_and_verge": {
+      "ok": true,
+      "value": {
+        "BP_OWRoad_C": "applied",
+        "BP_OWRoad_Dusty_C": "applied",
+        "BP_OWRoad_Gravel_C": "applied"
+      }
+    },
+    "measure_after": {
+      "ok": true,
+      "value": {
+        "BP_OWRoad_C": {
+          "mid_point_2": {
+            "xy": [
+              9000,
+              22000
+            ],
+            "spline_z": -100.8,
+            "ground_z": -100.8,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": -100.8
+          },
+          "half_length": {
+            "xy": [
+              7563,
+              16379
+            ],
+            "spline_z": -51.9,
+            "ground_z": -52.2,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 27.8
+          }
+        },
+        "BP_OWRoad_Dusty_C": {
+          "mid_point_2": {
+            "xy": [
+              24000,
+              22000
+            ],
+            "spline_z": 59.9,
+            "ground_z": 59.4,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 59.9
+          },
+          "half_length": {
+            "xy": [
+              25281,
+              16399
+            ],
+            "spline_z": 3.7,
+            "ground_z": 3.3,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 49.8
+          }
+        },
+        "BP_OWRoad_Gravel_C": {
+          "mid_point_2": {
+            "xy": [
+              41000,
+              22000
+            ],
+            "spline_z": 81.4,
+            "ground_z": 81.2,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 81.4
+          },
+          "half_length": {
+            "xy": [
+              42281,
+              16400
+            ],
+            "spline_z": 11.6,
+            "ground_z": 11.1,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 10.0
+          }
+        }
+      }
+    },
+    "generate": {
+      "ok": true,
+      "value": {
+        "Forest": "PCG_OWForest",
+        "Meadow": "PCG_OWMeadow",
+        "Scree": "PCG_OWScree",
+        "Road": "PCG_OWRoad",
+        "Cliff": "PCG_OWCliff",
+        "Alpine": "PCG_OWAlpine"
+      }
+    },
+    "generation_poll": {
+      "ok": true,
+      "value": {
+        "biomes": {
+          "Forest": {
+            "ism_components": 111,
+            "instances": 1108,
+            "generated": true
+          },
+          "Meadow": {
+            "ism_components": 25,
+            "instances": 128,
+            "generated": true
+          },
+          "Scree": {
+            "ism_components": 16,
+            "instances": 163,
+            "generated": true
+          },
+          "Road": {
+            "ism_components": 31,
+            "instances": 1624,
+            "generated": true
+          },
+          "Cliff": {
+            "ism_components": 15,
+            "instances": 78,
+            "generated": true
+          },
+          "Alpine": {
+            "ism_components": 10,
+            "instances": 58,
+            "generated": true
+          }
+        },
+        "seconds": 8.1
+      }
+    },
+    "save": {
+      "ok": true,
+      "value": {
+        "saved": true,
+        "dirty_maps_before": [
+          "/Game/GrandTour/Test/L_OWToolkitTest"
+        ],
+        "dirty_content_before": [],
+        "dirty_content_before_count": 0,
+        "still_dirty_maps": [],
+        "still_dirty_content": []
+      }
+    },
+    "measure_final": {
+      "ok": true,
+      "value": {
+        "BP_OWRoad_C": {
+          "mid_point_2": {
+            "xy": [
+              9000,
+              22000
+            ],
+            "spline_z": -100.8,
+            "ground_z": -100.8,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": -100.8
+          },
+          "half_length": {
+            "xy": [
+              7563,
+              16379
+            ],
+            "spline_z": -51.9,
+            "ground_z": -52.2,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 27.8
+          }
+        },
+        "BP_OWRoad_Dusty_C": {
+          "mid_point_2": {
+            "xy": [
+              24000,
+              22000
+            ],
+            "spline_z": 59.9,
+            "ground_z": 59.4,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 59.9
+          },
+          "half_length": {
+            "xy": [
+              25281,
+              16399
+            ],
+            "spline_z": 3.7,
+            "ground_z": 3.3,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 49.8
+          }
+        },
+        "BP_OWRoad_Gravel_C": {
+          "mid_point_2": {
+            "xy": [
+              41000,
+              22000
+            ],
+            "spline_z": 81.4,
+            "ground_z": 81.2,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 81.4
+          },
+          "half_length": {
+            "xy": [
+              42281,
+              16400
+            ],
+            "spline_z": 11.6,
+            "ground_z": 11.1,
+            "hit": "Landscape_1",
+            "verge": 1.0,
+            "layout_z": 10.0
+          }
+        }
+      }
+    },
+    "biomes_final": {
+      "ok": true,
+      "value": {
+        "Forest": {
+          "ism_components": 111,
+          "instances": 1108,
+          "generated": true
+        },
+        "Meadow": {
+          "ism_components": 25,
+          "instances": 128,
+          "generated": true
+        },
+        "Scree": {
+          "ism_components": 16,
+          "instances": 163,
+          "generated": true
+        },
+        "Road": {
+          "ism_components": 31,
+          "instances": 1624,
+          "generated": true
+        },
+        "Cliff": {
+          "ism_components": 15,
+          "instances": 78,
+          "generated": true
+        },
+        "Alpine": {
+          "ism_components": 10,
+          "instances": 58,
+          "generated": true
+        }
+      }
+    }
+  }
+}

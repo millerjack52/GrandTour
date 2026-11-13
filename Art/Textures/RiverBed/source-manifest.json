@@ -1,0 +1,26 @@
+[
+  {
+    "file": "river_small_rocks_diff_2k.jpg",
+    "md5": "5e92928b04ca9484c3923d40f18777aa",
+    "channel": "Diffuse",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/river_small_rocks/river_small_rocks_diff_2k.jpg"
+  },
+  {
+    "file": "river_small_rocks_nor_dx_2k.jpg",
+    "md5": "bbebe8f01e8a18365f8ab45dea5ad926",
+    "channel": "nor_dx",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/river_small_rocks/river_small_rocks_nor_dx_2k.jpg"
+  },
+  {
+    "file": "river_small_rocks_rough_2k.jpg",
+    "md5": "1584f5ee7eeacc76d28012b76ad2ef51",
+    "channel": "Rough",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/river_small_rocks/river_small_rocks_rough_2k.jpg"
+  },
+  {
+    "file": "river_small_rocks_disp_2k.png",
+    "md5": "6fe1428e2d0cdfd6a8465dde2e688dc9",
+    "channel": "Displacement",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/river_small_rocks/river_small_rocks_disp_2k.png"
+  }
+]

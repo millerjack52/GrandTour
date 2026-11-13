@@ -1,0 +1,210 @@
+{
+  "blender": "5.1.2",
+  "units": "Blender metres; FBX centimetres (apply_unit_scale), -Z forward, Y up",
+  "across_cm": 30.0,
+  "embed_share": 0.18,
+  "hull_max_vertices": 64,
+  "families": "0-1 rounded, 2-3 slab, 4 broken, 5 smear (AGTMudPatch maps the number)",
+  "pivot": "the hull's bottom centre: the area centroid of its face on the embed line (z = 0); the render mesh goes on below it by embed_cm",
+  "volumes": "cm^3 at 30 cm across: volume_cm3 the closed render mesh (what a break deposits, x scale^3), hull_volume_cm3 the UCX_ hull, volume_above_embed_cm3 the mesh above the line",
+  "chunks": [
+    {
+      "name": "SM_GT_MudChunk_0",
+      "family": "rounded",
+      "family_index": 0,
+      "height_ratio": 0.55,
+      "fbx": "Art/Export/MudChunks/SM_GT_MudChunk_0.fbx",
+      "triangles": 996,
+      "vertices": 500,
+      "size_cm": [
+        30.0,
+        27.5,
+        16.5
+      ],
+      "across_cm": 30.0,
+      "height_cm": 16.5,
+      "embed_cm": 2.97,
+      "embed_share": 0.18,
+      "volume_cm3": 5585.78,
+      "volume_above_embed_cm3": 4347.93,
+      "hull_volume_cm3": 5188.45,
+      "hull": "UCX_SM_GT_MudChunk_0_00",
+      "hull_vertices": 64,
+      "hull_triangles": 124,
+      "hull_bottom_cm": 0.0,
+      "mesh_bottom_cm": -2.97,
+      "cracks": 3,
+      "cube_sphere_n": 10,
+      "pivot_shift_cm": [
+        -0.38,
+        -0.533,
+        2.97
+      ]
+    },
+    {
+      "name": "SM_GT_MudChunk_1",
+      "family": "rounded",
+      "family_index": 0,
+      "height_ratio": 0.48,
+      "fbx": "Art/Export/MudChunks/SM_GT_MudChunk_1.fbx",
+      "triangles": 952,
+      "vertices": 478,
+      "size_cm": [
+        30.0,
+        29.77,
+        14.4
+      ],
+      "across_cm": 30.0,
+      "height_cm": 14.4,
+      "embed_cm": 2.592,
+      "embed_share": 0.18,
+      "volume_cm3": 5169.68,
+      "volume_above_embed_cm3": 3953.23,
+      "hull_volume_cm3": 4730.77,
+      "hull": "UCX_SM_GT_MudChunk_1_00",
+      "hull_vertices": 64,
+      "hull_triangles": 124,
+      "hull_bottom_cm": 0.0,
+      "mesh_bottom_cm": -2.592,
+      "cracks": 4,
+      "cube_sphere_n": 10,
+      "pivot_shift_cm": [
+        1.125,
+        -0.402,
+        2.592
+      ]
+    },
+    {
+      "name": "SM_GT_MudChunk_2",
+      "family": "slab",
+      "family_index": 1,
+      "height_ratio": 0.3,
+      "fbx": "Art/Export/MudChunks/SM_GT_MudChunk_2.fbx",
+      "triangles": 872,
+      "vertices": 438,
+      "size_cm": [
+        30.0,
+        29.18,
+        9.0
+      ],
+      "across_cm": 30.0,
+      "height_cm": 9.0,
+      "embed_cm": 1.62,
+      "embed_share": 0.18,
+      "volume_cm3": 3629.57,
+      "volume_above_embed_cm3": 2658.37,
+      "hull_volume_cm3": 2920.92,
+      "hull": "UCX_SM_GT_MudChunk_2_00",
+      "hull_vertices": 64,
+      "hull_triangles": 124,
+      "hull_bottom_cm": 0.0,
+      "mesh_bottom_cm": -1.62,
+      "cracks": 4,
+      "cube_sphere_n": 10,
+      "pivot_shift_cm": [
+        -0.31,
+        0.577,
+        1.62
+      ]
+    },
+    {
+      "name": "SM_GT_MudChunk_3",
+      "family": "slab",
+      "family_index": 1,
+      "height_ratio": 0.34,
+      "fbx": "Art/Export/MudChunks/SM_GT_MudChunk_3.fbx",
+      "triangles": 962,
+      "vertices": 483,
+      "size_cm": [
+        24.77,
+        30.0,
+        10.2
+      ],
+      "across_cm": 30.0,
+      "height_cm": 10.2,
+      "embed_cm": 1.836,
+      "embed_share": 0.18,
+      "volume_cm3": 3461.94,
+      "volume_above_embed_cm3": 2563.88,
+      "hull_volume_cm3": 2760.26,
+      "hull": "UCX_SM_GT_MudChunk_3_00",
+      "hull_vertices": 62,
+      "hull_triangles": 120,
+      "hull_bottom_cm": 0.0,
+      "mesh_bottom_cm": -1.836,
+      "cracks": 3,
+      "cube_sphere_n": 12,
+      "pivot_shift_cm": [
+        -0.704,
+        -0.859,
+        1.836
+      ]
+    },
+    {
+      "name": "SM_GT_MudChunk_4",
+      "family": "broken",
+      "family_index": 2,
+      "height_ratio": 0.58,
+      "fbx": "Art/Export/MudChunks/SM_GT_MudChunk_4.fbx",
+      "triangles": 806,
+      "vertices": 405,
+      "size_cm": [
+        28.79,
+        30.0,
+        17.4
+      ],
+      "across_cm": 30.0,
+      "height_cm": 17.4,
+      "embed_cm": 3.132,
+      "embed_share": 0.18,
+      "volume_cm3": 5189.1,
+      "volume_above_embed_cm3": 3595.35,
+      "hull_volume_cm3": 3798.59,
+      "hull": "UCX_SM_GT_MudChunk_4_00",
+      "hull_vertices": 59,
+      "hull_triangles": 114,
+      "hull_bottom_cm": 0.0,
+      "mesh_bottom_cm": -3.132,
+      "cracks": 3,
+      "cube_sphere_n": 14,
+      "pivot_shift_cm": [
+        0.447,
+        -1.411,
+        3.132
+      ]
+    },
+    {
+      "name": "SM_GT_MudChunk_5",
+      "family": "smear",
+      "family_index": 3,
+      "height_ratio": 0.26,
+      "fbx": "Art/Export/MudChunks/SM_GT_MudChunk_5.fbx",
+      "triangles": 904,
+      "vertices": 454,
+      "size_cm": [
+        30.0,
+        14.01,
+        7.8
+      ],
+      "across_cm": 30.0,
+      "height_cm": 7.8,
+      "embed_cm": 1.404,
+      "embed_share": 0.18,
+      "volume_cm3": 1537.84,
+      "volume_above_embed_cm3": 1180.07,
+      "hull_volume_cm3": 1309.0,
+      "hull": "UCX_SM_GT_MudChunk_5_00",
+      "hull_vertices": 64,
+      "hull_triangles": 124,
+      "hull_bottom_cm": 0.0,
+      "mesh_bottom_cm": -1.404,
+      "cracks": 2,
+      "cube_sphere_n": 10,
+      "pivot_shift_cm": [
+        -0.189,
+        0.059,
+        1.404
+      ]
+    }
+  ]
+}

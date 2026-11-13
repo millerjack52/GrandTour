@@ -1,0 +1,59 @@
+{
+  "ok": true,
+  "tag": "b2ref",
+  "strips": [
+    {
+      "strip": "MudVariants",
+      "level": "/Game/GrandTour/ArtTests/MudVariants/L_MudVariants",
+      "cameras": {
+        "Relief_Overview": {
+          "eye_m": [
+            79.21,
+            25.27,
+            27.33
+          ],
+          "look_m": [
+            95.0,
+            0.0,
+            -0.69
+          ],
+          "fov": 60.0,
+          "console": []
+        },
+        "Relief_OnFoot": {
+          "eye_m": [
+            80.0,
+            18.0,
+            2.17
+          ],
+          "look_m": [
+            91.25,
+            0.0,
+            -0.66
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Relief_Bog": {
+          "eye_m": [
+            80.0,
+            4.0,
+            1.52
+          ],
+          "look_m": [
+            87.95,
+            -8.72,
+            -0.4
+          ],
+          "fov": 65.0,
+          "console": []
+        }
+      }
+    }
+  ],
+  "images": [
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Relief_Overview.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Relief_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Relief_Bog.png"
+  ]
+}

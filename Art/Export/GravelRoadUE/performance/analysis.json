@@ -1,0 +1,66 @@
+{
+  "complete": true,
+  "scope": "Single stationary run per view; not a driving or incremental grass cost benchmark",
+  "runs": [
+    {
+      "view": "Driver",
+      "thermal": false,
+      "metrics": {
+        "GPUTime": {
+          "median": 13.6819,
+          "p95": 15.6428
+        },
+        "FrameTime": {
+          "median": 15.1863,
+          "p95": 28.6145
+        },
+        "GameThreadTime": {
+          "median": 2.1837999999999997,
+          "p95": 2.6752
+        },
+        "RenderThreadTime": {
+          "median": 15.2898,
+          "p95": 26.6929
+        },
+        "GPUMem/LocalUsedMB": {
+          "median": 3804.3164,
+          "p95": 3896.9414
+        },
+        "RHI/DrawCalls": {
+          "median": 113.0,
+          "p95": 151.0
+        }
+      }
+    },
+    {
+      "view": "Overview",
+      "thermal": false,
+      "metrics": {
+        "GPUTime": {
+          "median": 12.3378,
+          "p95": 13.9892
+        },
+        "FrameTime": {
+          "median": 5.78035,
+          "p95": 46.6692
+        },
+        "GameThreadTime": {
+          "median": 1.9066,
+          "p95": 2.3792
+        },
+        "RenderThreadTime": {
+          "median": 5.77,
+          "p95": 46.7566
+        },
+        "GPUMem/LocalUsedMB": {
+          "median": 3434.4414,
+          "p95": 3434.6289
+        },
+        "RHI/DrawCalls": {
+          "median": 114.0,
+          "p95": 117.0
+        }
+      }
+    }
+  ]
+}

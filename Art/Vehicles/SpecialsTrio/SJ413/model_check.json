@@ -1,0 +1,110 @@
+{
+  "car": "SJ413",
+  "source_revision": "R6",
+  "status": "BLENDER_VALIDATED_UNREAL_PENDING",
+  "triangles": [
+    36580,
+    34190,
+    32598
+  ],
+  "bones": 14,
+  "intersection_pairs": 207,
+  "visual_review": [
+    "front",
+    "rear",
+    "side",
+    "cockpit",
+    "lod2",
+    "articulation",
+    "rear_open"
+  ],
+  "fbx_validation": {
+    "LOD1": {
+      "triangles": 34190,
+      "ratio_requested": 0.58,
+      "weights": "PASS"
+    },
+    "LOD2": {
+      "triangles": 32598,
+      "ratio_requested": 0.3,
+      "weights": "PASS"
+    },
+    "roundtrip_LOD0": {
+      "status": "PASS",
+      "triangles": 36580,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 203.00000000000057,
+      "track_cm": 130.00000000000404,
+      "bounds_cm": [
+        369.6549987792969,
+        181.50000762939453,
+        166.99799617822282
+      ],
+      "bones": 14,
+      "fbx_sha256": "abc4bacda373788b32cbaec413374217fe716b5dc313c2d09066db67fcfbdbaa"
+    },
+    "roundtrip_LOD1": {
+      "status": "PASS",
+      "triangles": 34190,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 203.00000000000057,
+      "track_cm": 130.00000000000404,
+      "bounds_cm": [
+        369.6549987792969,
+        181.50000762939453,
+        166.99799617822282
+      ],
+      "bones": 14,
+      "fbx_sha256": "632140d99bd73ed62426417c4cf6be62340f48bff0cce779682fa532bcce177b"
+    },
+    "roundtrip_LOD2": {
+      "status": "PASS",
+      "triangles": 32598,
+      "meshes": 4,
+      "material_slots": 4,
+      "wheelbase_cm": 203.00000000000057,
+      "track_cm": 130.00000000000404,
+      "bounds_cm": [
+        369.6549987792969,
+        181.50000762939453,
+        166.99799617822282
+      ],
+      "bones": 14,
+      "fbx_sha256": "b4c4a15caa1bfbd66339646de56230aafd55fd4214f4e84cc3ef6f8f098e90fd"
+    },
+    "collision_template": {
+      "body_boxes": [
+        {
+          "bone": "Root",
+          "centre_cm": [
+            0.0,
+            0.0,
+            76.25
+          ],
+          "size_cm": [
+            308.0,
+            134.0,
+            54.49999999999999
+          ]
+        },
+        {
+          "bone": "Root",
+          "centre_cm": [
+            -62.0,
+            4.680870006268378e-06,
+            135.25
+          ],
+          "size_cm": [
+            180.0,
+            120.0,
+            63.5
+          ]
+        }
+      ],
+      "status": "Blender template only; fit and suspension contact require Unreal"
+    }
+  },
+  "limitations": "Engine import, Chaos driving, instrument bindings, steering/suspension clearance and performance remain untested."
+}

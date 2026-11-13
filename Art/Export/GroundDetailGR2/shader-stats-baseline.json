@@ -1,0 +1,1248 @@
+{
+  "ok": true,
+  "tag": "baseline",
+  "rows": [
+    {
+      "role": "L_MudVariants",
+      "material": "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape",
+      "ground_detail": "today",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_MudDrive",
+      "material": "/Game/GrandTour/ArtTests/LiveMudDrive/M_LiveLandscape",
+      "ground_detail": "today",
+      "pixel_instructions": 496,
+      "vertex_instructions": 155,
+      "samplers": 8,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "L_GravelDeform",
+      "material": "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape",
+      "ground_detail": "today",
+      "pixel_instructions": 201,
+      "vertex_instructions": 155,
+      "samplers": 3,
+      "pixel_texture_samples": 3,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    },
+    {
+      "role": "The Hide and the legs",
+      "material": "/Game/GrandTour/Materials/M_GT_Landscape",
+      "ground_detail": null,
+      "pixel_instructions": 323,
+      "vertex_instructions": 155,
+      "samplers": 6,
+      "pixel_texture_samples": 12,
+      "vertex_texture_samples": 0,
+      "interpolator_scalars": 0
+    }
+  ],
+  "graphs": {
+    "/Game/GrandTour/ArtTests/MudVariants/M_VariantsLandscape": {
+      "tangent_space_normal": false,
+      "outputs": {
+        "MP_BASE_COLOR": [
+          "MaterialExpressionMaterialFunctionCall desc=Weather:call (MaterialExpressionMaterialFunctionCall_1)",
+          "BaseColor"
+        ],
+        "MP_NORMAL": [
+          "MaterialExpressionMaterialFunctionCall desc=MudCover:call (MaterialExpressionMaterialFunctionCall_0)",
+          "Normal"
+        ],
+        "MP_ROUGHNESS": [
+          "MaterialExpressionCustom desc=LiveApronRoughness (MaterialExpressionCustom_5)",
+          ""
+        ],
+        "MP_AMBIENT_OCCLUSION": [
+          "MaterialExpressionMaterialFunctionCall desc=MudCover:call (MaterialExpressionMaterialFunctionCall_0)",
+          "AmbientOcclusion"
+        ],
+        "MP_OPACITY_MASK": [
+          "MaterialExpressionCustom desc=Landscape:hole (MaterialExpressionCustom_3)",
+          ""
+        ],
+        "MP_SPECULAR": null,
+        "MP_METALLIC": null
+      },
+      "blends": {
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:colour (MaterialExpressionLandscapeLayerBlend_0)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": null,
+          "Layer Scrub": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadow (MaterialExpressionMultiply_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadowlush (MaterialExpressionMultiply_2)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadowdry (MaterialExpressionMultiply_3)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forest (MaterialExpressionMultiply_4)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestbeech (MaterialExpressionMultiply_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestbirch (MaterialExpressionMultiply_6)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestfir (MaterialExpressionMultiply_7)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestoak (MaterialExpressionMultiply_8)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_scree (MaterialExpressionMultiply_9)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_alpine (MaterialExpressionMultiply_10)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionMultiply desc=Landscape:graded_thicket (MaterialExpressionMultiply_11)",
+            "n/a (TypeError)"
+          ]
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:roughness (MaterialExpressionLandscapeLayerBlend_1)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": null,
+          "Layer Scrub": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ]
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:porosity (MaterialExpressionLandscapeLayerBlend_2)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": null,
+          "Layer Mud": null,
+          "Layer Snow": null,
+          "Layer Scrub": null,
+          "Layer Bog": null,
+          "Layer OW_Meadow": null,
+          "Layer OW_MeadowLush": null,
+          "Layer OW_MeadowDry": null,
+          "Layer OW_Forest": null,
+          "Layer OW_ForestBeech": null,
+          "Layer OW_ForestBirch": null,
+          "Layer OW_ForestFir": null,
+          "Layer OW_ForestOak": null,
+          "Layer OW_Scree": null,
+          "Layer OW_Alpine": null,
+          "Layer Thicket": null
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:normal (MaterialExpressionLandscapeLayerBlend_3)": {
+          "Layer Tarmac": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Dirt": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Scrub": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ]
+        }
+      },
+      "customs": {
+        "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)": {
+          "inputs": [
+            "WorldPos",
+            "VertexNormal",
+            "DiffTex",
+            "NormTex",
+            "RoughTex",
+            "TileCm",
+            "MeanColor",
+            "MudColor",
+            "BogColor",
+            "MudRough",
+            "BogRough",
+            "RoughVary",
+            "RoughMin",
+            "RoughMax",
+            "NormalScale",
+            "NoiseFineCm",
+            "NoiseCoarseCm",
+            "NoiseTint",
+            "NoiseRough",
+            "NoiseWarp",
+            "TriSharp",
+            "ClayC",
+            "ClayN",
+            "WorkC",
+            "WorkN",
+            "BogC",
+            "BogN",
+            "BogTileCm",
+            "BogTile2Cm",
+            "BogTile2Deg",
+            "BogMixCm",
+            "BogBlendSharp",
+            "FarGlossNearCm",
+            "FarGlossFarCm",
+            "FarGlossRough",
+            "CamPos",
+            "FarFade",
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "PV0",
+            "PV1",
+            "PV2",
+            "PV3",
+            "ApronCm",
+            "MudPBR",
+            "MudCavityTint",
+            "BogORH"
+          ],
+          "outputs": [
+            "BogAlbedo",
+            "Normal",
+            "MudRoughOut",
+            "BogRoughOut",
+            "Apron",
+            "ApronColor",
+            "ApronNormal",
+            "ApronRough"
+          ],
+          "code_chars": 7190
+        },
+        "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)": {
+          "inputs": [
+            "WorldPos",
+            "VertexNormal",
+            "GrassDiff",
+            "GrassRough",
+            "DirtDiff",
+            "DirtRough",
+            "GrassTileCm",
+            "DirtTileCm",
+            "GrassTint",
+            "DirtTint",
+            "TriSharp",
+            "RoadC",
+            "LaneC",
+            "EdgeClay",
+            "ApronW",
+            "ApronC"
+          ],
+          "outputs": [
+            "DirtAlbedo",
+            "GrassRoughOut",
+            "DirtRoughOut",
+            "ClayBlend"
+          ],
+          "code_chars": 811
+        },
+        "MaterialExpressionCustom desc=Landscape:normalsafe (MaterialExpressionCustom_2)": {
+          "inputs": [
+            "N",
+            "VN"
+          ],
+          "outputs": [],
+          "code_chars": 81
+        },
+        "MaterialExpressionCustom desc=Landscape:hole (MaterialExpressionCustom_3)": {
+          "inputs": [
+            "WorldPos",
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "HoleInsetCm"
+          ],
+          "outputs": [],
+          "code_chars": 396
+        },
+        "MaterialExpressionCustom desc=LiveApronNormal (MaterialExpressionCustom_4)": {
+          "inputs": [
+            "None",
+            "Old",
+            "Blend",
+            "Clay"
+          ],
+          "outputs": [],
+          "code_chars": 39
+        },
+        "MaterialExpressionCustom desc=LiveApronRoughness (MaterialExpressionCustom_5)": {
+          "inputs": [
+            "None",
+            "Old",
+            "Blend",
+            "Rough"
+          ],
+          "outputs": [],
+          "code_chars": 29
+        },
+        "MaterialExpressionCustom desc=MudCover:rainfloor (MaterialExpressionCustom_6)": {
+          "inputs": [
+            "R",
+            "Mask",
+            "Puddle"
+          ],
+          "outputs": [],
+          "code_chars": 73
+        }
+      },
+      "expressions": 155
+    },
+    "/Game/GrandTour/ArtTests/LiveMudDrive/M_LiveLandscape": {
+      "tangent_space_normal": false,
+      "outputs": {
+        "MP_BASE_COLOR": [
+          "MaterialExpressionMaterialFunctionCall desc=Weather:call (MaterialExpressionMaterialFunctionCall_1)",
+          "BaseColor"
+        ],
+        "MP_NORMAL": [
+          "MaterialExpressionMaterialFunctionCall desc=MudCover:call (MaterialExpressionMaterialFunctionCall_0)",
+          "Normal"
+        ],
+        "MP_ROUGHNESS": [
+          "MaterialExpressionCustom desc=LiveApronRoughness (MaterialExpressionCustom_5)",
+          ""
+        ],
+        "MP_AMBIENT_OCCLUSION": [
+          "MaterialExpressionMaterialFunctionCall desc=MudCover:call (MaterialExpressionMaterialFunctionCall_0)",
+          "AmbientOcclusion"
+        ],
+        "MP_OPACITY_MASK": [
+          "MaterialExpressionCustom desc=Landscape:hole (MaterialExpressionCustom_3)",
+          ""
+        ],
+        "MP_SPECULAR": null,
+        "MP_METALLIC": null
+      },
+      "blends": {
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:colour (MaterialExpressionLandscapeLayerBlend_0)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": null,
+          "Layer Scrub": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadow (MaterialExpressionMultiply_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadowlush (MaterialExpressionMultiply_2)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadowdry (MaterialExpressionMultiply_3)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forest (MaterialExpressionMultiply_4)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestbeech (MaterialExpressionMultiply_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestbirch (MaterialExpressionMultiply_6)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestfir (MaterialExpressionMultiply_7)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestoak (MaterialExpressionMultiply_8)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_scree (MaterialExpressionMultiply_9)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_alpine (MaterialExpressionMultiply_10)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionMultiply desc=Landscape:graded_thicket (MaterialExpressionMultiply_11)",
+            "n/a (TypeError)"
+          ]
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:roughness (MaterialExpressionLandscapeLayerBlend_1)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": null,
+          "Layer Scrub": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ]
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:porosity (MaterialExpressionLandscapeLayerBlend_2)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": null,
+          "Layer Mud": null,
+          "Layer Snow": null,
+          "Layer Scrub": null,
+          "Layer Bog": null,
+          "Layer OW_Meadow": null,
+          "Layer OW_MeadowLush": null,
+          "Layer OW_MeadowDry": null,
+          "Layer OW_Forest": null,
+          "Layer OW_ForestBeech": null,
+          "Layer OW_ForestBirch": null,
+          "Layer OW_ForestFir": null,
+          "Layer OW_ForestOak": null,
+          "Layer OW_Scree": null,
+          "Layer OW_Alpine": null,
+          "Layer Thicket": null
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:normal (MaterialExpressionLandscapeLayerBlend_3)": {
+          "Layer Tarmac": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Dirt": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Scrub": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ]
+        }
+      },
+      "customs": {
+        "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)": {
+          "inputs": [
+            "WorldPos",
+            "VertexNormal",
+            "DiffTex",
+            "NormTex",
+            "RoughTex",
+            "TileCm",
+            "MeanColor",
+            "MudColor",
+            "BogColor",
+            "MudRough",
+            "BogRough",
+            "RoughVary",
+            "RoughMin",
+            "RoughMax",
+            "NormalScale",
+            "NoiseFineCm",
+            "NoiseCoarseCm",
+            "NoiseTint",
+            "NoiseRough",
+            "NoiseWarp",
+            "TriSharp",
+            "ClayC",
+            "ClayN",
+            "WorkC",
+            "WorkN",
+            "BogC",
+            "BogN",
+            "BogTileCm",
+            "BogTile2Cm",
+            "BogTile2Deg",
+            "BogMixCm",
+            "BogBlendSharp",
+            "FarGlossNearCm",
+            "FarGlossFarCm",
+            "FarGlossRough",
+            "CamPos",
+            "FarFade",
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "PV0",
+            "PV1",
+            "PV2",
+            "PV3",
+            "ApronCm",
+            "MudPBR",
+            "MudCavityTint",
+            "BogORH"
+          ],
+          "outputs": [
+            "BogAlbedo",
+            "Normal",
+            "MudRoughOut",
+            "BogRoughOut",
+            "Apron",
+            "ApronColor",
+            "ApronNormal",
+            "ApronRough"
+          ],
+          "code_chars": 7190
+        },
+        "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)": {
+          "inputs": [
+            "WorldPos",
+            "VertexNormal",
+            "GrassDiff",
+            "GrassRough",
+            "DirtDiff",
+            "DirtRough",
+            "GrassTileCm",
+            "DirtTileCm",
+            "GrassTint",
+            "DirtTint",
+            "TriSharp",
+            "RoadC",
+            "LaneC",
+            "EdgeClay",
+            "ApronW",
+            "ApronC"
+          ],
+          "outputs": [
+            "DirtAlbedo",
+            "GrassRoughOut",
+            "DirtRoughOut",
+            "ClayBlend"
+          ],
+          "code_chars": 811
+        },
+        "MaterialExpressionCustom desc=Landscape:normalsafe (MaterialExpressionCustom_2)": {
+          "inputs": [
+            "N",
+            "VN"
+          ],
+          "outputs": [],
+          "code_chars": 81
+        },
+        "MaterialExpressionCustom desc=Landscape:hole (MaterialExpressionCustom_3)": {
+          "inputs": [
+            "WorldPos",
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "HoleInsetCm"
+          ],
+          "outputs": [],
+          "code_chars": 396
+        },
+        "MaterialExpressionCustom desc=LiveApronNormal (MaterialExpressionCustom_4)": {
+          "inputs": [
+            "Old",
+            "Clay",
+            "Blend"
+          ],
+          "outputs": [],
+          "code_chars": 39
+        },
+        "MaterialExpressionCustom desc=LiveApronRoughness (MaterialExpressionCustom_5)": {
+          "inputs": [
+            "Old",
+            "Blend",
+            "Rough"
+          ],
+          "outputs": [],
+          "code_chars": 29
+        },
+        "MaterialExpressionCustom desc=MudCover:rainfloor (MaterialExpressionCustom_6)": {
+          "inputs": [
+            "R",
+            "Mask",
+            "Puddle"
+          ],
+          "outputs": [],
+          "code_chars": 73
+        }
+      },
+      "expressions": 155
+    },
+    "/Game/GrandTour/ArtTests/DeformableGravel/M_GravelLandscape": {
+      "tangent_space_normal": false,
+      "outputs": {
+        "MP_BASE_COLOR": [
+          "MaterialExpressionLandscapeLayerBlend desc=Gravel:2100 (MaterialExpressionLandscapeLayerBlend_5)",
+          ""
+        ],
+        "MP_NORMAL": [
+          "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+          "Normal"
+        ],
+        "MP_ROUGHNESS": [
+          "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+          "Rough"
+        ],
+        "MP_AMBIENT_OCCLUSION": [
+          "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+          "AO"
+        ],
+        "MP_OPACITY_MASK": [
+          "MaterialExpressionCustom desc=Landscape:hole (MaterialExpressionCustom_3)",
+          ""
+        ],
+        "MP_SPECULAR": null,
+        "MP_METALLIC": null
+      },
+      "blends": {
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:colour (MaterialExpressionLandscapeLayerBlend_0)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": null,
+          "Layer Scrub": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadow (MaterialExpressionMultiply_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadowlush (MaterialExpressionMultiply_2)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_meadowdry (MaterialExpressionMultiply_3)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forest (MaterialExpressionMultiply_4)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestbeech (MaterialExpressionMultiply_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestbirch (MaterialExpressionMultiply_6)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestfir (MaterialExpressionMultiply_7)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_forestoak (MaterialExpressionMultiply_8)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_scree (MaterialExpressionMultiply_9)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionMultiply desc=Landscape:graded_ow_alpine (MaterialExpressionMultiply_10)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionMultiply desc=Landscape:graded_thicket (MaterialExpressionMultiply_11)",
+            "n/a (TypeError)"
+          ]
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:roughness (MaterialExpressionLandscapeLayerBlend_1)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": null,
+          "Layer Scrub": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)",
+            "n/a (TypeError)"
+          ]
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:porosity (MaterialExpressionLandscapeLayerBlend_2)": {
+          "Layer Tarmac": null,
+          "Layer Dirt": null,
+          "Layer Mud": null,
+          "Layer Snow": null,
+          "Layer Scrub": null,
+          "Layer Bog": null,
+          "Layer OW_Meadow": null,
+          "Layer OW_MeadowLush": null,
+          "Layer OW_MeadowDry": null,
+          "Layer OW_Forest": null,
+          "Layer OW_ForestBeech": null,
+          "Layer OW_ForestBirch": null,
+          "Layer OW_ForestFir": null,
+          "Layer OW_ForestOak": null,
+          "Layer OW_Scree": null,
+          "Layer OW_Alpine": null,
+          "Layer Thicket": null
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Landscape:normal (MaterialExpressionLandscapeLayerBlend_3)": {
+          "Layer Tarmac": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Dirt": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Scrub": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Meadow": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowLush": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_MeadowDry": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Forest": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBeech": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestBirch": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestFir": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_ForestOak": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Scree": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer OW_Alpine": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ],
+          "Layer Thicket": [
+            "MaterialExpressionVertexNormalWS desc=Landscape:vertexnormal (MaterialExpressionVertexNormalWS_0)",
+            "n/a (TypeError)"
+          ]
+        },
+        "MaterialExpressionLandscapeLayerBlend desc=Gravel:2100 (MaterialExpressionLandscapeLayerBlend_5)": {
+          "Layer Tarmac": [
+            "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer Dirt": [
+            "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer Mud": [
+            "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer Snow": [
+            "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer Scrub": [
+            "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+            "n/a (TypeError)"
+          ],
+          "Layer Bog": [
+            "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)",
+            "n/a (TypeError)"
+          ]
+        }
+      },
+      "customs": {
+        "MaterialExpressionCustom desc=Landscape:mudtex (MaterialExpressionCustom_0)": {
+          "inputs": [
+            "WorldPos",
+            "VertexNormal",
+            "DiffTex",
+            "NormTex",
+            "RoughTex",
+            "TileCm",
+            "MeanColor",
+            "MudColor",
+            "BogColor",
+            "MudRough",
+            "BogRough",
+            "RoughVary",
+            "RoughMin",
+            "RoughMax",
+            "NormalScale",
+            "NoiseFineCm",
+            "NoiseCoarseCm",
+            "NoiseTint",
+            "NoiseRough",
+            "NoiseWarp",
+            "TriSharp",
+            "ClayC",
+            "ClayN",
+            "WorkC",
+            "WorkN",
+            "BogC",
+            "BogN",
+            "BogR",
+            "BogH",
+            "BogTileCm",
+            "BogTile2Cm",
+            "BogTile2Deg",
+            "BogMixCm",
+            "BogBlendSharp",
+            "FarGlossNearCm",
+            "FarGlossFarCm",
+            "FarGlossRough",
+            "CamPos",
+            "FarFade",
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "PV0",
+            "PV1",
+            "PV2",
+            "PV3",
+            "ApronCm"
+          ],
+          "outputs": [
+            "BogAlbedo",
+            "Normal",
+            "MudRoughOut",
+            "BogRoughOut",
+            "Apron",
+            "ApronColor",
+            "ApronNormal",
+            "ApronRough"
+          ],
+          "code_chars": 6269
+        },
+        "MaterialExpressionCustom desc=Landscape:groundtex (MaterialExpressionCustom_1)": {
+          "inputs": [
+            "WorldPos",
+            "VertexNormal",
+            "GrassDiff",
+            "GrassRough",
+            "DirtDiff",
+            "DirtRough",
+            "GrassTileCm",
+            "DirtTileCm",
+            "GrassTint",
+            "DirtTint",
+            "TriSharp"
+          ],
+          "outputs": [
+            "DirtAlbedo",
+            "GrassRoughOut",
+            "DirtRoughOut"
+          ],
+          "code_chars": 1473
+        },
+        "MaterialExpressionCustom desc=Landscape:normalsafe (MaterialExpressionCustom_2)": {
+          "inputs": [
+            "N",
+            "VN"
+          ],
+          "outputs": [],
+          "code_chars": 81
+        },
+        "MaterialExpressionCustom desc=Landscape:hole (MaterialExpressionCustom_3)": {
+          "inputs": [
+            "WorldPos",
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "HoleInsetCm"
+          ],
+          "outputs": [],
+          "code_chars": 396
+        },
+        "MaterialExpressionCustom desc=Gravel:560 (MaterialExpressionCustom_5)": {
+          "inputs": [
+            "WorldPos",
+            "VertexNormal",
+            "Wetness",
+            "GC",
+            "GN",
+            "GO",
+            "GravelTileCm",
+            "GravelNormalStrength",
+            "GravelAOStrength",
+            "GravelCavityTint",
+            "GravelAlbedoScale",
+            "GravelWetDarken",
+            "GravelWetRough"
+          ],
+          "outputs": [
+            "Normal",
+            "Rough",
+            "AO"
+          ],
+          "code_chars": 1381
+        }
+      },
+      "expressions": 161
+    }
+  },
+  "mpc_track_paint": {
+    "scalars": [
+      "TrackDepthCm",
+      "PatchCount",
+      "PatchVariant0",
+      "PatchVariant1",
+      "PatchVariant2",
+      "PatchVariant3",
+      "MudCover",
+      "GrassMud",
+      "MudPBR",
+      "MudPOM",
+      "MudPOMShadow",
+      "GravelPOM",
+      "GravelDebug"
+    ],
+    "vectors": 5
+  }
+}

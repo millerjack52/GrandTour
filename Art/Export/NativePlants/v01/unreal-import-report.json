@@ -1,0 +1,5060 @@
+{
+  "ok": true,
+  "destination": "/Game/GrandTour/Environment/NativePlants/v01",
+  "meshes": [
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "Beech_Mature",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Beech_Mature",
+      "lods": 3,
+      "manifest_tris": [
+        26804,
+        7658,
+        1920
+      ],
+      "unreal_verts": [
+        46414,
+        13718,
+        4814
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          -3.05,
+          63.77,
+          1096.99
+        ],
+        "extent": [
+          579.1,
+          561.88,
+          1102.99
+        ]
+      },
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 3,
+      "manifest_hulls": 3,
+      "size_m": [
+        11.582,
+        11.2376,
+        22.0598
+      ],
+      "manifest_size_m": [
+        11.582,
+        11.2376,
+        22.0598
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "Beech_Pole",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Beech_Pole",
+      "lods": 3,
+      "manifest_tris": [
+        5746,
+        1870,
+        576
+      ],
+      "unreal_verts": [
+        9879,
+        3412,
+        1551
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          9.64,
+          22.41,
+          597.31
+        ],
+        "extent": [
+          165.45,
+          159.48,
+          603.31
+        ]
+      },
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        3.309,
+        3.1895,
+        12.0663
+      ],
+      "manifest_size_m": [
+        3.309,
+        3.1895,
+        12.0663
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "Beech_Edge",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Beech_Edge",
+      "lods": 3,
+      "manifest_tris": [
+        23026,
+        6714,
+        1920
+      ],
+      "unreal_verts": [
+        40838,
+        12208,
+        5130
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          290.59,
+          39.28,
+          795.89
+        ],
+        "extent": [
+          475.61,
+          449.24,
+          801.89
+        ]
+      },
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 3,
+      "manifest_hulls": 3,
+      "size_m": [
+        9.5121,
+        8.9847,
+        16.0377
+      ],
+      "manifest_size_m": [
+        9.5121,
+        8.9847,
+        16.0377
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "DeadSpar",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_DeadSpar",
+      "lods": 3,
+      "manifest_tris": [
+        766,
+        230,
+        97
+      ],
+      "unreal_verts": [
+        530,
+        198,
+        111
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          75.26,
+          26.95,
+          696.91
+        ],
+        "extent": [
+          181.92,
+          189.81,
+          702.91
+        ]
+      },
+      "screens": [
+        1.0,
+        0.22,
+        0.08
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        3.6384,
+        3.7962,
+        14.0583
+      ],
+      "manifest_size_m": [
+        3.6384,
+        3.7962,
+        14.0583
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "CrownFern_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_CrownFern_A",
+      "lods": 3,
+      "manifest_tris": [
+        1943,
+        618,
+        150
+      ],
+      "unreal_verts": [
+        3885,
+        1276,
+        320
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          0.69,
+          -0.84,
+          22.16
+        ],
+        "extent": [
+          53.8,
+          53.42,
+          28.16
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.0759,
+        1.0684,
+        0.5632
+      ],
+      "manifest_size_m": [
+        1.0759,
+        1.0684,
+        0.5632
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "CrownFern_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_CrownFern_B",
+      "lods": 3,
+      "manifest_tris": [
+        2927,
+        888,
+        213
+      ],
+      "unreal_verts": [
+        5853,
+        1834,
+        455
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          -3.36,
+          1.8,
+          32.07
+        ],
+        "extent": [
+          75.85,
+          73.77,
+          38.07
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.517,
+        1.4754,
+        0.7614
+      ],
+      "manifest_size_m": [
+        1.517,
+        1.4754,
+        0.7614
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "CrownFern_C",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_CrownFern_C",
+      "lods": 3,
+      "manifest_tris": [
+        2975,
+        513,
+        241
+      ],
+      "unreal_verts": [
+        5949,
+        1059,
+        515
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          -3.37,
+          -3.52,
+          39.89
+        ],
+        "extent": [
+          96.14,
+          92.23,
+          45.89
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.9228,
+        1.8447,
+        0.9178
+      ],
+      "manifest_size_m": [
+        1.9228,
+        1.8447,
+        0.9178
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "TreeFern_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_TreeFern_A",
+      "lods": 3,
+      "manifest_tris": [
+        7818,
+        2474,
+        534
+      ],
+      "unreal_verts": [
+        15709,
+        4651,
+        1004
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          -5.62,
+          1.48,
+          220.98
+        ],
+        "extent": [
+          218.83,
+          208.96,
+          226.98
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        4.3765,
+        4.1792,
+        4.5396
+      ],
+      "manifest_size_m": [
+        4.3765,
+        4.1792,
+        4.5396
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "TreeFern_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_TreeFern_B",
+      "lods": 3,
+      "manifest_tris": [
+        8780,
+        2836,
+        616
+      ],
+      "unreal_verts": [
+        17491,
+        5299,
+        1159
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          96.76,
+          56.4,
+          304.66
+        ],
+        "extent": [
+          267.75,
+          253.88,
+          310.66
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        5.3551,
+        5.0775,
+        6.2133
+      ],
+      "manifest_size_m": [
+        5.3551,
+        5.0775,
+        6.2133
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "bush",
+      "skipped": true,
+      "name": "TreeFern_Young",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_TreeFern_Young",
+      "lods": 3,
+      "manifest_tris": [
+        3683,
+        1121,
+        166
+      ],
+      "unreal_verts": [
+        7800,
+        2223,
+        336
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          3.25,
+          -7.08,
+          45.49
+        ],
+        "extent": [
+          149.36,
+          148.8,
+          51.49
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        2.9871,
+        2.9761,
+        1.0297
+      ],
+      "manifest_size_m": [
+        2.9871,
+        2.9761,
+        1.0297
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Harakeke_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Harakeke_A",
+      "lods": 3,
+      "manifest_tris": [
+        2376,
+        504,
+        180
+      ],
+      "unreal_verts": [
+        4856,
+        1080,
+        396
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          8.35,
+          12.38,
+          78.47
+        ],
+        "extent": [
+          98.36,
+          85.24,
+          84.47
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.9671,
+        1.7047,
+        1.6895
+      ],
+      "manifest_size_m": [
+        1.9671,
+        1.7047,
+        1.6895
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Harakeke_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Harakeke_B",
+      "lods": 3,
+      "manifest_tris": [
+        4426,
+        1535,
+        384
+      ],
+      "unreal_verts": [
+        9066,
+        3167,
+        818
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          3.18,
+          -1.89,
+          167.8
+        ],
+        "extent": [
+          117.56,
+          114.65,
+          173.8
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        2.3512,
+        2.293,
+        3.476
+      ],
+      "manifest_size_m": [
+        2.3512,
+        2.293,
+        3.476
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Coprosma_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Coprosma_A",
+      "lods": 3,
+      "manifest_tris": [
+        8464,
+        2568,
+        712
+      ],
+      "unreal_verts": [
+        16928,
+        5136,
+        1424
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          0.8,
+          2.63,
+          60.11
+        ],
+        "extent": [
+          76.11,
+          76.19,
+          66.11
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.5222,
+        1.5238,
+        1.3223
+      ],
+      "manifest_size_m": [
+        1.5222,
+        1.5238,
+        1.3223
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Coprosma_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Coprosma_B",
+      "lods": 3,
+      "manifest_tris": [
+        9340,
+        2840,
+        684
+      ],
+      "unreal_verts": [
+        18680,
+        5680,
+        1368
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          5.05,
+          -2.56,
+          101.44
+        ],
+        "extent": [
+          117.73,
+          115.95,
+          107.44
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        2.3545,
+        2.3189,
+        2.1488
+      ],
+      "manifest_size_m": [
+        2.3545,
+        2.3189,
+        2.1488
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Matagouri_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Matagouri_A",
+      "lods": 3,
+      "manifest_tris": [
+        9598,
+        2880,
+        534
+      ],
+      "unreal_verts": [
+        22016,
+        6492,
+        1068
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          1.8,
+          2.85,
+          44.92
+        ],
+        "extent": [
+          81.8,
+          72.44,
+          50.92
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.6359,
+        1.4489,
+        1.0183
+      ],
+      "manifest_size_m": [
+        1.6359,
+        1.4489,
+        1.0183
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Matagouri_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Matagouri_B",
+      "lods": 3,
+      "manifest_tris": [
+        9598,
+        2880,
+        583
+      ],
+      "unreal_verts": [
+        14643,
+        5194,
+        1154
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          11.69,
+          -0.21,
+          116.91
+        ],
+        "extent": [
+          131.68,
+          123.46,
+          122.91
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        2.6336,
+        2.4692,
+        2.4582
+      ],
+      "manifest_size_m": [
+        2.6336,
+        2.4692,
+        2.4582
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "TiKouka_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_TiKouka_A",
+      "lods": 3,
+      "manifest_tris": [
+        7817,
+        2878,
+        766
+      ],
+      "unreal_verts": [
+        15614,
+        5984,
+        1692
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          -2.7,
+          5.18,
+          254.19
+        ],
+        "extent": [
+          144.46,
+          129.9,
+          260.19
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        2.8893,
+        2.5979,
+        5.2038
+      ],
+      "manifest_size_m": [
+        2.8893,
+        2.5979,
+        5.2038
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "TiKouka_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_TiKouka_B",
+      "lods": 3,
+      "manifest_tris": [
+        11109,
+        2879,
+        767
+      ],
+      "unreal_verts": [
+        22248,
+        5674,
+        1615
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          -12.39,
+          18.44,
+          378.56
+        ],
+        "extent": [
+          230.78,
+          213.95,
+          384.56
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        4.6156,
+        4.2791,
+        7.6911
+      ],
+      "manifest_size_m": [
+        4.6156,
+        4.2791,
+        7.6911
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Kanuka_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Kanuka_A",
+      "lods": 3,
+      "manifest_tris": [
+        9992,
+        4800,
+        1152
+      ],
+      "unreal_verts": [
+        17156,
+        8912,
+        2156
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          4.8,
+          5.22,
+          302.73
+        ],
+        "extent": [
+          93.75,
+          78.44,
+          308.73
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        1.8749,
+        1.5687,
+        6.1746
+      ],
+      "manifest_size_m": [
+        1.8749,
+        1.5687,
+        6.1746
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "open",
+      "skipped": true,
+      "name": "Kanuka_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Kanuka_B",
+      "lods": 3,
+      "manifest_tris": [
+        12870,
+        4796,
+        1152
+      ],
+      "unreal_verts": [
+        25457,
+        9374,
+        2138
+      ],
+      "collision": null,
+      "bounds": {
+        "origin": [
+          -3.27,
+          -12.49,
+          533.7
+        ],
+        "extent": [
+          198.06,
+          169.99,
+          539.7
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        3.9612,
+        3.3997,
+        10.794
+      ],
+      "manifest_size_m": [
+        3.9612,
+        3.3997,
+        10.794
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Kiokio_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Kiokio_A",
+      "lods": 3,
+      "manifest_tris": [
+        2232,
+        443,
+        108
+      ],
+      "unreal_verts": [
+        4462,
+        913,
+        230
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -4.32,
+          -1.05,
+          38.63
+        ],
+        "extent": [
+          82.55,
+          85.28,
+          44.63
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.6509,
+        1.7057,
+        0.8926
+      ],
+      "manifest_size_m": [
+        1.6509,
+        1.7057,
+        0.8926
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Kiokio_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Kiokio_B",
+      "lods": 3,
+      "manifest_tris": [
+        3396,
+        563,
+        136
+      ],
+      "unreal_verts": [
+        6790,
+        1161,
+        290
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -1.25,
+          0.84,
+          61.14
+        ],
+        "extent": [
+          134.92,
+          127.22,
+          67.14
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        2.6984,
+        2.5443,
+        1.3427
+      ],
+      "manifest_size_m": [
+        2.6984,
+        2.5443,
+        1.3427
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Log_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Log_A",
+      "lods": 3,
+      "manifest_tris": [
+        2739,
+        769,
+        186
+      ],
+      "unreal_verts": [
+        1615,
+        519,
+        164
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 2)",
+      "bounds": {
+        "origin": [
+          30.04,
+          8.3,
+          41.86
+        ],
+        "extent": [
+          409.54,
+          61.27,
+          47.86
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        8.1908,
+        1.2253,
+        0.9573
+      ],
+      "manifest_size_m": [
+        8.1908,
+        1.2253,
+        0.9573
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Log_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Log_B",
+      "lods": 3,
+      "manifest_tris": [
+        1943,
+        573,
+        174
+      ],
+      "unreal_verts": [
+        1254,
+        427,
+        161
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 2)",
+      "bounds": {
+        "origin": [
+          0.52,
+          12.31,
+          38.82
+        ],
+        "extent": [
+          252.84,
+          50.95,
+          44.82
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        5.0569,
+        1.019,
+        0.8964
+      ],
+      "manifest_size_m": [
+        5.0569,
+        1.019,
+        0.8964
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Stump_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Stump_A",
+      "lods": 3,
+      "manifest_tris": [
+        1404,
+        452,
+        134
+      ],
+      "unreal_verts": [
+        867,
+        323,
+        123
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          -1.15,
+          -0.75,
+          57.63
+        ],
+        "extent": [
+          105.48,
+          105.36,
+          63.63
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        2.1097,
+        2.1073,
+        1.2725
+      ],
+      "manifest_size_m": [
+        2.1097,
+        2.1073,
+        1.2725
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "MossHummock_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_MossHummock_A",
+      "lods": 3,
+      "manifest_tris": [
+        690,
+        234,
+        56
+      ],
+      "unreal_verts": [
+        2008,
+        666,
+        152
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          1.42,
+          1.51,
+          8.79
+        ],
+        "extent": [
+          36.19,
+          31.28,
+          14.79
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.7238,
+        0.6256,
+        0.2958
+      ],
+      "manifest_size_m": [
+        0.7238,
+        0.6256,
+        0.2958
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "MossHummock_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_MossHummock_B",
+      "lods": 3,
+      "manifest_tris": [
+        690,
+        234,
+        56
+      ],
+      "unreal_verts": [
+        2010,
+        666,
+        152
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          2.65,
+          -4.73,
+          15.05
+        ],
+        "extent": [
+          53.24,
+          61.23,
+          21.05
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.0648,
+        1.2246,
+        0.4209
+      ],
+      "manifest_size_m": [
+        1.0648,
+        1.2246,
+        0.4209
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Cobble_Cluster_S",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Cobble_Cluster_S",
+      "lods": 3,
+      "manifest_tris": [
+        529,
+        190,
+        54
+      ],
+      "unreal_verts": [
+        384,
+        165,
+        61
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          0.09,
+          -0.5,
+          0.05
+        ],
+        "extent": [
+          19.36,
+          19.83,
+          6.05
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.3872,
+        0.3967,
+        0.1209
+      ],
+      "manifest_size_m": [
+        0.3872,
+        0.3967,
+        0.1209
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Cobble_Cluster_M",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Cobble_Cluster_M",
+      "lods": 3,
+      "manifest_tris": [
+        538,
+        155,
+        52
+      ],
+      "unreal_verts": [
+        423,
+        168,
+        61
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          0.98,
+          -0.24,
+          2.04
+        ],
+        "extent": [
+          39.52,
+          40.46,
+          8.04
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.7903,
+        0.8091,
+        0.1607
+      ],
+      "manifest_size_m": [
+        0.7903,
+        0.8091,
+        0.1607
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Cobble_Cluster_L",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Cobble_Cluster_L",
+      "lods": 3,
+      "manifest_tris": [
+        559,
+        187,
+        54
+      ],
+      "unreal_verts": [
+        455,
+        195,
+        67
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          0.65,
+          2.59,
+          1.14
+        ],
+        "extent": [
+          70.68,
+          69.2,
+          7.14
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.4135,
+        1.3839,
+        0.1428
+      ],
+      "manifest_size_m": [
+        1.4135,
+        1.3839,
+        0.1428
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "CobbleBar",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_CobbleBar",
+      "lods": 3,
+      "manifest_tris": [
+        2872,
+        594,
+        192
+      ],
+      "unreal_verts": [
+        2527,
+        677,
+        215
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          13.85,
+          -3.11,
+          4.53
+        ],
+        "extent": [
+          156.9,
+          103.36,
+          10.53
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        3.138,
+        2.0673,
+        0.2105
+      ],
+      "manifest_size_m": [
+        3.138,
+        2.0673,
+        0.2105
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Driftwood_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Driftwood_A",
+      "lods": 3,
+      "manifest_tris": [
+        1474,
+        440,
+        143
+      ],
+      "unreal_verts": [
+        955,
+        355,
+        161
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          24.01,
+          3.79,
+          43.71
+        ],
+        "extent": [
+          218.01,
+          52.18,
+          49.71
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        4.3601,
+        1.0436,
+        0.9942
+      ],
+      "manifest_size_m": [
+        4.3601,
+        1.0436,
+        0.9942
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "LogJam",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_LogJam",
+      "lods": 3,
+      "manifest_tris": [
+        4972,
+        1424,
+        480
+      ],
+      "unreal_verts": [
+        3357,
+        1231,
+        600
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 2)",
+      "bounds": {
+        "origin": [
+          2.94,
+          13.48,
+          50.95
+        ],
+        "extent": [
+          300.83,
+          143.41,
+          56.95
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        6.0167,
+        2.8682,
+        1.1389
+      ],
+      "manifest_size_m": [
+        6.0167,
+        2.8682,
+        1.139
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Boulder_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Boulder_A",
+      "lods": 3,
+      "manifest_tris": [
+        886,
+        238,
+        64
+      ],
+      "unreal_verts": [
+        570,
+        161,
+        52
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          -3.73,
+          -1.25,
+          31.12
+        ],
+        "extent": [
+          63.68,
+          78.6,
+          37.12
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        1.2736,
+        1.572,
+        0.7424
+      ],
+      "manifest_size_m": [
+        1.2736,
+        1.572,
+        0.7424
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "floor",
+      "skipped": true,
+      "name": "Boulder_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Boulder_B",
+      "lods": 3,
+      "manifest_tris": [
+        945,
+        240,
+        66
+      ],
+      "unreal_verts": [
+        617,
+        174,
+        54
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          -1.25,
+          -1.76,
+          16.2
+        ],
+        "extent": [
+          40.06,
+          33.76,
+          22.2
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        0.8012,
+        0.6752,
+        0.444
+      ],
+      "manifest_size_m": [
+        0.8012,
+        0.6752,
+        0.444
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Gorse_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Gorse_A",
+      "lods": 3,
+      "manifest_tris": [
+        8636,
+        2852,
+        768
+      ],
+      "unreal_verts": [
+        17780,
+        5808,
+        1536
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          3.87,
+          -3.75,
+          85.52
+        ],
+        "extent": [
+          88.07,
+          105.68,
+          91.52
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.7615,
+        2.1136,
+        1.8304
+      ],
+      "manifest_size_m": [
+        1.7615,
+        2.1136,
+        1.8304
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Gorse_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Gorse_B",
+      "lods": 3,
+      "manifest_tris": [
+        8380,
+        2876,
+        768
+      ],
+      "unreal_verts": [
+        17340,
+        5864,
+        1536
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          0.14,
+          -6.47,
+          118.11
+        ],
+        "extent": [
+          140.77,
+          113.92,
+          124.11
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        2.8154,
+        2.2784,
+        2.4822
+      ],
+      "manifest_size_m": [
+        2.8154,
+        2.2784,
+        2.4822
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Broom_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Broom_A",
+      "lods": 3,
+      "manifest_tris": [
+        3840,
+        1152,
+        262
+      ],
+      "unreal_verts": [
+        8290,
+        2342,
+        562
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          2.65,
+          1.26,
+          94.57
+        ],
+        "extent": [
+          107.24,
+          102.34,
+          100.57
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        2.1449,
+        2.0469,
+        2.0114
+      ],
+      "manifest_size_m": [
+        2.1449,
+        2.0469,
+        2.0114
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Rush_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Rush_A",
+      "lods": 3,
+      "manifest_tris": [
+        1260,
+        260,
+        92
+      ],
+      "unreal_verts": [
+        2604,
+        604,
+        268
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -5.75,
+          -0.18,
+          25.16
+        ],
+        "extent": [
+          28.57,
+          22.2,
+          31.16
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.5715,
+        0.4439,
+        0.6231
+      ],
+      "manifest_size_m": [
+        0.5715,
+        0.4439,
+        0.6231
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Rush_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Rush_B",
+      "lods": 3,
+      "manifest_tris": [
+        1436,
+        212,
+        76
+      ],
+      "unreal_verts": [
+        2940,
+        492,
+        220
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          9.27,
+          -2.29,
+          40.3
+        ],
+        "extent": [
+          46.62,
+          38.33,
+          46.3
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.9324,
+        0.7665,
+        0.9261
+      ],
+      "manifest_size_m": [
+        0.9324,
+        0.7665,
+        0.9261
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Thistle_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Thistle_A",
+      "lods": 3,
+      "manifest_tris": [
+        1585,
+        378,
+        101
+      ],
+      "unreal_verts": [
+        3767,
+        826,
+        259
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          6.34,
+          -8.09,
+          53.82
+        ],
+        "extent": [
+          51.9,
+          51.07,
+          59.82
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.038,
+        1.0215,
+        1.1963
+      ],
+      "manifest_size_m": [
+        1.038,
+        1.0215,
+        1.1963
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "VergeTussock_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_VergeTussock_A",
+      "lods": 3,
+      "manifest_tris": [
+        1068,
+        378,
+        96
+      ],
+      "unreal_verts": [
+        2232,
+        870,
+        264
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -3.05,
+          -1.79,
+          22.67
+        ],
+        "extent": [
+          40.25,
+          40.72,
+          28.67
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.8049,
+        0.8143,
+        0.5734
+      ],
+      "manifest_size_m": [
+        0.8049,
+        0.8143,
+        0.5734
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "VergeTussock_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_VergeTussock_B",
+      "lods": 3,
+      "manifest_tris": [
+        1058,
+        383,
+        96
+      ],
+      "unreal_verts": [
+        2244,
+        881,
+        264
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -0.16,
+          1.08,
+          35.46
+        ],
+        "extent": [
+          61.64,
+          60.44,
+          41.46
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.2329,
+        1.2089,
+        0.8291
+      ],
+      "manifest_size_m": [
+        1.2329,
+        1.2089,
+        0.8291
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Radiata_Young",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Radiata_Young",
+      "lods": 3,
+      "manifest_tris": [
+        9344,
+        2781,
+        768
+      ],
+      "unreal_verts": [
+        17482,
+        5343,
+        1356
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          8.98,
+          -14.56,
+          403.43
+        ],
+        "extent": [
+          233.94,
+          236.15,
+          409.43
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        4.6788,
+        4.723,
+        8.1886
+      ],
+      "manifest_size_m": [
+        4.6788,
+        4.723,
+        8.1886
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Radiata_Mature",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Radiata_Mature",
+      "lods": 3,
+      "manifest_tris": [
+        15358,
+        4699,
+        1151
+      ],
+      "unreal_verts": [
+        29134,
+        9012,
+        1974
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 2)",
+      "bounds": {
+        "origin": [
+          202.15,
+          -3.68,
+          1104.24
+        ],
+        "extent": [
+          526.63,
+          617.76,
+          1110.24
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        10.5326,
+        12.3551,
+        22.2047
+      ],
+      "manifest_size_m": [
+        10.5326,
+        12.3551,
+        22.2047
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "Macrocarpa",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Macrocarpa",
+      "lods": 3,
+      "manifest_tris": [
+        15353,
+        4800,
+        1152
+      ],
+      "unreal_verts": [
+        41412,
+        12082,
+        2877
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 2)",
+      "bounds": {
+        "origin": [
+          -15.29,
+          -3.6,
+          685.4
+        ],
+        "extent": [
+          823.25,
+          827.88,
+          691.4
+        ]
+      },
+      "screens": [
+        1.0,
+        0.12,
+        0.04
+      ],
+      "sections": 2,
+      "lod_section_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        },
+        {
+          "slot": 1,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        16.4649,
+        16.5575,
+        13.8281
+      ],
+      "manifest_size_m": [
+        16.4649,
+        16.5575,
+        13.8281
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "TwigLitter_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_TwigLitter_A",
+      "lods": 3,
+      "manifest_tris": [
+        710,
+        260,
+        76
+      ],
+      "unreal_verts": [
+        1526,
+        544,
+        164
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -5.48,
+          1.68,
+          -0.84
+        ],
+        "extent": [
+          83.41,
+          58.75,
+          5.16
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.6681,
+        1.175,
+        0.1032
+      ],
+      "manifest_size_m": [
+        1.6681,
+        1.175,
+        0.1032
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "TwigLitter_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_TwigLitter_B",
+      "lods": 3,
+      "manifest_tris": [
+        664,
+        250,
+        76
+      ],
+      "unreal_verts": [
+        1430,
+        524,
+        164
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -4.16,
+          -2.99,
+          -0.96
+        ],
+        "extent": [
+          85.27,
+          50.08,
+          5.04
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.7053,
+        1.0016,
+        0.1009
+      ],
+      "manifest_size_m": [
+        1.7053,
+        1.0016,
+        0.1009
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "RootTangle_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_RootTangle_A",
+      "lods": 3,
+      "manifest_tris": [
+        1016,
+        318,
+        76
+      ],
+      "unreal_verts": [
+        2018,
+        642,
+        172
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -5.25,
+          0.95,
+          2.47
+        ],
+        "extent": [
+          65.27,
+          59.6,
+          8.47
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.3053,
+        1.192,
+        0.1693
+      ],
+      "manifest_size_m": [
+        1.3053,
+        1.192,
+        0.1693
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "verge",
+      "skipped": true,
+      "name": "LeafLitter_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_LeafLitter_A",
+      "lods": 3,
+      "manifest_tris": [
+        566,
+        191,
+        57
+      ],
+      "unreal_verts": [
+        1414,
+        389,
+        119
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          2.01,
+          -0.37,
+          3.77
+        ],
+        "extent": [
+          52.01,
+          51.2,
+          9.77
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        1.0402,
+        1.0239,
+        0.1955
+      ],
+      "manifest_size_m": [
+        1.0402,
+        1.0239,
+        0.1955
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "Fence_4m",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Fence_4m",
+      "lods": 3,
+      "manifest_tris": [
+        965,
+        281,
+        101
+      ],
+      "unreal_verts": [
+        874,
+        326,
+        185
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          196.07,
+          0.26,
+          56.99
+        ],
+        "extent": [
+          203.93,
+          7.22,
+          63.06
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        4.0787,
+        0.1445,
+        1.2611
+      ],
+      "manifest_size_m": [
+        4.0787,
+        0.1445,
+        1.2611
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "Strainer",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Strainer",
+      "lods": 3,
+      "manifest_tris": [
+        944,
+        392,
+        113
+      ],
+      "unreal_verts": [
+        863,
+        461,
+        191
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 2)",
+      "bounds": {
+        "origin": [
+          -17.41,
+          8.17,
+          62.0
+        ],
+        "extent": [
+          241.41,
+          20.83,
+          68.02
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 2,
+      "manifest_hulls": 2,
+      "size_m": [
+        4.8281,
+        0.4165,
+        1.3604
+      ],
+      "manifest_size_m": [
+        4.8281,
+        0.4165,
+        1.3604
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "Gate_3m6",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Gate_3m6",
+      "lods": 3,
+      "manifest_tris": [
+        1606,
+        602,
+        140
+      ],
+      "unreal_verts": [
+        1478,
+        620,
+        224
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 3)",
+      "bounds": {
+        "origin": [
+          196.2,
+          -0.44,
+          61.99
+        ],
+        "extent": [
+          208.47,
+          12.41,
+          68.07
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 3,
+      "manifest_hulls": 3,
+      "size_m": [
+        4.1695,
+        0.2483,
+        1.3614
+      ],
+      "manifest_size_m": [
+        4.1695,
+        0.2483,
+        1.3614
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "CattleStop",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_CattleStop",
+      "lods": 3,
+      "manifest_tris": [
+        1788,
+        482,
+        170
+      ],
+      "unreal_verts": [
+        1522,
+        604,
+        340
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 3)",
+      "bounds": {
+        "origin": [
+          0.0,
+          0.0,
+          -3.5
+        ],
+        "extent": [
+          120.0,
+          180.0,
+          41.5
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 3,
+      "manifest_hulls": 3,
+      "size_m": [
+        2.4,
+        3.6,
+        0.83
+      ],
+      "manifest_size_m": [
+        2.4,
+        3.6,
+        0.83
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "Culvert",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Culvert",
+      "lods": 3,
+      "manifest_tris": [
+        1226,
+        418,
+        52
+      ],
+      "unreal_verts": [
+        1558,
+        580,
+        76
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          -22.5,
+          0.0,
+          -40.0
+        ],
+        "extent": [
+          172.5,
+          80.0,
+          50.0
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        3.45,
+        1.6,
+        1.0
+      ],
+      "manifest_size_m": [
+        3.45,
+        1.6,
+        1.0
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "Trough",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Trough",
+      "lods": 3,
+      "manifest_tris": [
+        796,
+        232,
+        72
+      ],
+      "unreal_verts": [
+        597,
+        210,
+        92
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          0.0,
+          0.0,
+          28.5
+        ],
+        "extent": [
+          60.31,
+          60.31,
+          34.5
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        1.2062,
+        1.2062,
+        0.69
+      ],
+      "manifest_size_m": [
+        1.2062,
+        1.2062,
+        0.69
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "PowerPole",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_PowerPole",
+      "lods": 3,
+      "manifest_tris": [
+        1102,
+        320,
+        69
+      ],
+      "unreal_verts": [
+        828,
+        284,
+        112
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          149.8,
+          -3.74,
+          496.9
+        ],
+        "extent": [
+          167.2,
+          90.0,
+          503.19
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        3.344,
+        1.8,
+        10.0638
+      ],
+      "manifest_size_m": [
+        3.344,
+        1.8,
+        10.0638
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "SignPost",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_SignPost",
+      "lods": 3,
+      "manifest_tris": [
+        272,
+        60,
+        32
+      ],
+      "unreal_verts": [
+        416,
+        110,
+        60
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          0.0,
+          0.52,
+          107.0
+        ],
+        "extent": [
+          45.0,
+          4.12,
+          113.01
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        0.9,
+        0.0824,
+        2.2601
+      ],
+      "manifest_size_m": [
+        0.9,
+        0.0824,
+        2.2601
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "GiveWay",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_GiveWay",
+      "lods": 3,
+      "manifest_tris": [
+        188,
+        72,
+        24
+      ],
+      "unreal_verts": [
+        310,
+        130,
+        46
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          0.0,
+          0.5,
+          107.0
+        ],
+        "extent": [
+          34.14,
+          4.1,
+          113.01
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        0.6827,
+        0.082,
+        2.2602
+      ],
+      "manifest_size_m": [
+        0.6827,
+        0.082,
+        2.2602
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "Letterbox",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Letterbox",
+      "lods": 3,
+      "manifest_tris": [
+        196,
+        52,
+        20
+      ],
+      "unreal_verts": [
+        270,
+        80,
+        40
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          0.0,
+          1.4,
+          65.1
+        ],
+        "extent": [
+          12.5,
+          18.9,
+          71.1
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        0.25,
+        0.378,
+        1.422
+      ],
+      "manifest_size_m": [
+        0.25,
+        0.378,
+        1.422
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "farm",
+      "skipped": true,
+      "name": "HayBale",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_HayBale",
+      "lods": 3,
+      "manifest_tris": [
+        504,
+        96,
+        44
+      ],
+      "unreal_verts": [
+        602,
+        150,
+        52
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (hulls 1)",
+      "bounds": {
+        "origin": [
+          0.0,
+          0.27,
+          69.43
+        ],
+        "extent": [
+          60.0,
+          75.68,
+          75.43
+        ]
+      },
+      "screens": [
+        1.0,
+        0.18,
+        0.065
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Bark",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark"
+        }
+      ],
+      "hulls": 1,
+      "manifest_hulls": 1,
+      "size_m": [
+        1.2,
+        1.5136,
+        1.5086
+      ],
+      "manifest_size_m": [
+        1.2,
+        1.5136,
+        1.5086
+      ],
+      "notes": [
+        "already imported with 3 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "grass",
+      "skipped": true,
+      "name": "PastureClump_S",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_PastureClump_S",
+      "lods": 2,
+      "manifest_tris": [
+        90,
+        18
+      ],
+      "unreal_verts": [
+        190,
+        42
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          0.54,
+          1.39,
+          4.43
+        ],
+        "extent": [
+          11.76,
+          12.5,
+          6.52
+        ]
+      },
+      "screens": [
+        1.0,
+        0.25
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.2352,
+        0.25,
+        0.1304
+      ],
+      "manifest_size_m": [
+        0.2352,
+        0.25,
+        0.1304
+      ],
+      "notes": [
+        "already imported with 2 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "grass",
+      "skipped": true,
+      "name": "PastureClump_M",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_PastureClump_M",
+      "lods": 2,
+      "manifest_tris": [
+        149,
+        30
+      ],
+      "unreal_verts": [
+        315,
+        66
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -4.8,
+          -2.52,
+          5.28
+        ],
+        "extent": [
+          20.0,
+          19.47,
+          7.4
+        ]
+      },
+      "screens": [
+        1.0,
+        0.25
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.4,
+        0.3894,
+        0.148
+      ],
+      "manifest_size_m": [
+        0.4,
+        0.3894,
+        0.148
+      ],
+      "notes": [
+        "already imported with 2 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "grass",
+      "skipped": true,
+      "name": "PastureClump_L",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_PastureClump_L",
+      "lods": 2,
+      "manifest_tris": [
+        225,
+        42
+      ],
+      "unreal_verts": [
+        475,
+        90
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -6.61,
+          -0.89,
+          5.94
+        ],
+        "extent": [
+          28.54,
+          30.0,
+          8.03
+        ]
+      },
+      "screens": [
+        1.0,
+        0.25
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.5708,
+        0.6,
+        0.1606
+      ],
+      "manifest_size_m": [
+        0.5708,
+        0.6,
+        0.1606
+      ],
+      "notes": [
+        "already imported with 2 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "grass",
+      "skipped": true,
+      "name": "RankClump_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_RankClump_A",
+      "lods": 2,
+      "manifest_tris": [
+        288,
+        58
+      ],
+      "unreal_verts": [
+        600,
+        122
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          1.84,
+          0.34,
+          22.78
+        ],
+        "extent": [
+          25.0,
+          24.26,
+          24.81
+        ]
+      },
+      "screens": [
+        1.0,
+        0.25
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.5,
+        0.4853,
+        0.4962
+      ],
+      "manifest_size_m": [
+        0.5,
+        0.4853,
+        0.4962
+      ],
+      "notes": [
+        "already imported with 2 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "grass",
+      "skipped": true,
+      "name": "RankClump_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_RankClump_B",
+      "lods": 2,
+      "manifest_tris": [
+        388,
+        74
+      ],
+      "unreal_verts": [
+        808,
+        154
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "bounds": {
+        "origin": [
+          -1.31,
+          -1.75,
+          26.43
+        ],
+        "extent": [
+          35.0,
+          33.22,
+          28.49
+        ]
+      },
+      "screens": [
+        1.0,
+        0.25
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "size_m": [
+        0.7,
+        0.6644,
+        0.5697
+      ],
+      "manifest_size_m": [
+        0.7,
+        0.6644,
+        0.5697
+      ],
+      "notes": [
+        "already imported with 2 LODs, the manifest hull count and size; not re-imported"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "patch",
+      "skipped": false,
+      "name": "GrassPatch_A",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_GrassPatch_A",
+      "lods": 3,
+      "manifest_tris": [
+        414,
+        126,
+        24
+      ],
+      "unreal_verts": [
+        906,
+        264,
+        48
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "screens": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "bounds": {
+        "origin": [
+          -4.45,
+          -7.06,
+          22.21
+        ],
+        "extent": [
+          60.43,
+          59.05,
+          24.7
+        ]
+      },
+      "size_m": [
+        1.2086,
+        1.181,
+        0.4939
+      ],
+      "manifest_size_m": [
+        1.2086,
+        1.181,
+        0.4939
+      ],
+      "units": "shrub",
+      "notes": [
+        "vertex alpha readback: {\"has_vertex_colors\": \"unavailable: StaticMesh: Failed to find property 'has_vertex_colors' for attribute 'has_verte\", \"description\": \"StaticMeshDescription\", \"vertex_instances\": 1242, \"alpha\": \"not readable through the Python API in this editor (StaticMeshDescription has no vertex-instance colour getter): 'StaticMeshDescription' object has no attribute 'get_vertex_instance_color'\"}"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "patch",
+      "skipped": false,
+      "name": "GrassPatch_B",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_GrassPatch_B",
+      "lods": 3,
+      "manifest_tris": [
+        414,
+        126,
+        24
+      ],
+      "unreal_verts": [
+        906,
+        264,
+        48
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "screens": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "bounds": {
+        "origin": [
+          -4.16,
+          -5.7,
+          24.45
+        ],
+        "extent": [
+          64.51,
+          62.94,
+          26.87
+        ]
+      },
+      "size_m": [
+        1.2902,
+        1.2588,
+        0.5373
+      ],
+      "manifest_size_m": [
+        1.2902,
+        1.2588,
+        0.5373
+      ],
+      "units": "shrub",
+      "notes": [
+        "vertex alpha readback: {\"has_vertex_colors\": \"unavailable: StaticMesh: Failed to find property 'has_vertex_colors' for attribute 'has_verte\", \"description\": \"StaticMeshDescription\", \"vertex_instances\": 1242, \"alpha\": \"not readable through the Python API in this editor (StaticMeshDescription has no vertex-instance colour getter): 'StaticMeshDescription' object has no attribute 'get_vertex_instance_color'\"}"
+      ]
+    },
+    {
+      "ok": true,
+      "set": "patch",
+      "skipped": false,
+      "name": "GrassPatch_C",
+      "path": "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_GrassPatch_C",
+      "lods": 3,
+      "manifest_tris": [
+        414,
+        126,
+        24
+      ],
+      "unreal_verts": [
+        906,
+        264,
+        48
+      ],
+      "collision": "CTF_USE_SIMPLE_AS_COMPLEX (no collision)",
+      "screens": [
+        1.0,
+        0.35,
+        0.12
+      ],
+      "sections": 1,
+      "lod_section_slots": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "materials": [
+        {
+          "slot": 0,
+          "name": "M_NZ_Foliage",
+          "material": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage"
+        }
+      ],
+      "hulls": 0,
+      "manifest_hulls": 0,
+      "bounds": {
+        "origin": [
+          1.05,
+          4.87,
+          24.81
+        ],
+        "extent": [
+          62.2,
+          64.92,
+          27.22
+        ]
+      },
+      "size_m": [
+        1.2441,
+        1.2985,
+        0.5444
+      ],
+      "manifest_size_m": [
+        1.2441,
+        1.2985,
+        0.5444
+      ],
+      "units": "shrub",
+      "notes": [
+        "vertex alpha readback: {\"has_vertex_colors\": \"unavailable: StaticMesh: Failed to find property 'has_vertex_colors' for attribute 'has_verte\", \"description\": \"StaticMeshDescription\", \"vertex_instances\": 1242, \"alpha\": \"not readable through the Python API in this editor (StaticMeshDescription has no vertex-instance colour getter): 'StaticMeshDescription' object has no attribute 'get_vertex_instance_color'\"}"
+      ]
+    }
+  ],
+  "failed": [],
+  "materials": {
+    "bark": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Bark.M_NZ_Bark",
+    "foliage": "/Game/GrandTour/Environment/NativePlants/v01/M_NZ_Foliage.M_NZ_Foliage",
+    "vector_parameters": {
+      "M_NZ_Bark": [
+        "Tint"
+      ],
+      "M_NZ_Foliage": [
+        "Tint"
+      ]
+    },
+    "tint_wiring": {
+      "M_NZ_Foliage": {
+        "expressions": [
+          "MaterialExpressionConstant",
+          "MaterialExpressionConstant",
+          "MaterialExpressionConstant",
+          "MaterialExpressionMultiply",
+          "MaterialExpressionMultiply",
+          "MaterialExpressionVectorParameter",
+          "MaterialExpressionVectorParameter",
+          "MaterialExpressionVectorParameter",
+          "MaterialExpressionVectorParameter",
+          "MaterialExpressionVertexColor"
+        ],
+        "sources": [
+          [
+            "<MaterialProperty.MP_BASE_COLOR: 5>",
+            "MaterialExpressionVertexColor",
+            ""
+          ],
+          [
+            "<MaterialProperty.MP_SUBSURFACE_COLOR: 15>",
+            "MaterialExpressionVertexColor",
+            ""
+          ]
+        ]
+      },
+      "M_NZ_Bark": {
+        "expressions": [
+          "MaterialExpressionConstant",
+          "MaterialExpressionConstant",
+          "MaterialExpressionConstant",
+          "MaterialExpressionMultiply",
+          "MaterialExpressionVectorParameter",
+          "MaterialExpressionVertexColor",
+          "MaterialExpressionVertexColor",
+          "MaterialExpressionVertexColor"
+        ],
+        "sources": [
+          [
+            "<MaterialProperty.MP_BASE_COLOR: 5>",
+            "MaterialExpressionVertexColor",
+            ""
+          ]
+        ]
+      }
+    }
+  },
+  "units": "shrub",
+  "imported": [
+    "GrassPatch_A",
+    "GrassPatch_B",
+    "GrassPatch_C"
+  ],
+  "skipped": [
+    "Beech_Mature",
+    "Beech_Pole",
+    "Beech_Edge",
+    "DeadSpar",
+    "CrownFern_A",
+    "CrownFern_B",
+    "CrownFern_C",
+    "TreeFern_A",
+    "TreeFern_B",
+    "TreeFern_Young",
+    "Harakeke_A",
+    "Harakeke_B",
+    "Coprosma_A",
+    "Coprosma_B",
+    "Matagouri_A",
+    "Matagouri_B",
+    "TiKouka_A",
+    "TiKouka_B",
+    "Kanuka_A",
+    "Kanuka_B",
+    "Kiokio_A",
+    "Kiokio_B",
+    "Log_A",
+    "Log_B",
+    "Stump_A",
+    "MossHummock_A",
+    "MossHummock_B",
+    "Cobble_Cluster_S",
+    "Cobble_Cluster_M",
+    "Cobble_Cluster_L",
+    "CobbleBar",
+    "Driftwood_A",
+    "LogJam",
+    "Boulder_A",
+    "Boulder_B",
+    "Gorse_A",
+    "Gorse_B",
+    "Broom_A",
+    "Rush_A",
+    "Rush_B",
+    "Thistle_A",
+    "VergeTussock_A",
+    "VergeTussock_B",
+    "Radiata_Young",
+    "Radiata_Mature",
+    "Macrocarpa",
+    "TwigLitter_A",
+    "TwigLitter_B",
+    "RootTangle_A",
+    "LeafLitter_A",
+    "Fence_4m",
+    "Strainer",
+    "Gate_3m6",
+    "CattleStop",
+    "Culvert",
+    "Trough",
+    "PowerPole",
+    "SignPost",
+    "GiveWay",
+    "Letterbox",
+    "HayBale",
+    "PastureClump_S",
+    "PastureClump_M",
+    "PastureClump_L",
+    "RankClump_A",
+    "RankClump_B"
+  ],
+  "floor_ok": 15,
+  "verge_ok": 15,
+  "farm_ok": 11,
+  "grass_ok": 5,
+  "patch_ok": 3
+}

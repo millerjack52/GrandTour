@@ -1,0 +1,323 @@
+{
+  "ok": true,
+  "tag": "gr2",
+  "strips": [
+    {
+      "strip": "MudVariants",
+      "level": "/Game/GrandTour/ArtTests/MudVariants/L_MudVariants",
+      "cameras": {
+        "Relief_Overview": {
+          "eye_m": [
+            79.21,
+            25.27,
+            27.33
+          ],
+          "look_m": [
+            95.0,
+            0.0,
+            -0.69
+          ],
+          "fov": 60.0,
+          "console": []
+        },
+        "Relief_OnFoot": {
+          "eye_m": [
+            80.0,
+            18.0,
+            2.17
+          ],
+          "look_m": [
+            91.25,
+            0.0,
+            -0.66
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Relief_Bog": {
+          "eye_m": [
+            80.0,
+            4.0,
+            1.52
+          ],
+          "look_m": [
+            87.95,
+            -8.72,
+            -0.4
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Ground_Close": {
+          "eye_m": [
+            113.44,
+            12.5,
+            1.73
+          ],
+          "look_m": [
+            115.0,
+            10.0,
+            -0.29
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Ground_Close_Detail0": {
+          "eye_m": [
+            113.44,
+            12.5,
+            1.73
+          ],
+          "look_m": [
+            115.0,
+            10.0,
+            -0.29
+          ],
+          "fov": 65.0,
+          "console": [
+            "gt.Ground.Detail 0",
+            "gt.Ground.Scatter 0"
+          ]
+        },
+        "Ground_Far": {
+          "eye_m": [
+            95.0,
+            -24.0,
+            0.19
+          ],
+          "look_m": [
+            121.5,
+            -66.4,
+            2.04
+          ],
+          "fov": 65.0,
+          "console": []
+        }
+      },
+      "gr2": {
+        "close_aim_m": [
+          115.0,
+          10.0
+        ],
+        "tussocks": 3824,
+        "far_aim_m": [
+          121.5,
+          -66.4
+        ]
+      }
+    },
+    {
+      "strip": "DeformableGravel",
+      "level": "/Game/GrandTour/ArtTests/DeformableGravel/L_GravelDeform",
+      "cameras": {
+        "Relief_Overview": {
+          "eye_m": [
+            54.21,
+            25.27,
+            24.72
+          ],
+          "look_m": [
+            70.0,
+            0.0,
+            0.3
+          ],
+          "fov": 60.0,
+          "console": []
+        },
+        "Relief_OnFoot": {
+          "eye_m": [
+            60.0,
+            18.0,
+            1.77
+          ],
+          "look_m": [
+            71.25,
+            0.0,
+            0.29
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Ground_Close": {
+          "eye_m": [
+            44.44,
+            12.5,
+            2.56
+          ],
+          "look_m": [
+            46.0,
+            10.0,
+            0.79
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Ground_Close_Detail0": {
+          "eye_m": [
+            44.44,
+            12.5,
+            2.56
+          ],
+          "look_m": [
+            46.0,
+            10.0,
+            0.79
+          ],
+          "fov": 65.0,
+          "console": [
+            "gt.Ground.Detail 0",
+            "gt.Ground.Scatter 0"
+          ]
+        },
+        "Ground_Far": {
+          "eye_m": [
+            70.0,
+            -24.0,
+            2.09
+          ],
+          "look_m": [
+            96.5,
+            -66.4,
+            1.61
+          ],
+          "fov": 65.0,
+          "console": []
+        }
+      },
+      "gr2": {
+        "close_aim_m": [
+          46.0,
+          10.0
+        ],
+        "tussocks": 320,
+        "far_aim_m": [
+          96.5,
+          -66.4
+        ]
+      }
+    },
+    {
+      "strip": "LiveMudDrive",
+      "level": "/Game/GrandTour/ArtTests/LiveMudDrive/L_MudDrive",
+      "cameras": {
+        "Relief_Overview": {
+          "eye_m": [
+            24.21,
+            25.27,
+            25.94
+          ],
+          "look_m": [
+            40.0,
+            0.0,
+            -0.08
+          ],
+          "fov": 60.0,
+          "console": []
+        },
+        "Relief_OnFoot": {
+          "eye_m": [
+            30.0,
+            18.0,
+            3.02
+          ],
+          "look_m": [
+            41.25,
+            0.0,
+            -0.11
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Relief_Bog": {
+          "eye_m": [
+            36.0,
+            4.0,
+            1.86
+          ],
+          "look_m": [
+            43.95,
+            -8.72,
+            0.92
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Ground_Close": {
+          "eye_m": [
+            38.44,
+            12.5,
+            3.55
+          ],
+          "look_m": [
+            40.0,
+            10.0,
+            1.2
+          ],
+          "fov": 65.0,
+          "console": []
+        },
+        "Ground_Close_Detail0": {
+          "eye_m": [
+            38.44,
+            12.5,
+            3.55
+          ],
+          "look_m": [
+            40.0,
+            10.0,
+            1.2
+          ],
+          "fov": 65.0,
+          "console": [
+            "gt.Ground.Detail 0",
+            "gt.Ground.Scatter 0"
+          ]
+        },
+        "Ground_Far": {
+          "eye_m": [
+            40.0,
+            -24.0,
+            2.68
+          ],
+          "look_m": [
+            66.5,
+            -66.4,
+            -0.96
+          ],
+          "fov": 65.0,
+          "console": []
+        }
+      },
+      "gr2": {
+        "close_aim_m": [
+          40.0,
+          10.0
+        ],
+        "tussocks": 2288,
+        "far_aim_m": [
+          66.5,
+          -66.4
+        ]
+      }
+    }
+  ],
+  "images": [
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Relief_Overview.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Relief_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Relief_Bog.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Ground_Close.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Ground_Close_Detail0.png",
+    "C:\\GrandTour\\Art\\Export\\MudVariants\\Ground_Far.png",
+    "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Relief_Overview.png",
+    "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Relief_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Ground_Close.png",
+    "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Ground_Close_Detail0.png",
+    "C:\\GrandTour\\Art\\Export\\DeformableGravel\\Ground_Far.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\Relief_Overview.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\Relief_OnFoot.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\Relief_Bog.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\Ground_Close.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\Ground_Close_Detail0.png",
+    "C:\\GrandTour\\Art\\Export\\LiveMudDrive\\Ground_Far.png"
+  ]
+}

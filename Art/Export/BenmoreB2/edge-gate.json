@@ -1,0 +1,53 @@
+{
+ "strips": {
+  "inside": {
+   "pixels": 40297,
+   "patch": [
+    0.1769,
+    0.132,
+    0.09762
+   ],
+   "landscape": [
+    0.17704,
+    0.13211,
+    0.09776
+   ]
+  },
+  "outside": {
+   "pixels": 25906,
+   "patch": [
+    0.20231,
+    0.15157,
+    0.11192
+   ],
+   "landscape": [
+    0.20251,
+    0.15121,
+    0.11089
+   ]
+  }
+ },
+ "rule": "display-linear means of the 1 m strips either side of the live tile border; per channel",
+ "across_border_patch_frame": [
+  0.1256,
+  0.1291,
+  0.1278
+ ],
+ "across_border_landscape_frame": [
+  0.1258,
+  0.1263,
+  0.1184
+ ],
+ "inside_patch_vs_landscape": [
+  0.0008,
+  0.0008,
+  0.0014
+ ],
+ "outside_patch_frame_vs_landscape_frame": [
+  0.001,
+  0.0024,
+  0.0093
+ ],
+ "max_diff": 0.0014,
+ "passes": true
+}

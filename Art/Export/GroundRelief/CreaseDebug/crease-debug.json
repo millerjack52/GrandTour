@@ -1,0 +1,340 @@
+{
+  "ok": true,
+  "images": [
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_Base.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_POMShadow0.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_POM0.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_NoMeshShadow.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_NoAO.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Gap_TopDown.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_Debug1_NoTracks.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_Debug2_Smoothed.png",
+    "C:\\GrandTour\\Art\\Export\\GroundRelief\\CreaseDebug\\Crease_Debug4_NoLumps.png"
+  ],
+  "sessions": [
+    {
+      "debug": 0,
+      "prechurn": [
+        {
+          "section": 0,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.05,
+            22.94
+          ],
+          "hummock_cm": 19.93,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 3,
+          "chunks_moved": 3,
+          "chunks_planned": 4,
+          "chunks_planned_flat": 6
+        },
+        {
+          "section": 1,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 4,
+          "depth_cm": [
+            6.0,
+            24.91
+          ],
+          "hummock_cm": 19.95,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.088,
+          "chunks_kept": 5,
+          "chunks_moved": 5,
+          "chunks_planned": 5,
+          "chunks_planned_flat": 10
+        },
+        {
+          "section": 2,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 3,
+          "depth_cm": [
+            6.07,
+            23.3
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 244,
+          "cells": 33681,
+          "water_table_cm": -15.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 11,
+          "chunks_moved": 5,
+          "chunks_planned": 10,
+          "chunks_planned_flat": 16
+        },
+        {
+          "section": 3,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.31,
+            23.77
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.07,
+          "chunks_kept": 8,
+          "chunks_moved": 3,
+          "chunks_planned": 8,
+          "chunks_planned_flat": 11
+        }
+      ]
+    },
+    {
+      "debug": 1,
+      "prechurn": [
+        {
+          "section": 0,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.05,
+            22.94
+          ],
+          "hummock_cm": 19.93,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 3,
+          "chunks_moved": 3,
+          "chunks_planned": 4,
+          "chunks_planned_flat": 6
+        },
+        {
+          "section": 1,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 4,
+          "depth_cm": [
+            6.0,
+            24.91
+          ],
+          "hummock_cm": 19.95,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.088,
+          "chunks_kept": 5,
+          "chunks_moved": 5,
+          "chunks_planned": 5,
+          "chunks_planned_flat": 10
+        },
+        {
+          "section": 2,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 3,
+          "depth_cm": [
+            6.07,
+            23.3
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 244,
+          "cells": 33681,
+          "water_table_cm": -15.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 11,
+          "chunks_moved": 5,
+          "chunks_planned": 10,
+          "chunks_planned_flat": 16
+        },
+        {
+          "section": 3,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.31,
+            23.77
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.07,
+          "chunks_kept": 8,
+          "chunks_moved": 3,
+          "chunks_planned": 8,
+          "chunks_planned_flat": 11
+        }
+      ]
+    },
+    {
+      "debug": 2,
+      "prechurn": [
+        {
+          "section": 0,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.05,
+            22.94
+          ],
+          "hummock_cm": 19.93,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 3,
+          "chunks_moved": 3,
+          "chunks_planned": 4,
+          "chunks_planned_flat": 6
+        },
+        {
+          "section": 1,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 4,
+          "depth_cm": [
+            6.0,
+            24.91
+          ],
+          "hummock_cm": 19.95,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.088,
+          "chunks_kept": 5,
+          "chunks_moved": 5,
+          "chunks_planned": 5,
+          "chunks_planned_flat": 10
+        },
+        {
+          "section": 2,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 3,
+          "depth_cm": [
+            6.07,
+            23.3
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 244,
+          "cells": 33681,
+          "water_table_cm": -15.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 10,
+          "chunks_moved": 6,
+          "chunks_planned": 10,
+          "chunks_planned_flat": 16
+        },
+        {
+          "section": 3,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.31,
+            23.77
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.07,
+          "chunks_kept": 8,
+          "chunks_moved": 3,
+          "chunks_planned": 8,
+          "chunks_planned_flat": 11
+        }
+      ]
+    },
+    {
+      "debug": 4,
+      "prechurn": [
+        {
+          "section": 0,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.05,
+            22.94
+          ],
+          "hummock_cm": 19.93,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 3,
+          "chunks_moved": 3,
+          "chunks_planned": 4,
+          "chunks_planned_flat": 6
+        },
+        {
+          "section": 1,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 4,
+          "depth_cm": [
+            6.0,
+            24.91
+          ],
+          "hummock_cm": 19.95,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.088,
+          "chunks_kept": 5,
+          "chunks_moved": 5,
+          "chunks_planned": 5,
+          "chunks_planned_flat": 10
+        },
+        {
+          "section": 2,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 3,
+          "depth_cm": [
+            6.07,
+            23.3
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 244,
+          "cells": 33681,
+          "water_table_cm": -15.0,
+          "rim_max_cm": 0.101,
+          "chunks_kept": 11,
+          "chunks_moved": 5,
+          "chunks_planned": 10,
+          "chunks_planned_flat": 16
+        },
+        {
+          "section": 3,
+          "scale": 1.0,
+          "pre_churned": true,
+          "tracks": 2,
+          "depth_cm": [
+            6.31,
+            23.77
+          ],
+          "hummock_cm": 20.0,
+          "water_cells": 0,
+          "cells": 33681,
+          "water_table_cm": -25.0,
+          "rim_max_cm": 0.07,
+          "chunks_kept": 8,
+          "chunks_moved": 3,
+          "chunks_planned": 8,
+          "chunks_planned_flat": 11
+        }
+      ]
+    }
+  ]
+}

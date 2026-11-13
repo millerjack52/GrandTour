@@ -1,0 +1,905 @@
+[
+  {
+    "name": "Roof | shallow transverse and longitudinal crown",
+    "bounds": [
+      [
+        -0.7300000190734863,
+        0.7300000190734863
+      ],
+      [
+        -0.37299466133117676,
+        1.8890374898910522
+      ],
+      [
+        1.5144546031951904,
+        1.6395882368087769
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy"
+    ],
+    "vertices": 88,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Right | continuous cabin frame",
+    "bounds": [
+      [
+        -0.8498799204826355,
+        -0.7037258148193359
+      ],
+      [
+        -0.8454035520553589,
+        2.1922459602355957
+      ],
+      [
+        1.0988588333129883,
+        1.5962727069854736
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy",
+      null
+    ],
+    "vertices": 5674,
+    "modifiers": []
+  },
+  {
+    "name": "-1 | front recessed glass",
+    "bounds": [
+      [
+        -0.830971896648407,
+        -0.7303939461708069
+      ],
+      [
+        -0.6920374631881714,
+        0.20432886481285095
+      ],
+      [
+        1.1365587711334229,
+        1.549908995628357
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 9,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "-1 | rear recessed glass",
+    "bounds": [
+      [
+        -0.8305339217185974,
+        -0.7286002039909363
+      ],
+      [
+        0.40112870931625366,
+        1.12565279006958
+      ],
+      [
+        1.1418629884719849,
+        1.5598576068878174
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "-1 | cargo recessed glass",
+    "bounds": [
+      [
+        -0.8283029794692993,
+        -0.7272253632545471
+      ],
+      [
+        1.198540210723877,
+        2.0205962657928467
+      ],
+      [
+        1.1455988883972168,
+        1.5496604442596436
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 7,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Left | continuous cabin frame",
+    "bounds": [
+      [
+        0.7037258148193359,
+        0.8498799204826355
+      ],
+      [
+        -0.8454037308692932,
+        2.1922459602355957
+      ],
+      [
+        1.0988588333129883,
+        1.5962727069854736
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy",
+      null
+    ],
+    "vertices": 5674,
+    "modifiers": []
+  },
+  {
+    "name": "1 | front recessed glass",
+    "bounds": [
+      [
+        0.7303939461708069,
+        0.830971896648407
+      ],
+      [
+        -0.6920374631881714,
+        0.20432886481285095
+      ],
+      [
+        1.1365587711334229,
+        1.549908995628357
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 9,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "1 | rear recessed glass",
+    "bounds": [
+      [
+        0.7286002039909363,
+        0.8305339217185974
+      ],
+      [
+        0.40112870931625366,
+        1.12565279006958
+      ],
+      [
+        1.1418629884719849,
+        1.5598576068878174
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "1 | cargo recessed glass",
+    "bounds": [
+      [
+        0.7272253632545471,
+        0.8283029794692993
+      ],
+      [
+        1.198540210723877,
+        2.0205962657928467
+      ],
+      [
+        1.1455988883972168,
+        1.5496604442596436
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 7,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Windscreen | formed surround",
+    "bounds": [
+      [
+        -0.831283688545227,
+        0.831283688545227
+      ],
+      [
+        -0.8446524143218994,
+        -0.37299466133117676
+      ],
+      [
+        1.1823689937591553,
+        1.5625828504562378
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy"
+    ],
+    "vertices": 44,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Windscreen | rubber",
+    "bounds": [
+      [
+        -0.7747421860694885,
+        0.7747421860694885
+      ],
+      [
+        -0.8116363883018494,
+        -0.40129411220550537
+      ],
+      [
+        1.2189137935638428,
+        1.5429465770721436
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 44,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Windscreen | glass",
+    "bounds": [
+      [
+        -0.7522838711738586,
+        0.7522838711738586
+      ],
+      [
+        -0.7962031960487366,
+        -0.4047272801399231
+      ],
+      [
+        1.2308205366134644,
+        1.5364010334014893
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 136,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Rear screen | formed surround",
+    "bounds": [
+      [
+        -0.8104490041732788,
+        0.8104490041732788
+      ],
+      [
+        1.8890374898910522,
+        2.1922459602355957
+      ],
+      [
+        1.124614953994751,
+        1.5529571771621704
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy"
+    ],
+    "vertices": 44,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Rear screen | rubber",
+    "bounds": [
+      [
+        -0.7565284967422485,
+        0.7565284967422485
+      ],
+      [
+        1.9072299003601074,
+        2.1710214614868164
+      ],
+      [
+        1.1524428129196167,
+        1.527256727218628
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 44,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Rear screen | glass",
+    "bounds": [
+      [
+        -0.7349358797073364,
+        0.7349358797073364
+      ],
+      [
+        1.9072941541671753,
+        2.1589572429656982
+      ],
+      [
+        1.1607112884521484,
+        1.5186898708343506
+      ]
+    ],
+    "mats": [
+      "R50 | shape-study glazing"
+    ],
+    "vertices": 136,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Front -1 | seated flare and continuous tub",
+    "bounds": [
+      [
+        -0.9240000247955322,
+        -0.6000000238418579
+      ],
+      [
+        -1.8636094331741333,
+        -0.8516767024993896
+      ],
+      [
+        0.38825133442878723,
+        0.9440903067588806
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy",
+      "R50 | charcoal"
+    ],
+    "vertices": 324,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ],
+      [
+        "Separate liner normals",
+        "EDGE_SPLIT"
+      ]
+    ]
+  },
+  {
+    "name": "Rear -1 | seated flare and continuous tub",
+    "bounds": [
+      [
+        -0.9240000247955322,
+        -0.6000000238418579
+      ],
+      [
+        0.7547450661659241,
+        1.8781023025512695
+      ],
+      [
+        0.38343849778175354,
+        0.9245766997337341
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy",
+      "R50 | charcoal"
+    ],
+    "vertices": 324,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ],
+      [
+        "Separate liner normals",
+        "EDGE_SPLIT"
+      ]
+    ]
+  },
+  {
+    "name": "Front 1 | seated flare and continuous tub",
+    "bounds": [
+      [
+        0.6000000238418579,
+        0.9240000247955322
+      ],
+      [
+        -1.8636095523834229,
+        -0.8516767024993896
+      ],
+      [
+        0.38825133442878723,
+        0.9440903067588806
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy",
+      "R50 | charcoal"
+    ],
+    "vertices": 324,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ],
+      [
+        "Separate liner normals",
+        "EDGE_SPLIT"
+      ]
+    ]
+  },
+  {
+    "name": "Rear 1 | seated flare and continuous tub",
+    "bounds": [
+      [
+        0.6000000238418579,
+        0.9240000247955322
+      ],
+      [
+        0.7547450661659241,
+        1.8781023025512695
+      ],
+      [
+        0.38343849778175354,
+        0.9245766997337341
+      ]
+    ],
+    "mats": [
+      "R50 | restrained burgundy",
+      "R50 | charcoal"
+    ],
+    "vertices": 324,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ],
+      [
+        "Separate liner normals",
+        "EDGE_SPLIT"
+      ]
+    ]
+  },
+  {
+    "name": "Mirror | glass -1",
+    "bounds": [
+      [
+        -1.003000020980835,
+        -0.8849999904632568
+      ],
+      [
+        -0.5679518580436707,
+        -0.5619518756866455
+      ],
+      [
+        1.1405534744262695,
+        1.2415534257888794
+      ]
+    ],
+    "mats": [
+      "R50 | subdued alloy"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Roof rail | foot",
+    "bounds": [
+      [
+        -0.6800000071525574,
+        -0.6200000047683716
+      ],
+      [
+        -0.18985293805599213,
+        -0.07485294342041016
+      ],
+      [
+        1.6131844520568848,
+        1.6881844997406006
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Roof rail | foot.001",
+    "bounds": [
+      [
+        -0.6800000071525574,
+        -0.6200000047683716
+      ],
+      [
+        0.8400936126708984,
+        0.9550935626029968
+      ],
+      [
+        1.6232069730758667,
+        1.698206901550293
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Roof rail | foot.002",
+    "bounds": [
+      [
+        -0.6800000071525574,
+        -0.6200000047683716
+      ],
+      [
+        1.653462529182434,
+        1.7684625387191772
+      ],
+      [
+        1.6127184629440308,
+        1.6877185106277466
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Mirror | glass 1",
+    "bounds": [
+      [
+        0.8849999904632568,
+        1.003000020980835
+      ],
+      [
+        -0.5679518580436707,
+        -0.5619518756866455
+      ],
+      [
+        1.1405534744262695,
+        1.2415534257888794
+      ]
+    ],
+    "mats": [
+      "R50 | subdued alloy"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Roof rail | foot.003",
+    "bounds": [
+      [
+        0.6200000047683716,
+        0.6800000071525574
+      ],
+      [
+        -0.18985293805599213,
+        -0.07485294342041016
+      ],
+      [
+        1.6131844520568848,
+        1.6881844997406006
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Roof rail | foot.004",
+    "bounds": [
+      [
+        0.6200000047683716,
+        0.6800000071525574
+      ],
+      [
+        0.8400936126708984,
+        0.9550935626029968
+      ],
+      [
+        1.6232069730758667,
+        1.698206901550293
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Roof rail | foot.005",
+    "bounds": [
+      [
+        0.6200000047683716,
+        0.6800000071525574
+      ],
+      [
+        1.653462529182434,
+        1.7684625387191772
+      ],
+      [
+        1.6127184629440308,
+        1.6877185106277466
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 8,
+    "modifiers": [
+      [
+        "Rounded production edge",
+        "BEVEL"
+      ]
+    ]
+  },
+  {
+    "name": "Floor | fitted passenger and cargo pan",
+    "bounds": [
+      [
+        -0.7951638698577881,
+        0.7951638698577881
+      ],
+      [
+        -0.8600000143051147,
+        2.1141562461853027
+      ],
+      [
+        0.4309999942779541,
+        0.4309999942779541
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 506,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Floor | front footwell closure",
+    "bounds": [
+      [
+        -0.8626318573951721,
+        0.8626318573951721
+      ],
+      [
+        -0.8600000143051147,
+        -0.699999988079071
+      ],
+      [
+        0.4309999942779541,
+        0.8999999761581421
+      ]
+    ],
+    "mats": [
+      "R50 | charcoal"
+    ],
+    "vertices": 4,
+    "modifiers": [
+      [
+        "Inward sheet",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Floor | fitted sill upstand -1 0",
+    "bounds": [
+      [
+        -0.807742714881897,
+        -0.7908608913421631
+      ],
+      [
+        -0.8600000143051147,
+        0.8564509153366089
+      ],
+      [
+        0.42899999022483826,
+        0.46000534296035767
+      ]
+    ],
+    "mats": [
+      "Detail | satin black polymer"
+    ],
+    "vertices": 492,
+    "modifiers": [
+      [
+        "Component wall thickness",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Floor | fitted sill upstand -1 1",
+    "bounds": [
+      [
+        -0.7943738698959351,
+        -0.7676776051521301
+      ],
+      [
+        1.7704720497131348,
+        2.115692138671875
+      ],
+      [
+        0.42899999022483826,
+        0.4390000104904175
+      ]
+    ],
+    "mats": [
+      "Detail | satin black polymer"
+    ],
+    "vertices": 100,
+    "modifiers": [
+      [
+        "Component wall thickness",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Floor | fitted sill upstand 1 0",
+    "bounds": [
+      [
+        0.7908608913421631,
+        0.807742714881897
+      ],
+      [
+        -0.8600000143051147,
+        0.8564509153366089
+      ],
+      [
+        0.42899999022483826,
+        0.46000534296035767
+      ]
+    ],
+    "mats": [
+      "Detail | satin black polymer"
+    ],
+    "vertices": 492,
+    "modifiers": [
+      [
+        "Component wall thickness",
+        "SOLIDIFY"
+      ]
+    ]
+  },
+  {
+    "name": "Floor | fitted sill upstand 1 1",
+    "bounds": [
+      [
+        0.7676776051521301,
+        0.7943741679191589
+      ],
+      [
+        1.7704720497131348,
+        2.115692138671875
+      ],
+      [
+        0.42899999022483826,
+        0.4390000104904175
+      ]
+    ],
+    "mats": [
+      "Detail | satin black polymer"
+    ],
+    "vertices": 100,
+    "modifiers": [
+      [
+        "Component wall thickness",
+        "SOLIDIFY"
+      ]
+    ]
+  }
+]

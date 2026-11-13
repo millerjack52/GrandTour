@@ -1,0 +1,248 @@
+LIDAR RIVERBANK - REFERENCE AND ACCEPTANCE CONTRACT
+2026-11-06
+
+CURRENT STATUS
+RS7 first-section implementation is saved in L_LidarStudy. The bounded reach is
+22 m along the river by 15.6 m across the slope, centred at -45800,-31600 cm.
+Current evidence and individual gate results are recorded in:
+Art/Export/LidarStudy/FirstSection/Review/acceptance.json
+Actual game/reference comparison:
+Art/Export/LidarStudy/FirstSection/Review/index.html
+Owner visual acceptance of the implemented section remains PENDING. No other
+bank is approved for expansion by this record.
+
+REFERENCE-STUDY HISTORY
+The live map remained restored RS5 during reference generation; no game build
+was accepted at that stage.
+The owner responded positively ("Fantastic work so far") to the photo-based v03
+study. This establishes visual direction; it does not mark a game build as passed.
+
+REFERENCE AUTHORITY
+Primary evidence: the owner's actual Waimeamea photographs.
+Secondary: waimeamea-bank-v03.png, a built-in image_gen stylized interpretation.
+Style-only reference: ReferenceStyle/2026-11-05.jpg.
+If the generated image invents or contradicts a site feature, the source photo
+and the owner's instructions prevail. A generated image is not evidence that
+Unreal can currently render that result.
+
+Photo-based study and exact generation prompt:
+Art/References/ReferenceStyle/PhotoBased/waimeamea-bank-v03.png
+Art/References/ReferenceStyle/PhotoBased/waimeamea-bank-v03-prompt.txt
+
+Earlier generated boards are superseded: v01 repeated similar fern crowns;
+v02 overcorrected toward a generic shrub garden. Neither is an acceptance target.
+Do not carry v02's arbitrary three-fern cap into the world-building recipe.
+
+PHOTO-TO-GAME CHECKS
+04_river_riffle_wading_ferns.jpg:
+  Steep-bank attachment, uneven hanging fronds, layered leaves, mossy earth,
+  overhanging limbs, believable scale against the river and person in the source.
+08_bush_interior_crown_fern_pole_beech_mud.jpg:
+  Multiple actual growth forms: coarse upright crown ferns, finer divided fronds,
+  higher tree-fern crowns, different ages/heights, fine grasses, roots and litter,
+  gaps with damp earth. Native trunks retain their dark moss/lichen character.
+15_river_corner_warm_gravel_bar.jpg:
+  Warm fine gravel/sand matrix, varied rounded grey stones, moss-covered earth
+  margins and amber water. Do not substitute fractured bedrock across the bar.
+07_river_pool_mossy_branches_sand_bar.jpg and
+14_river_photo_reach_broad_ford.jpg:
+  Overall gully enclosure, branching silhouettes, ford scale, reflected canopy,
+  readable shallow bed and transitions into the banks.
+16_river_rocky_shallows_moss_banks.jpg:
+  Rock scale and distribution, damp moss, waterline and accumulated timber.
+
+CORRECTION TO THE RECOVERY PLAN
+Variation means the variety observed in these photographs, including variation
+within fern forms. Do not impose equal proportions of arbitrary species, convert
+the fern-rich interior into a shrub garden, or blanket the bank with clones.
+The rocky-bank choice is localized exposed structure within this photographed
+habitat; it does not authorize a continuous new cliff or a row of large boulders.
+
+EVIDENCE PACK FOR EACH BUILD
+For each view store: source photograph ID, relevant v03 panel, unedited baseline
+game capture, candidate game capture, camera transform/FOV, map and asset revision,
+lighting/exposure settings, actual renderer preset, date and verdict with reasons.
+Use the actual in-game camera for baseline/candidate comparisons. The source photo
+is a visual relationship reference; do not claim pixel registration or surveyed
+camera position when these are unknown. Do not use image similarity scores as an
+art-quality verdict across photographs, concepts and stylized game renders.
+
+Fixed test views:
+B01 - Across-river composition at standing eye height.
+B02 - Oblique root/crown close view, approximately 2-5 m where safely reachable.
+B03 - Along-bank view revealing overlaps, back faces and ledge intersections.
+B04 - Normal vehicle approach and crossing view.
+B05 - Shaded bank pocket with sunlit foreground in the same frame.
+Distances are test-design targets, not surveyed values; save exact poses once set.
+Record a repeatable walking/drive path through these views, including near/far
+transitions, a direction reversal, and a stopped interval for temporal settling.
+
+GATE A - LANDFORM AND COMPOSITION
+Method: neutral-material blockout plus normal lit views B01/B03/B04.
+Pass: continuous bank mass, subordinate exposed rock, credible river/plant/tree
+scale, overlapping depth and intentionally open patches consistent with photos.
+Block: repeated detached rock silhouettes, equally spaced shelves, oversized
+boulders, loss of gully character, or a composition that works only from B01.
+Evidence: matched stills from all three views. Geometry is revised before detail
+if this gate fails.
+
+GATE B - PLANT FORM, VARIETY AND SUPPORT
+Method: selected plant turnarounds, LOD comparisons and views B01/B02/B03.
+Pass: source-supported differences in crown height, frond width, division, age,
+orientation and occlusion are visible at gameplay resolution. Upright centres and
+hanging outer fronds remain volumetric. Soil/root pockets explain attachments.
+Block: dominant repeated crown silhouettes, radial discs, potted shrubs, visible
+root gaps, severe uphill frond clipping, or collapsed shape at cross-river distance.
+Technical checks: actual supporting surface and root envelope; representative
+frond clearance along the uphill/outward directions; stable roots during wind;
+saved/reloaded placement equality. Use a small centimetre-scale root tolerance
+matched to the actual crown rather than burying every asset by one universal value.
+Contacts passing numerically cannot override a visible failure.
+
+GATE C - MATERIALS AND LIGHT
+Method: base-colour, normal and lighting diagnostics plus B02/B05 in final shading.
+Pass: rock, gravel, soil, moss, bark and leaves have compatible detail scales;
+shade retains material/colour distinctions; dampness follows believable contact
+and moisture zones; sunlit foliage retains shape.
+Block: unrelated texture grain, white-bark substitution, neon moss caps, plastic
+leaves, crushed bank shadows, blanket glow, or obvious pasted-on material seams.
+Compare under the chosen fixed exposure for diagnosis, then under normal gameplay
+exposure. No edited screenshots or temporary lighting rigs count as final evidence.
+
+GATE D - MOVEMENT AND GAMEPLAY
+Method: native saved gameplay preset and the repeatable route in standalone/PIE.
+Pass: crowns keep their shape across actual LOD transitions; no distracting
+flicker/ghosting, root swimming, disappearing groundcover or broken water edges.
+Crossings and road clearance remain usable; visible obstacles agree with collision.
+Block: success only in a still image or only with forced highest-detail meshes;
+new phantom collision, water/ground mismatch or changed mud/ford behaviour.
+Temporary LOD0/native-resolution diagnostic settings must be removed before passing.
+
+GATE E - PERFORMANCE AND REPRODUCIBILITY
+Target: existing RTX4050 Laptop 6GB, 1600x900, saved v6 visual preset.
+Run the same warmed route before and after on the same hardware/settings, with
+repeat runs to distinguish variation. Record GPU and frame timings, p95, hitch
+counts and VRAM. Preserve raw measurements and report uncertainty.
+The recovery plan's roughly 1 ms additional GPU budget is provisional, not a
+measured allowance or 120 fps promise. Any overrun needs explicit review and a
+bounded optimization preserving the approved silhouettes and visual preset.
+Check deterministic rebuild, no cumulative scaling/tilting/removal, outside-region
+preservation, paired tree visuals/colliders, backup, rollback and save/reload.
+
+RELEASE RULE
+The complete representative section is reviewed first. Every gate has one of:
+NOT TESTED / FAIL / PASS, an evidence link and a short reason. A missing view or
+unrun test stays NOT TESTED. Do not average a critical failure into an overall pass.
+User visual acceptance is recorded separately from automated technical results.
+Only expand the treatment once the section passes the technical gates and its
+visual direction is accepted. The earlier requirement to keep the live level
+untouched applied to reference preparation. The owner's subsequent instruction
+to build the first section authorized the bounded RS7 implementation.
+
+2026-11-06 - RS7 FIRST BOUNDED RIVERBANK SECTION BUILT
+The owner authorized implementation after endorsing the photo-based v03 direction.
+The saved L_LidarStudy map now contains a 22 m river frontage by 15.6 m slope span,
+centred at -45800,-31600 cm. Four bank-specific fern forms (12 mesh variants),
+152 ferns, 51 grass clumps, 14 small toe-cobble clusters, fitted moss/earth/rock
+and 12 local bark overrides replace 74 low plants within this bounded section.
+Shared plant assets remain unchanged. No whole-bank expansion was performed.
+
+Review: Art/Export/LidarStudy/FirstSection/Review/index.html
+Five actual standalone game views are supplied beside owner photos 04/08/15,
+the original woodland style image and approved v03 study. Four matched before
+views are included. B03's original camera was below ground, so no invalid before
+view is presented. A roughly 12-second actual-game camera sequence is included;
+it is sampled at 12 fps and is not a live performance measurement.
+
+Root contact: 608 probes, maximum positive gap 1.2 cm. Surface registration error
+at five probes: below 0.04 cm. Repeat-build and saved/reloaded snapshots match
+(229 local instances). Outside low-plant hash preserves 207399 instances. Tree
+visual/collider total remains 148385. Original terrain digest is unchanged.
+Saved v6, 1600x900: four warmed matched views show mean GPU differences from
+-0.28 to +0.56 ms; no graphics-preset reduction. New small-foliage batch shadows
+were disabled to meet the provisional additional-cost budget, preserving geometry.
+No 120 fps claim is made.
+
+The new validate runner passed against the final saved map. A standalone ford
+smoke test moved 8.6 m without an engine-flood event; it does not prove a complete
+crossing. Acceptance gate D remains NOT TESTED in full. Owner visual acceptance
+is PENDING. The bounded section is delivered for visual review, not certified
+for expansion. Gate evidence, limitations, hashes and rollback instructions are
+in the review directory. The original brighter woodland reference remains visible
+in the comparison; an exact visual match is not claimed.
+
+Backup: Saved/LidarAuthoringBackups/RS7-1793994925613427600/
+Recipe: Art/Unreal/lidar_first_section.py
+Validate/rebuild wrapper: Art/rebuild_lidar_first_section.ps1
+Manifest: Art/Export/LidarStudy/Place/first-section.json
+The rejected RS6 rocky-bank.json remains disabled.
+2026-11-06 - RS7 GROUND MATERIAL DETAIL FOLLOW-UP
+The owner approved the improvement but reported blurred/flat ground. The two
+map-owned bank ground materials now use 2 m root/litter soil detail, 1.1 m rock
+fractures and 35 cm mineral detail, with filtered world-space bump, cavity shading
+and spatial roughness/dampness variation. Two map-owned 2K soil textures remain
+resident; shared source textures and global rendering settings are unchanged.
+This is shading relief, not physical displacement: map geometry, plant placements,
+root support, collision and exposure remain the previously checked version.
+The first runtime attempt flattened the inherited linear-data rock range; this
+was corrected before the final ground-final captures. The final standalone game
+captures reload the saved material assets successfully. Editor preview images and
+the superseded ground-detail capture are diagnostic, not delivery evidence.
+Review and final timing record:
+Art/Export/LidarStudy/FirstSection/Review/GroundDetail/index.html
+Art/Export/LidarStudy/FirstSection/Review/GroundDetail/evidence.json
+Implementation: Art/Unreal/lidar_bank_ground_material.py
+Material backup: Saved/LidarAuthoringBackups/RS7Ground-1794001850837697000/
+Earlier first-section images and motion clip remain historical evidence. The
+original review page links to the current ground-material comparison.
+2026-11-06 - RS7 PHYSICAL SURFACE RELIEF FOLLOW-UP
+The owner reported that the textured ground still read as flat and instructed
+that discovered causes should be implemented. The bank mesh itself is rebuilt:
+10 cm sampling, 70648 faces, irregular soil hummocks, embedded mineral features,
+stepped rock lips facing the river, and several stronger root runs. Mild cavity
+colour follows geometric recesses. This is a geometry change with matching
+complex-as-simple collision, not another shading-only update.
+The approved plant layout is frozen in plant-layout.json for deterministic rebuild.
+6191 contact constraints preserve existing roots and low fronds. All 229 local
+instance transforms and 207399 outside low plants remain unchanged. Validation
+covers 608 root probes and 10285 frond samples across 152 plants; penetration did
+not increase. The original procedural terrain digest, road network and exposure
+remain unchanged. Only the fitted first-section surface asset is reimported.
+Source recipe: Art/Unreal/lidar_bank_relief_detail.py
+Data: Art/Export/LidarStudy/FirstSection/physical-relief.json
+Build: Art/Blender/build_lidar_bank_surface.py
+Review/evidence: Art/Export/LidarStudy/FirstSection/Review/PhysicalRelief/index.html
+Art/Export/LidarStudy/FirstSection/Review/PhysicalRelief/evidence.json
+The older GroundDetail images are the preceding material-only revision. Current
+first-section review links point to the physical-relief comparison. A complete
+live walking/driving route remains a separate gate, not implied by these probes.
+
+2026-11-06 - FOREST ATMOSPHERE FOLLOW-UP
+Owner: add forest fog and improve distant forest depth while keeping the original
+colourful woodland reference. Existing height fog began at 1100 m, missing most
+forest views. Saved L_LidarStudy now uses light height haze from 18 m, density
+0.024, falloff 0.1, opacity cap 0.62, base elevation 45 m, cool luminance
+(550,850,1050). Two low-density LocalFogVolume actors sit deeper in the river
+woodland; full volumetric fog stays off. Sun, sky light and exposure unchanged.
+
+Two longer geometric tree-range trials were measured and rejected: the broad
+extension cost about 9-10 ms in forest views; the modest trial still reached
++3.62 ms. Final is the measured fog-only state. The four original canopy meshes
+were restored byte-for-byte from the pre-change backup, retaining all tree LODs.
+Distant forest improvement in this pass comes from depth-dependent colour and
+contrast. Better distant crown shapes still need better cheap representations;
+this pass does not claim that asset work is complete.
+
+Plant snapshot, outside planting, DEM digest, tree counts and near LOD checks
+passed. Final saved map was rendered in standalone with identical cameras and
+saved v6 at 1600x900. GPU mean changes in one matched pair were -0.47 to +1.63 ms across
+four views; not full-route performance proof. Source screenshots are unchanged.
+Authoring editor had one abnormal teardown after successful saving/validation;
+subsequent editor and standalone runs exited cleanly. No new runtime material
+compile error found. Full route, temporal transition and owner visual gates remain.
+
+Recipe: Art/Unreal/lidar_forest_atmosphere.py; settings in
+Art/Export/LidarStudy/Place/forest-atmosphere.json.
+Review: Art/Export/LidarStudy/FirstSection/Review/Atmosphere/index.html
+Evidence: same directory/evidence.json; isolation and rejected trials under
+Saved/LidarAuthoringQA/Atmosphere and Saved/LidarAuthoringQA/RS7.
