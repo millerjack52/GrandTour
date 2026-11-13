@@ -1,0 +1,476 @@
+{
+  "ok": true,
+  "reports": {
+    "colour": {
+      "ok": true,
+      "images": [
+        "game_current_canopy",
+        "game_current_road",
+        "game_current_sunlit",
+        "game_colour_medium_canopy",
+        "game_colour_medium_road",
+        "game_colour_medium_sunlit",
+        "game_colour_strong_canopy",
+        "game_colour_strong_road",
+        "game_colour_strong_sunlit",
+        "game_experiment_driving"
+      ],
+      "timings": [],
+      "package_fingerprint": "e4ee840b23dbdb12dced0037326aef1da3d90dcdad1159aa03293f5d04f6b851",
+      "assets": {
+        "ok": true,
+        "components": [
+          {
+            "mesh": "SM_Exact_drygrass",
+            "instances": 743,
+            "lods": 3,
+            "lod0_triangles": 52,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_fern",
+            "instances": 159,
+            "lods": 3,
+            "lod0_triangles": 460,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_grass",
+            "instances": 6276,
+            "lods": 3,
+            "lod0_triangles": 42,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 92,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 101,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_shrub",
+            "instances": 2524,
+            "lods": 3,
+            "lod0_triangles": 416,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 68,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 79,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": false,
+            "contact_shadow": true
+          }
+        ],
+        "textures": {
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_drygrass_Colour.T_Exact_drygrass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_006.T_SourceMask_Grass_006": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_fern_Colour.T_Exact_fern_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Fern_1.T_SourceMask_Fern_1": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_grass_Colour.T_Exact_grass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_004.T_SourceMask_Grass_004": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_pine.T_SourceBark_pine": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_pine_Colour.T_Exact_pine_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_shrub_Colour.T_Exact_shrub_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Shrubbery.T_SourceMask_Shrubbery": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass.T_SourceMask_Grass": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Flower_0_RANDOM.T_SourceMask_Flower_0_RANDOM": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          }
+        },
+        "lod0_triangle_upper_bound": 21331816,
+        "scope": "Every populated new foliage component uses the approved source texture bindings; LOD0 triangles preserved, 3 LODs, bark loaded at 4K."
+      },
+      "performance_verified": false,
+      "performance_scope": "Not benchmarked; existing shared-GPU limitation. Volumetric grid dimensions and geometry unchanged.",
+      "saved_map_unchanged": true,
+      "scene_lighting_exposure_unchanged": true
+    },
+    "install_colour": {
+      "ok": true,
+      "trees": 340,
+      "materials": [
+        "/Game/GrandTour/ArtTests/FloraTrail/Materials/Canopy/M_Exact_pine_Leaf_0_26834fc_coverage_lighting.M_Exact_pine_Leaf_0_26834fc_coverage_lighting",
+        "/Game/GrandTour/ArtTests/FloraTrail/Materials/Canopy/M_Exact_tree_Leaf_0_26834fc_coverage_lighting.M_Exact_tree_Leaf_0_26834fc_coverage_lighting"
+      ],
+      "changed_packages": [
+        "C:\\GrandTour\\Content\\GrandTour\\ArtTests\\FloraTrail\\Materials\\Canopy\\M_Exact_pine_Leaf_0_26834fc_coverage_lighting.uasset",
+        "C:\\GrandTour\\Content\\GrandTour\\ArtTests\\FloraTrail\\Materials\\Canopy\\M_Exact_tree_Leaf_0_26834fc_coverage_lighting.uasset"
+      ],
+      "before": {
+        "/Game/GrandTour/ArtTests/FloraTrail/Materials/Canopy/M_Exact_pine_Leaf_0_26834fc_coverage_lighting.M_Exact_pine_Leaf_0_26834fc_coverage_lighting": {
+          "CanopyReflectance": 0.23000000417232513,
+          "CanopyTransmission": 0.1599999964237213
+        },
+        "/Game/GrandTour/ArtTests/FloraTrail/Materials/Canopy/M_Exact_tree_Leaf_0_26834fc_coverage_lighting.M_Exact_tree_Leaf_0_26834fc_coverage_lighting": {
+          "CanopyReflectance": 0.23000000417232513,
+          "CanopyTransmission": 0.1599999964237213
+        }
+      },
+      "settings": {
+        "reflectance": 0.6,
+        "transmission": 0.32,
+        "coverage_facing_floor": 0.62,
+        "scope": "Tree leaves only; source bark, shrubs, grass, scene exposure and lighting unchanged",
+        "measure_gpu": false
+      },
+      "backup": "C:\\GrandTour\\Saved\\FloraTrailBackups\\colour-1794605107978392300",
+      "all_other_packages_unchanged": true,
+      "geometry_masks_normals_lights_exposure_unchanged": true
+    },
+    "verify_colour": {
+      "ok": true,
+      "images": [
+        "game_saved_canopy",
+        "game_saved_road",
+        "game_saved_sunlit",
+        "game_saved_driving"
+      ],
+      "timings": [],
+      "package_fingerprint": "01ecb62d6f4c3ef7ce20a025a777582878ad5e602919d3949fe4080de2dbe79c",
+      "assets": {
+        "ok": true,
+        "components": [
+          {
+            "mesh": "SM_Exact_drygrass",
+            "instances": 743,
+            "lods": 3,
+            "lod0_triangles": 52,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_fern",
+            "instances": 159,
+            "lods": 3,
+            "lod0_triangles": 460,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_grass",
+            "instances": 6276,
+            "lods": 3,
+            "lod0_triangles": 42,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 92,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 101,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_shrub",
+            "instances": 2524,
+            "lods": 3,
+            "lod0_triangles": 416,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 68,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 79,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": false,
+            "contact_shadow": true
+          }
+        ],
+        "textures": {
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_drygrass_Colour.T_Exact_drygrass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_006.T_SourceMask_Grass_006": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_fern_Colour.T_Exact_fern_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Fern_1.T_SourceMask_Fern_1": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_grass_Colour.T_Exact_grass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_004.T_SourceMask_Grass_004": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_pine.T_SourceBark_pine": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_pine_Colour.T_Exact_pine_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_shrub_Colour.T_Exact_shrub_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Shrubbery.T_SourceMask_Shrubbery": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass.T_SourceMask_Grass": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Flower_0_RANDOM.T_SourceMask_Flower_0_RANDOM": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          }
+        },
+        "lod0_triangle_upper_bound": 21331816,
+        "scope": "Every populated new foliage component uses the approved source texture bindings; LOD0 triangles preserved, 3 LODs, bark loaded at 4K."
+      },
+      "saved_settings_match": true,
+      "settings": {
+        "reflectance": 0.6,
+        "transmission": 0.32,
+        "coverage_facing_floor": 0.62,
+        "scope": "Tree leaves only; source bark, shrubs, grass, scene exposure and lighting unchanged",
+        "measure_gpu": false
+      },
+      "performance_verified": false,
+      "performance_scope": "Not benchmarked; existing shared-GPU limitation. Volumetric grid dimensions and geometry unchanged.",
+      "saved_map_unchanged": true,
+      "scene_lighting_exposure_unchanged": true
+    }
+  },
+  "processes": {
+    "colour": {
+      "started": "2026-11-13T15:20:46.8046468-06:00",
+      "finished": "2026-11-13T15:24:39.3148389-06:00",
+      "stage": "colour",
+      "exit_code": 0
+    },
+    "install_colour": {
+      "started": "2026-11-13T15:24:40.5105698-06:00",
+      "finished": "2026-11-13T15:25:22.8103672-06:00",
+      "stage": "install_colour",
+      "exit_code": 0
+    },
+    "verify_colour": {
+      "started": "2026-11-13T15:25:53.5901282-06:00",
+      "finished": "2026-11-13T15:27:33.5636597-06:00",
+      "stage": "verify_colour",
+      "exit_code": 0
+    }
+  },
+  "performance_verified": false,
+  "scope": "Two local tree materials, 340 instances; reflectance and transmission scalar values only.",
+  "unchanged": [
+    "Source textures and hue",
+    "Leaf coverage and authored normals",
+    "Geometry and LODs",
+    "Scene lights, fog and exposure",
+    "Bark, shrubs, ground, mud and water"
+  ],
+  "images": [
+    "tree-colour-before-after.jpg",
+    "colour-trials.jpg",
+    "game_saved_sunlit.png"
+  ],
+  "limits": [
+    "No exact Blender parity claim",
+    "No new GPU benchmark; capture runner disables the RHI thread to avoid a tooling shutdown fault",
+    "Existing fine mask noise remains"
+  ]
+}

@@ -1,0 +1,49 @@
+FLORA TRAIL / BRIGHTER FOLIAGE WITH SHADOWS
+
+Target
+The reference has much brighter coloured foliage while retaining shaded crown
+interiors. This pass changes the native leaf response, keeping the existing
+source pigment, leaf coverage, normals and corrected haze.
+
+Controlled trials
+Actual PIE views compare the existing reflectance/transmission multipliers
+(0.23/0.16), a medium response (0.40/0.24), and a stronger response (0.60/0.32).
+The cameras include the established canopy and road views and a view facing
+the sunlit sides of the trees. All share identical lighting and exposure.
+The stronger response was selected for brighter yellow-green illuminated
+foliage with visible shaded interiors. It does not use emissive lighting.
+Native light and shadow evaluation remain in place; ambient leaf colour also
+responds to the increased reflectance. Shadow brightness is not numerically
+identical to the old material.
+
+Installation and controls
+Only two local FloraTrail tree material packages are changed, serving 340
+instances. No geometry, texture samples, shading features or passes are added.
+Art/flora_trail_canopy_settings.json remains the canonical rebuild control;
+reflectance is now 0.60 and transmission 0.32. All other settings are retained.
+The installer backs up the two materials and prior settings, then checks every
+other saved package hash, including the map. No woodland/LiDAR material changes.
+
+Run the controlled comparison before installing a selected response:
+powershell -ExecutionPolicy Bypass -File Art/run_flora_tree_colour.ps1 -Stage colour
+Write Art/Export/FloraTrail/TreeColour/selection.json containing the selected
+reflectance and transmission values (0.60 and 0.32 for this pass), then run:
+powershell -ExecutionPolicy Bypass -File Art/run_flora_tree_colour.ps1 -Stage install_colour
+powershell -ExecutionPolicy Bypass -File Art/run_flora_tree_colour.ps1 -Stage verify_colour
+python Art/review_flora_tree_colour.py
+
+Verification reopens the saved map, audits source texture bindings and LODs,
+asserts the installed scalar values, and captures actual PIE views. The final
+comparison uses those reopened-map captures, with no image grading.
+docs/validation/flora-tree-colour.json is the current visual/material evidence;
+earlier atmosphere/canopy reports remain historical snapshots.
+
+Limits
+The preliminary solid-mask and softened-normal trials were not installed.
+The user's clarified priority was brighter colour with shadows. The selected
+change keeps the existing mask and authored normals. Fine temporal noise and
+tree-form differences from the reference remain. Exact Blender parity is not
+claimed. Performance timings remain unverified. The capture runner uses
+-norhithread after a late diagnostic shutdown failure; it is not the game's
+normal launch configuration and must not be used for performance conclusions.
+Unreal also reported derived-cache storage failures during the diagnostic runs.

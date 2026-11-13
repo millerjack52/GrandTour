@@ -39,3 +39,5 @@ The isolated **FloraTrail** driving section combines the approved source foliage
 FloraTrail's tree coverage and sunlight-response refinement is documented in `docs/FLORA_TRAIL_CANOPY.txt`, including controlled material tests and current saved-map validation.
 
 FloraTrail atmosphere controls and current saved-map visual evidence are documented in `docs/FLORA_TRAIL_ATMOSPHERE.txt`.
+
+The tree colour response refinement and current validation are documented in `docs/FLORA_TREE_COLOUR.txt`.

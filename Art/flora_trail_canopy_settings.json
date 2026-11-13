@@ -1,6 +1,6 @@
 {
-  "reflectance": 0.23,
-  "transmission": 0.16,
+  "reflectance": 0.6,
+  "transmission": 0.32,
   "coverage_facing_floor": 0.62,
   "scope": "Tree leaves only; source bark, shrubs, grass, scene exposure and lighting unchanged",
   "measure_gpu": false

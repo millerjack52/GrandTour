@@ -94,3 +94,7 @@ Atmosphere refinement
 FLORA_TRAIL_ATMOSPHERE.txt documents the lighter near-camera haze. Current
 visual/map evidence is validation/flora-trail-atmosphere.json. The surface
 palette, tree fix and gameplay systems remain unchanged.
+
+Tree colour response
+FLORA_TREE_COLOUR.txt documents brighter lit foliage with native shadows.
+Current material/map evidence is validation/flora-tree-colour.json.
