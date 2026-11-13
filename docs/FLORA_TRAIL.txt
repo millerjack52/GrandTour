@@ -1,0 +1,84 @@
+FLORA TRAIL / SOURCE FOLIAGE + DEFORMABLE MUD + WATER
+
+Scope
+A separate small playable section using the approved FloraGroup source conversion
+and the established FloraDrive terrain/vehicle/water simulation. It does not
+replace the LiDAR map or overwrite either approved study. The 52 m S-shaped
+route has three recovery points, a muddy dip and a woodland pond beside it.
+
+Drive
+Run Drive-FloraTrail.bat. W/S accelerate/brake, A/D steer, Space handbrake.
+1/2/3 recover to entry/mud/water. Backspace resets the section and soil.
+F1 toggles the driving diagnostic overlay.
+
+Rebuild
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail.ps1 -Stage build
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail.ps1 -Stage check
+Requires the local purchased pack assets and previously generated study assets;
+these licensed binary inputs are not redistributed in the source repository.
+
+Visual principles
+Six source-converted families: pine, broadleaf tree, fern, shrub, grass and dry
+grass. Preserve source pigments, opacity and geometric normals, including the
+separate 4K wood/moss bake. Remap the seeded clustered layout by object bounds,
+keeping root heights, open running lane, short verges, taller understory and
+background tree layers. Consolidate instances by family and near/far usage.
+Ground and rock materials retain existing source maps, relief and normals.
+Map-local material copies and lighting controls keep changes isolated.
+
+Controls
+Art/flora_trail_settings.json: sun direction, source sun/sky strengths and
+colours, fog density/colour, sky/cloud luminance and rendering settings.
+Source foliage lighting uses the map-local MPC_SourceLighting; keep its sun
+vector and sky radiance synchronized with the scene lights via the builder.
+The Standard display transfer must remain enabled in the game viewport.
+
+Mud and water contract
+Keep LiDAR physical soil parameters, the native mud update, real grid vertex
+displacement, sediment/water state and changing water-bed updates. Keep the
+local MR_VisualWindow at (0,0,3750,600) on ground AND tread materials. POM adds
+small surface relief; it is not the tyre deformation. The established regression
+measures actual NativeVisualGrid SceneDepth before/after driving, excludes the
+car/water/tread overlays, and separately verifies reset and GPU shader oracles.
+
+Limits
+The analytical foliage shader matches source sun plus uniform sky; general
+headlight/point-light parity is still unresolved. This daylight section is not
+a claim of a full-pack conversion or a 60 fps production release. Source trees
+and grass may still show temporal edge noise. Driving captures with pauses are
+functional evidence, not a clean performance benchmark.
+
+Validation
+See docs/validation/flora-trail.json and local Art/Export/FloraTrail results.
+
+Surface palette bridge
+The converted plants keep their source pigments. The surrounding native terrain
+uses a local albedo adjustment to fit the Standard display: road 0.8, verge 0.42,
+Rock Master surfaces 0.65. Water retains its native opacity, wave normals, vertex
+displacement and sediment state. A soft mask within the existing pond adjusts
+its colour, scattering and absorption towards a cool green-blue; road puddles
+retain the muddy medium. PondTint is exposed on the local M_FloraWater material
+and in flora_trail_settings.json. This is a visual adapter, not changed physics.
+
+Final verification (2026-11-13)
+Build, saved-asset/visual capture and continuous driving check exited 0. Source
+maps and approved foliage assets retained their hashes. All populated foliage
+components use the approved texture bindings; bark loaded at 4096x4096. There
+are 10,042 foliage instances in eight components, with three LODs per mesh.
+
+The car drove 51.29 m, contacting water up to 19.34 cm deep. SceneDepth of the
+actual ground grid measured up to 7.53 cm of depression and 3.33 cm of raised
+soil; 1,199 pixels changed by more than 1 cm. The fixed terrain probes returned
+to their initial heights with zero error on reset. Native GPU shader oracles,
+water-bed updates and sediment targets passed. The pond bed is -31.99 cm; the
+minimum tested road crown-to-trough relief is 16.33 cm.
+
+Two 300-frame stationary PIE spot checks at 1274x682 gave GPU medians of 16.07 ms
+(road) and 14.61 ms (pond), with p95 of 21.42 / 18.85 ms. These are not a 1080p,
+packaged-game or sustained-driving 60 fps validation. Captures show remaining
+foliage edge noise and sparse distant crown coverage, which need a dedicated
+rendering/LOD refinement pass before a wider rollout.
+
+Generated map rebuilds keep a map backup under Saved/FloraTrailBackups.
+Art/review_flora_trail.py assembles unretouched screenshots and checks that all
+reports refer to the same saved asset fingerprint before writing validation.

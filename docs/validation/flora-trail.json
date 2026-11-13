@@ -1,0 +1,341 @@
+{
+  "ok": true,
+  "level": "/Game/GrandTour/ArtTests/FloraTrail/L_FloraTrail",
+  "source_maps_and_assets_unchanged": true,
+  "route_length_m": 52.3,
+  "foliage_instances": 10042,
+  "foliage_components": 8,
+  "asset_audit": {
+    "ok": true,
+    "components": [
+      {
+        "mesh": "SM_Exact_drygrass",
+        "instances": 743,
+        "lods": 3,
+        "lod0_triangles": 52,
+        "cast_shadow": false,
+        "contact_shadow": true
+      },
+      {
+        "mesh": "SM_Exact_fern",
+        "instances": 159,
+        "lods": 3,
+        "lod0_triangles": 460,
+        "cast_shadow": true,
+        "contact_shadow": true
+      },
+      {
+        "mesh": "SM_Exact_grass",
+        "instances": 6276,
+        "lods": 3,
+        "lod0_triangles": 42,
+        "cast_shadow": false,
+        "contact_shadow": true
+      },
+      {
+        "mesh": "SM_Exact_pine",
+        "instances": 92,
+        "lods": 3,
+        "lod0_triangles": 74670,
+        "cast_shadow": true,
+        "contact_shadow": true
+      },
+      {
+        "mesh": "SM_Exact_pine",
+        "instances": 101,
+        "lods": 3,
+        "lod0_triangles": 74670,
+        "cast_shadow": false,
+        "contact_shadow": true
+      },
+      {
+        "mesh": "SM_Exact_shrub",
+        "instances": 2524,
+        "lods": 3,
+        "lod0_triangles": 416,
+        "cast_shadow": true,
+        "contact_shadow": true
+      },
+      {
+        "mesh": "SM_Exact_tree",
+        "instances": 68,
+        "lods": 3,
+        "lod0_triangles": 37382,
+        "cast_shadow": true,
+        "contact_shadow": true
+      },
+      {
+        "mesh": "SM_Exact_tree",
+        "instances": 79,
+        "lods": 3,
+        "lod0_triangles": 37382,
+        "cast_shadow": false,
+        "contact_shadow": true
+      }
+    ],
+    "textures": {
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_drygrass_Colour.T_Exact_drygrass_Colour": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": true
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_006.T_SourceMask_Grass_006": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": false
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_fern_Colour.T_Exact_fern_Colour": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": true
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Fern_1.T_SourceMask_Fern_1": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": false
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_grass_Colour.T_Exact_grass_Colour": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": true
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_004.T_SourceMask_Grass_004": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": false
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_pine.T_SourceBark_pine": {
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "srgb": true
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_pine_Colour.T_Exact_pine_Colour": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": true
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": false
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_shrub_Colour.T_Exact_shrub_Colour": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": true
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Shrubbery.T_SourceMask_Shrubbery": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": false
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass.T_SourceMask_Grass": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": false
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Flower_0_RANDOM.T_SourceMask_Flower_0_RANDOM": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": false
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree": {
+        "dimensions": [
+          4096,
+          4096
+        ],
+        "srgb": true
+      },
+      "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": {
+        "dimensions": [
+          2048,
+          2048
+        ],
+        "srgb": true
+      }
+    },
+    "lod0_triangle_upper_bound": 21331816,
+    "scope": "Every populated new foliage component uses the approved source texture bindings; LOD0 triangles preserved, 3 LODs, bark loaded at 4K."
+  },
+  "package_fingerprint_sha256": "2c17a898b946789557b67dea41017c227ddd5bcf7d454f8d248fb219afc8a87e",
+  "drive": {
+    "travel_cm": 5129.245520429123,
+    "max_sink_cm": 19.985794067382812,
+    "max_water_cm": 19.33678239583969,
+    "max_compression_cm": 7.282176971435547
+  },
+  "rendered_deformation": {
+    "max_rendered_depression_cm": 7.53125,
+    "max_rendered_raise_cm": 3.328125,
+    "pixels_changed_over_1cm": 1199,
+    "old_window_suppressed_displacement_cm": 32.078125,
+    "scope": "Actual SceneDepth of NativeVisualGrid only; car, foliage, water and tread ribbons excluded",
+    "resolution": [
+      128,
+      128
+    ]
+  },
+  "reset_error_cm": 0.0,
+  "shader_oracles": {
+    "wave_shader_max_error": 0.0005958645727472955,
+    "mud_blend_shader_max_error": 0.00014929199218749467,
+    "mud_normal_shader_max_error": 0.00047578171922069146,
+    "water_state_shader_max_error": 0.0004788910729605078,
+    "water_sediment_shader_max_error": 0.0002427726387244089
+  },
+  "pond_bed_cm": -31.990034103393555,
+  "road_crown_to_trough_cm": 16.33292007446289,
+  "render_spot_checks": [
+    {
+      "view": "road",
+      "resolution": [
+        1274,
+        682
+      ],
+      "csv": "C:\\GrandTour\\Art\\Export\\FloraTrail\\render_road.csv",
+      "metrics": {
+        "FrameTime": {
+          "samples": 300,
+          "mean": 20.67621766666667,
+          "median": 16.90895,
+          "min": 16.639,
+          "max": 889.7444,
+          "p95": 22.3306,
+          "p99": 24.3842
+        },
+        "GPUTime": {
+          "samples": 300,
+          "mean": 16.238870333333335,
+          "median": 16.07325,
+          "min": 12.4583,
+          "max": 23.4825,
+          "p95": 21.4205,
+          "p99": 22.6367
+        },
+        "GameThreadTime": {
+          "samples": 300,
+          "mean": 13.656731333333333,
+          "median": 10.28465,
+          "min": 8.3699,
+          "max": 886.8412,
+          "p95": 12.108,
+          "p99": 14.0727
+        },
+        "RenderThreadTime": {
+          "samples": 300,
+          "mean": 0.00027333333333333333,
+          "median": 0.0002,
+          "min": 0.0001,
+          "max": 0.0036,
+          "p95": 0.0004,
+          "p99": 0.0008
+        }
+      },
+      "scope": "stationary uncapped PIE; not a packaged-game benchmark"
+    },
+    {
+      "view": "pond",
+      "resolution": [
+        1274,
+        682
+      ],
+      "csv": "C:\\GrandTour\\Art\\Export\\FloraTrail\\render_pond.csv",
+      "metrics": {
+        "FrameTime": {
+          "samples": 300,
+          "mean": 16.666871333333336,
+          "median": 16.667050000000003,
+          "min": 16.6193,
+          "max": 16.7163,
+          "p95": 16.6818,
+          "p99": 16.6925
+        },
+        "GPUTime": {
+          "samples": 300,
+          "mean": 14.886572666666668,
+          "median": 14.61,
+          "min": 13.411,
+          "max": 21.6995,
+          "p95": 18.8524,
+          "p99": 20.9884
+        },
+        "GameThreadTime": {
+          "samples": 300,
+          "mean": 11.121195666666665,
+          "median": 11.0427,
+          "min": 8.4054,
+          "max": 16.0318,
+          "p95": 12.4961,
+          "p99": 14.3037
+        },
+        "RenderThreadTime": {
+          "samples": 300,
+          "mean": 0.036343,
+          "median": 0.0002,
+          "min": 0.0001,
+          "max": 5.6481,
+          "p95": 0.0004,
+          "p99": 0.0258
+        }
+      },
+      "scope": "stationary uncapped PIE; not a packaged-game benchmark"
+    }
+  ],
+  "processes": {
+    "build": {
+      "started": "2026-11-13T14:10:35.7727600-06:00",
+      "finished": "2026-11-13T14:11:23.3880412-06:00",
+      "stage": "build",
+      "exit_code": 0
+    },
+    "check": {
+      "started": "2026-11-13T14:16:13.0597364-06:00",
+      "finished": "2026-11-13T14:18:36.0424198-06:00",
+      "stage": "check",
+      "exit_code": 0
+    },
+    "capture": {
+      "started": "2026-11-13T14:14:08.4435616-06:00",
+      "finished": "2026-11-13T14:16:08.1283915-06:00",
+      "stage": "capture",
+      "exit_code": 0
+    }
+  },
+  "performance_verified": false,
+  "performance_scope": "300-frame stationary PIE spot checks per view; not a 1080p or packaged 60 fps acceptance run. Editor frame pacing may remain active even with t.MaxFPS=0.",
+  "limits": [
+    "Source foliage sun/uniform-sky model still has weak local-light parity",
+    "Temporal foliage edge noise remains",
+    "Six converted source foliage meshes, not the full pack"
+  ],
+  "images": [
+    "playable-section.jpg",
+    "deformation-proof.jpg"
+  ]
+}
