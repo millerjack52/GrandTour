@@ -1,6 +1,6 @@
 """Clean source-output materials. No FloraWorld colour/normal wrappers."""
 import unreal as u
-import hashlib
+import hashlib,re
 from pathlib import Path
 from benmore_river_life_materials import Graph,props
 E=u.EditorAssetLibrary;M=u.MaterialEditingLibrary;T=u.AssetToolsHelpers.get_asset_tools();S=u.get_editor_subsystem(u.StaticMeshEditorSubsystem)
@@ -101,7 +101,12 @@ def import_asset(asset):
     # Name-based slot binding avoids treating importer slot order as authoritative.
     for i,sm in enumerate(mesh.get_editor_property('static_materials')):
         slot=str(sm.get_editor_property('imported_material_slot_name'))
-        match=next((s for s in materials if slot==s or slot.startswith(s+'.')),None)
+        # FBX sanitizes Blender's dotted material names (Grass.004 -> Grass_004).
+        # Prefer exact identities, then a unique sanitized identity; never bind
+        # grass variants by material-array order or by the bare Grass prefix.
+        exact=[s for s in materials if slot==s or slot==s.replace('.','_')]
+        candidates=exact or [s for s in materials if slot.startswith(s+'.') or re.fullmatch(re.escape(s.replace('.','_'))+r'_\d+',slot)]
+        match=candidates[0] if len(candidates)==1 else None
         assert match,(slot,list(materials));mesh.set_material(i,materials[match])
     build=S.get_lod_build_settings(mesh,0);props(build,recompute_normals=False,recompute_tangents=True,use_full_precision_u_vs=True);S.set_lod_build_settings(mesh,0,build)
     settings=mesh.get_editor_property('nanite_settings');settings.enabled=False;S.set_nanite_settings(mesh,settings,True)

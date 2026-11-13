@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-13",
+  "state": "group_study_not_promoted_to_lidar",
+  "processes": {
+    "bake": {
+      "started": "2026-11-13T12:27:45.7079821-06:00",
+      "exit_code": 0,
+      "finished": "2026-11-13T12:28:05.7249206-06:00",
+      "stage": "bake"
+    },
+    "bark": {
+      "finished": "2026-11-13T12:38:41.0857620-06:00",
+      "started": "2026-11-13T12:38:06.3995415-06:00",
+      "exit_code": 0,
+      "stage": "bark"
+    },
+    "scene": {
+      "started": "2026-11-13T12:41:02.2078240-06:00",
+      "exit_code": 0,
+      "stage": "scene",
+      "finished": "2026-11-13T12:42:19.9801227-06:00"
+    },
+    "audit": {
+      "started": "2026-11-13T12:46:37.4483219-06:00",
+      "exit_code": 0,
+      "finished": "2026-11-13T12:47:10.9779876-06:00",
+      "stage": "audit"
+    }
+  },
+  "python_syntax_checked": [
+    "Art/Blender/bake_flora_group.py",
+    "Art/Blender/bake_flora_group_bark.py",
+    "Art/Unreal/build_flora_group.py",
+    "Art/Unreal/flora_group_bark.py",
+    "Art/Unreal/flora_group_display.py",
+    "Art/Unreal/audit_flora_group.py",
+    "Art/Unreal/flora_exact_materials.py",
+    "Art/review_flora_group.py"
+  ],
+  "texture_slots_checked": 35,
+  "texture_resources_checked": 18,
+  "source_converted_slots_hash_verified": 10,
+  "bark": [
+    {
+      "key": "tree",
+      "material": "/Game/GrandTour/ArtTests/FloraGroup/Assets/M_SourceBark_tree.M_SourceBark_tree",
+      "colour_texture": "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>",
+      "max_size": 4096,
+      "lod_bias": 0,
+      "source_graph": "procedural FP_Wood_material_01 through Moss_Shader_v1",
+      "normal_policy": "Preserve authored geometry/custom normals; active source has no normal-map or bump input",
+      "leaf_uv_and_geometry_unchanged": true,
+      "bark_texture_samples": 1
+    },
+    {
+      "key": "pine",
+      "material": "/Game/GrandTour/ArtTests/FloraGroup/Assets/M_SourceBark_pine.M_SourceBark_pine",
+      "colour_texture": "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_pine.T_SourceBark_pine",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "srgb": true,
+      "compression": "<TextureCompressionSettings.TC_BC7: 11>",
+      "max_size": 4096,
+      "lod_bias": 0,
+      "source_graph": "procedural FP_Wood_material_01 through Moss_Shader_v1",
+      "normal_policy": "Preserve authored geometry/custom normals; active source has no normal-map or bump input",
+      "leaf_uv_and_geometry_unchanged": true,
+      "bark_texture_samples": 1
+    }
+  ],
+  "instances": 1880,
+  "lod0_triangle_upper_bound": 3217992,
+  "protected_unchanged": {
+    "Config/DefaultEngine.ini": true,
+    "Content/GrandTour/ArtTests/LidarStudy/L_LidarStudy.umap": true,
+    "Content/GrandTour/ArtTests/FloraPath/L_FloraPath.umap": true
+  },
+  "editor_vs_capture_mean_display_difference": 0.015660058706998825,
+  "performance_verified": false,
+  "warnings": [
+    "Non-Nanite VSM marking workload warning; optimisation pending",
+    "Canopy/local-light shading mismatch remains",
+    "Editor high-resolution capture has noisier leaf edges than settled scene capture"
+  ],
+  "reference": "Owner-supplied Casey Sheep Flora Paint forest-path image"
+}

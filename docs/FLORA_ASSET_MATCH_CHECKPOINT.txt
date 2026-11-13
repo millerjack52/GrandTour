@@ -118,3 +118,10 @@ this as exact parity. Motion/held mean display differences: 0.0144 and 0.0199.
 All seven new Python scripts pass syntax parsing. Protected maps/config and
 purchased source hashes match the pre-study baseline. See the portable record
 at docs/validation/flora-asset-match.json. No whole-project rebuild is claimed.
+
+Follow-up group study, 13 November 2026
+See docs/FLORA_GROUP_STUDY.txt. Inspection of the active Wood_material graph
+corrects the earlier assumption about missing bark normals: this source uses
+procedural wood/moss colour and geometry normals, with no connected normal-map
+or bump input. The isolated group study restores dedicated bark UV packing and
+4K source colour bakes. This does not retroactively change the earlier bench.

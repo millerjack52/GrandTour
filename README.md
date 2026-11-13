@@ -29,3 +29,7 @@ The 13 November 2026 publication is a source checkpoint, including pre-existing
 project changes. It is not a release or a claim that every subsystem has been
 retested. Test results for this study are recorded explicitly in
 `docs/validation/flora-asset-match.json`.
+
+The separate forest-path group study is documented in
+`docs/FLORA_GROUP_STUDY.txt`, with lighting cases, dedicated source bark maps
+and a saved-map texture audit. Its map and licensed inputs remain local.

@@ -1,0 +1,91 @@
+FLORA PAINT GROUP / FOREST PATH STUDY
+13 November 2026
+
+Open with C:/GrandTour/Open-FloraGroup.bat.
+Map: /Game/GrandTour/ArtTests/FloraGroup/L_FloraGroup
+Editable controls: Art/flora_group_settings.json; named sun, sky, fog, spot,
+point light, camera and display volume also live in the map.
+
+Reference
+Casey Sheep / Flora Paint forest-path image supplied by the owner: tall pines,
+golden sunlight on the right, cooler shade, layered plants around a path.
+The purchased 001.blend scene supplies the frozen path geometry, placement and
+camera. This study remaps its foliage variants to six source-converted samples:
+fern, flowering shrub, Tree_B_001, Tree_D_001, Grass_001 and Dry_Grass_001.
+It is a reduced plant palette, not a claim that the full pack is converted.
+Ground, rocks, fallen litter and twigs reuse earlier scenic materials.
+Original assets and artist reference are local licensed dependencies.
+
+What is being tested
+Same geometry and camera under warm sun/cool sky, sky only, sun plus a warm
+spot and cool point light, low sky with local lights off, and local lights on.
+A separate native UE Two Sided Foliage diagnostic retains the same pigment
+and masks. This comparison exposes the sun-oriented lighting approximation;
+it is not presented as an equivalent Blender shader or a chosen replacement.
+Local lights use explicit candela units and inverse-square falloff. See:
+https://dev.epicgames.com/documentation/unreal-engine/using-physical-lighting-units-in-unreal-engine
+
+Bark correction
+The first group pass regressed to a whole-tree 2K atlas. It lost the dedicated
+bark packing used in the previous FloraPath work and looked visibly blurry.
+Bark now has independent UV1 packing and a 4K BC7/sRGB bake of the ACTIVE source
+procedural wood-and-moss shader. Leaf UV0/UV1 and geometry hashes are unchanged.
+Both tree types retain authored geometry normals. This source bark graph has
+NO connected normal-map/bump input: the older note that source bark normals
+still needed transferring was an assumption, corrected by this graph audit.
+The visible 3.jpg image branch is inactive and must not replace the active
+procedural wood shader. No invented normal texture was added.
+Each trunk still uses one colour texture sample; foliage remains unchanged.
+The dedicated bark images are not an excuse to increase all foliage textures.
+
+Texture checks
+The reopen audit enumerates every instanced mesh/material slot and texture.
+New foliage colour and coverage bindings are verified by hashes of the exact
+source-generated files. Bark maps must retain their 4096 cap and reach 4096
+after load warmup. Colour inputs use sRGB; mask inputs use linear sampling.
+Earlier scenery records its actual imported file paths and settings; it is not
+mislabelled as newly source-matched. Material fallback assignments fail audit.
+Blender material names can acquire .001 suffixes and FBX replaces dots with
+underscores. Binding accepts unique sanitized identities, never array order.
+
+Display and captures
+SceneCapture's sRGB target uses linear source output; the editor backbuffer
+requires explicit Standard/sRGB encoding when replacing its tonemapper.
+The saved map therefore uses M_ViewportStandard. The scene-capture loop uses
+the original linear output pass. No image grading or generated imagery is used
+in the comparison boards. Editor screenshots wait 64 frames for temporal AA.
+Audit tick callbacks are guarded against re-entry during shader compilation.
+
+Findings / limits
+The group reveals excessive canopy darkness and weak/uneven local-light leaf
+response compared with bark and ground. Native foliage lighting responds more
+strongly, but does not preserve the same source appearance. The next shader
+step is a light-independent multi-lobe model, validated under these same rigs,
+not another global colour gain. Fine stochastic edge noise also remains.
+The study has 1,880 instances in 31 components; 1,236 instances use the six new
+foliage meshes. LOD0 upper bound is 3,217,992 triangles, not measured draw cost.
+There is one shadow-casting spot and one unshadowed point fill. Unreal reports
+a non-Nanite virtual-shadow marking workload warning. This is an optimisation
+item, and FPS/60fps are NOT verified. No LiDAR or original FloraPath promotion.
+
+Reproduce (one renderer at a time)
+./Art/run_flora_group.ps1 bake
+./Art/run_flora_group.ps1 bark
+./Art/run_flora_group.ps1 scene
+./Art/run_flora_group.ps1 audit
+python Art/review_flora_group.py
+
+Evidence: Art/Export/LidarStudy/FloraGroup
+The process JSON files distinguish completed captures from clean engine exits.
+Use docs/validation/flora-group.json for the final portable validation record.
+Protected map/config hashes are checked by the review script.
+
+Final validation
+Baking, bark rebake, scene build/captures and saved-map audit all exited 0.
+35 slots / 18 texture resources checked; source bindings on converted slots
+verified by file hashes. Both bark textures report 4096 after load warmup.
+Editor versus settled scene capture mean display difference is 0.0157; the
+editor high-resolution capture remains visibly noisier on leaf edges.
+Eight Python scripts parse. LiDAR, original FloraPath and project config hashes
+remain unchanged. Full-map performance and a clean whole-project build were
+not claimed. Older failed attempts are superseded by these final process logs.

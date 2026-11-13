@@ -1,0 +1,135 @@
+{
+  "exposure_stops": 0,
+  "spot_position_cm": [
+    130,
+    240,
+    230
+  ],
+  "spot_target_cm": [
+    -200,
+    -160,
+    40
+  ],
+  "fill_position_cm": [
+    -280,
+    -180,
+    190
+  ],
+  "cases": [
+    {
+      "name": "00_reference_sun",
+      "sun": 37.52,
+      "sky": 0.75,
+      "sun_colour": [
+        1,
+        0.814,
+        0.539
+      ],
+      "sky_colour": [
+        0.58,
+        0.74,
+        1
+      ],
+      "fog": 0.09,
+      "fog_colour": [
+        0.24,
+        0.35,
+        0.5
+      ],
+      "spot_cd": 0,
+      "fill_cd": 0
+    },
+    {
+      "name": "01_open_shade",
+      "sun": 0,
+      "sky": 0.75,
+      "sun_colour": [
+        1,
+        0.814,
+        0.539
+      ],
+      "sky_colour": [
+        0.58,
+        0.74,
+        1
+      ],
+      "fog": 0.09,
+      "fog_colour": [
+        0.24,
+        0.35,
+        0.5
+      ],
+      "spot_cd": 0,
+      "fill_cd": 0
+    },
+    {
+      "name": "02_sun_and_local_lights",
+      "sun": 37.52,
+      "sky": 0.75,
+      "sun_colour": [
+        1,
+        0.814,
+        0.539
+      ],
+      "sky_colour": [
+        0.58,
+        0.74,
+        1
+      ],
+      "fog": 0.09,
+      "fog_colour": [
+        0.24,
+        0.35,
+        0.5
+      ],
+      "spot_cd": 180,
+      "fill_cd": 25
+    },
+    {
+      "name": "03_local_baseline",
+      "sun": 0,
+      "sky": 0.04,
+      "sun_colour": [
+        1,
+        0.814,
+        0.539
+      ],
+      "sky_colour": [
+        0.58,
+        0.74,
+        1
+      ],
+      "fog": 0.025,
+      "fog_colour": [
+        0.025,
+        0.045,
+        0.075
+      ],
+      "spot_cd": 0,
+      "fill_cd": 0
+    },
+    {
+      "name": "04_local_lights",
+      "sun": 0,
+      "sky": 0.04,
+      "sun_colour": [
+        1,
+        0.814,
+        0.539
+      ],
+      "sky_colour": [
+        0.58,
+        0.74,
+        1
+      ],
+      "fog": 0.025,
+      "fog_colour": [
+        0.025,
+        0.045,
+        0.075
+      ],
+      "spot_cd": 180,
+      "fill_cd": 25
+    }
+  ]
+}
