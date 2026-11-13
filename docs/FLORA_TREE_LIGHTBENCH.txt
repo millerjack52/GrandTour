@@ -1,0 +1,120 @@
+Flora Paint: same-tree colour and lighting calibration
+
+Scope
+An isolated Tree_B_001 comparison in Blender 3.4.1, Blender 5.1.2 and Unreal 5.8.
+The current driving scene, shared foliage assets and LiDAR are not modified.
+Original assets and artwork: Casey Sheep / Flora Paint. The purchased project
+and reference images remain local, in accordance with its supplied readme.
+
+Why the previous target was wrong
+Bonus_Project_Files/001/readme.txt explicitly specifies Blender 3.4.1. Earlier
+comparisons used 5.1.2. This new bench renders the identical original material,
+FBX, camera and light recipe in both versions with Standard display, no look,
+exposure 0 and gamma 1. The newer Eevee renderer makes this leaf material much
+darker. The isolated pigment output remains similar. This is a material-light
+response mismatch, not evidence that the source pigments need a yellow tint.
+It invalidates treating the earlier 5.1 thick-transmission fit as the author's
+reference. It does not mean every Flora Paint asset or Blender version behaves
+identically to this particular material family.
+
+Source identity
+The test imports FloraGroup/Bark/SM_Exact_tree.fbx into Blender. Unreal uses the
+matching approved FloraGroup mesh; its stored import hash must equal that FBX.
+The FloraTrail copy's LOD0 triangle count and bounds are checked against it.
+The original Leaf_0 and Wood_material are restored by slot identity in Blender.
+The source-identity probe confirms these are the actual materials on
+FP_Tree_B_001. The group contains repeated socket names (three named Soft), so
+the probe retains indices as well as names. Its facing softness is .8534567;
+the separate hue-softness socket is .5504094 and must not replace it.
+
+Unreal candidate
+The source Leaf_0 material has Shadow/diffuse weight 0: its leaf lighting uses
+a Translucent BSDF with an authored downward normal. Legacy Eevee evaluates
+that lobe on the opposite, upward hemisphere. The isolated Unreal candidate
+uses native Default Lit with a constant world +Z lighting normal, source
+pigment, zero specular, zero roughness, zero emissive and material AO 1.
+This replaces the prior colour ramp and approximate two-sided foliage response.
+It is specific to this audited shader family; do not apply it to every foliage
+material without checking the source graph and its weights/normals.
+
+Native Unreal lights and cast shadows remain active. No sun/sky colour is
+painted into the textures and no ambient illumination is added through emissive.
+Source facing coverage and independent per-card hashing are retained. The
+approved 4K source bark material is bound explicitly; the mesh's stale default
+material assignment is not used as authority for the driving scene's bindings.
+
+Calibration
+Art/flora_tree_lightbench_settings.json holds one sun-unit gain and one sky-unit
+gain, shared across all cases. They are calibrated using the neutral .18 diffuse
+receiver, not independently fitted to leaf colours. Both are currently .98.
+Six cases cover front, side, back, cool sky-only, warm sun/cool sky, and sun-only.
+The same tree, framing, source pigment and normal convention are held fixed.
+PNG comparisons use native Blender Standard output and a bench-only Unreal
+Standard display pass into an sRGB render target. There is no external colour
+grading, brightness correction or generated imagery in the comparison boards.
+HDR measurements are recorded separately in linear RGB.
+
+Evidence and limits
+Art/Export/FloraTreeLightBench contains native PNGs, linear float readbacks,
+process logs, source identity records, measurements and comparison boards.
+docs/validation/flora-tree-lightbench.json is the portable validation record.
+Measurements exclude sky, floor and most bark by using solid source/candidate
+opacity, upper-crown bounds and a source-pigment colour mask. They measure one
+canopy region, not an overall percentage of artistic similarity.
+Residual alpha coverage, temporal grain and renderer shadow differences remain.
+Direct sunlight with shadows disabled closely matches the source lobe. Controlled
+shadow probes then compare VSM against cascades, shadow coverage .65/.35/.15,
+and VSM normal bias 1.5/4/8. Reduced coverage brightens the crown but weakens the
+ground shadow; increasing bias does not fix the crown. Neither is selected.
+The candidate retains shadow coverage 1, default VSM bias .5 and VSM caching.
+The extra coverage control is a diagnostic, not a recommended production preset.
+The bench does not establish arbitrary whole-library parity, production viewport
+display parity, motion stability, dense-forest performance or 60 fps.
+Capture runners use -norhithread for tooling stability; normal game launchers
+are unchanged. Pixel-instruction and texture-sample counts are recorded as
+compiler statistics, not frame-time measurements.
+
+Recorded result (13 November 2026)
+All three renderer processes exited 0; final Unreal logs contain no material
+compilation fallback. All 389 protected assets/settings retain their hashes.
+Grey-receiver relative linear-RGB errors are below 1 percent in all six cases.
+Canopy comparisons improve in every case, from roughly 39-60 percent relative
+pixel RGB error to roughly 11-26 percent. This is explicitly not exact parity:
+the highest remaining error is direct sun with self-shadowing and no sky fill.
+The candidate uses 180 maximum pixel-permutation instructions versus 249 for the
+rejected scene response; vertex instructions remain 160 and texture samples 2.
+
+Reproduction
+Restore the licensed Content and existing local source exports first.
+The author-version portable executable is installed separately at
+D:/GrandTourAssets/Tools/blender-3.4.1-windows-x64/blender.exe. It does not replace
+the system Blender installation. Official archive:
+https://download.blender.org/release/Blender3.4/blender-3.4.1-windows-x64.zip
+
+Run sequentially from C:/GrandTour:
+  powershell -File Art/run_flora_tree_lightbench.ps1 -Stage blender34
+  powershell -File Art/run_flora_tree_lightbench.ps1 -Stage blender51
+  powershell -File Art/run_flora_tree_lightbench.ps1 -Stage unreal
+  python Art/review_flora_tree_lightbench.py
+
+The runner snapshots protected scene/shared-asset hashes on first use and checks
+them on subsequent runs. It rejects nonzero exits, missing/failing reports and
+shader compilation failures. Do not erase the baseline to hide a changed map.
+The review verifies protected hashes again. Early failed runs are development
+evidence, not passing captures.
+
+The candidate level is /Game/GrandTour/ArtTests/FloraTreeLighting/L_TreeLightBench.
+Beauty images come from its calibrated SceneCapture, not a claim that an ordinary
+editor viewport automatically uses the same output transform. The older
+FloraTreeLightBench directory contains superseded local diagnostic attempts.
+No candidate is installed into FloraTrail or LiDAR by this workflow.
+
+Next promotion gate
+Review the paired images first. Then validate the calibrated response in the
+actual driving viewport with the same display convention and a bounded lighting
+range. Audit other leaf shader families and moving/local lights before broader
+promotion. The rejected TreeReference yellow/cool ramp is not the approved path.
+
+Primary technical reference
+Blender 3.4.1's Translucent BSDF reverses the supplied normal before evaluation:
+https://github.com/blender/blender/blob/v3.4.1/source/blender/gpu/shaders/material/gpu_shader_material_translucent.glsl

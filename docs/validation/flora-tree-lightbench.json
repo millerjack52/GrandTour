@@ -1,0 +1,726 @@
+{
+  "ok": true,
+  "source_author": "Casey Sheep / Flora Paint",
+  "processes": {
+    "blender34": {
+      "started": "2026-11-13T17:13:12.6572680-06:00",
+      "finished": "2026-11-13T17:14:07.9146415-06:00",
+      "stage": "blender34",
+      "exit_code": 0
+    },
+    "blender51": {
+      "started": "2026-11-13T16:58:54.2385134-06:00",
+      "finished": "2026-11-13T16:59:54.4429267-06:00",
+      "stage": "blender51",
+      "exit_code": 0
+    },
+    "unreal": {
+      "started": "2026-11-13T17:18:43.2273365-06:00",
+      "finished": "2026-11-13T17:21:21.6383877-06:00",
+      "stage": "unreal",
+      "exit_code": 0
+    }
+  },
+  "measurements": {
+    "canopy_mask": "Reference opacity > .95, candidate opacity > .9, upper 390 rows, G > .8 R and G > 1.5 B in source pigment; no sky/floor. Scene-linear RGB, no image grading.",
+    "pixels": 27885,
+    "lighting": {
+      "front": {
+        "blender_median_rgb": [
+          0.15448200702667236,
+          0.1561414748430252,
+          0.021108577027916908
+        ],
+        "matched_median_rgb": [
+          0.1363525390625,
+          0.1363525390625,
+          0.0187835693359375
+        ],
+        "previous_median_rgb": [
+          0.049957275390625,
+          0.073974609375,
+          0.0178070068359375
+        ],
+        "matched_relative_rgb_error": 0.1328161060810089,
+        "previous_relative_rgb_error": 0.514495849609375
+      },
+      "side": {
+        "blender_median_rgb": [
+          0.11475587636232376,
+          0.11584421247243881,
+          0.017271805554628372
+        ],
+        "matched_median_rgb": [
+          0.10784912109375,
+          0.10711669921875,
+          0.01548004150390625
+        ],
+        "previous_median_rgb": [
+          0.035125732421875,
+          0.043182373046875,
+          0.011627197265625
+        ],
+        "matched_relative_rgb_error": 0.12515971064567566,
+        "previous_relative_rgb_error": 0.5975320339202881
+      },
+      "back": {
+        "blender_median_rgb": [
+          0.09094391018152237,
+          0.0920073613524437,
+          0.013057124800980091
+        ],
+        "matched_median_rgb": [
+          0.08880615234375,
+          0.08892822265625,
+          0.01263427734375
+        ],
+        "previous_median_rgb": [
+          0.03564453125,
+          0.04071044921875,
+          0.00980377197265625
+        ],
+        "matched_relative_rgb_error": 0.12062936276197433,
+        "previous_relative_rgb_error": 0.6072287559509277
+      },
+      "sky": {
+        "blender_median_rgb": [
+          0.0488911010324955,
+          0.06360551714897156,
+          0.011476514860987663
+        ],
+        "matched_median_rgb": [
+          0.0489501953125,
+          0.06256103515625,
+          0.011627197265625
+        ],
+        "previous_median_rgb": [
+          0.01560211181640625,
+          0.0264434814453125,
+          0.01001739501953125
+        ],
+        "matched_relative_rgb_error": 0.09609588980674744,
+        "previous_relative_rgb_error": 0.5831395387649536
+      },
+      "warm": {
+        "blender_median_rgb": [
+          0.10464951395988464,
+          0.10894258320331573,
+          0.015606045722961426
+        ],
+        "matched_median_rgb": [
+          0.0919189453125,
+          0.09765625,
+          0.01467132568359375
+        ],
+        "previous_median_rgb": [
+          0.046905517578125,
+          0.06622314453125,
+          0.0144500732421875
+        ],
+        "matched_relative_rgb_error": 0.1320084184408188,
+        "previous_relative_rgb_error": 0.39071163535118103
+      },
+      "sun_only": {
+        "blender_median_rgb": [
+          0.06957085430622101,
+          0.07033053785562515,
+          0.009365337900817394
+        ],
+        "matched_median_rgb": [
+          0.050933837890625,
+          0.050933837890625,
+          0.0067138671875
+        ],
+        "previous_median_rgb": [
+          0.0244903564453125,
+          0.03887939453125,
+          0.00843048095703125
+        ],
+        "matched_relative_rgb_error": 0.25561246275901794,
+        "previous_relative_rgb_error": 0.47440463304519653
+      }
+    },
+    "grey": {
+      "front": {
+        "blender_median_rgb": [
+          0.2746775150299072,
+          0.2746775150299072,
+          0.2746775150299072
+        ],
+        "unreal_median_rgb": [
+          0.275146484375,
+          0.275146484375,
+          0.275146484375
+        ],
+        "relative_error": 0.007100309245288372
+      },
+      "side": {
+        "blender_median_rgb": [
+          0.14400073885917664,
+          0.14400073885917664,
+          0.14400073885917664
+        ],
+        "unreal_median_rgb": [
+          0.143798828125,
+          0.143798828125,
+          0.1456298828125
+        ],
+        "relative_error": 0.007829719223082066
+      },
+      "back": {
+        "blender_median_rgb": [
+          0.25293999910354614,
+          0.25293999910354614,
+          0.25293999910354614
+        ],
+        "unreal_median_rgb": [
+          0.253173828125,
+          0.253173828125,
+          0.253173828125
+        ],
+        "relative_error": 0.0017508200835436583
+      },
+      "sky": {
+        "blender_median_rgb": [
+          0.08329455554485321,
+          0.10658879578113556,
+          0.14400073885917664
+        ],
+        "unreal_median_rgb": [
+          0.082275390625,
+          0.1060791015625,
+          0.1456298828125
+        ],
+        "relative_error": 0.009466184303164482
+      },
+      "warm": {
+        "blender_median_rgb": [
+          0.18736596405506134,
+          0.19130292534828186,
+          0.20009523630142212
+        ],
+        "unreal_median_rgb": [
+          0.187744140625,
+          0.1917724609375,
+          0.2005615234375
+        ],
+        "relative_error": 0.006664894986897707
+      },
+      "sun_only": {
+        "blender_median_rgb": [
+          0.1306767612695694,
+          0.1306767612695694,
+          0.1306767612695694
+        ],
+        "unreal_median_rgb": [
+          0.1304931640625,
+          0.130615234375,
+          0.1304931640625
+        ],
+        "relative_error": 0.009006493724882603
+      }
+    },
+    "version_front": {
+      "blender34_median_rgb": [
+        0.15448200702667236,
+        0.1561414748430252,
+        0.021108577027916908
+      ],
+      "blender51_median_rgb": [
+        0.01102447509765625,
+        0.01076507568359375,
+        0.0010700225830078125
+      ],
+      "pigment_relative_error": 0.014040602371096611
+    },
+    "coverage": {
+      "source_integral": 43302.9296875,
+      "candidate_integral": 40808.97265625,
+      "ratio": 0.9424067139625549
+    },
+    "unshadowed_lobe": {
+      "blender_median_rgb": [
+        0.07565707713365555,
+        0.07659931480884552,
+        0.010128095746040344
+      ],
+      "unreal_median_rgb": [
+        0.0758056640625,
+        0.0758056640625,
+        0.01001739501953125
+      ],
+      "relative_rgb_error": 0.032245710492134094
+    },
+    "shadow_probes": {
+      "ground_mask": "Rows 450:680, columns 415:660; source linear red .005 to .1, avoiding tree trunk.",
+      "source_ground_mean": 0.039401181042194366,
+      "cases": {
+        "matched_sun_only": {
+          "crown_median_rgb": [
+            0.050933837890625,
+            0.050933837890625,
+            0.0067138671875
+          ],
+          "crown_relative_rgb_error": 0.25561246275901794,
+          "ground_mean": 0.038126297295093536,
+          "ground_relative_rgb_error": 0.38725581765174866
+        },
+        "matched_sun_cascade": {
+          "crown_median_rgb": [
+            0.057708740234375,
+            0.057708740234375,
+            0.0077972412109375
+          ],
+          "crown_relative_rgb_error": 0.16519491374492645,
+          "ground_mean": 0.02795851230621338,
+          "ground_relative_rgb_error": 0.3958968222141266
+        },
+        "shadow_coverage_65": {
+          "crown_median_rgb": [
+            0.05682373046875,
+            0.05682373046875,
+            0.007678985595703125
+          ],
+          "crown_relative_rgb_error": 0.19907741248607635,
+          "ground_mean": 0.0495961531996727,
+          "ground_relative_rgb_error": 0.45287734270095825
+        },
+        "shadow_coverage_35": {
+          "crown_median_rgb": [
+            0.06414794921875,
+            0.06414794921875,
+            0.0086669921875
+          ],
+          "crown_relative_rgb_error": 0.1638801395893097,
+          "ground_mean": 0.0638982281088829,
+          "ground_relative_rgb_error": 0.7096747756004333
+        },
+        "shadow_coverage_15": {
+          "crown_median_rgb": [
+            0.0701904296875,
+            0.0703125,
+            0.00936126708984375
+          ],
+          "crown_relative_rgb_error": 0.1624411791563034,
+          "ground_mean": 0.0771629586815834,
+          "ground_relative_rgb_error": 1.0165338516235352
+        },
+        "shadow_bias_1_5": {
+          "crown_median_rgb": [
+            0.051361083984375,
+            0.050994873046875,
+            0.006862640380859375
+          ],
+          "crown_relative_rgb_error": 0.2516625225543976,
+          "ground_mean": 0.040883928537368774,
+          "ground_relative_rgb_error": 0.3974858820438385
+        },
+        "shadow_bias_4_0": {
+          "crown_median_rgb": [
+            0.0504150390625,
+            0.049957275390625,
+            0.0067138671875
+          ],
+          "crown_relative_rgb_error": 0.2628871202468872,
+          "ground_mean": 0.0404631532728672,
+          "ground_relative_rgb_error": 0.4079998731613159
+        },
+        "shadow_bias_8_0": {
+          "crown_median_rgb": [
+            0.048431396484375,
+            0.0479736328125,
+            0.00649261474609375
+          ],
+          "crown_relative_rgb_error": 0.28308728337287903,
+          "ground_mean": 0.04063710570335388,
+          "ground_relative_rgb_error": 0.4427212178707123
+        }
+      }
+    }
+  },
+  "reports": {
+    "blender34": {
+      "ok": true,
+      "version": "3.4.1",
+      "images": [
+        "tree_front",
+        "chart_front",
+        "tree_side",
+        "chart_side",
+        "tree_back",
+        "chart_back",
+        "tree_sky",
+        "chart_sky",
+        "tree_warm",
+        "chart_warm",
+        "tree_sun_only",
+        "chart_sun_only",
+        "tree_sun_unshadowed",
+        "tree_pigment_face",
+        "tree_opacity_face"
+      ],
+      "source_hash": "84b12b86950925a16c3357e4e86acf206c63cbcb7881b4ab242eb323bc6f3a02",
+      "fbx_hash": "fe2c1f8f54bb2baa809b74ee088e0dfee884826c507619def08055fa858a9ee2",
+      "source_display": {
+        "view_transform": "Standard",
+        "look": "None",
+        "exposure": 0.0,
+        "gamma": 1.0
+      },
+      "leaf_inputs": [
+        {
+          "index": 0,
+          "name": "Color",
+          "value": [
+            0.09405944496393204,
+            0.17016646265983582,
+            0.014606611803174019,
+            1.0
+          ]
+        },
+        {
+          "index": 1,
+          "name": "Color2",
+          "value": [
+            0.13318979740142822,
+            0.03731492534279823,
+            0.0036103299353271723,
+            1.0
+          ]
+        },
+        {
+          "index": 2,
+          "name": "Color2 Mask",
+          "value": 0.0
+        },
+        {
+          "index": 3,
+          "name": "Color2 Value",
+          "value": -0.1659259796142578
+        },
+        {
+          "index": 4,
+          "name": "Color2 Transparency",
+          "value": 0.35964131355285645
+        },
+        {
+          "index": 5,
+          "name": "Alpha Mask",
+          "value": 0.6916667222976685
+        },
+        {
+          "index": 7,
+          "name": "Emission Color",
+          "value": [
+            0.1329791396856308,
+            0.700717031955719,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "index": 8,
+          "name": "Emission Strength",
+          "value": 0.0
+        },
+        {
+          "index": 9,
+          "name": "Animation Fx",
+          "value": 0.7824069857597351
+        },
+        {
+          "index": 10,
+          "name": "Mask",
+          "value": 1.0
+        },
+        {
+          "index": 12,
+          "name": "Seed",
+          "value": 173.92999267578125
+        },
+        {
+          "index": 14,
+          "name": "Soft",
+          "value": 0.8534567356109619
+        },
+        {
+          "index": 15,
+          "name": "Shadow",
+          "value": 0.0
+        },
+        {
+          "index": 17,
+          "name": "Texture1(Hue)",
+          "value": 0.5
+        },
+        {
+          "index": 18,
+          "name": "Hue",
+          "value": 0.0
+        },
+        {
+          "index": 19,
+          "name": "Texture2(Value)",
+          "value": 0.5
+        },
+        {
+          "index": 20,
+          "name": "Value",
+          "value": 0.0
+        },
+        {
+          "index": 22,
+          "name": "Random Value",
+          "value": 0.5936254858970642
+        },
+        {
+          "index": 23,
+          "name": "Soft",
+          "value": 0.0
+        },
+        {
+          "index": 24,
+          "name": "%",
+          "value": 0.243027925491333
+        },
+        {
+          "index": 25,
+          "name": "Min",
+          "value": 0.5338645577430725
+        },
+        {
+          "index": 27,
+          "name": "Random Hue",
+          "value": 0.350597620010376
+        },
+        {
+          "index": 28,
+          "name": "Soft",
+          "value": 0.5504094362258911
+        },
+        {
+          "index": 29,
+          "name": "%",
+          "value": -0.14622986316680908
+        },
+        {
+          "index": 30,
+          "name": "Range",
+          "value": 0.2247491478919983
+        },
+        {
+          "index": 33,
+          "name": "Value 0",
+          "value": 0.21912351250648499
+        }
+      ],
+      "mesh": {
+        "vertices": 26402,
+        "polygons": 37382,
+        "uv_channels": 2
+      },
+      "source_unchanged": true,
+      "display": "Standard / None / exposure 0 / gamma 1",
+      "source_materials_unchanged": true
+    },
+    "blender51": {
+      "ok": true,
+      "version": "5.1.2",
+      "images": [
+        "tree_front",
+        "chart_front",
+        "tree_side",
+        "chart_side",
+        "tree_back",
+        "chart_back",
+        "tree_sky",
+        "chart_sky",
+        "tree_warm",
+        "chart_warm",
+        "tree_sun_only",
+        "chart_sun_only",
+        "tree_pigment_face",
+        "tree_opacity_face"
+      ],
+      "source_hash": "84b12b86950925a16c3357e4e86acf206c63cbcb7881b4ab242eb323bc6f3a02",
+      "fbx_hash": "fe2c1f8f54bb2baa809b74ee088e0dfee884826c507619def08055fa858a9ee2",
+      "source_display": {
+        "view_transform": "Standard",
+        "look": "None",
+        "exposure": 0.0,
+        "gamma": 1.0
+      },
+      "leaf_inputs": {
+        "Color": [
+          0.09405944496393204,
+          0.17016646265983582,
+          0.014606611803174019,
+          1.0
+        ],
+        "Color2": [
+          0.13318979740142822,
+          0.03731492534279823,
+          0.0036103299353271723,
+          1.0
+        ],
+        "Color2 Mask": 0.0,
+        "Color2 Value": -0.1659259796142578,
+        "Color2 Transparency": 0.35964131355285645,
+        "Alpha Mask": 0.6916667222976685,
+        "Emission Color": [
+          0.1329791396856308,
+          0.700717031955719,
+          1.0,
+          1.0
+        ],
+        "Emission Strength": 0.0,
+        "Animation Fx": 0.7824069857597351,
+        "Mask": 1.0,
+        "Seed": 173.92999267578125,
+        "Soft": 0.5504094362258911,
+        "Shadow": 0.0,
+        "Texture1(Hue)": 0.5,
+        "Hue": 0.0,
+        "Texture2(Value)": 0.5,
+        "Value": 0.0,
+        "Random Value": 0.5936254858970642,
+        "%": -0.14622986316680908,
+        "Min": 0.5338645577430725,
+        "Random Hue": 0.350597620010376,
+        "Range": 0.2247491478919983,
+        "Value 0": 0.21912351250648499
+      },
+      "mesh": {
+        "vertices": 26402,
+        "polygons": 37382,
+        "uv_channels": 2
+      },
+      "source_unchanged": true,
+      "display": "Standard / None / exposure 0 / gamma 1",
+      "source_materials_unchanged": true
+    },
+    "unreal": {
+      "ok": true,
+      "images": [
+        "current_front",
+        "matched_front",
+        "chart_front",
+        "current_side",
+        "matched_side",
+        "chart_side",
+        "current_back",
+        "matched_back",
+        "chart_back",
+        "current_sky",
+        "matched_sky",
+        "chart_sky",
+        "current_warm",
+        "matched_warm",
+        "chart_warm",
+        "current_sun_only",
+        "matched_sun_only",
+        "chart_sun_only",
+        "matched_sun_unshadowed",
+        "matched_sun_cascade",
+        "shadow_coverage_65",
+        "shadow_coverage_35",
+        "shadow_coverage_15",
+        "shadow_bias_1_5",
+        "shadow_bias_4_0",
+        "shadow_bias_8_0",
+        "tree_pigment_face",
+        "tree_opacity_face"
+      ],
+      "materials": {
+        "current": {
+          "path": "/Game/GrandTour/ArtTests/FloraTreeLighting/M_CurrentTree.M_CurrentTree",
+          "statistics": {
+            "num_pixel_shader_instructions": 249,
+            "num_vertex_shader_instructions": 160,
+            "num_samplers": 2,
+            "num_pixel_texture_samples": 2
+          },
+          "textures": [
+            {
+              "parameter": "SourcePigment",
+              "path": "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour",
+              "srgb": true
+            },
+            {
+              "parameter": "SourceCoverage",
+              "path": "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0",
+              "srgb": false
+            }
+          ]
+        },
+        "matched": {
+          "path": "/Game/GrandTour/ArtTests/FloraTreeLighting/M_Source34Tree.M_Source34Tree",
+          "statistics": {
+            "num_pixel_shader_instructions": 180,
+            "num_vertex_shader_instructions": 160,
+            "num_samplers": 2,
+            "num_pixel_texture_samples": 2
+          },
+          "textures": [
+            {
+              "parameter": "SourcePigment",
+              "path": "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour",
+              "srgb": true
+            },
+            {
+              "parameter": "SourceCoverage",
+              "path": "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0",
+              "srgb": false
+            }
+          ]
+        }
+      },
+      "size": 768,
+      "protected_before": 389,
+      "source_fbx_sha256": "fe2c1f8f54bb2baa809b74ee088e0dfee884826c507619def08055fa858a9ee2",
+      "scene_lod0_triangles_and_bounds_match": true,
+      "candidate": "Original source pigment and facing coverage; native +Z diffuse lobe matching source -Z translucent normal, no emission or colour tint.",
+      "mesh": {
+        "path": "/Game/GrandTour/ArtTests/FloraGroup/Assets/SM_Exact_tree.SM_Exact_tree",
+        "forced_lod": 1,
+        "location": [
+          0.036895256489515305,
+          -0.06545410305261612,
+          6.310745811788365e-05
+        ],
+        "scale": 0.1029048212560521,
+        "bounds_origin": [
+          -35.85377502441406,
+          -63.60646057128906,
+          971.7104258462787
+        ],
+        "bounds_extent": [
+          465.96412658691406,
+          427.85520935058594,
+          971.7717518880963
+        ]
+      },
+      "protected_after": 389,
+      "sun_gain": 0.98,
+      "sky_gain": 0.98,
+      "display": "Standard linear to native sRGB target; no external image recolouring",
+      "performance_verified": false,
+      "scene_modified": false
+    }
+  },
+  "protected_packages_and_settings": 389,
+  "production_unchanged": true,
+  "performance_verified": false,
+  "shadow_decision": "Retain coverage 1 and default VSM normal bias .5. Reduced coverage weakened ground shadows; increased bias did not improve the crown. Cascaded shadows changed the ground shadow and are not selected.",
+  "images": [
+    "same-tree-comparison.jpg",
+    "lighting-comparison.jpg",
+    "renderer-version-comparison.jpg"
+  ],
+  "limitations": [
+    "Single tree material family, not a whole-pack conversion",
+    "Capture-specific Standard display; production viewport migration not attempted",
+    "Residual opacity and shadow differences are measured, not claimed exact",
+    "No runtime performance benchmark"
+  ]
+}

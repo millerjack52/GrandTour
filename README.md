@@ -41,3 +41,5 @@ FloraTrail's tree coverage and sunlight-response refinement is documented in `do
 FloraTrail atmosphere controls and current saved-map visual evidence are documented in `docs/FLORA_TRAIL_ATMOSPHERE.txt`.
 
 The tree colour response refinement and current validation are documented in `docs/FLORA_TREE_COLOUR.txt`.
+
+The isolated same-tree lighting calibration is documented in `docs/FLORA_TREE_LIGHTBENCH.txt`. It uses the purchased project's specified Blender 3.4.1 version and does not promote changes into the driving scene or LiDAR.

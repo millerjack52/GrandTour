@@ -98,3 +98,7 @@ palette, tree fix and gameplay systems remain unchanged.
 Tree colour response
 FLORA_TREE_COLOUR.txt documents brighter lit foliage with native shadows.
 Current material/map evidence is validation/flora-tree-colour.json.
+
+Isolated source lighting calibration
+FLORA_TREE_LIGHTBENCH.txt documents the same-tree Blender 3.4.1 / Unreal
+comparison. This is a separate bench; its candidate is not installed here.

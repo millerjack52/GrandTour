@@ -1,0 +1,8 @@
+{
+  "source_blender_version": "3.4.1",
+  "sun_unit_gain": 0.98,
+  "sky_unit_gain": 0.98,
+  "shadow_coverage": 1.0,
+  "calibration": "Single neutral-grey receiver calibration shared across all tree lighting cases. No foliage colour gain or hue adjustment.",
+  "promote_to_scene": false
+}
