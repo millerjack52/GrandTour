@@ -1,0 +1,49 @@
+FLORA TRAIL / CLEARER COLOUR AND LIGHTER HAZE
+
+The canopy fix exposed a second issue: the scene-wide fog added a pale warm
+veil across both trees and sky. Controlled actual PIE captures compared the
+existing atmosphere, no fog, and a lighter fog profile with identical cameras,
+materials, exposure and surface lights. Removing fog recovered the source
+colours, so this correction is confined to the atmosphere.
+
+The old density was 0.04, with volumetric extinction 1, scattering distribution
+0.5, and volumetric start/fade both zero. The replacement uses density 0.012,
+extinction 0.45 and scattering distribution 0.2. Height fog starts at 8 m;
+volumetric fog starts at 6 m and fades in over 10 m. Its sun scattering is 0.12
+instead of 0.25. Fog luminance is a restrained cool blue. The source palette,
+sun surface intensity, sky lighting, exposure and tree shaders are unchanged.
+
+Controls live in Art/flora_trail_atmosphere_settings.json. The normal scene
+builder applies them after creating the lights and fog. These settings supersede
+the builder's initial legacy fog defaults. Density, colour, extinction, near
+fade, start distances and sunlight scattering can all be changed independently.
+This is a small driving-section profile, not a LiDAR valley preset.
+
+Reproduce the controlled comparison before installation:
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail_atmosphere.ps1 -Stage atmosphere
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail_atmosphere.ps1 -Stage install_atmosphere
+powershell -ExecutionPolicy Bypass -File Art/run_flora_trail_atmosphere.ps1 -Stage verify_atmosphere
+python Art/review_flora_trail_atmosphere.py
+
+The installer backs up the map and checks every pre-existing non-map package
+hash. Verification opens the saved map in a new Unreal process, asserts the
+saved atmosphere settings, audits source texture bindings, then captures actual
+PIE views. The final comparison uses those reopened saved-map captures.
+Reports require successful process exits. No images are colour corrected.
+
+The latest visual/map evidence is docs/validation/flora-trail-atmosphere.json;
+earlier canopy evidence remains a snapshot before this atmosphere adjustment.
+No geometry, volumetric grid resolution or gameplay systems were changed.
+GPU timings remain unverified under the existing shared-GPU limitation.
+
+Rendering references
+The height-fog start distance and volumetric start distance are distinct;
+changing only the height-fog distance does not clear the near volumetric veil.
+Verified against the installed UE 5.8 ExponentialHeightFogComponent header and:
+https://dev.epicgames.com/documentation/en-us/unreal-engine/volumetric-fog-in-unreal-engine
+https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Rendering/VolumetricFog/SetVolumetricFogStartDistance
+
+Verification environment note
+The final run reported Zen derived-cache write failures (HTTP 507) while C:
+was down to approximately 1.9 GB free. Map saving, source texture audits and
+reopened-map captures succeeded; this does not certify cache health.

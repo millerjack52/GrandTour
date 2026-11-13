@@ -138,6 +138,8 @@ def run():
    c.set_editor_property('vector_parameters',ps)
   E.save_loaded_asset(c,False)
  fog=spawn(u.ExponentialHeightFog,'Haze',(0,0,150));props(fog.component,fog_density=cfg['fog'],fog_inscattering_luminance=u.LinearColor(*cfg['fog_colour'],1),fog_height_falloff=.08,start_distance=200.,fog_max_opacity=.94,enable_volumetric_fog=True,volumetric_fog_scattering_distribution=.5,volumetric_fog_albedo=u.Color(185,207,235,255),volumetric_fog_distance=9000.)
+ from flora_trail_atmosphere import apply as apply_atmosphere
+ apply_atmosphere(fog.component,sun.light_component,json.loads((R/'Art/flora_trail_atmosphere_settings.json').read_text()))
  pp=spawn(u.PostProcessVolume,'Display');props(pp,unbound=True,priority=1000.,blend_weight=1.)
  ps=pp.settings
  for k,v in dict(auto_exposure_method=u.AutoExposureMethod.AEM_MANUAL,auto_exposure_apply_physical_camera_exposure=False,auto_exposure_bias=0.,bloom_intensity=.02,vignette_intensity=0.,film_grain_intensity=0.,lens_flare_intensity=0.,motion_blur_amount=0.,local_exposure_highlight_contrast_scale=1.,local_exposure_shadow_contrast_scale=1.,tone_curve_amount=0.,expand_gamut=0.,blue_correction=0.,dynamic_global_illumination_method=u.DynamicGlobalIlluminationMethod.NONE).items():props(ps,**{'override_'+k:True,k:v})

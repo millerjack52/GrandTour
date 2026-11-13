@@ -1,0 +1,16 @@
+{
+  "fog_density": 0.012,
+  "fog_height_falloff": 0.08,
+  "start_distance": 800.0,
+  "fog_max_opacity": 0.65,
+  "fog_colour": [
+    0.18,
+    0.28,
+    0.42
+  ],
+  "volumetric_fog_extinction_scale": 0.45,
+  "volumetric_fog_scattering_distribution": 0.2,
+  "volumetric_fog_start_distance": 600.0,
+  "volumetric_fog_near_fade_in_distance": 1000.0,
+  "sun_volumetric_scattering": 0.12
+}

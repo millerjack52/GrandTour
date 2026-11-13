@@ -89,3 +89,8 @@ FLORA_TRAIL_CANOPY.txt. Current saved-map evidence is in
 validation/flora-trail-canopy.json. The earlier metrics and screenshots above
 remain the pre-refinement snapshot; tree geometry and gameplay systems did not
 change in this later pass.
+
+Atmosphere refinement
+FLORA_TRAIL_ATMOSPHERE.txt documents the lighter near-camera haze. Current
+visual/map evidence is validation/flora-trail-atmosphere.json. The surface
+palette, tree fix and gameplay systems remain unchanged.

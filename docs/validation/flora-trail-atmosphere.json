@@ -1,0 +1,541 @@
+{
+  "ok": true,
+  "reports": {
+    "atmosphere": {
+      "ok": true,
+      "images": [
+        "game_before_canopy",
+        "game_before_road",
+        "game_no_fog_canopy",
+        "game_no_fog_road",
+        "game_after_canopy",
+        "game_after_road",
+        "game_after_driving"
+      ],
+      "timings": [],
+      "package_fingerprint": "883a463a39def5cf57f430f4487f562c78d3cee2578a020d856563bd00836f34",
+      "assets": {
+        "ok": true,
+        "components": [
+          {
+            "mesh": "SM_Exact_drygrass",
+            "instances": 743,
+            "lods": 3,
+            "lod0_triangles": 52,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_fern",
+            "instances": 159,
+            "lods": 3,
+            "lod0_triangles": 460,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_grass",
+            "instances": 6276,
+            "lods": 3,
+            "lod0_triangles": 42,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 92,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 101,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_shrub",
+            "instances": 2524,
+            "lods": 3,
+            "lod0_triangles": 416,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 68,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 79,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": false,
+            "contact_shadow": true
+          }
+        ],
+        "textures": {
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_drygrass_Colour.T_Exact_drygrass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_006.T_SourceMask_Grass_006": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_fern_Colour.T_Exact_fern_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Fern_1.T_SourceMask_Fern_1": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_grass_Colour.T_Exact_grass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_004.T_SourceMask_Grass_004": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_pine.T_SourceBark_pine": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_pine_Colour.T_Exact_pine_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_shrub_Colour.T_Exact_shrub_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Shrubbery.T_SourceMask_Shrubbery": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass.T_SourceMask_Grass": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Flower_0_RANDOM.T_SourceMask_Flower_0_RANDOM": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          }
+        },
+        "lod0_triangle_upper_bound": 21331816,
+        "scope": "Every populated new foliage component uses the approved source texture bindings; LOD0 triangles preserved, 3 LODs, bark loaded at 4K."
+      },
+      "before": {
+        "fog_density": 0.03999999910593033,
+        "fog_height_falloff": 0.07999999821186066,
+        "start_distance": 200.0,
+        "fog_max_opacity": 0.9399999976158142,
+        "volumetric_fog_extinction_scale": 1.0,
+        "volumetric_fog_scattering_distribution": 0.5,
+        "volumetric_fog_start_distance": 0.0,
+        "volumetric_fog_near_fade_in_distance": 0.0,
+        "fog_colour": [
+          0.23999999463558197,
+          0.3499999940395355,
+          0.5
+        ],
+        "sun_volumetric_scattering": 0.25
+      },
+      "after": {
+        "fog_density": 0.012,
+        "fog_height_falloff": 0.08,
+        "start_distance": 800.0,
+        "fog_max_opacity": 0.65,
+        "fog_colour": [
+          0.18,
+          0.28,
+          0.42
+        ],
+        "volumetric_fog_extinction_scale": 0.45,
+        "volumetric_fog_scattering_distribution": 0.2,
+        "volumetric_fog_start_distance": 600.0,
+        "volumetric_fog_near_fade_in_distance": 1000.0,
+        "sun_volumetric_scattering": 0.12
+      },
+      "performance_verified": false,
+      "performance_scope": "Timings skipped by default; optional 300-frame PIE spot checks are not a sustained-driving or 1080p certification",
+      "geometry_materials_surface_lighting_exposure_unchanged": true
+    },
+    "install_atmosphere": {
+      "ok": true,
+      "before": {
+        "fog_density": 0.03999999910593033,
+        "fog_height_falloff": 0.07999999821186066,
+        "start_distance": 200.0,
+        "fog_max_opacity": 0.9399999976158142,
+        "volumetric_fog_extinction_scale": 1.0,
+        "volumetric_fog_scattering_distribution": 0.5,
+        "volumetric_fog_start_distance": 0.0,
+        "volumetric_fog_near_fade_in_distance": 0.0,
+        "fog_colour": [
+          0.23999999463558197,
+          0.3499999940395355,
+          0.5
+        ],
+        "sun_volumetric_scattering": 0.25
+      },
+      "after": {
+        "fog_density": 0.012000000104308128,
+        "fog_height_falloff": 0.07999999821186066,
+        "start_distance": 800.0,
+        "fog_max_opacity": 0.6499999761581421,
+        "volumetric_fog_extinction_scale": 0.44999998807907104,
+        "volumetric_fog_scattering_distribution": 0.20000000298023224,
+        "volumetric_fog_start_distance": 600.0,
+        "volumetric_fog_near_fade_in_distance": 1000.0,
+        "fog_colour": [
+          0.18000000715255737,
+          0.2800000011920929,
+          0.41999998688697815
+        ],
+        "sun_volumetric_scattering": 0.11999999731779099
+      },
+      "existing_assets_unchanged": true,
+      "geometry_materials_surface_lighting_exposure_unchanged": true,
+      "settings": {
+        "fog_density": 0.012,
+        "fog_height_falloff": 0.08,
+        "start_distance": 800.0,
+        "fog_max_opacity": 0.65,
+        "fog_colour": [
+          0.18,
+          0.28,
+          0.42
+        ],
+        "volumetric_fog_extinction_scale": 0.45,
+        "volumetric_fog_scattering_distribution": 0.2,
+        "volumetric_fog_start_distance": 600.0,
+        "volumetric_fog_near_fade_in_distance": 1000.0,
+        "sun_volumetric_scattering": 0.12
+      },
+      "backup": "C:\\GrandTour\\Saved\\FloraTrailBackups\\atmosphere-1794604162627568300",
+      "previous_package_fingerprint": "883a463a39def5cf57f430f4487f562c78d3cee2578a020d856563bd00836f34"
+    },
+    "verify_atmosphere": {
+      "ok": true,
+      "images": [
+        "game_saved_canopy",
+        "game_saved_road",
+        "game_saved_driving"
+      ],
+      "timings": [],
+      "package_fingerprint": "e4ee840b23dbdb12dced0037326aef1da3d90dcdad1159aa03293f5d04f6b851",
+      "assets": {
+        "ok": true,
+        "components": [
+          {
+            "mesh": "SM_Exact_drygrass",
+            "instances": 743,
+            "lods": 3,
+            "lod0_triangles": 52,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_fern",
+            "instances": 159,
+            "lods": 3,
+            "lod0_triangles": 460,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_grass",
+            "instances": 6276,
+            "lods": 3,
+            "lod0_triangles": 42,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 92,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_pine",
+            "instances": 101,
+            "lods": 3,
+            "lod0_triangles": 74670,
+            "cast_shadow": false,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_shrub",
+            "instances": 2524,
+            "lods": 3,
+            "lod0_triangles": 416,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 68,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": true,
+            "contact_shadow": true
+          },
+          {
+            "mesh": "SM_Exact_tree",
+            "instances": 79,
+            "lods": 3,
+            "lod0_triangles": 37382,
+            "cast_shadow": false,
+            "contact_shadow": true
+          }
+        ],
+        "textures": {
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_drygrass_Colour.T_Exact_drygrass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_006.T_SourceMask_Grass_006": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_fern_Colour.T_Exact_fern_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Fern_1.T_SourceMask_Fern_1": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_grass_Colour.T_Exact_grass_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass_004.T_SourceMask_Grass_004": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_pine.T_SourceBark_pine": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_pine_Colour.T_Exact_pine_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_shrub_Colour.T_Exact_shrub_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Shrubbery.T_SourceMask_Shrubbery": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Grass.T_SourceMask_Grass": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Flower_0_RANDOM.T_SourceMask_Flower_0_RANDOM": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": false
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree": {
+            "dimensions": [
+              4096,
+              4096
+            ],
+            "srgb": true
+          },
+          "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": {
+            "dimensions": [
+              2048,
+              2048
+            ],
+            "srgb": true
+          }
+        },
+        "lod0_triangle_upper_bound": 21331816,
+        "scope": "Every populated new foliage component uses the approved source texture bindings; LOD0 triangles preserved, 3 LODs, bark loaded at 4K."
+      },
+      "before": {
+        "fog_density": 0.012000000104308128,
+        "fog_height_falloff": 0.07999999821186066,
+        "start_distance": 800.0,
+        "fog_max_opacity": 0.6499999761581421,
+        "volumetric_fog_extinction_scale": 0.44999998807907104,
+        "volumetric_fog_scattering_distribution": 0.20000000298023224,
+        "volumetric_fog_start_distance": 600.0,
+        "volumetric_fog_near_fade_in_distance": 1000.0,
+        "fog_colour": [
+          0.18000000715255737,
+          0.2800000011920929,
+          0.41999998688697815
+        ],
+        "sun_volumetric_scattering": 0.11999999731779099
+      },
+      "after": {
+        "fog_density": 0.012,
+        "fog_height_falloff": 0.08,
+        "start_distance": 800.0,
+        "fog_max_opacity": 0.65,
+        "fog_colour": [
+          0.18,
+          0.28,
+          0.42
+        ],
+        "volumetric_fog_extinction_scale": 0.45,
+        "volumetric_fog_scattering_distribution": 0.2,
+        "volumetric_fog_start_distance": 600.0,
+        "volumetric_fog_near_fade_in_distance": 1000.0,
+        "sun_volumetric_scattering": 0.12
+      },
+      "saved_settings_match": true,
+      "performance_verified": false,
+      "performance_scope": "Not benchmarked; existing shared-GPU limitation. Volumetric grid dimensions and geometry unchanged.",
+      "geometry_materials_surface_lighting_exposure_unchanged": true
+    }
+  },
+  "processes": {
+    "atmosphere": {
+      "started": "2026-11-13T15:06:42.7978061-06:00",
+      "finished": "2026-11-13T15:08:39.8023717-06:00",
+      "stage": "atmosphere",
+      "exit_code": 0
+    },
+    "install_atmosphere": {
+      "started": "2026-11-13T15:08:55.1614466-06:00",
+      "finished": "2026-11-13T15:09:37.7633727-06:00",
+      "stage": "install_atmosphere",
+      "exit_code": 0
+    },
+    "verify_atmosphere": {
+      "started": "2026-11-13T15:09:56.2845847-06:00",
+      "finished": "2026-11-13T15:11:37.5336376-06:00",
+      "stage": "verify_atmosphere",
+      "exit_code": 0
+    }
+  },
+  "performance_verified": false,
+  "scope": "FloraTrail fog and volumetric sunlight only. Textures, materials, exposure, direct/sky lighting, geometry and gameplay unchanged.",
+  "images": [
+    "atmosphere-before-after.jpg",
+    "game_saved_driving.png"
+  ],
+  "limits": [
+    "No new GPU timing claim",
+    "This small-scene haze profile is not a validated LiDAR long-distance profile"
+  ]
+}
