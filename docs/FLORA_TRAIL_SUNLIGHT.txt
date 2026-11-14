@@ -1,0 +1,63 @@
+FloraTrail: restore direct sunlight after source calibration
+==========================================================
+
+Cause
+The source-version promotion copied both the calibrated tree material and its
+isolated comparison light rig into the driving scene. Direct light fell from
+about 36.19 to 2.94, and its azimuth changed. The tree retained the approved
+source pigment response, but warm light on the terrain and bark disappeared.
+Material parity and environment art lighting must be controlled separately.
+
+Correction scope
+Keep the calibrated tree/pine materials, source textures and native shadows.
+Keep the same manual exposure, Standard display, cool skylight, fog and sky
+artwork. Restore the earlier scene sun direction and select its intensity from
+actual road and mixed-foliage views. A brighter exposure would also lift the
+shadows and sky, so it is not used for this correction.
+
+Art/flora_trail_source34_settings.json retains the original comparison values.
+Art/flora_trail_sunlight_settings.json supplies separate scene daylight overrides.
+The shared settings loader combines them for both scoped updates and rebuilds.
+The map-local undergrowth light direction is kept synchronized with the sun.
+
+Selected setting: source sun energy 16 (native intensity 15.68 with the 0.98
+unit gain). Source energy 8 left the road subdued; 37.52 pushed the calibrated
+crowns toward excessive yellow. Sixteen restores visible warm lighting while
+retaining coloured foliage and shaded canopy detail. Sky strength stays 0.8,
+native sky intensity 0.784, and exposure bias stays zero.
+
+Validation
+The reversible probe renders the saved baseline, then source sun energies 8,
+16 and 37.52 at the original scene direction. It uses the existing material
+packages without recompiling or saving them. The installer backs up the map
+and settings, and permits changes only to the map and its lighting collection;
+all remaining scene packages and protected other-map/source assets must retain
+their hashes. A fresh-load verifier checks source texture/LOD bindings, the
+saved sun/sky values, undergrowth direction and actual game display transfer.
+No new driving regression is needed for a change limited to lighting values;
+the earlier driving result remains historical rather than relabelled as new.
+
+Run sequentially from C:/GrandTour:
+  powershell -File Art/run_flora_trail_sunlight.ps1 -Stage probe
+  powershell -File Art/run_flora_trail_sunlight.ps1 -Stage install
+  powershell -File Art/run_flora_trail_sunlight.ps1 -Stage verify
+  python Art/review_flora_trail_sunlight.py
+
+Evidence: Art/Export/FloraTrail/Sunlight and
+Docs/validation/flora-trail-sunlight.json. Screenshots are ungraded game captures.
+No geometry, foliage count or shader cost is added. Timings remain unverified.
+
+Environment notes
+The first launch could not write its cache because C: had about 250 MB free.
+An attempted alternate cache on D: required a cold shader rebuild. The final
+runner uses the normal existing cache after C: recovered about 9 GB free; no
+existing cache was deleted. A launch failed because virtual memory was exhausted;
+Windows still had a windowless Wardogs process using about 11 GB of RAM. The
+user closed it before rendering resumed. Failed logs are retained separately.
+
+Verified result (13 November 2026)
+Probe, installation and fresh-load verification exited zero. Sixty non-lighting
+scene packages and 327 protected other-map/source files retained their hashes.
+The game display neutral measured RGB (118, 118, 118.28), confirming unchanged
+Standard output. Source bark loading now waits for the 4K texture instead of
+checking its transient 32px compilation placeholder after a fixed delay.

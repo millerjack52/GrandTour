@@ -1,5 +1,15 @@
 """Read-only source binding and LOD audit in the rendered FloraTrail world."""
 import unreal as u
+import time
+
+def await_bark_textures(timeout=120):
+ """Yield while asynchronous texture compilation still exposes its 32px placeholder."""
+ textures=[u.load_asset('/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_'+k) for k in ['tree','pine']]
+ assert all(textures)
+ deadline=time.monotonic()+timeout
+ while any([t.blueprint_get_size_x(),t.blueprint_get_size_y()]!=[4096,4096] for t in textures):
+  assert time.monotonic()<deadline,'Source bark textures did not finish loading at 4K'
+  yield .25
 
 def verify(world):
  M=u.MaterialEditingLibrary;S=u.get_editor_subsystem(u.StaticMeshEditorSubsystem)

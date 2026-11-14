@@ -76,6 +76,12 @@ functional driving test includes capture pauses: performance remains unverified.
 
 Launch the saved scene with Drive-FloraTrail.bat.
 
+Subsequent scene-lighting correction
+FLORA_TRAIL_SUNLIGHT.txt separates the isolated comparison rig from the driving
+scene's daylight. The calibrated tree materials stay unchanged; scene sunlight
+is now controlled by flora_trail_sunlight_settings.json. The original settings
+and evidence above describe the initial promotion, not its later illumination.
+
 Verified result (13 November 2026)
 Install, saved-game verification and repeated driving check all exited zero.
 The game neutral-card RGB was (118.0, 118.0, 118.29), matching Standard output.

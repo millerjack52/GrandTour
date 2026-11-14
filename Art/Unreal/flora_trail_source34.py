@@ -4,7 +4,12 @@ from pathlib import Path
 from benmore_river_life_materials import props
 R=Path('C:/GrandTour');D='/Game/GrandTour/ArtTests/FloraTrail';E=u.EditorAssetLibrary;M=u.MaterialEditingLibrary
 BENCH='/Game/GrandTour/ArtTests/FloraTreeLighting/M_Source34Tree'
-def settings():return json.loads((R/'Art/flora_trail_source34_settings.json').read_text())
+def settings():
+ cfg=json.loads((R/'Art/flora_trail_source34_settings.json').read_text())
+ # Keep isolated calibration values reproducible; scene daylight is a separate control.
+ override=R/'Art/flora_trail_sunlight_settings.json'
+ if override.exists():cfg.update(json.loads(override.read_text()))
+ return cfg
 def candidate(key):
  assert key in ['tree','pine']
  # Both tested tree meshes use the same audited Leaf_0 shader family.

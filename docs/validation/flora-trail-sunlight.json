@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "scope": "FloraTrail sun direction/intensity and matching undergrowth light vector only; calibrated tree shaders unchanged.",
+  "fingerprint": "4ae1a010342deb4f1554efc537be93ca2d67371d6e901c1255af572a61d15c2d",
+  "processes": {
+    "probe": {
+      "started": "2026-11-13T19:39:26.5061274-06:00",
+      "finished": "2026-11-13T19:43:02.7813973-06:00",
+      "stage": "probe",
+      "exit_code": 0
+    },
+    "install": {
+      "started": "2026-11-13T19:44:37.8336909-06:00",
+      "finished": "2026-11-13T19:45:16.2509323-06:00",
+      "stage": "install",
+      "exit_code": 0
+    },
+    "verify": {
+      "started": "2026-11-13T19:45:26.9095669-06:00",
+      "finished": "2026-11-13T19:46:59.4615630-06:00",
+      "stage": "verify",
+      "exit_code": 0
+    }
+  },
+  "lighting": {
+    "sun": 15.680000305175781,
+    "sky": 0.7839999794960022,
+    "collection_direction": [
+      0.23390856385231018,
+      0.8102441430091858,
+      0.5373929738998413
+    ]
+  },
+  "settings": {
+    "source_version": "3.4.1",
+    "comparison_case": "warm",
+    "sun_energy": 16.0,
+    "sky_strength": 0.8,
+    "sun_unit_gain": 0.98,
+    "sky_unit_gain": 0.98,
+    "sun_colour": [
+      1.0,
+      0.814,
+      0.539
+    ],
+    "sky_colour": [
+      0.58,
+      0.74,
+      1.0
+    ],
+    "sun_ray": [
+      -0.233908564,
+      -0.810244143,
+      -0.537392974
+    ],
+    "sun_source_angle": 0.5,
+    "contact_shadow_length": 0.0,
+    "exposure_bias": 0.0,
+    "shadow_coverage": 1.0,
+    "scene_lighting_profile": "daylight, calibrated foliage"
+  },
+  "retained_scene_packages": 60,
+  "protected_other_assets": 327,
+  "display_rgb": [
+    118.0,
+    118.0,
+    118.28125
+  ],
+  "performance_verified": false,
+  "driving_regression": "Prior Source34 driving result remains historical; no gameplay, geometry or material assets changed in this lighting-only correction.",
+  "comparison": "Art/Export/FloraTrail/Sunlight/sunlight-comparison.jpg"
+}
