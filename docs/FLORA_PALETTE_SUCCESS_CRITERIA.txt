@@ -1,0 +1,171 @@
+FLORA PAINT / PALETTE AND LIGHTING ACCEPTANCE TARGET
+=================================================
+Status: reference analysis and proposed acceptance criteria, 13 November 2026.
+No scene, material, lighting or gameplay changes are part of this analysis.
+
+Decision
+The current FloraTrail palette is not ready for a broad LiDAR rollout. Its
+source-asset calibration is useful groundwork, but matching one tree in a
+controlled rig does not establish the reference's complete appearance. The
+current daylight view needs coherent material colour and selective lighting.
+
+Reference roles
+Primary daylight palette: user-supplied green woodland with the white animal
+(0366285E.../3-Photo-3.jpg). This is the working daylight target, not a claim
+that the user has chosen one exact time of day for every map.
+Light structure: the Flora Paint forest-path image (87d6a348...). Use its
+coloured shade, selective sun patches and separation between forest layers.
+Open sunlight: the Flora Paint conifers at low sun (92317881...). Use the
+relationship between gold-facing foliage and cool interiors, not its entire
+sunset grade as a mandatory daylight colour cast.
+The pink/teal forest and blue-fog birch forest demonstrate alternate palettes
+and atmospheric depth. Their literal hues belong to separate mood profiles.
+The original sunny meadow remains a guide to varied, plentiful vegetation and
+colour accents. Do not average all these moods into one universal palette.
+
+What is visible in the references
+1. Colour has roles. Moss and olive greens form the base. Yellow-green and
+   cream highlights occupy selected surfaces. Dark olive, forest green and
+   blue-green form the shadows. Bark brings restrained rose-brown warmth;
+   litter and some plants repeat coral/ochre accents. Cool blue-grey/cyan
+   distance separates layers. Small flowers are accents, not equal competitors.
+2. Warm/cool contrast is relative. Not every shadow is teal, and not every
+   leaf tip is gold. In the green woodland, some shaded foliage is dark olive.
+   The path and sunset references use stronger blue-green shaded regions.
+3. Brightness is distributed in connected patches: branch faces, fern fans,
+   grass edges, strips of bark and pools on the path. Large dark masses remain
+   alongside the light. It is the distribution, not just the sun's energy,
+   that creates the sense of sunlight.
+4. Form survives the colour. Broad lit faces, intermediate foliage and darker
+   interiors describe clumps and overlapping branches. At reduced size these
+   remain readable shapes, rather than a field of equally bright leaves.
+5. The ground participates. Moss, ferns, litter, rocks and roots receive the
+   same light colours as the trees. Ground accents repeat across several
+   clumps. It does not read as one dark green carpet beneath yellow trees.
+6. Depth is selective. Foreground retains contact and texture contrast;
+   successive forest layers lose contrast and take on cooler atmospheric
+   colour. Bright haze can be strong behind a subject without veiling it.
+7. Painterly character is visible in coherent shapes, simplified planes and
+   pigment variation. The references also contain fine detail and grain.
+   They do not justify globally blurring textures or smoothing every edge.
+
+Current-image assessment
+Evidence: FloraTrail/Sunlight/game_saved_road.png, the saved sunlight correction.
+The crowns remain broadly similar yellow-olive masses. The new direct sun
+improves visible sunlight, but it also raises whole crown regions toward
+yellow without consistently producing the reference's colour/form separation.
+The undergrowth is predominantly dark green, with much weaker readable warm
+accents. Bark is mainly brown; the prominent rocks read separately as mottled
+grey. These are relationships to improve, not proof of wrong source textures.
+Some sun patches and dark crown interiors already work; preserve them.
+The open road composition contains substantially more sky than the forest
+references. That must not be mistaken for a shading error. A whole-image
+histogram or average RGB comparison would be misleading. Interior depth must
+be judged from an under-canopy view, not certified from this open road image.
+
+Acceptance criteria: visual gates, not an automatic similarity percentage
+-----------------------------------------------------------------------
+A. PALETTE HIERARCHY
+Pass: green/olive remains the dominant vegetation identity; sunlight introduces
+warmer local faces. Restrained coral/ochre accents visibly recur in ground
+plants/litter. Cool shades and distance support the vegetation, rather than
+requiring an unrelated global tint.
+Fail: nearly every crown has the same mustard fill, all ground plants merge
+into one green, or arbitrary per-leaf hue noise replaces intentional patches.
+Current: fail / insufficient palette cohesion.
+
+B. CROWN FORM AND COLOURED HIGHLIGHTS
+Test: select three representative crowns, including both tree families, in
+the open-edge and side-lit views; examine colour and greyscale thumbnails.
+Pass: each crown has recognisable connected light-facing and shaded masses;
+intermediate values preserve overlap and volume. Lit foliage retains pigment
+and detail. This must be visible at a 320px-wide view as well as full size.
+Fail: a crown reads as one flat bright cutout, or brightness erases its colour.
+Current: partial; sunlight is present, but large uniform fills remain.
+
+C. SHADE WITH READABLE COLOUR
+Test: inspect fixed shaded fern, shrub and trunk crops beside nearby lit ones.
+Pass: plant families and overlapping forms remain identifiable in shade, with
+colour still visible. Cooler green/blue-green relationships should be evident
+where the selected reference supports them; darkest contacts remain limited.
+Fail: large featureless black regions, grey wash, glowing unshadowed foliage,
+or making all shadow pixels uniformly blue.
+Current: partial; dark regions exist, but their colour separation is limited.
+
+D. COHERENT LIGHT ACROSS MATERIALS
+Test: one frame must contain leaf, fern, bark, rock and ground under the same sun.
+Pass: a sun patch reads consistently as warm on all five; their shaded sides
+belong to the same environment while retaining their individual base colours.
+Light pools and branch shadows remain recognisable on the road and understory.
+Fail: attractive trees beside disconnected grey rocks, orange-only bark or
+ground cover that appears unaffected by the surrounding light.
+Current: fail / mixed material appearance still lacks cohesion.
+
+E. DEPTH WITHOUT A FOREGROUND VEIL
+Test: under-canopy camera with visible foreground, middle forest and background.
+Pass: all three layers separate; the near plants retain clear form and contact,
+middle trunks remain distinct, and far layers shift cooler with reduced contrast.
+Fail: increasing fog flattens all layers, or distant trees retain near contrast.
+Current: not established by the selected open-road image. Requires this view.
+
+F. PAINTERLY READ AT TWO SCALES
+Pass: at 320px width, foliage reads as coherent coloured masses; at native
+resolution, source texture character and leaf/fern shape remain visible. During
+a slow camera move, temporal noise must not become the dominant texture.
+Fail: detail only looks appealing when blurred, sharpened grain dominates, or
+the palette looks correct only in a carefully chosen still.
+Current: partial for still images; movement is not evaluated by this analysis.
+
+G. CONSISTENCY ACROSS THE REVIEW SET
+Pass: A-D and F hold in an open road/forest edge, an under-canopy path and a
+mixed-material bank view. E holds in a view with the required depth layers.
+The same profile works with front/side/back lighting without per-camera
+exposure or colour-grade fixes. A separate valley camera checks that distance
+does not collapse the palette or canopy; these close references cannot prove
+an exact aerial-view match.
+Fail: tuning one hero screenshot breaks another required view.
+Current: not tested under this rubric. No pass is inferred from earlier tests.
+
+How we will review a future candidate
+1. Preserve the current scene and the approved source-material bench as two
+   distinct baselines. Capture one candidate at a time, changing one group of
+   controls at a time. Preserve camera, FOV, resolution, exposure, display
+   transform and render quality for each before/after pair.
+2. Record actual native capture resolution; do not upsample evidence and claim
+   a higher rendering resolution. Wait for shader and texture loading and
+   temporal accumulation. Use a shared wind state for still comparisons.
+3. Capture the three local views above plus a valley regression view. Compare
+   semantic crops (lit/shaded foliage, bark, rocks, ground), not unrelated
+   full-frame histograms. Supply greyscale thumbnails alongside colour.
+4. Record each gate as pass, partial, fail or not tested, with a screenshot
+   and one-sentence reason. Partial/not tested does not count as passed.
+   No averaged score may hide a failed palette, shadow or material-cohesion gate.
+5. Use a slow camera pass to review shifting hues, leaf stability and whether
+   the painterly appearance persists. Do not quietly retune exposure per view.
+6. Present actual Unreal/reference views for visual acceptance before widening
+   the LiDAR rollout. A technical source-material match is not aesthetic approval.
+7. Keep the 60 fps target as a subsequent measured performance gate at specified
+   resolution/hardware. This analysis provides no new timing claim and authorizes
+   no added rendering cost as a substitute for fixing the palette.
+
+Next implementation order, after this target is established
+First isolate why lit crowns become uniformly yellow: compare neutral lighting,
+current daylight, and direction changes with pigment/normal/display response
+examined separately. Preserve the source-parity benchmark as a diagnostic.
+Then establish material-family colour roles across leaves, ferns, shrubs, bark,
+rock and soil; use restrained variation across clumps, not random colour speckle.
+Next tune selective direct light and coloured fill while holding exposure fixed.
+Only then tune depth haze and a small final colour grade. Re-test the entire
+review set after every candidate; do not use global desaturation or stronger
+sunlight to hide a material-family mismatch.
+
+Evidence and limits
+Art/analyse_flora_palette.py creates local analysis figures and records the
+source paths and sample boxes in Art/Export/FloraPaletteStudy/reference-evidence.json.
+Sampled swatches are medians of marked patches in finished compressed images.
+They include local light, texture, grading and compression. They are display
+RGB, not linear material inputs, and are not mandatory hex-code targets.
+The images alone cannot uniquely reveal sun energy, renderer settings, material
+nodes or the proportion of painted versus simulated shading. All appearance
+claims above are visual observations; implementation causes remain hypotheses
+until controlled tests distinguish them.

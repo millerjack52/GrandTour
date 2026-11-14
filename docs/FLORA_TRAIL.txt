@@ -109,3 +109,10 @@ Scene sunlight
 FLORA_TRAIL_SUNLIGHT.txt records the subsequent direct-sun correction. It keeps
 the calibrated tree materials but restores warm directional light in the game.
 Current visual validation is validation/flora-trail-sunlight.json.
+
+Art-direction acceptance
+FLORA_PALETTE_SUCCESS_CRITERIA.txt records the subsequent reference analysis.
+The sunlight validation above establishes saved settings and asset integrity;
+it does not establish a reference-level palette match. The current appearance
+does not yet pass the new palette/material-cohesion gates. No scene changes
+were made during that analysis.

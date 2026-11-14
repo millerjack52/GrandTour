@@ -45,3 +45,5 @@ The tree colour response refinement and current validation are documented in `do
 The same-tree lighting calibration is documented in `docs/FLORA_TREE_LIGHTBENCH.txt`. It uses the purchased project's specified Blender 3.4.1 version. Its approved tree response is installed in FloraTrail; the initial promotion used the comparison's lighting. See `docs/FLORA_TRAIL_SOURCE34.txt` for game-view and driving validation. LiDAR remains unchanged.
 
 FloraTrail's subsequent sunlight correction keeps those tree materials and separates scene daylight from the isolated comparison rig. See `docs/FLORA_TRAIL_SUNLIGHT.txt` and the per-scene `Art/flora_trail_sunlight_settings.json` controls.
+
+The current palette and lighting acceptance target is `docs/FLORA_PALETTE_SUCCESS_CRITERIA.txt`. It analyses the supplied Flora Paint references, identifies remaining visual gaps and defines the review gates before broader LiDAR rollout. This is an art-direction rubric, separate from the passing technical checks.
