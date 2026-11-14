@@ -1,0 +1,145 @@
+FloraTrail palette candidate: diagnostic preparation, 14 November 2026
+====================================================================
+
+Status
+The saved scene has NOT been improved or replaced by this work yet. Neither
+the trees nor the undergrowth is visually accepted. No new Unreal capture,
+motion check, saved-candidate verification or performance measurement exists.
+The prepared Unreal script is syntax-checked but has not executed in-engine.
+
+The user requested that Wardogs remain running. No application was closed.
+The diagnostic preflight refused to launch Unreal with approximately 4.3 GiB
+free physical memory, 4.0 GiB free virtual memory and 2.2 GiB free C: space.
+The runner requires 8 GiB physical, 12 GiB virtual and 4 GiB C: headroom. These
+are conservative operational thresholds, not measured scene requirements.
+No caches or unrelated files were removed. A renderer was not launched.
+
+Protected baseline
+Art/flora_trail_palette_baseline.py verifies the existing saved build hashes
+and historic source protection, then preserves 90 files under:
+  Saved/FloraTrailBackups/palette-1794693503785232400
+The local manifest is Art/Export/FloraTrail/PaletteCandidate/baseline.json.
+It verifies 784 protected files, including all existing FloraTrail packages,
+the isolated calibration packages, LiDAR study packages and protected source
+assets. The recoverable copy includes the scene, settings, build fingerprint
+and isolated calibration assets. Re-running preparation never resets the
+baseline. LiDAR, mud, water, source textures, 4K bark and LODs are unchanged.
+
+Recover with Unreal closed: use the manifest's backup path and backup_hashes
+to copy the selected original files back to the same relative paths under
+C:/GrandTour, then run the baseline script with --verify. No recovery is
+currently required. Diagnostic packages, if later created, live only under
+FloraTrail/Materials/PaletteDiagnostic and are not assigned to the saved map.
+
+Reference inspection and findings
+The five original images named in reference-evidence.json were opened, not
+only the analysis boards. Green woodland remains the primary daylight target;
+the path supplies selective lighting/depth and open conifers the warm/cool
+relationship. Pink forest and blue-fog forest remain separate mood profiles.
+
+Existing saved Unreal road, mixed-material and upward-crown views were also
+inspected. The broad yellow crowns lack convincing connected shaded masses.
+Many small foliage edges read as stipple; some large lobes are flat yellow.
+Undergrowth is predominantly low dark clumps, with weak fern-fan readability
+and little repeated coral/ochre colour. Grey rocks remain disconnected. A
+colour correction alone may not resolve the shapes, distribution and species
+mix. Do not infer that the tree layer is satisfactory from source parity.
+
+The previous camera labelled canopy aims strongly upward into the sky; it is
+not adequate evidence for the depth gate. The new lower path camera and the
+elevated valley camera are provisional until actual renders establish their
+coverage. The old upward camera is retained as a crown diagnostic.
+
+Source audit: causes to test, not visually confirmed diagnoses
+1. Source34 tree/pine output a constant world +Z diffuse normal. At a fixed
+   sun altitude, changing azimuth cannot give that normal new branch-facing
+   response; only visibility/shadows change. Source pigment and coverage still
+   vary, so this does not prove that normals alone explain the visual problem.
+2. Existing undergrowth uses the older conversion in flora_exact_materials.py:
+   weighted pigment is squared for transmission, divided by pi for direct
+   light, and accompanied by an analytic ambient term. Its reflection direct
+   contribution is gated off for an above-horizon source sun. Tree/pine now
+   use the calibrated native diffuse response instead. Fern diffuse weight
+   is about .766; shrub/grass about .295, with other shrub slots differing.
+   This is a concrete family-response mismatch to investigate after tree
+   diagnostics, not permission to relabel the remaining conversion as matched.
+3. Standard display has prior midgrey evidence, but the new run will check
+   it again in actual game output. One neutral card only establishes midgrey
+   transfer; it cannot certify the entire highlight curve or exposure gamut.
+
+Prepared controlled test
+Art/flora_trail_palette_probe_settings.json defines cameras and cases.
+Art/Unreal/probe_flora_trail_palette.py makes local copies of tree materials
+and changes assignments only in PIE. The saved map and calibrated shaders
+remain protected. The identity probe first holds pigment=(1,1,1) and normal
+blend=0, so its output must retain the baseline before other cases are used.
+
+Cases: saved daylight; identity probe; neutral sun/sky chromaticity at unchanged
+energy; tree pigment multiplier alone; tree mesh-normal blend alone; reversed
+sun azimuth at unchanged altitude; normal blend plus reversed azimuth. The
+last case is an explicit interaction test, not a one-variable comparison
+against baseline. The normal probe folds mesh normals into the upper
+hemisphere and blends them with +Z; it is an art-direction experiment and
+does not claim Blender source parity. No emissive foliage is introduced.
+
+All cases restore the original settings before applying their one named group.
+Exposure, Standard display, fog, FOV and render quality remain fixed. Source
+coverage and texture bindings remain intact. The script checks 4K bark loading,
+requests fully loaded used textures, waits before capture and records PNG IHDR
+dimensions rather than equating requested window size with native resolution.
+The fixed exported tree graphs must have no connected wind/WPO output.
+
+Run with sufficient resources, from C:/GrandTour:
+  powershell -NoProfile -File Art/run_flora_trail_palette.ps1 -Stage prepare
+  powershell -NoProfile -File Art/run_flora_trail_palette.ps1 -Stage diagnose
+
+The runner uses the established renderer mutex and single-renderer check. It
+records resource preflight and process exit status, rejects shader errors,
+rechecks protected hashes and assembles actual reference/probe boards. It has
+no install stage: choose and implement family changes only after inspecting
+these results. No combined artistic candidate has been chosen yet.
+
+Review artifacts available now
+Art/Export/FloraTrail/PaletteCandidate/baseline-reference-review.jpg places the
+original three working references alongside historical saved Unreal images.
+Separate 320px colour and greyscale thumbnails are in the same folder. These
+are labelled historical and cannot be presented as new before/after evidence.
+The historical Unreal images are native 1274 x 682, not the requested 1600 x
+900 window size. The review script resizes only for presentation; no colour
+grade, sharpening, blur or upsampling is applied to source evidence.
+
+Acceptance gates
+Gate  Existing saved baseline observation           New candidate
+A     FAIL: yellow crowns / dark ground separation  NOT TESTED
+B     PARTIAL: some interiors; flat large lobes     NOT TESTED
+C     PARTIAL: dark clumps, weak family separation  NOT TESTED
+D     FAIL: grey rocks / brown bark disconnected   NOT TESTED
+E     NOT TESTED: no suitable local depth view      NOT TESTED
+F     PARTIAL: still shapes weak; motion untested   NOT TESTED
+G     NOT TESTED: full view/light-direction set absent NOT TESTED
+60fps NOT TESTED                                    NOT TESTED
+These are qualitative baseline observations, not a newly completed gate suite.
+No partial or untested result counts as passed. Three selected crown crops,
+fixed shaded/nearby-lit material crops, motion and valley regression remain
+outstanding. No aesthetic approval or LiDAR rollout is authorized by this report.
+
+Next work, in order
+1. Execute/inspect diagnosis, including identity control and display card.
+   Confirm actual camera coverage before any before/after acceptance set.
+2. Correct the material-family response, colour roles and any demonstrated
+   shape/distribution defects. Both trees and undergrowth remain in scope.
+   Preserve source detail, source textures, native shadows, LODs and physics.
+3. Establish selective sunlight and readable shade without stronger global
+   sun, global desaturation, blur or emissive foliage. Then tune fog/grading.
+4. Capture and evaluate all gates using saved/reloaded candidate and baseline
+   at identical cameras/settings, including colour/greyscale, semantic crops,
+   a short slow motion check, three light directions and valley regression.
+5. Verify mud/water if relevant materials/geometry change; measure 60 fps
+   separately at specified hardware/resolution. Preserve historical results.
+
+Completed validation
+Baseline backup and re-verification succeeded. Python syntax and PowerShell
+parser checks passed. Historical evidence assembly succeeded. The resource
+guard was exercised and stopped safely before renderer launch. Unreal runtime
+API behaviour, compilation, images, final material choices and visual gates
+are NOT established by these offline checks.

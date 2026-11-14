@@ -1,0 +1,23 @@
+{
+  "status": "diagnostic candidate; not visually approved or installed",
+  "requested_size": [1600, 900],
+  "fov": 65.0,
+  "settle_frames": 120,
+  "views": [
+    {"name": "road", "position": [-2350, -470, 210], "target": [900, 150, 640]},
+    {"name": "canopy", "position": [-1200, -900, 130], "target": [1500, 1300, 300]},
+    {"name": "crowns", "position": [-1200, -900, 130], "target": [500, 1300, 1550]},
+    {"name": "bank", "position": [-900, 150, 150], "target": [500, 900, 400]},
+    {"name": "valley", "position": [-3600, -2700, 2300], "target": [500, 500, 400]}
+  ],
+  "view_status": "Road/bank/crowns reuse earlier fixed cameras. Earlier canopy view looks into sky and cannot establish depth. New lower canopy and elevated valley framing are provisional until visually checked.",
+  "cases": [
+    {"name": "baseline", "change": "none", "views": ["road", "canopy", "bank", "valley", "crowns"]},
+    {"name": "clone_control", "change": "probe graph at identity; must visually retain baseline before interpreting other cases", "pigment": [1, 1, 1], "normal_blend": 0.0, "views": ["road", "canopy"]},
+    {"name": "neutral_light", "change": "sun and sky chromaticity only; energy unchanged", "sun_colour": [1, 1, 1], "sky_colour": [1, 1, 1], "views": ["road", "canopy"]},
+    {"name": "pigment_only", "change": "tree pigment multiplier only", "pigment": [0.68, 0.90, 0.82], "views": ["road", "canopy"]},
+    {"name": "normal_only", "change": "tree diffuse normal only; upper hemisphere mesh normal blend", "normal_blend": 0.85, "views": ["road", "canopy"]},
+    {"name": "reverse_azimuth", "change": "sun azimuth only; altitude and energy unchanged", "reverse_azimuth": true, "views": ["road", "canopy"]},
+    {"name": "normal_reverse", "change": "normal_only with reversed azimuth; compare normal_only and reverse_azimuth", "normal_blend": 0.85, "reverse_azimuth": true, "views": ["road", "canopy"]}
+  ]
+}

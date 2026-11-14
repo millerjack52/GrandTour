@@ -1,0 +1,27 @@
+{
+  "status": "diagnostic preparation; rendering blocked by resource preflight",
+  "candidate_installed": false,
+  "saved_scene_modified": false,
+  "lidar_modified": false,
+  "protected_file_count": 784,
+  "recoverable_backup_file_count": 90,
+  "baseline_integrity": "passed",
+  "python_and_powershell_syntax": "passed",
+  "resource_guard": "exercised; refused launch",
+  "unreal_runtime_validation": "not tested",
+  "candidate_gates": {
+    "A_palette": "not tested",
+    "B_crown_form": "not tested",
+    "C_readable_shade": "not tested",
+    "D_material_coherence": "not tested",
+    "E_depth": "not tested",
+    "F_two_scales_and_motion": "not tested",
+    "G_review_set_consistency": "not tested"
+  },
+  "motion": "not tested",
+  "performance_60fps": "not tested",
+  "display_transform": "prior midgrey verification only; new check prepared, not run",
+  "historical_unreal_native_size": [1274, 682],
+  "historical_evidence": "Art/Export/FloraTrail/PaletteCandidate/baseline-reference-review.jpg",
+  "limitation": "No new candidate image exists. Historical comparisons and syntax checks do not establish aesthetic success. Both tree and undergrowth appearance need improvement."
+}
