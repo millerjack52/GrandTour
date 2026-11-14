@@ -1,0 +1,107 @@
+FloraTrail: fuller F002 pine trial
+================================
+
+Scope
+A separate drivable map at
+  /Game/GrandTour/ArtTests/FloraTrail/PineTrial/L_FloraTrail_Pine
+Launch with Drive-FloraTrail-Pine.bat. Drive-FloraTrail.bat still opens the
+protected original. LiDAR, original FloraTrail, the source calibration bench,
+mud/water assets and undergrowth are not overwritten by this trial.
+
+Species and source
+FP_Tree_F_002 from Bonus Project 002 / Forest_20240121.blend, evaluated at
+frame 1 using Blender 3.4.1. This is the original-version scene variant; the
+newer main-library F002 catalogue preview is not identical geometry. The local
+source hash and export report identify exactly which asset was rendered.
+Its authored displacement/deformation is frozen; no new silhouette is modelled.
+Source pigment and coverage are baked without illumination. Original mask UV0
+is retained, pigment uses UV1, and bark alone receives a dedicated 4K UV1 atlas.
+The source has 49,316 triangles; the Unreal import has 49,314 (two fewer after
+import/build). It has three Unreal LODs at 100/65/35 percent. Existing
+pine has 74,670 triangles at LOD0. Lower geometry is not measured performance.
+
+Material conversion
+This source uses Leaf_0.002, not the existing Leaf_0. Its facing softness is
+0.5060432 rather than 0.8534567, and its diffuse weight is 0.0336700 rather than
+zero. It has no source emission. The local candidate retains its own pigment,
+coverage, facing softness and hashed surface coverage. It mixes the calibrated
+upward response with the small geometry-normal diffuse contribution using a
+single native normal and magnitude correction. This is an approximation,
+especially at horizon-clamped lighting angles, not certified source parity.
+The protected calibration material is read-only. No emissive foliage, global
+desaturation, blur, stronger sunlight or new fog/grade is used.
+
+Scene construction
+Replace the 193 existing pine instances in the copied map, preserving positions,
+rotations, component shadow/culling settings and equivalent tree height. Width
+therefore changes with the new species' natural proportions. The 147 broadleaf
+trees and all ground plants remain. New foliage has wider/lower branch masses;
+road visibility must be reviewed, not assumed from unchanged trunk positions.
+Lighting is held at the existing sunlight profile: sun 15.68, sky 0.784,
+exposure zero and Standard display. This is a species experiment, not a finished
+palette correction. Understory conversion and whole-scene colour cohesion remain
+separate outstanding work.
+
+Reproduction (one renderer at a time)
+  powershell -File Art/run_flora_trail_pine.ps1 -Stage export
+  powershell -File Art/run_flora_trail_pine.ps1 -Stage install
+  powershell -File Art/run_flora_trail_pine.ps1 -Stage verify
+  python Art/review_flora_trail_pine.py
+The runner reserves the shared renderer mutex and checks free memory/disk.
+It never closes unrelated applications. Each stage verifies the protected
+baseline hashes. Install saves/reloads the separate map; verify starts a fresh
+Unreal process and checks 4K bark and LODs after asynchronous loading.
+
+Evidence
+Local-only files in Art/Export/FloraTrail/PineTrial include source renders with
+AO on/off, native Unreal fixed-camera road/canopy/bank/valley captures, colour
+and greyscale thumbnails, a sampled camera move, source/Unreal comparison,
+reports and process results. Baseline views come from the preceding saved-map
+diagnostic with the same camera, FOV, quality, exposure and 120-frame settling.
+The isolated comparison removes fog only for that diagnostic; it is separate
+from the unchanged daylight scene-review views. Camera position, target, scale
+and sun/sky match the new Blender source render. The requested vertical FOV
+match leaves the Unreal tree slightly smaller in normalized frame height;
+projection/aspect handling needs correction before pixel-parity comparisons.
+Native shadowing and the small mixed lobe also remain potential differences.
+
+Validation is recorded in Docs/validation/flora-trail-pine.json after review.
+Passing import, rendering or package checks never establishes visual acceptance.
+Motion samples are not sustained 60 fps evidence or a new mud/water driving pass.
+Purchased assets and rendered source images remain local; source automation,
+launcher and documentation may be committed.
+
+Observed result, 14 November 2026
+Export, successful install and fresh-process verification exited zero. All 784
+protected files and 90 backup files verified; the saved trial package hashes
+also stayed unchanged throughout verification. Native capture size is 1274x682,
+not the requested 1600x900. No material compilation failure was logged. One
+earlier install stopped at a Python property-access error; its log/report remain
+under failed-install-api and are not passing evidence.
+
+The species is a useful improvement in branch tiers, forest enclosure and green
+shaded mass. It does not match the references. The isolated native result has
+similar overall hue/silhouette to the source render but more broken/thinner
+leaf coverage; exact parity is not certified. Source AO on/off alone does not
+produce a dramatic change in this isolated rig. A whole-scene occlusion test
+would be separate evidence, not grounds for adding cost speculatively.
+
+Gate A FAIL: warmer ground accents remain too weak; yellow broadleaf crowns and
+dark green ground clumps still split the palette.
+Gate B PARTIAL: layered pine crowns have connected light/shade in colour and
+greyscale thumbnails, but the remaining broadleaf family and elevated view
+retain uniform bright fills.
+Gate C PARTIAL: pine shade retains green and some overlap, while much of the
+undergrowth still merges into dark regions.
+Gate D FAIL: warm trunks/leaf faces coexist with disconnected grey rocks and
+dark plants; the mixed bank still lacks a shared colour relationship.
+Gate E FAIL: the unchanged canopy camera is crowded by a broad new trunk, and
+middle/background layers do not show the reference's progressive atmosphere.
+Gate F PARTIAL: branch masses survive 320px reduction; source texture character
+is visible close up. Sampled movement preserves broad colour/form, but coverage
+grain remains and twelve samples cannot certify temporal stability at speed.
+Gate G FAIL: the same profile preserves the species improvement across the local
+views but does not pass A-D/F; the elevated canopy is still largely yellow.
+Front/side/back lighting coverage for this new species is NOT TESTED as a full set.
+Performance NOT TESTED. Mud/water regression NOT RE-RUN; their baseline files and
+scene setup were preserved. This remains a trial, not an approved LiDAR profile.

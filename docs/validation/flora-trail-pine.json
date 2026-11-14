@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-14",
+  "status": "saved, reload-verified species trial; not visually approved",
+  "map": "/Game/GrandTour/ArtTests/FloraTrail/PineTrial/L_FloraTrail_Pine",
+  "launcher": "Drive-FloraTrail-Pine.bat",
+  "source": "Bonus Project 002 / FP_Tree_F_002; original-version scene variant",
+  "source_reader": "Blender 3.4.1",
+  "source_triangles": 49316,
+  "unreal_lod0_triangles": 49314,
+  "replaced_pines": 193,
+  "unchanged_broadleaf_trees": 147,
+  "lod_count": 3,
+  "bark_resolution": [4096, 4096],
+  "native_capture_resolution": [1274, 682],
+  "process_exit_codes": {"export": 0, "install": 0, "verify": 0},
+  "protected_files_unchanged": 784,
+  "backup_files_verified": 90,
+  "original_flora_trail_unchanged": true,
+  "lidar_unchanged": true,
+  "saved_trial_packages_unchanged_during_verification": true,
+  "lighting": {"sun": 15.68, "sky": 0.784, "exposure": 0, "display": "Standard"},
+  "source_parity": {
+    "status": "partial",
+    "reason": "Similar overall hue and silhouette; Unreal coverage looks more broken/thinner. Small projection mismatch and native mixed-lobe/shadow differences prevent pixel-parity certification.",
+    "evidence": "Art/Export/FloraTrail/PineTrial/source-unreal-review.jpg"
+  },
+  "gates": {
+    "A": {"status": "fail", "reason": "Yellow broadleaf crowns and dark ground clumps remain; coral/ochre repetition is too weak.", "evidence": "pine-reference-review.jpg"},
+    "B": {"status": "partial", "reason": "Pine branch tiers retain light/shade at thumbnail size; broadleaf fills and elevated crowns still flatten.", "evidence": "compare_road.jpg"},
+    "C": {"status": "partial", "reason": "Pine interiors retain green; shaded undergrowth still merges into dark masses.", "evidence": "compare_canopy.jpg"},
+    "D": {"status": "fail", "reason": "Rocks, dark plants and warm bark still lack coherent lighting colour relationships.", "evidence": "compare_bank.jpg"},
+    "E": {"status": "fail", "reason": "A broader trunk crowds the unchanged canopy view; middle/background atmospheric progression remains weak.", "evidence": "compare_canopy.jpg"},
+    "F": {"status": "partial", "reason": "Coherent branch masses and source detail remain. Sampled movement retains broad colour/form, but coverage grain and full-speed temporal stability remain unresolved.", "evidence": "pine-motion.webp"},
+    "G": {"status": "fail", "reason": "A-D/F do not all pass across the review set; elevated canopy is still yellow. Full directional-light coverage is not tested.", "evidence": "compare_valley.jpg"}
+  },
+  "motion": {"status": "partial", "camera_frames": 48, "captured_samples": 12, "review": "sampled frame inspection; not full-rate playback certification"},
+  "performance": {"status": "not tested", "target_fps": 60},
+  "mud_water": {"status": "not tested this run", "preservation": "baseline files and copied scene setup retained"},
+  "evidence_root": "Art/Export/FloraTrail/PineTrial",
+  "failed_attempt_retained": "Art/Export/FloraTrail/PineTrial/failed-install-api",
+  "approved_for_lidar": false
+}

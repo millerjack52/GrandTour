@@ -63,7 +63,7 @@ def bake_assets(scene,objects,recipe,out):
         images={}
         for channel in ['Colour','Coverage']:
             image=bpy.data.images.new('Exact_'+asset['key']+'_'+channel,width=2048,height=2048,float_buffer=True,alpha=False)
-            image.colorspace_settings.name='Linear Rec.709' if channel=='Colour' else 'Non-Color'
+            image.colorspace_settings.name=('Linear' if bpy.app.version<(4,0,0) else 'Linear Rec.709') if channel=='Colour' else 'Non-Color'
             for i,(m,emit,colour,alpha) in enumerate(mats):
                 t=m.node_tree
                 if emit is None:
