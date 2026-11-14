@@ -1,0 +1,95 @@
+FloraTrail: first controlled Unreal palette diagnosis / 14 November 2026
+======================================================================
+
+Result
+The diagnostic run completed successfully: 18 native 1274 x 682 game captures,
+exit code zero, no shader-error fallback, 4K source bark and three foliage LODs
+verified, 784 protected files unchanged. Standard midgrey output was RGB
+(118,118,118.28), expected 117.65. This is a midgrey transfer check, not a full
+display-curve characterization. No candidate was installed or accepted.
+
+Appearance findings from actual road/lower-canopy images
+* Identity probe retains the baseline's overall colour and form. Fine temporal
+  coverage pixels differ; sample crown-crop mean absolute channel differences
+  range about 2.1-4.4 on a 0-255 scale. This is not a pixel-identical claim.
+* Neutral sun/sky chromaticity at unchanged energy does not recover the source
+  appearance. Broad yellow/lime fills and dark undergrowth remain.
+* The tree-only pigment multiplier makes the foliage greener but leaves the
+  broad fills, thin coverage and disconnected ground materials. Reject tint
+  alone as a solution.
+* Blending the world-up lighting normal toward upper-hemisphere mesh normals
+  produces more connected light/dark variation in several crowns, without
+  changing mesh geometry, source textures or opacity. It is a useful response
+  improvement, not a source-parity result or an approved final normal treatment.
+* Reversing sun azimuth at the same altitude changes shadows, lit bark and road
+  patches, but the original normals still yield broadly filled crowns. The
+  normal variant retains more directional crown shading in that reversed case.
+  This supports normal response as one contributing cause; it does not isolate
+  all remaining coverage, shadowing, LOD or source-environment differences.
+
+Source appearance remains the target
+The inventory's original embedded previews look substantially better than the
+Unreal scene, including B_001/D_001 already used. Their main-library and bonus
+scene raw geometry hashes match. Rebuilding those tree shapes is premature.
+Flora F-series and K-series offer stronger conifer forms for later selection,
+but transferring a different tree alone would not fix a deficient shader path.
+
+Native Blender 3.4.1 inspection of the two source bonus scenes found:
+  GTAO enabled, distance 1.0, factor 1.5; soft shadows enabled; hashed leaf
+  transparency and hashed leaf shadows; Standard/None/exposure 0/gamma 1.
+The isolated calibration script explicitly disables GTAO and uses a simplified
+uniform world and one sun. This confirms a meaningful source-environment
+difference that the isolated material benchmark did not establish parity for.
+It does NOT yet prove how much GTAO contributes to the attractive source look,
+nor that increasing Unreal AO is the right or affordable solution. Test the
+source with that feature on/off before adding rendering cost to FloraTrail.
+Source light datablocks and compositor nodes were inventoried, but their
+presence alone does not prove every light/node participates in the final image.
+Neither source file was saved or modified by inspection.
+
+Camera/evidence limits
+Road and lower-canopy before/after views are fixed across all cases. Baseline
+also has the original upward-crown, mixed-bank and elevated overview captures.
+The lower canopy now shows foreground ferns, middle trunks and background, but
+the scene remains open; it is not an enclosed forest corridor matching the
+reference. The elevated overview is a local test-section regression view, not
+a LiDAR valley validation. No modified-case bank/overview or motion pass was
+captured. No per-camera exposure, grading, fog or quality changes were made.
+
+Gate assessment of the normal-only diagnostic, NOT a finished candidate
+A  FAIL: crowns still broadly yellow/olive; no repeated warm ground accents.
+B  PARTIAL: several crowns gain connected shading; source form is not recovered.
+C  PARTIAL: shade contains some colour, but understory families remain too dark.
+D  FAIL: grey rocks and the ground/vegetation split remain.
+E  NOT TESTED: no completed enclosed-depth acceptance composition/profile.
+F  PARTIAL: shape survives reduction but remains stippled; motion NOT TESTED.
+G  NOT TESTED: changed cases cover two views/two azimuths, not the complete set.
+Performance  NOT TESTED: offscreen diagnostic timing is not sustained gameplay fps.
+No failed or partial gate is averaged away. No finished candidate is accepted.
+
+Next implementation
+First compare representative source trees/ferns using the full source shading
+context against the actual Unreal result. Preserve the isolated calibration as
+one control, not the complete aesthetic target. Separate coverage/shadow and
+environment-occlusion contributions before committing a final normal approach.
+Then correct the differing undergrowth response, establish material-family
+relationships and selective daylight, and only afterward tune fog/final grade.
+Use the source-appearance catalogue to choose coherent additional variants.
+Carry the chosen candidate through saved/reloaded images, motion and every
+acceptance gate before extending it to LiDAR. Mud/water are untouched here.
+
+Evidence
+Art/Export/FloraTrail/PaletteCandidate/diagnosis_road.jpg
+Art/Export/FloraTrail/PaletteCandidate/diagnosis_canopy.jpg
+Art/Export/FloraTrail/PaletteCandidate/<case>_<view>.png
+Art/Export/FloraTrail/PaletteCandidate/*_320_colour.png and *_320_grey.png
+Art/Export/FloraTrail/PaletteCandidate/diagnose-report.json
+Art/Export/FloraTrail/PaletteCandidate/diagnose-process.json
+Art/Export/TreeInventory/source-environments.json
+Art/Export/TreeInventory/index.html
+
+Reproduce the controlled captures with Art/run_flora_trail_palette.ps1 -Stage
+diagnose, then Art/review_flora_trail_palette.py. Read the environment with
+Blender 3.4.1 --background --factory-startup --disable-autoexec --python-exit-code
+1 --python C:/GrandTour/Art/Blender/inspect_flora_source_environment.py.
+Run only one Unreal/Blender process at a time.

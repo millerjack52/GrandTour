@@ -1,0 +1,89 @@
+{
+  "status": "diagnosis complete; no accepted or installed artistic candidate",
+  "process": {
+    "started": "2026-11-14T16:20:32.7071636-06:00",
+    "finished": "2026-11-14T16:31:17.3120459-06:00",
+    "exit_code": 0
+  },
+  "captures": 18,
+  "protected_files": 784,
+  "protected_unchanged": true,
+  "saved_scene_unchanged": true,
+  "technical_review": {
+    "technical_capture_complete": true,
+    "native_size": [
+      1274,
+      682
+    ],
+    "display_card_rgb": [
+      118.0,
+      118.0,
+      118.27734375
+    ],
+    "display_card_expected": 117.64581302261261,
+    "candidate_installed": false,
+    "visual_acceptance": "not tested",
+    "motion": "not tested",
+    "performance": "not tested",
+    "limits": "Review each case visually before choosing material-family changes. A neutral card checks midgrey transfer only; it does not characterize the complete display curve."
+  },
+  "normal_only_diagnostic_gates": {
+    "A": "fail",
+    "B": "partial",
+    "C": "partial",
+    "D": "fail",
+    "E": "not tested",
+    "F": "partial",
+    "G": "not tested"
+  },
+  "motion": "not tested",
+  "performance": "not tested",
+  "source_environments": [
+    {
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Flora_Paint_Bonus_Project_Files\\Bonus_Project_Files\\001\\001.blend",
+      "eevee": {
+        "use_gtao": true,
+        "gtao_distance": 1.0,
+        "gtao_factor": 1.5,
+        "use_soft_shadows": true,
+        "use_shadow_high_bitdepth": false,
+        "shadow_cube_size": "512",
+        "shadow_cascade_size": "1024",
+        "taa_render_samples": 64,
+        "use_bloom": true,
+        "use_ssr": true,
+        "use_ssr_refraction": true
+      },
+      "display": {
+        "view_transform": "Standard",
+        "look": "None",
+        "exposure": 0.0,
+        "gamma": 1.0
+      },
+      "source_unchanged": true
+    },
+    {
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Flora_Paint_Bonus_Project_Files\\Bonus_Project_Files\\002\\Forest_20240121.blend",
+      "eevee": {
+        "use_gtao": true,
+        "gtao_distance": 1.0,
+        "gtao_factor": 1.5,
+        "use_soft_shadows": true,
+        "use_shadow_high_bitdepth": false,
+        "shadow_cube_size": "4096",
+        "shadow_cascade_size": "4096",
+        "taa_render_samples": 64,
+        "use_bloom": true,
+        "use_ssr": true,
+        "use_ssr_refraction": true
+      },
+      "display": {
+        "view_transform": "Standard",
+        "look": "None",
+        "exposure": 0.0,
+        "gamma": 1.0
+      },
+      "source_unchanged": true
+    }
+  ]
+}

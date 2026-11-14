@@ -1,6 +1,10 @@
 FloraTrail palette candidate: diagnostic preparation, 14 November 2026
 ====================================================================
 
+Later update: the resource block was cleared and all controlled Unreal captures
+completed. See FLORA_TRAIL_PALETTE_DIAGNOSIS.txt for current findings. No final
+candidate is installed. The preparation history below remains historical.
+
 Status
 The saved scene has NOT been improved or replaced by this work yet. Neither
 the trees nor the undergrowth is visually accepted. No new Unreal capture,
