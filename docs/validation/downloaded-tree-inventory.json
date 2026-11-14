@@ -1,0 +1,121 @@
+{
+  "status": "read-only source inventory complete",
+  "source_files_inspected": 17,
+  "source_files_unchanged": true,
+  "packs": [
+    {
+      "pack": "Flora Paint / main",
+      "key": "flora-main",
+      "asset_entries": 42,
+      "distinct_base_meshes": 42,
+      "standing_tree_entries": 42,
+      "log_entries": 0,
+      "base_triangle_range": [
+        23144,
+        193767
+      ],
+      "file_version": [
+        4,
+        2,
+        66
+      ],
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Flora_Paint_Assets_Library_v1_3_PRO\\Main_Library\\FloraPaint_v1_3_Library.blend"
+    },
+    {
+      "pack": "Flora Paint / tree update",
+      "key": "flora-update",
+      "asset_entries": 13,
+      "distinct_base_meshes": 13,
+      "standing_tree_entries": 13,
+      "log_entries": 0,
+      "base_triangle_range": [
+        66032,
+        201392
+      ],
+      "file_version": [
+        4,
+        2,
+        66
+      ],
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Flora_Paint_Assets_Library_v1_3_PRO\\Main_Library\\V1.1_Update\\V1_1_Tree.blend"
+    },
+    {
+      "pack": "Trees Assets Library",
+      "key": "trees-library",
+      "asset_entries": 141,
+      "distinct_base_meshes": 140,
+      "standing_tree_entries": 141,
+      "log_entries": 0,
+      "base_triangle_range": [
+        6564,
+        220557
+      ],
+      "file_version": [
+        3,
+        4,
+        6
+      ],
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Trees_Assets_Library\\Trees_Assets_01.blend"
+    },
+    {
+      "pack": "Lazy Forest",
+      "key": "lazy-assets",
+      "asset_entries": 33,
+      "distinct_base_meshes": 15,
+      "standing_tree_entries": 33,
+      "log_entries": 0,
+      "base_triangle_range": [
+        3479,
+        65313
+      ],
+      "file_version": [
+        3,
+        4,
+        6
+      ],
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Lazy_Forest_Gen_Addon\\Assets\\Assets.blend"
+    },
+    {
+      "pack": "Stylized Forest Generator",
+      "key": "stylized-assets",
+      "asset_entries": 50,
+      "distinct_base_meshes": 50,
+      "standing_tree_entries": 44,
+      "log_entries": 6,
+      "base_triangle_range": [
+        3896,
+        479208
+      ],
+      "file_version": [
+        4,
+        5,
+        87
+      ],
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Stylized Forest Generator Addon - Trees & Plants Assets\\Stylized_Forest_Gen_Addon_v_1_0_1\\Stylized_Forest_Gen_Addon\\Stylized_Forest_Assets\\Assets.blend"
+    },
+    {
+      "pack": "GrassPaint companion library",
+      "key": "grasspaint-assets",
+      "asset_entries": 0,
+      "distinct_base_meshes": 0,
+      "standing_tree_entries": 0,
+      "log_entries": 0,
+      "base_triangle_range": [],
+      "file_version": [
+        5,
+        0,
+        118
+      ],
+      "source": "D:\\GrandTourAssets\\FlippedNormals\\Stylized Forest Generator Addon - Trees & Plants Assets\\Assets_Pack\\GrassPaint_Stylized_Forest_Assets_Pack\\Stylized_Forest_Assets\\Grass_Paint.blend"
+    }
+  ],
+  "standing_tree_asset_entries": 273,
+  "log_asset_entries": 6,
+  "current_flora_trail_sources": {
+    "FP_Tree_B_001": 147,
+    "FP_Tree_D_001": 193
+  },
+  "unreal_appearance_validated": false,
+  "catalogue": "Art/Export/TreeInventory/index.html",
+  "limits": "Asset entries include moss/snow/material variants. Base geometry hashes exclude modifiers, materials and transforms; not a count of final unique silhouettes. Preview colours are source thumbnails, not an Unreal transfer guarantee."
+}

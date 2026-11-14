@@ -1,0 +1,114 @@
+Downloaded tree inventory / 14 November 2026
+===========================================
+
+Conclusion
+The downloaded packs already contain convincing stylized trees. Their native
+previews show coherent foliage masses, useful branch tiers and good colour
+variation. Preserve and recover that appearance in Unreal before proposing
+geometry rebuilding. Inventory quality is not an Unreal appearance pass.
+
+Confirmed canonical libraries
+Library                   Standing tree entries  Distinct base meshes  Base tris
+Flora Paint main + update       55                       55            23,144-201,392
+Trees Assets Library           141                     140             6,564-220,557
+Lazy Forest                     33                      15             3,479-65,313
+Stylized Forest Generator       44                      44            23,476-479,208
+
+There are 273 asset-marked standing-tree entries across these libraries, plus
+six Stylized Forest log assets (Trees_Assets_034 through 039). The log assets
+have 3,896-11,382 base triangles and are not counted as standing trees.
+Counts include seasonal, moss and snow variants; 273 is not a count of unique
+species or unique silhouettes. A raw-mesh hash excludes material assignments,
+modifiers and transforms. Different hashes can still represent similar shapes.
+
+Flora Paint
+42 entries in FloraPaint_v1_3_Library.blend and 13 in V1_1_Tree.blend.
+Families: A 11 including four moss versions and three update trees; B 3; C 1;
+D 4; E 3; F 4; G 5; H 9; I 5; K 10 including five snow versions.
+A/E provide broad spreading crowns; B/D tall, raised crowns; F visibly layered
+conifers; G sparse branching; H dense broadleaf masses; I pink flowering trees;
+K upright fuller conifers. These are visual shape descriptions, not botanical IDs.
+
+Trees Assets Library
+Tree_001 through Tree_141. All 141 are asset-marked mesh objects with previews
+and UVs. Tree_024 and Tree_030 have identical raw geometry; do not assume their
+complete evaluated appearance is identical. All have DISPLACE and SIMPLE_DEFORM
+modifiers in the inspected source and share Leaves/Wood1 material slots.
+The range includes tall trees, full conifers, rounded/spreading crowns, sparse
+and bare trees, green/autumn variations and small conifers near 129-136.
+The supplied animation/modifier setup is not an Unreal wind implementation.
+
+Lazy Forest
+Tree_01 through Tree_15 are 15 base shapes. Tree_2_00 through Tree_2_08 and
+Tree_3_00 through Tree_3_08 provide nine autumn and nine snowy asset-marked
+variations, respectively. Tree_2_09 and Tree_3_09 also exist as unmarked mesh
+objects, sharing the Tree_15 base mesh; they are not added to the 33 browser
+entries. Tree_04/05 have useful layered conifer silhouettes at about 7k base
+triangles. No modifiers are present on these canonical library tree objects.
+
+Stylized Forest
+Trees_Assets_000-033 and 040-049 are 44 standing trees; 034-039 are six logs.
+Includes strongly shaped trunks, elevated clusters, exposed roots, rounded
+crowns and layered conifers. 010-014 and 020-024 are roughly 23k-27k base
+triangles; some other trees approach 480k. Polygon count alone does not prove
+frame cost, masked overdraw, LOD quality or sustained 60 fps.
+
+Supplementary files
+Seventeen .blend files were inspected read-only, including all six Flora Paint
+library/tool .blends, the three bonus scenes, both Lazy Forest .blends, both
+Stylized Forest .blends, both GrassPaint companions, Trees Assets Library and
+Sample File 4.4. GrassPaint companions and Sample File 4.4 yielded no named or
+catalogued tree candidates. Flora's wood example contains FP_Tree_D_002, not a
+new asset-marked tree. Scatter/generator and bonus-scene object counts are not
+added to the canonical asset totals: repeated placements would inflate them.
+Tree helper addon contains code/catalog support, not another mesh collection.
+
+Current FloraTrail selection
+FP_Tree_B_001 -> SM_Exact_tree: 147 placements (68 near, 79 far).
+FP_Tree_D_001 -> SM_Exact_pine: 193 placements (92 near, 101 far).
+These are two source shapes used 340 times, from the bonus-001 conversion.
+Their raw geometry hashes exactly match the same named main-library objects.
+That comparison covers vertex positions/topology, not the full shader, UVs,
+normals, modifiers or final Unreal LOD/coverage response.
+
+Version finding
+Files have different stored Blender schema versions: Flora main/update 4.2,
+Trees Assets Library and Lazy Forest 3.4, Stylized Forest assets 4.5, GrassPaint
+5.0, bonus scenes 4.0/3.4/3.4, sample 4.4. The third integer in the raw report is
+a file subversion, not an application patch version. The approved Blender 3.4.1
+diagnostic remains protected; its source-scene calibration must not be assumed
+to validate every later library revision or material family.
+Blender 5.1 was used only to inspect datablocks and extract existing embedded
+preview pixels. No beauty renders were made, no source scripts enabled, no
+modifiers applied, no library saved and no inference of 5.1 lighting parity made.
+
+Woodland shortlist, based on supplied previews
+First: Flora FP_Tree_F_001-004 for connected branch tiers and dark interiors.
+Then: Flora FP_Tree_K_003/005 for fuller upright conifers, A_moss_002 and E_001
+for broadleaf framing. Preserve pink/snow variants for separate mood profiles.
+Alternatives: Trees Library Tree_012/021; Lazy Forest Tree_04/05.
+The latter pair is a promising lower-geometry comparison, not a performance pass.
+Do not mix every pack indiscriminately; test a small coherent family in Unreal.
+
+Important correction to earlier discussion
+Rebuilding the tree shapes was premature. Good supplied previews demonstrate
+that suitable source assets exist, including better-looking versions of the
+two currently selected trees. First isolate where appearance is lost during
+conversion/rendering and restore it. Change geometry only if a controlled
+comparison subsequently demonstrates a geometry problem.
+
+Artifacts and reproduction
+Art/Export/TreeInventory/index.html: searchable local catalogue, every canonical
+entry with native preview, source name, triangle count, material slots and modifiers.
+Art/Export/TreeInventory/tree-inventory.json: full machine-readable inventory.
+Art/Export/TreeInventory/woodland-shortlist.jpg: selected supplied previews.
+Art/Export/TreeInventory/<library>-<page>.jpg: all 279 tree/log entry previews.
+Art/Export/TreeInventory/<source>/inventory.json: per-file read-only audit.
+
+Run sequentially with Unreal/Blender closed:
+  powershell -NoProfile -File Art/run_downloaded_tree_inventory.ps1
+  python Art/review_downloaded_tree_inventory.py
+The runner uses the established renderer mutex and disables source auto-execution.
+All 17 inspected source .blends retained their before/after SHA256. Existing
+FloraTrail/LiDAR/calibration files are not edited by this inventory. Purchased
+files and preview images remain local and are not included in Git commits.
