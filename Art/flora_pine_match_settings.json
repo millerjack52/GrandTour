@@ -1,0 +1,9 @@
+{
+  "source": "FP_Tree_F_002 / Bonus 002 / Blender 3.4.1",
+  "coverage_gain": 1.5,
+  "surface_only": false,
+  "has_pixel_animation": true,
+  "coverage_resolution": 4096,
+  "status": "Measured renderer coverage calibration; not exact shader parity",
+  "scope": "FloraTrail PineTrial F002 material only; pigment, bark, normal response, geometry and scene lighting unchanged"
+}

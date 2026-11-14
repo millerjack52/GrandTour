@@ -1,6 +1,12 @@
 FloraTrail: fuller F002 pine trial
 ================================
 
+Follow-up, 14 November 2026: FLORA_TRAIL_PINE_MATCH.txt records the subsequent
+pine-only coverage correction and corrected square source comparison. This
+document's observations below remain the historical pre-correction review.
+For current rebuilds, run the source-match mask stage before trial install;
+the installed settings are reapplied by the trial builder.
+
 Scope
 A separate drivable map at
   /Game/GrandTour/ArtTests/FloraTrail/PineTrial/L_FloraTrail_Pine

@@ -3,7 +3,7 @@ import bpy,math,json,numpy as np
 from pathlib import Path
 from flora_pigment_check import emission_material
 
-def bake_shared_masks(scene,objects,out):
+def bake_shared_masks(scene,objects,out,resolution=2048):
     masks={}
     for ob in objects:
         for source in ob.data.materials:
@@ -14,7 +14,7 @@ def bake_shared_masks(scene,objects,out):
                 if n.type=='OUTPUT_MATERIAL':t.nodes.remove(n)
             emit=t.nodes.new('ShaderNodeEmission');t.links.new(flora.outputs[1],emit.inputs['Color']);output=t.nodes.new('ShaderNodeOutputMaterial');t.links.new(emit.outputs[0],output.inputs['Surface'])
             bpy.ops.object.select_all(action='DESELECT');bpy.ops.mesh.primitive_plane_add(size=2);plane=bpy.context.object;plane.data.materials.append(m)
-            image=bpy.data.images.new('SourceMask_'+source.name,width=2048,height=2048,float_buffer=True,alpha=False);image.colorspace_settings.name='Non-Color'
+            image=bpy.data.images.new('SourceMask_'+source.name,width=resolution,height=resolution,float_buffer=True,alpha=False);image.colorspace_settings.name='Non-Color'
             n=t.nodes.new('ShaderNodeTexImage');n.image=image;t.nodes.active=n
             scene.cycles.samples=4;assert bpy.ops.object.bake(type='EMIT',margin=0)=={'FINISHED'};scene.cycles.samples=1
             scene.view_settings.view_transform='Raw';scene.render.image_settings.file_format='PNG';scene.render.image_settings.color_depth='8';scene.render.image_settings.color_mode='RGB'

@@ -1,0 +1,111 @@
+FloraTrail F002 pine: source comparison and coverage correction
+=============================================================
+14 November 2026. Scope: the existing PineTrial pine only.
+
+Result
+The saved Unreal pine is closer to its Blender 3.4.1 source. Foliage groups
+retain more of their connected mass and cast closer shadows. This is a measured
+coverage calibration, not exact shader parity or acceptance of the whole forest.
+The native fine edges remain grainier, and some shadow/lighting differences
+remain. No other species or environment palette change is part of this pass.
+
+Installed change
+M_Source34_pine_f002 uses a 4096-square raw source coverage mask, preserving the
+resolution of the original plant atlas. Its facing-dependent coverage is scaled
+by 1.5 before saturation, in both visible and shadow passes. Original pigment,
+facing softness, mixed-normal response, 8-frame hash and pixel-animation flag
+remain. The leaf still uses native lighting and shadows, with no emissive lift.
+The new mask is isolated under PineTrial/SourceMatch/T_SourceMask4K.
+
+The old leaf material is copied to SourceMatch/M_PreMatch. The eight pre-existing
+pine packages have a full recoverable backup and SHA-256 manifest at
+Art/Export/FloraTrail/PineMatch/baseline.json. Only the leaf material may differ.
+Bark, original textures, mesh/LODs, backdrop and pine map remain protected;
+the original FloraTrail's 784 files and 90 backup files are verified as well.
+No LiDAR, undergrowth, broadleaf, sun, sky, exposure, fog, grading, mud or water
+package is modified. The 4K bark and three existing LODs are retained.
+
+Controlled comparison
+The source is FP_Tree_F_002 in Bonus Project 002 / Forest_20240121.blend, opened
+read-only in Blender 3.4.1. Source SHA-256:
+bae00f199a0a7e3ce07fe511926ffd4e761d8008bec03ed199f24c78ca0d3c5c
+The original exported FBX is rendered with the original source materials to
+check the roundtrip. Source slot names are resolved explicitly, not by assuming
+Blender's numeric duplicate suffixes. The purchased blend is never saved.
+
+Native 768x768 Unreal SceneCapture corrects the earlier projection mismatch.
+Both renderers use camera (0,-17.437067,6.340752) metres, target (0,0,5.283960),
+horizontal FOV 43.602821 degrees, identical geometry scale, Standard display,
+zero exposure bias, source sun 16/native 15.68 and cool sky .8/native .784.
+No AO, fog, Lumen, post grain or per-view grade is used in this isolated bench.
+Warm, side and back light directions are recorded in recipe.json. Unreal uses
+128 capture iterations for temporal settling and waits for texture loading.
+Drivable scene captures retain their original atmosphere and lighting profile.
+
+Diagnosis and selected correction
+- Unlit pigment inside 22,468 solid leaf pixels already agrees closely. Mean
+  absolute linear RGB error is about (.0024,.0028,.00073). Retinting the pigment
+  would therefore hide a different problem.
+- Baseline integrated white coverage is about .861 of source, with solid-mask
+  intersection-over-union about .831. Leaf groups are visibly thinner/broken.
+- Coverage gains 1.25 and 1.5 improve the measured silhouette. The selected 4K
+  gain-1.5 candidate reaches about .985 integrated coverage and .949 mask IoU.
+  These are opacity measurements, NOT a percent visual match or acceptance score.
+- Original source graph sockets/facing formula were checked. A separate up-normal
+  diagnostic and three light directions did not justify changing the installed
+  mixed normal response. Display/projection and unlit controls separate colour
+  transport from coverage differences.
+- 128-frame hash cycling, depth decorrelation and forced mip zero did not recover
+  the source mass. 4K alone remains about .861: source resolution was worth
+  preserving but was not the cause of the density loss. Disabling Has Pixel
+  Animation slightly worsened coverage (.854-.855), so it remains enabled.
+- Gain on both visible and shadow passes gives closer warm/side lighting than
+  a visible-only gain. Back lighting also improves overall, although native
+  shadow boundaries still differ. Pigment and scene illumination stay fixed.
+- The precise renderer mechanism causing the coverage deficit is not fully
+  isolated. This correction is renderer calibration, not a claim to reproduce
+  Blender's hashed-alpha implementation exactly.
+
+Primary implementation references consulted
+Blender v3.4.1 gpu_shader_material_layer_weight.glsl and Eevee prepass_frag.glsl:
+https://github.com/blender/blender/blob/v3.4.1/source/blender/gpu/shaders/material/gpu_shader_material_layer_weight.glsl
+https://github.com/blender/blender/blob/v3.4.1/source/blender/draw/engines/eevee/shaders/prepass_frag.glsl
+Epic TSR documentation (Has Pixel Animation diagnostic):
+https://dev.epicgames.com/documentation/en-us/unreal-engine/temporal-super-resolution-in-unreal-engine
+
+Evidence and reproduction
+Local-only evidence: Art/Export/FloraTrail/PineMatch. Source, before and saved
+candidate boards are saved_warm.jpg, saved_side.jpg and saved_back.jpg. PNGs
+retain native resolution. Comparison-measurements.json records opacity and
+pigment measurements, not visual acceptance. Scene before/after and motion
+evidence are generated by Art/review_flora_pine_match.py.
+
+Run one renderer at a time; runners check disk/memory and never close user apps.
+After the original licensed pine export and trial exist:
+  powershell -File Art/run_flora_pine_match.ps1 -Stage source
+  powershell -File Art/run_flora_pine_match.ps1 -Stage mask
+  powershell -File Art/run_flora_pine_match.ps1 -Stage candidate
+  powershell -File Art/run_flora_pine_match.ps1 -Stage install
+  powershell -File Art/run_flora_pine_match.ps1 -Stage recheck
+  powershell -File Art/run_flora_pine_match.ps1 -Stage verify
+  python Art/review_flora_pine_match.py
+Optional probe/sampling/temporal stages retain the original comparison material.
+New trial rebuilds apply flora_pine_match_settings.json after source conversion;
+they require the local 4K mask bake/report or its already-imported texture.
+
+Validation detail and A-G gate statuses are in
+Docs/validation/flora-trail-pine-match.json. The source/mask, candidate, temporal,
+install, fresh recheck and full-scene verify processes exited zero. Scene capture
+is native 1274x682; it includes fixed road/canopy/bank/valley views and twelve
+samples from a 48-frame camera move. Saved package hashes stayed unchanged during
+verification. Source coverage and bark both loaded at 4096x4096; 49,314 LOD0
+triangles, three LODs and all 193 pine instances were confirmed.
+One sampling diagnostic captured
+successfully but crashed during shutdown (exit -1073741819); its process is NOT
+counted as a pass. Early failed source material-name attempts are retained.
+The diagnostic images from that failed shutdown only support rejected hypotheses;
+the installed choice is established by successful candidate/install/recheck runs.
+
+Performance remains unverified. Sampled camera movement is not a sustained 60 fps
+test or a new driving test of mud and water. This pine improvement does not approve
+the remaining palette, other foliage, atmosphere or a LiDAR rollout.

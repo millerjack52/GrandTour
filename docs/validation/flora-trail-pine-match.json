@@ -1,0 +1,179 @@
+{
+  "date": "2026-11-14",
+  "scope": "PineTrial F002 coverage only",
+  "source_match": "partial: visibly closer, not exact shader parity",
+  "source_hash": "bae00f199a0a7e3ce07fe511926ffd4e761d8008bec03ed199f24c78ca0d3c5c",
+  "settings": {
+    "source": "FP_Tree_F_002 / Bonus 002 / Blender 3.4.1",
+    "coverage_gain": 1.5,
+    "surface_only": false,
+    "has_pixel_animation": true,
+    "coverage_resolution": 4096,
+    "status": "Measured renderer coverage calibration; not exact shader parity",
+    "scope": "FloraTrail PineTrial F002 material only; pigment, bark, normal response, geometry and scene lighting unchanged"
+  },
+  "changed_existing_packages": [
+    "Content\\GrandTour\\ArtTests\\FloraTrail\\PineTrial\\Assets\\M_Source34_pine_f002.uasset"
+  ],
+  "backup": "C:\\GrandTour\\Saved\\FloraTrailBackups\\pine-match-1794697453572099600",
+  "original_baseline_files_verified": 784,
+  "original_backup_files_verified": 90,
+  "pine_backup_files_verified": 8,
+  "processes": {
+    "source": {
+      "started": "2026-11-14T17:07:06.4135181-06:00",
+      "finished": "2026-11-14T17:08:40.3082861-06:00",
+      "exit_code": 0
+    },
+    "mask": {
+      "started": "2026-11-14T17:18:45.3662727-06:00",
+      "finished": "2026-11-14T17:19:58.7081551-06:00",
+      "exit_code": 0
+    },
+    "probe": {
+      "started": "2026-11-14T17:09:10.2537869-06:00",
+      "finished": "2026-11-14T17:12:10.7928552-06:00",
+      "exit_code": 0
+    },
+    "candidate": {
+      "started": "2026-11-14T17:20:47.0870709-06:00",
+      "finished": "2026-11-14T17:23:58.9940116-06:00",
+      "exit_code": 0
+    },
+    "temporal": {
+      "started": "2026-11-14T17:24:30.0657658-06:00",
+      "finished": "2026-11-14T17:25:55.7875252-06:00",
+      "exit_code": 0
+    },
+    "install": {
+      "started": "2026-11-14T17:27:08.6881017-06:00",
+      "finished": "2026-11-14T17:28:51.6383544-06:00",
+      "exit_code": 0
+    },
+    "recheck": {
+      "started": "2026-11-14T17:29:53.8563829-06:00",
+      "finished": "2026-11-14T17:31:28.0770919-06:00",
+      "exit_code": 0
+    },
+    "verify": {
+      "started": "2026-11-14T17:32:00.2685177-06:00",
+      "finished": "2026-11-14T17:34:28.2817131-06:00",
+      "exit_code": 0
+    }
+  },
+  "failed_sampling_process": {
+    "started": "2026-11-14T17:14:16.0491568-06:00",
+    "finished": "2026-11-14T17:16:31.6106255-06:00",
+    "exit_code": -1073741819
+  },
+  "failed_sampling_note": "Captures completed but shutdown crashed; not a passing process or sole basis for selected correction.",
+  "isolated_resolution": [
+    768,
+    768
+  ],
+  "scene_resolution": [
+    1274,
+    682
+  ],
+  "tree": {
+    "lods": 3,
+    "triangles": 49314,
+    "bark_dimensions": [
+      4096,
+      4096
+    ],
+    "coverage_dimensions": [
+      4096,
+      4096
+    ]
+  },
+  "pine_components": [
+    {
+      "instances": 92,
+      "shadow": true
+    },
+    {
+      "instances": 101,
+      "shadow": false
+    }
+  ],
+  "opacity_measurements": {
+    "baseline": {
+      "integrated_opacity_ratio": 0.8610219592546903,
+      "opacity_mean_absolute_error_on_union": 0.10658371421817141,
+      "solid_mask_iou": 0.8312127093666882
+    },
+    "candidate": {
+      "integrated_opacity_ratio": 0.984834596189432,
+      "opacity_mean_absolute_error_on_union": 0.04182181978315777,
+      "solid_mask_iou": 0.9487735691640247
+    }
+  },
+  "pigment_measurements": {
+    "interior_leaf_pixels": 22468,
+    "source_linear_mean": [
+      0.07012390123559263,
+      0.09489188328385098,
+      0.016121298505917023
+    ],
+    "unreal_linear_mean": [
+      0.06948088277114062,
+      0.09263938764208854,
+      0.015821312108492885
+    ],
+    "linear_absolute_error": [
+      0.002443114213185028,
+      0.0028322840640427707,
+      0.0007339877053472512
+    ]
+  },
+  "measurement_limit": "Opacity ratio and IoU are silhouette diagnostics, not percent visual match.",
+  "gates": {
+    "A": {
+      "status": "fail",
+      "reason": "Yellow broadleaf crowns, dark undergrowth and weak repeated warm ground accents still prevent a coherent palette.",
+      "evidence": "Art/Export/FloraTrail/PineMatch/pine_road.png"
+    },
+    "B": {
+      "status": "partial",
+      "reason": "Pine branch groups retain connected light/shade and closer source coverage at 320px; the other family and elevated crown fills remain too uniform.",
+      "evidence": "Art/Export/FloraTrail/PineMatch/saved_warm_grey.jpg"
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Pine shade retains green and branch overlap, but the canopy view still merges much of the undergrowth into dark masses.",
+      "evidence": "Art/Export/FloraTrail/PineMatch/pine_canopy.png"
+    },
+    "D": {
+      "status": "fail",
+      "reason": "Mixed bank still combines green foliage, warm bark and disconnected grey rocks; this pine-only change does not unify them.",
+      "evidence": "Art/Export/FloraTrail/PineMatch/pine_bank.png"
+    },
+    "E": {
+      "status": "fail",
+      "reason": "Unchanged canopy composition remains dominated by a near trunk and lacks progressive separation through three depth layers.",
+      "evidence": "Art/Export/FloraTrail/PineMatch/pine_canopy.png"
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Source branch masses are closer in colour/greyscale and retained across 12 motion samples; fine edge grain remains and sampled movement cannot certify full temporal stability.",
+      "evidence": "Art/Export/FloraTrail/PineMatch/motion_samples.jpg"
+    },
+    "G": {
+      "status": "fail",
+      "reason": "One pine material improves under three isolated light directions without per-view grading, but the full-scene A-D/F gates are not all passed.",
+      "evidence": "Art/Export/FloraTrail/PineMatch/pine_valley.png"
+    }
+  },
+  "motion": {
+    "status": "partial",
+    "capture": "48-frame moving camera; 12 samples. Offscreen speed is not realtime performance.",
+    "observed": "Broad colour and branch mass persist across the 12 inspected samples; edge grain remains.",
+    "evidence": "Art/Export/FloraTrail/PineMatch/saved_motion.webp"
+  },
+  "performance": "not tested",
+  "mud_water_driving": "not tested this pass; original packages and map preserved",
+  "lidar": "unchanged",
+  "saved_packages_unchanged_during_verify": true,
+  "rebuild_apply_helper": "Syntax checked; original trial rebuild not rerun because it would replace protected trial packages."
+}

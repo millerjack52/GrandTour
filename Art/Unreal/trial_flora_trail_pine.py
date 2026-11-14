@@ -8,7 +8,7 @@ from flora_trail_asset_audit import verify as audit_baseline,await_bark_textures
 from flora_trail_source34 import configure,settings
 import flora_exact_materials as fm
 D='/Game/GrandTour/ArtTests/FloraTrail';P=D+'/PineTrial';LEVEL=P+'/L_FloraTrail_Pine'
-O=R/'Art/Export/FloraTrail/PineTrial';stage=os.environ.get('GT_PINE_STAGE','verify')
+SOURCE=R/'Art/Export/FloraTrail/PineTrial';O=Path(os.environ.get('GT_PINE_OUTPUT',str(SOURCE)));O.mkdir(parents=True,exist_ok=True);stage=os.environ.get('GT_PINE_STAGE','verify')
 E=u.EditorAssetLibrary;M=u.MaterialEditingLibrary;L=u.get_editor_subsystem(u.LevelEditorSubsystem);A=u.get_editor_subsystem(u.EditorActorSubsystem)
 report={'ok':False,'stage':stage,'level':LEVEL,'images':[],'performance_verified':False,'gates':{},'motion_checked':False}
 state={'busy':False,'due':0,'frame':0};world=pc=car=camera=None
@@ -51,6 +51,9 @@ def import_tree(data):
  for node,pin,out in [(pigment_node,'C','RGB'),(normal,'N',''),(side,'Side',''),(weight,'W','')]:g.wire(node,response,pin,out)
  g.output(response,u.MaterialProperty.MP_BASE_COLOR);g.output(response,u.MaterialProperty.MP_NORMAL,'LightNormal')
  assert not M.recompile_material(leaf);E.save_loaded_asset(leaf,False)
+ if (R/'Art/flora_pine_match_settings.json').exists():
+  from flora_pine_match_materials import apply
+  report['pine_match_settings']=apply(leaf)
  barkpath=P+'/Assets/M_SourceBark_pine_f002';barkmat=u.load_asset(barkpath) or E.duplicate_asset('/Game/GrandTour/ArtTests/FloraGroup/Assets/M_SourceBark_pine',barkpath)
  for n in M.get_material_expressions(barkmat):
   if isinstance(n,u.MaterialExpressionTextureSampleParameter2D):assert str(n.get_editor_property('parameter_name'))=='SourceBarkColour';n.set_editor_property('texture',bark)
@@ -109,6 +112,15 @@ def run():
   assert time.monotonic()<deadline,'4K bark still loading';yield .5
  assert sm.get_lod_count(mesh)==3 and sm.get_num_uv_channels(mesh,0)==2
  report['new_tree']={'lods':sm.get_lod_count(mesh),'triangles':mesh.get_static_mesh_description(0).get_triangle_count(),'bark_dimensions':[bark.blueprint_get_size_x(),bark.blueprint_get_size_y()]}
+ if (R/'Art/flora_pine_match_settings.json').exists():
+  leaf=u.load_asset(P+'/Assets/M_Source34_pine_f002')
+  coverage=next(n.get_editor_property('texture') for n in M.get_material_expressions(leaf) if isinstance(n,u.MaterialExpressionTextureSampleParameter2D) and str(n.get_editor_property('parameter_name'))=='SourceCoverage')
+  assert coverage.get_path_name().startswith(P+'/SourceMatch/T_SourceMask4K') and not coverage.get_editor_property('srgb')
+  deadline=time.monotonic()+180
+  while coverage.blueprint_get_size_x()!=4096:
+   assert time.monotonic()<deadline,'4K coverage still loading';yield .5
+  assert any('saturate(1.5*A*' in str(n.get_editor_property('code')) for n in M.get_material_expressions(leaf) if isinstance(n,u.MaterialExpressionCustom))
+  report['new_tree']['coverage_dimensions']=[coverage.blueprint_get_size_x(),coverage.blueprint_get_size_y()]
  rows=[]
  for a in A.get_all_level_actors():
   for c in a.get_components_by_class(u.InstancedStaticMeshComponent):
@@ -138,7 +150,7 @@ def run():
   report['motion_capture']='48-frame moving camera; 12 samples. Offscreen speed is not realtime performance.'
   # Additional source comparison: remote isolated tree, uniform source backdrop,
   # no atmosphere, same native sun/sky, scale and viewing rays as Blender.
-  data=json.loads((O/'export-report.json').read_text());origin=u.Vector(100000,0,100000)
+  data=json.loads((SOURCE/'export-report.json').read_text());origin=u.Vector(100000,0,100000)
   isolate=u.GTVehicleSetupLibrary.spawn_actor_of_class(world,u.StaticMeshActor,u.Transform(location=origin),'PineSourceComparison')
   isolate.static_mesh_component.set_mobility(u.ComponentMobility.MOVABLE);assert isolate.static_mesh_component.set_static_mesh(mesh);isolate.static_mesh_component.set_forced_lod_model(1)
   bg=u.GTVehicleSetupLibrary.spawn_actor_of_class(world,u.StaticMeshActor,u.Transform(location=origin),'PineSourceBackdrop')
@@ -147,7 +159,7 @@ def run():
   def convert(v):return origin+u.Vector(v[0]*100,-v[1]*100,v[2]*100)
   source=data['source_camera'];pos=convert(source['position']);target=convert(source['target'])
   size=report['images'][0]['size'];fov=math.degrees(2*math.atan(math.tan(math.radians(source['horizontal_fov']/2))*size[0]/size[1]))
-  camera.camera_component.set_field_of_view(fov);camera.set_actor_location(pos,False,True);camera.set_actor_rotation(u.MathLibrary.find_look_at_rotation(pos,target),False)
+  camera.camera_component.set_editor_property('aspect_ratio',size[0]/size[1]);camera.camera_component.set_field_of_view(fov);camera.set_actor_location(pos,False,True);camera.set_actor_rotation(u.MathLibrary.find_look_at_rotation(pos,target),False)
   cmd('ShowFlag.Fog 0');yield from shot('pine_isolated');cmd('ShowFlag.Fog 1')
   report['isolated_comparison']={'source_camera':source,'unreal_horizontal_fov':fov,'lod':0,'fog':False,'sun_sky':'unchanged','note':'Match vertical field of view; native engine shadow and shader differences remain under review.'}
   isolate.destroy_actor();bg.destroy_actor()
