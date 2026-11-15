@@ -1,0 +1,272 @@
+{
+  "date": "2026-11-14",
+  "scope": "Pale exposed ground beside the road; the dark grass/shrub clumps remain unresolved.",
+  "interpretation": "The user did not answer the optional patch-identification question during work; pale flat verge was the stated working assumption.",
+  "saved_map": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/L_FloraTrail_Verge",
+  "saved_ground": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/MI_VergeMud.MI_VergeMud",
+  "saved_terrain": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/M_VergeLandscape.M_VergeLandscape",
+  "water_binding": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/M_WaterFlat.M_WaterFlat",
+  "material_revision": 3,
+  "transition_cm": [
+    215,
+    310
+  ],
+  "edge_variation_cm": 20,
+  "processes": {
+    "probe": {
+      "started": "2026-11-14T22:04:03.9593221-06:00",
+      "finished": "2026-11-14T22:05:57.8118839-06:00",
+      "exit_code": 0
+    },
+    "candidate": {
+      "started": "2026-11-14T22:22:57.5012072-06:00",
+      "finished": "2026-11-14T22:24:51.6129774-06:00",
+      "exit_code": -1073741819
+    },
+    "verify": {
+      "started": "2026-11-14T22:26:31.2139999-06:00",
+      "finished": "2026-11-14T22:28:24.3321964-06:00",
+      "exit_code": 0
+    }
+  },
+  "process_assessment": {
+    "visibility_probe": "pass",
+    "candidate_capture_assertions": "pass",
+    "candidate_process": "fail: late shutdown access violation",
+    "fresh_saved_verify_and_drive": "pass"
+  },
+  "rejected_studies": [
+    "Terrain-only treatment: no material visual improvement in the reviewed strip.",
+    "Wide transition: pale band remained."
+  ],
+  "automation_failures": [
+    "Read-only NullRHI inventory: late shutdown access violation.",
+    "First candidate: non-exposed LandscapeComponent property; replaced with public getter.",
+    "Second candidate: save-as over existing map; use save_current_level on later runs.",
+    "Preservation check: hidden pixel-depth enum; compare original custom programs and public outputs instead."
+  ],
+  "texture_sample_counts_original_candidate": {
+    "M_VergeMud": [
+      31,
+      31
+    ],
+    "M_VergeLandscape": [
+      15,
+      15
+    ]
+  },
+  "mud_geometry_programs_unchanged": true,
+  "saved_live_controls": {
+    "woodland_floor": [
+      1.0,
+      1.0
+    ]
+  },
+  "native_capture_size": [
+    1274,
+    682
+  ],
+  "views": [
+    {
+      "name": "drive",
+      "position": [
+        -1850,
+        23.41318930196067,
+        163.64969730377197
+      ],
+      "target": [
+        -500,
+        379.3831500833646,
+        70.55722618103027
+      ]
+    },
+    {
+      "name": "close",
+      "position": [
+        -1500,
+        -2.26400437303937,
+        164.00022888183594
+      ],
+      "target": [
+        -1200,
+        281.84302353819595,
+        5.576814651489258
+      ]
+    },
+    {
+      "name": "distance",
+      "position": [
+        -2750,
+        -415.096726165825,
+        150.0462296716869
+      ],
+      "target": [
+        0,
+        308.76990783946763,
+        50.42767524719238
+      ]
+    },
+    {
+      "name": "context",
+      "position": [
+        -2350,
+        -470,
+        210
+      ],
+      "target": [
+        900,
+        150,
+        640
+      ]
+    },
+    {
+      "name": "puddle",
+      "position": [
+        350,
+        -83.31535351150433,
+        150
+      ],
+      "target": [
+        850,
+        -25.64979738314574,
+        -5
+      ]
+    },
+    {
+      "name": "verge",
+      "position": [
+        150,
+        66.31295565259092,
+        160
+      ],
+      "target": [
+        650,
+        -430.35666130661946,
+        0
+      ]
+    }
+  ],
+  "driving": {
+    "ok": true,
+    "travel_cm": 5141.579504756364,
+    "max_water_cm": 19.48350816965103,
+    "max_height_change_cm": 5.540831089019775,
+    "surface_report": "tiles=36 evictions=14 excavated_cm3=1777514.772 deposited_cm3=1777502.762 balance_cm3=12.009989 nanite_materials=0 displacement_scale_valid=0 quality=1 decay_cells=0 uploaded_cells=6313984 upload_peak_ms=1.699 upload_pending=0 textures_ready=1 observe_mean_ms=0.5404 observe_peak_ms=1.0498 native_shader=1 native_cells=117829 push_cells=571730 clay_atlas=512 clay_hold=1",
+    "water_report": "native_steps=0 cells=15876 cell_cm=50.000 awake=1 volume_m3=14.15435298 initial_m3=14.15435319 delta_m3=-0.00000021 bed_updates=367 bed_peak_ms=0.479 step_mean_ms=0.414 step_peak_ms=1.958 wet=573 lids=5 deficit_s=0.0000 clamps=0 foam_peak=0.9567 foam_mean_ms=0.0714 foam_peak_ms=0.1822",
+    "note": "Continuous physical traversal with captures; not a reset regression or a sustained 60 fps test."
+  },
+  "visual_after": "visual_spacing_cm=12.5 water_shader_steps=1168 water_state_side=126 wave_side=512 cadence_adapter_hz=30 tread_segments=2663 tread_sections=11",
+  "protected_prior_mud_packages": 43,
+  "protected_unchanged": true,
+  "fresh_verify_packages_unchanged": true,
+  "fresh_verify_package_hashes": {
+    "L_FloraTrail_Mud.umap": "154be69992687cda6df0d83dcaa5abe14218a1f7dcc216c8a67ea3498f073e64",
+    "L_FloraTrail_MudFlat.umap": "a87cad0455258b97433d17174466aedfce5f043512353ea45c111e2d72057433",
+    "L_FloraTrail_MudWet.umap": "1dcaa36ce212d9c06419f5c0a382ebf9bb1b7f920d611c0f15808a25db326263",
+    "L_FloraTrail_Verge.umap": "2d4875c55660e371d2a8048ad0b0f48f5d45a5ad49871df0a3f5da634951162c",
+    "MI_MudTrial_brown_mud_02.uasset": "309bfb9869e816612b3b0314014f1df7bcf6880c9905b21b2fb5286d5fa957f4",
+    "MI_MudTrial_brown_wet.uasset": "761736a2fefd9dd5f862134d078f7f2ba6945c39247052c8f2aab524aa932000",
+    "MI_MudTrial_muddy_tracks.uasset": "de4cc0fdf86b811d601161e7f6da37d1023f7509419a9640668c50adf9e22978",
+    "MI_MudTrial_mud_forest.uasset": "a7e15de034ab83193f1516b2bbb6bfcbcfae8ba69a626de582e83c1d54402e0c",
+    "MI_MudTrial_stylized_dry_mud.uasset": "aa997a18439d7f09aef234bdf0c5554d920cda6d0e88a46d2ed32c8e849bdaee",
+    "MI_VergeMud.uasset": "0b3a4e425917ef794609860681476d0934c3b9a2f26cc1d05702a9b847b22817",
+    "M_MudTrial_ground.uasset": "25c29d98be0221142419296e659e863be22d25e7b73b748dfa70b71599659a9c",
+    "M_MudTrial_Wet.uasset": "ca1b794881c1b5e5c3c62832939351a278e160dbb19ef5950be462a3e5564bf8",
+    "M_VergeLandscape.uasset": "7d832569bbf7550fe6ad93b71997e71f888f3fc09c86c19700034f7a902017d7",
+    "M_VergeMud.uasset": "01cdfd4d376e8a97d9251137a11eeddd5d6a507d9f0e0e805f9f4d8a983d63b8",
+    "M_WaterFlat.uasset": "8fbefc74bc64859246097e1a729cffc4b359e8263e78a133d8b5d9020a0f3688",
+    "Textures/T_brown_mud_02_color.uasset": "3adde6cef5f5c5515fb736cdbe75fff4f1c484f5bea995196379204aa6bc4b9a",
+    "Textures/T_brown_mud_02_color_native.uasset": "85e1da66eb7b4c91628d754624c6e7c332e747d0e2af8631807544e2925d20f5",
+    "Textures/T_brown_mud_02_height.uasset": "632b9b767728f22317bf1c2108c62b7ae087935692bcfc22e44ca9ca87547554",
+    "Textures/T_brown_mud_02_height_native.uasset": "8d32aad78eb1b9ea86b8844635d73677620a27a25f3ec3830f1736d45a5445a9",
+    "Textures/T_brown_mud_02_normal.uasset": "1bea7ba6b002ec7e5919c8059fa96bef531696198f662d699b1b69def5de1e6d",
+    "Textures/T_brown_mud_02_normal_native.uasset": "971c2191c09ce6df7b1e3aa4361c28d2b6eb73caf02e9b3d03d5980ebcbbf028",
+    "Textures/T_brown_mud_02_roughness.uasset": "bd7bfce672054ed4c0ca619759709855fed40c5af8be697e2c84cf459c611c53",
+    "Textures/T_brown_mud_02_roughness_native.uasset": "7a6ee3739a7f0bb9ad903c7dcd0d6f9c5b5575f5f70c460101862f525bbba70f",
+    "Textures/T_muddy_tracks_color.uasset": "d9e02176e6eb3f49cef6f7978f47efbcb39a7caf27e21755d6606ac0c68db5b7",
+    "Textures/T_muddy_tracks_color_native.uasset": "97d1972ac95b137f17658062687b6f411ca6e4501dcbfec83b9a0059e3200f03",
+    "Textures/T_muddy_tracks_height.uasset": "c90113e3598c9f3b3a27086dc7c858bff22e17e337b126b5c977331667aa2479",
+    "Textures/T_muddy_tracks_height_native.uasset": "602dc2b7ae0f0de1157497bc14c9c83006bead321d86944bea96ad1b7ce31133",
+    "Textures/T_muddy_tracks_normal.uasset": "73da7a9ffea0dbadd82be73f22e2902205307170f1f47f78e339d19d52e8ae94",
+    "Textures/T_muddy_tracks_normal_native.uasset": "20738f94a8299108710f67e693aa60a739f29999c9af8408a634d158c4556f95",
+    "Textures/T_muddy_tracks_roughness.uasset": "59e76a75b9d50f19300bce0d372c54f32dbb53ef79d2005078559440a71ec721",
+    "Textures/T_muddy_tracks_roughness_native.uasset": "41f39be564eae8894bdd191f8958ef304454451d39e084157212aa12be9a5b8c",
+    "Textures/T_mud_forest_color.uasset": "30f6dd044fc494344857c8c4b70e959f4b0f1e48347732937cd6d57094dee95c",
+    "Textures/T_mud_forest_color_native.uasset": "8469674b1e880beeb12893aee9b7458ee22b2872f7788cb7e15ddc00536bfca0",
+    "Textures/T_mud_forest_height.uasset": "633889a82fa288f36c2b80d5525b916d8457fe968dea86978aa7b95c2317666a",
+    "Textures/T_mud_forest_height_native.uasset": "e3a72e54a5461a643c56e01d3a512447155672ecb14ee064a6b130f69aa0a9ec",
+    "Textures/T_mud_forest_normal.uasset": "185c4bb1045d2ecfde465be2a1660be53d17ae52a981da5a559564b70694bca5",
+    "Textures/T_mud_forest_normal_native.uasset": "7c48ad3a6d5b41e934f28c7eed31858b80f260badfc11283209bd5267289b3f0",
+    "Textures/T_mud_forest_roughness.uasset": "3f9b7061949339c5fa70a9bd14fc3278d8a359a09c332c8043c208c8655226dd",
+    "Textures/T_mud_forest_roughness_native.uasset": "075f9f481012ae91eec96b14b1709b35215826d32df0dc0c249c9b59623817b7",
+    "Textures/T_stylized_dry_mud_color.uasset": "2ec3b9a2f43a03ed695e57d8d614258baff367e41a4e0e3a190dd34a24698257",
+    "Textures/T_stylized_dry_mud_color_native.uasset": "b83bd8303ff5898b4c4ed7e6dafb5c991e4573e5562e60906257691df77fda23",
+    "Textures/T_stylized_dry_mud_height.uasset": "21bf873a0138d352770e24fa55e679c49513ab59a36614f642257bbf128e2d36",
+    "Textures/T_stylized_dry_mud_height_native.uasset": "df78ed5e96081537ae6b7f1bc0115dad3fc79291a3bacfec68c67880b95f4f6f",
+    "Textures/T_stylized_dry_mud_normal.uasset": "5226fa47ef28a403040e03394288e5aaef10ed5055695d7d3ea2923a267ef36c",
+    "Textures/T_stylized_dry_mud_normal_native.uasset": "ee60aa1adb939c627cce738e8f84fd1f650850ddb2714eb9377a503cb3094dbe",
+    "Textures/T_stylized_dry_mud_roughness.uasset": "8fd4314222bf773ad8a5a7010affdffd2107fe78f54990bd5c9f3940e3b9329e",
+    "Textures/T_stylized_dry_mud_roughness_native.uasset": "32db0d8caa9803cf1c799a625015bd1208cd2b6309bdf36e8ae2fc40f7c3e922"
+  },
+  "visual_checks": {
+    "pale_ground_strip_removal": "pass",
+    "source_ground_detail": "pass",
+    "mud_verge_transition": "partial",
+    "grass_clump_quality": "fail",
+    "sampled_motion": "partial",
+    "saved_reload": "pass",
+    "physical_drive_deformation_water": "pass",
+    "sustained_60_fps": "not tested"
+  },
+  "palette_gates": {
+    "A": {
+      "status": "fail",
+      "reason": "Crown and undergrowth palette hierarchy remains unresolved."
+    },
+    "B": {
+      "status": "partial",
+      "reason": "Some connected light/shade crown masses; no new full crown lighting sweep."
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Soil/trunk colour survives shade; dark understory separation remains weak."
+    },
+    "D": {
+      "status": "fail",
+      "reason": "Road responds to common light but rocks and vegetation remain disconnected."
+    },
+    "E": {
+      "status": "not tested",
+      "reason": "This ground study does not establish the required three forest depth layers; previous failure is not superseded."
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Road forms survive thumbnails and close detail is retained; sampled motion is not full temporal acceptance."
+    },
+    "G": {
+      "status": "not tested",
+      "reason": "No complete canopy/bank/valley or front/side/back-light regression; previous scene failures remain."
+    }
+  },
+  "palette_gate_note": "Ground relationship improves, but the broad vegetation/cohesion failures remain; no full lighting/depth/valley regression.",
+  "scene_reference_matched": false,
+  "performance_verified": false,
+  "limits": [
+    "Dark, speckled grass/shrub coverage and bright green stones remain poor.",
+    "Final candidate comparison process failed during shutdown; fresh saved verification passed separately.",
+    "Eight sampled motion frames do not establish full temporal stability.",
+    "No sustained 60 fps or reset regression was performed."
+  ],
+  "evidence_directory": "C:\\GrandTour\\Art\\Export\\FloraTrail\\VergeStudy",
+  "evidence_sha256": {
+    "before_after_verge.jpg": "f235357ac291f4f0daa72bc06eda0906555cf866a6573a5eff7b8c5afeeea87b",
+    "before_after_puddle.jpg": "e62e05ea3859812640c14f7d4954f613a238ec6d2489640f5193d8f983962b3b",
+    "before_after_puddle_grey.jpg": "9f78db2a1d104df4a03d39bd8c968c94e6e7df50dd510319eb14a16ad20f020d",
+    "woodland_floor_motion.webp": "752a82cf836dabcf6c8fa20b10a15f8721d698c8c839710d4d0958fe4fef21d9",
+    "motion_samples.jpg": "e9d1da5be7ac08d1b51b005d7f9269accc6488ade8ec3ae5024db4ef9579e20b",
+    "reference_verge.jpg": "ace7929dd4a8a8ec51b9c2575be26b63d53b8040522a13de7c18913ca8e82c57",
+    "verify_woodland_floor_verge.png": "0acccb33de51bf2223a8b56f31e127ff32e07b1481a1dd73d47f954d97e7f126",
+    "verify_woodland_floor_puddle.png": "3d096c1e9ee1e9f6fe8ce1eafea41d27b05c047ac4466d9f26cbf966afc43646",
+    "saved_driving_flooded_dip.png": "eb49459b12a0b98c71ae3f4b9cab6555a1ae56a621454e0f92e51ffafdd1b9d8"
+  }
+}

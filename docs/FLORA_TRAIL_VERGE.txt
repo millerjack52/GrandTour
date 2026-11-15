@@ -1,0 +1,83 @@
+FloraTrail: woodland floor at the road edge
+==========================================
+
+Scope
+The pale green ground strip beside the mud read as a smooth carpet. This pass
+targets that exposed floor, based on the working interpretation of the user's
+"grassy patch" feedback. It does not establish acceptance of the grass meshes:
+the dark, speckled grass and shrub coverage remains visibly unresolved.
+
+Implementation
+L_FloraTrail_Verge is a separate candidate derived from the flat-water mud map.
+M_VergeLandscape and M_VergeMud share the same woodland-floor colour treatment;
+MI_VergeMud retains the wet mud instance's parameters. The wrapper reuses the
+existing POM-aligned forest soil, moss and litter samples. It adds no texture
+samples or geometry, and changes no source texture or foliage LOD.
+
+The floor blends from exposed soil toward restrained moss and warm leaf litter.
+The transition begins outside the central wheel channels, at 215-310 cm from
+the curved road centre, varied by up to 20 cm by a broad noise field. Earlier
+290-430 cm bounds left the old pale band exposed and were rejected. Both the
+underlying terrain and native overlay use the new relationship because updating
+the terrain alone did not produce a visible improvement in the review frame.
+
+Mud vertex displacement, pixel depth offset and mask programs are retained and
+checked against the wet baseline. The saved M_WaterFlat binding remains intact.
+The new ground material changes only colour, normal response and roughness at
+the verge. The central mud treatment, physical deformation and water simulation
+remain the established implementation. Lighting, fog and exposure are unchanged.
+
+Reproduction
+With other Unreal/Blender renderers closed, from C:/GrandTour run sequentially:
+  powershell -File Art/run_flora_verge.ps1 -Stage probe
+  powershell -File Art/run_flora_verge.ps1 -Stage candidate
+  powershell -File Art/run_flora_verge.ps1 -Stage verify
+  python Art/review_flora_verge.py
+
+Probe temporarily hides the floor forms, distant surround, apron and native
+grid separately. It saves no assets and captures two fixed views per case.
+Candidate installs the isolated material/map copies and captures baseline and
+woodland-floor controls from six fixed views plus eight sampled motion frames.
+It waits for source texture loading and freezes simulation for the comparison.
+Verify reloads the saved map, checks its bindings and controls, captures again,
+and runs the existing physical driving test without resaving any package.
+
+Evidence and recovery
+Art/Export/FloraTrail/VergeStudy contains native captures, colour/greyscale review
+boards, source-reference comparison, sampled motion and process reports.
+Docs/validation/flora-trail-verge.json records the measured results and limits.
+The initial read-only NullRHI inventory exited with a shutdown access violation;
+it is diagnostic context, not a passing renderer result. Two initial candidate
+attempts failed automation checks (private API access, then save-as to an already
+existing map); those logs remain under first-candidate and save-retry. The
+terrain-only and wide-transition candidates are retained as rejected studies.
+An added preservation check initially referenced a hidden Unreal enum; the
+corrected check compares the public vertex/mask outputs and every original
+custom shader program. The final comparison completed its capture/assertions
+but exited with a late shutdown access violation; this remains a failed
+process result under shutdown-failed. Fresh-load verification is a separate
+process and must be reported independently, never substituted into that log.
+
+The baseline helper protects all 43 pre-existing MudTrial packages and verifies
+the previous source/pine/LiDAR baseline chain. Copies are held on D: alongside
+the earlier backups. L_FloraTrail_MudFlat remains the recoverable prior scene.
+Earlier MudTrial review media moved to D:/GrandTourAssets/ReviewEvidence to
+restore render space; every file was hash-checked and a junction preserves the
+original C:/GrandTour/Art/Export/FloraTrail/MudTrial paths.
+
+Limits
+This is a ground-surface correction, not a complete grass or forest-style pass.
+Existing dark plant coverage, bright green stones, canopy colour and material
+cohesion still need work. Sampled motion is not full temporal acceptance and
+no sustained 60 fps claim is made. Palette A-G remain separately assessed;
+passing technical checks does not mean the scene matches the references.
+
+Verified saved result (14 November 2026)
+The fresh read-only verifier exited zero: 51.42 m travelled, up to 19.48 cm
+of wheel water contact and 5.54 cm of measured mud height change. All 47
+MudTrial packages were unchanged during verification; all 43 prior packages
+and the protected baseline chain remained unchanged. Graph texture samples
+remain 31/31 for the mud parent and 15/15 for the terrain parent.
+Drive-FloraTrail-Mud.bat now opens the candidate;
+Drive-FloraTrail-Mud-FlatBaseline.bat opens the previous flat-water scene.
+The pale ground strip improves, but grass-clump quality remains a visual fail.
