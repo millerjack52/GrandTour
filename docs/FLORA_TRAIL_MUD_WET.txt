@@ -1,0 +1,84 @@
+FLORATRAIL WET MUD RESPONSE - 14 NOVEMBER 2026
+============================================
+
+Problem and cause
+The chosen Brown Mud 02 surface had readable clods but looked predominantly
+dry beside its puddles. Its imported roughness has median 0.996, 10th percentile
+0.835 and 90th percentile 1.0. The comparison wrapper gave this map 65% of final
+roughness, overwhelming much of the previous ground's wet response. The colour
+modulation alone was insufficient to establish wet mud.
+
+Controlled tests and decision
+Compared baseline, darker colour only, lower roughness only, and a combined
+wet response under identical lighting, exposure, cameras, textures and frozen
+soil/water state. Lower roughness supplies the missing directional sheen;
+darkening alone still looks dry. The combined response is the selected candidate.
+
+New map: /Game/GrandTour/ArtTests/FloraTrail/MudTrial/L_FloraTrail_MudWet
+New material: M_MudTrial_Wet / MI_MudTrial_brown_wet in the same folder.
+Drive-FloraTrail-Mud.bat opens this wet candidate after verification.
+Drive-FloraTrail-Mud-Dry.bat retains the previous Brown Mud 02 comparison map.
+The 38 original MudTrial packages are unchanged and backed up on D:; the
+manifest is Art/Export/FloraTrail/MudWet/baseline.json. Original FloraTrail,
+PineTrial, the source diagnostic, bark/LODs and LiDAR remain protected.
+
+What changed
+Wetness is driven by the native material's existing live/rest ground height
+and wetness value, with local cavity variation from the same 4K relief texture.
+Raised clods remain rougher than lower ground. Wet colour darkens with moisture;
+fine normal strength is partially reduced where the sheen is strongest.
+Native large-scale normals, POM height, geometry, collision and deformation
+remain intact. The standing-water and tyre-mark materials are unchanged.
+
+Controls in Art/flora_mud_wet_settings.json:
+  DampRough 0.48, FilmRough 0.16, Darken 0.48, NormalKeep 0.55.
+These are endpoints blended through the height/cavity/moisture masks, not
+uniform roughness or colour values across the road. The source roughness map
+still contributes restrained local variation. This is an artistic wet-surface
+response using native state, not a newly simulated water-film transport model.
+No changes to sunlight, sky, exposure, grading or the 4K texture sources.
+
+Visual assessment
+Wetness: pass in the close oblique view; patchy reflective highlights now cross
+the clods instead of appearing only on the separate puddles. Straight-ahead
+driving views show a subtler damp sheen, as expected from their viewing angle.
+Relief: pass; clod shape and detailed texture remain legible under the sheen.
+Restraint: partial; a directly sun-facing patch produces strong pale highlights.
+It remains textured, but this is not a claim of complete painterly acceptance.
+Distance: partial; broad ruts remain the primary long-range shape signal.
+Motion: partial; sampled movement preserves pattern/shape, but does not prove
+full temporal stability at all angles. Sustained 60 fps is not tested.
+
+Whole-scene palette gates are not promoted by this surface correction:
+A fail (vegetation hierarchy), B partial (crown masses), C partial (shade),
+D fail (whole material ensemble), E not tested (required forest depth layers),
+F partial (two-scale painterly/temporal read), G not tested (complete review set).
+Prior scene failures remain unresolved; no LiDAR rollout is approved here.
+
+Evidence and verification
+Art/Export/FloraTrail/MudWet/controls_*.jpg compares all four controls.
+before_after_close.jpg and before_after_drive.jpg show unchanged-camera pairs.
+Greyscale and 320-pixel thumbnails accompany the colour captures. Actual Unreal
+capture resolution is 1274 x 682. *_motion.webp holds eight samples from each
+48-frame camera move; these are sampled previews, not realtime FPS evidence.
+probe-report.json records material controls and fixed camera positions.
+verify-report.json records a fresh saved-map reload, inherited wet controls and
+4K bindings without runtime overrides, a continuous drive, water/deformation
+response and unchanged package hashes. Final results and process exit codes
+are in Docs/validation/flora-trail-mud-wet.json.
+
+The first graph construction briefly compiled while its new inputs were still
+unconnected and was rejected by the strict log check. The builder now connects
+temporary valid outputs while editing, then restores the completed graph. A
+clean rebuild is used for the final control captures; first-build.log is retained
+as rejected build evidence. Shader warnings are not waived by the runner.
+
+Reproduction
+Art/run_flora_mud_wet.ps1 -Stage probe builds the isolated clone and compares
+the four controls using the established mud capture harness.
+-Stage saved applies settings and performs a drive if a later profile is chosen.
+-Stage verify performs the fresh read-only load, captures and physical traversal;
+it checks all trial package hashes before/after. The original dry trial and pine
+baseline checks run before and after every process. One renderer at a time;
+no unrelated processes are closed. Art/review_flora_mud_wet.py creates the boards.
+Source/configuration/documentation only are pushed; asset files stay local.

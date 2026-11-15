@@ -1,0 +1,13 @@
+{
+  "selected": "wet_combined",
+  "parameters": {
+    "Colour": 1.0,
+    "Roughness": 1.0,
+    "Normals": 1.0,
+    "DampRough": 0.48,
+    "FilmRough": 0.16,
+    "Darken": 0.48,
+    "NormalKeep": 0.55
+  },
+  "scope": "Wet shading in an isolated FloraTrail mud map; existing dry trial, pine and LiDAR remain unchanged"
+}

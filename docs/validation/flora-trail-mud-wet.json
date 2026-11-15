@@ -1,0 +1,257 @@
+{
+  "date": "2026-11-14",
+  "scope": "Wet response in isolated FloraTrail MudWet map; existing dry MudTrial packages unchanged",
+  "selected": "wet_combined",
+  "source_roughness_percentiles": {
+    "minimum": 0.0,
+    "p10": 0.8352941274642944,
+    "median": 0.9960784316062927,
+    "p90": 1.0,
+    "maximum": 1.0
+  },
+  "prior_roughness_texture_weight": 0.65,
+  "diagnosis": "Near-one scan roughness dominated wet response; isolated roughness test produced sheen, darkening-only did not.",
+  "settings": {
+    "selected": "wet_combined",
+    "parameters": {
+      "Colour": 1.0,
+      "Roughness": 1.0,
+      "Normals": 1.0,
+      "DampRough": 0.48,
+      "FilmRough": 0.16,
+      "Darken": 0.48,
+      "NormalKeep": 0.55
+    },
+    "scope": "Wet shading in an isolated FloraTrail mud map; existing dry trial, pine and LiDAR remain unchanged"
+  },
+  "processes": {
+    "probe": {
+      "started": "2026-11-14T21:42:46.9347593-06:00",
+      "finished": "2026-11-14T21:44:59.6192558-06:00",
+      "exit_code": 0
+    },
+    "verify": {
+      "started": "2026-11-14T21:45:28.3022311-06:00",
+      "finished": "2026-11-14T21:47:17.8169333-06:00",
+      "exit_code": 0
+    }
+  },
+  "rejected_first_build": "Transient missing-input compile warning; first-build.log retained; graph construction corrected and final clean rebuild used.",
+  "saved_map": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/L_FloraTrail_MudWet",
+  "saved_material": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/MI_MudTrial_brown_wet.MI_MudTrial_brown_wet",
+  "saved_wet_controls": {
+    "wet_combined": {
+      "Colour": 1.0,
+      "Roughness": 1.0,
+      "Normals": 1.0,
+      "DampRough": 0.47999998927116394,
+      "FilmRough": 0.1599999964237213,
+      "Darken": 0.47999998927116394,
+      "NormalKeep": 0.550000011920929
+    }
+  },
+  "texture_import": {
+    "brown_mud_02": {
+      "color": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_color_native.T_brown_mud_02_color_native",
+        "srgb": true,
+        "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      },
+      "normal": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_normal_native.T_brown_mud_02_normal_native",
+        "srgb": false,
+        "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      },
+      "height": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_height_native.T_brown_mud_02_height_native",
+        "srgb": false,
+        "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      },
+      "roughness": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_roughness_native.T_brown_mud_02_roughness_native",
+        "srgb": false,
+        "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      }
+    }
+  },
+  "capture_resolution": [
+    1274,
+    682
+  ],
+  "capture_count": {
+    "probe": 48,
+    "verify": 17
+  },
+  "fixed_views": [
+    {
+      "name": "drive",
+      "position": [
+        -1850,
+        23.41318930196067,
+        163.64969730377197
+      ],
+      "target": [
+        -500,
+        379.3831500833646,
+        70.55722618103027
+      ]
+    },
+    {
+      "name": "close",
+      "position": [
+        -1500,
+        -2.26400437303937,
+        164.00022888183594
+      ],
+      "target": [
+        -1200,
+        281.84302353819595,
+        5.576814651489258
+      ]
+    },
+    {
+      "name": "distance",
+      "position": [
+        -2750,
+        -415.096726165825,
+        150.0462296716869
+      ],
+      "target": [
+        0,
+        308.76990783946763,
+        50.42767524719238
+      ]
+    },
+    {
+      "name": "context",
+      "position": [
+        -2350,
+        -470,
+        210
+      ],
+      "target": [
+        900,
+        150,
+        640
+      ]
+    }
+  ],
+  "driving": {
+    "ok": true,
+    "travel_cm": 5143.483648488183,
+    "max_water_cm": 20.68079710006714,
+    "max_height_change_cm": 6.391595363616943,
+    "surface_report": "tiles=36 evictions=14 excavated_cm3=1866787.526 deposited_cm3=1866772.682 balance_cm3=14.844160 nanite_materials=0 displacement_scale_valid=0 quality=1 decay_cells=5375 uploaded_cells=6245376 upload_peak_ms=1.699 upload_pending=20 textures_ready=1 observe_mean_ms=0.5548 observe_peak_ms=1.6117 native_shader=1 native_cells=120297 push_cells=542394 clay_atlas=512 clay_hold=1",
+    "water_report": "native_steps=0 cells=15876 cell_cm=50.000 awake=1 volume_m3=14.15435271 initial_m3=14.15435319 delta_m3=-0.00000048 bed_updates=374 bed_peak_ms=0.541 step_mean_ms=0.421 step_peak_ms=2.215 wet=572 lids=5 deficit_s=0.0000 clamps=0 foam_peak=0.9656 foam_mean_ms=0.0717 foam_peak_ms=0.1344",
+    "note": "Continuous physical traversal with captures; not a reset regression or a sustained 60 fps test.",
+    "sample_count": 105
+  },
+  "native_visual": "visual_spacing_cm=12.5 water_shader_steps=1184 water_state_side=126 wave_side=512 cadence_adapter_hz=30 tread_segments=2625 tread_sections=11",
+  "protected_original_files": 784,
+  "protected_pine_files": 47,
+  "protected_dry_mud_files": 38,
+  "read_only_reload_packages_unchanged": true,
+  "package_hashes": {
+    "L_FloraTrail_Mud.umap": "154be69992687cda6df0d83dcaa5abe14218a1f7dcc216c8a67ea3498f073e64",
+    "L_FloraTrail_MudWet.umap": "1dcaa36ce212d9c06419f5c0a382ebf9bb1b7f920d611c0f15808a25db326263",
+    "MI_MudTrial_brown_mud_02.uasset": "309bfb9869e816612b3b0314014f1df7bcf6880c9905b21b2fb5286d5fa957f4",
+    "MI_MudTrial_brown_wet.uasset": "761736a2fefd9dd5f862134d078f7f2ba6945c39247052c8f2aab524aa932000",
+    "MI_MudTrial_muddy_tracks.uasset": "de4cc0fdf86b811d601161e7f6da37d1023f7509419a9640668c50adf9e22978",
+    "MI_MudTrial_mud_forest.uasset": "a7e15de034ab83193f1516b2bbb6bfcbcfae8ba69a626de582e83c1d54402e0c",
+    "MI_MudTrial_stylized_dry_mud.uasset": "aa997a18439d7f09aef234bdf0c5554d920cda6d0e88a46d2ed32c8e849bdaee",
+    "M_MudTrial_ground.uasset": "25c29d98be0221142419296e659e863be22d25e7b73b748dfa70b71599659a9c",
+    "M_MudTrial_Wet.uasset": "ca1b794881c1b5e5c3c62832939351a278e160dbb19ef5950be462a3e5564bf8",
+    "Textures/T_brown_mud_02_color.uasset": "3adde6cef5f5c5515fb736cdbe75fff4f1c484f5bea995196379204aa6bc4b9a",
+    "Textures/T_brown_mud_02_color_native.uasset": "85e1da66eb7b4c91628d754624c6e7c332e747d0e2af8631807544e2925d20f5",
+    "Textures/T_brown_mud_02_height.uasset": "632b9b767728f22317bf1c2108c62b7ae087935692bcfc22e44ca9ca87547554",
+    "Textures/T_brown_mud_02_height_native.uasset": "8d32aad78eb1b9ea86b8844635d73677620a27a25f3ec3830f1736d45a5445a9",
+    "Textures/T_brown_mud_02_normal.uasset": "1bea7ba6b002ec7e5919c8059fa96bef531696198f662d699b1b69def5de1e6d",
+    "Textures/T_brown_mud_02_normal_native.uasset": "971c2191c09ce6df7b1e3aa4361c28d2b6eb73caf02e9b3d03d5980ebcbbf028",
+    "Textures/T_brown_mud_02_roughness.uasset": "bd7bfce672054ed4c0ca619759709855fed40c5af8be697e2c84cf459c611c53",
+    "Textures/T_brown_mud_02_roughness_native.uasset": "7a6ee3739a7f0bb9ad903c7dcd0d6f9c5b5575f5f70c460101862f525bbba70f",
+    "Textures/T_muddy_tracks_color.uasset": "d9e02176e6eb3f49cef6f7978f47efbcb39a7caf27e21755d6606ac0c68db5b7",
+    "Textures/T_muddy_tracks_color_native.uasset": "97d1972ac95b137f17658062687b6f411ca6e4501dcbfec83b9a0059e3200f03",
+    "Textures/T_muddy_tracks_height.uasset": "c90113e3598c9f3b3a27086dc7c858bff22e17e337b126b5c977331667aa2479",
+    "Textures/T_muddy_tracks_height_native.uasset": "602dc2b7ae0f0de1157497bc14c9c83006bead321d86944bea96ad1b7ce31133",
+    "Textures/T_muddy_tracks_normal.uasset": "73da7a9ffea0dbadd82be73f22e2902205307170f1f47f78e339d19d52e8ae94",
+    "Textures/T_muddy_tracks_normal_native.uasset": "20738f94a8299108710f67e693aa60a739f29999c9af8408a634d158c4556f95",
+    "Textures/T_muddy_tracks_roughness.uasset": "59e76a75b9d50f19300bce0d372c54f32dbb53ef79d2005078559440a71ec721",
+    "Textures/T_muddy_tracks_roughness_native.uasset": "41f39be564eae8894bdd191f8958ef304454451d39e084157212aa12be9a5b8c",
+    "Textures/T_mud_forest_color.uasset": "30f6dd044fc494344857c8c4b70e959f4b0f1e48347732937cd6d57094dee95c",
+    "Textures/T_mud_forest_color_native.uasset": "8469674b1e880beeb12893aee9b7458ee22b2872f7788cb7e15ddc00536bfca0",
+    "Textures/T_mud_forest_height.uasset": "633889a82fa288f36c2b80d5525b916d8457fe968dea86978aa7b95c2317666a",
+    "Textures/T_mud_forest_height_native.uasset": "e3a72e54a5461a643c56e01d3a512447155672ecb14ee064a6b130f69aa0a9ec",
+    "Textures/T_mud_forest_normal.uasset": "185c4bb1045d2ecfde465be2a1660be53d17ae52a981da5a559564b70694bca5",
+    "Textures/T_mud_forest_normal_native.uasset": "7c48ad3a6d5b41e934f28c7eed31858b80f260badfc11283209bd5267289b3f0",
+    "Textures/T_mud_forest_roughness.uasset": "3f9b7061949339c5fa70a9bd14fc3278d8a359a09c332c8043c208c8655226dd",
+    "Textures/T_mud_forest_roughness_native.uasset": "075f9f481012ae91eec96b14b1709b35215826d32df0dc0c249c9b59623817b7",
+    "Textures/T_stylized_dry_mud_color.uasset": "2ec3b9a2f43a03ed695e57d8d614258baff367e41a4e0e3a190dd34a24698257",
+    "Textures/T_stylized_dry_mud_color_native.uasset": "b83bd8303ff5898b4c4ed7e6dafb5c991e4573e5562e60906257691df77fda23",
+    "Textures/T_stylized_dry_mud_height.uasset": "21bf873a0138d352770e24fa55e679c49513ab59a36614f642257bbf128e2d36",
+    "Textures/T_stylized_dry_mud_height_native.uasset": "df78ed5e96081537ae6b7f1bc0115dad3fc79291a3bacfec68c67880b95f4f6f",
+    "Textures/T_stylized_dry_mud_normal.uasset": "5226fa47ef28a403040e03394288e5aaef10ed5055695d7d3ea2923a267ef36c",
+    "Textures/T_stylized_dry_mud_normal_native.uasset": "ee60aa1adb939c627cce738e8f84fd1f650850ddb2714eb9377a503cb3094dbe",
+    "Textures/T_stylized_dry_mud_roughness.uasset": "8fd4314222bf773ad8a5a7010affdffd2107fe78f54990bd5c9f3940e3b9329e",
+    "Textures/T_stylized_dry_mud_roughness_native.uasset": "32db0d8caa9803cf1c799a625015bd1208cd2b6309bdf36e8ae2fc40f7c3e922"
+  },
+  "wetness_checks": {
+    "close_wet_read": "pass",
+    "straight_ahead_wet_read": "partial",
+    "relief_preservation": "pass",
+    "specular_restraint": "partial",
+    "sampled_motion": "partial",
+    "saved_reload": "pass",
+    "drive_deformation_water": "pass",
+    "sustained_60_fps": "not tested"
+  },
+  "palette_gates": {
+    "A": {
+      "status": "fail",
+      "reason": "Crown and undergrowth palette hierarchy remains unresolved."
+    },
+    "B": {
+      "status": "partial",
+      "reason": "Some connected light/shade crown masses; no new full crown lighting sweep."
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Soil/trunk colour survives shade; dark understory separation remains weak."
+    },
+    "D": {
+      "status": "fail",
+      "reason": "Road responds to common light but rocks and vegetation remain disconnected."
+    },
+    "E": {
+      "status": "not tested",
+      "reason": "This ground study does not establish the required three forest depth layers; previous failure is not superseded."
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Road forms survive thumbnails and close detail is retained; sampled motion is not full temporal acceptance."
+    },
+    "G": {
+      "status": "not tested",
+      "reason": "No complete canopy/bank/valley or front/side/back-light regression; previous scene failures remain."
+    }
+  },
+  "performance_verified": false,
+  "scene_reference_matched": false,
+  "evidence_directory": "C:\\GrandTour\\Art\\Export\\FloraTrail\\MudWet",
+  "evidence_sha256": {
+    "controls_close.jpg": "20209b142539ada6962b7597a2bf6200f58598a52cf8eaa848d3da439659832b",
+    "before_after_close.jpg": "d8c93ed098764ac3a5e0a94494d5f7a460be942765603bfc236c22b5b1b70ce8",
+    "before_after_drive.jpg": "7a26ab6b9e183812f0253259c42f94a11c0ade35ab709b97a1c307ff2cbd5f07",
+    "wet_combined_motion.webp": "fd0724325fb3c17ad321340c2ea11601ea4df4bb7468762f5b7e7d4af1ab110b",
+    "verify_wet_combined_close.png": "fee63f56e66155c7c537777761361412f7652f93bb8812c4ea7366aeab79e5dd",
+    "verify_wet_combined_drive.png": "4543924c5067031d34f4f2e66679bc439482421a835e5d5386fe1af91e96d9ce",
+    "saved_driving_flooded_dip.png": "76a5b8f063fcccf29673619c7dbc79c9a3975cf7931c8061c8666df7d21720a1"
+  }
+}
