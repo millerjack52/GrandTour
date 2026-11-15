@@ -1,0 +1,13 @@
+{
+  "review_candidates": [
+    "stylized_dry_mud",
+    "brown_mud_02",
+    "muddy_tracks",
+    "mud_forest"
+  ],
+  "selected": "brown_mud_02",
+  "scope": "Isolated FloraTrail MudTrial only; original FloraTrail, PineTrial and LiDAR unchanged",
+  "tile_scale": "Source physical sizes where supplied; stylized dry mud provisional 200 cm",
+  "relief_cm": 2.8,
+  "selection_note": "Leading wet-road candidate from corrected controlled captures; saved 4K material and physical traversal passed"
+}

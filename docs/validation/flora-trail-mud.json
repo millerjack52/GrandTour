@@ -1,0 +1,497 @@
+{
+  "date": "2026-11-14",
+  "scope": "Isolated FloraTrail MudTrial; original FloraTrail, PineTrial and LiDAR unchanged",
+  "selected": "brown_mud_02",
+  "scene_reference_matched": false,
+  "performance_verified": false,
+  "processes": {
+    "native": {
+      "started": "2026-11-14T21:17:49.3572846-06:00",
+      "finished": "2026-11-14T21:20:11.4266193-06:00",
+      "exit_code": 0
+    },
+    "saved": {
+      "started": "2026-11-14T21:28:38.6664070-06:00",
+      "finished": "2026-11-14T21:30:25.2913646-06:00",
+      "exit_code": 0
+    },
+    "verify": {
+      "started": "2026-11-14T21:30:52.6201688-06:00",
+      "finished": "2026-11-14T21:32:26.3650725-06:00",
+      "exit_code": 0
+    }
+  },
+  "failed_shutdown_attempts": {
+    "shutdown-failed-saved-process.json": {
+      "started": "2026-11-14T21:20:42.0397630-06:00",
+      "finished": "2026-11-14T21:22:28.3667564-06:00",
+      "exit_code": -1073741819
+    },
+    "shutdown-failed-2-saved-process.json": {
+      "started": "2026-11-14T21:24:53.3284594-06:00",
+      "finished": "2026-11-14T21:26:38.6561011-06:00",
+      "exit_code": -1073741819
+    }
+  },
+  "failed_attempts_count_as_pass": false,
+  "normal_height_checks": {
+    "stylized_dry_mud": {
+      "x_correlation": 0.7371752157726456,
+      "y_correlation": -0.7798043143800685,
+      "flip_green_for_unreal": true,
+      "method": "1K normalized import copies; normal XY against negative height gradient"
+    },
+    "brown_mud_02": {
+      "x_correlation": 0.738667269548446,
+      "y_correlation": 0.7347839074992839,
+      "flip_green_for_unreal": false,
+      "method": "1K normalized import copies; normal XY against negative height gradient"
+    },
+    "muddy_tracks": {
+      "x_correlation": 0.8093035528906477,
+      "y_correlation": 0.8055650185867856,
+      "flip_green_for_unreal": false,
+      "method": "1K normalized import copies; normal XY against negative height gradient"
+    },
+    "mud_forest": {
+      "x_correlation": 0.6884242969113579,
+      "y_correlation": 0.6900715085653113,
+      "flip_green_for_unreal": false,
+      "method": "1K normalized import copies; normal XY against negative height gradient"
+    }
+  },
+  "inputs": [
+    {
+      "id": "stylized_dry_mud",
+      "name": "Stylized Dry Mud 001",
+      "source": "https://3dtextures.me/2021/08/01/stylized-dry-mud-001/",
+      "license": "CC0",
+      "author": "Katsukagi",
+      "tile_cm": 200,
+      "maps": {
+        "color": {
+          "url": "https://drive.google.com/file/d/1LpcO0XhZ-rjznNCShsh6yPQJ6884Lhu2/view",
+          "sha256": "827871522501cc90c1bc27491599d8a203e7c80f503b18a579846c72c69c5d8a",
+          "size": [
+            1024,
+            1024
+          ],
+          "engine_sha256": "e9cf53129e2642276ac4fd40fa725f20d97792a9516d93abcebfe4b626cb8f1a"
+        },
+        "normal": {
+          "url": "https://drive.google.com/file/d/1fLpLKWazzPv9rWVfy_NlDvuOlmC_J-WI/view",
+          "sha256": "1b9db693768b7bcc61a1016d84f019f04581cb378b5e9023e838beb1ab4dfe75",
+          "size": [
+            1024,
+            1024
+          ],
+          "engine_sha256": "a6ea0b957ca1900716df7fc5e7005798fcd863257856e461958ee43e520387de"
+        },
+        "roughness": {
+          "url": "https://drive.google.com/file/d/13VvdRE4LK2ReQ5_FvRk2VRD1IUFGY5_w/view",
+          "sha256": "be233ee044067404bf745ab34e23a9fcbc5e7ae132606fefa4250e724e900088",
+          "size": [
+            1024,
+            1024
+          ],
+          "engine_sha256": "2a5942c070c14211128cb327865891192224a2b083e92112cccbc64430e4e4c6"
+        },
+        "height": {
+          "url": "https://drive.google.com/file/d/1Y75lR3VWx8pnotkVaMb4iaTW2GBjcgCM/view",
+          "sha256": "64303ed010d18ac41db448aafa5ef401c095229a55458bcdbc9f23e61176e7d9",
+          "size": [
+            1024,
+            1024
+          ],
+          "engine_sha256": "93619921dbba55dde56f83d8483a2f68db97e3fc8495b3f6068f51d586647320"
+        },
+        "ao": {
+          "url": "https://drive.google.com/file/d/1Z3V_X5eNwvlRcKvv0-LIL6y19FcVxCj4/view",
+          "sha256": "5a864e32a8664e07f1de6818a7f81dfd9d177fb6d413c1e0cb0d6b6b99117ffa",
+          "size": [
+            1024,
+            1024
+          ],
+          "engine_sha256": "b1f283739946c6de9b50cbc63f1fa62a7e2afbdd3326c26427c612c63cf6c06a"
+        }
+      }
+    },
+    {
+      "id": "brown_mud_02",
+      "name": "Brown Mud 02",
+      "source": "https://polyhaven.com/a/brown_mud_02",
+      "license": "CC0",
+      "author": {
+        "Rob Tuytel": "All"
+      },
+      "tile_cm": 129.9996018409729,
+      "maps": {
+        "color": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/brown_mud_02/brown_mud_02_diff_4k.png",
+          "sha256": "762e7e10660a8da04fbc7bd963ae7849a647a248994c41636f0920e53f7c0ad8",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "6d5e3cd1f623eef55c346b6228ec121670bfcaf56bbeb5f565ec156b9c2a7860"
+        },
+        "normal": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/brown_mud_02/brown_mud_02_nor_dx_4k.png",
+          "sha256": "17e22b72580479c4642546af5052f6538bfcb99cdde5314032af33deb47b488e",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "c718c19f59dbf774b11ba950c72880aa62aae87a5a16507a1b4e5f5b7f887fcc"
+        },
+        "roughness": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/brown_mud_02/brown_mud_02_rough_4k.png",
+          "sha256": "b2e48a923c1008d6b7767d819807aeb1e389ef624307be5788dadfa221a8d6fc",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "afbabd5ef0d9032d6a2dbb3e9db544a21351bb0d28346846f342ed6ca880ab45"
+        },
+        "height": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/brown_mud_02/brown_mud_02_disp_4k.png",
+          "sha256": "d3073b4979374d5d6cdb011ebbe5c0bbf296892dbe9302fc60be3eedc960396d",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "79f56c349ecf9622444edc21f78a616e78337eeb1d52902e27a1cfdaee07d008"
+        },
+        "ao": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/brown_mud_02/brown_mud_02_ao_4k.png",
+          "sha256": "6a678658045a1d01231953bf97c891eda4337cd78df2d4caa876844ccb843eb9",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "95b7954c138f76b10dcd2b1d5e95af5f3430a8cc42ab7a34ba75bea8f037aa99"
+        }
+      }
+    },
+    {
+      "id": "muddy_tracks",
+      "name": "Muddy Tracks",
+      "source": "https://polyhaven.com/a/muddy_tracks",
+      "license": "CC0",
+      "author": {
+        "Amal Kumar": "All"
+      },
+      "tile_cm": 225.0,
+      "maps": {
+        "color": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/muddy_tracks/muddy_tracks_diff_4k.png",
+          "sha256": "c10ad6fc228cb4622f41da00d87ba0fe90dbfff7d997fa38f449b96c3ea3b88d",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "7ad1a70fe90c6c20fcbd5a114fb6b8eb6fdd18220a2e056165e0d7469abd15c7"
+        },
+        "normal": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/muddy_tracks/muddy_tracks_nor_dx_4k.png",
+          "sha256": "b80e5edd8937f5a0caf79a373f8ee3f1b51bd2cdd4d5e82eb6b230dd031efd17",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "14dd40e00f664e20149ea9fcda85c03943687b91f25752807c1f57a7a4adcc29"
+        },
+        "roughness": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/muddy_tracks/muddy_tracks_rough_4k.png",
+          "sha256": "827d48a545a0a2cc7d3b0ff80db1aac341613de89275b37042968317e38d293f",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "7e3ea392fb3a0f87d5f63708b5c1230cd09fc6f1476a2f07855d6199339c2698"
+        },
+        "height": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/muddy_tracks/muddy_tracks_disp_4k.png",
+          "sha256": "f24de2065fd3573fd0051e42b3c4720d8502543725c301c2c5005776ddc3a720",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "3e68a6a291742d06a08eb37e9d6c6e5f78b47068b00aa65c4cd01de479377806"
+        },
+        "ao": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/muddy_tracks/muddy_tracks_ao_4k.png",
+          "sha256": "a4e9886fcbc82e654d92e1f64f4446e075cac6c2487a6ca2551d53278a22664a",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "86ef048e2d48dcc359f395fe1556da96a4eb2564879d68238af172314323a4f4"
+        }
+      }
+    },
+    {
+      "id": "mud_forest",
+      "name": "Mud Forest",
+      "source": "https://polyhaven.com/a/mud_forest",
+      "license": "CC0",
+      "author": {
+        "eye-candy.xyz": "All"
+      },
+      "tile_cm": 234.99999046325684,
+      "maps": {
+        "color": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/mud_forest/mud_forest_diff_4k.png",
+          "sha256": "2eb054d00a7483dad58c727f27981ce2c93f986a0174e542d36e71176701213d",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "3c4cf989dcb4da745301c071cfea62bfebe7611def304ae1bd032391747841e9"
+        },
+        "normal": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/mud_forest/mud_forest_nor_dx_4k.png",
+          "sha256": "03535683b85c4579c8919ec178caf60c5d1b524644c1438cbe723ee36b8e39aa",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "5220b869ccf85100ce9007c434e97e943de4a3275b46988c65459461752439dd"
+        },
+        "roughness": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/mud_forest/mud_forest_rough_4k.png",
+          "sha256": "ad6105d80442a08cd63e5d31bd90ff7f1dcbffc8b3536dfda7ca4bda5e6c937c",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "9787352bbb8256466794036bd108301008df3cc487c5d1825caf3dea23af7126"
+        },
+        "height": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/mud_forest/mud_forest_disp_4k.png",
+          "sha256": "9514e5c06c9630d5ddb48f0fde834beec4b3ceec514f2f5db8588681cfd0629d",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "97af02a4d6a6f4674026261978241254b172e59256f994707b1a89e2fc08a1d4"
+        },
+        "ao": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/mud_forest/mud_forest_ao_4k.png",
+          "sha256": "86d019827f820975e2c91e7ec16c16d007e4de6c9aff5b5eba7e79bb83ca9523",
+          "size": [
+            4096,
+            4096
+          ],
+          "engine_sha256": "33881c93b7a18092693d20b6bde0106f760261a872c3c4ba94c498225a7f9ae7"
+        }
+      }
+    }
+  ],
+  "saved_material": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/MI_MudTrial_brown_mud_02.MI_MudTrial_brown_mud_02",
+  "texture_import": {
+    "brown_mud_02": {
+      "color": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_color_native.T_brown_mud_02_color_native",
+        "srgb": true,
+        "compression": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      },
+      "normal": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_normal_native.T_brown_mud_02_normal_native",
+        "srgb": false,
+        "compression": "<TextureCompressionSettings.TC_NORMALMAP: 1>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      },
+      "height": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_height_native.T_brown_mud_02_height_native",
+        "srgb": false,
+        "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      },
+      "roughness": {
+        "asset": "/Game/GrandTour/ArtTests/FloraTrail/MudTrial/Textures/T_brown_mud_02_roughness_native.T_brown_mud_02_roughness_native",
+        "srgb": false,
+        "compression": "<TextureCompressionSettings.TC_GRAYSCALE: 3>",
+        "flip_green": false,
+        "revision": "normalized8_v1"
+      }
+    }
+  },
+  "capture_resolution": [
+    1274,
+    682
+  ],
+  "capture_count": {
+    "native": 60,
+    "saved": 17,
+    "verify": 12
+  },
+  "views": [
+    {
+      "name": "drive",
+      "position": [
+        -1850,
+        23.41318930196067,
+        163.64969730377197
+      ],
+      "target": [
+        -500,
+        379.3831500833646,
+        70.55722618103027
+      ]
+    },
+    {
+      "name": "close",
+      "position": [
+        -1500,
+        -2.26400437303937,
+        164.00022888183594
+      ],
+      "target": [
+        -1200,
+        281.84302353819595,
+        5.576814651489258
+      ]
+    },
+    {
+      "name": "distance",
+      "position": [
+        -2750,
+        -415.096726165825,
+        150.0462296716869
+      ],
+      "target": [
+        0,
+        308.76990783946763,
+        50.42767524719238
+      ]
+    },
+    {
+      "name": "context",
+      "position": [
+        -2350,
+        -470,
+        210
+      ],
+      "target": [
+        900,
+        150,
+        640
+      ]
+    }
+  ],
+  "motion": "48-frame slow move / 8 saved samples each; not realtime playback or performance proof",
+  "driving": {
+    "ok": true,
+    "travel_cm": 5146.307900078143,
+    "max_water_cm": 19.12786215543747,
+    "max_height_change_cm": 6.853706359863281,
+    "surface_report": "tiles=36 evictions=14 excavated_cm3=1819222.632 deposited_cm3=1819204.984 balance_cm3=17.647839 nanite_materials=0 displacement_scale_valid=0 quality=1 decay_cells=6577 uploaded_cells=6252544 upload_peak_ms=1.880 upload_pending=0 textures_ready=1 observe_mean_ms=0.5533 observe_peak_ms=1.1982 native_shader=1 native_cells=119835 push_cells=519066 clay_atlas=512 clay_hold=1",
+    "water_report": "native_steps=0 cells=15876 cell_cm=50.000 awake=1 volume_m3=14.15435298 initial_m3=14.15435319 delta_m3=-0.00000021 bed_updates=372 bed_peak_ms=1.107 step_mean_ms=0.423 step_peak_ms=2.544 wet=570 lids=0 deficit_s=0.0000 clamps=0 foam_peak=0.9692 foam_mean_ms=0.0710 foam_peak_ms=0.2244",
+    "note": "Continuous physical traversal with captures; not a reset regression or a sustained 60 fps test.",
+    "sample_count": 103
+  },
+  "native_visual": "visual_spacing_cm=12.5 water_shader_steps=1178 water_state_side=126 wave_side=512 cadence_adapter_hz=30 tread_segments=2723 tread_sections=11",
+  "original_baseline_files_verified": 784,
+  "original_backup_files_verified": 90,
+  "pine_trial_files_verified": 47,
+  "trial_packages_unchanged_during_readonly_reload": true,
+  "saved_trial_package_hashes": {
+    "L_FloraTrail_Mud.umap": "154be69992687cda6df0d83dcaa5abe14218a1f7dcc216c8a67ea3498f073e64",
+    "MI_MudTrial_brown_mud_02.uasset": "309bfb9869e816612b3b0314014f1df7bcf6880c9905b21b2fb5286d5fa957f4",
+    "MI_MudTrial_muddy_tracks.uasset": "de4cc0fdf86b811d601161e7f6da37d1023f7509419a9640668c50adf9e22978",
+    "MI_MudTrial_mud_forest.uasset": "a7e15de034ab83193f1516b2bbb6bfcbcfae8ba69a626de582e83c1d54402e0c",
+    "MI_MudTrial_stylized_dry_mud.uasset": "aa997a18439d7f09aef234bdf0c5554d920cda6d0e88a46d2ed32c8e849bdaee",
+    "M_MudTrial_ground.uasset": "25c29d98be0221142419296e659e863be22d25e7b73b748dfa70b71599659a9c",
+    "Textures/T_brown_mud_02_color.uasset": "3adde6cef5f5c5515fb736cdbe75fff4f1c484f5bea995196379204aa6bc4b9a",
+    "Textures/T_brown_mud_02_color_native.uasset": "85e1da66eb7b4c91628d754624c6e7c332e747d0e2af8631807544e2925d20f5",
+    "Textures/T_brown_mud_02_height.uasset": "632b9b767728f22317bf1c2108c62b7ae087935692bcfc22e44ca9ca87547554",
+    "Textures/T_brown_mud_02_height_native.uasset": "8d32aad78eb1b9ea86b8844635d73677620a27a25f3ec3830f1736d45a5445a9",
+    "Textures/T_brown_mud_02_normal.uasset": "1bea7ba6b002ec7e5919c8059fa96bef531696198f662d699b1b69def5de1e6d",
+    "Textures/T_brown_mud_02_normal_native.uasset": "971c2191c09ce6df7b1e3aa4361c28d2b6eb73caf02e9b3d03d5980ebcbbf028",
+    "Textures/T_brown_mud_02_roughness.uasset": "bd7bfce672054ed4c0ca619759709855fed40c5af8be697e2c84cf459c611c53",
+    "Textures/T_brown_mud_02_roughness_native.uasset": "7a6ee3739a7f0bb9ad903c7dcd0d6f9c5b5575f5f70c460101862f525bbba70f",
+    "Textures/T_muddy_tracks_color.uasset": "d9e02176e6eb3f49cef6f7978f47efbcb39a7caf27e21755d6606ac0c68db5b7",
+    "Textures/T_muddy_tracks_color_native.uasset": "97d1972ac95b137f17658062687b6f411ca6e4501dcbfec83b9a0059e3200f03",
+    "Textures/T_muddy_tracks_height.uasset": "c90113e3598c9f3b3a27086dc7c858bff22e17e337b126b5c977331667aa2479",
+    "Textures/T_muddy_tracks_height_native.uasset": "602dc2b7ae0f0de1157497bc14c9c83006bead321d86944bea96ad1b7ce31133",
+    "Textures/T_muddy_tracks_normal.uasset": "73da7a9ffea0dbadd82be73f22e2902205307170f1f47f78e339d19d52e8ae94",
+    "Textures/T_muddy_tracks_normal_native.uasset": "20738f94a8299108710f67e693aa60a739f29999c9af8408a634d158c4556f95",
+    "Textures/T_muddy_tracks_roughness.uasset": "59e76a75b9d50f19300bce0d372c54f32dbb53ef79d2005078559440a71ec721",
+    "Textures/T_muddy_tracks_roughness_native.uasset": "41f39be564eae8894bdd191f8958ef304454451d39e084157212aa12be9a5b8c",
+    "Textures/T_mud_forest_color.uasset": "30f6dd044fc494344857c8c4b70e959f4b0f1e48347732937cd6d57094dee95c",
+    "Textures/T_mud_forest_color_native.uasset": "8469674b1e880beeb12893aee9b7458ee22b2872f7788cb7e15ddc00536bfca0",
+    "Textures/T_mud_forest_height.uasset": "633889a82fa288f36c2b80d5525b916d8457fe968dea86978aa7b95c2317666a",
+    "Textures/T_mud_forest_height_native.uasset": "e3a72e54a5461a643c56e01d3a512447155672ecb14ee064a6b130f69aa0a9ec",
+    "Textures/T_mud_forest_normal.uasset": "185c4bb1045d2ecfde465be2a1660be53d17ae52a981da5a559564b70694bca5",
+    "Textures/T_mud_forest_normal_native.uasset": "7c48ad3a6d5b41e934f28c7eed31858b80f260badfc11283209bd5267289b3f0",
+    "Textures/T_mud_forest_roughness.uasset": "3f9b7061949339c5fa70a9bd14fc3278d8a359a09c332c8043c208c8655226dd",
+    "Textures/T_mud_forest_roughness_native.uasset": "075f9f481012ae91eec96b14b1709b35215826d32df0dc0c249c9b59623817b7",
+    "Textures/T_stylized_dry_mud_color.uasset": "2ec3b9a2f43a03ed695e57d8d614258baff367e41a4e0e3a190dd34a24698257",
+    "Textures/T_stylized_dry_mud_color_native.uasset": "b83bd8303ff5898b4c4ed7e6dafb5c991e4573e5562e60906257691df77fda23",
+    "Textures/T_stylized_dry_mud_height.uasset": "21bf873a0138d352770e24fa55e679c49513ab59a36614f642257bbf128e2d36",
+    "Textures/T_stylized_dry_mud_height_native.uasset": "df78ed5e96081537ae6b7f1bc0115dad3fc79291a3bacfec68c67880b95f4f6f",
+    "Textures/T_stylized_dry_mud_normal.uasset": "5226fa47ef28a403040e03394288e5aaef10ed5055695d7d3ea2923a267ef36c",
+    "Textures/T_stylized_dry_mud_normal_native.uasset": "ee60aa1adb939c627cce738e8f84fd1f650850ddb2714eb9377a503cb3094dbe",
+    "Textures/T_stylized_dry_mud_roughness.uasset": "8fd4314222bf773ad8a5a7010affdffd2107fe78f54990bd5c9f3940e3b9329e",
+    "Textures/T_stylized_dry_mud_roughness_native.uasset": "32db0d8caa9803cf1c799a625015bd1208cd2b6309bdf36e8ae2fc40f7c3e922"
+  },
+  "gates": {
+    "A": {
+      "status": "fail",
+      "reason": "Crown and undergrowth palette hierarchy remains unresolved."
+    },
+    "B": {
+      "status": "partial",
+      "reason": "Some connected light/shade crown masses; no new full crown lighting sweep."
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Soil/trunk colour survives shade; dark understory separation remains weak."
+    },
+    "D": {
+      "status": "fail",
+      "reason": "Road responds to common light but rocks and vegetation remain disconnected."
+    },
+    "E": {
+      "status": "not tested",
+      "reason": "This ground study does not establish the required three forest depth layers; previous failure is not superseded."
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Road forms survive thumbnails and close detail is retained; sampled motion is not full temporal acceptance."
+    },
+    "G": {
+      "status": "not tested",
+      "reason": "No complete canopy/bank/valley or front/side/back-light regression; previous scene failures remain."
+    }
+  },
+  "ground_checks": {
+    "near_relief": "pass",
+    "driving_height_detail": "pass",
+    "distance_detail": "partial",
+    "palette_fit": "partial",
+    "motion": "partial",
+    "saved_reload": "pass",
+    "continuous_drive": "pass",
+    "mud_deformation": "pass",
+    "water_response": "pass",
+    "sustained_60_fps": "not tested"
+  },
+  "evidence_directory": "C:\\GrandTour\\Art\\Export\\FloraTrail\\MudTrial",
+  "evidence": {
+    "native_close.jpg": "538f8f1005928da4d32bd66771db7841e6862d1672fcea47b9922412f5783e16",
+    "native_drive.jpg": "a468cbb7379dbf5a98927c3bb94750d196479c0b1e11bc25f703861d520b1e43",
+    "native_distance.jpg": "dba8f040d6ecfd37d9e704c7051dded2564ecd4c8af996f78701f70e4b645865",
+    "native_context.jpg": "62669e12257331e02a73cf5fc85490cfba07059c447e2cc1dfc7976f847641d4",
+    "native_drive_grey.jpg": "f16a15b97a8775357951e1bef7162df90ebfe2087abb70f2e2f3b8b50768b769",
+    "reference_comparison.jpg": "89399668bfaae0ccbcf678e12fddb1559e7b6d0b1ef594c282ee77b3c6227b8d",
+    "before_after_drive.jpg": "c9cb1ae30e863c59be4756cdcbb4aeba6537cff88e2650fddf6220e15fb15788",
+    "saved_driving_flooded_dip.png": "2b6e59db8435d43cffe178a69988d0588e107643fc67afed7915fff769f2f545",
+    "verify_brown_mud_02_verify_drive.png": "ce01da20dc035ef51c145f8a9eec477f202798f6c9fdbcff44e1e9ea96a97f3b"
+  }
+}

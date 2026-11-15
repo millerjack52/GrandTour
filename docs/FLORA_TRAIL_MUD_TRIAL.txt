@@ -1,0 +1,154 @@
+FLORATRAIL MUD MATERIAL COMPARISON - 14 NOVEMBER 2026
+==================================================
+
+Decision
+Brown Mud 02 is the leading wet-road candidate. Its irregular aggregates catch
+the existing light and preserve a subdued soil colour. It improves close and
+driving-height surface texture without making the entire road orange.
+This is a material-selection result, not acceptance of the complete art style.
+
+Mud Forest is the useful second choice: its green/ochre leaf litter connects
+with woodland colours, but scattered leaves over the entire worked road are
+less convincing than using it on unworked edges. That blend is not installed.
+Stylized Dry Mud 001 has the strongest graphic cracks and a warm colour, but
+reads as baked crust beside standing water. Reserve it for dry areas.
+Muddy Tracks gives directional clay detail, but its red/orange base dominates
+this scene and its fine corrugation is less legible than Brown Mud's clods.
+
+Scope and recovery
+New map: /Game/GrandTour/ArtTests/FloraTrail/MudTrial/L_FloraTrail_Mud
+Launch: C:/GrandTour/Drive-FloraTrail-Mud.bat
+All four native-resolution material instances live under that MudTrial folder.
+Only the new map uses MI_MudTrial_brown_mud_02 by default. The original
+FloraTrail and PineTrial maps, pine calibration, bark, LODs, lighting, fog,
+exposure and LiDAR assets are unchanged. The original/native tyre-mark and
+water materials remain in use. No global colour grade was added.
+
+Art/flora_mud_trial_baseline.py verifies the existing protected FloraTrail
+baseline and all 47 current PineTrial packages, plus their recoverable copies.
+Art/Export/FloraTrail/MudTrial/baseline.json records the extra PineTrial backup.
+The original Drive-FloraTrail-Pine.bat remains the immediate baseline launcher.
+
+Controlled comparison
+Four fixed cameras: driving height, close oblique road surface, farther road,
+and the established forest-path/context camera. Same camera positions, FOV 65,
+render settings, lighting and exposure within each comparison run. Actual
+screenshots are 1274 x 682, despite a requested 1600 x 900 PIE window.
+Two identical native soil strokes precede the captures. Simulation is then
+paused while the camera controller continues ticking, fixing water/soil/wind
+state across candidates. The parked vehicle is hidden for the final fixed
+camera review, then restored for the physical drive.
+
+Each candidate has a 48-frame camera move with eight saved samples over 2.1 m.
+The WebP animations are sampled previews, not realtime frame-rate evidence.
+The 1K screen_* pass was exploratory; its farther view was obstructed by the
+parked vehicle and its scalar import format was superseded. Use the corrected
+native_* captures and native-report.json as the final comparison evidence.
+
+Material implementation and diagnosed import causes
+The road-only wrapper retains the source material's native deformation/WPO,
+normal contribution, terrain inputs and water-related bindings. Candidate
+base colour, normal, height and roughness are added in a feathered road mask.
+Source pigment is ungraded; every candidate receives the same existing wetness
+modulation. Roughness combines 65% candidate and 35% existing road response.
+AO maps are retained in the source inventory but are not used by this wrapper.
+
+POM supplies 2.8 cm of visual height relief, fading between 8 and 18 m. It does
+not add collision or new terrain silhouettes. Existing native ruts/banks do
+that work. Normal strength is 1. Source tile widths: Brown Mud 02 130 cm,
+Muddy Tracks 225 cm, Mud Forest 235 cm. The stylized pack specifies no physical
+tile width; its provisional test width is 200 cm. Equal height range is a
+comparison convention, not a claim that the scans share a calibrated depth.
+
+The stylized normal's Y convention is opposite to the Poly Haven DirectX maps.
+Normal XY versus height-gradient checks verify the orientation; only the
+stylized normal receives a green-channel flip on Unreal import.
+
+Native 16-bit PNG colour imports for Muddy Tracks and Mud Forest appeared
+substantially brighter than the source/1K copies. Final imports use explicit
+8-bit PNG copies at the original pixel dimensions, with sRGB colour and
+linear normal/scalar data. Scalar 16-bit values are divided by 257, not clipped
+into an 8-bit image. No source hue adjustment is involved. Raw downloaded
+files and their hashes are retained on D:/GrandTourAssets/MudTextureTrial.
+Poly Haven inputs are 4K; the free stylized pack is 1K. No 4K claim is made for
+the latter. Shader/texture loading and temporal settling precede judgement.
+
+Visual results and limits
+Close surface relief: pass for Brown Mud; clear irregular highlights/shading.
+Driving-height read: pass for the nearby road; materially more grain/clods
+than the baseline. Original-resolution imports are needed for a fair close
+comparison; a successful texture binding alone is not visual acceptance.
+Farther read: partial. Broad road relief remains clear, but fine material
+features merge into tone with distance. These maps do not independently solve
+the user's requirement for large readable ground roughness at long range.
+Palette fit: partial. Brown Mud is restrained; Mud Forest supplies stronger
+litter accents. The entire scene still lacks the reference's material cohesion.
+Motion: partial. Sampled camera sequences retain the ground pattern and broad
+forms; this is not a full temporal-noise or performance certification. The
+existing foliage still has a conspicuously noisy edge/detail structure.
+
+FLORA_PALETTE_SUCCESS_CRITERIA gates for this limited mud study:
+A fail: uniform yellow-green crown regions and weak vegetation accent structure
+  remain; changing road texture has not repaired the palette hierarchy.
+B partial: connected crown light/shade exists, but some crowns remain flat and
+  noisy in the fixed-view thumbnails. No new three-crown lighting sweep.
+C partial: shaded ground and trunks retain colour; much understory remains
+  dark and poorly separated. No dedicated lit/shaded fern crop acceptance.
+D fail: new soil receives the same sunlight, but grey rocks and dark ground
+  plants still do not form a cohesive reference-like material ensemble.
+E not tested: these ground comparisons do not establish the required three
+  forest depth layers. The preceding failed scene assessment is not superseded.
+F partial: broad road shapes survive thumbnail reduction and surface detail
+  survives close viewing. Overall painterly shape/temporal acceptance remains.
+G not tested: no new complete front/side/back-light and valley regression set.
+  Prior scene failures remain unresolved; this is not a LiDAR rollout approval.
+Sustained 60 fps: not tested. POM and extra texture sampling have a cost; this
+study does not establish a performance budget for production or LiDAR.
+
+Evidence
+Folder: C:/GrandTour/Art/Export/FloraTrail/MudTrial
+native_close.jpg, native_drive.jpg, native_distance.jpg, native_context.jpg
+and their _grey counterparts: corrected actual Unreal comparisons.
+Individual *_320_colour.png / *_320_grey.png: thumbnail checks.
+before_after_*.jpg: baseline versus Brown Mud 02 at fixed cameras.
+reference_comparison.jpg: actual Unreal alongside the supplied woodland/path
+reference images; differences in composition are not shader-match evidence.
+native_*_motion.webp and *_motion_samples.jpg: sampled camera movement.
+saved-report.json and saved_driving_*.png: saved-map traversal evidence.
+verify-report.json: a separate process loads the saved selection without
+material overrides or asset writes, then checks unchanged trial package hashes.
+Docs/validation/flora-trail-mud.json records final run and protection results.
+
+The final saved-map traversal completed with a zero process exit. Two earlier
+traversal attempts reached their functional assertions but exited with access
+violations during shutdown; those runs are not counted as successful processes.
+Their reports/logs are retained as shutdown-failed-* evidence. The final runner
+keeps the drive generator in the cleared script scope, releases the helper's
+AssetTools UObject, and unpauses before ending PIE. This is an automation
+lifecycle correction, not a change to mud physics or the chosen material.
+
+Reproduction
+Art/prepare_flora_mud_trial.py retains/downloads the public Poly Haven sources,
+creates normalized import copies, and checks normal/height orientation. The
+stylized public Drive file IDs are in that script; place those free files in
+D:/GrandTourAssets/MudTextureTrial/stylized_dry_mud before running it.
+Art/run_flora_mud_trial.ps1 -Stage screen creates the isolated wrapper/map.
+-Stage native compares all candidates at their original pixel dimensions.
+-Stage saved installs the selection in Art/flora_mud_trial_settings.json,
+reloads the map, verifies its inherited texture parameters without runtime
+overrides, captures it, and performs a continuous physical road traversal.
+-Stage verify reloads the saved selection in a fresh process without editing
+assets or overriding the runtime material parameters.
+Art/review_flora_mud_trial.py creates comparison figures from completed runs.
+The runner checks disk, memory, renderer processes, protected hashes and logs.
+It never terminates unrelated applications. Only one renderer runs at a time.
+
+Sources (CC0; downloaded asset files are excluded from source control)
+Katsukagi, Stylized Dry Mud 001:
+https://3dtextures.me/2021/08/01/stylized-dry-mud-001/
+License: https://3dtextures.me/about/
+Poly Haven: https://polyhaven.com/a/brown_mud_02
+Poly Haven: https://polyhaven.com/a/muddy_tracks
+Poly Haven: https://polyhaven.com/a/mud_forest
+Exact authors, public download URLs, hashes and dimensions: sources.json in
+the local evidence folder. Source/configuration/documentation only are pushed.
