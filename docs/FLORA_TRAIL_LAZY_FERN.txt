@@ -1,6 +1,6 @@
 FloraTrail: selected owned Lazy Forest fern
 =========================================
-15 November 2026. Preparation only; Unreal testing remains explicitly on hold.
+15 November 2026. User resumed the Unreal trial; isolated candidate installed.
 
 Selection
 Use Lazy Forest Gen v2.0.5 Fern_02, following the user's choice to use the
@@ -35,21 +35,106 @@ D:/GrandTourAssets/ReviewEvidence/FloraTrail/LazyFern/
 The isolated blend references the original installed textures by absolute path.
 Keep that owned asset installation available; this is not a portable package.
 
-Pending work when the user resumes the held Unreal test
-1. Transfer/bake the actual authored pigment and bump response with source
-   coverage preserved. Keep colour, opacity and normal data correctly encoded.
-2. Import into a new FloraTrail/LazyFern candidate directory and duplicate the
-   current FernSurface map. Preserve the previous map, launcher and materials.
-3. Replace only the fern component's mesh/material. Keep instance locations and
-   record any deliberate footprint scaling. Inspect new LODs for frond loss;
-   the new model is about six times the current 460-triangle fern at LOD0.
-4. Check source versus Unreal close-up, then fixed-camera road/verge/fern
-   comparisons after texture loading, greyscale thumbnails and a motion pass.
-   Check palette gates A-G honestly; all remain untested for this new model.
-5. Verify saved/reloaded results and protected baseline hashes before promotion.
-   Preserve trees, bark, rocks, soil, deformable mud, flat water and LiDAR.
+Installed candidate
+/Game/GrandTour/ArtTests/FloraTrail/LazyFern/L_FloraTrail_LazyFern
+Launch separately with Drive-FloraTrail-LazyFern.bat. Existing launchers and
+all previous maps remain unchanged; LiDAR is unchanged.
 
-Current state
-No Unreal process was launched and no Content package or launcher was edited.
-No model/material has been installed in the scene. Performance and visual fit
-remain unverified. Do not resume automatically just because memory is available.
+The authored colour chain (mixes, RGB curves, one frozen object variation),
+coverage and transmission factor were baked to separate 4K atlases without
+lighting. Tangent-space bump normals were baked on the original mesh, DirectX
+convention. A full-atlas plane preserves colour/coverage through overlapping
+source UVs. Original purchased files are untouched. These are data bakes,
+not a Blender 3.4.1 lighting-parity claim for this different source pack.
+
+Unreal uses native masked two-sided foliage, source coverage cutoff .35,
+source-derived roughness .605263, specular .08, diffuse gain .45 and pigment
+x transmission x .15 for subsurface colour. No emissive or grading change.
+Normal/coverage/transmission maps are linear; colour is sRGB/BC7. All maps
+must finish asynchronous loading at 4096 before captures. Three LODs use
+100%, 65%, 35% triangle targets at screen sizes 1, .10, .035. LOD0 is 2,816
+triangles. LOD transitions across the entire distance range are not certified.
+
+All 159 fern instances retain their transforms. At native size this fern is
+77 cm wide rather than the previous 141 cm, and about the same 42 cm height.
+It therefore forms a narrower, more upright clump. There is no hidden scale
+adjustment to make the before/after silhouettes artificially equivalent.
+
+Review
+The same paused scene and cameras capture previous/new fern, mixed bank and
+road views at actual 1274 x 682. A/B swaps use runtime-only movable mobility
+because Unreal refuses mesh swaps on static components during play. An
+assertion now checks the actual displayed mesh. Fresh saved-map verification
+retains the saved static mobility. A 48-frame camera move has eight captured
+samples; this checks sampled shape/detail continuity, not sustained FPS or
+complete temporal stability. The fern has no newly added wind animation.
+
+Visual assessment of the candidate comparisons:
+- Leaflet separation, veins, pale local highlights and dark inner fronds are
+  substantially more readable than the previous broad, nearly flat green fern.
+- The bank view retains visible fern detail. The road overview changes less;
+  a fern replacement does not fix the other undergrowth or the tree palette.
+- New ferns are cooler/paler than surrounding olive foliage. The contrast is
+  useful, but palette integration remains partial. Do not call this reference
+  matched. Other plants still show noisy cutout edges and uniform colour.
+- Greyscale thumbnails show stronger fern volume, but the fine striped leaf
+  pattern and surrounding vegetation compete at a distance.
+- Sampled motion frames retain the fronds and their texture. Fine edge noise
+  remains; no full temporal or 60 fps pass is claimed.
+
+Whole-scene palette gates (FLORA_PALETTE_SUCCESS_CRITERIA.txt):
+A FAIL: yellow/olive canopy and mixed ground families still lack cohesion.
+B PARTIAL: canopy has some shade masses, but uniformly bright regions remain;
+  this fern-only change does not resolve the tree-form issue.
+C PARTIAL: new fern interior retains dark green/blue-green and readable form;
+  deeper surrounding shrubs still lose separation.
+D PARTIAL: fern has recognisable directional lighting and contact shadows,
+  but cool pale fern, olive plants and bright moss rocks are not fully unified.
+E NOT TESTED: these three views do not establish the required layered
+  under-canopy depth profile. No fog change was made.
+F PARTIAL: fern detail and volume improve at close/thumbnail scale and persist
+  in sampled motion; surrounding vegetation remains noisy, full temporal
+  stability unverified.
+G NOT TESTED: dedicated under-canopy, valley and front/side/back lighting
+  regressions are still required for a whole-scene pass.
+
+Evidence (local, licensed images excluded from git):
+D:/GrandTourAssets/ReviewEvidence/FloraTrail/LazyFern/
+  candidate-report.json, candidate-process.json, candidate.log
+  verify-report.json, verify-process.json, verify.log
+  before-after.jpg, greyscale-thumbnails.jpg, reference-comparison.jpg
+  motion-samples.gif (sampled sequence, playback is not real-time evidence)
+Review source: Art/review_flora_lazy_fern.py. Source preview is labelled and
+not substituted for an Unreal capture. Comparison panels are resized only;
+no screenshot colour correction, sharpening or blur is applied.
+
+Failed development attempts retained separately:
+- rejected-static-swap: stopped own renderer when baseline mesh swap failed;
+  those captures are invalid comparison evidence.
+- failed-existing-map-save: save-as refused an existing map. Candidate reruns
+  now load that map and save in place; baseline is never overwritten.
+- transient-graph-compile: graph deletion/reconstruction emitted temporary
+  shader errors. Completed captures existed, but the wrapper rejected the run.
+  The importer now reuses the completed graph on reruns. Only the subsequent
+  clean candidate run and fresh verification can count as technical passes.
+
+Reproduce sequentially with sufficient memory/disk and no other renderer:
+1. Blender background/factory-startup/disable-autoexec:
+   --python Art/Blender/export_lazy_fern.py
+   --python Art/Blender/bake_lazy_fern.py
+   (Separate invocations; one renderer at a time.)
+2. powershell -File Art/run_flora_lazy_fern.ps1 -Stage candidate
+3. powershell -File Art/run_flora_lazy_fern.ps1 -Stage verify
+4. python Art/review_flora_lazy_fern.py
+The runner checks resources, exclusive renderer slot, exit code, fresh report,
+shader errors and the full protected baseline chain. Source utilities and
+this documentation can be pushed; purchased meshes/maps/textures cannot.
+
+Verified outcome
+Both final candidate and fresh verification exited zero with fresh ok reports
+and no matching shader errors in their logs. Candidate produced 22 native
+captures; verification produced 11. Protected baseline checks passed before
+and after each run; saved candidate packages were unchanged during captures.
+See docs/validation/flora-trail-lazy-fern.json for the concise recorded result.
+Mud/water package and binding checks passed; this fern-only trial does not
+relabel earlier driving tests as newly run.

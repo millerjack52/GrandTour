@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-15",
+  "scope": "Isolated owned Lazy Forest Fern_02 trial",
+  "map": "/Game/GrandTour/ArtTests/FloraTrail/LazyFern/L_FloraTrail_LazyFern",
+  "launcher": "Drive-FloraTrail-LazyFern.bat",
+  "stages": {
+    "candidate": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 22,
+      "native_capture_size": [
+        1274,
+        682
+      ],
+      "protected_unchanged": true,
+      "other_components_and_instances_unchanged": true,
+      "fern": {
+        "mesh": "/Game/GrandTour/ArtTests/FloraTrail/LazyFern/SM_LazyFern02.SM_LazyFern02",
+        "lods": 3,
+        "instances": 159,
+        "triangles": 2816,
+        "bounds": [
+          38.55884552001953,
+          35.915292739868164,
+          21.220602204092287
+        ]
+      },
+      "texture_sizes": {
+        "Colour": [
+          4096,
+          4096
+        ],
+        "Coverage": [
+          4096,
+          4096
+        ],
+        "Normal": [
+          4096,
+          4096
+        ],
+        "Transmission": [
+          4096,
+          4096
+        ]
+      }
+    },
+    "verify": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 11,
+      "native_capture_size": [
+        1274,
+        682
+      ],
+      "protected_unchanged": true,
+      "other_components_and_instances_unchanged": true,
+      "fern": {
+        "mesh": "/Game/GrandTour/ArtTests/FloraTrail/LazyFern/SM_LazyFern02.SM_LazyFern02",
+        "lods": 3,
+        "instances": 159,
+        "triangles": 2816,
+        "bounds": [
+          38.55884552001953,
+          35.915292739868164,
+          21.220602204092287
+        ]
+      },
+      "texture_sizes": {
+        "Colour": [
+          4096,
+          4096
+        ],
+        "Coverage": [
+          4096,
+          4096
+        ],
+        "Normal": [
+          4096,
+          4096
+        ],
+        "Transmission": [
+          4096,
+          4096
+        ]
+      }
+    }
+  },
+  "gates": {
+    "A": "fail",
+    "B": "partial",
+    "C": "partial",
+    "D": "partial",
+    "E": "not tested",
+    "F": "partial",
+    "G": "not tested"
+  },
+  "performance_verified": false,
+  "reference_matched": false,
+  "evidence_directory": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\LazyFern"
+}
