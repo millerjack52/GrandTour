@@ -8,8 +8,10 @@ original colour texture's variation is retained. Wet sheen, roughness, normal
 detail, parallax relief, displacement, deformation and flat water are unchanged.
 No light, fog, exposure, vegetation or rock change is included.
 
-The existing Woodland launcher opens the new map after verification:
+This adjustment's saved map is:
   /Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/L_FloraTrail_BrownMud
+The Woodland launcher now opens its later crown-shading derivative, which
+retains this brown mud; see FLORA_TRAIL_CROWN_FORM.txt.
 The preceding Woodland/v3 map and all its 27 packages remain unchanged and
 backed up. Earlier baselines, source assets and LiDAR are also protected.
 Only the new map's GTMudRunnerVisual uses MI_WoodlandBrownMud; its parent

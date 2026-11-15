@@ -1,0 +1,116 @@
+FloraTrail: directional crown shading / 15 November 2026
+=======================================================
+
+Request
+Improve the flat crowns and their lighting variation while keeping the
+accepted browner mud and the rest of the woodland fixed.
+
+Baseline
+/Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/L_FloraTrail_BrownMud
+This map and its two mud materials are backed up and hash-protected, together
+with the preceding Woodland v3 and earlier baseline chain. Shared source
+assets, the Blender/Unreal calibration bench and LiDAR remain unchanged.
+
+Implemented controls
+Only canopy material slots are replaced with separate material copies.
+Source pigment/coverage textures, UVs, geometry, instance placement and LODs
+are retained. Bark, original ferns, shrubs, rocks, terrain, mud and water keep
+their saved materials. Sun, skylight, exposure, display and fog stay fixed.
+The reverse-light diagnostic temporarily reverses sun azimuth in PIE; that
+direction is not saved. No emissive foliage, blur or global grade is added.
+
+The previous world-space normal blended world-up with VertexNormalWS times
+TwoSidedSign. This makes part of the lighting normal depend on which side of
+the card the camera sees. The installed UE5.8 MaterialTemplate.ush applies its
+backface-normal sign only to tangent-space normals (or the special single-layer
+water path), not this world-space foliage output. The new enabled branch
+removes that camera-facing sign from the mesh normal.
+
+An ellipsoid normal, centred at 62% of local mesh height, is calculated from
+pre-skinned local position and per-mesh bounds. Instance-to-world conversion
+keeps independently rotated tree instances aligned with the actual sun.
+This describes the crown's broad lit face and shaded side. A second normal
+curves each foliage fan using its existing UV0 and tangent basis; it describes
+smaller overlapping surfaces. These are shading normals, not a mesh rebuild
+or a claim to recover the source author's exact normal construction.
+
+The final iteration also tests a local ambient-occlusion approximation:
+interior foliage receives less sky fill, with exposed sides/tops and fan edges
+remaining more open. It feeds the native Ambient Occlusion output; the source
+base colour remains unchanged. It is an authored volume/fan approximation,
+not newly ray-traced AO or a reproduction of Blender GTAO.
+
+Controls live in Art/flora_crown_settings.json. Versioned material paths keep
+prior iterations recoverable. Increase revision for graph-construction changes.
+Scalar defaults can be changed within a candidate revision and saved explicitly.
+
+Controlled comparison
+V1 tested the original shader, removal of the camera-facing sign, whole-crown
+normals, and a coverage trim. Whole-crown normals produced broad top/side
+variation, but individual fans remained sheet-like. Trimming opacity primarily
+changed edges and was not sufficient to correct lighting.
+V2 added curved fan normals and combined them with crown normals. Its captures
+completed and reported their assertions passed, but Unreal then returned
+0xC0000005 during shutdown after the log closed. This is retained as a failed
+process run, not a technical pass. Optional shader-statistics queries were
+removed from the verification harness; that does not establish the crash cause.
+V3 additionally separates occlusion-only, normals-only and combined cases.
+The complete review includes road, mixed bank, lower canopy, upward crowns,
+elevated overview and reversed-light captures, with no per-camera corrections.
+Baseline and final include eight sampled frames from a short camera move.
+
+Verification
+The saved map is reloaded before comparison. A fresh verify process reads
+stored settings without installing or setting crown parameters at runtime.
+Texture bindings, native texture sizes, mesh/instance data, other material
+bindings, light/fog/exposure settings, brown mud and flat water are checked.
+Candidate hashes must remain unchanged during captures. Renderer exit status,
+shader-error logs and protected-baseline hashes are checked by the runner.
+Native image size is 1274 x 682; comparison layouts do not increase resolution.
+The sampled motion sequence is not real-time footage or a 60 fps measurement.
+
+Run from C:/GrandTour, only one Unreal/Blender renderer at a time:
+  powershell -File Art/run_flora_crown.ps1 -Stage candidate
+  powershell -File Art/run_flora_crown.ps1 -Stage verify
+  python Art/review_flora_crown.py
+The optional save stage installs configured defaults and captures only final.
+
+Evidence root: D:/GrandTourAssets/ReviewEvidence/FloraTrail/CrownForm/
+  before-after.jpg; diagnosis-drive.jpg; diagnosis-crowns.jpg; diagnosis-valley.jpg
+  crown-crops.jpg; colour-thumbnails.jpg; greyscale-thumbnails.jpg
+  reference-comparison.jpg; motion-contact-sheet.jpg; motion-samples.gif
+  candidate_*.png; verify_*.png; *-report.json; *-process.json; *.log
+  v1-review/; v2-review/ retain preceding captures and material/settings sources.
+Final results and visual gate assessment: docs/validation/flora-trail-crown.json.
+
+Selected result
+CrownForm/v3 uses enabled=1, crown volume blend=0.5, curved fan blend=1,
+interior occlusion strength=0.9, coverage trim=0. The original silhouette and
+coverage are therefore retained. Main gains come from corrected/curved normals;
+AO adds a smaller, local reduction in shaded sky fill. The side/top transitions
+are clearer in the road-edge and conifer crops and in 320px grey thumbnails.
+Some near fans remain dense and sheet-like. Strong frontal/reversed sunlight
+still produces overly broad yellow-green faces. This is a better selected
+daylight candidate, not a completed reference match or a source-parity claim.
+
+Visual gates
+A PARTIAL: local warm highlights are more distinct; cream accents and cool
+  interiors still fall short of the reference. See colour thumbnails.
+B PARTIAL (previously fail): three crown crops now show clearer light/shade
+  separation, but dense near fans and the reverse-light view remain too flat.
+C PARTIAL: shaded forms retain green/blue-green colour; overlapping interiors
+  remain less differentiated than the references. See canopy/crowns views.
+D PARTIAL: trees use the unchanged native light; the previous mixed-material
+  weaknesses, particularly large grey rocks, remain. See bank.
+E PASS in the tested open under-canopy composition: foreground detail, middle
+  trunks and cooler distant layers remain separated. Not a LiDAR validation.
+F PARTIAL: crown value structure improves at 320px and source detail remains
+  close up; sampled motion retains shading, but coverage still looks coarse.
+  The sample sequence does not certify all temporal shimmer or wind behaviour.
+G FAIL: reverse lighting still exposes broad bright fills; other partial gates
+  prevent an overall pass. All five views and reverse light were reviewed.
+Performance and new physical driving regression: NOT TESTED.
+
+Use C:/GrandTour/Drive-FloraTrail-Woodland.bat for the selected saved candidate:
+/Game/GrandTour/ArtTests/FloraTrail/Woodland/CrownForm/v3/L_FloraTrail_CrownForm
+The preceding brown-mud map remains available unchanged for rollback.

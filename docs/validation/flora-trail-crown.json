@@ -1,0 +1,218 @@
+{
+  "date": "2026-11-15",
+  "scope": "Canopy-only crown/branch shading in the accepted brown-mud woodland",
+  "settings": {
+    "revision": "v3",
+    "CrownEnabled": 1.0,
+    "CrownVolume": 0.5,
+    "CrownCard": 1.0,
+    "CrownOcclusion": 0.9,
+    "CrownTrim": 0.0
+  },
+  "stages": {
+    "candidate": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 61,
+      "native_capture_size": [
+        1274,
+        682
+      ],
+      "geometry_and_instances_unchanged": true,
+      "noncanopy_materials_preserved": true,
+      "protected_unchanged": true,
+      "flat_water_preserved": true,
+      "mud": {
+        "material": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/MI_WoodlandBrownMud.MI_WoodlandBrownMud",
+        "tint": [
+          1.12,
+          0.82,
+          0.6
+        ],
+        "original_scalar_and_texture_overrides_preserved": true,
+        "normal_roughness_displacement_outputs_preserved": true
+      },
+      "saved_crown_parameters": [
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        },
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        },
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        },
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        }
+      ],
+      "source_texture_dimensions": {
+        "/Game/GrandTour/ArtTests/FloraTrail/PineTrial/Assets/T_Exact_pine_f002_Colour.T_Exact_pine_f002_Colour": [
+          2048,
+          2048
+        ],
+        "/Game/GrandTour/ArtTests/FloraTrail/PineTrial/SourceMatch/T_SourceMask4K.T_SourceMask4K": [
+          4096,
+          4096
+        ],
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": [
+          2048,
+          2048
+        ],
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": [
+          2048,
+          2048
+        ]
+      },
+      "report_sha256": "2503ea0663efcbc6bf431d842d89fee62e20b8a424f694dd24484ab6073466f2"
+    },
+    "verify": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 13,
+      "native_capture_size": [
+        1274,
+        682
+      ],
+      "geometry_and_instances_unchanged": true,
+      "noncanopy_materials_preserved": true,
+      "protected_unchanged": true,
+      "flat_water_preserved": true,
+      "mud": {
+        "material": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/MI_WoodlandBrownMud.MI_WoodlandBrownMud",
+        "tint": [
+          1.12,
+          0.82,
+          0.6
+        ],
+        "original_scalar_and_texture_overrides_preserved": true,
+        "normal_roughness_displacement_outputs_preserved": true
+      },
+      "saved_crown_parameters": [
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        },
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        },
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        },
+        {
+          "CrownEnabled": 1.0,
+          "CrownVolume": 0.5,
+          "CrownCard": 1.0,
+          "CrownTrim": 0.0,
+          "CrownOcclusion": 0.8999999761581421
+        }
+      ],
+      "source_texture_dimensions": {
+        "/Game/GrandTour/ArtTests/FloraTrail/PineTrial/Assets/T_SourceBark_pine_f002.T_SourceBark_pine_f002": [
+          4096,
+          4096
+        ],
+        "/Game/GrandTour/ArtTests/FloraTrail/PineTrial/Assets/T_Exact_pine_f002_Colour.T_Exact_pine_f002_Colour": [
+          2048,
+          2048
+        ],
+        "/Game/GrandTour/ArtTests/FloraTrail/PineTrial/SourceMatch/T_SourceMask4K.T_SourceMask4K": [
+          4096,
+          4096
+        ],
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceBark_tree.T_SourceBark_tree": [
+          4096,
+          4096
+        ],
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_Exact_tree_Colour.T_Exact_tree_Colour": [
+          2048,
+          2048
+        ],
+        "/Game/GrandTour/ArtTests/FloraGroup/Assets/T_SourceMask_Leaf_0.T_SourceMask_Leaf_0": [
+          2048,
+          2048
+        ]
+      },
+      "report_sha256": "9050e240b1c984ab510aaf46a25fd2995c1a47b7e295a9bc75243a2bc92942e0"
+    }
+  },
+  "gates": {
+    "A": {
+      "status": "partial",
+      "reason": "Warmer local faces are more distinct; cream accents and cool interiors still weaker than references.",
+      "evidence": "colour-thumbnails.jpg"
+    },
+    "B": {
+      "status": "partial",
+      "previous": "fail",
+      "reason": "Three crown crops show clearer connected light/shade; dense near fans and reverse-light faces remain too flat.",
+      "evidence": "crown-crops.jpg"
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Readable green/blue-green shade; overlapping interiors still insufficiently differentiated.",
+      "evidence": "candidate_final_canopy.png"
+    },
+    "D": {
+      "status": "partial",
+      "reason": "Native illumination retained across materials; existing large grey rock mismatch remains.",
+      "evidence": "candidate_final_bank.png"
+    },
+    "E": {
+      "status": "pass",
+      "reason": "Near, middle and distant layers retained in tested open under-canopy view; not a LiDAR validation.",
+      "evidence": "verify_final_canopy.png"
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Crown values improve at 320px; sampled motion retains shading but coarse coverage and complete temporal behaviour remain unresolved.",
+      "evidence": "motion-contact-sheet.jpg"
+    },
+    "G": {
+      "status": "fail",
+      "reason": "Reverse sunlight still reveals broad bright fills; other partial gates prevent an overall pass.",
+      "evidence": "candidate_reverse_valley.png"
+    }
+  },
+  "saved_map": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/CrownForm/v3/L_FloraTrail_CrownForm",
+  "local_evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\CrownForm",
+  "performance": "not tested",
+  "new_driving_regression": "not tested",
+  "reference_match_accepted": false,
+  "lidar_rollout_approved": false,
+  "retained_failed_runs": [
+    {
+      "path": "v2-review",
+      "capture_assertions_ok": true,
+      "exit_code": -1073741819,
+      "reason": "Access violation during shutdown after log closure; cause not established. Final candidate and fresh verify exit cleanly."
+    }
+  ]
+}

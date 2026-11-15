@@ -1,0 +1,8 @@
+{
+  "revision": "v3",
+  "CrownEnabled": 1.0,
+  "CrownVolume": 0.5,
+  "CrownCard": 1.0,
+  "CrownOcclusion": 0.9,
+  "CrownTrim": 0.0
+}

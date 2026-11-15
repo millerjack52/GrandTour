@@ -9,9 +9,10 @@ is more coherent, but crown modelling by light and the procedural-looking
 rock distribution still fall short of the supplied woodland references.
 
 Play: C:/GrandTour/Drive-FloraTrail-Woodland.bat
-Later pigment-only mud adjustment: this launcher now opens the BrownMud
-derivative described in FLORA_TRAIL_WOODLAND_MUD.txt. The v3 map below remains
-the unchanged baseline for this woodland review.
+Later adjustments: this launcher opens the CrownForm/v3 derivative described
+in FLORA_TRAIL_CROWN_FORM.txt, including the browner mud described in
+FLORA_TRAIL_WOODLAND_MUD.txt. The v3 map below remains the unchanged baseline
+for this woodland review.
 Map: /Game/GrandTour/ArtTests/FloraTrail/Woodland/v3/L_FloraTrail_Woodland
 Baseline: /Game/GrandTour/ArtTests/FloraTrail/FernSurface/L_FloraTrail_Fern
 The existing default launchers still open their previous maps.
