@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-14",
+  "scope": "Actual left-hand grass/fern/shrub coverage and light response; vertex-colour-only small moss rocks. FloraTrail only.",
+  "saved_map": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/L_FloraTrail_Understory",
+  "processes": {
+    "candidate": {
+      "started": "2026-11-14T22:43:47.3808573-06:00",
+      "finished": "2026-11-14T22:46:20.1373014-06:00",
+      "exit_code": 0
+    },
+    "verify": {
+      "started": "2026-11-14T22:47:04.5063334-06:00",
+      "finished": "2026-11-14T22:49:02.9853080-06:00",
+      "exit_code": 0
+    }
+  },
+  "invalid_initial_comparison": "Retained in UnderstoryStudy/invalid-static-mesh-swap; static PIE mesh replacement was rejected. Corrected to temporarily movable, restored mobility, then asserted actual mesh. Not accepted evidence.",
+  "native_resolution": [
+    1274,
+    682
+  ],
+  "controls": [
+    "baseline",
+    "coverage",
+    "lighting",
+    "rocks",
+    "combined"
+  ],
+  "plant_settings": {
+    "diffuse_gain": 0.45,
+    "subsurface_gain": 0.15,
+    "roughness": 0.8,
+    "specular": 0.08,
+    "opacity_clip": 0.35,
+    "emissive": 0,
+    "source_textures_unchanged": true
+  },
+  "rock_atlas": {
+    "count": 12,
+    "size": [
+      2048,
+      2048
+    ],
+    "source_version": "Blender 3.4.1",
+    "srgb": true,
+    "compression": "BC7",
+    "uv_channel": 1,
+    "normal": "Source diffuse has no connected normal input. Original geometry normals retained; no fabricated bump.",
+    "roughness": 0.94,
+    "specular": 0.04
+  },
+  "geometry": [
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_006.SM_Detail_FP_Rock_0_006",
+      "lods": 1,
+      "triangles": 1508,
+      "instances": 42
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_006_001.SM_Detail_FP_Rock_0_006_001",
+      "lods": 1,
+      "triangles": 1508,
+      "instances": 31
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_010.SM_Detail_FP_Rock_0_010",
+      "lods": 1,
+      "triangles": 504,
+      "instances": 41
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_010_001.SM_Detail_FP_Rock_0_010_001",
+      "lods": 1,
+      "triangles": 504,
+      "instances": 40
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_011.SM_Detail_FP_Rock_0_011",
+      "lods": 1,
+      "triangles": 896,
+      "instances": 48
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_012.SM_Detail_FP_Rock_0_012",
+      "lods": 1,
+      "triangles": 1280,
+      "instances": 54
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_012_001.SM_Detail_FP_Rock_0_012_001",
+      "lods": 1,
+      "triangles": 1280,
+      "instances": 45
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_013.SM_Detail_FP_Rock_0_013",
+      "lods": 1,
+      "triangles": 84,
+      "instances": 132
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_014.SM_Detail_FP_Rock_0_014",
+      "lods": 1,
+      "triangles": 84,
+      "instances": 156
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_015.SM_Detail_FP_Rock_0_015",
+      "lods": 1,
+      "triangles": 84,
+      "instances": 128
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_017.SM_Detail_FP_Rock_0_017",
+      "lods": 1,
+      "triangles": 84,
+      "instances": 152
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_018.SM_Detail_FP_Rock_0_018",
+      "lods": 1,
+      "triangles": 34,
+      "instances": 146
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/Meshes/SM_Exact_drygrass.SM_Exact_drygrass",
+      "lods": 3,
+      "triangles": 52,
+      "instances": 743
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/Meshes/SM_Exact_fern.SM_Exact_fern",
+      "lods": 3,
+      "triangles": 460,
+      "instances": 159
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/Meshes/SM_Exact_grass.SM_Exact_grass",
+      "lods": 3,
+      "triangles": 42,
+      "instances": 6276
+    },
+    {
+      "mesh": "/Game/GrandTour/ArtTests/FloraTrail/Meshes/SM_Exact_shrub.SM_Exact_shrub",
+      "lods": 3,
+      "triangles": 416,
+      "instances": 2524
+    }
+  ],
+  "plant_instances": 9702,
+  "rock_instances": 1015,
+  "protected_previous_mud_packages": 47,
+  "saved_candidate_packages": 55,
+  "saved_packages_unchanged": true,
+  "baseline_chain_unchanged": true,
+  "candidate_hashes": {
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/L_FloraTrail_Understory.umap": "98f4e68944dae43f96f3f1e612a00b3b95af6ca3c073312ba77d7c8a3f9161a2",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_drygrass_Grass_006_26834fc_combined.uasset": "8dae81144347df633d1edb90e818b95cac435bfbb818f007d4c305c7650bf70e",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_drygrass_Grass_006_26834fc_coverage.uasset": "15cfcafafce46d56b3be1f133de76ac43b40cab0d5a2cbc9f09aa35385e34473",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_drygrass_Grass_006_26834fc_lighting.uasset": "8b1fbd43108037660974630198ffadf386ac9cfb63d1c4436e8b887efa2b32f4",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_fern_Fern_1_26834fc_combined.uasset": "333a6714d213863ead57f19eeadf6165c6117bb9b8cf433a9c6c5e415c4e9a6d",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_fern_Fern_1_26834fc_coverage.uasset": "dc19335fbfd50cfffe39107c10179917bfa406b014e4bdd75a41df7b2586ab98",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_fern_Fern_1_26834fc_lighting.uasset": "79f245e0db65796e8c50dbb34fddaaa9a8af0742b9a1e20e0ff9b6dc70389bdd",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_grass_Grass_004_26834fc_combined.uasset": "c181e31a98993988bae17213ba86ae512763167303d5c784db175d835336ec20",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_grass_Grass_004_26834fc_coverage.uasset": "a856c6f51ce941327c10bba7a6f09c22f43af7a57703b717cdba953ac7fe070e",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_grass_Grass_004_26834fc_lighting.uasset": "721e33bd245b9bb5e7c2d8da394aeb3a2711ce9ad9d3d6d32b3c3367fcd4741d",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Flower_0_RANDOM_26834fc_combined.uasset": "a23de8b6fd385a0d5f28a6fbb1128cab27b95fcaf9fb1008954609c71b2108f0",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Flower_0_RANDOM_26834fc_coverage.uasset": "52054997eb206cca339bd8e4b5286dd944601a7162e5426174d7c29e297c0892",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Flower_0_RANDOM_26834fc_lighting.uasset": "b71938723fee3cc8b9a26ca5e30a62c85ab1469cdd74133f0e1d5860831b80e3",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Grass_26834fc_combined.uasset": "086c06c15a1bae9f5b1ccd5a0e57b8e2e063d02e02ea77f3533d52308cba7704",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Grass_26834fc_coverage.uasset": "6c6029c5b679f24b195f1b78718cfc0adefa739f73ee5552503878e03d3f3ea5",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Grass_26834fc_lighting.uasset": "2915442f923ab3a35dedae5841f41a18ae405a8039cec045f1c67bdad8dad96f",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Shrubbery_26834fc_combined.uasset": "214971a40ad1333bd2c41e60d4333b5c4b08a9cb87c9acb3505074abaceb2333",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Shrubbery_26834fc_coverage.uasset": "662be9addcf28af1086b1b9b961ac27c77473abceb1d12d2a4e5cddd6493ac40",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Materials/M_Exact_shrub_Shrubbery_26834fc_lighting.uasset": "0c243e29dabfe773accc12c7230ba69c41a1df2754d5e2da6cc3da79130bfe14",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_006.uasset": "07e1600255716f82a6599cc0c2086cbaad8478d6d614505da9a5149319daab60",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_006_001.uasset": "7bbc0cddb5f5daafd8668020d1a3a1398bf3271872cb2d1d6ae69f725007bc1a",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_010.uasset": "3e2d0b36d36750a843ee845379babc43dfd662ea8453bcc78d25dd24cdf79ac3",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_010_001.uasset": "9b6dfd0b56cf072f3a17783a3ff4f5907bb5929b84c942d5262e4e4f7836cb60",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_011.uasset": "ac437db39c35adf5b7d7add905d88072a613d1b6b5d64dbb6e0b676b0efa27f5",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_012.uasset": "da6e6fe5cfa7c5676615c45911d318a449ea0d5ab75782787eb697044df0c3c1",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_012_001.uasset": "048abaa446945b5cbf10a084daf2c1e5f9f61371a535276fe9ab72f054dbba00",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_013.uasset": "b182bd23880c06748fd35832ae19e5e3c0d54f9a37d60eda030929ce12473d0b",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_014.uasset": "b2234bfa0507842be91438a37deaafcf1384b7da08f0c45e72fdde0eafa6e954",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_015.uasset": "cd0db16fdc56dc9ec987fdab16783c2bbdb7603875bc68ed76827f5ee57b96c3",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_017.uasset": "6417295c0cb13a393761ba2e6e188a31c769379bfbc1d77aa7b853f742b498cb",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/M_SM_Detail_FP_Rock_0_018.uasset": "aff93dbb920696a85070fa110e88f34292a7850ee63cc7640d15992b78b33d3a",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_006.uasset": "1e6c76851008216a4628a00677ea079b525fb92df2cc6350aa2044c1bf5fffc5",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_006_001.uasset": "4da8f8f28663fbdaba53ef55b8212e68c3f8696acedd99d1b63c9736a6e4cec4",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_010.uasset": "83dff258ffb12805f8495df383dc9dd2031dc8d2a00e8007fcf7c392280dd440",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_010_001.uasset": "37b15ba7e193b001843ab7b046cad7dc6ca2c7d40196ee65ce71c60b8cfde13e",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_011.uasset": "e4b192c7d3eb0a8e9e799fc1dcb1993d09d44bc6e47bd5e8b39fac3846192de7",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_012.uasset": "941b130b9d70867b3ea6e0d23e5ff925372296f12fa662b3668bbaa7c54578d8",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_012_001.uasset": "dd469ef50d91bfbc241f07a0f41de01c96d25fbe2afa0e33aaf6552d2700dc06",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_013.uasset": "b06a3acc42c4271e1902092de15c7f271d2afb46b1479e3206e90f72bfc968ae",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_014.uasset": "b0f44464539ba8af1efc9e855bdc2c54a489a7623957c2e90fc5a5412ed49786",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_015.uasset": "a6e5b8475ef00ea937dcfec6bbea24e3fae96d9a06c9a9269d31b0a3126f94a0",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_017.uasset": "3e70c711fc3b6b72dfac0ae6134639b761391c068728f3d69f6682b580620b05",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/SM_Detail_FP_Rock_0_018.uasset": "085b87916b2fa3006ac18dd57a277a932181aaffd172eef88b1219e7e3f11394",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_006.uasset": "475e57f05acf1463876715dbc22a146a6f449d6356e0515f252b8c38e971877a",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_006_001.uasset": "6c14a8a3111d0a2915fc5ce9eaca10f282e1ff6f15dcd1496481314786aded41",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_010.uasset": "1c1ab1178fa535b661c4b605acf5d43c698af6c838b79696ca42247777c89f04",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_010_001.uasset": "6c2c440274f3e43ef79407aff519f86c97bc16b457c55ef651b50360a1f8c4d8",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_011.uasset": "3c4b88ed0f7d4c9a664d3eb021c45562c6b59f6165632d213d74c2809afff8a3",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_012.uasset": "7e82cca5465f5915090c2201a87ccc9cdce5ce893d623d0400b0d51123b223be",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_012_001.uasset": "1b419b700fd12dd937533ac20985515f14660fd3f0c7f4c03e5946d23ab8a7c9",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_013.uasset": "4983f988268e56bb2fe1ecd9d2bbffc7e19a14c6e071d56e08e3f28b352e127f",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_014.uasset": "ccb104a14ae3f25c76f4fab6ac5e6218cafa37e1481be7aa46d026f1e0034bb7",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_015.uasset": "6608f1217d07915745959640a86c63cb4b87d343b24264a2cc9bde388c81c9b7",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_017.uasset": "48197225fb1693b6ed358d0ffaa77c3bc09970944d12d8c43688791cf244570d",
+    "GrandTour/ArtTests/FloraTrail/UnderstoryTrial/Rocks/T_SM_Detail_FP_Rock_0_018.uasset": "0d241ad31d1f0c6d60ac6968daca332839c11e22b2eed60cebf25aca1cdb524c"
+  },
+  "driving": {
+    "ok": true,
+    "travel_cm": 5172.279198266052,
+    "max_water_cm": 20.297032594680786,
+    "max_height_change_cm": 5.771765232086182,
+    "surface_report": "tiles=36 evictions=14 excavated_cm3=1902468.982 deposited_cm3=1902456.848 balance_cm3=12.134715 nanite_materials=0 displacement_scale_valid=0 quality=1 decay_cells=0 uploaded_cells=6215680 upload_peak_ms=2.172 upload_pending=0 textures_ready=1 observe_mean_ms=0.5772 observe_peak_ms=1.1098 native_shader=1 native_cells=117513 push_cells=535624 clay_atlas=512 clay_hold=1",
+    "water_report": "native_steps=0 cells=15876 cell_cm=50.000 awake=1 volume_m3=14.15435296 initial_m3=14.15435319 delta_m3=-0.00000022 bed_updates=370 bed_peak_ms=0.382 step_mean_ms=0.455 step_peak_ms=2.514 wet=570 lids=5 deficit_s=0.0144 clamps=0 foam_peak=0.9565 foam_mean_ms=0.0722 foam_peak_ms=0.1840",
+    "note": "Continuous physical traversal with captures; not a reset regression or a sustained 60 fps test."
+  },
+  "local_visual_checks": {
+    "plant_coverage": "pass: solid leaf shapes replace perforated hashed masses",
+    "plant_lighting": "partial: lit/shaded colour improves; some cards and fern fans still flat",
+    "rock_detail": "pass: original per-pixel stone/moss variation is present after fresh load; moss still bright",
+    "motion": "partial: 48-frame slow camera move sampled at eight positions; broad silhouettes are clearer, not a realtime performance measurement"
+  },
+  "gates": {
+    "A": {
+      "status": "fail",
+      "reason": "Undergrowth now has readable olive/ochre variation, but broad yellow crowns and insufficient recurring coral accents still miss the complete palette hierarchy.",
+      "evidence": [
+        "verify_combined_drive.png",
+        "reference_verge.jpg"
+      ]
+    },
+    "B": {
+      "status": "partial",
+      "reason": "Existing crowns retain some dark interiors but uniform bright masses remain. Tree materials were deliberately preserved in this scoped pass.",
+      "evidence": [
+        "verify_combined_context.png",
+        "verify_combined_drive.png",
+        "thumbnails_grey.jpg"
+      ]
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Grass and fern colour is substantially more readable than the squared-pigment baseline; some shaded shrubs still collapse into dark clumps.",
+      "evidence": [
+        "before_after_verge.jpg",
+        "verify_combined_drive.png"
+      ]
+    },
+    "D": {
+      "status": "partial",
+      "reason": "Plants now receive native directional and sky light and rocks retain pigment patches; lime moss, large grey outcrops and simple bark still do not form the reference family relationships.",
+      "evidence": [
+        "verify_combined_bank.png",
+        "reference_verge.jpg"
+      ]
+    },
+    "E": {
+      "status": "partial",
+      "reason": "Near detail survives and trunks separate, but the reviewed under-canopy background does not establish the reference progressive cool depth. Fog remains unchanged.",
+      "evidence": [
+        "verify_combined_verge.png",
+        "verify_combined_distance.png"
+      ]
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Leaf silhouettes and rock surface patches are clearer at native resolution and 320px; the sampled camera pass avoids the previous perforated plant masses, but flat fern fans/cards and retained tree coverage noise remain.",
+      "evidence": [
+        "thumbnails_colour.jpg",
+        "thumbnails_grey.jpg",
+        "combined_motion.webp",
+        "combined_motion_samples.jpg"
+      ]
+    },
+    "G": {
+      "status": "not tested",
+      "reason": "Fixed road, under-canopy verge and mixed bank plus distance/context are captured, but there is no valley or front/side/back-light sweep and A-F are not all passed.",
+      "evidence": [
+        "verify_combined_drive.png",
+        "verify_combined_verge.png",
+        "verify_combined_bank.png"
+      ]
+    }
+  },
+  "reference_matched": false,
+  "performance_60fps": "not tested",
+  "lidar_changed": false,
+  "launch": "Drive-FloraTrail-Mud.bat",
+  "recoverable_previous_launcher": "Drive-FloraTrail-Mud-VergeBaseline.bat",
+  "evidence_root": "Art/Export/FloraTrail/UnderstoryStudy"
+}

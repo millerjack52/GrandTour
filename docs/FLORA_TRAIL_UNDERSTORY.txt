@@ -1,0 +1,87 @@
+FloraTrail: left-hand plants and moss-rock detail
+================================================
+
+Scope
+The user's left-hand patch is the actual grass/undergrowth, rather than the
+exposed ground treated in the preceding verge pass. This candidate changes only
+the four grass/dry-grass/fern/shrub components and twelve small Flora Paint rock
+mesh families in a separate map:
+  /Game/GrandTour/ArtTests/FloraTrail/UnderstoryTrial/L_FloraTrail_Understory
+
+Causes and changes
+The old undergrowth conversion used the Blender 5 transmission approximation:
+weighted pigment was squared, the upper-hemisphere reflection contribution was
+gated off, and facing coverage was passed through a temporal screen-space hash.
+Trees had subsequently received the calibrated Blender 3.4 response; these
+plants had not. The resulting undergrowth was both dark and perforated.
+
+Three plant controls isolate coverage, light response, and their combination.
+Coverage uses the same source mask/UV0 with a 0.35 cutoff, without random holes.
+Lighting uses native two-sided foliage, the original pigment/UV1 at 0.45 diffuse
+gain and 0.15 subsurface gain, vertex normals, roughness 0.8 and specular 0.08.
+Emissive output is zero. This is a visual candidate, not a measured claim of
+Blender parity. Grass, fern, shrub and flower source images remain unmodified.
+All plant meshes, instance counts and their existing LODs remain unchanged.
+
+The small moss rocks had no surface texture: the original procedural colour
+was baked only to vertices, including rocks with just 34 triangles. Increasing
+texture streaming quality could not recover detail that was absent. The source
+procedural pigment is now baked in Blender 3.4.1 to individual 2048px UV1 atlases.
+UV0, source shape/triangle counts, normals and one rock LOD are preserved in new
+local meshes. BC7 sRGB colour is sampled with normal mipmapping. The authored
+rock diffuse shader has no connected normal input; unused bump nodes are not
+invented as an extra surface layer. Roughness/specular remain 0.94/0.04.
+
+Preservation
+L_FloraTrail_Verge and all 47 previous MudTrial packages are backed up and checked
+by hash, in addition to the earlier source/tree/pine/LiDAR baseline chain.
+The accepted pine and tree materials, 4K bark, scene sunlight, skylight,
+exposure, display transform, fog, woodland floor, wet mud and flat-water
+materials remain unchanged. Do not promote this material pass into LiDAR.
+
+Reproduction
+With all Unreal/Blender renderers closed and sufficient disk/RAM, bake using
+Blender 3.4.1 with Art/Blender/bake_flora_rock_detail.py. Never save over the
+licensed blend. The exporter verifies its source hash and triangle counts.
+Then run sequentially from C:/GrandTour:
+  powershell -File Art/run_flora_understory.ps1 -Stage candidate
+  powershell -File Art/run_flora_understory.ps1 -Stage verify
+  python Art/review_flora_understory.py
+
+Candidate stages baseline, coverage-only, lighting-only, rock-detail-only and
+combined under the same paused simulation, cameras and exposure. It explicitly
+asserts successful mesh swaps; temporary PIE mobility changes are restored.
+Verification reloads the saved map in a fresh process, checks source bindings,
+LODs/counts and texture readiness, captures seven views plus a short camera move,
+then runs the existing physical mud/water traversal. Native captures are
+1274x682; review boards are reduced displays, never claimed as higher resolution.
+
+Evidence is under Art/Export/FloraTrail/UnderstoryStudy (local media on D: through
+a junction). The first comparison is retained in invalid-static-mesh-swap and
+rejected: Unreal refused static mesh replacement during PIE, so its rock
+baseline used the wrong mesh/vertex-colour pairing. Subsequent captures must
+pass the actual mesh assertion. Render/process failures are recorded separately
+from visual acceptance; a successful screenshot is not a reference match.
+
+Limitations
+Solid coverage intentionally changes the softness of the source hashed blend.
+Some grass cards and fern fans can still look flat; the moss tops remain bright.
+This pass does not fix the complete forest palette, canopy shape, composition,
+fog depth or selective lighting. The new atlases add texture memory. Sustained
+60 fps, a valley view and front/side/back-light sweeps remain unverified.
+See validation/flora-trail-understory.json for the final evidence and gate review.
+
+Saved result (14 November 2026)
+Candidate comparison and fresh verification both exited zero. All 55 candidate
+packages and the protected earlier packages retained their verification hashes.
+The four plant components hold 9,702 instances and retain three LODs. The twelve
+rock families hold 1,015 instances and retain their original triangle counts
+and single LOD. All sampled source/rock textures were resident at 2048x2048.
+The continuous traversal covered 51.72 m, reached 20.30 cm wheel water depth,
+and measured 5.77 cm maximum ground-height change. Native ground shading and
+water-bed updates remained active. This is not a new reset/performance test.
+
+The completed review records A fail, B-F partial and G not tested. Local rock
+detail and plant coverage improve; complete reference matching is not achieved.
+Launch with Drive-FloraTrail-Mud.bat; recover the previous accepted ground and
+water scene with Drive-FloraTrail-Mud-VergeBaseline.bat.
