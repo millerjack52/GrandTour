@@ -1,0 +1,82 @@
+FloraTrail fern surface variation
+=================================
+
+The user identified the fern fans as too flat. The existing 2K pigment atlas
+has RGB (58,81,25) in 99.54% of its nonblack pixels. Its visible surface is
+effectively solid green. The original Fern_0_1.png contains painted grey marks,
+but those marks were previously used only for opacity. The frozen fern has
+414 distinct vertex normals spanning curved fronds, rather than a single shared
+up-normal. Changing its geometry is not justified by this diagnosis.
+
+Candidate
+Keep the same fern mesh, all 159 instances, three LODs, source pigment,
+source coverage, 0.35 cutoff, native two-sided lighting, normals, roughness,
+specular and zero emissive. Import the original unblurred 2048px greyscale
+artwork as a separate local texture, sampled with its existing UV0 mapping.
+Use its painted values to vary pigment from 0.50 to 1.18, expanding the
+near-white 0.82-0.99 range. A separate restrained growth gradient darkens the
+base and shifts the tips towards warmer olive. It follows the upper-row
+fronds actually addressed by this frozen mesh's UVs. It is not a generic
+gradient appropriate to every fern in the pack.
+
+These are artistic controls, not a claim that the source had a missing colour
+map or that the candidate reproduces the original Blender shader. No generic
+noise, generated artwork, normal-map relief, new geometry or illumination is
+added. Both diffuse and subsurface use the same varied pigment, so backlighting
+does not revert to the solid colour. One texture sample is added.
+
+Scope and preservation
+Only the fern component's material slot changes in a separate map:
+  /Game/GrandTour/ArtTests/FloraTrail/FernSurface/L_FloraTrail_Fern
+The previous UnderstoryTrial map and all 55 packages have recoverable copies
+and hashes, followed by the earlier baseline chain. The comparison also checks
+all 386 static-mesh component records, materials and instance transforms;
+only the fern material slot is exempted. Map-local landscape paths are
+canonicalized because Save As relocates those embedded objects. This caused
+two early preservation-check failures; their logs are retained, not counted
+as passing capture evidence.
+
+The first fresh verification completed assertions/captures but exited with
+-1073741819 during late editor shutdown. It remains a failed process result in
+verify-shutdown-failed. A subsequent fresh process must pass before the launcher
+is promoted; the failed run is not silently relabelled as successful.
+
+Controls and review
+  powershell -File Art/run_flora_fern_surface.ps1 -Stage candidate
+  powershell -File Art/run_flora_fern_surface.ps1 -Stage verify
+  python Art/review_flora_fern_surface.py
+
+Candidate compares baseline, painted detail, growth gradient and both together
+under one paused simulation with identical cameras/exposure. Views cover a
+specific nearby fern, the left-hand verge and the driving view. The camera
+move spans 48 frames, sampled at eight positions per control. Native captures
+are 1274x682. Colour/greyscale 320px thumbnails and comparison sheets are local
+under Art/Export/FloraTrail/FernSurface, stored on D: through a junction.
+Fresh verification reloads the saved map and checks its material graph, source
+bindings, geometry, scene signature, texture readiness and saved package hashes.
+
+Driving physics are not retested for a fern-material-only change. The previous
+UnderstoryTrial traversal remains the latest driving evidence; do not relabel
+it as a new fern test. Mud and water material bindings are asserted unchanged.
+No LiDAR content, tree/pine calibration, terrain or global light/grading changes
+are included. Performance at sustained 60 fps remains unverified.
+
+See validation/flora-trail-fern-surface.json for the completed visual and process
+assessment. This pass addresses fern surface variation, not the remaining
+whole-scene palette, canopy and atmospheric-depth requirements.
+
+Saved result (14 November 2026)
+The completed candidate comparison and repeated fresh verification both exited
+zero. All three new packages retained their saved verification hashes, and
+55 UnderstoryTrial packages plus the earlier baseline chain remain unchanged.
+The original fern mesh, 159 instances and three LODs are preserved. The original
+artwork hash matches the imported texture's recorded source hash.
+
+Close-up surface variation improves visibly; the driving-distance change is
+subtle. Broad frond shapes still read flat, so this is a partial improvement
+to the user's flatness concern, not complete reference matching. Colour and
+greyscale thumbnails and the sampled motion sequence are included in the review.
+No new 60 fps or driving claim is made.
+
+Launch with Drive-FloraTrail-Mud.bat. The preceding scene is available through
+Drive-FloraTrail-Mud-UnderstoryBaseline.bat.

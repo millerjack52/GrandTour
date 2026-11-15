@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-14",
+  "scope": "Fern material only in FloraTrail; original artwork reused for pigment variation.",
+  "diagnosis": {
+    "pigment_modal_rgb": [
+      58,
+      81,
+      25
+    ],
+    "nonblack_pixels": 3577479,
+    "solid_colour_fraction": 0.995354549949839,
+    "distinct_vertex_normals": 414,
+    "normal_min": [
+      -0.98691,
+      -0.97299,
+      0.02297
+    ],
+    "normal_max": [
+      0.98738,
+      0.95417,
+      0.99973
+    ],
+    "original_art": "D:/GrandTourAssets/FlippedNormals/Flora_Paint_Bonus_Project_Files/Bonus_Project_Files/001/textures/Fern_0_1.png",
+    "interpretation": "Existing pigment is effectively constant; original grayscale painting was only used for opacity. Candidate uses it as pigment variation, not as a claimed source albedo restoration."
+  },
+  "saved_map": "/Game/GrandTour/ArtTests/FloraTrail/FernSurface/L_FloraTrail_Fern",
+  "processes": {
+    "candidate": {
+      "started": "2026-11-14T23:26:39.7845525-06:00",
+      "finished": "2026-11-14T23:28:46.8295289-06:00",
+      "exit_code": 0
+    },
+    "verify": {
+      "started": "2026-11-14T23:32:34.6838743-06:00",
+      "finished": "2026-11-14T23:34:06.6682483-06:00",
+      "exit_code": 0
+    }
+  },
+  "failed_runs": [
+    {
+      "path": "signature-failed",
+      "reason": "Save As renamed embedded landscape mesh/material paths; strict path comparison stopped before captures."
+    },
+    {
+      "path": "signature-path-diagnosis",
+      "reason": "Read-only diagnosis confirmed only embedded landscape paths differed. Canonicalized those map roots; other scene fields remain compared."
+    },
+    {
+      "path": "verify-shutdown-failed",
+      "process": {
+        "started": "2026-11-14T23:29:44.2020983-06:00",
+        "finished": "2026-11-14T23:31:16.8899511-06:00",
+        "exit_code": -1073741819
+      },
+      "reason": "Assertions/captures completed, but late shutdown exit -1073741819. Failed process; subsequent fresh verification exited zero."
+    }
+  ],
+  "selected_controls": {
+    "FernDetailStrength": 1,
+    "FernGradientStrength": 1
+  },
+  "controls_tested": [
+    "baseline",
+    "paint",
+    "gradient",
+    "combined"
+  ],
+  "native_resolution": [
+    1274,
+    682
+  ],
+  "fern": {
+    "mesh": "/Game/GrandTour/ArtTests/FloraTrail/Meshes/SM_Exact_fern.SM_Exact_fern",
+    "lods": 3,
+    "instances": 159,
+    "triangles": 460
+  },
+  "paint_texture": {
+    "size": [
+      2048,
+      2048
+    ],
+    "source_sha256": "0e3605dc5ed2f56702e6656b9896a67696a4395b6f693321c3b79e2f69c514be"
+  },
+  "preserved_source_bindings_normals_coverage": true,
+  "scene_component_records_checked": 386,
+  "other_static_mesh_components_materials_and_transforms_unchanged": true,
+  "protected_understory_packages": 55,
+  "saved_candidate_packages": 3,
+  "candidate_hashes": {
+    "GrandTour/ArtTests/FloraTrail/FernSurface/L_FloraTrail_Fern.umap": "988a9bfe7a140c606e9436a4d1e28a40b1f4219c9b0f0eabc4304216e0c85daa",
+    "GrandTour/ArtTests/FloraTrail/FernSurface/M_FernSurface.uasset": "9c79dd5ecb63577455b678fa84f97b638b4bd854027143279358cf52a4cb03ea",
+    "GrandTour/ArtTests/FloraTrail/FernSurface/T_FernPaint.uasset": "c2e82c6e28df9af9f5d80fd5b937134fe0e60c30b21bec7eeaafb4d7c1f062c1"
+  },
+  "baseline_chain_unchanged": true,
+  "visual_assessment": {
+    "close_surface_variation": "pass: painted marks and darker vein-like patterns replace the nearly solid green fill.",
+    "gradient": "partial: darker bases and warmer tips improve frond separation but broad leaf cards still look flat.",
+    "driving_distance": "partial: subtle improvement; finer painted marks disappear with distance.",
+    "motion": "partial: sampled 48-frame camera move reviewed at eight positions; no new stochastic coverage, not a realtime stability/performance certification.",
+    "whole_scene_reference_match": "not achieved"
+  },
+  "palette_gates": {
+    "A": "fail (previous full review retained)",
+    "B": "partial (not retested; crowns unchanged)",
+    "C": "partial",
+    "D": "partial",
+    "E": "partial (not retested; atmosphere unchanged)",
+    "F": "partial",
+    "G": "not tested (no valley or light-direction sweep)"
+  },
+  "driving": "Not repeated for fern-only material change. Previous UnderstoryTrial traversal is historical evidence, not a new result.",
+  "mud_water_bindings": "pass: existing M_VergeLandscape, MI_VergeMud and M_WaterFlat retained",
+  "performance_60fps": "not tested",
+  "lidar_changed": false,
+  "evidence_root": "Art/Export/FloraTrail/FernSurface",
+  "launch": "Drive-FloraTrail-Mud.bat",
+  "baseline_launcher": "Drive-FloraTrail-Mud-UnderstoryBaseline.bat"
+}
