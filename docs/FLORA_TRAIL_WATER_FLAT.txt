@@ -1,0 +1,61 @@
+FloraTrail: level standing water
+===============================
+
+Scope
+The MudFlat candidate retains the accepted Brown Mud wet material and uses a
+separate, map-local water material. Its water mesh sits at FieldLevelCm with
+zero vertex displacement and an upward surface normal. The deformable mud bed,
+source ground textures, tyre material, water solver, sediment and foam inputs
+remain unchanged. LiDAR and the source-calibrated pine diagnostic are protected.
+
+Cause and controlled comparison
+The previous water material added physical-field elevation and a native ripple
+term to vertex position. Its normals combined an optical wave atlas with the
+gradients of both fields. On shallow standing water these created broad rolling
+highlights. Setting displacement alone to zero did not remove that appearance:
+the geometry-only control still looked wavy. Removing the wave normals as well
+produced level puddles and a calm pond in the fixed-camera comparison.
+
+FloraWaterFlat=1 removes both displacement terms. The same control removes the
+height offsets from the depth calculation, so clipping and absorption refer to
+the level surface. Physical wet coverage still limits the water footprint.
+FloraWaterQuietNormals=1 gives the surface an upward normal. Both are saved
+defaults. The baseline control sets both to zero; geometry_only uses (1,0).
+This is a standing-water appearance profile, not a general river material.
+
+The visible surface intentionally does not rise into simulated waves or wake
+crests. Physical water depth, wheel interaction, mud deformation and native
+sediment/foam simulation still run. Removing visible wave crests is part of
+the requested flat appearance, not a claim that the simulation was flattened.
+
+Reproduction
+With other Unreal/Blender renderers closed, run sequentially from C:/GrandTour:
+  powershell -File Art/run_flora_water_flat.ps1 -Stage probe
+  powershell -File Art/run_flora_water_flat.ps1 -Stage verify
+  python Art/review_flora_water_flat.py
+
+Probe clones L_FloraTrail_MudWet into L_FloraTrail_MudFlat and clones the local
+M_FloraWater into MudTrial/M_WaterFlat. No old package is overwritten. It uses
+the existing mud harness with fixed exposure, camera, lighting and render
+settings, waits for source texture loading, pauses simulation for comparison,
+then captures six views and a sampled short motion check per control.
+Verify reloads the saved map, checks the live defaults and mesh plane, captures
+again, and runs the existing continuous driving test. It must leave every
+MudTrial package unchanged and exit zero with no material compilation errors.
+
+Evidence
+Art/Export/FloraTrail/WaterFlat contains native Unreal frames, comparison boards,
+320px colour/greyscale thumbnails, sampled motion, reports and process logs.
+The images render at the recorded native backbuffer size, not the requested
+window size. Motion is sampled evidence, not a sustained-framerate benchmark.
+Docs/validation/flora-trail-water-flat.json records actual measured results.
+
+Recovery and limits
+Art/flora_water_flat_baseline.py snapshots all 41 existing MudTrial packages
+to D:/GrandTourAssets/Backups and verifies them along with the previous baseline
+chain. The former MudWet map and original water material remain recoverable.
+Drive-FloraTrail-Mud-Waves.bat opens that former version.
+Drive-FloraTrail-Mud.bat opens the flat-water candidate after verification.
+The bank/shore transition is still visibly hard in places. This change does not
+establish a reference-matched forest palette or sustained 60 fps. The broader
+A-G palette gate status remains explicitly separate in the validation record.
