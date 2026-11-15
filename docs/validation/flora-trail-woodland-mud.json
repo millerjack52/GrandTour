@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-15",
+  "change": "Pigment-only browner mud in the Woodland derivative",
+  "tint": [
+    1.12,
+    0.82,
+    0.6
+  ],
+  "stages": {
+    "candidate": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 8,
+      "native_size": [
+        1274,
+        682
+      ],
+      "material_audit": {
+        "material": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/MI_WoodlandBrownMud.MI_WoodlandBrownMud",
+        "tint": [
+          1.12,
+          0.82,
+          0.6
+        ],
+        "original_scalar_and_texture_overrides_preserved": true,
+        "normal_roughness_displacement_outputs_preserved": true
+      },
+      "geometry_and_lighting_unchanged": true,
+      "flat_water_preserved": true,
+      "protected_unchanged": true,
+      "report_sha256": "0657335856bd0385969d4ecbb467bb4fa1a0e3258515cb9ee0007857a91d3902"
+    },
+    "verify": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 4,
+      "native_size": [
+        1274,
+        682
+      ],
+      "material_audit": {
+        "material": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/MI_WoodlandBrownMud.MI_WoodlandBrownMud",
+        "tint": [
+          1.12,
+          0.82,
+          0.6
+        ],
+        "original_scalar_and_texture_overrides_preserved": true,
+        "normal_roughness_displacement_outputs_preserved": true
+      },
+      "geometry_and_lighting_unchanged": true,
+      "flat_water_preserved": true,
+      "protected_unchanged": true,
+      "report_sha256": "67c8b2e79a61e14cfe6e2acc9035a24770bf55acd49a2c27186bc21221909540"
+    }
+  },
+  "saved_map": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/L_FloraTrail_BrownMud",
+  "evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\WoodlandMud",
+  "visual_assessment": "Modest warmer brown on lit mud ridges; existing wet highlights and cool shaded regions remain.",
+  "performance": "not retested",
+  "driving": "not retested",
+  "motion": "not retested"
+}

@@ -1,0 +1,36 @@
+FloraTrail woodland: browner mud / 15 November 2026
+=================================================
+
+Requested change: make the mud a bit more brown.
+The road pigment alone is multiplied in linear colour by [1.12, 0.82, 0.60],
+before the existing moisture darkening and road/forest-floor blend. The
+original colour texture's variation is retained. Wet sheen, roughness, normal
+detail, parallax relief, displacement, deformation and flat water are unchanged.
+No light, fog, exposure, vegetation or rock change is included.
+
+The existing Woodland launcher opens the new map after verification:
+  /Game/GrandTour/ArtTests/FloraTrail/Woodland/BrownMud/L_FloraTrail_BrownMud
+The preceding Woodland/v3 map and all its 27 packages remain unchanged and
+backed up. Earlier baselines, source assets and LiDAR are also protected.
+Only the new map's GTMudRunnerVisual uses MI_WoodlandBrownMud; its parent
+copies the original M_VergeMud and inserts the pigment multiplier into the
+road colour input. Original scalar/texture overrides and normal, roughness
+and displacement output connections are audited.
+
+Reproduce from C:/GrandTour, one renderer at a time:
+  powershell -File Art/run_flora_woodland_mud.ps1 -Stage candidate
+  powershell -File Art/run_flora_woodland_mud.ps1 -Stage verify
+  python Art/review_flora_woodland_mud.py
+Settings: Art/flora_woodland_mud_settings.json.
+
+The candidate capture uses identical paused deformation, cameras and lighting
+with neutral and brown pigment multipliers. Verify opens the saved map in a
+fresh process and checks the stored multiplier without setting it at runtime.
+Native capture size is 1274 x 682. Source textures are awaited before capture.
+This pigment edit does not establish a new driving, motion or performance pass
+and does not change the broader woodland palette gate assessment.
+Run results: docs/validation/flora-trail-woodland-mud.json.
+
+Evidence: D:/GrandTourAssets/ReviewEvidence/FloraTrail/WoodlandMud/
+  road-comparison.jpg; before-after.jpg
+  candidate_*.png; verify_*.png; *-report.json; *-process.json; *.log
