@@ -1,0 +1,190 @@
+{
+  "date": "2026-11-15",
+  "scope": "Isolated FloraTrail Woodland v3 with original ferns",
+  "map": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/v3/L_FloraTrail_Woodland",
+  "launcher": "Drive-FloraTrail-Woodland.bat",
+  "stages": {
+    "candidate": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 44,
+      "native_capture_size": [
+        1274,
+        682
+      ],
+      "geometry_and_instances_unchanged": true,
+      "source_textures_preserved": true,
+      "original_ferns_preserved": true,
+      "slots_by_role": {
+        "rock": 32,
+        "litter": 1,
+        "grass": 1,
+        "bark": 4,
+        "canopy": 4,
+        "shrub": 3
+      },
+      "report_sha256": "f5252dac56e6f6a07a13cd7abfe84450678f346fe026e1cebc352716bbbf80fd"
+    },
+    "verify": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 13,
+      "native_capture_size": [
+        1274,
+        682
+      ],
+      "geometry_and_instances_unchanged": true,
+      "source_textures_preserved": true,
+      "original_ferns_preserved": true,
+      "slots_by_role": {
+        "rock": 32,
+        "litter": 1,
+        "grass": 1,
+        "bark": 4,
+        "canopy": 4,
+        "shrub": 3
+      },
+      "report_sha256": "fc6afece7e92a8e60b69d90f9533811e2821c6de4425a0294153d5e20baa89c6",
+      "saved_lighting": {
+        "sun_intensity": 15.680000305175781,
+        "sky_intensity": 1.2740000486373901,
+        "sun_ray": [
+          -0.2339085644581207,
+          -0.8102441445868996,
+          -0.5373929750525082
+        ],
+        "stored_light_colours": {
+          "sun": [
+            255,
+            242,
+            216,
+            255
+          ],
+          "sky": [
+            196,
+            221,
+            243,
+            255
+          ]
+        },
+        "fog": {
+          "fog_density": 0.04500000178813934,
+          "fog_height_falloff": 0.1599999964237213,
+          "start_distance": 1200.0,
+          "fog_max_opacity": 0.6499999761581421,
+          "volumetric_fog_extinction_scale": 0.6499999761581421,
+          "volumetric_fog_scattering_distribution": 0.3499999940395355,
+          "volumetric_fog_start_distance": 1000.0,
+          "volumetric_fog_near_fade_in_distance": 1400.0,
+          "fog_colour": [
+            0.2199999988079071,
+            0.3400000035762787,
+            0.4000000059604645
+          ],
+          "sun_volumetric_scattering": 0.2199999988079071
+        },
+        "exposure_bias": [
+          {
+            "actor": "FloraTrail_Display",
+            "bias": 0.0,
+            "override": true
+          }
+        ]
+      }
+    }
+  },
+  "settings": {
+    "revision": "v3",
+    "sun_energy": 16.0,
+    "sun_colour": [
+      1.0,
+      0.89,
+      0.69
+    ],
+    "sky_strength": 1.3,
+    "sky_colour": [
+      0.55,
+      0.72,
+      0.9
+    ],
+    "sun_ray": [
+      -0.233908564,
+      -0.810244143,
+      -0.537392974
+    ],
+    "sun_source_angle": 1.2,
+    "normal_blend": 0.78,
+    "fog_density": 0.045,
+    "fog_height_falloff": 0.16,
+    "start_distance": 1200.0,
+    "fog_max_opacity": 0.65,
+    "fog_colour": [
+      0.22,
+      0.34,
+      0.4
+    ],
+    "volumetric_fog_extinction_scale": 0.65,
+    "volumetric_fog_scattering_distribution": 0.35,
+    "volumetric_fog_start_distance": 1000.0,
+    "volumetric_fog_near_fade_in_distance": 1400.0,
+    "sun_volumetric_scattering": 0.22
+  },
+  "gates": {
+    "A": {
+      "status": "partial",
+      "reason": "Green/olive and repeated warm accents improve; cream accents and coloured shade remain weak.",
+      "evidence": "before-after.jpg"
+    },
+    "B": {
+      "status": "fail",
+      "reason": "Several crowns still read as flat opaque masses in colour and grey crops.",
+      "evidence": "semantic-crops.jpg"
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Shaded plants remain identifiable but colour and overlap separation are weak.",
+      "evidence": "semantic-crops.jpg"
+    },
+    "D": {
+      "status": "partial",
+      "reason": "Small moss rocks and plants share warmer sunlight; large grey rocks still appear disconnected.",
+      "evidence": "candidate_final_bank.png"
+    },
+    "E": {
+      "status": "pass",
+      "reason": "Near contact detail, separate middle trunks and cooler low-contrast distant forest in tested open lower-canopy view.",
+      "evidence": "verify_final_canopy.png"
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Palette persists in thumbnails and sampled motion; coarse foliage coverage and complete temporal behaviour remain unresolved.",
+      "evidence": "motion-contact-sheet.jpg"
+    },
+    "G": {
+      "status": "fail",
+      "reason": "Complete review set captured, but crown form fails and other appearance gates remain incomplete.",
+      "evidence": "reference-comparison.jpg"
+    }
+  },
+  "performance": "not tested",
+  "new_physical_driving_regression": "not tested",
+  "reference_match_accepted": false,
+  "lidar_rollout_approved": false,
+  "local_evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Woodland",
+  "limitations": [
+    "Motion GIF contains eight samples, not measured real-time footage.",
+    "Valley view is local test-section overview, not LiDAR.",
+    "No new enclosed forest corridor composition."
+  ],
+  "preservation": [
+    "Prior baselines and backup hashes verified before/after.",
+    "Original 159 ferns and materials preserved.",
+    "Mud, landscape and flat-water bindings preserved.",
+    "No new geometry or instance transforms.",
+    "Source textures and existing LODs retained."
+  ],
+  "retained_failed_runs": [
+    "failed-map-path-audit",
+    "failed-runtime-exposure-audit"
+  ]
+}

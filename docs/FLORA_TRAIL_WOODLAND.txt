@@ -1,0 +1,143 @@
+FloraTrail woodland candidate / 15 November 2026
+================================================
+
+Decision
+Keep the original 159 Flora Paint ferns, including their existing material.
+Woodland v3 is a separate, reviewable art-direction candidate. It is not a
+reference-matched result and is not approved for LiDAR rollout. Its palette
+is more coherent, but crown modelling by light and the procedural-looking
+rock distribution still fall short of the supplied woodland references.
+
+Play: C:/GrandTour/Drive-FloraTrail-Woodland.bat
+Map: /Game/GrandTour/ArtTests/FloraTrail/Woodland/v3/L_FloraTrail_Woodland
+Baseline: /Game/GrandTour/ArtTests/FloraTrail/FernSurface/L_FloraTrail_Fern
+The existing default launchers still open their previous maps.
+
+What changed
+45 component material slots use map-local copies: four canopy, four bark,
+three shrub, one grass, one litter and 32 rock slots. Source textures, UVs,
+meshes, LOD counts, component transforms and every instance transform remain
+unchanged. Original ferns, landscape, deformable mud and flat water retain
+their original material bindings. No LiDAR, isolated source-calibration or
+shared source asset changes are part of this candidate.
+
+Canopy pigment is cooler green, with restrained variation by instance.
+World-up normals blend toward signed mesh normals at 0.78; native two-sided
+foliage shading uses restrained subsurface colour (12% of base), roughness
+0.82 and specular 0.04. This is an artistic candidate, not a claim to reproduce
+Blender's shader. Camera-facing coverage uses the original coverage texture
+with a facing term; shadow passes retain the source coverage expression.
+This reduces fine visible stipple but leaves several large opaque-looking
+clusters. Geometry was not rebuilt to conceal that remaining failure.
+
+Ground plant families repeat coral/ochre in whole clumps, not random leaves.
+Bark receives a restrained cooler tint. Rocks retain their detailed source
+textures, with mineral tones moderated and green-dominant moss redirected
+toward olive. The large grey rock still reads separately in the road view;
+texture correctness does not make that a visual pass.
+
+Sun energy remains 16 (native 15.68), with its original direction restored.
+Sun colour is [1,0.89,0.69]; cool sky strength 1.3 (native 1.274), colour
+[0.55,0.72,0.90]. Sun source angle is 1.2. Exposure remains zero; the existing
+Standard display transform is retained. No global desaturation, blur,
+emissive foliage or new final colour grade was added.
+
+Depth was adjusted after the material/light comparisons: fog density 0.045,
+height falloff 0.16, start distance 1200 cm, maximum opacity 0.65; volumetric
+extinction 0.65, scattering distribution 0.35, start distance 1000 cm, near
+fade 1400 cm; fog colour [0.22,0.34,0.40], sun scattering 0.22.
+
+Controlled evidence and causes
+The prior independent pigment/normal/neutral-light/azimuth/display tests are
+documented in FLORA_TRAIL_PALETTE_DIAGNOSIS.txt. They found that world-up normals
+contribute to uniformly filled crowns, while neither tint alone nor neutral
+illumination restores source form. The Standard midgrey test passed; it is
+not a complete display-curve characterization. This pass preserves that
+display transform rather than introducing a compensating global grade.
+
+Three candidate iterations are retained locally. V1, with lower sunlight and
+direct texture coverage in all passes, made the road excessively dark and
+crowns too solid. V2 restored source shadow coverage and the original sun
+direction, improving ground light; its crowns and moss remained too lime.
+V3 tests native two-sided canopy shading and a separate moss-colour treatment.
+Those two changes concern different material families; this is not a claim
+that their individual contributions have been isolated by a single metric.
+
+V3 captures hold camera, FOV, display, exposure and quality fixed across:
+baseline; family materials/normals; camera coverage; lighting; final depth;
+and reverse sun azimuth. Five views cover road, mixed bank, lower canopy,
+upward crowns and an elevated overview. Reverse light covers the first three.
+Baseline and final each include eight samples from a short 48-step camera
+move. All game captures are native 1274 x 682, not upscaled evidence. Shaders
+and asynchronous textures are awaited, including 4K bark and the pine mask.
+No per-camera exposure or grading fixes are used.
+
+The elevated view is a local test-section overview, not a LiDAR valley.
+The under-canopy view has foreground, middle and distant layers, but it is
+still an open woodland composition rather than the reference's forest corridor.
+
+Visual gates (partial does not count as passed)
+A PALETTE: PARTIAL. Green/olive replaces much of the uniform yellow response,
+  and coral/ochre recurs through the bank. Cream accents and coloured shade
+  remain less convincing than the reference. See before-after/reference panels.
+B CROWN FORM: FAIL. Three crown crops and 320px grey views show variation, but
+  some foreground and elevated crowns still read as flat opaque leaf masses.
+  The native foliage variant reduces lime brightness without fully recovering
+  connected light-facing planes and intermediate volume. See semantic-crops.
+C SHADE: PARTIAL. Ferns, shrubs and trunks remain identifiable in shade;
+  cooler colour separation is weak and several overlapping clusters flatten.
+  See lit/shaded fern and bark crops and reverse-light bank.
+D MATERIAL COHESION: PARTIAL. Bark, plants and small moss rocks share warmer
+  sunlight more consistently. Large grey rocks and the repeated roadside
+  pebble distribution remain conspicuous. See mixed bank and road.
+E DEPTH: PASS for the tested lower-canopy composition. Near fern/contact
+  detail survives, middle trunks separate, and far forest loses contrast
+  into cooler haze. This does not certify an enclosed forest or LiDAR valley.
+F TWO SCALES / MOTION: PARTIAL. Colour groups read at thumbnail size and source
+  detail remains close up. The eight motion samples retain their palette, but
+  foliage coverage remains coarse and this sampled move cannot certify all
+  temporal shimmer, wind or vehicle-speed behaviour. No blur was used.
+G CONSISTENCY: FAIL. All required local views, reverse lighting and elevated
+  regression views were captured, but B fails and A/C/D/F are incomplete.
+Performance: NOT TESTED. Offscreen capture timing is not sustained 60 fps.
+Driving/reset regression: NOT TESTED in this pass. The same existing review
+strokes exercise the visible mud/water state; earlier physical driving results
+are not re-labelled as a new traversal test.
+
+Verification and recovery
+The runner protects prior baselines before and after each run and refuses to
+start beside another Unreal/Blender renderer or below its RAM/disk thresholds.
+No unrelated application is terminated. Baseline package hashes and the local
+backup are checked. Candidate material/level hashes must remain unchanged
+during capture; source texture bindings, mesh/instance data and fern bindings
+are asserted after save/reload. The verify stage opens a fresh editor process,
+audits saved light/fog/exposure before PIE, and does not reapply lighting.
+Runtime post-process bias fields are audited only when their override is set;
+an unused default bias of 1 is not an active exposure override.
+See validation/flora-trail-woodland.json for actual final run results.
+
+Reproduce from C:/GrandTour, one renderer at a time:
+  powershell -File Art/run_flora_woodland.ps1 -Stage candidate
+  powershell -File Art/run_flora_woodland.ps1 -Stage verify
+  python Art/review_flora_woodland.py
+Settings: Art/flora_woodland_settings.json. Material versions are immutable;
+increment revision before changing material construction to avoid stale reuse.
+Do not merge this candidate into shared source materials or LiDAR.
+
+Local evidence root
+D:/GrandTourAssets/ReviewEvidence/FloraTrail/Woodland/
+  before-after.jpg; reference-comparison.jpg
+  colour-thumbnails.jpg; greyscale-thumbnails.jpg
+  semantic-crops.jpg; stages-road.jpg; stages-bank.jpg
+  motion-contact-sheet.jpg; motion-samples.gif (sampled, not real-time fps)
+  candidate_*.png; verify_*.png; *-report.json; *-process.json; *.log
+  v1-review/; v2-review/ (earlier versions, not current results)
+  failed-map-path-audit/; failed-runtime-exposure-audit/ (retained failures)
+Original reference image paths remain in the existing reference-evidence.json;
+the review panel uses those actual files, not a generated approximation.
+
+Next visual priorities
+Recover connected canopy light/shade without making leaf cards into solid
+cutouts. Then compose less regular rock/plant groups with deliberate sunlit
+clearings and darker connecting areas. These are the largest remaining gaps;
+additional global tint or fog will not solve them. Keep the original ferns.
