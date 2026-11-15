@@ -1,0 +1,55 @@
+FloraTrail: selected owned Lazy Forest fern
+=========================================
+15 November 2026. Preparation only; Unreal testing remains explicitly on hold.
+
+Selection
+Use Lazy Forest Gen v2.0.5 Fern_02, following the user's choice to use the
+owned option in the fern shortlist. This replaces the pending generated-atlas
+experiment as the next candidate. No existing candidate files were deleted.
+
+Verified source facts
+Assets/Assets.blend contains seven fern objects. Fern_02 is a mesh with 1,683
+vertices, 2,816 triangles, one UVMap and one Plant material, with no modifiers.
+Its dimensions are approximately 0.771 x 0.718 x 0.424 metres. The material
+uses texture_a01.png (4K colour and alpha) and texture_a01_mask1.jpg (4K).
+The latter controls colour/translucency relationships; it is NOT the cutout
+mask. Cutout coverage comes from the colour atlas alpha. The shader also has
+colour mixes, RGB curves, object variation and a bump response from colour.
+Do not treat a plain FBX import or generic solid green material as a transfer
+of this appearance. Source appearance is not yet verified in Unreal.
+
+Completed preparation
+Art/Blender/export_lazy_fern.py appends only this object, audits the material
+graph, preserves an isolated Blender source object with its authored material,
+and exports an FBX with the pivot centred on the base. Original geometry and
+UVs are retained. A Blender FBX roundtrip passed vertex/triangle counts, UV
+layer names and physical dimensions. The purchased source file hash remained
+unchanged. Blender 5.1.2 was used only for inspection/export, not rendering;
+this is not a Blender-version lighting parity result.
+
+Local licensed outputs (excluded from the source repository):
+D:/GrandTourAssets/ReviewEvidence/FloraTrail/LazyFern/
+  source-audit.json
+  Fern02-source.blend
+  SM_LazyFern02.fbx
+The isolated blend references the original installed textures by absolute path.
+Keep that owned asset installation available; this is not a portable package.
+
+Pending work when the user resumes the held Unreal test
+1. Transfer/bake the actual authored pigment and bump response with source
+   coverage preserved. Keep colour, opacity and normal data correctly encoded.
+2. Import into a new FloraTrail/LazyFern candidate directory and duplicate the
+   current FernSurface map. Preserve the previous map, launcher and materials.
+3. Replace only the fern component's mesh/material. Keep instance locations and
+   record any deliberate footprint scaling. Inspect new LODs for frond loss;
+   the new model is about six times the current 460-triangle fern at LOD0.
+4. Check source versus Unreal close-up, then fixed-camera road/verge/fern
+   comparisons after texture loading, greyscale thumbnails and a motion pass.
+   Check palette gates A-G honestly; all remain untested for this new model.
+5. Verify saved/reloaded results and protected baseline hashes before promotion.
+   Preserve trees, bark, rocks, soil, deformable mud, flat water and LiDAR.
+
+Current state
+No Unreal process was launched and no Content package or launcher was edited.
+No model/material has been installed in the scene. Performance and visual fit
+remain unverified. Do not resume automatically just because memory is available.
