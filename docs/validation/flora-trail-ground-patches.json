@@ -1,0 +1,78 @@
+{
+  "status": "candidate partially captured; fresh verification held; not promoted",
+  "reason": "Skate started during render; task-owned Unreal stopped after free virtual memory fell below 2 GB",
+  "revision": "v2",
+  "selected_strength": 0.75,
+  "current_images": 17,
+  "current_process_exit": -1,
+  "current_report_ok": false,
+  "saved_reload_geometry_audit": true,
+  "foliage_bark_rock_materials_preserved": true,
+  "flat_water_binding_preserved": true,
+  "ground_material_audit": {
+    "terrain": {
+      "texture_samples": 15,
+      "non_verge_shader_programs_unchanged": true,
+      "displacement_and_mask_connections_unchanged": true
+    },
+    "overlay": {
+      "texture_samples": 31,
+      "non_verge_shader_programs_unchanged": true,
+      "displacement_and_mask_connections_unchanged": true
+    },
+    "mud": {
+      "material": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/GroundPatches/v2/MI_GroundPatchesMud.MI_GroundPatchesMud",
+      "tint": [
+        1.12,
+        0.82,
+        0.6
+      ],
+      "original_scalar_and_texture_overrides_preserved": true,
+      "normal_roughness_displacement_outputs_preserved": true
+    }
+  },
+  "texture_dimensions": {
+    "/Game/GrandTour/ArtTests/FloraDrive/T_ForestGround_01.T_ForestGround_01": [
+      2048,
+      2048
+    ],
+    "/Game/GrandTour/ArtTests/FloraDrive/T_ForestGround_01N.T_ForestGround_01N": [
+      2048,
+      2048
+    ],
+    "/Game/GrandTour/ArtTests/FloraDrive/T_ForestGround_02.T_ForestGround_02": [
+      2048,
+      2048
+    ],
+    "/Game/GrandTour/ArtTests/FloraDrive/T_ForestGround_02N.T_ForestGround_02N": [
+      2048,
+      2048
+    ],
+    "/Game/GrandTour/ArtTests/FloraDrive/T_ForestGround_03.T_ForestGround_03": [
+      2048,
+      2048
+    ],
+    "/Game/GrandTour/ArtTests/FloraDrive/T_ForestGround_03N.T_ForestGround_03N": [
+      2048,
+      2048
+    ]
+  },
+  "v1_images": 39,
+  "v1_status": "capture sequence complete, process 0, failed shader-warning guard during graph construction",
+  "fresh_verification": "not tested",
+  "motion": "8 sampled frames per profile in v1; v2 candidate motion not captured",
+  "gates_provisional": {
+    "A": "pass",
+    "B": "partial",
+    "C": "partial",
+    "D": "partial",
+    "E": "pass",
+    "F": "partial",
+    "G": "fail"
+  },
+  "explanation": "docs/FLORA_TRAIL_GROUND_PATCHES.txt",
+  "physical_driving": "not tested",
+  "performance": "not tested",
+  "default_launcher_changed": false,
+  "evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\GroundPatches"
+}

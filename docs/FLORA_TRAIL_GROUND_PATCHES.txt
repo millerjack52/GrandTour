@@ -1,0 +1,112 @@
+FloraTrail ground distribution candidate
+=======================================
+15 November 2026 local; render logs dated 16 November UTC.
+
+Current status: visually reviewable experiment, NOT promoted. The v2 run was
+stopped after 17 captures because Skate started while rendering and free
+virtual memory fell below 2 GB. Only this task's Unreal process was stopped;
+Skate was untouched. Saved map reload, geometry/material/lighting audits and
+floor texture dimensions passed before the captures, but report.ok remains
+false and process exit is -1. No fresh saved-map verification was run.
+The existing driving launcher remains unchanged. Do not infer a clean run,
+performance pass or complete implementation from the available screenshots.
+
+Scope and diagnosis
+The approved tree/undergrowth palette, CrownForm/v3 shading, brown wet mud and
+flat water are the baseline. The exposed verge has a pale moss strip and even
+fine mottling. Small green stones form conspicuous road-edge bands. The woodland
+reference instead has connected soil/moss/litter areas and irregular plant and
+rock groups. This first comparison isolates surface distribution; it does not
+change stone or plant placement, and does not claim to solve those bands.
+
+Implementation
+Separate map/material copies under
+/Game/GrandTour/ArtTests/FloraTrail/Woodland/GroundPatches/v2.
+The existing forest-floor wrapper in terrain and native overlay is extended
+with GroundPatchStrength. Current moss/litter weights blend toward larger
+irregular fields: 680 cm moss, 430 cm litter, 145 cm coordinate warp driven
+by a 240 cm field. Moss and litter share the coordinate field; litter coverage
+is restrained in strong moss regions. This avoids replacing the entire floor
+with one continuous green layer. Existing source texture tiling is retained.
+
+Profiles: baseline 0; patches .75; strong 1. Selected candidate is patches .75.
+Source albedo and normal samples, 2K resolution, original tint, roughness and
+existing fine detail remain. Colour and matching normal weights change outside
+the existing verge transition. The road-centre mask and 215-310 cm transition
+remain exactly the existing expressions. No new texture reads, POM settings,
+mud deformation, water bindings, lights, exposure or postprocess effects.
+No mesh, LOD, transform, instance count, plant material or rock material changes.
+The calibrated source bench, LiDAR and earlier baseline packages are protected.
+
+Review
+The full v1 set compares drive, mixed bank, near floor, canopy and valley at fixed cameras,
+plus eight sampled camera-move frames for every profile. Simulation is paused
+to keep the deformation/wind state common. The same two native tyre strokes
+are applied before the review; these are not a physical driving regression.
+Colour and greyscale sheets use 320 px wide images. Native images are 1274x682.
+The actual original woodland reference is included beside the Unreal bank.
+The current v2 partial set has all baseline views/motion and candidate drive,
+bank, floor and canopy. Candidate valley/motion and strong profile remain
+uncaptured in v2. Its ground-review.jpg uses only the new v2 bank/floor pairs.
+Full sheets and sampled motion under v1-build-warnings are explicitly from
+the earlier completed capture sequence, which failed the build-warning guard.
+
+Initial visual assessment
+The .75 variant replaces some pale moss strip with warmer soil and connected
+litter. The change is modest and most visible beside the road and under nearby
+plants. Fine texture survives; it is not a new painted texture or geometry pass.
+The full-strength variant adds more of that distribution but offers no clear
+reason to prefer it. The repeated bright green stones and isolated small plant
+clumps still dominate the composition. Those are the next ground-art priority;
+global darkening, desaturation or more texture noise would not remove repetition.
+
+Provisional visual gates from the available v2 views and complete v1 study
+A PASS: the approved vegetation palette remains; soil/litter warmth is locally
+  connected to the existing warm ground plants. No new global grade.
+B PARTIAL: crown form is unchanged, including the known broad flat fan faces.
+C PARTIAL: shaded plants retain colour; dense overlaps remain unresolved.
+D PARTIAL: floor colours blend more naturally, but bright small moss stones
+  and large grey rocks remain visibly disconnected. See bank/drive.
+E PASS for the tested canopy view: existing depth layers remain separate.
+F PARTIAL: broader floor colour groups help modestly; source detail survives
+  close up, but repeated geometry and the unfinished foliage limit the style.
+  v1 sampled motion does not certify continuous shimmer or wind behaviour;
+  candidate motion in v2 was not captured.
+G FAIL for full reference acceptance: B/C/D/F remain incomplete. Directional
+  light sweep NOT TESTED in this pass; no claim that earlier reverse-light
+  weaknesses are resolved.
+Sustained 60 fps and a new physical traversal/reset regression: NOT TESTED.
+
+Validation and recovery
+Art/flora_pine_brush_baseline.py already protects CrownForm/v3, verifies its
+recoverable copy and traverses the earlier source/LiDAR protection chain.
+The candidate asserts identical mesh/instance data, foliage/bark/rock slots,
+saved light settings and source texture bindings after save/reload. Every
+custom shader program except the floor wrapper must match the source exactly;
+displacement and mask output connections must also match. Brown mud scalar and
+texture overrides are checked against the established wet baseline.
+
+First v1 build completed captures and exited 0, but failed the runner because
+editing an attached custom node caused temporary missing-input compile warnings.
+That is a failed validation run, retained under v1-build-warnings. In v2 the
+three material outputs are detached while the input is added and wired, then
+restored before final compilation/saving. The visual shader formula is unchanged.
+No missing-input/fallback shader warnings were found in the v2 log before it
+was stopped. See candidate process/report and candidate-stopped.json for status.
+
+Disk headroom: 174 Saved/FloraTrailBackups files moved to
+D:/GrandTourAssets/Backups/FloraTrailBackups-20261115. All file hashes matched;
+a junction preserves the original paths. Nothing was deleted. No unrelated
+process was terminated and only one Unreal renderer ran at a time.
+
+Run from C:/GrandTour:
+powershell -File Art/run_flora_ground_patches.ps1 -Stage candidate
+python Art/review_flora_ground_patches.py
+powershell -File Art/run_flora_ground_patches.ps1 -Stage verify
+For the interrupted v2 images only, use review_flora_ground_patches.py --partial.
+Archive the stopped run before rerunning candidate; preserve its failure status.
+Evidence: D:/GrandTourAssets/ReviewEvidence/FloraTrail/GroundPatches
+No driving launcher was added or changed. Drive-FloraTrail-Woodland.bat remains
+on the approved CrownForm/v3 scene while the ground candidate awaits verification.
+Source/config/documentation only may be pushed; purchased textures,
+Unreal packages and image evidence stay outside the source commit.
