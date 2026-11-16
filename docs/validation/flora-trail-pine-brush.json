@@ -1,0 +1,35 @@
+{
+  "decision": "Keep approved CrownForm/v3; no brush probe promoted",
+  "candidate_images": 64,
+  "native_sizes": [
+    [
+      1274,
+      682
+    ]
+  ],
+  "candidate_process_exit": -1073741819,
+  "candidate_clean_pass": false,
+  "fresh_saved_baseline_verify_images": 16,
+  "verify_process_exit": 0,
+  "source_palette_preserved": true,
+  "protected_unchanged": true,
+  "geometry_unchanged": true,
+  "flat_water_preserved": true,
+  "gates": {
+    "A": "pass",
+    "B": "partial",
+    "C": "partial",
+    "D": "partial",
+    "E": "pass",
+    "F": "partial",
+    "G": "fail"
+  },
+  "gates_explained_in": "docs/FLORA_TRAIL_PINE_BRUSH.txt",
+  "motion": "8 camera samples per profile with simulation paused; not realtime shimmer or wind certification",
+  "direction_sweep": "not tested",
+  "performance": "not tested",
+  "evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\PineBrush",
+  "comparison": "pine-review.jpg",
+  "references": "references-threshold45.jpg",
+  "greyscale": "greyscale-thumbnails.jpg"
+}

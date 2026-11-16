@@ -1,6 +1,31 @@
-FloraTrail pine brushwork experiment - prepared, not rendered
-===========================================================
-15 November 2026
+FloraTrail pine brushwork experiment - captured, not promoted
+==========================================================
+15 November 2026 (render log UTC: 16 November)
+
+Latest result
+Four profiles produced 64 actual Unreal captures at 1274x682: eight fixed
+views and eight motion samples per profile. Geometry, material connections,
+texture bindings, lighting, mud and water assertions passed. The complete
+protected baseline chain passed inside the capture process.
+Threshold .45 opens some foliage gaps; .55 opens more and exposes more bare
+branches. Neither creates the missing painted variation inside broad leaf
+faces. Removing angle fading at .45 fills the crown back in. At thumbnail
+size the main effect is density, not a substantial improvement in painted form.
+Do not promote any of these probes. Keep selected=baseline and the approved
+CrownForm/v3 driving launcher. The palette remains unchanged.
+
+The completed candidate process exited with access violation -1073741819 after
+the log had closed, despite report.ok=true. No material compilation failure
+was found in the log. This run is NOT a clean technical pass. A separate
+saved-map verification is recorded in verify-report.json and verify-process.json.
+That fresh verification completed 16 captures and exited 0. It tested the saved
+baseline profile without reapplying brush parameters, and passed package hashes,
+geometry, lighting, source texture bindings and mud/water checks. It does not
+erase the candidate process failure or validate a saved non-baseline variant.
+The initial attempt hit a Python AttributeError reading opacity_mask_clip_value;
+fixed to get_editor_property. Failed evidence is retained under
+attempt1-property-error. Its report was archived before the runner read it,
+so that runner also reports a missing report; the original error is preserved.
 
 The user has approved the current colours. Preserve CrownForm/v3 pigment,
 normals, AO, subsurface colour, lighting, fog, exposure, bark and brown mud.
@@ -36,7 +61,7 @@ Other tree families and non-pine materials remain unchanged.
 Target: /Game/GrandTour/ArtTests/FloraTrail/Woodland/PineBrush/v1/L_FloraTrail_PineBrush
 The default selected profile is baseline until actual comparisons are reviewed.
 Drive-FloraTrail-Woodland.bat still launches the accepted CrownForm/v3 map.
-No new Unreal packages have been created by this preparation.
+The isolated map and one pine material now exist, saved with baseline enabled.
 flora_pine_brush_baseline.py backs up and hashes all three CrownForm/v3 packages
 and verifies the earlier protection chain, including LiDAR/source diagnostics.
 Runtime assertions compare geometry, LODs, transforms, texture bindings, saved
@@ -59,25 +84,39 @@ Texture dimensions alone do not certify that the desired mip was rendered;
 inspect close-up detail after the streaming wait. Check front/side/back light
 consistency separately before promoting anything; this probe holds light fixed.
 
-Validation status
-Python sources and generated Unreal runtime parse successfully.
-Recoverable baseline backup and complete earlier hash chain verified.
-Unreal API execution, shader compilation, saved reload, captures: NOT TESTED.
-Wardogs was using about 22 GB RAM with about 1 GB physical memory free.
-It was left running; no unrelated application was terminated.
+Validation history
+Python sources and generated Unreal runtime parse successfully. The initial
+preparation was held while Wardogs used about 22 GB RAM. No application was
+terminated. On the next request, Wardogs was absent and memory was available.
+Old Art/Export/FloraTrail files were relocated to
+D:/GrandTourAssets/ArchivedExports/FloraTrail-20261115, with a junction at their
+original path. All 1045 file hashes matched; the relocation manifest is beside
+that directory. This recovered render disk headroom without deleting evidence.
+Recoverable baseline backup and the complete earlier hash chain were verified.
+Unreal script and shader compilation, in-process saved reload and captures now
+completed; the shutdown failure above prevents a clean candidate process pass.
 Runner requires 8 GB physical, 12 GB virtual and 4 GB C: free and one renderer.
 The candidate runner was exercised: it verified the baseline then stopped at
 the memory guard before launching Unreal (2.52 GB physical / 2.03 GB virtual
 free at that check). candidate-preflight.json records the machine state.
 This expected preflight rejection is not a successful render or shader test.
 
-Gate A (palette): not tested for this experiment; approved palette is locked.
-Gate B (crown form): not tested; inspect both families, three crowns, grey/colour.
-Gate C (shade): not tested; check whether opened gaps damage shaded readability.
-Gate D (shared light): not tested; no lighting or other-material adjustments.
-Gate E (depth): not tested; compare canopy and valley to baseline.
-Gate F (painted character): not tested; primary objective of these probes.
-Gate G (consistency): not tested; directional-light regression still required.
+Gate A (palette): PASS for approved daylight colour hierarchy in this review;
+  green/olive, selective warm faces and ground accents remain. No new hue tuning.
+Gate B (crown form): PARTIAL; connected shade remains but the fan surfaces stay
+  broad and flat. Both families remain visible in drive/crowns/valley thumbnails.
+Gate C (shade): PARTIAL; green shade remains readable, but overlapping dark fans
+  still merge. Opening cutouts is not a substitute for internal form.
+Gate D (shared light): PARTIAL; ground, bark and plants retain the accepted
+  lighting; conspicuous grey rocks remain disconnected in the mixed bank view.
+Gate E (depth): PASS in the tested canopy view; near/middle/far layers remain
+  separate without a new foreground veil. No fog change or LiDAR claim.
+Gate F (painted character): PARTIAL; source silhouettes remain, but the probes
+  do not deliver a substantial painted-surface gain. Sampled motion retains
+  broad flat faces. Eight sampled frames do not certify temporal shimmer/wind.
+Gate G (consistency): FAIL for promotion because B/D/F remain incomplete across
+  the view set. Front/side/back direction sweep NOT TESTED in this experiment;
+  the earlier reverse-light weakness is not established as fixed.
 No new driving or 60 fps result. No claim of a reference match or visual gain.
 
 Evidence directory: D:/GrandTourAssets/ReviewEvidence/FloraTrail/PineBrush

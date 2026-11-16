@@ -40,7 +40,7 @@ def clone(source):
         coverage=next(n for n in nodes if isinstance(n,u.MaterialExpressionTextureSampleParameter2D) and str(n.get_editor_property('parameter_name'))=='SourceCoverage')
         old=M.get_material_property_input_node(m,u.MaterialProperty.MP_OPACITY_MASK)
         port=M.get_material_property_input_node_output_name(m,u.MaterialProperty.MP_OPACITY_MASK) or ''
-        assert abs(m.opacity_mask_clip_value-.35)<1e-5
+        assert abs(m.get_editor_property('opacity_mask_clip_value')-.35)<1e-5
         mask=g.custom(['Original','A','N','V','Enabled','Threshold','Facing'],'''#if SHADOW_DEPTH_SHADER
 return Original;
 #else

@@ -11,6 +11,9 @@ def main():
     review.O=O
     for view in VIEWS:
         review.panel([(case+' / '+view,O/f'candidate_{case}_{view}.png') for case in CASES],f'comparison-{view}.jpg')
+    labels={'baseline':'Current approved pine','threshold45':'Moderately opened brush gaps','threshold55':'Strongly opened brush gaps','fixed45':'Without view-angle fading'}
+    review.panel([(labels[case],O/f'candidate_{case}_pine_close.png') for case in CASES],'pine-review.jpg')
+    review.panel([(labels[case]+' / motion sample '+str(frame),O/f'candidate_{case}_motion_{frame:02d}.png') for frame in (0,18,42) for case in ('baseline','threshold45')],'motion-comparison.jpg')
     for grey in (False,True):
         sheet=Image.new('RGB',(1280,204*len(VIEWS)),(27,29,31));draw=ImageDraw.Draw(sheet)
         for row,view in enumerate(VIEWS):
