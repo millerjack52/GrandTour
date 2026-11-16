@@ -12,6 +12,18 @@ motion and a small amount of falling foliage, and measure the additional cost.
 Base: Woodland/GroundPatches/v2/L_FloraTrail_GroundPatches.
 Saved target: Woodland/Motion/v2/L_FloraTrail_Motion.
 
+Interactive preview
+Drive-FloraTrail-Motion-Preview.bat opens the saved Motion/v2 map in a visible
+game window. The normal Drive-FloraTrail and Drive-FloraTrail-Woodland launchers
+still open their existing maps WITHOUT this new wind/falling-leaf candidate.
+This distinction caused the user's missing-motion report; the normal launchers
+were intentionally not promoted after the performance failure, but an explicit
+interactive preview entry point was missing. The new launcher supplies it.
+The preview reserves the renderer slot while open, checks resources, and never
+closes other applications. Saved/Logs/FloraMotionPreview.log identifies the map.
+This makes the tested candidate accessible; it does not fix its GPU cost or
+change animation strength. Leaf sprites remain small and wind remains subtle.
+
 Foliage wind
 Clone only masked tree, pine, fern, shrub, grass and dry-grass materials.
 Keep pigment, mask, normals, roughness, subsurface, AO and texture bindings;
