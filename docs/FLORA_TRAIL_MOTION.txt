@@ -1,14 +1,16 @@
 FloraTrail foliage motion and falling-leaf study
 ==============================================
-16 November 2026. STATUS: testing held at the user's explicit request.
-The source implementation is prepared; no finished motion preview or performance
-result exists yet. No driving launcher was changed and LiDAR is untouched.
+16 November 2026. STATUS: motion captured; current wind FAILS performance.
+The user ended the testing hold. The first complete candidate run exited zero,
+produced 63 native captures and six timing windows. No driving launcher was
+changed and LiDAR is untouched. Fresh reload passed its scene checks, then
+Unreal exited with a shutdown access violation; clean verification remains FAIL.
 
 Intent
 Keep the approved painterly palette and the ground candidate, add gentle leaf
 motion and a small amount of falling foliage, and measure the additional cost.
 Base: Woodland/GroundPatches/v2/L_FloraTrail_GroundPatches.
-Target: Woodland/Motion/v2/L_FloraTrail_Motion (not generated yet).
+Saved target: Woodland/Motion/v2/L_FloraTrail_Motion.
 
 Foliage wind
 Clone only masked tree, pine, fern, shrub, grass and dry-grass materials.
@@ -21,9 +23,11 @@ The candidate replaces the old tiny whole-surface breeze rather than adding
 another breeze on top. The comparison's baseline restores original materials.
 Wind fades from 20 to 45 metres, with component WPO disabled beyond 50 metres.
 Displacement is bounded to 8 cm in the material. No added texture samples.
-Shadow-depth passes use zero new offset; existing rigid shadow caching remains.
-This deliberately keeps small flutter out of moving canopy shadows, avoiding
-continuous virtual-shadow cache invalidation. Inspect the visual trade-off.
+Shadow-depth passes use zero new offset and components request rigid cache
+behaviour. This keeps the intended small flutter out of moving canopy shadows,
+but DOES NOT establish efficient caching: measured ShadowDepths rose from 2.7
+to 23.4 ms. A reversible Static-cache override also failed to reduce that cost.
+Do not promote this wind on the assumption that the shader branch saves shadows.
 
 Falling leaves
 72 fixed instances in six small groups along the road; one instanced component.
@@ -51,7 +55,12 @@ Compare original materials/leaves hidden, wind only, and wind plus leaves.
 Fixed road, bank, canopy, valley and leaf-facing cameras use the same lighting.
 Capture 48 actual Unreal frames at 12 animation samples/second over four seconds.
 This deterministic sequence is a preview, not a statement about render FPS.
-review_flora_motion.py encodes native-resolution MP4 and a reduced GIF.
+Actual native captures are 1274x682, despite the requested 1600x900 window.
+review_flora_motion.py encodes native-resolution MP4 and a reduced GIF, plus
+colour/greyscale thumbnails and actual Unreal/reference comparison panels.
+The verify stage adds a 48-sample, four-second slow camera movement.
+An existing candidate map is reloaded and audited. Change the revision when
+changing material-generation settings; an existing map is not silently rebuilt.
 
 Performance protocol
 Separate from screenshots, unpause simulation and run real shader/game time.
@@ -65,6 +74,46 @@ and p95. Small differences may be noise; do not claim zero cost from small delta
 This is uncooked PIE/offscreen screening, not Shipping or a sustained driving
 60 fps certification. A moving-camera/vehicle check and broader visibility
 conditions remain necessary before a production performance claim.
+The fresh verify stage also measures baseline/leaves-only/leaves-only/baseline,
+so falling-leaf cost can be separated from the rejected wind implementation.
+
+Measured candidate results
+RTX 4050 Laptop GPU, D3D12, UE 5.8, uncooked offscreen PIE, native 1274x682,
+100% screen percentage, TSR, no motion blur, same fixed leaf-facing camera.
+Two ten-second windows per case, original materials restored for baseline.
+                    Mean GPU ms    Mean frame ms    Mean game-thread ms
+Original materials     13.696          16.678               10.965
+Wind only              36.343          37.426               10.942
+Wind + 72 leaves       37.365          38.478               10.993
+Wind GPU delta: +22.647 ms; combined GPU delta: +23.669 ms. The combined view
+averages about 26 frames/second in this harness. This fails the intended budget.
+Game-thread differences are within repeat variation. Render-thread/RHI-thread
+CSV channels were near zero and are invalid for claiming negligible CPU cost.
+Baseline GPU repeats were 12.994 and 14.398 ms: the roughly 1.022 ms combined-
+minus-wind difference alone is too small to certify an exact particle cost.
+GPU memory telemetry was retained with raw CSVs; no Shipping/60 fps claim.
+
+Separate leaves-only screening (fresh reload, completed before shutdown failure)
+Baseline GPU mean 12.276 ms; 72 falling leaves 12.503 ms: +.227 ms.
+Baseline repeat drift was 1.119 ms, larger than this effect. Treat the leaves as
+promising and apparently inexpensive in this view, not a certified .227 ms cost.
+Frame mean changed 16.678 to 16.862 ms; game-thread mean 12.793 to 13.333 ms.
+One leaves window included a GC event; raw hitches were retained, not trimmed.
+The retained exited Unreal entry from the earlier diagnostic was also present
+during this run. This is an additional resource/CPU-screening limitation.
+Minimum measured GPU memory headroom: 1788 MB in the original candidate run,
+1035 MB in fresh verification. This is not a wider memory-budget certification.
+
+Cause isolation
+The first diagnostic reload exited zero. GPU/ShadowDepths was 2.728 ms baseline
+versus 23.400 ms with wind; RenderVelocities was .166 versus 3.637 ms.
+Disabling vertex deformation returned GPU time to 14.194 ms. Canopy-only wind
+was 34.420 ms and undergrowth-only 19.410 ms. These are single screening windows,
+not independent frame-sample significance tests. Baseline drift reached 3.3 ms.
+Disabling motion-vector writes removed that pass but did not solve total cost.
+Static-cache overrides likewise left ShadowDepths around 23-25 ms. Neither
+override was saved or promoted. The expensive shadow path is identified; the
+engine mechanism that defeats the expected cache saving is not yet resolved.
 
 Validation history and current limitations
 Ground v2 verification was retried before this work. It completed its saved-map
@@ -74,31 +123,75 @@ Motion v1 compiled and saved the wind materials, then the leaf material failed:
 its grayscale mask had been given a Linear Color sampler. No motion map or
 captures were produced. The runner correctly rejected the attempt (process
 exit 0 but report.ok=false). Evidence is retained under v1-mask-sampler-error.
-The sampler was corrected to Linear Grayscale in source. v2 also removes the
-unused original-WPO evaluation and explicitly interpolates per-instance position
-for the falling-leaf distance fade. These changes await Unreal compilation.
-Wardogs started before v2 could launch. The preflight guard rejected rendering;
-its later working set was about 23 GB, leaving under 1 GB physical RAM free.
-The user explicitly answered: "Hold testing while I play". Wardogs was left
-untouched and no further Unreal launches are authorized during that hold.
-Python sources and assembled runtime pass syntax checks only. Those checks do
-not establish shader correctness, visible motion, clean saves or performance.
+The corrected Linear Grayscale sampler and explicit per-instance interpolation
+compiled in v2. The initial attempt then failed because editor material metadata
+was unavailable inside PIE. Original material paths are now captured before PIE.
+A retry tried to save over an existing map; the runner now reloads/audits it.
+Both failures are retained separately; neither counts as a passing test.
+Wardogs was never closed by automation. Its earlier hold ended only when the
+user explicitly requested these tests; it finished exiting before rendering.
+The Static-cache diagnostic completed its measurements, but its wrapper hung
+in WaitForExit after the engine log closed. Windows reported HasExited=true and
+native exit code zero while retaining an exited Unreal entry. Only that test's
+wrapper and matching crash monitor were closed. This is an incomplete wrapper,
+not a clean diagnostic verification. Evidence: v2-static-cache-isolation.
+The runner now polls HasExited, records exit status and remaining process entries,
+and excludes exited entries from the active-renderer guard. Memory/disk guards
+and the single-active-renderer mutex remain in place.
+Fresh verify produced 101 native captures (five fixed views, 48 animation frames,
+48 moving-camera frames), all four leaves-only timing windows, and passed all
+saved surface/geometry/light/source-preservation checks. All ten candidate package
+hashes match the first complete run. It then exited -1073741819 after log closure.
+The wrapper correctly failed. No further renderer was launched to hide this.
+Diagnostic exports require explicit --failed-process-evidence and have
+"failed-process" in their filenames; clean process results remain distinct.
+At the end, Windows still retained exited PID 14552 with about 4 GB working set;
+normal termination APIs reported no running instance. No unrelated app was closed.
+The remaining Windows cleanup issue is unresolved and may require a restart.
 
-Gates: animation quality NOT TESTED; falling-leaf appearance NOT TESTED;
-temporal stability NOT TESTED; culling/bounds NOT TESTED visually; incremental
-GPU/CPU cost NOT TESTED; sustained 60 fps NOT TESTED. Palette A-G are not newly
-passed by this source-only preparation. No new gameplay/physical regression run.
+Visual and performance gates
+Animation: PARTIAL - gentle crown/understory movement visible; four-second sample
+is too short to certify every distance, attachment and camera trajectory.
+Falling leaves: PARTIAL - sparse olive/ochre shapes tumble and descend; edge-on
+leaves become hard to see. No collision or ground accumulation is simulated.
+Temporal stability: PARTIAL - sampled sequence exists; continuous play and the
+full temporal response still require review beyond a sampled 12 fps preview.
+Culling/bounds: NOT TESTED across the entire fade/cull boundary.
+Incremental performance: FAIL for wind/combined; game-thread time stays similar.
+Leaves-only incremental cost: PARTIAL - small measured delta below repeat drift;
+the final process failure prevents a clean verified performance result.
+Sustained driving at 60 fps: NOT TESTED. No new physical driving/reset regression.
+
+Palette criteria, current motion review (not a new palette-tuning pass)
+A PASS: olive/green dominance and recurring ochre/coral accents survive motion.
+B PARTIAL: large crown masses remain readable at 320px; some close broadleaf
+  clusters still read as flat dark shapes, short of the reference's layering.
+C PARTIAL: shaded plant families remain distinguishable, but large near-leaf
+  overlaps lose internal detail. No emissive lift or new grade was introduced.
+D PARTIAL: ground/fern/bark share the light; the grey rocks remain less integrated
+  than the reference. Motion does not fix that existing material relationship.
+E PARTIAL: near/middle/far layers separate; haze is less selective than the path
+  reference and no atmospheric tuning was part of this change.
+F PARTIAL: source shapes survive close up and at thumbnail scale; fine coverage
+  noise remains, and a sampled clip cannot certify continuous temporal stability.
+G PARTIAL: road, canopy, bank and valley retain the same approved profile, but
+  incomplete B-F and untested full lighting-direction coverage prevent a pass.
+Evidence: colour-greyscale-review.jpg, reference-review.jpg, candidate-motion.mp4.
 
 Recovery and later execution
 flora_motion_baseline.py backs up/hash-checks the four GroundPatches/v2 packages
 and verifies the earlier CrownForm/source/LiDAR protection chain. All changes
 are isolated under Motion. The original driving launcher stays unchanged.
-After the user ends the testing hold and resources pass the guard:
+With resources passing the guard:
   powershell -File Art/run_flora_motion.ps1 -Stage candidate
   python Art/review_flora_motion.py
   powershell -File Art/run_flora_motion.ps1 -Stage verify
   python Art/review_flora_motion.py verify
-Inspect the actual video and repeated CSV measurements; tune count/amplitude/
-distance if necessary. Verify the saved map in a fresh process before promoting.
+To inspect the completed frames from this failed-shutdown verification only:
+  python Art/review_flora_motion.py verify --failed-process-evidence
+Optional diagnostic stage uses GT_FLORA_MOTION_PROFILE_CASES (comma-separated
+case names) to isolate wind, canopy, understory, velocity, cache and leaves.
+Inspect actual video and timing repeats before promotion. Current wind remains
+rejected on cost; do not hide that failure by reducing sunlight or image quality.
 Evidence root: D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion
 Commit source/config/docs only; keep purchased assets and Unreal packages local.

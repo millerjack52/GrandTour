@@ -1,35 +1,312 @@
 {
-  "status": "testing held by user; source prepared; not installed in driving scene",
-  "hold": "Hold testing while I play",
+  "date": "2026-11-16",
+  "status": "tested; wind rejected on GPU cost; clean fresh verification failed at shutdown",
   "revision": "v2",
-  "planned_leaf_count": 72,
-  "wind_fade_metres": [
-    20,
-    45
-  ],
-  "wind_disable_metres": 50,
-  "leaf_fade_metres": [
-    18,
-    32
-  ],
-  "leaf_cull_metres": 45,
-  "cpu_leaf_tick": false,
-  "leaf_collision": false,
-  "leaf_shadows": false,
-  "validation": {
-    "python_syntax": "pass",
-    "generated_runtime_syntax": "pass",
-    "v1_wind_material_compilation": "pass",
-    "v1_leaf_material_compilation": "fail - grayscale sampler mismatch",
-    "v2_unreal_compilation": "not tested",
-    "saved_scene": "not tested",
-    "animation_visual": "not tested",
-    "incremental_performance": "not tested",
-    "sustained_60fps": "not tested"
+  "saved_map": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/Motion/v2/L_FloraTrail_Motion",
+  "leaf_count": 72,
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "driver": "616.56",
+    "engine": "5.8.0",
+    "api": "D3D12",
+    "actual_capture_resolution": [
+      1274,
+      682
+    ],
+    "requested_window": [
+      1600,
+      900
+    ]
   },
-  "last_attempt": "v2 guard refused launch after Wardogs started",
-  "evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Motion",
+  "validation": {
+    "source_syntax": "pass",
+    "assembled_runtime_syntax": "pass",
+    "material_compilation": "pass",
+    "initial_candidate_process": "pass - exit 0",
+    "fresh_saved_scene_checks": "pass",
+    "fresh_verify_process": "fail - exit -1073741819 after completed checks and log closure",
+    "candidate_hashes_unchanged": true,
+    "candidate_packages": 10,
+    "protected_baselines": "pass - full protection chain rechecked after testing",
+    "wind_animation_visual": "partial",
+    "falling_leaf_visual": "partial",
+    "temporal_stability": "partial",
+    "full_culling_boundary": "not tested",
+    "wind_incremental_performance": "fail",
+    "leaves_incremental_performance": "partial - small delta below repeat drift; failed shutdown",
+    "sustained_60fps": "not tested",
+    "physical_driving_reset_regression": "not tested"
+  },
+  "palette_gates": {
+    "A": {
+      "status": "pass",
+      "reason": "Green/olive hierarchy and recurring warm accents preserved."
+    },
+    "B": {
+      "status": "partial",
+      "reason": "Readable thumbnail crown masses, but close broadleaf overlaps remain flat."
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Shaded families distinguishable; near dense leaf overlaps lose internal detail."
+    },
+    "D": {
+      "status": "partial",
+      "reason": "Plants, bark and soil share lighting; grey rocks remain less integrated than reference."
+    },
+    "E": {
+      "status": "partial",
+      "reason": "Depth layers separate; haze remains less selective than reference."
+    },
+    "F": {
+      "status": "partial",
+      "reason": "Source shapes retained; fine coverage noise and continuous temporal quality remain concerns."
+    },
+    "G": {
+      "status": "partial",
+      "reason": "Fixed road/canopy/bank/valley preserve profile; incomplete B-F prevents overall pass."
+    }
+  },
+  "candidate_performance": {
+    "scope": "Fixed camera, PIE/offscreen, uncooked; no screenshots in timing windows. Relative A/B only, not sustained driving or Shipping 60 fps.",
+    "cases": {
+      "baseline": {
+        "FrameTime": {
+          "mean_ms": 16.677713095158598,
+          "p95_ms": 16.67445,
+          "repeat_means_ms": [
+            16.688614190317196,
+            16.666812
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 13.696111433778519,
+          "p95_ms": 16.0949,
+          "repeat_means_ms": [
+            12.993820534223707,
+            14.398402333333333
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 10.965484420562047,
+          "p95_ms": 13.23785,
+          "repeat_means_ms": [
+            11.295204674457429,
+            10.635764166666666
+          ]
+        }
+      },
+      "wind": {
+        "FrameTime": {
+          "mean_ms": 37.42574414395528,
+          "p95_ms": 43.88785,
+          "repeat_means_ms": [
+            37.02582074074074,
+            37.825667547169814
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 36.34315640461216,
+          "p95_ms": 41.84375,
+          "repeat_means_ms": [
+            35.93884111111111,
+            36.74747169811321
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 10.94245142208246,
+          "p95_ms": 13.4055,
+          "repeat_means_ms": [
+            10.95130925925926,
+            10.933593584905662
+          ]
+        }
+      },
+      "both": {
+        "FrameTime": {
+          "mean_ms": 38.47760844336703,
+          "p95_ms": 44.43085,
+          "repeat_means_ms": [
+            38.19640877862595,
+            38.75880810810811
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 37.36508442998615,
+          "p95_ms": 43.12575,
+          "repeat_means_ms": [
+            37.11422175572519,
+            37.615947104247105
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 10.993013527513337,
+          "p95_ms": 13.293099999999999,
+          "repeat_means_ms": [
+            10.882830916030533,
+            11.10319613899614
+          ]
+        }
+      }
+    },
+    "difference_ms": {
+      "wind": {
+        "FrameTime": 20.748,
+        "GPUTime": 22.647,
+        "GameThreadTime": -0.023
+      },
+      "both": {
+        "FrameTime": 21.7999,
+        "GPUTime": 23.669,
+        "GameThreadTime": 0.0275
+      }
+    },
+    "limitations": [
+      "PIE/offscreen fixed camera; not Shipping or sustained driving",
+      "Two repeats per case; small deltas may be measurement noise",
+      "Playback is a deterministic sampled timeline, not a measured framerate"
+    ],
+    "process_exit_code": 0,
+    "warnings": [
+      "Duplicate counters preserved with # occurrence suffixes: FMsgLogf/FMsgLogfCount",
+      "RHIThreadTime missing or near zero; verify in Timing Insights",
+      "RenderThreadTime missing or near zero; verify in Timing Insights"
+    ],
+    "unreliable_metrics": [
+      "RenderThreadTime",
+      "RHIThreadTime"
+    ],
+    "native_capture_resolution": [
+      1274,
+      682
+    ]
+  },
+  "leaves_only_diagnostic_performance": {
+    "scope": "Fixed camera, PIE/offscreen, uncooked; no screenshots in timing windows. Relative A/B only, not sustained driving or Shipping 60 fps.",
+    "cases": {
+      "baseline": {
+        "FrameTime": {
+          "mean_ms": 16.67752683333333,
+          "p95_ms": 16.6725,
+          "repeat_means_ms": [
+            16.6799635,
+            16.675090166666667
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 12.275977,
+          "p95_ms": 14.272549999999999,
+          "repeat_means_ms": [
+            11.716528499999999,
+            12.8354255
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 12.792855416666667,
+          "p95_ms": 14.766549999999999,
+          "repeat_means_ms": [
+            12.573936,
+            13.011774833333334
+          ]
+        }
+      },
+      "leaves_only": {
+        "FrameTime": {
+          "mean_ms": 16.861779942578913,
+          "p95_ms": 16.6732,
+          "repeat_means_ms": [
+            16.672670617696163,
+            17.050889267461667
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 12.50281042054759,
+          "p95_ms": 14.59955,
+          "repeat_means_ms": [
+            12.215313856427379,
+            12.790306984667803
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 13.332597812225373,
+          "p95_ms": 15.3697,
+          "repeat_means_ms": [
+            12.994722370617696,
+            13.670473253833048
+          ]
+        }
+      }
+    },
+    "difference_ms": {
+      "leaves_only": {
+        "FrameTime": 0.1843,
+        "GPUTime": 0.2268,
+        "GameThreadTime": 0.5397
+      }
+    },
+    "limitations": [
+      "PIE/offscreen fixed camera; not Shipping or sustained driving",
+      "Two repeats per case; small deltas may be measurement noise",
+      "Playback is a deterministic sampled timeline, not a measured framerate",
+      "Measurements completed before shutdown failure; this is diagnostic evidence, not a clean saved verification"
+    ],
+    "process_exit_code": -1073741819,
+    "warnings": [
+      "RHIThreadTime missing or near zero; verify in Timing Insights",
+      "RenderThreadTime missing or near zero; verify in Timing Insights"
+    ],
+    "unreliable_metrics": [
+      "RenderThreadTime",
+      "RHIThreadTime"
+    ],
+    "native_capture_resolution": [
+      1274,
+      682
+    ]
+  },
+  "gpu_memory_minimum_headroom_mb": {
+    "candidate": 1788.3516,
+    "verify": 1035.3984
+  },
+  "diagnostic_findings": {
+    "baseline_shadow_depth_ms": 2.728,
+    "wind_shadow_depth_ms": 23.4,
+    "baseline_velocity_ms": 0.166,
+    "wind_velocity_ms": 3.637,
+    "wind_disabled_gpu_ms": 14.194,
+    "canopy_only_gpu_ms": 34.42,
+    "undergrowth_only_gpu_ms": 19.41,
+    "static_cache_override": "did not fix cost; not saved",
+    "velocity_write_override": "did not fix total cost; not saved",
+    "cache_mechanism": "unresolved; expensive shadow path measured, not an established engine bug"
+  },
+  "evidence": {
+    "root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Motion",
+    "clean_motion": "candidate-motion.mp4",
+    "fresh_motion_diagnostic": "verify-failed-process-motion.mp4",
+    "camera_move_diagnostic": "verify-failed-process-camera-move.mp4",
+    "colour_greyscale": "colour-greyscale-review.jpg",
+    "references_alongside_unreal": "reference-review.jpg",
+    "candidate_native_images": 63,
+    "verify_native_images": 101,
+    "preview": "48 deterministic samples over four seconds; not measured render framerate"
+  },
+  "failed_attempts": [
+    "v1-mask-sampler-error",
+    "v2-pie-metadata-error",
+    "v2-existing-map-save-error",
+    "v2-static-cache-isolation wrapper incomplete",
+    "verify late shutdown access violation"
+  ],
+  "cleanup": {
+    "active_renderers_at_completion": 0,
+    "retained_exited_unreal_pid": 14552,
+    "retained_working_set_approx_gib": 3.93,
+    "note": "Windows reports HasExited=true but retains the entry. Normal termination APIs report no running instance. Owned wrapper and matching crash monitor closed; Windows cleanup unresolved. This entry existed during final leaves-only timing."
+  },
   "launcher_changed": false,
   "lidar_changed": false,
-  "notes": "docs/FLORA_TRAIL_MOTION.txt"
+  "palette_changed": false,
+  "ground_mud_water_preserved": true,
+  "notes": "Docs/FLORA_TRAIL_MOTION.txt"
 }
