@@ -1,0 +1,104 @@
+FloraTrail foliage motion and falling-leaf study
+==============================================
+16 November 2026. STATUS: testing held at the user's explicit request.
+The source implementation is prepared; no finished motion preview or performance
+result exists yet. No driving launcher was changed and LiDAR is untouched.
+
+Intent
+Keep the approved painterly palette and the ground candidate, add gentle leaf
+motion and a small amount of falling foliage, and measure the additional cost.
+Base: Woodland/GroundPatches/v2/L_FloraTrail_GroundPatches.
+Target: Woodland/Motion/v2/L_FloraTrail_Motion (not generated yet).
+
+Foliage wind
+Clone only masked tree, pine, fern, shrub, grass and dry-grass materials.
+Keep pigment, mask, normals, roughness, subsurface, AO and texture bindings;
+change only the world-position-offset output. Preserve original assets and LODs.
+Use a height-rooted low-frequency gust plus spatially varied flutter. Maximum
+amplitude control is 3 cm for canopy, 1.5-2 cm for understory. Roots stay still.
+Canopy bark remains static; the small leaf offset is not branch skeleton motion.
+The candidate replaces the old tiny whole-surface breeze rather than adding
+another breeze on top. The comparison's baseline restores original materials.
+Wind fades from 20 to 45 metres, with component WPO disabled beyond 50 metres.
+Displacement is bounded to 8 cm in the material. No added texture samples.
+Shadow-depth passes use zero new offset; existing rigid shadow caching remains.
+This deliberately keeps small flutter out of moving canopy shadows, avoiding
+continuous virtual-shadow cache invalidation. Inspect the visual trade-off.
+
+Falling leaves
+72 fixed instances in six small groups along the road; one instanced component.
+Use the existing engine plane and a single isolated leaf from the original 4K
+Flora source coverage atlas. Its inspected UV rectangle is (.326,.019) to
+(.398,.106). No purchased texture is altered or committed. The first inspected
+rectangle clipped the shape and was corrected before successful material creation.
+Olive/ochre/restrained coral pigment stays within the scene's established roles.
+Shader time supplies 13-19 second cycles, downward travel, lateral drift and
+tumbling. Instances are 10-17 cm plane size; the cutout is smaller within that.
+Spawn/expiry opacity ramps hide the loop reset. No accumulated ground debris.
+No collision, particle lights, cast shadows, ray tracing, distance-field lighting
+or per-leaf CPU tick. The effect is an instanced shader animation, not Niagara
+simulation. It is bounded and placed locally; it does not follow the player or
+create particles across the whole world. It also does not collide with branches.
+Shader fade covers 18-32 metres horizontally; component culling ends at 45 metres.
+The 1250 cm WPO bound accommodates the fall and drift. This expanded bound is a
+trade-off to verify for culling; 72 leaves is a cap, not a measured GPU budget.
+
+Controls and review
+Art/flora_motion_settings.json holds distances, leaf count and timing duration.
+FloraWindCm/FloraWindEnabled control wind; FloraTimeOverride=-1 uses real time.
+Nonnegative overrides exist only for reproducible capture at chosen timestamps.
+Compare original materials/leaves hidden, wind only, and wind plus leaves.
+Fixed road, bank, canopy, valley and leaf-facing cameras use the same lighting.
+Capture 48 actual Unreal frames at 12 animation samples/second over four seconds.
+This deterministic sequence is a preview, not a statement about render FPS.
+review_flora_motion.py encodes native-resolution MP4 and a reduced GIF.
+
+Performance protocol
+Separate from screenshots, unpause simulation and run real shader/game time.
+At a fixed camera, record CSV for baseline/wind/both/both/wind/baseline, ten
+seconds each, with six seconds settling before each window and no screenshots
+inside a timing window. Baseline restores original materials, not just zero
+wind strength, so it does not retain candidate vertex-program cost.
+Use the existing CSV analyzer to retain frame/GPU/game-thread/render-thread
+distributions, raw captures and memory warnings. Compare both repeated means
+and p95. Small differences may be noise; do not claim zero cost from small deltas.
+This is uncooked PIE/offscreen screening, not Shipping or a sustained driving
+60 fps certification. A moving-camera/vehicle check and broader visibility
+conditions remain necessary before a production performance claim.
+
+Validation history and current limitations
+Ground v2 verification was retried before this work. It completed its saved-map
+checks/captures but exited -1073741819 after the log closed; it remains a failed
+process result, not a clean completed verification.
+Motion v1 compiled and saved the wind materials, then the leaf material failed:
+its grayscale mask had been given a Linear Color sampler. No motion map or
+captures were produced. The runner correctly rejected the attempt (process
+exit 0 but report.ok=false). Evidence is retained under v1-mask-sampler-error.
+The sampler was corrected to Linear Grayscale in source. v2 also removes the
+unused original-WPO evaluation and explicitly interpolates per-instance position
+for the falling-leaf distance fade. These changes await Unreal compilation.
+Wardogs started before v2 could launch. The preflight guard rejected rendering;
+its later working set was about 23 GB, leaving under 1 GB physical RAM free.
+The user explicitly answered: "Hold testing while I play". Wardogs was left
+untouched and no further Unreal launches are authorized during that hold.
+Python sources and assembled runtime pass syntax checks only. Those checks do
+not establish shader correctness, visible motion, clean saves or performance.
+
+Gates: animation quality NOT TESTED; falling-leaf appearance NOT TESTED;
+temporal stability NOT TESTED; culling/bounds NOT TESTED visually; incremental
+GPU/CPU cost NOT TESTED; sustained 60 fps NOT TESTED. Palette A-G are not newly
+passed by this source-only preparation. No new gameplay/physical regression run.
+
+Recovery and later execution
+flora_motion_baseline.py backs up/hash-checks the four GroundPatches/v2 packages
+and verifies the earlier CrownForm/source/LiDAR protection chain. All changes
+are isolated under Motion. The original driving launcher stays unchanged.
+After the user ends the testing hold and resources pass the guard:
+  powershell -File Art/run_flora_motion.ps1 -Stage candidate
+  python Art/review_flora_motion.py
+  powershell -File Art/run_flora_motion.ps1 -Stage verify
+  python Art/review_flora_motion.py verify
+Inspect the actual video and repeated CSV measurements; tune count/amplitude/
+distance if necessary. Verify the saved map in a fresh process before promoting.
+Evidence root: D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion
+Commit source/config/docs only; keep purchased assets and Unreal packages local.

@@ -1,0 +1,35 @@
+{
+  "status": "testing held by user; source prepared; not installed in driving scene",
+  "hold": "Hold testing while I play",
+  "revision": "v2",
+  "planned_leaf_count": 72,
+  "wind_fade_metres": [
+    20,
+    45
+  ],
+  "wind_disable_metres": 50,
+  "leaf_fade_metres": [
+    18,
+    32
+  ],
+  "leaf_cull_metres": 45,
+  "cpu_leaf_tick": false,
+  "leaf_collision": false,
+  "leaf_shadows": false,
+  "validation": {
+    "python_syntax": "pass",
+    "generated_runtime_syntax": "pass",
+    "v1_wind_material_compilation": "pass",
+    "v1_leaf_material_compilation": "fail - grayscale sampler mismatch",
+    "v2_unreal_compilation": "not tested",
+    "saved_scene": "not tested",
+    "animation_visual": "not tested",
+    "incremental_performance": "not tested",
+    "sustained_60fps": "not tested"
+  },
+  "last_attempt": "v2 guard refused launch after Wardogs started",
+  "evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Motion",
+  "launcher_changed": false,
+  "lidar_changed": false,
+  "notes": "docs/FLORA_TRAIL_MOTION.txt"
+}

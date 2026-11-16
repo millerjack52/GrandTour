@@ -1,0 +1,11 @@
+{
+  "revision": "v2",
+  "wind_fade_start_cm": 2000,
+  "wind_fade_end_cm": 4500,
+  "wind_disable_cm": 5000,
+  "leaf_count": 72,
+  "leaf_fade_start_cm": 1800,
+  "leaf_fade_end_cm": 3200,
+  "leaf_cull_cm": 4500,
+  "profile_seconds": 10
+}
