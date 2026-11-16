@@ -5,6 +5,25 @@ from PIL import Image,ImageDraw
 import imageio_ffmpeg
 import review_flora_woodland as review
 O=Path('D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion')
+SETTINGS=json.loads(Path('C:/GrandTour/Art/flora_motion_settings.json').read_text())
+if SETTINGS.get('evidence_subdir'):O=O/SETTINGS['evidence_subdir']
+
+def comparison(name,left,right,box):
+    """Side-by-side crops from actual engine frames; no invented motion or scaling."""
+    assert len(left)==len(right)==48
+    width=box[2]-box[0];height=box[3]-box[1]
+    args=[imageio_ffmpeg.get_ffmpeg_exe(),'-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{width*2}x{height+28}','-r','12','-i','-','-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(O/(name+'.mp4'))]
+    process=subprocess.Popen(args,stdin=subprocess.PIPE)
+    try:
+        for lp,rp in zip(left,right):
+            frame=Image.new('RGB',(width*2,height+28),(22,24,26));draw=ImageDraw.Draw(frame)
+            for x,path,label in ((0,lp,'Previous motion / v2'),(width,rp,'Revised motion / '+SETTINGS['revision'])):
+                with Image.open(path) as src:frame.paste(src.convert('RGB').crop(box),(x,28))
+                draw.text((x+8,8),label,fill='white')
+            process.stdin.write(frame.tobytes())
+        process.stdin.close();assert process.wait()==0
+    finally:
+        if process.poll() is None:process.kill();process.wait()
 def main(stage='candidate',failed_process_evidence=False):
     report=json.loads((O/(stage+'-report.json')).read_text());assert report['ok']
     process=json.loads((O/(stage+'-process.json')).read_text(encoding='utf-8-sig'))
@@ -23,6 +42,9 @@ def main(stage='candidate',failed_process_evidence=False):
     review.O=O
     review.panel([('Actual Unreal / t=%.2f s'%report['animation_times'][i],frames[i]) for i in (0,12,24,36)],label+'-motion-frames.jpg')
     if stage=='candidate':
+        if (O/'candidate_bush_both_000.png').exists():
+            comparison('tree-motion-before-after',sorted(O.parent.glob('candidate_animation_*.png')),frames,(0,80,600,560))
+            comparison('bush-motion-before-after',sorted(O.glob('candidate_bush_old_*.png')),sorted(O.glob('candidate_bush_both_*.png')),(60,300,660,640))
         review.panel([(case+' / '+view,O/f'candidate_{case}_{view}.png') for view in ('bank','leaves') for case in ('baseline','both')],'before-after.jpg')
         sheet=Image.new('RGB',(1280,4*200),(24,26,28));draw=ImageDraw.Draw(sheet)
         for row,view in enumerate(('drive','canopy','bank','valley')):

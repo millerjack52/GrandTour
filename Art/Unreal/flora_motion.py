@@ -6,14 +6,18 @@ import flora_ground_patches as ground
 import flora_woodland_materials as wood
 R=Path('C:/GrandTour');O=Path('D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion')
 CFG=json.loads((R/'Art/flora_motion_settings.json').read_text())
+if CFG.get('evidence_subdir'):O=O/CFG['evidence_subdir']
+O.mkdir(parents=True,exist_ok=True)
 D='/Game/GrandTour/ArtTests/FloraTrail/Woodland/Motion/'+CFG['revision']
 BASE=ground.MAP;MAP=D+'/L_FloraTrail_Motion'
 E=u.EditorAssetLibrary;M=u.MaterialEditingLibrary
-PLANTS={'SM_Exact_tree':3.,'SM_Exact_pine_f002':3.,'SM_Exact_fern':1.7,'SM_Exact_shrub':1.5,'SM_Exact_grass':2.,'SM_Exact_drygrass':1.7}
+PLANTS=CFG.get('plant_amplitudes_cm',{'SM_Exact_tree':3.,'SM_Exact_pine_f002':3.,'SM_Exact_fern':1.7,'SM_Exact_shrub':1.5,'SM_Exact_grass':2.,'SM_Exact_drygrass':1.7})
+SHADOW_ACTOR='FloraMotion_StaticShadows'
 
 def slots(world):
     result=[]
     for a in u.GameplayStatics.get_all_actors_of_class(world,u.Actor):
+        if a.get_actor_label()==SHADOW_ACTOR:continue
         for c in a.get_components_by_class(u.StaticMeshComponent):
             if not c.static_mesh or c.static_mesh.get_name() not in PLANTS:continue
             for i,m in enumerate(c.get_materials()):
@@ -35,7 +39,7 @@ def signature(m):
     textures=[(n.get_name(),n.get_editor_property('texture').get_path_name() if n.get_editor_property('texture') else None) for n in M.get_material_expressions(m) if isinstance(n,u.MaterialExpressionTextureSample)]
     return {'outputs':outputs,'textures':textures}
 
-def wind(source,amount):
+def wind(source,amount,canopy):
     path=D+'/M_Wind_'+hashlib.sha1(source.get_path_name().encode()).hexdigest()[:8]
     m=u.load_asset(path)
     if not m:
@@ -44,24 +48,45 @@ def wind(source,amount):
         pos=g.node(u.MaterialExpressionPreSkinnedPosition);bounds=g.node(u.MaterialExpressionBounds)
         q=g.custom(['P','Lo','Hi'],'return saturate((P-Lo)/max(Hi-Lo,float3(1,1,1)));')
         g.wire(pos,q,'P');g.wire(bounds,q,'Lo','Min');g.wire(bounds,q,'Hi','Max')
+        root=g.custom(['Lo','Hi'],'return float3((Lo.xy+Hi.xy)*.5,Lo.z);')
+        top=g.custom(['Lo','Hi'],'return float3((Lo.xy+Hi.xy)*.5,Hi.z);')
+        for n in (root,top):g.wire(bounds,n,'Lo','Min');g.wire(bounds,n,'Hi','Max')
+        points=[]
+        for n in (root,top):
+            world=g.node(u.MaterialExpressionTransformPosition,transform_source_type=u.MaterialPositionTransformSource.TRANSFORMPOSSOURCE_INSTANCE,transform_type=u.MaterialPositionTransformSource.TRANSFORMPOSSOURCE_WORLD)
+            g.wire(n,world,'');points.append(world)
         amp=g.node(u.MaterialExpressionScalarParameter,parameter_name='FloraWindCm',default_value=amount)
         enabled=g.node(u.MaterialExpressionScalarParameter,parameter_name='FloraWindEnabled',default_value=1.)
-        node=g.custom(['P','Local','Q','Camera','T','Amount','Enabled','Seed'],'''#if SHADOW_DEPTH_SHADER
+        node=g.custom(['P','Q','Root','Top','Camera','T','Amount','Enabled','Seed','Canopy'],'''#if SHADOW_DEPTH_SHADER
 // Keep cached canopy shadows stable; leaf flutter is a small visual offset.
 return float3(0,0,0);
 #else
 float fade=1.-smoothstep('''+str(CFG['wind_fade_start_cm'])+''','''+str(CFG['wind_fade_end_cm'])+''',distance(P,Camera));
-float root=smoothstep(.02,.60,Q.z);
-float phase=Seed*6.283185+dot(P.xy,float2(.0011,.0007));
-float gust=sin(T*.83+phase)*.65+sin(T*1.31+phase*.73)*.35;
-float flutter=sin(T*3.8+dot(Local,float3(.027,.019,.013))+Seed*11.);
-float3 offset=float3(.88,.38,.04)*gust*Amount*root;
-offset+=float3(.18,-.32,.32)*flutter*Amount*root;
+float phase=Seed*6.283185+dot(Root.xy,float2(.0007,.0004));
+float3 direction=normalize(float3(.92,.38,0));
+float3 offset;
+if (Canopy>.5) {
+    // Broad coherent tip movement, with the inner crown held near its branches.
+    // This material covers foliage only. Do not pin lower branches using a
+    // trunk-height mask: nearby low leaves need to move as well as the top.
+    float tip=smoothstep(.01,.10,Q.z)*lerp(.35,1.,smoothstep(.01,.22,length(Q.xy-.5)));
+    float gust=.8*sin(T*.90+phase+Q.z*1.2)+.2*sin(T*.47+phase*.7);
+    float flutter=sin(T*3.2+phase+dot(Q,float3(7,5,5)));
+    offset=direction*Amount*tip*gust+float3(-.38,.92,.22)*Amount*.22*tip*flutter;
+} else {
+    // A shared slow bend around the plant base. No per-vertex buzzing field.
+    float height=max(distance(Root,Top),1.);
+    float breeze=.75*sin(T*.85+phase)+.25*sin(T*.47+phase*1.7);
+    float angle=min(Amount/height,.06)*breeze*Q.z*smoothstep(.01,.12,Q.z);
+    float3 axis=float3(-direction.y,direction.x,0),v=P-Root;
+    float c=cos(angle),s=sin(angle);
+    offset=v*c+cross(axis,v)*s+axis*dot(axis,v)*(1.-c)-v;
+}
 return offset*fade*saturate(Enabled);
 #endif''')
-        for n,pin,out in [(g.node(u.MaterialExpressionWorldPosition),'P',''),(pos,'Local',''),(q,'Q',''),(g.node(u.MaterialExpressionCameraPositionWS),'Camera',''),(time_node(g),'T',''),(amp,'Amount',''),(enabled,'Enabled',''),(g.node(u.MaterialExpressionPerInstanceRandom),'Seed','')]:g.wire(n,node,pin,out)
+        for n,pin in [(g.node(u.MaterialExpressionWorldPosition),'P'),(q,'Q'),(points[0],'Root'),(points[1],'Top'),(g.node(u.MaterialExpressionCameraPositionWS),'Camera'),(time_node(g),'T'),(amp,'Amount'),(enabled,'Enabled'),(g.node(u.MaterialExpressionPerInstanceRandom),'Seed'),(g.scalar(1. if canopy else 0.),'Canopy')]:g.wire(n,node,pin)
         g.output(node,u.MaterialProperty.MP_WORLD_POSITION_OFFSET)
-        props(m,max_world_position_offset_displacement=8.)
+        props(m,max_world_position_offset_displacement=18. if canopy else 4.)
         E.set_metadata_tag(m,'FloraMotionSource',source.get_path_name())
     assert signature(m)==signature(source)
     assert not M.recompile_material(m);assert E.save_loaded_asset(m,False)
@@ -112,9 +137,61 @@ return float3(0,-sin(b),cos(b));''')
     assert not M.recompile_material(m);assert E.save_loaded_asset(m,False)
     return m
 
-def install(world):
+def shadow_key(actor,component):return actor+'/'+component
+
+def shadow_components(world):
+    result={}
+    for a in u.GameplayStatics.get_all_actors_of_class(world,u.Actor):
+        if a.get_actor_label()!=SHADOW_ACTOR:continue
+        for c in a.get_components_by_class(u.InstancedStaticMeshComponent):
+            tag=next(str(t) for t in c.get_editor_property('component_tags') if str(t).startswith('ShadowOf='))
+            result[tag.removeprefix('ShadowOf=')]=c
+    return result
+
+def install_shadows(world,rows):
+    actor=u.GTVehicleSetupLibrary.spawn_actor_of_class(world,u.Actor,u.Transform(),SHADOW_ACTOR)
+    seen=set()
+    for a,c,i,m in rows:
+        key=shadow_key(a,c.get_name())
+        if key in seen or not c.get_editor_property('cast_shadow'):continue
+        seen.add(key);assert isinstance(c,u.InstancedStaticMeshComponent)
+        transforms=[c.get_instance_transform(j,True) for j in range(c.get_instance_count())]
+        proxy=u.GTVegetationSubsystem.add_tagged_instances(actor,c.static_mesh,transforms,'StaticShadow_'+str(len(seen)),'NoCollision',True)
+        for index,material in enumerate(c.get_materials()):proxy.set_material(index,material)
+        proxy.set_cull_distances(c.get_editor_property('instance_start_cull_distance'),c.get_editor_property('instance_end_cull_distance'))
+        props(proxy,component_tags=['ShadowOf='+key],render_in_main_pass=False,render_in_depth_pass=False,visible_in_ray_tracing=False,affect_distance_field_lighting=False,shadow_cache_invalidation_behavior=u.ShadowCacheInvalidationBehavior.STATIC)
+        proxy.set_evaluate_world_position_offset(False)
+        c.set_cast_shadow(False)
+    actor.set_actor_tick_enabled(False)
+
+def audit_shadows(world):
+    proxies=shadow_components(world);seen=set();counts={}
     for a,c,i,m in slots(world):
-        c.set_material(i,wind(m,PLANTS[c.static_mesh.get_name()]))
+        key=shadow_key(a,c.get_name())
+        if key not in proxies or key in seen:continue
+        seen.add(key);p=proxies[key]
+        assert not c.get_editor_property('cast_shadow')
+        assert p.get_editor_property('cast_shadow') and not p.get_editor_property('render_in_main_pass') and not p.get_editor_property('render_in_depth_pass')
+        assert not p.get_editor_property('evaluate_world_position_offset')
+        assert p.static_mesh==c.static_mesh and p.get_instance_count()==c.get_instance_count()
+        assert all(p.get_editor_property(k)==c.get_editor_property(k) for k in ('instance_start_cull_distance','instance_end_cull_distance'))
+        for j in range(c.get_instance_count()):
+            x=c.get_instance_transform(j,True);y=p.get_instance_transform(j,True)
+            assert (x.translation-y.translation).length()<.01 and (x.scale3d-y.scale3d).length()<.001
+            xx=x.rotation.to_tuple();yy=y.rotation.to_tuple()
+            assert min(max(abs(v-w) for v,w in zip(xx,yy)),max(abs(v+w) for v,w in zip(xx,yy)))<.001
+        for j,material in enumerate(c.get_materials()):
+            source=E.get_metadata_tag(material,'FloraMotionSource') if isinstance(material,u.Material) else ''
+            assert p.get_material(j).get_path_name()==(source or material.get_path_name())
+        counts[key]=c.get_instance_count()
+    assert seen==set(proxies)
+    return {'components':len(proxies),'shadow_only_instances':sum(counts.values()),'instance_counts':counts,'visible_geometry_duplicated':False,'original_materials_transforms_lods_verified':True}
+
+def install(world):
+    rows=slots(world)
+    if CFG.get('static_shadow_proxies'):install_shadows(world,rows)
+    for a,c,i,m in rows:
+        c.set_material(i,wind(m,PLANTS[c.static_mesh.get_name()],c.static_mesh.get_name() in ('SM_Exact_tree','SM_Exact_pine_f002')))
         props(c,world_position_offset_disable_distance=CFG['wind_disable_cm'],shadow_cache_invalidation_behavior=u.ShadowCacheInvalidationBehavior.RIGID)
     actor=u.GTVehicleSetupLibrary.spawn_actor_of_class(world,u.Actor,u.Transform(),'FloraMotion_FallingLeaves')
     surface=u.GameplayStatics.get_all_actors_of_class(world,u.GTLandscapeSurface)[0]
@@ -136,7 +213,7 @@ def leaf_components(world):
     return [c for a in u.GameplayStatics.get_all_actors_of_class(world,u.Actor) if a.get_actor_label()=='FloraMotion_FallingLeaves' for c in a.get_components_by_class(u.InstancedStaticMeshComponent)]
 
 def geometry(world):
-    rows=[r for r in ground.geometry(world) if r['actor']!='FloraMotion_FallingLeaves']
+    rows=[r for r in ground.geometry(world) if r['actor'] not in ('FloraMotion_FallingLeaves',SHADOW_ACTOR)]
     data=json.dumps(rows)
     for root in (BASE,MAP):data=data.replace(root+'.'+root.rsplit('/',1)[-1],'<ReviewWorld>').replace(root,'<ReviewMap>')
     return json.loads(data)

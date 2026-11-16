@@ -1,5 +1,15 @@
 {
-  "revision": "v2",
+  "revision": "v4",
+  "evidence_subdir": "v4",
+  "static_shadow_proxies": true,
+  "plant_amplitudes_cm": {
+    "SM_Exact_tree": 12.0,
+    "SM_Exact_pine_f002": 10.0,
+    "SM_Exact_fern": 1.4,
+    "SM_Exact_shrub": 1.8,
+    "SM_Exact_grass": 1.6,
+    "SM_Exact_drygrass": 1.2
+  },
   "wind_fade_start_cm": 2000,
   "wind_fade_end_cm": 4500,
   "wind_disable_cm": 5000,

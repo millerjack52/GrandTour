@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-16",
+  "status": "v4 source prepared; Unreal tests held while Wardogs runs",
+  "configured_revision": "v4",
+  "interactive_preview_revision": "v2",
+  "v2_user_feedback": "tree leaves barely move; bush animation looks bad",
+  "v2_preservation_manifest": "D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion/baseline-v2.json",
+  "v3_attempt": {
+    "report_ok": false,
+    "process_exit_code": 0,
+    "capture_count": 159,
+    "error": "Traceback (most recent call last):\n  File \"D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Motion\\v3\\runtime.py\", line 285, in tick\n    if time.monotonic()>=state['due']:state['due']=time.monotonic()+next(steps)\n                                                                    ^^^^^^^^^^^\n  File \"D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Motion\\v3\\runtime.py\", line 252, in run\n    report['profile_runs'].append({'case':case,'csv':str(dest),'analysis':analyse(dest)})\n                                                                          ^^^^^^^^^^^^^\n  File \"C:\\GrandTour\\Art\\tools\\benmore_profile_metrics.py\", line 123, in analyse\n    raise ValueError(\"Too few frames or missing GPUTime\")\nValueError: Too few frames or missing GPUTime\n",
+    "shadow_proxy_audit": {
+      "components": 4,
+      "shadow_only_instances": 2843,
+      "instance_counts": {
+        "FloraTrail_SourceFoliage/ISM_SM_Exact_fern_0": 159,
+        "FloraTrail_SourceFoliage/ISM_SM_Exact_pine_0": 92,
+        "FloraTrail_SourceFoliage/ISM_SM_Exact_shrub_0": 2524,
+        "FloraTrail_SourceFoliage/ISM_SM_Exact_tree_0": 68
+      },
+      "visible_geometry_duplicated": false,
+      "original_materials_transforms_lods_verified": true
+    },
+    "timing_valid": false,
+    "timing_invalid_reason": "Wardogs started after preflight; 20 timing frames, all over GPU memory budget",
+    "minimum_gpu_memory_headroom_mb": -1646.8046,
+    "evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Motion\\v3",
+    "visual_result": "nearby lower branches still too constrained; superseded by untested v4 mask",
+    "cull_distance_copy_audit": "not tested - source added after v3 module loaded"
+  },
+  "v4_validation": {
+    "python_and_generated_runtime_syntax": "pass",
+    "preflight_blocks_Wardogs": "pass - observed refusal without renderer launch",
+    "protected_baselines": "pass",
+    "material_compilation": "not tested",
+    "saved_reload": "not tested",
+    "tree_motion_readability": "not tested",
+    "bush_motion_quality": "not tested",
+    "temporal_stability": "not tested",
+    "shadow_memory_and_performance": "not tested",
+    "sustained_driving_60fps": "not tested"
+  },
+  "unchanged": [
+    "source textures and LOD assets",
+    "approved palette",
+    "mud",
+    "flat water",
+    "LiDAR",
+    "normal launchers",
+    "preview launcher target"
+  ],
+  "notes": "Docs/FLORA_TRAIL_MOTION_REFINEMENT.txt"
+}

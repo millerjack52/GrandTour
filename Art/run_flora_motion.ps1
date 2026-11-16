@@ -2,12 +2,15 @@ param([ValidateSet('candidate','verify','save','diagnose')][string]$Stage='candi
 $ErrorActionPreference='Stop'
 Set-Location C:/GrandTour
 $out='D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion'
+$settings=Get-Content Art/flora_motion_settings.json -Raw | ConvertFrom-Json
+if($settings.evidence_subdir) {$out=Join-Path $out $settings.evidence_subdir}
 New-Item -ItemType Directory -Force $out | Out-Null
 $mutex=[Threading.Mutex]::new($false,'Local\GrandTour-BenmoreProfiling');$held=$false
 try {
  try {$held=$mutex.WaitOne(0)} catch [Threading.AbandonedMutexException] {$held=$true}
  if(-not $held) {throw 'Renderer slot reserved'}
  if(Get-Process UnrealEditor,UnrealEditor-Cmd,blender -ErrorAction SilentlyContinue | Where-Object {-not $_.HasExited}) {throw 'Renderer already running'}
+ if(Get-Process 'Wardogs*' -ErrorAction SilentlyContinue | Where-Object {-not $_.HasExited}) {throw 'Wardogs is running; render testing is held. No application was closed.'}
  python Art/flora_motion_baseline.py
  if($LASTEXITCODE -ne 0) {throw 'Protected baseline changed'}
  $os=Get-CimInstance Win32_OperatingSystem

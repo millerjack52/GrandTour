@@ -14,5 +14,16 @@ def verify():
  for p,h in data['hashes'].items():
   assert sha(root/p)==h,p
   assert sha(Path(data['backup'])/p)==h,p
+ # Keep the rejected v2 animation recoverable while trying different motion.
+ old=R/'Content/GrandTour/ArtTests/FloraTrail/Woodland/Motion/v2'
+ manifest=O/'baseline-v2.json'
+ if old.is_dir():
+  if not manifest.exists():
+   backup=Path('D:/GrandTourAssets/Backups')/('flora-motion-v2-'+str(time.time_ns()));shutil.copytree(old,backup)
+   manifest.write_text(json.dumps({'backup':str(backup),'hashes':{p.relative_to(old).as_posix():sha(p) for p in old.rglob('*') if p.is_file()}},indent=2))
+  prior=json.loads(manifest.read_text());assert len(prior['hashes'])==10
+  for p,h in prior['hashes'].items():
+   assert sha(old/p)==h,p
+   assert sha(Path(prior['backup'])/p)==h,p
  return data
 if __name__=='__main__':print(json.dumps({'protected_ground_packages':len(verify()['hashes'])}))

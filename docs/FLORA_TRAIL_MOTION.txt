@@ -1,5 +1,8 @@
 FloraTrail foliage motion and falling-leaf study
 ==============================================
+Follow-up: FLORA_TRAIL_MOTION_REFINEMENT.txt records the user's rejection of v2
+tree/bush animation, the resource-invalid v3 attempt and pending v4 source.
+The measured results below remain historical v2 evidence.
 16 November 2026. STATUS: motion captured; current wind FAILS performance.
 The user ended the testing hold. The first complete candidate run exited zero,
 produced 63 native captures and six timing windows. No driving launcher was
