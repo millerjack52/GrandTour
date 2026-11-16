@@ -1,0 +1,85 @@
+FloraTrail pine brushwork experiment - prepared, not rendered
+===========================================================
+15 November 2026
+
+The user has approved the current colours. Preserve CrownForm/v3 pigment,
+normals, AO, subsurface colour, lighting, fog, exposure, bark and brown mud.
+The remaining objective is foliage that reads as painted at close and driving
+distances, without losing coherent crown shapes or becoming noisy in motion.
+
+Observation and hypothesis
+The original 4K SourceCoverage atlas contains painted streaks and rough edges.
+It contains multiple shapes mapped through UV0; the separate pigment atlas
+uses UV1. No replacement texture is required to begin this experiment.
+Current camera coverage is A*(.15+.85*abs(N dot V)^.7), clipped at .35.
+That threshold and angle response may suppress useful brush character, but
+this is not yet demonstrated. Higher thresholds can also destroy thin strokes.
+Removing angle attenuation can make crowns denser. Either may be rejected.
+
+Prepared probes (same source texture sampling and existing mips)
+- baseline: exact inherited CrownForm/v3 output.
+- threshold45: change only the camera coverage threshold to .45.
+- threshold55: change only the camera coverage threshold to .55.
+- fixed45: .45 threshold, remove camera-angle attenuation; compare to threshold45.
+The original shadow-depth branch is returned unchanged in every probe.
+No temporal dither, pigment noise, emissive, sharpen, blur or new colour tint.
+Material clip stays .35; output offset implements the tested threshold.
+These are diagnostic probes, not a claim that a threshold can create new
+brush strokes or solve broad branch shape and normal problems.
+
+Isolation and protection
+Only SM_Exact_pine_f002 canopy slots in a new map receive cloned materials.
+All instances of that pine share the probe so scene context can be reviewed.
+Additional cameras target one deterministically selected existing pine at
+close, middle and far distances; their framing still needs Unreal review.
+Other tree families and non-pine materials remain unchanged.
+Target: /Game/GrandTour/ArtTests/FloraTrail/Woodland/PineBrush/v1/L_FloraTrail_PineBrush
+The default selected profile is baseline until actual comparisons are reviewed.
+Drive-FloraTrail-Woodland.bat still launches the accepted CrownForm/v3 map.
+No new Unreal packages have been created by this preparation.
+flora_pine_brush_baseline.py backs up and hashes all three CrownForm/v3 packages
+and verifies the earlier protection chain, including LiDAR/source diagnostics.
+Runtime assertions compare geometry, LODs, transforms, texture bindings, saved
+lighting and non-coverage material output connections after map reload.
+
+Run when memory is available
+powershell -File C:/GrandTour/Art/run_flora_pine_brush.ps1 -Stage candidate
+python C:/GrandTour/Art/review_flora_pine_brush.py
+Inspect the native captures, colour and grey thumbnails and sampled motion.
+Only if a probe is visibly better, set selected in flora_pine_brush_settings.json
+to that profile, run -Stage save, then -Stage verify in a fresh process.
+Do not repoint the driving launcher before visual review and saved verification.
+Keep failed or inconclusive probes as evidence rather than calling them wins.
+
+The harness retains open road, bank, canopy, crowns and valley views, and adds
+the individual pine views. Every probe uses identical cameras and light.
+It records actual screenshot dimensions and waits for texture loads and
+temporal settling. Eight motion samples are not a realtime stability/FPS test.
+Texture dimensions alone do not certify that the desired mip was rendered;
+inspect close-up detail after the streaming wait. Check front/side/back light
+consistency separately before promoting anything; this probe holds light fixed.
+
+Validation status
+Python sources and generated Unreal runtime parse successfully.
+Recoverable baseline backup and complete earlier hash chain verified.
+Unreal API execution, shader compilation, saved reload, captures: NOT TESTED.
+Wardogs was using about 22 GB RAM with about 1 GB physical memory free.
+It was left running; no unrelated application was terminated.
+Runner requires 8 GB physical, 12 GB virtual and 4 GB C: free and one renderer.
+The candidate runner was exercised: it verified the baseline then stopped at
+the memory guard before launching Unreal (2.52 GB physical / 2.03 GB virtual
+free at that check). candidate-preflight.json records the machine state.
+This expected preflight rejection is not a successful render or shader test.
+
+Gate A (palette): not tested for this experiment; approved palette is locked.
+Gate B (crown form): not tested; inspect both families, three crowns, grey/colour.
+Gate C (shade): not tested; check whether opened gaps damage shaded readability.
+Gate D (shared light): not tested; no lighting or other-material adjustments.
+Gate E (depth): not tested; compare canopy and valley to baseline.
+Gate F (painted character): not tested; primary objective of these probes.
+Gate G (consistency): not tested; directional-light regression still required.
+No new driving or 60 fps result. No claim of a reference match or visual gain.
+
+Evidence directory: D:/GrandTourAssets/ReviewEvidence/FloraTrail/PineBrush
+Source/config/documentation may be committed; purchased textures, meshes,
+maps and generated image evidence must stay outside the source commit.
