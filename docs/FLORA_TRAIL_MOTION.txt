@@ -1,7 +1,9 @@
 FloraTrail foliage motion and falling-leaf study
 ==============================================
 Follow-up: FLORA_TRAIL_MOTION_REFINEMENT.txt records the user's rejection of v2
-tree/bush animation, the resource-invalid v3 attempt and pending v4 source.
+tree/bush animation, resource-invalid v3 attempt, and cleanly verified v4 with
+separate tree/plant motion and much lower measured GPU cost. Motion Preview now
+opens v4. The original v2 map remains available through -Revision v2.
 The measured results below remain historical v2 evidence.
 16 November 2026. STATUS: motion captured; current wind FAILS performance.
 The user ended the testing hold. The first complete candidate run exited zero,
@@ -16,7 +18,7 @@ Base: Woodland/GroundPatches/v2/L_FloraTrail_GroundPatches.
 Saved target: Woodland/Motion/v2/L_FloraTrail_Motion.
 
 Interactive preview
-Drive-FloraTrail-Motion-Preview.bat opens the saved Motion/v2 map in a visible
+Originally Drive-FloraTrail-Motion-Preview.bat opened Motion/v2 in a visible
 game window. The normal Drive-FloraTrail and Drive-FloraTrail-Woodland launchers
 still open their existing maps WITHOUT this new wind/falling-leaf candidate.
 This distinction caused the user's missing-motion report; the normal launchers

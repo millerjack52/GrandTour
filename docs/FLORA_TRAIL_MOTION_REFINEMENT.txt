@@ -1,8 +1,9 @@
 FloraTrail: separate tree-tip movement from rooted undergrowth bending
 ==================================================================
-16 November 2026. STATUS: v4 source prepared; Unreal testing held while Wardogs
-runs. No visual or performance success is claimed for v4. The interactive
-Motion Preview launcher still opens v2, not this unverified revision.
+16 November 2026. STATUS: v4 candidate and fresh verification completed, both
+with process exit zero. Motion Preview now opens v4 for interactive review.
+The normal driving launchers and LiDAR remain unchanged. A sustained driving
+60 fps result and final user approval of the animation are still outstanding.
 
 User finding
 The actual v2 preview barely moves the tree leaves and the bushes animate badly.
@@ -12,7 +13,7 @@ and a spatially varying faster flutter on bushes. A whole-tree height mask also
 attenuated nearby lower branches. Increasing only the nominal amplitude would
 not fix that masking or the undergrowth's deformation style.
 
-Prepared changes
+Implemented candidate changes
 - Broadleaf canopy amplitude control 12 cm; pine 10 cm. These are maximum input
   controls, not measured screen displacement. Coherent gusts and smaller lateral
   tip flutter replace the previous local-position high-frequency field.
@@ -20,7 +21,8 @@ Prepared changes
   35 percent interior influence and stronger outside influence. Only leaf
   materials deform; the bark mesh is unchanged. This is an approximation using
   mesh bounds, not per-leaf pivots or an authored branch skeleton. Attachment
-  quality and silhouette readability still require actual Unreal review.
+  quality still needs broader review; the fixed-camera captures now show
+  readable nearby lower-branch motion where v2/v3 barely moved.
 - Shrubs and ferns bend slowly around an instance-space base transformed to
   world space. The offset is rotational, height weighted and anchored at the
   bottom, with no fast per-vertex flutter. Controls: shrub 1.8 cm, fern 1.4 cm,
@@ -33,7 +35,8 @@ Prepared changes
   rendering, collision, ray tracing and distance-field lighting. Visible wind
   components stop casting shadows; baseline profiling restores their original
   materials/shadows and hides proxies. This duplicates shadow instances, not
-  visible foliage. Its memory and render cost is NOT yet established.
+  visible foliage. Fixed-view render cost and GPU memory headroom were measured
+  below; wider visibility conditions and full driving remain unverified.
 
 v3 attempt and why it was not accepted
 v3 compiled, saved and reloaded successfully inside the candidate process.
@@ -55,7 +58,7 @@ The engine exited zero, but report.ok was false: the test FAILED. The user game
 was left untouched. No second renderer was launched while it was running.
 
 v4 also copies/checks original component instance-cull distances on the shadow
-proxies; this addition was made after v3's module had loaded and awaits testing.
+proxies; this addition passed in v4 candidate and fresh saved verification.
 v3's original mesh LOD assets were retained, but the pending cull-distance audit
 must not be retrospectively counted as a v3 pass.
 
@@ -71,9 +74,54 @@ All ten v2 packages have a separate verified backup described in
 D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion/baseline-v2.json.
 The earlier ground/CrownForm/source/LiDAR protection chain was rechecked after
 the failed run. v3 evidence remains under Motion/v3; v4 uses Motion/v4 and a new
-asset folder. Existing launchers, approved palette, mud and water are unchanged.
+asset folder. Approved palette, mud, flat water and normal launchers are unchanged.
+The Motion Preview launcher alone now selects v4. To inspect the previous version:
+  powershell -File Art/open_flora_motion_preview.ps1 -Revision v2
 
-Pending execution once Wardogs is closed and resource guards pass
+v4 results
+Candidate: 159 native captures plus six ten-second timing windows, exit zero.
+Fresh verification: 101 native captures including a slow camera move, four
+leaves-only timing windows, exit zero. All ten candidate package hashes match
+between runs. Original surface outputs, lighting, visible instances, ground,
+water and the complete protected baseline chain passed their checks.
+Fresh PIE parameter checks confirm 12 cm broadleaf, 10 cm pine and the separate
+undergrowth controls above, with wind enabled. These are shader amplitude
+controls, not promises of identical displacement at every leaf vertex.
+
+RTX 4050 Laptop GPU / D3D12 / UE 5.8 / uncooked offscreen PIE / 1274x682 native
+captures / TSR / 100 percent screen percentage. Same fixed camera for timings.
+                    Mean GPU ms    Mean frame ms    Mean game-thread ms
+Original materials     11.900          16.691               10.758
+Wind                   13.346          17.008               11.062
+Wind + 72 leaves       13.622          16.667               10.997
+Wind delta +1.446 ms GPU; combined +1.721 ms GPU. Old v2 combined delta was
++23.669 ms. The v4 wind shadow pass was about 2.45-2.67 ms, compared with about
+23.4 ms in the earlier v2 isolation. Static shadow copies remove that large
+cost while deliberately keeping canopy shadows still during small leaf motion.
+Baseline GPU repeats drifted from 10.808 to 12.993 ms. Treat small exact deltas
+as screening estimates, not certified budgets. CPU render/RHI counters remain
+near zero and unsuitable for claiming negligible thread cost.
+The separate leaves-only check measured -0.077 ms GPU relative to its bracketed
+baseline, within noise; particles do not make rendering faster. All ten timing
+windows stayed within the GPU memory budget. Baseline keeps hidden shadow-copy
+components allocated, so the A/B delta excludes their allocation and some scene
+bookkeeping overhead. No claim of zero memory overhead is made.
+
+Visual evidence (actual engine captures, no synthetic interpolation)
+D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion/v4
+  tree-motion-before-after.mp4 -- native crops, v2 versus v4, same camera/time
+  bush-motion-before-after.mp4 -- old/new shaders in the same v4 bank view
+  candidate-motion.mp4 -- full tree-facing view
+  verify-camera-move.mp4 -- short moving-camera check
+  colour-greyscale-review.jpg -- road/canopy/bank/valley regression views
+  reference-review.jpg -- actual Unreal views alongside Flora Paint references
+Clips contain 48 deterministic samples over four seconds, played at 12 fps.
+They show deformation but cannot certify full-rate temporal behaviour. Nearby
+tree movement is more visible; bushes now bend gently rather than using the
+faster spatial flutter. Fine foliage coverage noise remains. Animation quality
+is still open to user review in the live preview, not declared reference-matched.
+
+Reproduction once Wardogs is closed and resource guards pass
   powershell -File Art/run_flora_motion.ps1 -Stage candidate
   python Art/review_flora_motion.py
   powershell -File Art/run_flora_motion.ps1 -Stage verify
@@ -81,13 +129,17 @@ Pending execution once Wardogs is closed and resource guards pass
 Review native tree/bush before-after clips and a slow camera move. Check lower
 branch motion, root attachment, foliage stretching, shadow mismatch and culling.
 Accept performance only from valid repeated windows with GPU memory headroom.
-Then explicitly update the preview launcher to the reviewed map. Do not silently
-point the user's existing preview at a missing or unverified asset revision.
+The preview target was changed only after both v4 runs completed successfully.
 
 Gates
-v4 shader compilation: NOT TESTED; saved reload: NOT TESTED; tree readability:
-NOT TESTED; bush motion quality: NOT TESTED; temporal stability: NOT TESTED;
-shadow-proxy performance/memory: NOT TESTED; sustained driving 60 fps: NOT TESTED.
+v4 shader compilation: PASS; saved reload/process: PASS; selected close tree
+motion readability: PASS; wider tree/attachment quality: PARTIAL; bush motion
+quality: PARTIAL (rooted slow bending captured, user review outstanding);
+temporal stability: PARTIAL; full cull-boundary crossing: NOT TESTED;
+fixed-view incremental cost and memory screening: PASS; wider performance:
+NOT TESTED; sustained driving 60 fps: NOT TESTED. No new physical/reset test.
 Python and generated-runtime syntax: PASS. Protected baseline hashes: PASS.
-Palette A-G retain their previous assessment; source preparation grants no new
-visual passes. The performance and visual failures of v2/v3 remain documented.
+Palette A-G retain their previous assessment: A pass, B-G partial. Fixed colour
+and greyscale captures show no palette regression, but motion does not resolve
+the previous flat-shade/rock/depth/reference-matching limitations. The failures
+of v2/v3 remain documented and are not overwritten by the v4 result.

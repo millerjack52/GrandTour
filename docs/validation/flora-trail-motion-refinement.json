@@ -1,8 +1,8 @@
 {
   "date": "2026-11-16",
-  "status": "v4 source prepared; Unreal tests held while Wardogs runs",
+  "status": "v4 candidate and fresh saved verification passed; interactive preview open; final animation approval outstanding",
   "configured_revision": "v4",
-  "interactive_preview_revision": "v2",
+  "interactive_preview_revision": "v4",
   "v2_user_feedback": "tree leaves barely move; bush animation looks bad",
   "v2_preservation_manifest": "D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion/baseline-v2.json",
   "v3_attempt": {
@@ -26,20 +26,22 @@
     "timing_invalid_reason": "Wardogs started after preflight; 20 timing frames, all over GPU memory budget",
     "minimum_gpu_memory_headroom_mb": -1646.8046,
     "evidence_root": "D:\\GrandTourAssets\\ReviewEvidence\\FloraTrail\\Motion\\v3",
-    "visual_result": "nearby lower branches still too constrained; superseded by untested v4 mask",
+    "visual_result": "nearby lower branches still too constrained; superseded by verified v4 mask",
     "cull_distance_copy_audit": "not tested - source added after v3 module loaded"
   },
   "v4_validation": {
     "python_and_generated_runtime_syntax": "pass",
     "preflight_blocks_Wardogs": "pass - observed refusal without renderer launch",
     "protected_baselines": "pass",
-    "material_compilation": "not tested",
-    "saved_reload": "not tested",
-    "tree_motion_readability": "not tested",
-    "bush_motion_quality": "not tested",
-    "temporal_stability": "not tested",
-    "shadow_memory_and_performance": "not tested",
-    "sustained_driving_60fps": "not tested"
+    "material_compilation": "pass",
+    "saved_reload": "pass - ten candidate package hashes match fresh verification",
+    "tree_motion_readability": "pass in selected close views; wider attachment quality partial",
+    "bush_motion_quality": "partial - slower rooted bend captured; user review outstanding",
+    "temporal_stability": "partial - sampled slow move; fine coverage noise remains",
+    "shadow_memory_and_performance": "pass for fixed-view screening only",
+    "sustained_driving_60fps": "not tested",
+    "full_cull_boundary_crossing": "not tested",
+    "physical_driving_and_reset": "not tested"
   },
   "unchanged": [
     "source textures and LOD assets",
@@ -47,8 +49,354 @@
     "mud",
     "flat water",
     "LiDAR",
-    "normal launchers",
-    "preview launcher target"
+    "normal launchers"
   ],
-  "notes": "Docs/FLORA_TRAIL_MOTION_REFINEMENT.txt"
+  "notes": "Docs/FLORA_TRAIL_MOTION_REFINEMENT.txt",
+  "v4_runs": {
+    "candidate": {
+      "report_ok": true,
+      "process": {
+        "started": "2026-11-16T18:30:36.9112845-06:00",
+        "finished": "2026-11-16T18:36:21.5413211-06:00",
+        "exit_code": 0
+      },
+      "capture_count": 159,
+      "timing_windows": 6,
+      "minimum_gpu_memory_headroom_mb": 1881.5391,
+      "over_budget_frames": 0,
+      "protected_unchanged": true,
+      "shadow_proxy_audit": {
+        "components": 4,
+        "shadow_only_instances": 2843,
+        "instance_counts": {
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_fern_0": 159,
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_pine_0": 92,
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_shrub_0": 2524,
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_tree_0": 68
+        },
+        "visible_geometry_duplicated": false,
+        "original_materials_transforms_lods_verified": true
+      }
+    },
+    "verify": {
+      "report_ok": true,
+      "process": {
+        "started": "2026-11-16T18:37:42.1911912-06:00",
+        "finished": "2026-11-16T18:41:00.7769382-06:00",
+        "exit_code": 0
+      },
+      "capture_count": 101,
+      "timing_windows": 4,
+      "minimum_gpu_memory_headroom_mb": 1756.7422000000001,
+      "over_budget_frames": 0,
+      "protected_unchanged": true,
+      "shadow_proxy_audit": {
+        "components": 4,
+        "shadow_only_instances": 2843,
+        "instance_counts": {
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_fern_0": 159,
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_pine_0": 92,
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_shrub_0": 2524,
+          "FloraTrail_SourceFoliage/ISM_SM_Exact_tree_0": 68
+        },
+        "visible_geometry_duplicated": false,
+        "original_materials_transforms_lods_verified": true
+      }
+    }
+  },
+  "saved_package_hashes": {
+    "L_FloraTrail_Motion.umap": "6bf6368f3b636de09207d505224a4fec85bb0982c67e87508adb692655ad00f8",
+    "M_FallingLeaves.uasset": "57f035b89c2e2be0236c5b7d2edf9b5cb6f2e745369110bd6f42ebb6ecf0f4bd",
+    "M_Wind_1116b8d5.uasset": "2b97f5c15e46cfff94650aa3ef893fb7ce1fa1e5cf6f22629e2a9aa5d6a99efa",
+    "M_Wind_6b9186db.uasset": "80a2d080f53342cf564843a5dbf160194f12d84aee5b5db6c0871100a9ea60d1",
+    "M_Wind_9edb81ce.uasset": "364b544709883540d779ff349d6b4d4cc7e0d8dbf0294ac019e1f98c9d5ee69d",
+    "M_Wind_b03ce816.uasset": "37112a93857ae8a04a0f36c79812af5418511679aa57abcf8e892345b584722c",
+    "M_Wind_c97d04a2.uasset": "d74598f1b657b69c53238cf77a6ec632936b85ee798751f90083b9872d3aedd7",
+    "M_Wind_cd997eed.uasset": "6ef6a86f323e41cb0f61be5dadb7aac7777cb3a6fd1b3e5c8dff7f70561097ac",
+    "M_Wind_e16495fb.uasset": "03b5d139e740012eae1e4b3958f364edd314b3f3ea7df731dadd4609956d3b0f",
+    "M_Wind_ffbb83be.uasset": "d7cc6cca24fcdc38b68bd525dd1436217f3d2db43311c40992b2b386c5417e04"
+  },
+  "verified_live_wind_controls": [
+    {
+      "component": "ISM_SM_Exact_drygrass_0",
+      "mesh": "SM_Exact_drygrass",
+      "amplitude_cm": 1.2000000476837158,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_fern_0",
+      "mesh": "SM_Exact_fern",
+      "amplitude_cm": 1.399999976158142,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_grass_0",
+      "mesh": "SM_Exact_grass",
+      "amplitude_cm": 1.600000023841858,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_pine_0",
+      "mesh": "SM_Exact_pine_f002",
+      "amplitude_cm": 10.0,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_pine_1",
+      "mesh": "SM_Exact_pine_f002",
+      "amplitude_cm": 10.0,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_shrub_0",
+      "mesh": "SM_Exact_shrub",
+      "amplitude_cm": 1.7999999523162842,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_shrub_0",
+      "mesh": "SM_Exact_shrub",
+      "amplitude_cm": 1.7999999523162842,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_shrub_0",
+      "mesh": "SM_Exact_shrub",
+      "amplitude_cm": 1.7999999523162842,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_tree_0",
+      "mesh": "SM_Exact_tree",
+      "amplitude_cm": 12.0,
+      "enabled": 1.0
+    },
+    {
+      "component": "ISM_SM_Exact_tree_1",
+      "mesh": "SM_Exact_tree",
+      "amplitude_cm": 12.0,
+      "enabled": 1.0
+    }
+  ],
+  "performance": {
+    "scope": "Fixed camera, PIE/offscreen, uncooked; no screenshots in timing windows. Relative A/B only, not sustained driving or Shipping 60 fps.",
+    "cases": {
+      "baseline": {
+        "FrameTime": {
+          "mean_ms": 16.69084193645485,
+          "p95_ms": 16.6721,
+          "repeat_means_ms": [
+            16.712711872909697,
+            16.668972
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 11.900094098104795,
+          "p95_ms": 13.8996,
+          "repeat_means_ms": [
+            10.807508862876254,
+            12.992679333333333
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 10.758061927536232,
+          "p95_ms": 12.46875,
+          "repeat_means_ms": [
+            10.86380652173913,
+            10.652317333333334
+          ]
+        }
+      },
+      "wind": {
+        "FrameTime": {
+          "mean_ms": 17.008131462585034,
+          "p95_ms": 16.672,
+          "repeat_means_ms": [
+            17.011848129251703,
+            17.00441479591837
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 13.345676360544218,
+          "p95_ms": 15.2575,
+          "repeat_means_ms": [
+            12.371100170068027,
+            14.320252551020406
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 11.06186887755102,
+          "p95_ms": 12.846599999999999,
+          "repeat_means_ms": [
+            11.09652380952381,
+            11.02721394557823
+          ]
+        }
+      },
+      "both": {
+        "FrameTime": {
+          "mean_ms": 16.666836,
+          "p95_ms": 16.67165,
+          "repeat_means_ms": [
+            16.6668235,
+            16.6668485
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 13.621504,
+          "p95_ms": 15.465150000000001,
+          "repeat_means_ms": [
+            13.291825666666666,
+            13.951182333333334
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 10.996731,
+          "p95_ms": 13.085,
+          "repeat_means_ms": [
+            11.247638,
+            10.745823999999999
+          ]
+        }
+      }
+    },
+    "difference_ms": {
+      "wind": {
+        "FrameTime": 0.3173,
+        "GPUTime": 1.4456,
+        "GameThreadTime": 0.3038
+      },
+      "both": {
+        "FrameTime": -0.024,
+        "GPUTime": 1.7214,
+        "GameThreadTime": 0.2387
+      }
+    },
+    "limitations": [
+      "PIE/offscreen fixed camera; not Shipping or sustained driving",
+      "Two repeats per case; small deltas may be measurement noise",
+      "Playback is a deterministic sampled timeline, not a measured framerate"
+    ],
+    "process_exit_code": 0,
+    "warnings": [
+      "Duplicate counters preserved with # occurrence suffixes: FMsgLogf/FMsgLogfCount",
+      "RHIThreadTime missing or near zero; verify in Timing Insights",
+      "RenderThreadTime missing or near zero; verify in Timing Insights"
+    ],
+    "unreliable_metrics": [
+      "RenderThreadTime",
+      "RHIThreadTime"
+    ],
+    "native_capture_resolution": [
+      1274,
+      682
+    ]
+  },
+  "leaves_only_performance": {
+    "scope": "Fixed camera, PIE/offscreen, uncooked; no screenshots in timing windows. Relative A/B only, not sustained driving or Shipping 60 fps.",
+    "cases": {
+      "baseline": {
+        "FrameTime": {
+          "mean_ms": 16.667886000000003,
+          "p95_ms": 16.671950000000002,
+          "repeat_means_ms": [
+            16.668954833333334,
+            16.666817166666668
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 12.918223,
+          "p95_ms": 14.479949999999999,
+          "repeat_means_ms": [
+            11.887180166666667,
+            13.949265833333332
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 10.734522916666666,
+          "p95_ms": 12.43015,
+          "repeat_means_ms": [
+            10.706763666666667,
+            10.762282166666667
+          ]
+        }
+      },
+      "leaves_only": {
+        "FrameTime": {
+          "mean_ms": 16.667193583333336,
+          "p95_ms": 16.6721,
+          "repeat_means_ms": [
+            16.667508,
+            16.666879166666668
+          ]
+        },
+        "GPUTime": {
+          "mean_ms": 12.841624083333333,
+          "p95_ms": 14.055499999999999,
+          "repeat_means_ms": [
+            12.494024333333334,
+            13.189223833333333
+          ]
+        },
+        "GameThreadTime": {
+          "mean_ms": 10.797764749999999,
+          "p95_ms": 12.7085,
+          "repeat_means_ms": [
+            10.766780333333333,
+            10.828749166666666
+          ]
+        }
+      }
+    },
+    "difference_ms": {
+      "leaves_only": {
+        "FrameTime": -0.0007,
+        "GPUTime": -0.0766,
+        "GameThreadTime": 0.0632
+      }
+    },
+    "limitations": [
+      "PIE/offscreen fixed camera; not Shipping or sustained driving",
+      "Two repeats per case; small deltas may be measurement noise",
+      "Playback is a deterministic sampled timeline, not a measured framerate"
+    ],
+    "process_exit_code": 0,
+    "warnings": [
+      "RHIThreadTime missing or near zero; verify in Timing Insights",
+      "RenderThreadTime missing or near zero; verify in Timing Insights"
+    ],
+    "unreliable_metrics": [
+      "RenderThreadTime",
+      "RHIThreadTime"
+    ],
+    "native_capture_resolution": [
+      1274,
+      682
+    ]
+  },
+  "additional_limitations": [
+    "Shadows intentionally remain static while visible foliage moves.",
+    "Baseline retains hidden shadow proxies allocated; measured delta excludes their allocation and some bookkeeping.",
+    "Original-material GPU repeats drifted from 10.808 to 12.993 ms; small deltas are screening estimates.",
+    "Animation clips are 48 deterministic samples at 12 fps, not proof of full-rate temporal quality.",
+    "Approximate mesh-bound bending has no authored leaf pivots or branch skeleton."
+  ],
+  "evidence_root": "D:/GrandTourAssets/ReviewEvidence/FloraTrail/Motion/v4",
+  "visual_evidence": [
+    "tree-motion-before-after.mp4",
+    "bush-motion-before-after.mp4",
+    "candidate-motion.mp4",
+    "verify-camera-move.mp4",
+    "colour-greyscale-review.jpg",
+    "reference-review.jpg"
+  ],
+  "palette_gates": {
+    "A": "pass",
+    "B": "partial",
+    "C": "partial",
+    "D": "partial",
+    "E": "partial",
+    "F": "partial",
+    "G": "partial"
+  }
 }

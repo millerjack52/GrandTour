@@ -55,6 +55,8 @@ replace(marker,marker+'''
   component_shadow_defaults[c.get_path_name()]=c.get_editor_property('shadow_cache_invalidation_behavior')
   mid=c.create_dynamic_material_instance(i,m);assert mid
   assert abs(mid.get_scalar_parameter_value('FloraTimeOverride')+1.)<1e-5,(a,c.get_name(),m.get_path_name(),mid.get_scalar_parameter_value('FloraTimeOverride'))
+  assert abs(mid.get_scalar_parameter_value('FloraWindCm')-motion.PLANTS[c.static_mesh.get_name()])<1e-5
+  assert abs(mid.get_scalar_parameter_value('FloraWindEnabled')-1.)<1e-5
   live.append((c,i,original,mid))
   if motion.CFG['revision']!='v2':
    old=u.load_asset('/Game/GrandTour/ArtTests/FloraTrail/Woodland/Motion/v2/M_Wind_'+hashlib.sha1(original.get_path_name().encode()).hexdigest()[:8]);assert old
@@ -80,6 +82,7 @@ replace(marker,marker+'''
   for c in leaves:c.set_visibility(case in ('both','both_static','leaves_only'))
   for mid in leafmids:mid.set_scalar_parameter_value('FloraTimeOverride',t)
  report['wind_material_slots']=len(live)
+ report['wind_controls']=[{'component':c.get_name(),'mesh':c.static_mesh.get_name(),'amplitude_cm':mid.get_scalar_parameter_value('FloraWindCm'),'enabled':mid.get_scalar_parameter_value('FloraWindEnabled')} for c,i,original,mid in live]
  report['component_motion_defaults']=component_motion_defaults
  report['component_shadow_defaults']={k:str(v) for k,v in component_shadow_defaults.items()}
 ''')
