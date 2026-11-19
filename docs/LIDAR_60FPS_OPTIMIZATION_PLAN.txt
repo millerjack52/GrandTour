@@ -1,0 +1,146 @@
+LiDAR visual-preserving 60 fps optimization plan
+==============================================
+19 November 2026. Requested after the fine-grass restoration.
+Status: plan only. No new performance result or optimization is claimed here.
+
+Outcome and baseline
+Aim for sustained 60 fps on the actual target laptop without reducing the chosen
+visual quality. Current detected CPU/GPU: Ryzen 7 8845HS and RTX 4050 Laptop GPU.
+The existing v7 profile targets 1600x900, TSR 75%, dynamic resolution off, the
+current authored tree LODs, virtual shadows and native mud/water/grass interaction.
+Confirm actual viewport, GPU/VRAM, driver, power/thermal state and runtime settings
+at the start. This is not a native-1080p claim. A different resolution is a separate
+target, never an undeclared way to pass.
+
+Freeze the saved grass-restoration map, material settings, normal launcher,
+vehicle and graphics profile as a recoverable comparison baseline. Its unresolved
+tree colour, pale shaded verges and decorative ground-plant issues remain listed;
+"baseline" is not a claim that the owner has approved every visual element.
+Keep further art changes separate from optimization comparisons. Rebase measured
+results if the selected visual baseline changes.
+
+Acceptance gates
+- Rendering budget: 16.667 ms/frame. Report mean, median, p95, p99, maximum,
+  percentage over budget, and hitches over 33.3/50/100ms, separately for each route
+  segment. A fast valley must not average away a slow forest or water crossing.
+- Initial sustained-work target: p95 at or below 16.667ms in every representative
+  segment, then reduce p99 excursions and recurring hitches before acceptance.
+  The final report must show the tail behavior even if the p95 target passes;
+  p95 alone does not establish a locked 60 fps experience.
+- Aim for roughly 2ms of GPU/limiting-thread headroom in steady heavy views so
+  normal gameplay bursts do not immediately break the budget. Measure the actual
+  CPU/GPU bottleneck; do not add pipelined CPU and GPU durations together.
+- Run uncapped for work/headroom measurement, then check real foreground gameplay
+  at the normal 60fps presentation target. Offscreen CSV results alone do not prove
+  smooth display pacing, input latency or a sustained driving result.
+- No visual regression in matched native colour/greyscale views and real-time
+  camera/drive clips: density, silhouettes, contact, source detail, wind, lighting,
+  atmospheric layers and near/far transitions must survive.
+- Native wheel contact, grass bending/removal, deformation, water and vehicle
+  handling remain correct. Keep audio and normal gameplay work enabled for final
+  acceptance; a muted diagnostic is not the complete game budget.
+
+1. Repair the measurement workflow before collecting a baseline
+Reuse Art/profile_lidar_play.ps1, native gt.Perf instrumentation and
+Art/tools/analyze_lidar_play_perf.py, but do not run the old harness unchanged:
+- Its default Art/Export/LidarStudy/Place fixtures are currently unavailable on
+  C:. Make new C-owned fixtures from the installed map and known review cameras.
+- It schedules HighResShot. That forces LOD0 in this engine and is unsuitable
+  for gameplay visual comparison. Use normal Shot outside measurement windows.
+- It records requested resolution, not a verified runtime viewport. Reject a
+  benchmark with unexpected output/internal resolution; the recent PIE review
+  demonstrated 1274x682 vs 1600x868 windows despite identical requested sizes.
+- Keep logical frame-boundary CSV timing, but report Render/RHI thread columns
+  where available as well as game/GPU work. Distinguish raw frame work from cap
+  waits/presentation. Replace the historical 16.9ms tolerance with explicit
+  16.667ms reporting for this target.
+- Frame-count throttle/teleport segments are useful probes but not an identical
+  continuous route when frame rate changes. Use time/distance route checkpoints,
+  record actual trajectory/speed, and separate stationary probes from route tests.
+- Add the current single-renderer reservation, disk/memory guard, bounded timeout,
+  correct-exit checks and C-only evidence paths. Do not terminate unrelated apps.
+
+2. Establish representative standalone measurements
+Run the saved map in standalone game mode, outside the editor, at the declared
+quality. Start with a warm-up sufficient for shaders, textures, grass and temporal
+history; verify readiness rather than trusting a fixed short delay. Use normal
+shipping-like streaming, not the visual-review force-all-used-textures setting.
+Collect at least three repeated warm runs, alternating baseline/candidate order
+when comparing. Record cold traversal separately. Keep real driving hitches in
+the route statistics; do not discard slow frames as "warm-up" after the drive starts.
+
+Coverage must include:
+ a) Fine-grass paddock low view and fast traversal through the near/far boundary.
+ b) Forest entry and dense under-canopy path, including turning toward the sun.
+ c) Mixed-material bank: leaf/fern/bark/rock/road together, close to source detail.
+ d) Mud braking/acceleration and repeated tyre tracks with native deformation.
+ e) Water crossing with ripples, wet surfaces and the normal vehicle effects.
+ f) Valley overlook plus approach/turn, exposing distant canopy and fog cost.
+ g) At least one continuous multi-minute drive linking the demanding sections,
+    repeated after enough play to reveal accumulated contacts/particles/streaming.
+Use a normal vehicle, camera, weather/time and normal gameplay/audio settings.
+
+3. Find the real limiting work
+Record game, render/RHI and GPU timings; draw/primitive/triangle counts; memory,
+texture mip/residency state; streaming and garbage-collection spikes. Correlate
+the slow frames with native gt.Perf scopes, CSV GPU passes and focused Unreal
+Insights/GPU captures. Collect expensive diagnostic traces separately to quantify
+their overhead. Rank bottlenecks in milliseconds, not by how complex an asset looks.
+Temporary disable-one-system probes may identify cost, but are not candidate
+optimizations and must never be presented as visual-preserving improvements.
+
+4. Optimize avoidable work first, in measured priority order
+CPU/streaming:
+- Inspect grass ring updates, repeated scans/allocations, dirty-state propagation,
+  vegetation bounds/registration, terrain queries and contact bookkeeping.
+- Inspect mud/soil/water uploads, copies, synchronization and update scheduling.
+  Retain visible response and simulation accuracy; do not simply lower physics rate.
+- Inspect unnecessary tick/duplicate controllers, disabled/hidden components that
+  still do work, resource churn and garbage collection. Prove the removed work was
+  unused, while retaining hidden recovery data in recoverable assets where needed.
+- Keep vehicle physics, panel/contact behavior and audio in the budget. Optimize
+  implementation or scheduling, not gameplay fidelity.
+
+GPU/visibility:
+- Measure actual fine-grass vertex cost versus masked overdraw. Restored near
+  grass is 144/64/36 triangles; do not assume either geometry or pixel work dominates.
+- Inspect virtual-shadow page invalidation from foliage wind, shadow caster
+  bounds and needless distant updates. Preserve visible moving leaf shadows.
+- Check instance spatial batching/culling and LOD transitions using live gameplay
+  views. Preserve root positions and stable colour/random seeds when rebatching.
+- Audit expensive material paths, duplicated calculations and inactive branches.
+  Cache/simplify equivalent work; preserve the selected normals, pigment and detail.
+- Measure close ground POM/detail, reflections, water, fog and custom post-process
+  passes individually. Remove redundancy or offscreen work before changing quality.
+- Keep 4K bark/source textures sharp. Fix residency, unused allocations and streaming
+  stalls before considering any reduction in texture quality.
+
+5. Protect visual quality for each candidate
+One measured change at a time. Keep output/internal resolution, exposure controls,
+lighting, fog, wind settings, geometry populations and source textures fixed unless
+the experiment specifically targets an equivalent implementation of one of them.
+Capture the same local and valley views, colour and greyscale thumbnails, plus
+real-time motion for shimmer, LOD popping, shadow instability and wind continuity.
+Inspect both steady images and transition moments. Revert a visual regression;
+do not compensate for lost detail with sharpening, stronger fog or a new grade.
+Do not lower TSR resolution, thin visible grass/trees, reduce visible draw distance,
+disable wind/shadows, blur textures, or simplify silhouettes to manufacture a pass.
+If the hardware budget remains out of reach after equivalent-work improvements,
+report that honestly with measured options instead of silently degrading the scene.
+
+6. Integrate and validate sustained results
+After individual wins pass, combine them in a recoverable candidate and remeasure;
+savings need not add up. Repeat every route segment and the continuous drive under
+matched power/thermal conditions. Run a longer foreground driving soak to expose
+streaming/VRAM growth, accumulating simulation state and thermal throttling.
+Validate mud, water, contact persistence, vehicle behavior and reset/reload. Compare
+normal launch with the benchmark configuration; no private preview-only settings.
+
+Deliverables
+- Baseline hardware/settings/route manifest and raw timings/traces.
+- Ranked bottleneck list with per-segment costs and prioritized experiments.
+- Per-change measured gain, visual evidence, behavior checks and rollback point.
+- Final per-segment p95/p99/hitch report and real foreground 60fps pacing check.
+- Explicit remaining limitations and a reproducible normal launch.
+Source/config/documentation only in Git; no purchased assets or credentials.
+No 60fps success is declared until this evidence exists.

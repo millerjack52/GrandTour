@@ -1,0 +1,130 @@
+LiDAR fine grass restoration / 19 November 2026
+==============================================
+Status: v2 installed in the normal LiDAR map, saved/reloaded and visually checked.
+
+Owner feedback
+The streamed ground cover is chunky and shrub-like; the distant grass/terrain
+is too bright green. The owner confirmed that "the grass we had before" means
+the earlier fine LiDAR grass, not the grass in FloraTrail.
+The previous forest-path review did not adequately cover the open paddocks.
+
+Identified causes
+The 13 November FloraWorld installer assigned Flora Paint Grass_005/013/016
+and Dry_Grass_014 to the native streamed grass actor. Its modified plant pigment
+graph creates broad green and rusty/brown clumps. The distant layer still uses
+the older GS3 geometry, while terrain/far colour uses the separate RS1 palette.
+The 19 November crown/grade transfer preserved those bindings; it did not create
+the broad-clump replacement. Existing good grass art remains under GrassGS3.
+
+Controlled correction
+Restore SM_GS3_Near_A/B/C and SM_GS3_Verge with their original wind/contact
+materials copied into map-local GrassRecovery/v2 assets. Keep GS3 far geometry.
+Change only the existing shared pasture palette constants across near grass,
+far grass, verge, terrain and detail material copies. No global desaturation,
+emissive fill, new texture samples, lighting adjustment or tree recolour.
+Three palette roles remain: living green, cool green and restricted dry straw.
+The first muted v1 was too grey-straw; it is retained as diagnostic evidence.
+v2 restores more green at similar restrained brightness.
+
+Geometry and budget
+The earlier fine assets have 144/64/36 triangles per near clump and 216/96/60
+per verge clump; far remains 72/12. They are not free compared with the replaced
+38-42 triangle Flora clumps. Existing spacing (55cm), scales (.9-1.15), streaming
+radius (46m), near fade (32-40m), LOD distances (7/16m), far spacing (2m) and far
+end (150m) remain fixed. Retaining those limits does not prove equal GPU cost.
+The same native host, planting rules, custom-data contact contract and shaders
+for wind/removal are retained. Physical terrain, soil, mud and water are protected.
+The terrain/detail colour edit remains inside the existing pasture mask; native
+displacement, opacity, wet-mud graph and texture bindings are unchanged.
+
+Review
+Compare current, fine-original and fine-muted-v1 in the actual LiDAR map using
+two open-paddock cameras and the previous mixed-material bank camera. Current
+captures are 1274x682; subsequent PIE windows in that same process expanded to
+1600x868. That intermediate three-way diagnosis is NOT an identical-resolution
+comparison. The final saved candidate is checked against the initial current
+captures at native 1274x682, using the same cameras/FOV/quality/exposure settings.
+No source PNG is recoloured or enhanced. Auto exposure and wind time can vary;
+these are not pixel-identical simulation snapshots or real-time benchmarks.
+Grass streaming completes before capture; native contact API probes check bending
+and removal. They do not substitute for a new physical driving/reset test.
+
+Tree assessment
+The tree materials, LODs, placement, lighting and grade are held fixed here.
+Broad mustard/olive lit masses, dark interiors/trunks and repeated silhouettes
+remain. The previous bright field amplifies that mismatch, but correcting grass
+does not solve canopy colour/form. Next tree tests should isolate leaf pigment
+from normal response under open-edge and back/side light; keep selected warm
+highlights and readable green interiors instead of darkening/desaturating all trees.
+
+Workflow and recovery
+Art/run_lidar_grass_recovery.ps1: audit, prepare, compare (v1 diagnostic),
+candidate (current configured palette), install (save, reload, gameplay checks).
+Art/lidar_grass_recovery_settings.json records the selected palette.
+Art/Export/LidarGrassRecovery contains source reports, captures and owner feedback.
+Current C: backup is created by Art/lidar_grass_recovery_baseline.py only after
+a completed comparison; it protects the post-tree-transfer map independently
+of the older pre-transfer backup. Historical D: is still unavailable.
+Other original LiDAR packages and FloraTrail remain protected by hashes.
+The previous transfer's exact map hash becomes historical after this correction.
+Do not run the old tree-transfer rollback over this later map; its guard refuses it.
+A deliberate full FloraWorld regeneration still restores its older broad-grass
+bindings. That workflow must preserve the focused recovery.apply mapping and
+establish a fresh baseline; do not blindly replay this one-time guarded install
+against later edits. Do not regenerate the full forest just to change grass.
+
+Recovery command (renderer closed):
+powershell -NoProfile -File Art/rollback_lidar_grass_recovery.ps1
+This restores the pre-grass map, retaining the earlier tree transfer. It verifies
+the backup and refuses to overwrite a map changed after this installation.
+
+Known visual limitation: restored fine grass in the shaded bank remains paler
+than nearby ferns and shrubs. The open field is substantially improved; this is
+not a claim that the entire understory palette is finished. Tree colour/shading,
+ground-plant cards and rock cohesion remain separate outstanding art issues.
+
+Next phase: Docs/LIDAR_60FPS_OPTIMIZATION_PLAN.txt. That is a measurement and
+optimization plan, not a performance pass or permission to reduce visual quality.
+
+Validation result
+Audit, v1 preparation/comparison, v2 preparation/candidate and final installation
+all returned ok with process exit 0. The final installation saved the normal map,
+unloaded it, reopened it from disk, verified the grass assignments and repeated
+three gameplay views. This is a saved reload check, not a separate second process
+after installation. The preceding v2 candidate ran in its own fresh process.
+Before and final saved captures are both 1274x682 at TSR 75%, mesh LOD scale 1.
+All three review positions returned native grass streaming consistency 'ok'.
+The saved-run contact probe changed bent counts from 14/9/13 to 32/21/30 and
+removed counts from 0/0/0 to 11/9/12 for grass variants A/B/C. No physical-driving
+or real-time wind/performance success is inferred from those API checks.
+All five material copies retain source texture bindings, WPO and opacity inputs.
+Tree geometry/materials, source assets, terrain/road transforms, lighting/fog,
+native soil/water/mud settings and grass density/stream/LOD settings are preserved.
+The previous 880-package protection set and the new 383-package LiDAR snapshot
+verify, allowing only the deliberately saved map to differ. New GrassRecovery
+assets are separate from the immutable source packages.
+Saved map SHA256:
+4af178bf4c88dec6feb823daeba3b2b45e3eb1740f0ac0b8607524413f1fced6
+Backup: Saved/LidarGrassRecoveryBackup/2026-11-19/L_LidarStudy.umap
+Rollback was syntax-checked and recovery hashes verified; no destructive restore
+was executed against the final map.
+
+The editor emitted one 'Failed to build grass maps for 250/256 landscape
+components' warning during the material-changing save. The copied terrain
+material has no LandscapeGrassOutput node; the native streamed grass is present
+and passes its own checks after reload. The warning is retained in install.log,
+not described as a clean warning-free run. Its editor-cache cause is not resolved
+by this work. No failed material compile, default-material fallback or fatal error
+occurred in the passing runs.
+
+Visual gates for this focused change
+Blade restoration: PASS in both paddock views; broad shrub clumps are replaced
+by the earlier fine blades. Excessive pasture green: improved, with green/olive
+identity retained; dry and cool patches remain connected across near/far cover.
+Full original palette rubric: A PARTIAL, B PARTIAL (trees held), C PARTIAL (pale
+verges), D FAIL (verge/rock/plant cohesion), E NOT TESTED anew, F PARTIAL for
+stills with real-time temporal behavior NOT TESTED, G PARTIAL (three views here).
+The previous unresolved tree/ground issues prevent a full reference-match claim.
+Evidence: paddock_low-comparison.jpg, paddock_wide-comparison.jpg,
+bank-comparison.jpg, native verify_*.png and per-view greyscale sheets.
+Docs/LIDAR_FINE_GRASS_RECOVERY_VALIDATION.json records the machine-read evidence.

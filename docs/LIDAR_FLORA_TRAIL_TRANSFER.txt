@@ -3,6 +3,9 @@ LiDAR study: FloraTrail crown treatment and gentle grade
 19 November 2026. Owner requested migration into the normal LiDAR study map.
 Status: installed in the normal LiDAR map; saved reload and separate fresh launch
 verified. Visual migration is complete; reference appearance is not fully met.
+Subsequent work: LIDAR_FINE_GRASS_RECOVERY.txt records the 19 November fine-grass
+restoration. The exact map hash below is historical after that later save; this
+document's results remain evidence for the tree transfer, not the latest map.
 
 Scope
 Target: /Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy

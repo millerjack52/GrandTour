@@ -1,0 +1,404 @@
+{
+  "date": "2026-11-19",
+  "status": "fine-grass v2 saved and reload verified; visual limits remain",
+  "map": "/Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy",
+  "before_sha256": "84fbec4cb70e1081ce9b4bd6b01e2229b2a2ed477d803ba2b3c83b6ed3cd633c",
+  "saved_sha256": "4af178bf4c88dec6feb823daeba3b2b45e3eb1740f0ac0b8607524413f1fced6",
+  "recovery": "C:\\GrandTour\\Saved\\LidarGrassRecoveryBackup\\2026-11-19\\L_LidarStudy.umap",
+  "settings": {
+    "revision": "v2",
+    "green": [
+      0.105,
+      0.195,
+      0.065
+    ],
+    "cool": [
+      0.065,
+      0.15,
+      0.095
+    ],
+    "straw": [
+      0.235,
+      0.23,
+      0.12
+    ],
+    "verge": [
+      0.25,
+      0.24,
+      0.125
+    ]
+  },
+  "rejected_v1": {
+    "revision": "v1",
+    "green": [
+      0.135,
+      0.185,
+      0.085
+    ],
+    "cool": [
+      0.085,
+      0.145,
+      0.115
+    ],
+    "straw": [
+      0.245,
+      0.235,
+      0.135
+    ],
+    "verge": [
+      0.265,
+      0.245,
+      0.145
+    ]
+  },
+  "runs": {
+    "audit": {
+      "ok": true,
+      "process": {
+        "started": "2026-11-19T13:14:02.7715143-06:00",
+        "finished": "2026-11-19T13:15:34.4855862-06:00",
+        "exit_code": 0
+      },
+      "images": []
+    },
+    "prepare": {
+      "ok": true,
+      "process": {
+        "started": "2026-11-19T13:27:41.2539064-06:00",
+        "finished": "2026-11-19T13:30:41.0000739-06:00",
+        "exit_code": 0
+      },
+      "images": []
+    },
+    "compare": {
+      "ok": true,
+      "process": {
+        "started": "2026-11-19T13:19:17.8817176-06:00",
+        "finished": "2026-11-19T13:27:17.9276443-06:00",
+        "exit_code": 0
+      },
+      "images": [
+        {
+          "name": "current_paddock_low",
+          "size": [
+            1274,
+            682
+          ]
+        },
+        {
+          "name": "current_paddock_wide",
+          "size": [
+            1274,
+            682
+          ]
+        },
+        {
+          "name": "current_bank",
+          "size": [
+            1274,
+            682
+          ]
+        },
+        {
+          "name": "fine_original_paddock_low",
+          "size": [
+            1600,
+            868
+          ]
+        },
+        {
+          "name": "fine_original_paddock_wide",
+          "size": [
+            1600,
+            868
+          ]
+        },
+        {
+          "name": "fine_original_bank",
+          "size": [
+            1600,
+            868
+          ]
+        },
+        {
+          "name": "fine_muted_paddock_low",
+          "size": [
+            1600,
+            868
+          ]
+        },
+        {
+          "name": "fine_muted_paddock_wide",
+          "size": [
+            1600,
+            868
+          ]
+        },
+        {
+          "name": "fine_muted_bank",
+          "size": [
+            1600,
+            868
+          ]
+        }
+      ]
+    },
+    "candidate": {
+      "ok": true,
+      "process": {
+        "started": "2026-11-19T13:31:05.0293025-06:00",
+        "finished": "2026-11-19T13:34:38.9335552-06:00",
+        "exit_code": 0
+      },
+      "images": [
+        {
+          "name": "candidate_paddock_low",
+          "size": [
+            1274,
+            682
+          ]
+        },
+        {
+          "name": "candidate_paddock_wide",
+          "size": [
+            1274,
+            682
+          ]
+        },
+        {
+          "name": "candidate_bank",
+          "size": [
+            1274,
+            682
+          ]
+        }
+      ]
+    },
+    "install": {
+      "ok": true,
+      "process": {
+        "started": "2026-11-19T13:36:37.0710376-06:00",
+        "finished": "2026-11-19T13:42:10.0736438-06:00",
+        "exit_code": 0
+      },
+      "images": [
+        {
+          "name": "verify_paddock_low",
+          "size": [
+            1274,
+            682
+          ]
+        },
+        {
+          "name": "verify_paddock_wide",
+          "size": [
+            1274,
+            682
+          ]
+        },
+        {
+          "name": "verify_bank",
+          "size": [
+            1274,
+            682
+          ]
+        }
+      ]
+    }
+  },
+  "preservation": {
+    "saved_bindings_verified": true,
+    "protected_geometry_and_systems": true,
+    "prior_package_manifest": 880,
+    "post_tree_transfer_lidar_manifest": 383,
+    "grass_density_stream_lod_settings_unchanged": true,
+    "trees_lighting_grade_unchanged": true,
+    "new_texture_samples": 0,
+    "material_checks": [
+      {
+        "role": "Near",
+        "source": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/M_GS3_Near.M_GS3_Near",
+        "copy": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Near.M_Fine_Near",
+        "textures_wind_coverage_preserved": true
+      },
+      {
+        "role": "Far",
+        "source": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/M_GS3_Far.M_GS3_Far",
+        "copy": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Far.M_Fine_Far",
+        "textures_wind_coverage_preserved": true
+      },
+      {
+        "role": "Verge",
+        "source": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/M_GS3_Verge.M_GS3_Verge",
+        "copy": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Verge.M_Fine_Verge",
+        "textures_wind_coverage_preserved": true
+      },
+      {
+        "role": "Terrain",
+        "source": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/M_FloraTerrain.M_FloraTerrain",
+        "copy": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Terrain.M_Fine_Terrain",
+        "textures_wind_coverage_preserved": true
+      },
+      {
+        "role": "Detail",
+        "source": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/M_FloraDetail.M_FloraDetail",
+        "copy": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Detail.M_Fine_Detail",
+        "textures_wind_coverage_preserved": true
+      }
+    ]
+  },
+  "runtime": {
+    "properties": {
+      "generate_around_player": true,
+      "grass_material": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Near.M_Fine_Near",
+      "rank_material": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Verge.M_Fine_Verge",
+      "card_grass_material": "/Game/GrandTour/ArtTests/LidarStudy/FloraIntegration/Grass/M_LidarGrass.M_LidarGrass",
+      "distant_grass_material": "/Game/GrandTour/ArtTests/LidarStudy/FloraIntegration/Grass/M_LidarGrassDistance.M_LidarGrassDistance",
+      "pasture_clump_mesh": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Near_A.SM_GS3_Near_A",
+      "pasture_clump_mesh_b": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Near_B.SM_GS3_Near_B",
+      "pasture_clump_mesh_c": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Near_C.SM_GS3_Near_C",
+      "rank_clump_mesh": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Verge.SM_GS3_Verge",
+      "distant_pasture_mesh": "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Far.SM_GS3_Far",
+      "distant_pasture_material": "/Game/GrandTour/ArtTests/LidarStudy/GrassRecovery/v2/M_Fine_Far.M_Fine_Far",
+      "clump_spacing_cm": 55.0,
+      "clump_scale_min": 0.8999999761581421,
+      "clump_scale_max": 1.149999976158142,
+      "clump_stream_radius_cm": 4600.0,
+      "grass_cull_start_cm": 3200.0,
+      "grass_cull_end_cm": 4000.0,
+      "clump_lod1_distance_cm": 700.0,
+      "clump_lod2_distance_cm": 1600.0,
+      "distant_pasture_spacing_cm": 200.0,
+      "distant_pasture_end_cm": 15000.0,
+      "independent_grass_lod_scale": true,
+      "blade_scale": 0.800000011920929,
+      "rank_band_scale": 1.399999976158142
+    },
+    "quality": {
+      "r.ScreenPercentage": 75.0,
+      "r.StaticMeshLODDistanceScale": 1.0,
+      "r.AntiAliasingMethod": 4.0
+    },
+    "paddock_low": {
+      "consistency": "ok L0.rebuild_expected=7429 L0.rebuild_missing=0 L0.rebuild_extra=0; L1.rebuild_expected=7190 L1.rebuild_missing=0 L1.rebuild_extra=0; L2.rebuild_expected=7352 L2.rebuild_missing=0 L2.rebuild_extra=0; rank.rebuild_expected=0 rank.rebuild_missing=0 rank.rebuild_extra=0; ",
+      "near_count": 21971,
+      "report": "instances=21971 bent=36 removed=0 native_radius_cm=64 custom_floats=4 straw=0 mode=clumps near=21971 rank=0 distant=11774 layers=3 near_a=7429 near_b=7190 near_c=7352 stream_radius_cm=4600 cull_start_cm=3200 cull_end_cm=4000 lod1_cm=700 lod2_cm=1600 bent_a=14 bent_b=9 bent_c=13 removed_a=0 removed_b=0 removed_c=0"
+    },
+    "contact": {
+      "before": {
+        "bent_a": 14,
+        "bent_b": 9,
+        "bent_c": 13,
+        "removed_a": 0,
+        "removed_b": 0,
+        "removed_c": 0
+      },
+      "after": {
+        "bent_a": 32,
+        "bent_b": 21,
+        "bent_c": 30,
+        "removed_a": 11,
+        "removed_b": 9,
+        "removed_c": 12
+      },
+      "method": "native API probe; not a physical driving test"
+    },
+    "paddock_wide": {
+      "consistency": "ok L0.rebuild_expected=7448 L0.rebuild_missing=0 L0.rebuild_extra=0; L1.rebuild_expected=7173 L1.rebuild_missing=0 L1.rebuild_extra=0; L2.rebuild_expected=7341 L2.rebuild_missing=0 L2.rebuild_extra=0; rank.rebuild_expected=0 rank.rebuild_missing=0 rank.rebuild_extra=0; ",
+      "near_count": 21962,
+      "report": "instances=21962 bent=125 removed=32 native_radius_cm=64 custom_floats=4 straw=0 mode=clumps near=21962 rank=0 distant=11774 layers=3 near_a=7448 near_b=7173 near_c=7341 stream_radius_cm=4600 cull_start_cm=3200 cull_end_cm=4000 lod1_cm=700 lod2_cm=1600 bent_a=46 bent_b=36 bent_c=43 removed_a=11 removed_b=9 removed_c=12"
+    },
+    "bank": {
+      "consistency": "ok L0.rebuild_expected=165 L0.rebuild_missing=0 L0.rebuild_extra=0; L1.rebuild_expected=173 L1.rebuild_missing=0 L1.rebuild_extra=0; L2.rebuild_expected=168 L2.rebuild_missing=0 L2.rebuild_extra=0; rank.rebuild_expected=194 rank.rebuild_missing=0 rank.rebuild_extra=0; ",
+      "near_count": 506,
+      "report": "instances=506 bent=1 removed=1 native_radius_cm=64 custom_floats=4 straw=0 mode=clumps near=506 rank=194 distant=782 layers=3 near_a=165 near_b=173 near_c=168 stream_radius_cm=4600 cull_start_cm=3200 cull_end_cm=4000 lod1_cm=700 lod2_cm=1600 bent_a=0 bent_b=0 bent_c=1 removed_a=0 removed_b=0 removed_c=1"
+    }
+  },
+  "fine_meshes": {
+    "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Near_A.SM_GS3_Near_A": {
+      "triangles": [
+        144,
+        64,
+        36
+      ],
+      "dimensions": [
+        103.78881454467773,
+        106.28794479370117,
+        46.97125434875488
+      ]
+    },
+    "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Near_B.SM_GS3_Near_B": {
+      "triangles": [
+        144,
+        64,
+        36
+      ],
+      "dimensions": [
+        100.02090454101562,
+        105.80443572998047,
+        46.94882392883301
+      ]
+    },
+    "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Near_C.SM_GS3_Near_C": {
+      "triangles": [
+        144,
+        64,
+        36
+      ],
+      "dimensions": [
+        108.2700309753418,
+        101.34115600585938,
+        46.58304786682129
+      ]
+    },
+    "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Far.SM_GS3_Far": {
+      "triangles": [
+        72,
+        12
+      ],
+      "dimensions": [
+        216.8134536743164,
+        230.78590393066406,
+        46.86729454994202
+      ]
+    },
+    "/Game/GrandTour/ArtTests/LidarStudy/GrassGS3/SM_GS3_Verge.SM_GS3_Verge": {
+      "triangles": [
+        216,
+        96,
+        60
+      ],
+      "dimensions": [
+        150.13858032226562,
+        120.93103408813477,
+        56.45709466934204
+      ]
+    }
+  },
+  "comparison_notes": [
+    "Final before/saved pairs are both native 1274x682; original-fine/v1 previews were 1600x868 and are labelled diagnostic.",
+    "TSR75 and mesh LOD scale1 are held. Auto exposure settings held, adapted value and wind time are not locked.",
+    "Only pasture pigment changes inside terrain/detail shader copies; physical soil/water/mud unchanged."
+  ],
+  "visual_gates": {
+    "blade_restoration": "pass",
+    "A_palette": "partial",
+    "B_crown_form": "partial; held from previous task",
+    "C_shade": "partial; shaded verge grass remains pale",
+    "D_material_cohesion": "fail; verge/rocks/ground plants need work",
+    "E_depth": "not tested anew",
+    "F_two_scale": "partial stills; real-time temporal behavior not tested",
+    "G_consistency": "partial; three views here"
+  },
+  "not_tested": [
+    "sustained 60fps",
+    "new physical driving/reset test",
+    "real-time wind and temporal stability",
+    "destructive rollback execution"
+  ],
+  "warnings": [
+    "One editor landscape grass-map build warning during save; source terrain material has no LandscapeGrassOutput; native grass streaming and contacts passed after reload."
+  ],
+  "performance_plan": "Docs/LIDAR_60FPS_OPTIMIZATION_PLAN.txt",
+  "performance_optimizations_applied": false
+}
