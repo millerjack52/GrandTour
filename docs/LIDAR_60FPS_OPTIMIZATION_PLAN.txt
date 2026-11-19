@@ -1,7 +1,8 @@
 LiDAR visual-preserving 60 fps optimization plan
 ==============================================
 19 November 2026. Requested after the fine-grass restoration.
-Status: plan only. No new performance result or optimization is claimed here.
+First driving measurements and ranked costs are recorded in
+LIDAR_DRIVING_BASELINE_2026-11-19.md.
 
 Outcome and baseline
 Aim for sustained 60 fps on the actual target laptop without reducing the chosen
