@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-19",
+  "target": "/Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy",
+  "source_treatment": "FloraTrail/Woodland/TransmissionStudy/v2 gentle_grade",
+  "materials": "LidarStudy/FloraTrailStyle/v1",
+  "status": "installed and fresh-launch verified; not reference-matched",
+  "saved_map_sha256": "84fbec4cb70e1081ce9b4bd6b01e2229b2a2ed477d803ba2b3c83b6ed3cd633c",
+  "baseline_map_sha256": "56c7d0d96862f595540196806c131552e224e27f01bfd66bb4fde2ca6dccec69",
+  "recovery": "C:\\GrandTour\\Saved\\LidarFloraTransferBackup\\2026-11-19\\L_LidarStudy.umap",
+  "stages": {
+    "audit": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 0,
+      "process": {
+        "started": "2026-11-19T02:59:16.0814710-06:00",
+        "finished": "2026-11-19T03:00:58.2304051-06:00",
+        "exit_code": 0
+      }
+    },
+    "before": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 17,
+      "process": {
+        "started": "2026-11-19T03:03:09.4173680-06:00",
+        "finished": "2026-11-19T03:07:03.8819469-06:00",
+        "exit_code": 0
+      }
+    },
+    "prepare": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 0,
+      "process": {
+        "started": "2026-11-19T03:15:50.0866790-06:00",
+        "finished": "2026-11-19T03:16:57.3565552-06:00",
+        "exit_code": 0
+      }
+    },
+    "install": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 17,
+      "process": {
+        "started": "2026-11-19T03:19:48.4603182-06:00",
+        "finished": "2026-11-19T03:26:21.1548273-06:00",
+        "exit_code": 0
+      }
+    },
+    "verify": {
+      "ok": true,
+      "exit_code": 0,
+      "images": 17,
+      "process": {
+        "started": "2026-11-19T03:26:34.6774738-06:00",
+        "finished": "2026-11-19T03:30:49.6443407-06:00",
+        "exit_code": 0
+      }
+    }
+  },
+  "technical_checks": {
+    "bindings_verified": 12,
+    "effective_leaf_defaults": {
+      "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_5_ca124a94.MI_Path_Leaf_0_T_Colour_5_ca124a94": {
+        "LeafTransmission": 0.25,
+        "CrownOcclusion": 0.44999998807907104,
+        "CrownVolume": 0.5,
+        "CrownCard": 1.0
+      },
+      "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_6_4c813bf5.MI_Path_Leaf_0_T_Colour_6_4c813bf5": {
+        "LeafTransmission": 0.25,
+        "CrownOcclusion": 0.44999998807907104,
+        "CrownVolume": 0.5,
+        "CrownCard": 1.0
+      },
+      "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_4_4cbf099c.MI_Path_Leaf_0_T_Colour_4_4cbf099c": {
+        "LeafTransmission": 0.25,
+        "CrownOcclusion": 0.44999998807907104,
+        "CrownVolume": 0.5,
+        "CrownCard": 1.0
+      }
+    },
+    "grade_verified": true,
+    "invariants_preserved": true,
+    "protected_original_packages": 880,
+    "unchanged_original_packages": 879,
+    "saved_mesh_components": 901,
+    "saved_instances_including_hidden": 1032629,
+    "affected_canopy_instances": 146197,
+    "affected_saplings": 13030,
+    "new_geometry_instances": 0,
+    "new_foliage_texture_samples": 0,
+    "new_fullscreen_passes": 0
+  },
+  "capture": {
+    "native_pixels": [
+      1274,
+      682
+    ],
+    "runtime_quality": {
+      "r.ScreenPercentage": 75.0,
+      "r.StaticMeshLODDistanceScale": 1.0,
+      "r.AntiAliasingMethod": 4.0
+    },
+    "views": [
+      "road",
+      "bank",
+      "canopy",
+      "valley",
+      "long_valley"
+    ],
+    "sampled_camera_frames": 12,
+    "sampled_distance_metres": 1.32,
+    "video_fps": 3,
+    "realtime_video": false,
+    "same_exposure_settings": true,
+    "fixed_exposure_value": false,
+    "synchronized_wind_between_processes": false,
+    "source_pngs_unmodified": true
+  },
+  "visual_gates": {
+    "A": {
+      "status": "partial",
+      "reason": "Local tree greens are more restrained; vivid ground plants and missing repeated coral accents remain."
+    },
+    "B": {
+      "status": "partial",
+      "reason": "Connected shade improves locally; bright saplings and repetitive valley silhouettes remain; all lighting directions were not tested."
+    },
+    "C": {
+      "status": "partial",
+      "reason": "Shade retains colour, but flat fans and dark contacts remain."
+    },
+    "D": {
+      "status": "fail",
+      "reason": "Mottled blue-grey rocks and saturated flat ground plants do not yet share the reference material relationships."
+    },
+    "E": {
+      "status": "partial",
+      "reason": "Valley depth remains progressive; dense local understory and heavily hazed long valley need further composition work."
+    },
+    "F": {
+      "status": "fail",
+      "reason": "Close leaf sheets and stippling remain in both before_move_11 and verify_move_11; real-time temporal quality untested."
+    },
+    "G": {
+      "status": "partial",
+      "reason": "One profile works across all five views, but unresolved material/form issues prevent a visual pass."
+    }
+  },
+  "not_tested": [
+    "sustained 60fps",
+    "real-time wind/TSR stability",
+    "new physical driving/reset regression",
+    "executing rollback on updated map"
+  ],
+  "evidence_directory": "C:\\GrandTour\\Art\\Export\\LidarFloraTransfer",
+  "failed_attempts": [
+    "stopped-install-disk",
+    "stopped-install-disk-2"
+  ],
+  "settings": {
+    "revision": "v1",
+    "LeafTransmission": 0.25,
+    "CrownOcclusion": 0.45,
+    "CrownVolume": 0.5,
+    "CrownCard": 1.0,
+    "leaf_tint": [
+      0.76,
+      0.86,
+      0.94
+    ],
+    "roughness": 0.82,
+    "specular": 0.04,
+    "grade_strength": 1.0
+  }
+}

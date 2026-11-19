@@ -1,0 +1,153 @@
+LiDAR study: FloraTrail crown treatment and gentle grade
+======================================================
+19 November 2026. Owner requested migration into the normal LiDAR study map.
+Status: installed in the normal LiDAR map; saved reload and separate fresh launch
+verified. Visual migration is complete; reference appearance is not fully met.
+
+Scope
+Target: /Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy
+Source treatment: FloraTrail/Woodland/TransmissionStudy/v2, gentle_grade.
+New material copies: LidarStudy/FloraTrailStyle/v1.
+Play-LidarStudy.bat and Open-LidarStudy.bat continue opening the same map.
+This transfers the reviewed tree shading/palette and restrained finish. It does
+not replace LiDAR's ground dressing with the FloraTrail test-scene layout.
+The user's migration instruction supersedes the earlier keep-LiDAR-unchanged
+boundary for this operation. FloraTrail and its source diagnostic remain intact.
+
+Adaptation
+LiDAR uses three source tree shapes with native geometry LODs and eight-triangle
+far cards. Their actual meshes, source textures, material coverage, existing wind,
+instance placement, collision, minimum LOD and cull budgets are retained.
+The source exporters retain authored leaf-mask coordinates in UV0; unique baked
+colour atlases use UV1 where required. The transferred fan response uses UV0.
+
+Visible tree/sapling material bindings receive map-local copies. Hidden old
+integration trees remain unchanged as recovery components. Near leaves receive
+instance-space ellipsoid/fan normals from CrownForm, CrownVolume .5, CrownCard 1,
+CrownOcclusion .45 and subsurface colour = final leaf colour * .25. Roughness
+is .82 and specular .04. Native Two Sided Foliage was already enabled in LiDAR.
+This is an adapted graph, not an identical Blender/Unreal parity assertion.
+
+Near/far foliage share the woodland tint (.76,.86,.94) with restrained per-tree
+brightness variation (.88..1.06). The older additional colour-family treatment
+is disabled for these copies. Far cards keep their baked normals, shadow field
+and Default Lit model; their existing broad crown-normal blend becomes .5.
+No new foliage texture samples, meshes, particles or distant geometry are added.
+
+LiDAR's physical sun is 42000 lux with histogram exposure; FloraTrail uses a
+different light/exposure/display regime. Copying its raw sun intensity or its
+replacement tonemapper would not be a faithful visual migration. LiDAR retains
+its sun, skylight, exposure controls, sky, fog and distance profile. Its existing
+SDR haze/finish material is copied and extended with the relative grade inside
+the same pass: linear-space shadow gamma 1.04, shadow gain (.99,1.01,1.03), and
+highlight gain (1.005,1,.99), with smooth luminance masks. The finish decodes and
+re-encodes the existing SDR colour; black stays black. Native grading and haze
+are not globally replaced, and no additional full-screen pass is introduced.
+
+Bark, ground vegetation, rocks, terrain, mud, water and interactive grass retain
+their existing materials. The grade affects their final presentation together.
+The previously rejected riverbed experiment is not reinstated. Ground-plant
+scale and the outstanding twig/moss-rock complaints are not resolved here.
+
+Recovery and protection
+D: remains unavailable. The currently installed C: map is backed up independently:
+Saved/LidarFloraTransferBackup/2026-11-19/L_LidarStudy.umap
+Art/Export/LidarFloraTransfer/baseline.json records that backup and 880 installed
+package hashes. The map is the sole permitted modification to existing packages;
+new copies live only under FloraTrailStyle. Historical D: parity is not claimed.
+The prior Transmission study's LiDAR hash is now historical by authorization.
+
+The invariant manifest records every saved static-mesh component, all instance
+transform hashes, materials normalized to their original source, collision,
+visibility, LOD/cull limits, all road spline points, ground output digest, native
+soil/grid/tread settings, water positions and queried water properties. Sun,
+sky, fog and exposure/blendable settings are compared immediately around install
+and again after reopening, normalizing only the intentionally copied finish.
+
+Rollback, with no renderer open:
+powershell -NoProfile -File Art/rollback_lidar_flora_transfer.ps1
+The restore refuses a map changed after this installation, verifies the recovery
+copy's hash, and verifies the restored map. It does not delete source assets.
+
+Reproduction
+powershell -NoProfile -File Art/run_lidar_flora_transfer.ps1 -Stage audit
+powershell -NoProfile -File Art/run_lidar_flora_transfer.ps1 -Stage before
+powershell -NoProfile -File Art/run_lidar_flora_transfer.ps1 -Stage prepare
+powershell -NoProfile -File Art/run_lidar_flora_transfer.ps1 -Stage install
+powershell -NoProfile -File Art/run_lidar_flora_transfer.ps1 -Stage verify
+python Art/review_lidar_flora_transfer.py
+Run before only on the backed-up original map. Installation is a one-time map
+promotion, not a generic regeneration of the full terrain/forest system.
+Material preparation runs without the large terrain map loaded. Two earlier
+attempts hit the disk guard before the map was saved; those logs are retained
+separately, and are not passing installation evidence. The workflow skips hidden
+recovery components and records disk headroom during subsequent runs.
+
+Review and limits
+Evidence: Art/Export/LidarFloraTransfer. The same road, bank, under-canopy and two
+valley cameras are used before and after. Normal viewport Shot retains gameplay
+LODs. Actual output is 1274x682, with LiDAR's TSR 75% quality profile, rather than
+the requested 1600x900 window dimensions. Exposure settings are held; histogram
+adaptation can respond to changed foliage luminance. Textures settle before capture.
+The camera clips are twelve settled viewpoints over 1.32m, encoded at 3fps. They
+are not real-time performance or wind-stability measurements. Source PNGs are
+untouched; review boards only arrange/downsample them or convert to greyscale.
+The world is paused for each capture, but wind time is not synchronized between
+processes. Runtime physics can also move loose branches between captures; these
+are not pixel-identical simulation snapshots. Saved geometry is checked separately.
+
+Preserving population, LODs and texture/pass counts does not establish zero GPU
+cost. Sustained 60fps and a new physical driving/reset regression remain untested.
+FloraTrail's unresolved flat leaf fans and repeated silhouettes do not become
+reference-matched merely by transferring them to this larger map.
+
+Visual assessment of the installed candidate
+A / palette hierarchy: PARTIAL. Tree greens/olives are more restrained in local
+views, but vivid teal shrubs and green fern masses still compete with them;
+the woodland reference's repeated coral/litter accents are not established.
+B / crown form: PARTIAL. The road and bank have stronger dark/light separation,
+but some saplings remain bright cutouts and valley crowns remain repetitive.
+The five views do not establish a complete front/side/back-lighting test.
+C / readable shade: PARTIAL. Shaded plants retain green/blue-green colour and
+the finish lifts some dark detail, but flat fan masses and dark contacts remain.
+D / material lighting coherence: FAIL. Bark and road light patches remain clear,
+but blue-grey mottled rocks and flat/saturated ground plants are still disconnected
+from the painted woodland reference. These materials were not replaced here.
+E / depth: PARTIAL. Valley ridges retain progressively cooler, lower contrast
+layers; local trunks separate, but the dense understory lacks the reference's
+deliberate layered composition. The long valley remains heavily hazed.
+F / painterly two-scale read: FAIL at close range. The final sampled-camera
+frame shows broad flat leaf sheets and stippling, present in both baseline and
+candidate. Shading separation changes, but it does not restore convincing painted
+detail. Wider stills are partial. Real-time temporal stability is NOT TESTED;
+a settled-camera sequence cannot certify moving wind/TSR quality.
+G / consistency: PARTIAL. One profile is used throughout the five-view set,
+but the unresolved palette/material/form issues prevent an overall visual pass.
+No aggregate score or reference-match claim is made.
+
+Verification result
+Audit, before, prepare, install and verify each finished with report.ok true and
+process exit 0. No failed material compile, fallback material or fatal error was
+found in the passing run logs. Before/install/verify each produced 17 native
+1274x682 PNGs: five fixed views and twelve sampled-camera positions.
+All 12 material slots across six active tree components reopen correctly;
+the three effective leaf-instance parameter sets and finish strength were read
+back after fresh launch. These components hold 146197 canopy trees plus 13030
+saplings (159227 total), using the same three meshes as before.
+All 901 saved mesh components and 1032629 instances including hidden recovery
+components retain their transform hashes, collision and visibility/LOD/cull
+settings. Road and driving-system invariants are unchanged. 879 other original
+packages remain byte-identical; the 880th original package is the intentionally
+updated LiDAR map, whose original recovery copy also verifies.
+Saved map SHA256:
+84fbec4cb70e1081ce9b4bd6b01e2229b2a2ed477d803ba2b3c83b6ed3cd633c
+The isolated FloraTrail study and source diagnostic are unchanged.
+
+Review artifacts: before-after.jpg, greyscale-thumbnails.jpg,
+lidar-and-references.jpg, per-view comparison JPGs and verify-sampled-move.mp4
+under Art/Export/LidarFloraTransfer. The final sampled frame move_11 is an explicit
+close-up failure example, not a hidden outtake. Validation summary:
+Docs/LIDAR_FLORA_TRAIL_TRANSFER_VALIDATION.json.
+Rollback script was parsed and its inputs/hash checks verified, but was not
+executed against the accepted saved map. A new physical drive/reset test and
+sustained 60fps benchmark are not part of the passing checks above.

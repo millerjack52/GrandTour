@@ -1,0 +1,11 @@
+{
+  "revision": "v1",
+  "LeafTransmission": 0.25,
+  "CrownOcclusion": 0.45,
+  "CrownVolume": 0.5,
+  "CrownCard": 1.0,
+  "leaf_tint": [0.76, 0.86, 0.94],
+  "roughness": 0.82,
+  "specular": 0.04,
+  "grade_strength": 1.0
+}
