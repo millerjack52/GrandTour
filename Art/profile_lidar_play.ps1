@@ -1,5 +1,6 @@
-param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline)
+param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual')][string]$ShadowStudy, [string]$ShadowCandidate='baseline')
 $ErrorActionPreference='Stop'
+if($ShadowStudy){$DrivingBaseline=$true}
 if($DrivingBaseline){
  $Drive=$true
  $Probes=$true
@@ -44,6 +45,7 @@ try {
  }
  if(-not $PoseFile){$PoseFile="$out/pf60-poses.json"}
  $poses=Get-Content -LiteralPath $PoseFile -Raw | ConvertFrom-Json
+ if($ShadowStudy){$poses=@($poses | Where-Object name -eq 'bog214')}
  $schedule=@('50:EnableCheats')
  if($DrivingBaseline){$schedule+='475:r.DumpRenderTargetPoolMemory'}
  if($HighRange){$schedule+=@('150:Input.+action IA_LowRange 1','151:Input.-action IA_LowRange','152:Input.+action IA_DiffLock 1','153:Input.-action IA_DiffLock')}
@@ -53,6 +55,13 @@ try {
  foreach($pose in $poses) {
   $frame=200+$index*$FramesPerSite
   $schedule+=('{0}:BugItGo {1} {2} {3} 0 {4} 0' -f $frame,$pose.x,$pose.y,$pose.z,$pose.yaw)
+  if($ShadowStudy){
+   & python "$PSScriptRoot/tools/lidar_shadow_study.py" schedule $ShadowStudy $ShadowCandidate $out
+   if($LASTEXITCODE -ne 0){throw 'Could not prepare shadow experiment'}
+   $study=Get-Content -Raw -LiteralPath "$out/shadow-schedule.json" | ConvertFrom-Json
+   $schedule+=@($study.commands)
+   continue
+  }
   if($DistanceAB){$schedule+=('{0}:gt.Grass.Distance 1' -f $frame);$schedule+=('{0}:gt.Grass.Distance 0' -f ($frame+1700))}
   if($DrivingBaseline){
    $schedule+=('{0}:Shot filename="{1}/{2}.png" -nosuffix' -f ($frame+280),$out.Replace('\','/'),$pose.name)
@@ -100,6 +109,7 @@ try {
   $index++
  }
  $frames=200+$poses.Count*$FramesPerSite
+ if($ShadowStudy){$frames=$study.frames}
  $log=Join-Path $taskRoot "Saved/Logs/LidarPlay-$Label.log"
  # CSV location is obtained from the runtime log.
  # A boot capture forces legacy FrameTime (work plus the next frame's variable wait).
@@ -109,6 +119,8 @@ try {
  if($DrivingBaseline){
   $launch=@($launch | Where-Object {$_ -ne '-NoSound'})
   $launch+='-ForceRes'
+  if($ShadowStudy){$launch+='-ForceEnablePython'}
+  if($ShadowStudy -eq 'visual'){$launch+=@('-UseFixedTimeStep','-FPS=24','-FixedSeed')}
   # The normal Saved/Profiling junction may point to a disconnected drive.
   $launch+='-saveddirsuffix=LidarDrive'
   $driveSaved=Join-Path $taskRoot 'Saved_LidarDrive'
@@ -123,6 +135,12 @@ try {
   $launch=@($launch | Where-Object {$_ -notlike '-abslog=*'})
   $launch+=('-abslog="'+$log+'"')
  }
+ if($ShadowStudy -in @('drive','visual') -and $ShadowCandidate -eq 'tree110'){
+  # Exercise the same early activation as the optional player launch.
+  $trialPath=(Join-Path $PSScriptRoot 'Unreal/lidar_tree_shadow_trial.py').Replace('\','/')
+  $launch=@($launch | ForEach-Object {if($_ -like '-ExecCmds=*'){ $_.TrimEnd('"')+',py '+$trialPath+'"' }else{$_}})
+ }
+ if($ShadowStudy -and ($launch -join ' ').Length -ge 16200){throw 'Shadow study command line exceeds engine capacity'}
  $p=Start-Process 'C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor.exe' -ArgumentList $launch -WindowStyle Hidden -PassThru
  $handle=$p.Handle
  if($DrivingBaseline){

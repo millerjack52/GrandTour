@@ -1,0 +1,1919 @@
+{
+  "runs": {
+    "drive_B1": {
+      "activation": "in-session",
+      "sections": {
+        "bog": {
+          "frames": 121,
+          "seconds": 8.011,
+          "fps": 15.1,
+          "estimated_travel_m": 1.9,
+          "timings": {
+            "FrameTime": {
+              "mean": 66.204,
+              "p95": 77.591
+            },
+            "GPUTime": {
+              "mean": 64.819,
+              "p95": 74.603
+            },
+            "GPU/ShadowDepths": {
+              "mean": 12.696,
+              "p95": 12.918
+            },
+            "GPU/Basepass": {
+              "mean": 22.857,
+              "p95": 27.067
+            },
+            "GPU/RenderVelocities": {
+              "mean": 15.34,
+              "p95": 18.252
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1431.719,
+              "p95": 1445.0
+            },
+            "GameThreadTime": {
+              "mean": 9.923,
+              "p95": 11.813
+            },
+            "RenderThreadTime": {
+              "mean": 11.124,
+              "p95": 14.966
+            }
+          },
+          "full_travel_m": 2.58,
+          "matched_distance": {
+            "target_m": 1.5,
+            "frames": 69,
+            "seconds": 4.645,
+            "fps": 14.86,
+            "timings": {
+              "FrameTime": {
+                "mean": 67.314,
+                "p95": 78.178
+              },
+              "GPUTime": {
+                "mean": 65.897,
+                "p95": 75.262
+              },
+              "GPU/ShadowDepths": {
+                "mean": 12.782,
+                "p95": 13.146
+              },
+              "GPU/Basepass": {
+                "mean": 23.363,
+                "p95": 27.079
+              },
+              "GPU/RenderVelocities": {
+                "mean": 15.663,
+                "p95": 18.295
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1437.145,
+                "p95": 1453.0
+              },
+              "GameThreadTime": {
+                "mean": 9.957,
+                "p95": 12.97
+              },
+              "RenderThreadTime": {
+                "mean": 11.492,
+                "p95": 15.709
+              }
+            }
+          }
+        },
+        "approach": {
+          "frames": 103,
+          "seconds": 8.029,
+          "fps": 12.83,
+          "estimated_travel_m": 7.74,
+          "timings": {
+            "FrameTime": {
+              "mean": 77.951,
+              "p95": 84.445
+            },
+            "GPUTime": {
+              "mean": 76.138,
+              "p95": 81.906
+            },
+            "GPU/ShadowDepths": {
+              "mean": 13.341,
+              "p95": 14.911
+            },
+            "GPU/Basepass": {
+              "mean": 28.083,
+              "p95": 29.796
+            },
+            "GPU/RenderVelocities": {
+              "mean": 18.27,
+              "p95": 19.863
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1466.049,
+              "p95": 1480.0
+            },
+            "GameThreadTime": {
+              "mean": 9.911,
+              "p95": 11.669
+            },
+            "RenderThreadTime": {
+              "mean": 12.553,
+              "p95": 14.523
+            }
+          },
+          "full_travel_m": 19.4,
+          "matched_distance": {
+            "target_m": 12.0,
+            "frames": 162,
+            "seconds": 13.179,
+            "fps": 12.29,
+            "timings": {
+              "FrameTime": {
+                "mean": 81.351,
+                "p95": 90.592
+              },
+              "GPUTime": {
+                "mean": 76.868,
+                "p95": 87.463
+              },
+              "GPU/ShadowDepths": {
+                "mean": 13.395,
+                "p95": 15.271
+              },
+              "GPU/Basepass": {
+                "mean": 28.133,
+                "p95": 32.296
+              },
+              "GPU/RenderVelocities": {
+                "mean": 18.345,
+                "p95": 21.228
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1451.969,
+                "p95": 1478.0
+              },
+              "GameThreadTime": {
+                "mean": 14.586,
+                "p95": 14.205
+              },
+              "RenderThreadTime": {
+                "mean": 12.892,
+                "p95": 16.949
+              }
+            }
+          }
+        }
+      },
+      "gpu_telemetry": {
+        "samples": 4,
+        "median_c_mhz_util": [
+          88.5,
+          1665.0,
+          98.0
+        ]
+      }
+    },
+    "drive_A2": {
+      "activation": "stock",
+      "sections": {
+        "bog": {
+          "frames": 72,
+          "seconds": 8.05,
+          "fps": 8.94,
+          "estimated_travel_m": 1.57,
+          "timings": {
+            "FrameTime": {
+              "mean": 111.803,
+              "p95": 117.578
+            },
+            "GPUTime": {
+              "mean": 109.854,
+              "p95": 114.749
+            },
+            "GPU/ShadowDepths": {
+              "mean": 52.781,
+              "p95": 53.445
+            },
+            "GPU/Basepass": {
+              "mean": 24.993,
+              "p95": 26.994
+            },
+            "GPU/RenderVelocities": {
+              "mean": 16.91,
+              "p95": 18.314
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1439.236,
+              "p95": 1444.0
+            },
+            "GameThreadTime": {
+              "mean": 12.881,
+              "p95": 17.248
+            },
+            "RenderThreadTime": {
+              "mean": 12.945,
+              "p95": 15.8
+            }
+          },
+          "full_travel_m": 2.29,
+          "matched_distance": {
+            "target_m": 1.5,
+            "frames": 59,
+            "seconds": 6.674,
+            "fps": 8.84,
+            "timings": {
+              "FrameTime": {
+                "mean": 113.115,
+                "p95": 117.657
+              },
+              "GPUTime": {
+                "mean": 111.089,
+                "p95": 114.762
+              },
+              "GPU/ShadowDepths": {
+                "mean": 52.828,
+                "p95": 53.445
+              },
+              "GPU/Basepass": {
+                "mean": 25.534,
+                "p95": 27.009
+              },
+              "GPU/RenderVelocities": {
+                "mean": 17.291,
+                "p95": 18.315
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1438.441,
+                "p95": 1442.0
+              },
+              "GameThreadTime": {
+                "mean": 13.227,
+                "p95": 17.281
+              },
+              "RenderThreadTime": {
+                "mean": 13.233,
+                "p95": 16.076
+              }
+            }
+          }
+        },
+        "approach": {
+          "frames": 69,
+          "seconds": 8.044,
+          "fps": 8.58,
+          "estimated_travel_m": 3.25,
+          "timings": {
+            "FrameTime": {
+              "mean": 116.576,
+              "p95": 123.173
+            },
+            "GPUTime": {
+              "mean": 114.726,
+              "p95": 120.203
+            },
+            "GPU/ShadowDepths": {
+              "mean": 56.382,
+              "p95": 57.989
+            },
+            "GPU/Basepass": {
+              "mean": 26.014,
+              "p95": 27.97
+            },
+            "GPU/RenderVelocities": {
+              "mean": 17.303,
+              "p95": 18.653
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1470.913,
+              "p95": 1479.0
+            },
+            "GameThreadTime": {
+              "mean": 10.91,
+              "p95": 12.933
+            },
+            "RenderThreadTime": {
+              "mean": 12.838,
+              "p95": 15.834
+            }
+          },
+          "full_travel_m": 16.66,
+          "matched_distance": {
+            "target_m": 12.0,
+            "frames": 210,
+            "seconds": 24.927,
+            "fps": 8.42,
+            "timings": {
+              "FrameTime": {
+                "mean": 118.698,
+                "p95": 124.352
+              },
+              "GPUTime": {
+                "mean": 116.654,
+                "p95": 121.209
+              },
+              "GPU/ShadowDepths": {
+                "mean": 56.155,
+                "p95": 57.839
+              },
+              "GPU/Basepass": {
+                "mean": 26.732,
+                "p95": 28.239
+              },
+              "GPU/RenderVelocities": {
+                "mean": 17.791,
+                "p95": 18.858
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1459.552,
+                "p95": 1478.0
+              },
+              "GameThreadTime": {
+                "mean": 12.043,
+                "p95": 15.247
+              },
+              "RenderThreadTime": {
+                "mean": 13.259,
+                "p95": 16.201
+              }
+            }
+          }
+        }
+      },
+      "gpu_telemetry": {
+        "samples": 9,
+        "median_c_mhz_util": [
+          88.0,
+          1665.0,
+          99.0
+        ]
+      }
+    },
+    "drive_B2": {
+      "activation": "fresh launch",
+      "sections": {
+        "bog": {
+          "frames": 117,
+          "seconds": 8.048,
+          "fps": 14.54,
+          "estimated_travel_m": 2.47,
+          "timings": {
+            "FrameTime": {
+              "mean": 68.788,
+              "p95": 78.328
+            },
+            "GPUTime": {
+              "mean": 67.29,
+              "p95": 75.372
+            },
+            "GPU/ShadowDepths": {
+              "mean": 12.899,
+              "p95": 14.425
+            },
+            "GPU/Basepass": {
+              "mean": 23.781,
+              "p95": 27.095
+            },
+            "GPU/RenderVelocities": {
+              "mean": 15.941,
+              "p95": 18.24
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1433.761,
+              "p95": 1448.0
+            },
+            "GameThreadTime": {
+              "mean": 9.945,
+              "p95": 11.95
+            },
+            "RenderThreadTime": {
+              "mean": 11.221,
+              "p95": 15.305
+            }
+          },
+          "full_travel_m": 3.17,
+          "matched_distance": {
+            "target_m": 1.5,
+            "frames": 40,
+            "seconds": 2.871,
+            "fps": 13.93,
+            "timings": {
+              "FrameTime": {
+                "mean": 71.785,
+                "p95": 78.247
+              },
+              "GPUTime": {
+                "mean": 70.141,
+                "p95": 74.898
+              },
+              "GPU/ShadowDepths": {
+                "mean": 12.67,
+                "p95": 12.888
+              },
+              "GPU/Basepass": {
+                "mean": 25.537,
+                "p95": 27.095
+              },
+              "GPU/RenderVelocities": {
+                "mean": 17.159,
+                "p95": 18.271
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1441.65,
+                "p95": 1455.0
+              },
+              "GameThreadTime": {
+                "mean": 10.586,
+                "p95": 14.047
+              },
+              "RenderThreadTime": {
+                "mean": 12.085,
+                "p95": 15.759
+              }
+            }
+          }
+        },
+        "approach": {
+          "frames": 109,
+          "seconds": 8.059,
+          "fps": 13.53,
+          "estimated_travel_m": 8.3,
+          "timings": {
+            "FrameTime": {
+              "mean": 73.932,
+              "p95": 79.207
+            },
+            "GPUTime": {
+              "mean": 72.243,
+              "p95": 76.317
+            },
+            "GPU/ShadowDepths": {
+              "mean": 12.526,
+              "p95": 12.663
+            },
+            "GPU/Basepass": {
+              "mean": 26.634,
+              "p95": 28.175
+            },
+            "GPU/RenderVelocities": {
+              "mean": 17.633,
+              "p95": 18.663
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1460.752,
+              "p95": 1472.0
+            },
+            "GameThreadTime": {
+              "mean": 9.979,
+              "p95": 11.835
+            },
+            "RenderThreadTime": {
+              "mean": 12.448,
+              "p95": 14.663
+            }
+          },
+          "full_travel_m": 17.96,
+          "matched_distance": {
+            "target_m": 12.0,
+            "frames": 168,
+            "seconds": 12.548,
+            "fps": 13.39,
+            "timings": {
+              "FrameTime": {
+                "mean": 74.691,
+                "p95": 80.278
+              },
+              "GPUTime": {
+                "mean": 72.959,
+                "p95": 77.962
+              },
+              "GPU/ShadowDepths": {
+                "mean": 12.632,
+                "p95": 12.832
+              },
+              "GPU/Basepass": {
+                "mean": 26.742,
+                "p95": 28.269
+              },
+              "GPU/RenderVelocities": {
+                "mean": 17.717,
+                "p95": 18.731
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1456.149,
+                "p95": 1472.0
+              },
+              "GameThreadTime": {
+                "mean": 10.783,
+                "p95": 14.008
+              },
+              "RenderThreadTime": {
+                "mean": 12.507,
+                "p95": 15.273
+              }
+            }
+          }
+        }
+      },
+      "gpu_telemetry": {
+        "samples": 6,
+        "median_c_mhz_util": [
+          87.5,
+          1665.0,
+          98.0
+        ]
+      }
+    },
+    "drive_A3": {
+      "activation": "stock",
+      "sections": {
+        "bog": {
+          "frames": 72,
+          "seconds": 8.069,
+          "fps": 8.92,
+          "estimated_travel_m": 1.88,
+          "timings": {
+            "FrameTime": {
+              "mean": 112.071,
+              "p95": 118.129
+            },
+            "GPUTime": {
+              "mean": 110.24,
+              "p95": 115.772
+            },
+            "GPU/ShadowDepths": {
+              "mean": 52.716,
+              "p95": 53.861
+            },
+            "GPU/Basepass": {
+              "mean": 25.32,
+              "p95": 27.156
+            },
+            "GPU/RenderVelocities": {
+              "mean": 17.094,
+              "p95": 18.392
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1438.111,
+              "p95": 1447.0
+            },
+            "GameThreadTime": {
+              "mean": 12.105,
+              "p95": 15.119
+            },
+            "RenderThreadTime": {
+              "mean": 11.846,
+              "p95": 15.125
+            }
+          },
+          "full_travel_m": 4.99,
+          "matched_distance": {
+            "target_m": 1.5,
+            "frames": 53,
+            "seconds": 5.902,
+            "fps": 8.98,
+            "timings": {
+              "FrameTime": {
+                "mean": 111.368,
+                "p95": 117.37
+              },
+              "GPUTime": {
+                "mean": 109.63,
+                "p95": 115.042
+              },
+              "GPU/ShadowDepths": {
+                "mean": 52.86,
+                "p95": 53.647
+              },
+              "GPU/Basepass": {
+                "mean": 25.252,
+                "p95": 27.152
+              },
+              "GPU/RenderVelocities": {
+                "mean": 17.063,
+                "p95": 18.398
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1436.453,
+                "p95": 1447.0
+              },
+              "GameThreadTime": {
+                "mean": 12.104,
+                "p95": 16.435
+              },
+              "RenderThreadTime": {
+                "mean": 11.748,
+                "p95": 14.955
+              }
+            }
+          }
+        },
+        "approach": {
+          "frames": 65,
+          "seconds": 8.064,
+          "fps": 8.06,
+          "estimated_travel_m": 3.25,
+          "timings": {
+            "FrameTime": {
+              "mean": 124.06,
+              "p95": 131.548
+            },
+            "GPUTime": {
+              "mean": 121.855,
+              "p95": 126.255
+            },
+            "GPU/ShadowDepths": {
+              "mean": 58.169,
+              "p95": 59.965
+            },
+            "GPU/Basepass": {
+              "mean": 28.283,
+              "p95": 30.172
+            },
+            "GPU/RenderVelocities": {
+              "mean": 18.474,
+              "p95": 19.689
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1472.923,
+              "p95": 1488.0
+            },
+            "GameThreadTime": {
+              "mean": 12.941,
+              "p95": 16.405
+            },
+            "RenderThreadTime": {
+              "mean": 15.624,
+              "p95": 19.817
+            }
+          },
+          "full_travel_m": 15.96,
+          "matched_distance": {
+            "target_m": 12.0,
+            "frames": 237,
+            "seconds": 29.954,
+            "fps": 7.91,
+            "timings": {
+              "FrameTime": {
+                "mean": 126.386,
+                "p95": 137.294
+              },
+              "GPUTime": {
+                "mean": 124.223,
+                "p95": 133.542
+              },
+              "GPU/ShadowDepths": {
+                "mean": 59.047,
+                "p95": 63.03
+              },
+              "GPU/Basepass": {
+                "mean": 28.957,
+                "p95": 31.578
+              },
+              "GPU/RenderVelocities": {
+                "mean": 18.756,
+                "p95": 20.729
+              },
+              "DrawCall/ShadowDepths": {
+                "mean": 1457.16,
+                "p95": 1487.0
+              },
+              "GameThreadTime": {
+                "mean": 13.575,
+                "p95": 17.55
+              },
+              "RenderThreadTime": {
+                "mean": 14.94,
+                "p95": 19.276
+              }
+            }
+          }
+        }
+      },
+      "gpu_telemetry": {
+        "samples": 9,
+        "median_c_mhz_util": [
+          88.0,
+          1650.0,
+          99.0
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "bog": {
+      "baseline": {
+        "fps": 8.93,
+        "ms": {
+          "FrameTime": 111.937,
+          "GPUTime": 110.047,
+          "GPU/ShadowDepths": 52.748,
+          "GPU/Basepass": 25.157,
+          "GPU/RenderVelocities": 17.002,
+          "DrawCall/ShadowDepths": 1438.674,
+          "GameThreadTime": 12.493,
+          "RenderThreadTime": 12.396
+        },
+        "p95_frame_ms_per_run": [
+          117.578,
+          118.129
+        ],
+        "travel_m_per_run": [
+          1.57,
+          1.88
+        ]
+      },
+      "candidate": {
+        "fps": 14.82,
+        "ms": {
+          "FrameTime": 67.474,
+          "GPUTime": 66.034,
+          "GPU/ShadowDepths": 12.796,
+          "GPU/Basepass": 23.311,
+          "GPU/RenderVelocities": 15.635,
+          "DrawCall/ShadowDepths": 1432.723,
+          "GameThreadTime": 9.934,
+          "RenderThreadTime": 11.172
+        },
+        "p95_frame_ms_per_run": [
+          77.591,
+          78.328
+        ],
+        "travel_m_per_run": [
+          1.9,
+          2.47
+        ]
+      }
+    },
+    "approach": {
+      "baseline": {
+        "fps": 8.32,
+        "ms": {
+          "FrameTime": 120.206,
+          "GPUTime": 118.184,
+          "GPU/ShadowDepths": 57.249,
+          "GPU/Basepass": 27.115,
+          "GPU/RenderVelocities": 17.871,
+          "DrawCall/ShadowDepths": 1471.888,
+          "GameThreadTime": 11.895,
+          "RenderThreadTime": 14.189
+        },
+        "p95_frame_ms_per_run": [
+          123.173,
+          131.548
+        ],
+        "travel_m_per_run": [
+          3.25,
+          3.25
+        ]
+      },
+      "candidate": {
+        "fps": 13.18,
+        "ms": {
+          "FrameTime": 75.885,
+          "GPUTime": 74.135,
+          "GPU/ShadowDepths": 12.922,
+          "GPU/Basepass": 27.338,
+          "GPU/RenderVelocities": 17.942,
+          "DrawCall/ShadowDepths": 1463.326,
+          "GameThreadTime": 9.946,
+          "RenderThreadTime": 12.499
+        },
+        "p95_frame_ms_per_run": [
+          84.445,
+          79.207
+        ],
+        "travel_m_per_run": [
+          7.74,
+          8.3
+        ]
+      }
+    }
+  },
+  "diag1": {
+    "baseline0": {
+      "fps": 14.87,
+      "shadow_ms": 33.209,
+      "shadow_draws": 1447.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.13,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.09,
+        "EMPTY_PAGES": 1894.74,
+        "NON_NANITE_INSTANCES_DRAWN": 29122.3
+      }
+    },
+    "trees1": {
+      "fps": 25.56,
+      "shadow_ms": 4.446,
+      "shadow_draws": 1418.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.43,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.43,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 21392.26
+      }
+    },
+    "landscape2": {
+      "fps": 14.1,
+      "shadow_ms": 35.034,
+      "shadow_draws": 1208.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 59.0,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 52.0,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29173.7
+      }
+    },
+    "groundflora3": {
+      "fps": 14.15,
+      "shadow_ms": 34.022,
+      "shadow_draws": 1393.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.3,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.3,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 8294.57
+      }
+    },
+    "groundmesh4": {
+      "fps": 13.39,
+      "shadow_ms": 37.356,
+      "shadow_draws": 816.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.35,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.35,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 28836.91
+      }
+    },
+    "vehicle5": {
+      "fps": 12.98,
+      "shadow_ms": 38.62,
+      "shadow_draws": 1440.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.13,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.13,
+        "EMPTY_PAGES": 1982.78,
+        "NON_NANITE_INSTANCES_DRAWN": 29196.48
+      }
+    },
+    "other6": {
+      "fps": 12.59,
+      "shadow_ms": 39.147,
+      "shadow_draws": 954.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.91,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.91,
+        "EMPTY_PAGES": 1985.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29058.52
+      }
+    },
+    "baseline7": {
+      "fps": 12.32,
+      "shadow_ms": 40.511,
+      "shadow_draws": 1450.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.7,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.7,
+        "EMPTY_PAGES": 1985.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29229.04
+      }
+    },
+    "skip_invalidation8": {
+      "fps": 11.97,
+      "shadow_ms": 41.45,
+      "shadow_draws": 1450.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.83,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 0.0,
+        "EMPTY_PAGES": 1985.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29199.04
+      }
+    },
+    "restore9": {
+      "fps": 11.87,
+      "shadow_ms": 41.801,
+      "shadow_draws": 1450.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.43,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.43,
+        "EMPTY_PAGES": 1985.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29173.0
+      }
+    }
+  },
+  "cache1": {
+    "baseline": {
+      "fps": 11.68,
+      "shadow_ms": 41.716,
+      "shadow_draws": 1449.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 56.74,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 49.74,
+        "EMPTY_PAGES": 1895.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29166.11
+      }
+    },
+    "receiver_off": {
+      "fps": 9.9,
+      "shadow_ms": 51.48,
+      "shadow_draws": 1449.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 56.53,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 49.47,
+        "EMPTY_PAGES": 1990.89,
+        "NON_NANITE_INSTANCES_DRAWN": 38457.63
+      }
+    },
+    "baseline_repeat": {
+      "fps": 11.02,
+      "shadow_ms": 44.903,
+      "shadow_draws": 1448.382,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.26,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.26,
+        "EMPTY_PAGES": 1986.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29101.74
+      }
+    },
+    "shadow_wind_bias0": {
+      "fps": 10.8,
+      "shadow_ms": 45.806,
+      "shadow_draws": 1443.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.58,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.58,
+        "EMPTY_PAGES": 1985.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29183.84
+      }
+    },
+    "receiver_off_wind_bias0": {
+      "fps": 9.48,
+      "shadow_ms": 57.314,
+      "shadow_draws": 1443.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.42,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.42,
+        "EMPTY_PAGES": 1987.0,
+        "NON_NANITE_INSTANCES_DRAWN": 39561.58
+      }
+    },
+    "receiver_off_repeat": {
+      "fps": 9.29,
+      "shadow_ms": 58.454,
+      "shadow_draws": 1437.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.21,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.21,
+        "EMPTY_PAGES": 1985.0,
+        "NON_NANITE_INSTANCES_DRAWN": 39708.16
+      }
+    },
+    "restore": {
+      "fps": 10.21,
+      "shadow_ms": 48.938,
+      "shadow_draws": 1437.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 59.47,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 52.47,
+        "EMPTY_PAGES": 1986.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29251.42
+      }
+    }
+  },
+  "canopy1": {
+    "baseline": {
+      "fps": 10.5,
+      "shadow_ms": 47.588,
+      "shadow_draws": 1446.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 59.53,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 52.53,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29224.58
+      }
+    },
+    "wind50": {
+      "fps": 10.37,
+      "shadow_ms": 48.207,
+      "shadow_draws": 1442.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.21,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.21,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29227.16
+      }
+    },
+    "wind50bias0": {
+      "fps": 14.67,
+      "shadow_ms": 20.028,
+      "shadow_draws": 1434.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.0,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.0,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 23729.89
+      }
+    },
+    "wind50biasNeg2": {
+      "fps": 16.47,
+      "shadow_ms": 12.227,
+      "shadow_draws": 1434.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.0,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.0,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 22225.53
+      }
+    },
+    "all_tree_wpo_off_diagnostic": {
+      "fps": 12.81,
+      "shadow_ms": 26.058,
+      "shadow_draws": 1434.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 56.84,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 49.84,
+        "EMPTY_PAGES": 1894.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29098.84
+      }
+    },
+    "bias125": {
+      "fps": 9.82,
+      "shadow_ms": 49.942,
+      "shadow_draws": 1438.036,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 49.47,
+        "STATIC_INVALIDATED_PAGES": 0.05,
+        "DYNAMIC_INVALIDATED_PAGES": 43.47,
+        "EMPTY_PAGES": 1957.58,
+        "NON_NANITE_INSTANCES_DRAWN": 30736.74
+      }
+    },
+    "bias150": {
+      "fps": 9.83,
+      "shadow_ms": 48.612,
+      "shadow_draws": 1437.855,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 40.0,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 35.0,
+        "EMPTY_PAGES": 1983.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29602.58
+      }
+    },
+    "restore": {
+      "fps": 9.31,
+      "shadow_ms": 53.903,
+      "shadow_draws": 1438.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.05,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 50.05,
+        "EMPTY_PAGES": 1984.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29276.68
+      }
+    }
+  },
+  "rebuild1": {
+    "baseline": {
+      "fps": 9.3,
+      "shadow_ms": 53.322,
+      "shadow_draws": 1432.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.63,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.63,
+        "EMPTY_PAGES": 1985.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29188.89
+      }
+    },
+    "tree110": {
+      "fps": 15.28,
+      "shadow_ms": 12.801,
+      "shadow_draws": 1444.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 57.53,
+        "STATIC_INVALIDATED_PAGES": 3.05,
+        "DYNAMIC_INVALIDATED_PAGES": 50.89,
+        "EMPTY_PAGES": 1984.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29537.05
+      }
+    },
+    "tree110soft": {
+      "fps": 13.38,
+      "shadow_ms": 22.276,
+      "shadow_draws": 1440.83,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 59.84,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 52.84,
+        "EMPTY_PAGES": 1984.0,
+        "NON_NANITE_INSTANCES_DRAWN": 23835.37
+      }
+    },
+    "resolution2": {
+      "fps": 10.23,
+      "shadow_ms": 44.354,
+      "shadow_draws": 1436.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 33.05,
+        "STATIC_INVALIDATED_PAGES": 1.74,
+        "DYNAMIC_INVALIDATED_PAGES": 29.26,
+        "EMPTY_PAGES": 2014.0,
+        "NON_NANITE_INSTANCES_DRAWN": 27100.05
+      }
+    },
+    "shadowlod2": {
+      "fps": 10.48,
+      "shadow_ms": 41.796,
+      "shadow_draws": 1407.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 59.0,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 52.0,
+        "EMPTY_PAGES": 1986.0,
+        "NON_NANITE_INSTANCES_DRAWN": 28133.89
+      }
+    },
+    "restore": {
+      "fps": 9.37,
+      "shadow_ms": 53.236,
+      "shadow_draws": 1436.0,
+      "vsm": {
+        "REQUESTED_THIS_FRAME_PAGES": 58.47,
+        "STATIC_INVALIDATED_PAGES": 0.0,
+        "DYNAMIC_INVALIDATED_PAGES": 51.47,
+        "EMPTY_PAGES": 1987.0,
+        "NON_NANITE_INSTANCES_DRAWN": 29220.79
+      }
+    }
+  },
+  "distance_comparison": {
+    "bog": {
+      "baseline": {
+        "target_m": 1.5,
+        "repeats": 2,
+        "fps": 8.91,
+        "ms": {
+          "FrameTime": 112.288,
+          "GPUTime": 110.399,
+          "GPU/ShadowDepths": 52.843,
+          "GPU/Basepass": 25.401,
+          "GPU/RenderVelocities": 17.183,
+          "DrawCall/ShadowDepths": 1437.5,
+          "GameThreadTime": 12.696,
+          "RenderThreadTime": 12.53
+        },
+        "p95_frame_ms_per_run": [
+          117.657,
+          117.37
+        ]
+      },
+      "candidate": {
+        "target_m": 1.5,
+        "repeats": 2,
+        "fps": 14.5,
+        "ms": {
+          "FrameTime": 68.955,
+          "GPUTime": 67.454,
+          "GPU/ShadowDepths": 12.741,
+          "GPU/Basepass": 24.161,
+          "GPU/RenderVelocities": 16.212,
+          "DrawCall/ShadowDepths": 1438.798,
+          "GameThreadTime": 10.188,
+          "RenderThreadTime": 11.71
+        },
+        "p95_frame_ms_per_run": [
+          78.178,
+          78.247
+        ]
+      }
+    },
+    "approach": {
+      "baseline": {
+        "target_m": 12.0,
+        "repeats": 2,
+        "fps": 8.14,
+        "ms": {
+          "FrameTime": 122.774,
+          "GPUTime": 120.667,
+          "GPU/ShadowDepths": 57.688,
+          "GPU/Basepass": 27.912,
+          "GPU/RenderVelocities": 18.303,
+          "DrawCall/ShadowDepths": 1458.284,
+          "GameThreadTime": 12.855,
+          "RenderThreadTime": 14.15
+        },
+        "p95_frame_ms_per_run": [
+          124.352,
+          137.294
+        ]
+      },
+      "candidate": {
+        "target_m": 12.0,
+        "repeats": 2,
+        "fps": 12.83,
+        "ms": {
+          "FrameTime": 77.96,
+          "GPUTime": 74.878,
+          "GPU/ShadowDepths": 13.007,
+          "GPU/Basepass": 27.425,
+          "GPU/RenderVelocities": 18.025,
+          "DrawCall/ShadowDepths": 1454.097,
+          "GameThreadTime": 12.65,
+          "RenderThreadTime": 12.696
+        },
+        "p95_frame_ms_per_run": [
+          90.592,
+          80.278
+        ]
+      }
+    }
+  },
+  "paired_visual": [
+    {
+      "sample": 0,
+      "pose": {
+        "game_time": 37.7916677929461,
+        "pawn": [
+          -44470.75965252088,
+          -39615.82967776743,
+          5008.9393052388195
+        ],
+        "camera": [
+          -44653.681934998356,
+          -38936.2321273721,
+          5250.0397187905955
+        ],
+        "rotation": [
+          -1.6148099745460815e-15,
+          -10.0,
+          -74.78612518310547
+        ]
+      },
+      "regions": {
+        "scene": {
+          "before_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.006,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          }
+        },
+        "left_verge": {
+          "before_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          }
+        },
+        "truck_ground": {
+          "before_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.011,
+            "pct_over_8": 0.0,
+            "p99_255": 0.715
+          }
+        },
+        "right_trees": {
+          "before_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          }
+        },
+        "upper_canopy": {
+          "before_repeat": {
+            "mae_255": 0.008,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "after_repeat": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "before_after": {
+            "mae_255": 0.019,
+            "pct_over_8": 0.029,
+            "p99_255": 0.715
+          },
+          "baseline_restored": {
+            "mae_255": 0.013,
+            "pct_over_8": 0.0,
+            "p99_255": 0.715
+          }
+        },
+        "distant_path": {
+          "before_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.001,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.005,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          }
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "pose": {
+        "game_time": 39.791667852550745,
+        "pawn": [
+          -44370.75350055989,
+          -39947.49348983755,
+          4984.590751643018
+        ],
+        "camera": [
+          -44567.214239696936,
+          -39287.12683370699,
+          5226.509346130466
+        ],
+        "rotation": [
+          -2.4222148030004446e-15,
+          -10.0,
+          -73.94769287109375
+        ]
+      },
+      "regions": {
+        "scene": {
+          "before_repeat": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.002,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.002,
+            "p99_255": 0.213
+          },
+          "baseline_restored": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          }
+        },
+        "left_verge": {
+          "before_repeat": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          },
+          "after_repeat": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "baseline_restored": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          }
+        },
+        "truck_ground": {
+          "before_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.001,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          },
+          "baseline_restored": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          }
+        },
+        "right_trees": {
+          "before_repeat": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          },
+          "after_repeat": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.009,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "baseline_restored": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          }
+        },
+        "upper_canopy": {
+          "before_repeat": {
+            "mae_255": 0.008,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "after_repeat": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.001,
+            "p99_255": 0.213
+          },
+          "before_after": {
+            "mae_255": 0.027,
+            "pct_over_8": 0.047,
+            "p99_255": 0.715
+          },
+          "baseline_restored": {
+            "mae_255": 0.012,
+            "pct_over_8": 0.0,
+            "p99_255": 0.715
+          }
+        },
+        "distant_path": {
+          "before_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "baseline_restored": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          }
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "pose": {
+        "game_time": 41.79166791215539,
+        "pawn": [
+          -44241.5541240102,
+          -40320.06431110763,
+          4924.631947502536
+        ],
+        "camera": [
+          -44447.168616559684,
+          -39649.129335412676,
+          5168.235268857876
+        ],
+        "rotation": [
+          3.229619949092163e-15,
+          -10.0,
+          -72.73008728027344
+        ]
+      },
+      "regions": {
+        "scene": {
+          "before_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.001,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.013,
+            "p99_255": 0.072
+          },
+          "baseline_restored": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          }
+        },
+        "left_verge": {
+          "before_repeat": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.002,
+            "p99_255": 0.072
+          },
+          "after_repeat": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.004,
+            "p99_255": 0.213
+          },
+          "baseline_restored": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          }
+        },
+        "truck_ground": {
+          "before_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.001,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          }
+        },
+        "right_trees": {
+          "before_repeat": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          },
+          "after_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "baseline_restored": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          }
+        },
+        "upper_canopy": {
+          "before_repeat": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "after_repeat": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.037,
+            "pct_over_8": 0.093,
+            "p99_255": 0.715
+          },
+          "baseline_restored": {
+            "mae_255": 0.01,
+            "pct_over_8": 0.0,
+            "p99_255": 0.643
+          }
+        },
+        "distant_path": {
+          "before_repeat": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.003,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.003,
+            "p99_255": 0.072
+          },
+          "baseline_restored": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.003,
+            "p99_255": 0.144
+          }
+        }
+      }
+    },
+    {
+      "sample": 3,
+      "pose": {
+        "game_time": 43.791667971760035,
+        "pawn": [
+          -44156.115830796436,
+          -40554.93138913975,
+          4914.389010495923
+        ],
+        "camera": [
+          -44376.63026819193,
+          -39887.2729096908,
+          5158.775660949145
+        ],
+        "rotation": [
+          -1.2918479796368652e-14,
+          -10.0,
+          -71.5364761352539
+        ]
+      },
+      "regions": {
+        "scene": {
+          "before_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          },
+          "baseline_restored": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          }
+        },
+        "left_verge": {
+          "before_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          },
+          "baseline_restored": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.14
+          }
+        },
+        "truck_ground": {
+          "before_repeat": {
+            "mae_255": 0.006,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "after_repeat": {
+            "mae_255": 0.001,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          },
+          "baseline_restored": {
+            "mae_255": 0.008,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          }
+        },
+        "right_trees": {
+          "before_repeat": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.001,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.004,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          }
+        },
+        "upper_canopy": {
+          "before_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.021,
+            "pct_over_8": 0.052,
+            "p99_255": 0.285
+          },
+          "baseline_restored": {
+            "mae_255": 0.007,
+            "pct_over_8": 0.0,
+            "p99_255": 0.213
+          }
+        },
+        "distant_path": {
+          "before_repeat": {
+            "mae_255": 0.001,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "after_repeat": {
+            "mae_255": 0.002,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "before_after": {
+            "mae_255": 0.003,
+            "pct_over_8": 0.0,
+            "p99_255": 0.0
+          },
+          "baseline_restored": {
+            "mae_255": 0.005,
+            "pct_over_8": 0.0,
+            "p99_255": 0.072
+          }
+        }
+      }
+    }
+  ],
+  "uninterrupted_visual": {
+    "frames": 96,
+    "seconds": 8.0,
+    "crop_xyxy": [
+      80,
+      195,
+      1520,
+      875
+    ],
+    "positions": 9,
+    "max_pawn_separation_cm": 0.0,
+    "travel_m": [
+      15.4,
+      15.4
+    ],
+    "mean_luma_delta_255_per_frame": {
+      "mean": 0.23,
+      "max": 0.398
+    },
+    "pct_scene_luma_delta_over_8_per_frame": {
+      "mean": 0.085,
+      "max": 0.421
+    },
+    "highest_difference_frame": 42
+  },
+  "conditions": {
+    "preset_sha256": "9D6412474695435CA1CD928542EBF88AE2F957239AA027B172310B9C4938D318",
+    "audio_enabled": true,
+    "offscreen": true,
+    "os_build": "26200",
+    "map_sha256": "4AF178BF4C88DEC6FEB823DAEBA3B2B45E3EB1740F0AC0B8607524413F1FCED6",
+    "module_sha256": "8FF157DEA769DA55488186574F5912DD934900475AD790C54BE32F6920400491",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "resolution": [
+      1600,
+      900
+    ],
+    "tsr_percent": 75
+  },
+  "timing_units": "Milliseconds per frame, except draw calls. Comparisons pool frames. Position thresholds are in horizontal metres."
+}

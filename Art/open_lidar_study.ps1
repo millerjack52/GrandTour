@@ -1,5 +1,7 @@
-param([switch]$Play,[switch]$OriginalQuality,[switch]$ShowFPS,[switch]$Paddock,[switch]$House)
+param([switch]$Play,[switch]$OriginalQuality,[switch]$ShowFPS,[switch]$Paddock,[switch]$House,[switch]$WoodedTrack,[switch]$TreeShadowTrial)
 $ErrorActionPreference='Stop'
+if($WoodedTrack -and (-not $Play -or $House -or $Paddock)){throw '-WoodedTrack requires play and one starting point'}
+if($TreeShadowTrial -and (-not $Play -or $OriginalQuality)){throw '-TreeShadowTrial requires play with the measured LiDAR quality preset'}
 if($Paddock -and -not $Play){throw '-Paddock requires -Play'}
 if($House -and (-not $Play -or $Paddock)){throw '-House requires -Play and cannot combine with -Paddock'}
 & "$PSScriptRoot/wait_unreal_free.ps1" -MaxMinutes 0
@@ -12,6 +14,18 @@ $preset=Get-Content "$PSScriptRoot/lidar_performance.json" -Raw | ConvertFrom-Js
 if($Play){$taskArgs+=@('-game','-windowed',('-ResX='+$preset.output_resolution[0]),('-ResY='+$preset.output_resolution[1]))}
 $commands=@()
 if(-not $OriginalQuality){$commands+=@($preset.commands)}
+if($TreeShadowTrial){
+ $taskArgs+='-ForceEnablePython'
+ $trial=(Join-Path $PSScriptRoot 'Unreal/lidar_tree_shadow_trial.py').Replace('\','/')
+ $commands+="py $trial"
+}
+if($WoodedTrack){
+ $points=Get-Content -Raw "$PSScriptRoot/lidar_driving_baseline_poses.json" | ConvertFrom-Json
+ $pose=$points | Where-Object name -eq 'bog214'
+ if(-not $pose){throw 'Wooded mud driving checkpoint missing'}
+ $commands+='EnableCheats'
+ $commands+=('BugItGo {0} {1} {2} 0 {3} 0' -f $pose.x,$pose.y,$pose.z,$pose.yaw)
+}
 if($ShowFPS){$commands+='stat fps'}
 if($Paddock){
  $poses=Get-Content "$PSScriptRoot/Export/LidarStudy/Place/gs3-poses.json" -Raw | ConvertFrom-Json
