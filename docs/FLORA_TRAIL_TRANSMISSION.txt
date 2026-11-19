@@ -1,0 +1,147 @@
+FloraTrail: foliage transmission and restrained grading study
+============================================================
+18 November 2026. Review candidate only; not a LiDAR promotion.
+
+Request and result
+Test subsurface foliage lighting and colour grading for the dark tree interiors.
+The accepted CrownForm/v3 scene is the baseline. Native Two Sided Foliage was
+already enabled; this study changes its subsurface colour multiplier, not its
+shading model. Increasing that multiplier alone produces only a small lift.
+Reducing authored crown occlusion contributes more to readable interiors.
+Neither operation fixes the broad, flat branch fans visible close to camera.
+
+Profiles in Art/flora_transmission_settings.json isolate subsurface 0.12 / 0.25 /
+0.40, crown occlusion 0.90 / 0.45, and grading. The selected review candidate is
+gentle_grade: subsurface multiplier 0.25, crown occlusion 0.45, grade strength 1.
+These are shader controls, not percentages of physically transmitted light.
+The actual grading correction is small; strength 1 means the configured grade.
+
+Grading diagnosis
+The first v1 experiment used ordinary post-process shadow gamma/gain controls.
+It showed essentially no visual response. FloraTrail's M_ViewportStandard
+replacement tonemapper directly encodes linear scene colour to sRGB. It bypasses
+the normal colour-grading LUT; raising post-process priority is not the fix.
+The source implementation is Art/Unreal/flora_group_display.py. UE5.8's local
+PostProcessing.cpp also selects a replacement-material branch instead of the
+normal tonemapper. Epic documents that replacement path here:
+https://dev.epicgames.com/documentation/unreal-engine/post-process-materials-in-unreal-engine
+
+v2 duplicates the installed display material into this study's own directory.
+Its original pre-exposure correction and sRGB encoding stay intact. A small
+linear-space correction is inserted before encoding, in the same material pass:
+shadow gamma (1.04,1.04,1.04), shadow gain (.99,1.01,1.03), highlight gain
+(1.005,1,.99). Smooth luminance weights confine the changes to shadows and
+highlights; there is no black offset, global desaturation, blur or foliage
+emission. GradeStrength 0 returns the original display calculation exactly.
+These named controls are our shader's formula, not UE's native LUT controls.
+The extra study volume is an inert saved grade marker, not a second grade pass.
+
+Scope and recovery
+Source: /Game/GrandTour/ArtTests/FloraTrail/Woodland/CrownForm/v3/L_FloraTrail_CrownForm
+Candidate: /Game/GrandTour/ArtTests/FloraTrail/Woodland/TransmissionStudy/v2/L_FloraTrail_Transmission
+Separate launcher: Drive-FloraTrail-Transmission.bat
+Normal FloraTrail launchers continue opening their previous maps.
+Only two copied canopy materials, a copied display material and the candidate
+map are saved. Four canopy component slots use the copies. Placement, meshes,
+LODs, source pigment/coverage, 4K bark, ground dressing, lights, exposure, fog,
+brown mud and flat-water materials retain the baseline state. The rejected
+cobble riverbed is not reinstated. Twig, Small_Plants_006 scale and Rock_0_006
+appearance are not corrected in this experiment.
+
+D: and its historical evidence/backups/source checkout were unavailable. This
+study therefore protects the currently installed C: baseline independently.
+Art/Export/FloraTransmissionStudy/baseline.json hashes 862 installed packages.
+Saved/FloraTransmissionBackup/v1 contains recoverable CrownForm/v3 packages.
+The recorded source, FloraGroup, FloraTreeLightBench and LiDAR packages must
+remain unchanged. This does not certify the unavailable historical audit chain.
+
+Evidence and limits
+Art/Export/FloraTransmissionStudy/v2 holds the reports, logs and native PNGs.
+Five fixed views: open road, mixed-material bank, under-canopy, crown underside
+and valley. All profiles share cameras, FOV, exposure, sun, fog and quality.
+Actual output is 1274 x 682, despite the requested 1600 x 900 PIE window.
+Textures are forced resident with settling time; 4K bark dimensions are checked.
+No generated/retouched images substitute for Unreal captures. Review sheets
+only arrange or downsample captures; greyscale sheets remove colour for value
+assessment. Original woodland, path and sunlit references appear alongside.
+
+The short camera clips contain 12 settled samples over a 1.32 m camera move,
+encoded at 3 fps for four seconds. They show changing viewpoints, not real-time
+frame delivery. They cannot pass a temporal stability, wind or 60 fps gate.
+There is no new sustained performance, physical-driving or reset regression.
+The material work keeps the same foliage shading model and display-pass count;
+that does not establish zero GPU cost.
+
+Early unsuccessful runs are retained separately. v1 setup property-access and
+struct comparisons were corrected. v2's first display access used a Python
+property unavailable in this engine; it now uses editor-property access. The
+construction run rendered successfully but the strict wrapper rejected transient
+missing-input compile warnings while the display graph was being connected.
+A clean fresh-process comparison is required before accepting its evidence.
+Report ok alone is not sufficient: process completion and clean logs matter.
+Future construction assembles the new grade node disconnected and attaches
+its output only after both inputs are wired. The current v2 saved graph was
+built before that construction-order cleanup; its final shader is equivalent.
+A save-stage scalar property-access error was also corrected before retrying.
+
+Reproduction
+powershell -NoProfile -File Art/run_flora_transmission.ps1 -Stage compare
+python Art/review_flora_transmission.py compare
+powershell -NoProfile -File Art/run_flora_transmission.ps1 -Stage save
+powershell -NoProfile -File Art/run_flora_transmission.ps1 -Stage verify
+The save stage installs defaults only in the candidate, reloads it and captures.
+Verify opens it in a separate process, asserts saved values without reapplying
+the selected profile, and checks the candidate package hashes remain stable.
+The runner checks memory/disk, acquires the shared renderer slot, refuses other
+Unreal/Blender/Wardogs processes and closes only its own run on overlap.
+
+Completed validation
+Clean comparison: 71 native captures, process exit 0, no shader failure logs.
+Saved candidate: 17 native captures, process exit 0, defaults read back as
+transmission .25, occlusion .45 and display grade strength 1.
+Fresh verification: 17 captures in a separate Unreal process, exit 0, the same
+defaults without reapplying the profile, identical candidate package hashes.
+All 862 recorded protected packages remain unchanged. See
+Docs/validation/flora-trail-transmission.json for timestamps and package hashes.
+Two intervening runs were stopped by the overlap guard when another Unreal
+process appeared. Their incomplete reports are retained separately and excluded.
+
+Visual decision
+This is a modest shadow-readability candidate, not a reference match. The
+comparison still exposes flat near foliage, repeated distant crowns, oversized
+ground plants and disconnected moss/rock treatment. More grading is not the
+next remedy: revise the crown normal/card-form response and those particular
+ground assets before expanding the LiDAR rollout.
+
+Acceptance gates (FLORA_PALETTE_SUCCESS_CRITERIA.txt)
+A / Palette hierarchy: PARTIAL. Olive greens and repeated ochre undergrowth
+remain; bright moss and some large yellow-green fills still compete (bank/road).
+B / Crown form: PARTIAL. Road pines and distant round crowns have broad value
+separation, but the close crown underside still merges into planar fans
+(crowns/valley, colour and greyscale thumbnails).
+C / Readable coloured shade: PARTIAL. The candidate lifts tree interiors while
+retaining green, but overlapping shaded fans remain insufficiently separated;
+the fern/trunk/ground families still need their own response work (canopy/bank).
+D / Coherent light across materials: FAIL. The mixed bank exposes grey rock,
+bright smooth moss and flat plant faces that do not yet share a convincing
+painterly lighting treatment (bank/road). Grading does not solve this.
+E / Depth without a foreground veil: PARTIAL. Near, middle and far layers are
+visible, but atmospheric separation remains fairly uniform and distant foliage
+is repetitive (canopy/valley). Fog was deliberately not retuned.
+F / Painterly at two scales: PARTIAL. Broad green shapes survive downsampling
+and source detail is retained, but flat fans remain conspicuous close up.
+Settled camera samples do not establish real-time temporal stability.
+G / Consistency: PARTIAL. One profile is used across all five fixed views with
+no per-camera adjustments; the unresolved B-D problems remain. A new sun-angle
+sweep/front-side-back lighting certification is NOT TESTED in this study.
+Performance / sustained 60 fps: NOT TESTED. No timing claim follows from renders.
+These partial and untested results are not passes or permission for rollout.
+
+Source delivery
+New source/config/documentation is isolated by explicit file list. No purchased
+assets, local evidence, credentials or agent configuration belong in the commit.
+The requested D:/GrandTourGitHub/2026-11-13-source checkout was unavailable.
+A new sparse source checkout at C:/GrandTourGitHub/2026-11-18-transmission-source
+uses remote base 06d3bc540f688822ff15140dc057e21856b6e98b on the separate branch
+flora-transmission-grade-study. Its existing helper scripts and scene settings
+match those used for this test. The dirty C:/GrandTour repository is not staged.

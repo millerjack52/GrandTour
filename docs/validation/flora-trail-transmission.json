@@ -1,0 +1,147 @@
+{
+  "date": "2026-11-18",
+  "scope": "FloraTrail-only review candidate; no LiDAR promotion",
+  "selected": "gentle_grade",
+  "candidate_map": "/Game/GrandTour/ArtTests/FloraTrail/Woodland/TransmissionStudy/v2/L_FloraTrail_Transmission",
+  "evidence_directory": "Art/Export/FloraTransmissionStudy/v2",
+  "runs": {
+    "compare": {
+      "exit_code": 0,
+      "started": "2026-11-18T19:32:34.6724478-06:00",
+      "finished": "2026-11-18T19:35:01.3378645-06:00",
+      "native_captures": 71,
+      "size": [
+        1274,
+        682
+      ],
+      "protected_packages": 862,
+      "geometry_noncanopy_materials_preserved": true,
+      "saved_defaults": [
+        {
+          "transmission": 0.11999999731779099,
+          "occlusion": 0.8999999761581421
+        },
+        {
+          "transmission": 0.11999999731779099,
+          "occlusion": 0.8999999761581421
+        },
+        {
+          "transmission": 0.11999999731779099,
+          "occlusion": 0.8999999761581421
+        },
+        {
+          "transmission": 0.11999999731779099,
+          "occlusion": 0.8999999761581421
+        }
+      ],
+      "saved_display_grade": 0.0,
+      "saved_packages": {
+        "L_FloraTrail_Transmission.umap": "0b21243292a8aad021b001bf2bb5107db931d5725343624129a7831b7c915f7a",
+        "M_TransmissionDisplay.uasset": "0ad78988b11911cfb7229632bf579014127bbe5950171edc8436d153582d841c",
+        "M_Transmission_M_Crown_23089b76.uasset": "5ba8e969b6be8397bf6821eabfd7cb3e8031bcab0c2451dac43628ca86e28eca",
+        "M_Transmission_M_Crown_b74ce8ab.uasset": "30957aa83cba144b20692de06fac5d7d838163c42b13168c89b6ed6efb399d1e"
+      }
+    },
+    "save": {
+      "exit_code": 0,
+      "started": "2026-11-18T19:36:59.7320215-06:00",
+      "finished": "2026-11-18T19:38:23.1073376-06:00",
+      "native_captures": 17,
+      "size": [
+        1274,
+        682
+      ],
+      "protected_packages": 862,
+      "geometry_noncanopy_materials_preserved": true,
+      "saved_defaults": [
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        },
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        },
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        },
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        }
+      ],
+      "saved_display_grade": 1.0,
+      "saved_packages": {
+        "L_FloraTrail_Transmission.umap": "25109e9750a945667b47aa0ef15b7be76a89ccde45f06ae156e78e0980d908b6",
+        "M_TransmissionDisplay.uasset": "3b7cf66d85161ec80bca145da5637390ace5f23fea89baa24ebfb99efc583ef1",
+        "M_Transmission_M_Crown_23089b76.uasset": "37dd4fdec90bdc57c17af8a85977baaa9fce091bdc3519b65fc26ef10947a945",
+        "M_Transmission_M_Crown_b74ce8ab.uasset": "e3e32d112be43e2254aa96e55593a30a7a541f5bfdd82d02e9e169b19f9da04a"
+      }
+    },
+    "verify": {
+      "exit_code": 0,
+      "started": "2026-11-18T19:41:09.4572606-06:00",
+      "finished": "2026-11-18T19:42:33.3347265-06:00",
+      "native_captures": 17,
+      "size": [
+        1274,
+        682
+      ],
+      "protected_packages": 862,
+      "geometry_noncanopy_materials_preserved": true,
+      "saved_defaults": [
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        },
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        },
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        },
+        {
+          "transmission": 0.25,
+          "occlusion": 0.44999998807907104
+        }
+      ],
+      "saved_display_grade": 1.0,
+      "saved_packages": {
+        "L_FloraTrail_Transmission.umap": "25109e9750a945667b47aa0ef15b7be76a89ccde45f06ae156e78e0980d908b6",
+        "M_TransmissionDisplay.uasset": "3b7cf66d85161ec80bca145da5637390ace5f23fea89baa24ebfb99efc583ef1",
+        "M_Transmission_M_Crown_23089b76.uasset": "37dd4fdec90bdc57c17af8a85977baaa9fce091bdc3519b65fc26ef10947a945",
+        "M_Transmission_M_Crown_b74ce8ab.uasset": "e3e32d112be43e2254aa96e55593a30a7a541f5bfdd82d02e9e169b19f9da04a"
+      }
+    }
+  },
+  "gates": {
+    "A_palette": "partial",
+    "B_crown_form": "partial",
+    "C_coloured_shade": "partial",
+    "D_material_light_cohesion": "fail",
+    "E_depth": "partial",
+    "F_painterly_two_scales": "partial",
+    "G_review_consistency": "partial",
+    "real_time_temporal_stability": "not tested",
+    "sun_angle_sweep": "not tested",
+    "sustained_60_fps": "not tested",
+    "new_driving_reset_regression": "not tested"
+  },
+  "camera_samples": {
+    "count_per_profile": 12,
+    "travel_m": 1.32,
+    "encoded_fps": 3,
+    "note": "Settled viewpoints, not real-time playback or a timing measurement"
+  },
+  "limitations": [
+    "Near branch fans remain flat.",
+    "Problem ground assets and their scale are unchanged.",
+    "Historical D: backup/evidence chain unavailable.",
+    "Saved v2 graph validated; future disconnected-node construction-order cleanup not exercised in these runs."
+  ],
+  "source_checkout_base": "06d3bc540f688822ff15140dc057e21856b6e98b",
+  "source_branch": "flora-transmission-grade-study"
+}

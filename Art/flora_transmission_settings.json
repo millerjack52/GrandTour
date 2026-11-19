@@ -1,0 +1,18 @@
+{
+  "revision": "v2",
+  "selected": "gentle_grade",
+  "profiles": {
+    "baseline": {"transmission": 0.12, "occlusion": 0.9, "grade": 0.0},
+    "transmission25": {"transmission": 0.25, "occlusion": 0.9, "grade": 0.0},
+    "transmission40": {"transmission": 0.4, "occlusion": 0.9, "grade": 0.0},
+    "occlusion45": {"transmission": 0.12, "occlusion": 0.45, "grade": 0.0},
+    "combined": {"transmission": 0.25, "occlusion": 0.45, "grade": 0.0},
+    "grade_only": {"transmission": 0.12, "occlusion": 0.9, "grade": 1.0},
+    "gentle_grade": {"transmission": 0.25, "occlusion": 0.45, "grade": 1.0}
+  },
+  "grade": {
+    "color_gamma_shadows": [1.04, 1.04, 1.04, 1.0],
+    "color_gain_shadows": [0.99, 1.01, 1.03, 1.0],
+    "color_gain_highlights": [1.005, 1.0, 0.99, 1.0]
+  }
+}
