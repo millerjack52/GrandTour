@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 import statistics
+import shutil
 from pathlib import Path
 import sys
 
@@ -109,6 +110,120 @@ def schedule(stage, candidate, out, base_family="control"):
             cmd(start + 385, "Input.-action IA_Throttle")
             cmd(start + 386, "Input.+key SpaceBar")
         frames = start + 408
+    elif stage == "visibilityhold":
+        if candidate != "saved":
+            raise ValueError("Use the saved profile for the visibility check")
+        cmd(235, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(335, "verify_launch")
+        for index, name in enumerate(("bog552", "access", "paddock_mid")):
+            setup = 375 + index * 675
+            relocate(setup, name)
+            cmd(setup + 168, "Input.-key SpaceBar")
+            cmd(setup + 170, "Input.+action IA_Throttle 0.8")
+            window(setup + 171, setup + 363, name)
+            if name != "bog552":
+                cmd(setup + 205, "Input.+action IA_Steer 0.22")
+                cmd(setup + 232, "Input.-action IA_Steer")
+            hold = setup + 370
+            probe(hold, "pause")
+            for step, (label, hzb, queries) in enumerate(
+                (("stock", 0, 0), ("hzb", 1, 0), ("queries", 1, 1), ("restored", 0, 0))
+            ):
+                at = hold + step * 42 + 1
+                cmd(at, f"r.InstanceCulling.OcclusionCull {hzb}")
+                cmd(at, f"r.InstanceCulling.OcclusionQueries {queries}")
+                shot(at + 32, name + "_" + label)
+                probe(at + 34, f"record_{name}_{label}")
+            probe(hold + 180, "resume")
+            cmd(hold + 182, "Input.-action IA_Throttle")
+            cmd(hold + 183, "Input.+key SpaceBar")
+        frames = hold + 205
+    elif stage == "efficiency":
+        if candidate != "saved":
+            raise ValueError("Use the saved profile for rendering efficiency comparisons")
+        cmd(235, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(335, "verify_launch")
+        relocate(375, "bog552")
+        # Bracket each group with a stock control inside the same game and thermal session.
+        # The truck is braked. These timings isolate rendering at one view, outside driving.
+        cases = (
+            ("stock", 0, 0, 0),
+            ("dry", 1, 0, 0),
+            ("hzb", 1, 1, 0),
+            ("queries", 1, 1, 1),
+            ("dry_repeat", 1, 0, 0),
+            ("stock_repeat", 0, 0, 0),
+            ("queries_repeat", 1, 1, 1),
+            ("hzb_repeat", 1, 1, 0),
+            ("stock_end", 0, 0, 0),
+        )
+        for index, (name, dry, hzb, queries) in enumerate(cases):
+            start = 690 + index * 160
+            for setting, value in (
+                ("gt.Weather.SkipDryOcclusion", dry),
+                ("r.InstanceCulling.OcclusionCull", hzb),
+                ("r.InstanceCulling.OcclusionQueries", queries),
+            ):
+                cmd(start, f"{setting} {value}")
+            window(start + 52, start + 148, name)
+            shot(start + 152, name)
+        frames = start + 167
+    elif stage == "renderfamilies":
+        if candidate != "saved":
+            raise ValueError("The render family study requires the saved profile")
+        script = (ROOT / "Art/Unreal/lidar_base_pass_probe.py").as_posix()
+        cmd(235, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(335, "verify_launch")
+        relocate(375, "bog552")
+        cmd(600, f"py {script} inventory bog552 {out.as_posix()}")
+        cases = (
+            "control",
+            "tree_visibility",
+            "hide_trees_and_terrain",
+            "hide_trees_and_dressing",
+            "tree_visibility",
+            "hide_trees_and_all_grass",
+            "hide_trees_and_pickup",
+            "tree_visibility",
+            "control",
+        )
+        for i, family in enumerate(cases):
+            start = 660 + 145 * i
+            cmd(start, f"py {script} measure {family} {out.as_posix()}")
+            window(start + 45, start + 133, f"{i:02}_{family}")
+        frames = start + 145
+    elif stage == "weathercheck":
+        if candidate != "saved":
+            raise ValueError("Weather validation requires the saved map and profile")
+        script = (ROOT / "Art/Unreal/lidar_weather_check.py").as_posix()
+        cmd(235, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(335, "verify_launch")
+        relocate(375, "bog552")
+        for at, action in (
+            (520, "dry1"),
+            (550, "dry2"),
+            (555, "rain"),
+            (557, "onset"),
+            (586, "raining"),
+            (588, "clear"),
+            (610, "drying"),
+            (616, "reset_wetness"),
+            (645, "dry3"),
+            (672, "dry4"),
+            (676, "snow"),
+            (706, "snowing"),
+            (710, "clear"),
+            (724, "melting"),
+        ):
+            cmd(at, f"py {script} {action} {out.as_posix()}")
+        for at, label in ((553, "dry"), (587, "rain"), (611, "drying"), (707, "snow")):
+            shot(at, label)
+        window(640, 669, "clear")
+        frames = 740
     elif stage == "basemoving":
         if candidate != "saved":
             raise ValueError("Use the saved LiDAR profile for the moving base-pass test")
@@ -387,7 +502,16 @@ def analyze(out):
                 source = screenshots / match[1]
                 dest = out / match[2]
                 if not dest.exists():
-                    source.rename(dest)
+                    if source.drive.lower() == dest.drive.lower():
+                        source.rename(dest)
+                    else:
+                        # Commit the complete frame before removing the engine's temporary copy.
+                        partial = dest.with_suffix(".partial")
+                        shutil.copyfile(source, partial)
+                        if partial.stat().st_size != source.stat().st_size:
+                            raise OSError(f"Incomplete screenshot {partial}")
+                        partial.replace(dest)
+                        source.unlink()
                 assert dest.is_file()
     metrics = (
         "FrameTime",
@@ -399,7 +523,7 @@ def analyze(out):
         "GameThreadTime",
         "RenderThreadTime",
     )
-    if plan["stage"] in ("basepass", "basemoving", "routetime"):
+    if plan["stage"] in ("basepass", "basemoving", "routetime", "efficiency", "renderfamilies"):
         metrics += ("DrawCall/Basepass", "RHI/PrimitivesDrawn", "GPU/Prepass")
     with Path(manifest["csv"][0]).open(newline="") as f:
         reader = csv.DictReader(f)
@@ -424,6 +548,22 @@ def analyze(out):
             p95=round(sort[round((len(sort) - 1) * 0.95)], 3),
         )
 
+    def timing_stats(rows):
+        table = dict(zip(metrics, [stats(column) for column in zip(*rows)]))
+        frame_times = sorted(row[0] for row in rows)
+        table["FrameTime"].update(
+            median=round(statistics.median(frame_times), 3),
+            p99=round(frame_times[round((len(frame_times) - 1) * 0.99)], 3),
+            maximum=round(frame_times[-1], 3),
+            pct_over_60fps_budget=round(
+                100 * sum(t > 1000 / 60 for t in frame_times) / len(frame_times), 2
+            ),
+            over_33_3_ms=sum(t > 33.3 for t in frame_times),
+            over_50_ms=sum(t > 50 for t in frame_times),
+            over_100_ms=sum(t > 100 for t in frame_times),
+        )
+        return table
+
     tabs = []
     vsm_files = re.findall(r"Writing VSM accumulated stats .*? to file '([^']+)'", log)
     diagnostic = plan["stage"] in ("diagnose", "cache", "canopy", "rebuild")
@@ -445,7 +585,7 @@ def analyze(out):
             fps=round((hi - lo) / elapsed, 2),
             travel_m=round(distance, 2),
             pawn_cm=xyz,
-            timings=dict(zip(metrics, [stats(col) for col in zip(*frames[lo:hi])])),
+            timings=timing_stats(frames[lo:hi]),
         )
         if plan["stage"] in ("drive", "routetime"):
             # Equal wall-time exposure even when a faster candidate renders more frames.
@@ -454,26 +594,26 @@ def analyze(out):
 
             clock = [0.0, *itertools.accumulate(times)]
             stop = bisect.bisect_left(clock, 8.0)
-            assert 0 < stop < len(clock), "Drive did not cover eight seconds"
-            split = lo + stop
-            m = bisect.bisect_left(markers, split)
-            dist8 = sum(
-                math.dist(x[:2], y[:2]) / 100 for x, y in zip(xyz[: m - a - 1], xyz[1 : m - a])
-            )
-            first = markers[m - 1]
-            frac = (
-                (clock[stop] - clock[first - lo]) / (clock[markers[m] - lo] - clock[first - lo])
-                if markers[m] > first
-                else 0
-            )
-            dist8 += frac * math.dist(xyz[m - a - 1][:2], xyz[m - a][:2]) / 100
-            tab["eight_seconds"] = dict(
-                frames=stop,
-                seconds=round(clock[stop], 3),
-                fps=round(stop / clock[stop], 2),
-                estimated_travel_m=round(dist8, 2),
-                timings=dict(zip(metrics, [stats(col) for col in zip(*frames[lo:split])])),
-            )
+            # Fast complete traversals can end before eight seconds. Retain the full
+            # segment and matched-distance data without fabricating an eight-second result.
+            if stop < len(clock):
+                split = lo + stop
+                m = bisect.bisect_left(markers, split)
+                dist8 = sum(
+                    math.dist(x[:2], y[:2]) / 100 for x, y in zip(xyz[: m - a - 1], xyz[1 : m - a])
+                )
+                first = markers[m - 1]
+                frac = (clock[stop] - clock[first - lo]) / (
+                    clock[markers[m] - lo] - clock[first - lo]
+                )
+                dist8 += frac * math.dist(xyz[m - a - 1][:2], xyz[m - a][:2]) / 100
+                tab["eight_seconds"] = dict(
+                    frames=stop,
+                    seconds=round(clock[stop], 3),
+                    fps=round(stop / clock[stop], 2),
+                    estimated_travel_m=round(dist8, 2),
+                    timings=timing_stats(frames[lo:split]),
+                )
             target = {"bog": 1.5, "river": 1.0, "bog_entry": 2.0, "bog552": 1.0}.get(
                 w["name"], 12.0
             )
@@ -492,7 +632,7 @@ def analyze(out):
                     frames=len(subset),
                     seconds=round(seconds, 3),
                     fps=round(len(subset) / seconds, 2),
-                    timings=dict(zip(metrics, [stats(col) for col in zip(*subset)])),
+                    timings=timing_stats(subset),
                 )
         if diagnostic:
             path = Path(manifest["csv"][0]).parents[1] / Path(vsm_files[len(tabs)]).name

@@ -21,7 +21,7 @@ NAMES = {
 }
 
 
-def review(stock, trial, output):
+def review(stock, trial, output, trial_label="Candidate", movie_suffix="shadows"):
     output.mkdir(parents=True, exist_ok=True)
     takes = [read(folder / "shadow-results.json") for folder in (stock, trial)]
     plans = [read(folder / "shadow-schedule.json") for folder in (stock, trial)]
@@ -35,7 +35,7 @@ def review(stock, trial, output):
     painter = ImageDraw.Draw(board)
     results = {}
     movie = imageio_ffmpeg.write_frames(
-        str(output / f"lidar-{prefix}-shadows.mp4"),
+        str(output / f"lidar-{prefix}-{movie_suffix}.mp4"),
         (1600, 496),
         fps=rate,
         codec="libx264",
@@ -65,9 +65,7 @@ def review(stock, trial, output):
                 frame = Image.new("RGB", (1600, 496), "#18211e")
                 overlay = ImageDraw.Draw(frame)
                 luma = []
-                for side, (folder, label) in enumerate(
-                    ((stock, "Original"), (trial, "Shadow fix"))
-                ):
+                for side, (folder, label) in enumerate(((stock, "Original"), (trial, trial_label))):
                     with Image.open(folder / f"r{station}{index:02}.png") as capture:
                         assert capture.size == (1600, 900)
                         rgb = capture.convert("RGB")
@@ -100,7 +98,7 @@ def review(stock, trial, output):
                     worst_index = index
             painter.text(
                 (12, station * 394 + 3),
-                f"{title}   |   Original (left) and shadow fix (right)   |   {worst_index / rate:.2f} s",
+                f"{title}   |   Original (left) and {trial_label} (right)   |   {worst_index / rate:.2f} s",
                 fill="white",
                 font=labels,
             )
@@ -193,7 +191,16 @@ if __name__ == "__main__":
         choices=NAMES,
         help="Completed checkpoints in the held capture",
     )
+    parser.add_argument("--trial-label", default="Candidate")
+    parser.add_argument(
+        "--movie-suffix", choices=("shadows", "visibility", "weather", "trees"), default="shadows"
+    )
     args = parser.parse_args()
-    print(json.dumps(review(args.stock, args.trial, args.output), indent=2))
+    print(
+        json.dumps(
+            review(args.stock, args.trial, args.output, args.trial_label, args.movie_suffix),
+            indent=2,
+        )
+    )
     if args.held:
         compare_held(args.held, args.output, args.held_sections)

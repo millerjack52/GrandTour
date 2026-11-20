@@ -1,6 +1,11 @@
-param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','basepass','basemoving')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind')][string]$BaseFamily='control')
+param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','tree_leaf_constant')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit)
 $ErrorActionPreference='Stop'
 if($ShadowStudy){$DrivingBaseline=$true}
+if($TreeCellMetres -and ($ShadowStudy -ne 'basemoving' -or $TreeCellMetres -lt 32)){throw 'Tree cell trials require basemoving and at least 32 metres'}
+if($StudySettings){
+ if(-not $ShadowStudy){throw '-StudySettings requires a controlled study'}
+ foreach($setting in $StudySettings){if($setting -notmatch '^(?:r|gt)\.[A-Za-z0-9_.]+ -?[0-9]+(?:\.[0-9]+)?$'){throw "Expected a numeric study setting: $setting"}}
+}
 if($DrivingBaseline){
  $Drive=$true
  $Probes=$true
@@ -17,11 +22,12 @@ if($UseSavedProfile){
  $profileCommands=@($preset.commands)
  if($ShadowStudy -and $ShadowCandidate -ne 'saved'){
   # Historical experiments set their own shadow bias. Keep the v7 control reproducible.
-  $profileCommands=@($profileCommands | Where-Object {$_ -notmatch '^r\.Shadow\.Virtual\.Clipmap\.WPODisableDistance\.LodBias '})
+  $profileCommands=@($profileCommands | Where-Object {$_ -notmatch '^(r\.Shadow\.Virtual\.Clipmap\.WPODisableDistance\.LodBias|gt\.Weather\.SkipDryOcclusion|r\.InstanceCulling\.OcclusionCull) '}) + @('gt.Weather.SkipDryOcclusion 0','r.InstanceCulling.OcclusionCull 0')
  }
  if($Uncapped){$profileCommands=@($profileCommands | Where-Object {$_ -notmatch '^t.MaxFPS '})}
  $Commands=$profileCommands -join ','
 }
+if($StudySettings){$Commands+=','+($StudySettings -join ',')}
 if($ExtraCommands){$Commands+=','+$ExtraCommands}
 & "$PSScriptRoot/wait_unreal_free.ps1" -PollSeconds 10 -MaxMinutes 1
 if($LASTEXITCODE -ne 0){throw 'Unreal occupied'}
@@ -31,11 +37,13 @@ try {
  if(-not $acquired){throw 'Unreal slot reserved'}
  $out=Join-Path $taskRoot 'Art/Export/LidarStudy/Place'
  if($DrivingBaseline){
-  $out=Join-Path $taskRoot "Saved/LidarDrivingBaseline/$Label"
+  $out=if($EvidenceRoot){Join-Path ([IO.Path]::GetFullPath($EvidenceRoot)) $Label}else{Join-Path $taskRoot "Saved/LidarDrivingBaseline/$Label"}
   New-Item -ItemType Directory -Path $out -ErrorAction Stop | Out-Null
   $os=Get-CimInstance Win32_OperatingSystem
-  $minimumDisk = if($ShadowStudy -in @('basepass','basemoving')){3GB}else{4GB}
-  if($os.FreePhysicalMemory*1KB -lt 8GB -or $os.FreeVirtualMemory*1KB -lt 12GB -or ([IO.DriveInfo]::new('C:\')).AvailableFreeSpace -lt $minimumDisk){throw 'Insufficient memory or disk for standalone drive'}
+  $minimumDisk = if($ShadowStudy -in @('routetime','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')){3GB}else{4GB}
+  if($EvidenceRoot -and ([IO.DriveInfo]::new([IO.Path]::GetPathRoot($out))).AvailableFreeSpace -lt $minimumDisk){throw 'Insufficient storage for evidence'}
+  $minSystemDisk=if($EvidenceRoot -and $ShadowStudy -in @('routefilm','boundaryfilm')){3584MB}else{$minimumDisk}
+  if($os.FreePhysicalMemory*1KB -lt 8GB -or $os.FreeVirtualMemory*1KB -lt 12GB -or ([IO.DriveInfo]::new('C:\')).AvailableFreeSpace -lt $minSystemDisk){throw 'Insufficient memory or disk for standalone drive'}
   if(Get-Process UnrealEditor,UnrealEditor-Cmd,blender,'Wardogs*' -ErrorAction SilentlyContinue){throw 'Another renderer or Wardogs is active'}
   $conditions=@{
    map_sha256=(Get-FileHash -LiteralPath "$taskRoot/Content/GrandTour/ArtTests/LidarStudy/L_LidarStudy.umap").Hash
@@ -65,6 +73,8 @@ try {
    if($LASTEXITCODE -ne 0){throw 'Could not prepare shadow experiment'}
    $study=Get-Content -Raw -LiteralPath "$out/shadow-schedule.json" | ConvertFrom-Json
    $schedule+=@($study.commands)
+   if($TreeMeshAudit){$audit=(Join-Path $PSScriptRoot 'Unreal/lidar_tree_mesh_audit.py').Replace('\','/');$schedule+=(('{0}:py {1} {2}' -f ($study.frames-5),$audit,$out.Replace('\','/')))}
+   if($TreeCellMetres){$schedule+=('404:gt.Lidar.TrialTreeCells '+$TreeCellMetres)}
    continue
   }
   if($DistanceAB){$schedule+=('{0}:gt.Grass.Distance 1' -f $frame);$schedule+=('{0}:gt.Grass.Distance 0' -f ($frame+1700))}
@@ -125,7 +135,7 @@ try {
   $launch=@($launch | Where-Object {$_ -ne '-NoSound'})
   $launch+='-ForceRes'
   if($ShadowStudy){$launch+='-ForceEnablePython'}
-  if($ShadowStudy -in @('visual','routefilm','boundaryfilm','routehold','basemoving')){$launch+=@('-UseFixedTimeStep','-FPS=24','-FixedSeed')}
+  if($ShadowStudy -in @('visual','routefilm','boundaryfilm','routehold','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')){$launch+=@('-UseFixedTimeStep','-FPS=24','-FixedSeed')}
   # The normal Saved/Profiling junction may point to a disconnected drive.
   $launch+='-saveddirsuffix=LidarDrive'
   $driveSaved=Join-Path $taskRoot 'Saved_LidarDrive'
