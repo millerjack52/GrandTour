@@ -1,6 +1,7 @@
 {
   "name": "LiDAR balanced visual quality",
-  "version": 10,
+  "version": 11,
+  "fast_crown_shadows": true,
   "output_resolution": [
     1600,
     900

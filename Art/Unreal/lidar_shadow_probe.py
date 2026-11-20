@@ -81,9 +81,18 @@ if mode == "init":
     inventory = collections.Counter()
     samples = []
     settings = []
+    visible_trees = []
+    fast_ranges = []
     other_distances = collections.Counter()
     for actor in u.GameplayStatics.get_all_actors_of_class(world, u.Actor):
         for c in actor.get_components_by_class(u.PrimitiveComponent):
+            tags = {str(t) for t in c.component_tags}
+            if isinstance(c, u.InstancedStaticMeshComponent) and c.is_visible() and tags & {"FloraWorldCanopy", "FloraWorldSaplings"}:
+                visible_trees.append(c)
+            if "LidarFastCrownShadow" in tags:
+                assert all(c.get_editor_property(p) for p in ("cast_shadow", "cast_hidden_shadow", "hidden_in_game"))
+                assert not any(c.get_editor_property(p) for p in ("render_in_main_pass", "render_in_depth_pass", "evaluate_world_position_offset"))
+                fast_ranges.append([c.static_mesh.get_name(), c.instance_end_cull_distance, c.get_instance_count()])
             if not c.get_editor_property("cast_shadow"):
                 continue
             mesh = c.static_mesh if isinstance(c, u.StaticMeshComponent) else None
@@ -92,7 +101,7 @@ if mode == "init":
             tags = " ".join(map(str, c.component_tags))
             desc = (asset + " " + owner + " " + tags + " " + actor.get_name()).lower()
             if any(
-                s in desc for s in ("tree", "canopy", "conifer", "trunk", "pine", "woodlandforest")
+                s in desc for s in ("tree", "canopy", "conifer", "trunk", "pine", "woodlandforest", "lidarfastcrownshadow")
             ):
                 group = "trees"
             elif (
@@ -153,11 +162,7 @@ if mode == "init":
                         str(c.shadow_cache_invalidation_behavior),
                     ]
                 )
-    trees = [
-        c
-        for c in groups["trees"]
-        if {str(t) for t in c.component_tags} & {"FloraWorldCanopy", "FloraWorldSaplings"}
-    ]
+    trees = visible_trees
     builtins.gt_shadow_tree_settings = [
         (c, c.world_position_offset_disable_distance, c.evaluate_world_position_offset)
         for c in trees
@@ -172,6 +177,7 @@ if mode == "init":
                 "classes": [[*k, v] for k, v in inventory.most_common()],
                 "instanced": samples,
                 "flora_settings": settings,
+                "fast_crown_ranges": sorted(fast_ranges),
                 "explicit_wpo_limits": [[*k, count] for k, count in other_distances.items()],
             },
             indent=1,

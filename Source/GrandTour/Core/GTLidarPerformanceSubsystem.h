@@ -13,5 +13,8 @@ public:
     virtual void OnWorldBeginPlay(UWorld& World) override;
     virtual void Deinitialize() override;
 private:
+    void InstallCrownShadows();
+    FTimerHandle CrownTimer;
+    int32 CrownAttempts = 0;
     bool bOwnsProfile=false;
 };

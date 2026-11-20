@@ -59,7 +59,8 @@ namespace
 				if (bShadowAudit)
 				{
 					if (!Component->IsRegistered() || !Component->CastShadow ||
-						!Component->ComponentHasTag(TEXT("LidarFullNaniteShadow"))) continue;
+						!(Component->ComponentHasTag(TEXT("LidarFullNaniteShadow")) ||
+						  Component->ComponentHasTag(TEXT("LidarFastCrownShadow")))) continue;
 				}
 				else if (!Component->IsVisible() || (!Component->ComponentHasTag(TEXT("FloraWorldCanopy")) &&
 					!Component->ComponentHasTag(TEXT("FloraWorldSaplings")))) continue;

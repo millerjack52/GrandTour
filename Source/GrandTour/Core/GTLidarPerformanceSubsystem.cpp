@@ -8,6 +8,7 @@
 #include "Misc/Paths.h"
 #include "Serialization/JsonReader.h"
 #include "Serialization/JsonSerializer.h"
+#include "TimerManager.h"
 
 namespace
 {
@@ -28,8 +29,7 @@ void UGTLidarPerformanceSubsystem::OnWorldBeginPlay(UWorld& World)
     Super::OnWorldBeginPlay(World);
     int32 Enabled=AutoProfile.GetValueOnGameThread();
     FParse::Value(FCommandLine::Get(),TEXT("GTLidarPerformance="),Enabled);
-    if(!Enabled || UGameplayStatics::GetCurrentLevelName(&World,true)!=TEXT("L_LidarStudy"))return;
-    if(Users>0){++Users;bOwnsProfile=true;return;}
+    if(UGameplayStatics::GetCurrentLevelName(&World,true)!=TEXT("L_LidarStudy"))return;
     FString Text;
     TSharedPtr<FJsonObject> Root;
     const FString Path=FPaths::ProjectDir()/TEXT("Art/lidar_performance.json");
@@ -38,6 +38,14 @@ void UGTLidarPerformanceSubsystem::OnWorldBeginPlay(UWorld& World)
         UE_LOG(LogTemp,Warning,TEXT("LiDAR play preset unavailable: %s"),*Path);return;
     }
     const TArray<TSharedPtr<FJsonValue>>* Commands=nullptr;
+    bool bFastCrowns=false;
+    Root->TryGetBoolField(TEXT("fast_crown_shadows"),bFastCrowns);
+    int32 FastCrowns=Enabled && bFastCrowns;
+    FParse::Value(FCommandLine::Get(),TEXT("GTLidarFastShadows="),FastCrowns);
+    if(FastCrowns && World.GetNetMode()!=NM_DedicatedServer)
+        World.GetTimerManager().SetTimer(CrownTimer,this,&UGTLidarPerformanceSubsystem::InstallCrownShadows,.25f);
+    if(!Enabled)return;
+    if(Users>0){++Users;bOwnsProfile=true;return;}
     if(!Root->TryGetArrayField(TEXT("commands"),Commands))return;
     for(const auto& Entry:*Commands)
     {
@@ -59,6 +67,7 @@ void UGTLidarPerformanceSubsystem::OnWorldBeginPlay(UWorld& World)
 
 void UGTLidarPerformanceSubsystem::Deinitialize()
 {
+    if(GetWorld())GetWorld()->GetTimerManager().ClearTimer(CrownTimer);
     if(bOwnsProfile && --Users==0)
     {
         for(const auto& Setting:Saved)
