@@ -7997,7 +7997,7 @@
     }
   },
   "full_range_nanite_shadow_trial": {
-    "changed": "Mature tree shadow geometry only. Both trial modes show the same size-matched camera geometry.",
+    "changed": "Two changes to the hidden mature tree casters: Nanite geometry uses the first playable mesh, and the shadow proxy disables vertex wind evaluation. Visible trees and visible wind are identical across the two size-based trials.",
     "checkpoint_build": "0264524558098D7468742F1F3B762845269B8154D05635A31453E71B27487B24",
     "original": {
       "run": "sweep121_original_shadow_control",
@@ -8844,6 +8844,106 @@
         "median_wheel_contacts": 4.0,
         "max_lateral_offset_m": 3.0
       }
+    },
+    "logging_start_and_river": {
+      "run": "sweep129_track_start",
+      "reason": "stalled",
+      "travel_m": 77.19,
+      "farthest_station_m": 1785.86,
+      "elapsed_s": 91.39,
+      "contacts": {
+        "4": 649,
+        "3": 5
+      },
+      "recoveries": 5,
+      "sections": {
+        "forest_access": {
+          "moving": {
+            "frames": 221,
+            "fps": 15.27,
+            "median_ms": 61.025,
+            "mean_ms": 65.474,
+            "p95_ms": 101.057,
+            "p99_ms": 130.311,
+            "maximum_ms": 194.834,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 221,
+            "over_50_ms": 209,
+            "over_100_ms": 12
+          },
+          "foreground": 223,
+          "all_samples": 223,
+          "resolution": {
+            "1600x900": 223
+          }
+        },
+        "river": {
+          "moving": {
+            "frames": 361,
+            "fps": 14.47,
+            "median_ms": 68.1,
+            "mean_ms": 69.099,
+            "p95_ms": 79.568,
+            "p99_ms": 91.65,
+            "maximum_ms": 119.175,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 361,
+            "over_50_ms": 361,
+            "over_100_ms": 2
+          },
+          "foreground": 1075,
+          "all_samples": 1075,
+          "resolution": {
+            "1600x900": 1075
+          }
+        }
+      },
+      "stall_trace_count": 18,
+      "observed_blockers": [],
+      "reported_flood_depth_m": [
+        0.85,
+        0.86,
+        0.87,
+        0.89
+      ]
+    },
+    "rutted_saddle": {
+      "run": "sweep130_track_saddle",
+      "reason": "stalled",
+      "travel_m": 119.19,
+      "farthest_station_m": 2089.34,
+      "elapsed_s": 194.48,
+      "contacts": {
+        "4": 1235
+      },
+      "recoveries": 3,
+      "sections": {
+        "wooded_track": {
+          "moving": {
+            "frames": 2160,
+            "fps": 12.13,
+            "median_ms": 79.523,
+            "mean_ms": 82.411,
+            "p95_ms": 106.098,
+            "p99_ms": 129.524,
+            "maximum_ms": 190.32,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 2160,
+            "over_50_ms": 2160,
+            "over_100_ms": 198
+          },
+          "foreground": 2354,
+          "all_samples": 2354,
+          "resolution": {
+            "1600x900": 2354
+          }
+        }
+      },
+      "stall_trace_count": 18,
+      "observed_blockers": [
+        "/Game/GrandTour/Environment/NativePlants/v01/SM_NZ_Log_A.SM_NZ_Log_A"
+      ],
+      "reported_flood_depth_m": []
     }
   },
   "distance_matched_shadow_trial": {

@@ -134,6 +134,7 @@ class RoadDrive:
         angle = math.atan2(forward.y, forward.x)
         front = u.Vector(math.cos(angle), math.sin(angle), 0)
         right = u.Vector(-math.sin(angle), math.cos(angle), 0)
+
         def trace(a, b):
             result = u.SystemLibrary.line_trace_single(
                 self.world, a, b, u.TraceTypeQuery.TRACE_TYPE_QUERY1, True,
@@ -143,9 +144,12 @@ class RoadDrive:
             if not values or not values[0]:
                 return None
             point = next(v for v in values if isinstance(v, u.Vector))
-            return dict(point_cm=point.to_tuple(), objects=[
-                obj.get_path_name() for obj in values if isinstance(obj, (u.Actor, u.PrimitiveComponent))
-            ])
+            return dict(
+                point_cm=point.to_tuple(),
+                objects=[obj.get_path_name() for obj in values if isinstance(obj, (u.Actor, u.PrimitiveComponent))],
+                meshes=[obj.static_mesh.get_path_name() for obj in values if isinstance(obj, u.StaticMeshComponent) and obj.static_mesh],
+            )
+
         checks = []
         for lateral in (-110, 0, 110):
             origin = location + right * lateral

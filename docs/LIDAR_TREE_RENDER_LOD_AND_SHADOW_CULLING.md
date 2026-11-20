@@ -217,7 +217,7 @@ A separate particle isolation used the fixed 150 m version and original trees at
 
 ## Replacing the full-range shadow casters
 
-The original mature trees use different meshes as they recede. This trial gave the three species a full-range Nanite shadow copy of their first playable mesh. It kept the visible size-based trees, original far appearance materials, 146,197 mature tree placements and the pickup's chase camera. Unreal verified the three new shadow proxies and their painted materials on the render thread. Both shadow modes used identical pickup positions at 17 points in the 11.65 m bog replay.
+The original mature trees use different meshes as they recede. This trial gave the three species a full-range Nanite shadow copy of their first playable mesh. It also disabled vertex wind evaluation on that shadow copy. The painted wind shader returns zero offset in the original shadow pass, but Unreal can still use the evaluation flag when deciding whether to cache a caster as static. The timing comparison includes both changes. It kept the visible size-based trees, original far appearance materials, 146,197 mature tree placements and the pickup's chase camera. Unreal verified the three new shadow proxies and their painted materials on the render thread. Both shadow modes used identical pickup positions at 17 points in the 11.65 m bog replay.
 
 | Bog replay | Mean fps | Mean / p95 / p99 frame, ms | Base / velocity / shadow, ms | Median GPU clock |
 | --- | ---: | ---: | ---: | ---: |
@@ -243,3 +243,9 @@ The 11.65 m bog replay averaged 26.33 fps with a 37.98 ms mean, 40.79 ms p95, 41
 Two instrumented frames with the bounded shadow trial had conventional base passes of 7.10 and 9.38 ms. Tree D 003's remaining conventional leaves took 0.85 and 1.78 ms, down from roughly 9 ms in the earlier instrumented original. The fine ground-detail material took 1.49 and 1.74 ms. Nanite visibility and surface work are separate from those conventional draws. The physical foreground result for the full-range experiment and the visual failures of both shadow variants remain the basis of the default decision.
 
 Use `-StableNaniteShadows` on the size-matched tree trial to reproduce the full-range case, or add `-MatchShadowRange` to reproduce the bounded case. The baseline measurements above used the original playable v10 profile.
+
+### Driving from the first and third logging checkpoints
+
+The pickup drove 77.19 m from the player's Track Start checkpoint. The river section recorded 361 moving frames at 14.47 fps, with p95 at 79.57 ms and p99 at 91.65 ms. The vehicle condition system reported flooding with approximately 0.86 m of water at the intake. The pickup reached road station 1785.86 and stalled before completing the crossing.
+
+The player's Rutted Saddle checkpoint provided a separate 119.19 m physical drive. In the wooded section 2,160 moving frames averaged 12.13 fps, with p95 at 106.10 ms and p99 at 129.52 ms. All 2,354 presentation samples retained game-window focus. After the timed drive ended, collision queries found a native log mesh 3 m ahead on the vehicle's centreline. Neither road, obstacle, water height nor vehicle setup was edited for these attempts. Both are partial route timings.
