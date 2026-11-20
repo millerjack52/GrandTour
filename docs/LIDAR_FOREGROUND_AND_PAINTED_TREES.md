@@ -35,8 +35,25 @@ The 55 m experiment uses the painted Nanite meshes for the three mature species 
 | Original, without the split | 17.23 | 58.05 ms | 85.30 ms | 23.34 ms | 13.14 ms | 9.10 ms |
 | 55 m painted trees, repeat | 18.53 | 53.95 ms | 77.08 ms | 19.22 ms | 12.68 ms | 8.63 ms |
 
-All four runs covered the same 11.65 m and all 17 sampled positions agreed. Thermal throttling was active. The two nearby-tree runs saved 4.10–10.00 ms in mean frame time against the original in this sequence. Both missed the frame budget. The range-split control cost 1.25 ms more than the original on this test.
+All four runs covered the same 11.65 m and all 17 sampled positions agreed. Thermal throttling was active. The table includes a warm-up artifact. Immediately after the shader warm-up at frame 580, conventional shadow drawing rose to about 49–52 ms and dropped to around 12 ms after frame 681. UE 5.8 uses 100 frames without invalidation to return a caster to its static shadow cache. The same transition occurred in both nearby-tree runs and the conventional controls. The original 192-frame comparison mixed rebuilding with steady driving.
+
+Across the last 128 matched frames, the original averaged **46.16 ms (21.66 fps)**, the conventional split 47.82 ms (20.91 fps), and the nearby painted trees **39.72 ms (25.18 fps)** and **43.78 ms (22.84 fps)**. Their p95 values were 51.55, 54.07, 43.48 and 48.06 ms respectively. The nearby implementation saved **2.38–6.44 ms** against the original in this settled window. The 10-second hardware polling interval yielded just one measurement inside each short replay, with measured GPU clocks from 1665 to 1800 MHz. Subsequent tests sample once per second and start material warm-up earlier.
 
 Two fresh fixed-time drives used the same saved equipment and the same native build. All 65 sampled vehicle positions agreed across 240 pairs of driving frames. In the paddock the average brightness difference was 0.13 on a 255-level scale. The strongest local difference fell to 0.48, compared with 15.24 when the trial replaced all mature trees. The crown and trunk separation in the skyline returned. In the bog approach a nearby trunk shifted greener and darker. At the deep-bog checkpoint the worst difference was on grass blades. Moving tyre dust obscured the largest forest-access difference. The nearby variant remains experimental.
 
 Reproduce with the saved profile, `-ShadowStudy basemoving -NearTreeMetres 55`. Add `-NearTreeControl` for the conventional split or use only `-WarmTrees` for the unsplit control. All runs need a unique label and `-ShadowCandidate saved`. The local film, colour crops and greyscale driving frames are in `D:/GrandTourAssets/Reviews/Lidar60/near55-route-review`.
+
+## The recurring half-second hitch
+
+Seven runs contained nine periodic garbage-collection events. The next frame interval was 561–666 ms in every case. In the foreground river capture the event occupied a 649.45 ms game-thread frame, with the rendering thread waiting for 610.65 ms and the GPU spending 31.46 ms. The next measured frame interval was 648.84 ms. The CSV recorded zero graphics pipeline misses in the surrounding frames. This identifies a recurring game-thread stall alongside the separate steady GPU cost. The scripting-enabled profiling runs alone cannot assign the stall to a particular collector phase or show how much time the normal player spends there.
+
+## Motion vectors in the base pass
+
+Two fresh standalone games drew the original tree models, the same materials and the same 11.65 m bog replay. All 17 measured pickup positions matched. The shader output mode was selected at startup, so each mode used its correct compiled shaders. A writable cache on the evidence drive kept these test shaders separate. Both games reported zero pending asset compilations before and after the measured drive, with zero tree material fallbacks.
+
+| Settled 128 frames | Depth prepass | Separate velocity | Base pass | Total GPU | Mean frame | p95 frame |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Original depth-pass velocity | 0.30 ms | 9.22 ms | 13.25 ms | 46.06 ms | 47.04 ms | 51.77 ms |
+| Base-pass velocity | 6.43 ms | — | 16.34 ms | 46.74 ms | 47.75 ms | 52.36 ms |
+
+Writing the vectors with the surface removed the separate velocity draw. The extra prepass and surface work absorbed the saving. The base-pass version was 0.71 ms slower on average in this sequence. It stays outside the default. Both tests used the same output resolution and TSR setting. Route-wide visual equivalence for this rejected option is untested.
