@@ -79,6 +79,8 @@ class RoadDrive:
         self.samples = []
         self.handle = None
         drive = self.car.get_drivetrain()
+        self.drivetrain = drive
+        self.traction = self.car.get_traction()
         drive.set_low_range(True)
         drive.set_diff_lock(True)
         self.car.reset_driving_inputs()
@@ -98,6 +100,23 @@ class RoadDrive:
         self.command("gt.Lidar.Present stop")
         payload = dict(
             reason=reason,
+            columns=[
+                "elapsed_s",
+                "section",
+                "station_m",
+                "lateral_m",
+                "x_cm",
+                "y_cm",
+                "z_cm",
+                "speed_mps",
+                "wheel_contacts",
+                "throttle",
+                "brake",
+                "steer",
+                "gear",
+                "engine_rpm",
+                "max_sinkage_fraction",
+            ],
             start_station_m=self.start_station,
             travel_m=self.travel,
             elapsed_s=time.monotonic() - self.started,
@@ -218,6 +237,9 @@ class RoadDrive:
                     round(throttle, 2),
                     round(brake, 2),
                     round(steer, 2),
+                    self.drivetrain.get_gear(),
+                    round(self.drivetrain.get_engine_rpm()),
+                    round(self.traction.get_max_sinkage_fraction(), 3),
                 ]
             )
         except Exception:

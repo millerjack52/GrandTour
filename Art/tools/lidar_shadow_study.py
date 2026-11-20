@@ -6,6 +6,7 @@ import json
 import re
 import statistics
 import shutil
+from datetime import datetime, timedelta
 from pathlib import Path
 import sys
 
@@ -13,8 +14,17 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def schedule(
-    stage, candidate, out, base_family="control", early_family=False, linked_start="access"
+    stage,
+    candidate,
+    out,
+    base_family="control",
+    early_family=False,
+    linked_start="access",
+    native_player=False,
+    warm_trees=False,
 ):
+    if native_player and (stage != "routetime" or candidate != "saved" or base_family != "control"):
+        raise ValueError("Native player requires the saved timed route")
     events = []
     route_names = ("paddock_mid", "access", "river", "bog_entry", "bog552")
     poses = {
@@ -44,7 +54,10 @@ def schedule(
         windows.append(dict(name=name, start=start, end=end))
 
     def relocate(frame, name):
-        if name == "bog_entry":
+        if name == "bog_entry" and native_player:
+            # Same surveyed approach as the original tree probe, on the saved v10 map.
+            cmd(frame, "BugItGo -27247.0 -62212.0 6442.894816994667 0 -19.6745 0")
+        elif name == "bog_entry":
             probe(frame, "bog_entry")
         else:
             pose = poses[name]
@@ -54,12 +67,15 @@ def schedule(
         if (
             candidate != "saved"
             or base_family != "control"
-            or linked_start not in ("access", "bog214")
+            or linked_start not in ("access", "bog214", "bog552")
         ):
             raise ValueError("Continuous drive requires the playable preset and a surveyed start")
         cmd(235, "Input.+key SpaceBar")
-        probe(285, "init")
-        probe(315, "verify_launch")
+        cmd(100, "Log LogGarbage Log")
+        cmd(101, "gc.DumpAnalyticsToLog 1")
+        cmd(285, "gt.Lidar.AuditRenderPass")
+        cmd(315, "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias")
+        cmd(316, "r.InstanceCulling.OcclusionCull")
         relocate(340, linked_start)
         cmd(506, "Input.-key SpaceBar")
         cmd(510, f"gt.Lidar.Present start {out.name}")
@@ -73,8 +89,16 @@ def schedule(
         route = ("paddock_mid", "access") if boundary else route_names
         film = stage in ("routefilm", "boundaryfilm")
         cmd(235, "Input.+key SpaceBar")
-        probe(300, "init")
-        probe(330, "verify_launch" if candidate in ("tree110", "saved") else "verify_stock")
+        if native_player:
+            cmd(330, "gt.Lidar.AuditRenderPass")
+            cmd(331, "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias")
+            cmd(332, "r.InstanceCulling.OcclusionCull")
+        else:
+            probe(300, "init")
+            probe(330, "verify_launch" if candidate in ("tree110", "saved") else "verify_stock")
+        if stage == "routetime":
+            cmd(100, "Log LogGarbage Log")
+            cmd(101, "gc.DumpAnalyticsToLog 1")
         if base_family != "control":
             if candidate != "saved" or base_family not in {
                 "tree_mask_threshold",
@@ -264,8 +288,11 @@ def schedule(
         probe(300, "init")
         probe(335, "verify_launch")
         relocate(375, "bog552")
-        cmd(110 if early_family else 525, f"py {script} inventory bog552 {out.as_posix()}")
-        cmd(115 if early_family else 555, f"py {script} measure {base_family} {out.as_posix()}")
+        inventory_frame, change_frame = (
+            (110, 115) if early_family else (400, 410) if warm_trees else (525, 555)
+        )
+        cmd(inventory_frame, f"py {script} inventory bog552 {out.as_posix()}")
+        cmd(change_frame, f"py {script} measure {base_family} {out.as_posix()}")
         cmd(623, "Input.-key SpaceBar")
         cmd(625, "Input.+action IA_Throttle 0.8")
         window(626, 818, f"drive_{base_family}")
@@ -514,6 +541,47 @@ def schedule(
     )
 
 
+def graphics_samples(out, log):
+    path = out / "gpu-sample.csv"
+    opened = re.search(r"Log file open, (\d+/\d+/\d+ \d+:\d+:\d+)", log)
+    stamp = r"(\d{4}\.\d{2}\.\d{2}-\d{2}\.\d{2}\.\d{2}:\d{3})"
+    first = re.search(r"\[" + stamp + r"\]", log)
+    if not (path.is_file() and opened and first):
+        return {}, []
+    local_open = datetime.strptime(opened[1], "%m/%d/%y %H:%M:%S")
+    parse_engine = lambda value: datetime.strptime(value, "%Y.%m.%d-%H.%M.%S:%f")
+    offset = (parse_engine(first[1]) - local_open).total_seconds()
+    offset = timedelta(seconds=900 * round(offset / 900))
+    if abs((parse_engine(first[1]) - offset - local_open).total_seconds()) > 90:
+        return {}, []
+    markers = {
+        int(frame): parse_engine(value) - offset
+        for value, frame in re.findall(
+            r"\["
+            + stamp
+            + r'\]\[ *\d+\]LogCsvProfiler: Display: CSVEvent "CsvExecCommand : LogLoc" \[Frame (\d+)\]',
+            log,
+        )
+    }
+    observations = []
+    with path.open(newline="", encoding="utf-8-sig") as stream:
+        for row in csv.DictReader(stream, skipinitialspace=True):
+            try:
+                time = datetime.strptime(row["timestamp"], "%Y/%m/%d %H:%M:%S.%f")
+                observations.append(
+                    (
+                        time,
+                        float(row["clocks.current.sm [MHz]"].split()[0]),
+                        float(row["temperature.gpu"]),
+                        float(row["power.draw [W]"].split()[0]),
+                        row["clocks_event_reasons.sw_thermal_slowdown"] == "Active",
+                    )
+                )
+            except (KeyError, ValueError, AttributeError):
+                continue
+    return markers, observations
+
+
 def analyze(out):
     manifest = json.loads((out / f"playperf-{out.name}.json").read_text(encoding="utf-8-sig"))
     assert manifest["exit_code"] == 0
@@ -559,6 +627,13 @@ def analyze(out):
         metrics += ("DrawCall/Basepass", "RHI/PrimitivesDrawn", "GPU/Prepass")
     with Path(manifest["csv"][0]).open(newline="") as f:
         reader = csv.DictReader(f)
+        missing_passes = []
+        if "GPU/RenderVelocities" not in reader.fieldnames:
+            conditions = json.loads((out / "conditions.json").read_text(encoding="utf-8-sig"))
+            if conditions.get("velocity_pass_trial") != "base":
+                raise ValueError("Unexpected absence of the velocity GPU counter")
+            missing_passes.append("GPU/RenderVelocities")
+            metrics = tuple(k for k in metrics if k not in missing_passes)
         frames = []
         markers = []
         for row in reader:
@@ -596,6 +671,7 @@ def analyze(out):
         )
         return table
 
+    marker_times, graphics = graphics_samples(out, log)
     tabs = []
     vsm_files = re.findall(r"Writing VSM accumulated stats .*? to file '([^']+)'", log)
     diagnostic = plan["stage"] in ("diagnose", "cache", "canopy", "rebuild")
@@ -619,6 +695,19 @@ def analyze(out):
             pawn_cm=xyz,
             timings=timing_stats(frames[lo:hi]),
         )
+        if missing_passes:
+            tab["unreported_passes"] = missing_passes
+        start, end = marker_times.get(w["start"]), marker_times.get(w["end"])
+        if start and end:
+            matched = [sample for sample in graphics if start <= sample[0] < end]
+            tab["hardware_samples"] = len(matched)
+            if matched:
+                tab["gpu_hardware"] = dict(
+                    median_clock_mhz=statistics.median(x[1] for x in matched),
+                    peak_temperature_c=max(x[2] for x in matched),
+                    median_power_w=statistics.median(x[3] for x in matched),
+                    samples_thermally_limited=sum(x[4] for x in matched),
+                )
         if plan["stage"] in ("drive", "routetime"):
             # Equal wall-time exposure even when a faster candidate renders more frames.
             times = [r[0] / 1000 for r in frames[lo:hi]]
@@ -696,6 +785,8 @@ if __name__ == "__main__":
             family[0] if family else "control",
             bool(int(family[1])) if len(family) > 1 else False,
             family[2] if len(family) > 2 else "access",
+            bool(int(family[3])) if len(family) > 3 else False,
+            bool(int(family[4])) if len(family) > 4 else False,
         )
     elif sys.argv[1] == "analyze":
         analyze(Path(sys.argv[2]))

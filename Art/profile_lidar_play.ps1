@@ -1,9 +1,18 @@
-param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,150)][int]$NearTreeMetres=0, [switch]$NearTreeControl)
+param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214','bog552')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,150)][int]$NearTreeMetres=0, [switch]$NearTreeControl, [ValidateSet('depth','base')][string]$VelocityPassStudy, [switch]$StaticFarLeaves, [switch]$NativePlayer, [switch]$DisableEditorPython)
 $ErrorActionPreference='Stop'
 if($ShadowStudy){$DrivingBaseline=$true}
 if($TargetWindow -and !$ForegroundDrive){throw 'The target window requires foreground timing'}
 if($ShadowStudy -eq 'linkeddrive' -and !$ForegroundDrive){throw 'Continuous route timing requires the actual game window'}
 if($ForegroundDrive -and ($ShadowStudy -notin @('routetime','linkeddrive') -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $StudySettings -or $TreeCellMetres -or $TreeSections -or $TreeShadowIndices -or $Label.Length -gt 64)){throw 'Foreground timing uses the normal saved route and quality settings'}
+if($DisableEditorPython -and !$NativePlayer){throw 'Disabling editor scripting requires the native route'}
+if($NativePlayer -and (!$ForegroundDrive -or $ShadowStudy -ne 'routetime' -or $WarmTrees -or $VelocityPassStudy -or $StaticFarLeaves -or $NearTreeMetres -or $TreeMeshAudit)){throw 'The native launcher comparison requires an unmodified timed foreground drive'}
+if($StaticFarLeaves){
+ if(!$NearTreeMetres){$NearTreeMetres=110}
+ if($NearTreeMetres -lt 110){throw 'Use at least the authored 110 m displacement cutoff for distant static leaves'}
+ $NearTreeControl=$true
+}
+if($VelocityPassStudy -and (!$EvidenceRoot -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $NearTreeMetres -or $StudySettings -or $TreeSections -or $TreeShadowIndices -or $TreeCellMetres -or $ShadowStudy -notin @('basemoving','routefilm','routetime'))){throw 'Motion-vector pass comparisons require the original trees and an external evidence folder'}
+if($VelocityPassStudy){$WarmTrees=$true}
 if($NearTreeControl -and !$NearTreeMetres){throw 'A near-tree control needs a distance'}
 if($NearTreeMetres -and ($NearTreeMetres -lt 20 -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $TreeCellMetres -or $TreeSections -or $TreeShadowIndices -or $StudySettings -or $ShadowStudy -notin @('routefilm','boundaryfilm','routetime','basemoving','linkeddrive'))){throw 'Near-tree comparisons require the saved route, original tree placement and a 20 to 150 metre distance'}
 if($EarlyFamily -and $ShadowStudy -ne 'basemoving'){throw 'Early family installation requires a moving study'}
@@ -66,6 +75,10 @@ try {
   $conditions.workshop_save_sha256=if(Test-Path -LiteralPath $workshopSave){(Get-FileHash -LiteralPath $workshopSave).Hash}else{$null}
   $conditions.near_tree_metres=$NearTreeMetres
   $conditions.near_tree_control=[bool]$NearTreeControl
+  $conditions.velocity_pass_trial=$VelocityPassStudy
+  $conditions.static_far_leaves=[bool]$StaticFarLeaves
+  $conditions.native_player=[bool]$NativePlayer
+  $conditions.disable_editor_python=[bool]$DisableEditorPython
   $conditions | ConvertTo-Json | Set-Content "$out/conditions.json"
  }
  if(-not $PoseFile){$PoseFile="$out/pf60-poses.json"}
@@ -85,7 +98,7 @@ try {
   $frame=200+$index*$FramesPerSite
   $schedule+=('{0}:BugItGo {1} {2} {3} 0 {4} 0' -f $frame,$pose.x,$pose.y,$pose.z,$pose.yaw)
   if($ShadowStudy){
-   & python "$PSScriptRoot/tools/lidar_shadow_study.py" schedule $ShadowStudy $ShadowCandidate $out $BaseFamily ([int]$EarlyFamily.IsPresent) $LinkedStart
+   & python "$PSScriptRoot/tools/lidar_shadow_study.py" schedule $ShadowStudy $ShadowCandidate $out $BaseFamily ([int]$EarlyFamily.IsPresent) $LinkedStart ([int]$NativePlayer.IsPresent) ([int]($WarmTrees -or $NearTreeMetres -or $BaseFamily.EndsWith('_paint')))
    if($LASTEXITCODE -ne 0){throw 'Could not prepare shadow experiment'}
    $study=Get-Content -Raw -LiteralPath "$out/shadow-schedule.json" | ConvertFrom-Json
    $schedule+=@($study.commands)
@@ -101,10 +114,18 @@ try {
    if($NearTreeMetres){
     $mode=if($NearTreeControl){'control'}else{'paint'}
     $schedule+=("342:gt.Lidar.NearTreeStudy $NearTreeMetres $mode")
+    if($StaticFarLeaves){
+     $farScript=(Join-Path $PSScriptRoot 'Unreal/lidar_distant_leaf_trial.py').Replace('\','/')
+     $schedule+=("345:py $farScript")
+    }
    }
    if($WarmTrees -or $NearTreeMetres -or $BaseFamily.EndsWith('_paint')){
-    if($ShadowStudy -eq 'basemoving'){$schedule+='580:gt.Lidar.AuditTreeRendering warm'}
+    if($ShadowStudy -eq 'basemoving'){$schedule+='468:gt.Lidar.AuditTreeRendering warm'}
     if($ShadowStudy -in @('routefilm','boundaryfilm','routetime','linkeddrive')){$schedule+=@('425:gt.Lidar.AuditTreeRendering warm','455:gt.Lidar.AuditTreeRendering')}
+   }
+   if($VelocityPassStudy){
+    if($ShadowStudy -eq 'basemoving'){$schedule+=@('448:gt.Lidar.AuditRenderPass warm','611:gt.Lidar.AuditRenderPass','821:gt.Lidar.AuditRenderPass')}
+    else{$schedule+=@('416:gt.Lidar.AuditRenderPass warm','485:gt.Lidar.AuditRenderPass')}
    }
    if($TreeMeshAudit){$audit=(Join-Path $PSScriptRoot 'Unreal/lidar_tree_mesh_audit.py').Replace('\','/');$schedule+=(('{0}:py {1} {2}' -f ($study.frames-5),$audit,$out.Replace('\','/')))}
    if($TreeSections){$schedule+=('342:gt.Lidar.TrialTreeSections '+$TreeShadowIndices).TrimEnd()}
@@ -168,7 +189,7 @@ try {
  if($DrivingBaseline){
   $launch=@($launch | Where-Object {$_ -ne '-NoSound'})
   $launch+='-ForceRes'
-  if($ShadowStudy){$launch+='-ForceEnablePython'}
+  if($ShadowStudy -and !$NativePlayer){$launch+='-ForceEnablePython'}
   if($ShadowStudy -in @('visual','routefilm','boundaryfilm','routehold','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')){$launch+=@('-UseFixedTimeStep','-FPS=24','-FixedSeed')}
   # The normal Saved/Profiling junction may point to a disconnected drive.
   $launch+='-saveddirsuffix=LidarDrive'
@@ -203,17 +224,36 @@ try {
   if($TargetWindow){$launch+=@('-ForceRes','-ini:Engine:[/Script/Engine.UserInterfaceSettings]:bAllowHighDPIInGameMode=True')}
   $windowStyle='Normal'
  }
+ if($DisableEditorPython){$launch+='-DisablePython'}
+ if($NativePlayer -and (($launch -join ' ') -match 'ForceEnablePython|:py ')){throw 'Unexpected scripting in the native drive'}
  if($ShadowStudy -and ($launch -join ' ').Length -ge 16200){throw 'Shadow study command line exceeds engine capacity'}
+ if($VelocityPassStudy){
+  $scratch=Join-Path ([IO.Path]::GetFullPath($EvidenceRoot)) 'VelocityShaders'
+  if(([IO.Path]::GetPathRoot($scratch) -eq [IO.Path]::GetPathRoot($env:SystemRoot)) -or ([IO.DriveInfo]::new([IO.Path]::GetPathRoot($scratch))).AvailableFreeSpace -lt 20GB){throw 'The shader comparison needs 20 GB on the evidence drive'}
+  $shaderCache=Join-Path $scratch 'Cache'
+  $shaderTemp=Join-Path $scratch 'Temp'
+  New-Item -ItemType Directory -Force -Path $shaderCache,$shaderTemp | Out-Null
+  $passValue=[int]($VelocityPassStudy -eq 'base')
+  $launch+=@("-ini:Engine:[/Script/Engine.RendererSettings]:r.VelocityOutputPass=$passValue",
+   '-DDC=(EnginePak=InstalledEnginePak,ZenLocal(ReadOnly=true),Prior=InstalledLocal(ReadOnly=true),Scratch=Shared)',
+   ('-SharedDataCachePath="'+$shaderCache+'"'))
+ }
+ $savedTemp=$env:TEMP
+ $savedTmp=$env:TMP
+ try{
+  if($VelocityPassStudy){$env:TEMP=$shaderTemp;$env:TMP=$shaderTemp}
  $p=Start-Process 'C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor.exe' -ArgumentList $launch -WindowStyle $windowStyle -PassThru
+ }finally{$env:TEMP=$savedTemp;$env:TMP=$savedTmp}
  $handle=$p.Handle
  if($DrivingBaseline){
   $gpuMonitor=$null
   $smi=Get-Command nvidia-smi.exe -ErrorAction SilentlyContinue
   if($smi){
    $fields='timestamp,temperature.gpu,power.draw,utilization.gpu,clocks.sm,memory.used,clocks_event_reasons.sw_thermal_slowdown,clocks_event_reasons.sw_power_cap'
-   $gpuMonitor=Start-Process $smi.Source -ArgumentList "--query-gpu=$fields",'--format=csv','--loop=10' -RedirectStandardOutput "$out/gpu-sample.csv" -WindowStyle Hidden -PassThru
+   $gpuMonitor=Start-Process $smi.Source -ArgumentList "--query-gpu=$fields",'--format=csv','--loop=1' -RedirectStandardOutput "$out/gpu-sample.csv" -WindowStyle Hidden -PassThru
   }
-  $deadline=(Get-Date).AddMinutes(15)
+  $allowedMinutes=if($VelocityPassStudy){45}else{15}
+  $deadline=(Get-Date).AddMinutes($allowedMinutes)
   $waitingForCapture=$true
   try {
   while(-not $p.WaitForExit(2000)){
@@ -232,6 +272,10 @@ try {
   }
   } finally {if($gpuMonitor -and -not $gpuMonitor.HasExited){$gpuMonitor.Kill()}}
  }else{$p.WaitForExit()}
+ if($DrivingBaseline){
+  $conditions.final_workshop_save_sha256=if(Test-Path -LiteralPath $workshopSave){(Get-FileHash -LiteralPath $workshopSave).Hash}else{$null}
+  $conditions | ConvertTo-Json | Set-Content "$out/conditions.json"
+ }
  if($ForegroundDrive){
   $presentationPath=Join-Path $driveSaved "LidarPresentation/$Label.csv"
   if(!(Test-Path -LiteralPath $presentationPath) -or !(Select-String -LiteralPath $log -SimpleMatch 'GT_LIDAR_PRESENT saved=1' -Quiet)){throw 'No window presentation capture'}
@@ -241,6 +285,21 @@ try {
   $conditions.target_window=[bool]$TargetWindow
   $conditions | ConvertTo-Json | Set-Content "$out/conditions.json"
   if($TargetWindow -and ($actualSizes.Count -ne 1 -or $actualSizes[0] -ne '1600x900')){throw 'Game window did not reach the target resolution'}
+ }
+ if($StaticFarLeaves){
+  if(!(Select-String -LiteralPath $log -SimpleMatch 'GT_STATIC_LEAF_RANGE groups=3' -Quiet)){throw 'The distant-tree wind boundary did not verify'}
+  foreach($species in 0..2){
+   $near="GT_TREE_DRAW_RANGE mesh=SM_Canopy_$species min_cm=0 max_cm=$($NearTreeMetres*100) wpo_slots=1"
+   $far="GT_TREE_DRAW_RANGE mesh=SM_Canopy_$species min_cm=$($NearTreeMetres*100) max_cm=2147483648 wpo_slots=0"
+   if(!(Select-String -LiteralPath $log -SimpleMatch $near -Quiet) -or !(Select-String -LiteralPath $log -SimpleMatch $far -Quiet)){throw "Compiled leaf wind did not match the near and far ranges for species $species"}
+  }
+ }
+ if($VelocityPassStudy){
+  $lastPass=Select-String -LiteralPath $log -SimpleMatch 'GT_LIDAR_PASS velocity=' | Select-Object -Last 1
+  if(!$lastPass -or !$lastPass.Line.Contains("GT_LIDAR_PASS velocity=$passValue pending_assets=0")){throw 'Motion-vector setting or compilation did not verify'}
+  if(Select-String -LiteralPath $log -Pattern 'Failed to compile (global shader|Material)|Default Material will be used in game' -Quiet){throw 'A material failed to compile in the motion-vector comparison'}
+  $cacheLine=Select-String -LiteralPath $log -Pattern 'Scratch: Using.*Writable' | Select-Object -First 1
+  if(!$cacheLine -or !$cacheLine.Line.Replace('\','/').Contains($shaderCache.Replace('\','/'))){throw 'Could not verify the isolated shader cache'}
  }
  if($NearTreeMetres -or $BaseFamily.EndsWith('_paint') -or $WarmTrees){
   $groups=6

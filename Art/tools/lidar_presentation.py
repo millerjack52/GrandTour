@@ -30,13 +30,10 @@ def timing_summary(frame):
     )
 
 
-def continuous_results(folder, observations, data):
+def engine_results(folder, observations, data):
     first_engine_frame = observations[0]["engine_frame"]
     manifest = json.loads(next(folder.glob("playperf-*.json")).read_text(encoding="utf-8-sig"))
-    drive = json.loads((folder / "continuous-drive.json").read_text())
-    samples = drive["samples"]
-    data["drive"] = {k: v for k, v in drive.items() if k != "samples"}
-    data["drive"]["telemetry_samples"] = len(samples)
+    collections = []
     times = []
     origin = None
     with Path(manifest["csv"][0]).open(newline="", encoding="utf-8-sig") as stream:
@@ -47,6 +44,17 @@ def continuous_results(folder, observations, data):
                 break
             if "CsvExecCommand : gt.Lidar.Present start " in row["EVENTS"]:
                 origin = first_engine_frame - len(times)
+            if "GC##" in row["EVENTS"]:
+                collections.append(
+                    dict(
+                        csv_frame=len(times),
+                        game_thread_ms=float(row["GameThreadTime"]),
+                        gpu_ms=float(row["GPUTime"]),
+                        render_thread_wait_ms=float(
+                            row.get("Exclusive/RenderThread/EventWait") or 0
+                        ),
+                    )
+                )
             times.append(dt)
     if origin is None:
         raise ValueError("No matching display and engine capture start")
@@ -67,6 +75,22 @@ def continuous_results(folder, observations, data):
                 and r["speed_mps"] > 0.5
             ]
             info["engine_moving"] = timing_summary(moving) if moving else None
+    by_frame = {r["engine_frame"]: r for r in observations}
+    for event in collections:
+        index = event["csv_frame"]
+        observed = by_frame.get(origin + index, {})
+        event["section"] = observed.get("section")
+        event["speed_mps"] = observed.get("speed_mps")
+        event["driving"] = observed.get("driving")
+        event["next_frame_ms"] = times[index + 1] if index + 1 < len(times) else None
+    data["garbage_collections"] = collections
+
+
+def continuous_results(folder, data):
+    drive = json.loads((folder / "continuous-drive.json").read_text())
+    samples = drive["samples"]
+    data["drive"] = {k: v for k, v in drive.items() if k != "samples"}
+    data["drive"]["telemetry_samples"] = len(samples)
     data["physical_sections"] = []
     for name, group in groupby(samples, key=lambda s: s[1]):
         group = list(group)
@@ -194,8 +218,9 @@ def analyze(folder):
                 ),
             )
         data["sections"].append(info)
+    engine_results(folder, rows, data)
     if plan["stage"] == "linkeddrive":
-        continuous_results(folder, rows, data)
+        continuous_results(folder, data)
     return data
 
 

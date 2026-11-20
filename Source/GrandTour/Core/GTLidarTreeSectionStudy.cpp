@@ -14,8 +14,28 @@
 #include "StaticMeshResources.h"
 
 #if WITH_EDITOR
+#include "AssetCompilingManager.h"
 namespace
 {
+	void AuditRenderPass(const TArray<FString>& Args, UWorld* World)
+	{
+		if (!World || World->WorldType != EWorldType::Game ||
+			UGameplayStatics::GetCurrentLevelName(World, true) != TEXT("L_LidarStudy")) return;
+		auto& Compilers = FAssetCompilingManager::Get();
+		if (Args.Contains(TEXT("warm")))
+		{
+			Compilers.FinishAllCompilation();
+			FlushRenderingCommands();
+		}
+		const auto* Velocity = IConsoleManager::Get().FindConsoleVariable(TEXT("r.VelocityOutputPass"));
+		const auto* Mask = IConsoleManager::Get().FindConsoleVariable(TEXT("r.EarlyZPassOnlyMaterialMasking"));
+		UE_LOG(LogTemp, Display, TEXT("GT_LIDAR_PASS velocity=%d pending_assets=%d early_mask=%d"),
+			Velocity->GetInt(), Compilers.GetNumRemainingAssets(), Mask->GetInt());
+	}
+	FAutoConsoleCommandWithWorldAndArgs AuditPass(TEXT("gt.Lidar.AuditRenderPass"),
+		TEXT("Read active rendering configuration and pending compilation during a LiDAR trial."),
+		FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(AuditRenderPass));
+
 	void AuditTreeRendering(const TArray<FString>& Args, UWorld* World)
 	{
 		if (!World || World->WorldType != EWorldType::Game ||
@@ -73,20 +93,24 @@ namespace
 				for (const auto& Group : Groups)
 				{
 					const bool bNanite = Group.SceneProxy && Group.SceneProxy->IsNaniteMesh();
-					FVector2f Range;
-					if (Group.SceneProxy && Group.SceneProxy->GetInstanceDrawDistanceMinMax(Range))
-					{
-						UE_LOG(LogTemp, Display, TEXT("GT_TREE_DRAW_RANGE mesh=%s min_cm=%.0f max_cm=%.0f"),
-							*Group.Mesh, Range.X, Range.Y);
-					}
 					Nanite += bNanite;
 					Proxies += Group.SceneProxy != nullptr;
 					int32 GroupFallbacks = 0;
+					int32 WindSlots = 0;
 					for (const auto* Material : Group.Materials)
 					{
 						const FMaterialRenderProxy* Fallback = nullptr;
-						if (Material) Material->GetMaterialWithFallback(Level, Fallback);
+						if (Material)
+						{
+							WindSlots += Material->GetMaterialWithFallback(Level, Fallback).MaterialUsesWorldPositionOffset_RenderThread();
+						}
 						GroupFallbacks += !Material || Fallback != nullptr;
+					}
+					FVector2f Range;
+					if (Group.SceneProxy && Group.SceneProxy->GetInstanceDrawDistanceMinMax(Range))
+					{
+						UE_LOG(LogTemp, Display, TEXT("GT_TREE_DRAW_RANGE mesh=%s min_cm=%.0f max_cm=%.0f wpo_slots=%d"),
+							*Group.Mesh, Range.X, Range.Y, WindSlots);
 					}
 					Fallbacks += GroupFallbacks;
 					if (bNanite)

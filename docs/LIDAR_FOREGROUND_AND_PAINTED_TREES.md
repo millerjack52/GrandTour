@@ -1,6 +1,6 @@
 # Foreground LiDAR driving and painted-tree rendering
 
-The saved v10 profile missed the 16.67 ms frame budget at each of the three usable foreground driving checkpoints on the RTX 4050 laptop. The 143.871 Hz desktop was active and the swap chain reported 1600 Ã— 900 throughout. TSR used the saved 75% setting. These are short checkpoint drives with normal audio and vehicle physics.
+The initial foreground test had three usable checkpoints. Later runs measured all five in the driving view. The saved v10 profile missed the 16.67 ms budget at each checkpoint on the RTX 4050 laptop. The 143.871 Hz desktop was active and the swap chain reported 1600 Ã— 900 throughout. TSR used the saved 75% setting. These are short checkpoint drives with normal audio and vehicle physics.
 
 | Checkpoint | Distance | Engine fps | Engine p95 | Engine p99 | Longest frame | Observed display fps |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -35,9 +35,9 @@ The 55 m experiment uses the painted Nanite meshes for the three mature species 
 | Original, without the split | 17.23 | 58.05 ms | 85.30 ms | 23.34 ms | 13.14 ms | 9.10 ms |
 | 55 m painted trees, repeat | 18.53 | 53.95 ms | 77.08 ms | 19.22 ms | 12.68 ms | 8.63 ms |
 
-All four runs covered the same 11.65 m and all 17 sampled positions agreed. Thermal throttling was active. The table includes a warm-up artifact. Immediately after the shader warm-up at frame 580, conventional shadow drawing rose to about 49–52 ms and dropped to around 12 ms after frame 681. UE 5.8 uses 100 frames without invalidation to return a caster to its static shadow cache. The same transition occurred in both nearby-tree runs and the conventional controls. The original 192-frame comparison mixed rebuilding with steady driving.
+All four runs covered the same 11.65 m and all 17 sampled positions agreed. Thermal throttling was active. The table includes a warm-up artifact. Immediately after the shader warm-up at frame 580, conventional shadow drawing rose to about 49â€“52 ms and dropped to around 12 ms after frame 681. UE 5.8 uses 100 frames without invalidation to return a caster to its static shadow cache. The same transition occurred in both nearby-tree runs and the conventional controls. The original 192-frame comparison mixed rebuilding with steady driving.
 
-Across the last 128 matched frames, the original averaged **46.16 ms (21.66 fps)**, the conventional split 47.82 ms (20.91 fps), and the nearby painted trees **39.72 ms (25.18 fps)** and **43.78 ms (22.84 fps)**. Their p95 values were 51.55, 54.07, 43.48 and 48.06 ms respectively. The nearby implementation saved **2.38–6.44 ms** against the original in this settled window. The 10-second hardware polling interval yielded just one measurement inside each short replay, with measured GPU clocks from 1665 to 1800 MHz. Subsequent tests sample once per second and start material warm-up earlier.
+Across the last 128 matched frames, the original averaged **46.16 ms (21.66 fps)**, the conventional split 47.82 ms (20.91 fps), and the nearby painted trees **39.72 ms (25.18 fps)** and **43.78 ms (22.84 fps)**. Their p95 values were 51.55, 54.07, 43.48 and 48.06 ms respectively. The nearby implementation saved **2.38â€“6.44 ms** against the original in this settled window. The 10-second hardware polling interval yielded just one measurement inside each short replay, with measured GPU clocks from 1665 to 1800 MHz. Subsequent tests sample once per second and start material warm-up earlier.
 
 Two fresh fixed-time drives used the same saved equipment and the same native build. All 65 sampled vehicle positions agreed across 240 pairs of driving frames. In the paddock the average brightness difference was 0.13 on a 255-level scale. The strongest local difference fell to 0.48, compared with 15.24 when the trial replaced all mature trees. The crown and trunk separation in the skyline returned. In the bog approach a nearby trunk shifted greener and darker. At the deep-bog checkpoint the worst difference was on grass blades. Moving tyre dust obscured the largest forest-access difference. The nearby variant remains experimental.
 
@@ -45,7 +45,7 @@ Reproduce with the saved profile, `-ShadowStudy basemoving -NearTreeMetres 55`. 
 
 ## The recurring half-second hitch
 
-Seven runs contained nine periodic garbage-collection events. The next frame interval was 561–666 ms in every case. In the foreground river capture the event occupied a 649.45 ms game-thread frame, with the rendering thread waiting for 610.65 ms and the GPU spending 31.46 ms. The next measured frame interval was 648.84 ms. The CSV recorded zero graphics pipeline misses in the surrounding frames. This identifies a recurring game-thread stall alongside the separate steady GPU cost. The scripting-enabled profiling runs alone cannot assign the stall to a particular collector phase or show how much time the normal player spends there.
+Seven runs contained nine periodic garbage-collection events. The next frame interval was 561â€“666 ms in every case. In the foreground river capture the event occupied a 649.45 ms game-thread frame, with the rendering thread waiting for 610.65 ms and the GPU spending 31.46 ms. The next measured frame interval was 648.84 ms. The CSV recorded zero graphics pipeline misses in the surrounding frames. This identifies a recurring game-thread stall alongside the separate steady GPU cost. The scripting-enabled profiling runs alone cannot assign the stall to a particular collector phase or show how much time the normal player spends there.
 
 ## Motion vectors in the base pass
 
@@ -54,6 +54,32 @@ Two fresh standalone games drew the original tree models, the same materials and
 | Settled 128 frames | Depth prepass | Separate velocity | Base pass | Total GPU | Mean frame | p95 frame |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Original depth-pass velocity | 0.30 ms | 9.22 ms | 13.25 ms | 46.06 ms | 47.04 ms | 51.77 ms |
-| Base-pass velocity | 6.43 ms | — | 16.34 ms | 46.74 ms | 47.75 ms | 52.36 ms |
+| Base-pass velocity | 6.43 ms | â€” | 16.34 ms | 46.74 ms | 47.75 ms | 52.36 ms |
 
 Writing the vectors with the surface removed the separate velocity draw. The extra prepass and surface work absorbed the saving. The base-pass version was 0.71 ms slower on average in this sequence. It stays outside the default. Both tests used the same output resolution and TSR setting. Route-wide visual equivalence for this rejected option is untested.
+
+## Foreground driving without the scene inventory
+
+Two fresh games used the saved v10 profile at 1600 x 900 and 75% TSR with game audio, the same vehicle equipment and the game window in focus. Native driving commands replaced the profiling script that enumerates the scene. Each checkpoint covers 300 consecutive game frames in the driving view. The moving figures include only frames with the player in the truck and speed above 0.5 m/s. Display figures cover the interior of the full driving-view window, including moments when the truck slowed.
+
+| Checkpoint | Travel | Frames moving | Moving fps | Moving p95 | Display fps | Display p95 | Median GPU clock |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Fine-grass paddock | 41.27 m | 297/300 | 25.54 | 45.65 ms | 25.54 | 41.71 ms | 1627.5 MHz |
+| Forest access | 38.84 m | 145/300 | 19.58 | 56.30 ms | 20.23 | 55.61 ms | 1387.5 MHz |
+| River margin | 6.38 m | 146/300 | 20.28 | 55.47 ms | 19.75 | 62.56 ms | 1170 MHz |
+| Bog approach | 6.48 m | 143/300 | 16.83 | 66.26 ms | 16.79 | 69.50 ms | 1275 MHz |
+| Deep bog | 15.69 m | 294/300 | 15.46 | 83.14 ms | 15.43 | 83.41 ms | 1275 MHz |
+
+The normal scripting setting was active in the table. All five display windows had 283 consecutive presentation intervals with no gaps. Every moving frame exceeded the 16.67 ms budget. In the deep bog the GPU took 62.84 ms on average. Surface shading took 18.09 ms, shadows took 16.50 ms and motion vectors took 12.57 ms. All 19 hardware observations in that window reported thermal throttling, and the GPU reached 89 degrees C. The game thread averaged 10.78 ms. Wheel travel and GPU clocks differed between the two runs, preventing a direct comparison of interpreter cost.
+
+Two garbage collections with normal game scripting produced frame intervals of 57.03 and 60.03 ms. Disabling the interpreter for a second run produced 55.86 and 91.31 ms. Its collector reported 18.04 and 13.26 ms of total work, including 12.44 and 11.57 ms traversing references. None of these four events reproduced the half-second frame seen in the inventory-assisted tests. A half-second periodic hitch in normal play remains unconfirmed. Both games began each checkpoint drive separately.
+
+Reproduce with the foreground target-window timing options above and add `-NativePlayer`. Add `-DisableEditorPython` only for the interpreter comparison. The measurement file includes the equipment hashes before and after each run, rendering costs and thermal conditions.
+
+## Continuous forest-access drive
+
+The pickup started at road station 770 m and followed the access road in low range with the differential locked. Steering and pedals used normal wheel and ground physics. During 245.6 seconds it traveled 941.23 m, advancing 910.76 m along the road. All 3,519 engine frames had the game window in focus with the player driving. The median wheel contact count was four. The 3,368 moving frames averaged **14.38 fps**, with **98.90 ms p95**, 112.15 ms p99 and a 188.95 ms maximum. All moving frames took longer than 16.67 ms. The presentation trace contained 199 discontinuities. Its consecutive intervals averaged 14.54 fps.
+
+The pickup stalled about 15 m before the riverside junction. Three attempts to reverse and change wheel track failed to get it through. The run establishes a continuous forest-access baseline. River, wooded mud track and bog performance need separate physical drives. Four periodic garbage collections during the access drive produced frame intervals between 54.25 and 80.26 ms.
+
+Reproduce with the saved profile and `-ForegroundDrive -TargetWindow -ShadowStudy linkeddrive -LinkedStart access`. The presentation analyzer records route progress, drive distance, wheel contact and actual motion. Each launch uses one initial placement.
