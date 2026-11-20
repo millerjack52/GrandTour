@@ -12,7 +12,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def schedule(stage, candidate, out, base_family="control"):
+def schedule(
+    stage, candidate, out, base_family="control", early_family=False, linked_start="access"
+):
     events = []
     route_names = ("paddock_mid", "access", "river", "bog_entry", "bog552")
     poses = {
@@ -48,7 +50,23 @@ def schedule(stage, candidate, out, base_family="control"):
             pose = poses[name]
             cmd(frame, f"BugItGo {pose['x']} {pose['y']} {pose['z']} 0 {pose['yaw']} 0")
 
-    if stage in ("routefilm", "routetime", "boundaryfilm"):
+    if stage == "linkeddrive":
+        if (
+            candidate != "saved"
+            or base_family != "control"
+            or linked_start not in ("access", "bog214")
+        ):
+            raise ValueError("Continuous drive requires the playable preset and a surveyed start")
+        cmd(235, "Input.+key SpaceBar")
+        probe(285, "init")
+        probe(315, "verify_launch")
+        relocate(340, linked_start)
+        cmd(506, "Input.-key SpaceBar")
+        cmd(510, f"gt.Lidar.Present start {out.name}")
+        driver = (ROOT / "Art/Unreal/lidar_continuous_drive.py").as_posix()
+        cmd(512, f"py {driver} {out.as_posix()} {linked_start}")
+        frames = 36000
+    elif stage in ("routefilm", "routetime", "boundaryfilm"):
         if candidate not in ("tree110", "baseline", "saved"):
             raise ValueError(candidate)
         boundary = stage == "boundaryfilm"
@@ -57,6 +75,20 @@ def schedule(stage, candidate, out, base_family="control"):
         cmd(235, "Input.+key SpaceBar")
         probe(300, "init")
         probe(330, "verify_launch" if candidate in ("tree110", "saved") else "verify_stock")
+        if base_family != "control":
+            if candidate != "saved" or base_family not in {
+                "tree_mask_threshold",
+                "dress_windlimit",
+                "mature_tree_nanite",
+                "mature_d003_nanite",
+                "tree_paint",
+                "mature_tree_paint",
+                "mature_d003_paint",
+            }:
+                raise ValueError("Unverified route family " + base_family)
+            script = (ROOT / "Art/Unreal/lidar_base_pass_probe.py").as_posix()
+            cmd(333, f"py {script} inventory route {out.as_posix()}")
+            cmd(342, f"py {script} measure {base_family} {out.as_posix()}")
         for index, name in enumerate(route):
             setup = 350 + (970 if boundary else 370 if film else 530) * index
             relocate(setup, name)
@@ -232,8 +264,8 @@ def schedule(stage, candidate, out, base_family="control"):
         probe(300, "init")
         probe(335, "verify_launch")
         relocate(375, "bog552")
-        cmd(525, f"py {script} inventory bog552 {out.as_posix()}")
-        cmd(555, f"py {script} measure {base_family} {out.as_posix()}")
+        cmd(110 if early_family else 525, f"py {script} inventory bog552 {out.as_posix()}")
+        cmd(115 if early_family else 555, f"py {script} measure {base_family} {out.as_posix()}")
         cmd(623, "Input.-key SpaceBar")
         cmd(625, "Input.+action IA_Throttle 0.8")
         window(626, 818, f"drive_{base_family}")
@@ -657,6 +689,13 @@ def analyze(out):
 if __name__ == "__main__":
     if sys.argv[1] == "schedule":
         _, action, stage, candidate, out, *family = sys.argv
-        schedule(stage, candidate, Path(out), *family)
+        schedule(
+            stage,
+            candidate,
+            Path(out),
+            family[0] if family else "control",
+            bool(int(family[1])) if len(family) > 1 else False,
+            family[2] if len(family) > 2 else "access",
+        )
     elif sys.argv[1] == "analyze":
         analyze(Path(sys.argv[2]))

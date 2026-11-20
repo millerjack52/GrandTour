@@ -1,0 +1,472 @@
+{
+  "target": {
+    "gpu": "RTX 4050 Laptop",
+    "output": [
+      1600,
+      900
+    ],
+    "tsr_percent": 75,
+    "p95_budget_ms": 16.666666666666668
+  },
+  "foreground": {
+    "run": "sweep30_desktop_target",
+    "conditions": {
+      "offscreen": false,
+      "audio_enabled": true,
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+      "os_build": "26200",
+      "module_sha256": "D79F82B70838E64C8C1BFD30A554FC31E42D5C6526C80DD2149AD76F10604A87",
+      "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     "
+    },
+    "desktop_hz": 143.871,
+    "query_median_us": 16.5,
+    "excluded": {
+      "bog_entry": "workshop interaction during this section",
+      "bog552": "stationary workshop view"
+    },
+    "sections": [
+      {
+        "name": "paddock_mid",
+        "frames": 300,
+        "fps": 35.55,
+        "travel_m": 41.02,
+        "engine": {
+          "FrameTime": {
+            "mean": 28.126,
+            "p95": 34.542,
+            "median": 27.018,
+            "p99": 59.107,
+            "maximum": 79.389,
+            "pct_over_60fps_budget": 99.67,
+            "over_33_3_ms": 21,
+            "over_50_ms": 7,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 27.017,
+            "p95": 29.318
+          },
+          "GPU/ShadowDepths": {
+            "mean": 3.759,
+            "p95": 4.41
+          },
+          "GPU/Basepass": {
+            "mean": 7.692,
+            "p95": 8.505
+          },
+          "GPU/RenderVelocities": {
+            "mean": 5.23,
+            "p95": 5.684
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 1332.3,
+            "p95": 1517.0
+          },
+          "GameThreadTime": {
+            "mean": 8.579,
+            "p95": 11.717
+          },
+          "RenderThreadTime": {
+            "mean": 9.949,
+            "p95": 13.175
+          },
+          "DrawCall/Basepass": {
+            "mean": 549.817,
+            "p95": 583.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2273491.32,
+            "p95": 2474707.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.075,
+            "p95": 0.091
+          }
+        },
+        "display": {
+          "section": "paddock_mid",
+          "samples": 300,
+          "viewport": {
+            "1600x900": 300
+          },
+          "foreground_samples": 300,
+          "dxgi_status": {
+            "0": 300
+          },
+          "intervals": 281,
+          "discontinuities": 1,
+          "invalid_samples": 0,
+          "complete_inner_window": false,
+          "observed_contiguous_fps": 35.37,
+          "p95_ms": 34.753,
+          "p99_ms": 55.605,
+          "maximum_ms": 83.407,
+          "percent_over_16_67_ms": 100.0
+        }
+      },
+      {
+        "name": "access",
+        "frames": 300,
+        "fps": 29.68,
+        "travel_m": 37.04,
+        "engine": {
+          "FrameTime": {
+            "mean": 33.693,
+            "p95": 40.0,
+            "median": 33.565,
+            "p99": 41.973,
+            "maximum": 49.868,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 155,
+            "over_50_ms": 0,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 32.668,
+            "p95": 38.611
+          },
+          "GPU/ShadowDepths": {
+            "mean": 9.823,
+            "p95": 15.543
+          },
+          "GPU/Basepass": {
+            "mean": 6.242,
+            "p95": 8.816
+          },
+          "GPU/RenderVelocities": {
+            "mean": 5.406,
+            "p95": 7.027
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 1449.813,
+            "p95": 1471.0
+          },
+          "GameThreadTime": {
+            "mean": 7.547,
+            "p95": 11.474
+          },
+          "RenderThreadTime": {
+            "mean": 9.729,
+            "p95": 12.031
+          },
+          "DrawCall/Basepass": {
+            "mean": 548.23,
+            "p95": 605.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2007413.553,
+            "p95": 2339073.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.198,
+            "p95": 0.302
+          }
+        },
+        "display": {
+          "section": "access",
+          "samples": 300,
+          "viewport": {
+            "1600x900": 300
+          },
+          "foreground_samples": 300,
+          "dxgi_status": {
+            "0": 300
+          },
+          "intervals": 283,
+          "discontinuities": 0,
+          "invalid_samples": 0,
+          "complete_inner_window": true,
+          "observed_contiguous_fps": 29.7,
+          "p95_ms": 41.704,
+          "p99_ms": 41.705,
+          "maximum_ms": 48.655,
+          "percent_over_16_67_ms": 100.0
+        }
+      },
+      {
+        "name": "river",
+        "frames": 300,
+        "fps": 28.12,
+        "travel_m": 6.45,
+        "engine": {
+          "FrameTime": {
+            "mean": 35.557,
+            "p95": 46.179,
+            "median": 32.148,
+            "p99": 57.557,
+            "maximum": 648.839,
+            "pct_over_60fps_budget": 99.33,
+            "over_33_3_ms": 106,
+            "over_50_ms": 12,
+            "over_100_ms": 1
+          },
+          "GPUTime": {
+            "mean": 32.488,
+            "p95": 41.594
+          },
+          "GPU/ShadowDepths": {
+            "mean": 11.694,
+            "p95": 21.245
+          },
+          "GPU/Basepass": {
+            "mean": 5.652,
+            "p95": 6.193
+          },
+          "GPU/RenderVelocities": {
+            "mean": 3.315,
+            "p95": 3.825
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 734.52,
+            "p95": 753.0
+          },
+          "GameThreadTime": {
+            "mean": 11.132,
+            "p95": 11.655
+          },
+          "RenderThreadTime": {
+            "mean": 8.634,
+            "p95": 9.569
+          },
+          "DrawCall/Basepass": {
+            "mean": 679.907,
+            "p95": 719.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2244292.91,
+            "p95": 2558390.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.279,
+            "p95": 0.308
+          }
+        },
+        "display": {
+          "section": "river",
+          "samples": 300,
+          "viewport": {
+            "1600x900": 300
+          },
+          "foreground_samples": 300,
+          "dxgi_status": {
+            "0": 300
+          },
+          "intervals": 280,
+          "discontinuities": 1,
+          "invalid_samples": 0,
+          "complete_inner_window": false,
+          "observed_contiguous_fps": 27.92,
+          "p95_ms": 48.653,
+          "p99_ms": 62.555,
+          "maximum_ms": 597.738,
+          "percent_over_16_67_ms": 100.0
+        }
+      }
+    ]
+  },
+  "canopy_replay": {
+    "run": "sweep36_painted_warm",
+    "conditions": {
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "audio_enabled": true,
+      "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+      "module_sha256": "140A6C5E4EDFBEA9858E6EFBE4E933C43A1C21497A51A573714CEE3A63213C26",
+      "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+      "os_build": "26200",
+      "offscreen": true
+    },
+    "trees": 146197,
+    "groups": 6,
+    "nanite_groups": 3,
+    "material_fallbacks": 0,
+    "verified_nanite_sections": 6,
+    "frames": 192,
+    "fps": 50.51,
+    "travel_m": 11.65,
+    "timings": {
+      "FrameTime": {
+        "mean": 19.799,
+        "p95": 21.102,
+        "median": 19.685,
+        "p99": 27.418,
+        "maximum": 31.986,
+        "pct_over_60fps_budget": 98.44,
+        "over_33_3_ms": 0,
+        "over_50_ms": 0,
+        "over_100_ms": 0
+      },
+      "GPUTime": {
+        "mean": 18.833,
+        "p95": 19.741
+      },
+      "GPU/ShadowDepths": {
+        "mean": 4.679,
+        "p95": 5.508
+      },
+      "GPU/Basepass": {
+        "mean": 2.437,
+        "p95": 2.537
+      },
+      "GPU/RenderVelocities": {
+        "mean": 1.387,
+        "p95": 1.46
+      },
+      "DrawCall/ShadowDepths": {
+        "mean": 629.276,
+        "p95": 648.0
+      },
+      "GameThreadTime": {
+        "mean": 9.465,
+        "p95": 11.316
+      },
+      "RenderThreadTime": {
+        "mean": 9.0,
+        "p95": 10.458
+      },
+      "DrawCall/Basepass": {
+        "mean": 549.766,
+        "p95": 570.0
+      },
+      "RHI/PrimitivesDrawn": {
+        "mean": 2126128.073,
+        "p95": 2375593.0
+      },
+      "GPU/Prepass": {
+        "mean": 0.223,
+        "p95": 0.236
+      }
+    }
+  },
+  "painted_visual": {
+    "paddock_mid": {
+      "travel_m": [
+        19.26,
+        19.26
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 2.089,
+      "max_pct_over_8": 7.45,
+      "mean_upper_scene_delta_255": 4.553,
+      "worst_96px_patch_mean_delta_255": 15.236,
+      "worst_local_frame": 47
+    },
+    "access": {
+      "travel_m": [
+        37.82,
+        37.82
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 5.214,
+      "max_pct_over_8": 70.819,
+      "mean_upper_scene_delta_255": 2.916,
+      "worst_96px_patch_mean_delta_255": 83.226,
+      "worst_local_frame": 37
+    },
+    "river": {
+      "travel_m": [
+        2.48,
+        2.48
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.512,
+      "max_pct_over_8": 1.086,
+      "mean_upper_scene_delta_255": 0.482,
+      "worst_96px_patch_mean_delta_255": 11.658,
+      "worst_local_frame": 41
+    },
+    "bog_entry": {
+      "travel_m": [
+        3.41,
+        3.41
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.456,
+      "max_pct_over_8": 0.516,
+      "mean_upper_scene_delta_255": 0.762,
+      "worst_96px_patch_mean_delta_255": 5.877,
+      "worst_local_frame": 46
+    },
+    "bog552": {
+      "travel_m": [
+        7.34,
+        7.34
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.541,
+      "max_pct_over_8": 0.884,
+      "mean_upper_scene_delta_255": 1.062,
+      "worst_96px_patch_mean_delta_255": 6.482,
+      "worst_local_frame": 22
+    }
+  },
+  "wooded_attempt": {
+    "desktop_refresh_hz": 143.871,
+    "query_median_us": 19.3,
+    "query_p99_us": 32.9,
+    "sections": [
+      {
+        "section": "wooded_track",
+        "samples": 1094,
+        "first_engine_frame": 513,
+        "last_engine_frame": 1606,
+        "viewport": {
+          "1600x900": 1094
+        },
+        "foreground_samples": 1094,
+        "dxgi_status": {
+          "0": 1094
+        },
+        "intervals": 1074,
+        "discontinuities": 1,
+        "invalid_samples": 0,
+        "complete_inner_window": false,
+        "observed_contiguous_fps": 24.99,
+        "p95_ms": 48.653,
+        "p99_ms": 48.657,
+        "maximum_ms": 514.343,
+        "percent_over_16_67_ms": 100.0,
+        "engine": {
+          "fps": 24.99,
+          "median_ms": 39.244,
+          "mean_ms": 40.015,
+          "p95_ms": 43.991,
+          "p99_ms": 45.855,
+          "maximum_ms": 580.035,
+          "percent_over_budget": 99.82,
+          "over_33_3_ms": 1088,
+          "over_50_ms": 3,
+          "over_100_ms": 1
+        }
+      }
+    ],
+    "drive": {
+      "reason": "stalled",
+      "start_station_m": 1922.9466388849307,
+      "travel_m": 11.932306714022022,
+      "elapsed_s": 43.796999999991385,
+      "telemetry_samples": 364
+    },
+    "physical_sections": [
+      {
+        "section": "wooded_track",
+        "samples": 364,
+        "elapsed_s": 43.64,
+        "road_progress_m": 4.27,
+        "travel_m": 11.92,
+        "moving_pct": 26.1,
+        "wheel_contacts_median": 4.0
+      }
+    ]
+  }
+}

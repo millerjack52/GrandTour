@@ -27,6 +27,19 @@ for kind in range(3):
         mesh, False
     )
     assert not original.get_editor_property("nanite_settings").enabled
+    for part in ("Rigid", "Leaves"):
+        path = f"{scratch}/SM_Section{part}_{kind}"
+        copy = (
+            u.load_asset(path)
+            if assets.does_asset_exist(path)
+            else assets.duplicate_asset(source, path)
+        )
+        assert copy and copy.get_path_name() != original.get_path_name()
+        assert not copy.get_editor_property("nanite_settings").enabled
+        # The source components have ray tracing disabled. Do not build an unused
+        # acceleration structure for the deliberately empty far leaf section.
+        copy.set_editor_property("support_ray_tracing", False)
+        assert assets.save_loaded_asset(copy, False)
 
 # Preserve the cost of the actual coverage and wind programs while removing the colour,
 # normal and transmission graph. The constant colour is a diagnostic material only.
