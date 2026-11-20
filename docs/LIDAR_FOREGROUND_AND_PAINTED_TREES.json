@@ -2262,6 +2262,551 @@
           "wheel_contacts_median": 4.0
         }
       ]
+    },
+    {
+      "run": "sweep61_linked_deepbog",
+      "status": "Excluded from driving measurements: zero wheel contacts and no motion",
+      "conditions": {
+        "os_build": "26200",
+        "target_window": true,
+        "near_tree_metres": 0,
+        "near_tree_control": false,
+        "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "static_far_leaves": false,
+        "native_player": false,
+        "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+        "module_sha256": "6D6AA5CED0E1EBAF2C2DBA0EDAA7D5840FA8D8E84F6FC14DB02767BF2FE2E89D",
+        "presentation_viewports": [
+          "1600x900"
+        ],
+        "velocity_pass_trial": "",
+        "offscreen": false,
+        "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+        "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "audio_enabled": true,
+        "disable_editor_python": false,
+        "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E"
+      },
+      "desktop_refresh_hz": 143.871,
+      "query_median_us": 42.5,
+      "query_p99_us": 122.4,
+      "sections": [
+        {
+          "section": "deep_bog",
+          "samples": 618,
+          "first_engine_frame": 513,
+          "last_engine_frame": 1130,
+          "viewport": {
+            "1600x900": 618
+          },
+          "foreground_samples": 618,
+          "dxgi_status": {
+            "0": 618
+          },
+          "drive_view_samples": 618,
+          "drive_view_moving_samples": 0,
+          "intervals": 601,
+          "discontinuities": 0,
+          "invalid_samples": 0,
+          "complete_inner_window": true,
+          "observed_contiguous_fps": 17.63,
+          "p95_ms": 69.507,
+          "p99_ms": 76.457,
+          "maximum_ms": 90.356,
+          "percent_over_16_67_ms": 100.0,
+          "engine": {
+            "frames": 618,
+            "fps": 17.63,
+            "median_ms": 54.787,
+            "mean_ms": 56.706,
+            "p95_ms": 69.702,
+            "p99_ms": 74.997,
+            "maximum_ms": 93.35,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 618,
+            "over_50_ms": 606,
+            "over_100_ms": 0
+          },
+          "engine_moving": null
+        }
+      ],
+      "garbage_collections": [
+        {
+          "csv_frame": 1008,
+          "game_thread_ms": 42.1983,
+          "gpu_ms": 57.5037,
+          "render_thread_wait_ms": 35.1463,
+          "section": "deep_bog",
+          "speed_mps": 0.0,
+          "driving": 1,
+          "next_frame_ms": 55.9542
+        }
+      ],
+      "drive": {
+        "reason": "stalled",
+        "columns": [
+          "elapsed_s",
+          "section",
+          "station_m",
+          "lateral_m",
+          "x_cm",
+          "y_cm",
+          "z_cm",
+          "speed_mps",
+          "wheel_contacts",
+          "throttle",
+          "brake",
+          "steer",
+          "gear",
+          "engine_rpm",
+          "max_sinkage_fraction"
+        ],
+        "start_station_m": 2259.8188964023693,
+        "travel_m": 0.0,
+        "elapsed_s": 35.078000000008615,
+        "recoveries": [
+          [
+            7.03,
+            2259.82,
+            1.5
+          ],
+          [
+            18.06,
+            2259.82,
+            -1.5
+          ],
+          [
+            29.16,
+            2259.82,
+            1.5
+          ]
+        ],
+        "telemetry_samples": 291
+      },
+      "physical_sections": [
+        {
+          "section": "deep_bog",
+          "samples": 291,
+          "elapsed_s": 34.94,
+          "road_progress_m": 0.0,
+          "travel_m": 0.0,
+          "moving_pct": 0.0,
+          "wheel_contacts_median": 0
+        }
+      ]
+    },
+    {
+      "run": "sweep62_grounded_deepbog",
+      "conditions": {
+        "audio_enabled": true,
+        "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+        "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "velocity_pass_trial": "",
+        "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+        "target_window": true,
+        "offscreen": false,
+        "os_build": "26200",
+        "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+        "disable_editor_python": false,
+        "near_tree_metres": 0,
+        "native_player": false,
+        "static_far_leaves": false,
+        "presentation_viewports": [
+          "1600x900"
+        ],
+        "near_tree_control": false,
+        "module_sha256": "6D6AA5CED0E1EBAF2C2DBA0EDAA7D5840FA8D8E84F6FC14DB02767BF2FE2E89D"
+      },
+      "desktop_refresh_hz": 143.872,
+      "query_median_us": 37.5,
+      "query_p99_us": 75.2,
+      "sections": [
+        {
+          "section": "deep_bog",
+          "samples": 1449,
+          "first_engine_frame": 513,
+          "last_engine_frame": 1961,
+          "viewport": {
+            "1600x900": 1449
+          },
+          "foreground_samples": 1449,
+          "dxgi_status": {
+            "0": 1449
+          },
+          "drive_view_samples": 1449,
+          "drive_view_moving_samples": 734,
+          "intervals": 1432,
+          "discontinuities": 0,
+          "invalid_samples": 0,
+          "complete_inner_window": true,
+          "observed_contiguous_fps": 20.2,
+          "p95_ms": 62.553,
+          "p99_ms": 69.507,
+          "maximum_ms": 97.306,
+          "percent_over_16_67_ms": 100.0,
+          "engine": {
+            "frames": 1449,
+            "fps": 20.21,
+            "median_ms": 49.815,
+            "mean_ms": 49.474,
+            "p95_ms": 58.321,
+            "p99_ms": 67.713,
+            "maximum_ms": 95.172,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 1447,
+            "over_50_ms": 702,
+            "over_100_ms": 0
+          },
+          "engine_moving": {
+            "frames": 734,
+            "fps": 19.78,
+            "median_ms": 50.533,
+            "mean_ms": 50.558,
+            "p95_ms": 58.877,
+            "p99_ms": 67.713,
+            "maximum_ms": 95.172,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 732,
+            "over_50_ms": 391,
+            "over_100_ms": 0
+          }
+        }
+      ],
+      "garbage_collections": [
+        {
+          "csv_frame": 1240,
+          "game_thread_ms": 47.1392,
+          "gpu_ms": 47.2965,
+          "render_thread_wait_ms": 23.6468,
+          "section": "deep_bog",
+          "speed_mps": 0.774,
+          "driving": 1,
+          "next_frame_ms": 49.1705
+        }
+      ],
+      "drive": {
+        "reason": "stalled",
+        "columns": [
+          "elapsed_s",
+          "section",
+          "station_m",
+          "lateral_m",
+          "x_cm",
+          "y_cm",
+          "z_cm",
+          "speed_mps",
+          "wheel_contacts",
+          "throttle",
+          "brake",
+          "steer",
+          "gear",
+          "engine_rpm",
+          "max_sinkage_fraction"
+        ],
+        "start_station_m": 2261.318297630106,
+        "travel_m": 29.293980274893247,
+        "elapsed_s": 71.70300000000861,
+        "recoveries": [
+          [
+            7.09,
+            2261.59,
+            1.5
+          ],
+          [
+            18.19,
+            2261.81,
+            -1.5
+          ],
+          [
+            42.77,
+            2266.85,
+            1.5
+          ],
+          [
+            53.86,
+            2264.86,
+            -1.5
+          ],
+          [
+            64.95,
+            2266.1,
+            1.5
+          ]
+        ],
+        "telemetry_samples": 572
+      },
+      "physical_sections": [
+        {
+          "section": "deep_bog",
+          "samples": 572,
+          "elapsed_s": 71.59,
+          "road_progress_m": 3.82,
+          "travel_m": 29.26,
+          "moving_pct": 52.8,
+          "wheel_contacts_median": 4.0
+        }
+      ]
     }
-  ]
+  ],
+  "distant_leaf_wind": {
+    "geometry": "original conventional meshes and source LODs",
+    "authored_wind_zero_cm": 5500,
+    "distance_split_cm": 11000,
+    "nearest_possible_vertex_cm": {
+      "SM_Canopy_1": 8538.2,
+      "SM_Canopy_0": 8538.2,
+      "SM_Canopy_2": 8538.2
+    },
+    "matched_poses": 17,
+    "measurements": [
+      {
+        "run": "sweep57_far_static",
+        "measured_frames": 192,
+        "travel_m": 11.65,
+        "fps": 15.39,
+        "timings": {
+          "FrameTime": {
+            "mean": 64.959,
+            "p95": 68.851,
+            "median": 64.778,
+            "p99": 76.086,
+            "maximum": 81.83,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 192,
+            "over_50_ms": 192,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 63.855,
+            "p95": 66.998
+          },
+          "GPU/ShadowDepths": {
+            "mean": 17.607,
+            "p95": 21.231
+          },
+          "GPU/Basepass": {
+            "mean": 18.197,
+            "p95": 19.643
+          },
+          "GPU/RenderVelocities": {
+            "mean": 12.709,
+            "p95": 13.613
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 637.552,
+            "p95": 650.0
+          },
+          "GameThreadTime": {
+            "mean": 9.826,
+            "p95": 11.927
+          },
+          "RenderThreadTime": {
+            "mean": 10.599,
+            "p95": 13.325
+          },
+          "DrawCall/Basepass": {
+            "mean": 576.375,
+            "p95": 593.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2140259.448,
+            "p95": 2375343.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.402,
+            "p95": 0.43
+          }
+        },
+        "hardware": {
+          "median_clock_mhz": 1230.0,
+          "peak_temperature_c": 89.0,
+          "median_power_w": 22.32,
+          "samples_thermally_limited": 13
+        },
+        "conditions": {
+          "native_player": false,
+          "velocity_pass_trial": "",
+          "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+          "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+          "near_tree_control": true,
+          "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+          "module_sha256": "6D6AA5CED0E1EBAF2C2DBA0EDAA7D5840FA8D8E84F6FC14DB02767BF2FE2E89D",
+          "disable_editor_python": false,
+          "offscreen": true,
+          "audio_enabled": true,
+          "static_far_leaves": true,
+          "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+          "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+          "os_build": "26200",
+          "near_tree_metres": 110
+        }
+      },
+      {
+        "run": "sweep58_far_control",
+        "measured_frames": 192,
+        "travel_m": 11.65,
+        "fps": 16.23,
+        "timings": {
+          "FrameTime": {
+            "mean": 61.603,
+            "p95": 68.525,
+            "median": 60.552,
+            "p99": 85.971,
+            "maximum": 97.984,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 192,
+            "over_50_ms": 192,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 60.613,
+            "p95": 67.885
+          },
+          "GPU/ShadowDepths": {
+            "mean": 16.948,
+            "p95": 24.535
+          },
+          "GPU/Basepass": {
+            "mean": 17.186,
+            "p95": 18.316
+          },
+          "GPU/RenderVelocities": {
+            "mean": 11.954,
+            "p95": 12.787
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 632.651,
+            "p95": 645.0
+          },
+          "GameThreadTime": {
+            "mean": 9.688,
+            "p95": 11.69
+          },
+          "RenderThreadTime": {
+            "mean": 10.39,
+            "p95": 12.492
+          },
+          "DrawCall/Basepass": {
+            "mean": 572.828,
+            "p95": 591.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2140298.573,
+            "p95": 2420153.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.379,
+            "p95": 0.406
+          }
+        },
+        "hardware": {
+          "median_clock_mhz": 1342.5,
+          "peak_temperature_c": 89.0,
+          "median_power_w": 23.36,
+          "samples_thermally_limited": 12
+        },
+        "conditions": {
+          "velocity_pass_trial": "",
+          "native_player": false,
+          "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+          "static_far_leaves": false,
+          "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+          "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+          "module_sha256": "6D6AA5CED0E1EBAF2C2DBA0EDAA7D5840FA8D8E84F6FC14DB02767BF2FE2E89D",
+          "offscreen": true,
+          "disable_editor_python": false,
+          "audio_enabled": true,
+          "os_build": "26200",
+          "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+          "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+          "near_tree_metres": 110,
+          "near_tree_control": true
+        }
+      },
+      {
+        "run": "sweep59_early_warm_stock",
+        "measured_frames": 192,
+        "travel_m": 11.65,
+        "fps": 17.26,
+        "timings": {
+          "FrameTime": {
+            "mean": 57.946,
+            "p95": 61.827,
+            "median": 57.709,
+            "p99": 70.558,
+            "maximum": 72.42,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 192,
+            "over_50_ms": 192,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 56.855,
+            "p95": 59.671
+          },
+          "GPU/ShadowDepths": {
+            "mean": 14.752,
+            "p95": 17.594
+          },
+          "GPU/Basepass": {
+            "mean": 16.73,
+            "p95": 17.881
+          },
+          "GPU/RenderVelocities": {
+            "mean": 11.597,
+            "p95": 12.51
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 632.667,
+            "p95": 644.0
+          },
+          "GameThreadTime": {
+            "mean": 9.745,
+            "p95": 11.737
+          },
+          "RenderThreadTime": {
+            "mean": 10.249,
+            "p95": 12.439
+          },
+          "DrawCall/Basepass": {
+            "mean": 570.016,
+            "p95": 588.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2146212.573,
+            "p95": 2419545.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.368,
+            "p95": 0.392
+          }
+        },
+        "hardware": {
+          "median_clock_mhz": 1335.0,
+          "peak_temperature_c": 89.0,
+          "median_power_w": 23.72,
+          "samples_thermally_limited": 11
+        },
+        "conditions": {
+          "velocity_pass_trial": "",
+          "native_player": false,
+          "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+          "static_far_leaves": false,
+          "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+          "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+          "module_sha256": "6D6AA5CED0E1EBAF2C2DBA0EDAA7D5840FA8D8E84F6FC14DB02767BF2FE2E89D",
+          "offscreen": true,
+          "disable_editor_python": false,
+          "audio_enabled": true,
+          "os_build": "26200",
+          "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+          "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+          "near_tree_metres": 0,
+          "near_tree_control": false
+        }
+      }
+    ],
+    "decision": "Experimental. No demonstrated saving at the measured clocks."
+  }
 }

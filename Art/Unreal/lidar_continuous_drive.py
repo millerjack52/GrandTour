@@ -87,6 +87,9 @@ class RoadDrive:
         self.move.set_target_gear(1, True)
         self.move.set_brake_input(0)
         self.move.set_handbrake_input(False)
+        # The initial checkpoint placement can leave an airborne chassis asleep.
+        # Wake it once before sampling. The normal sleep policy applies on the road.
+        self.move.set_sleeping(False)
 
     def command(self, value):
         u.SystemLibrary.execute_console_command(self.world, value, self.pc)

@@ -83,3 +83,23 @@ The pickup started at road station 770 m and followed the access road in low ran
 The pickup stalled about 15 m before the riverside junction. Three attempts to reverse and change wheel track failed to get it through. The run establishes a continuous forest-access baseline. River, wooded mud track and bog performance need separate physical drives. Four periodic garbage collections during the access drive produced frame intervals between 54.25 and 80.26 ms.
 
 Reproduce with the saved profile and `-ForegroundDrive -TargetWindow -ShadowStudy linkeddrive -LinkedStart access`. The presentation analyzer records route progress, drive distance, wheel contact and actual motion. Each launch uses one initial placement.
+
+## Wind on distant trees
+
+The painted leaf wind fades to zero at 55 m. The trial splits the three mature tree groups at 110 m and uses copies of the original painted materials with the wind output disconnected on the far side. The nearest possible vertex of a distant tree was 85.38 m away after accounting for every instance scale and the full mesh bounds. The renderer verified one compiled wind slot on each near tree, zero on each far tree and zero material fallbacks. Saplings use their original wind. All 17 pickup positions agreed over the 11.65 m moving test. Material warm-up finished before the shadow cache settling interval.
+
+| Deep-bog trial | Mean frame | 95th percentile | Average fps | Shadow drawing | Surface shading | Motion vectors | GPU clock |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Distant wind disconnected | 64.96 ms | 68.85 ms | 15.39 | 17.61 ms | 18.20 ms | 12.71 ms | 1230 MHz |
+| Same split with original wind | 61.60 ms | 68.53 ms | 16.23 | 16.95 ms | 17.19 ms | 11.95 ms | 1342.5 MHz |
+| Original without a split | 57.95 ms | 61.83 ms | 17.26 | 14.75 ms | 16.73 ms | 11.60 ms | 1335 MHz |
+
+The wind-free version averaged 3.36 ms slower than the split control. Its GPU also ran at a lower clock. These runs failed to demonstrate a saving from removing the far wind program. The 110 m split remains experimental. Route-wide visual equivalence was not tested.
+
+To reproduce, prepare the duplicate materials with `Art/Unreal/prepare_lidar_distant_leaf_study.py` and set `GT_LIDAR_NANITE_SOURCE_AUDIT` to a saved LiDAR caster inventory. For the three moving comparisons use `-StaticFarLeaves`, `-NearTreeMetres 110 -NearTreeControl`, and `-WarmTrees` respectively.
+
+## Starting the continuous drive in the deep bog
+
+The first isolated attempt at the deep-bog start covered zero distance and reported zero wheel contacts for 35 seconds. It is excluded from the driving results. The repeat uses one initial checkpoint placement and wakes the chassis once before the recorded drive. Regular suspension, steering, gearing, mud and sleep behavior apply throughout the drive.
+
+The grounded truck traveled 29.29 m in 71.7 seconds, gaining 3.82 m along the road. The median was four wheels in contact. Five reversals and changes of wheel track were insufficient to clear the bog. The engine recorded 734 moving frames at **19.78 fps** with **58.88 ms p95**. Every moving frame exceeded the 60 fps budget. This is a slow physical maneuver, and the full track is still unverified. To repeat it use `-LinkedStart bog552` with the continuous foreground drive.

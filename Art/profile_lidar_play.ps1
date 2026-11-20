@@ -96,7 +96,7 @@ try {
  $index=0
  foreach($pose in $poses) {
   $frame=200+$index*$FramesPerSite
-  $schedule+=('{0}:BugItGo {1} {2} {3} 0 {4} 0' -f $frame,$pose.x,$pose.y,$pose.z,$pose.yaw)
+  if($ShadowStudy -ne 'linkeddrive'){$schedule+=('{0}:BugItGo {1} {2} {3} 0 {4} 0' -f $frame,$pose.x,$pose.y,$pose.z,$pose.yaw)}
   if($ShadowStudy){
    & python "$PSScriptRoot/tools/lidar_shadow_study.py" schedule $ShadowStudy $ShadowCandidate $out $BaseFamily ([int]$EarlyFamily.IsPresent) $LinkedStart ([int]$NativePlayer.IsPresent) ([int]($WarmTrees -or $NearTreeMetres -or $BaseFamily.EndsWith('_paint')))
    if($LASTEXITCODE -ne 0){throw 'Could not prepare shadow experiment'}
