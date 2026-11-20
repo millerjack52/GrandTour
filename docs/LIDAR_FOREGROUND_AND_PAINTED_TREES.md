@@ -23,3 +23,20 @@ Five fixed-time drives produced 240 pairs of images and 65 matching pickup posit
 To reproduce with locally installed art, run the Unreal Python asset preparation scripts `prepare_lidar_tree_gpu_study.py` and `prepare_lidar_nanite_paint_study.py` in order. For the second script set `GT_LIDAR_NANITE_SOURCE_AUDIT` to a conventional saved-route caster inventory. Then run the profile script with `-ShadowStudy basemoving -ShadowCandidate saved -BaseFamily mature_tree_paint`. The same options with `-ShadowStudy routefilm` capture the drive. Local comparison footage is under `D:/GrandTourAssets/Reviews/Lidar60/painted-route-review`.
 
 The [measurement file](LIDAR_FOREGROUND_AND_PAINTED_TREES.json) includes per-section frame-time tails, presentation gaps, GPU timings, map and profile hashes, and the stalled continuous-drive record.
+
+## Nearby painted trees and the original skyline
+
+The 55 m experiment uses the painted Nanite meshes for the three mature species close to the camera. Beyond that distance the original renderer draws the original trees. Both representations use the same instance transforms and random seeds. The Nanite build changed the bounding centre of two meshes by 91 cm and 129 cm. The test aligns both distance checks to the original centre and encloses both sets of bounds. Unreal requires a nonzero far limit to enable the minimum draw distance. The native renderer reported the expected ranges for all three pairs, the original sapling distances, all nine scene proxies and zero fallback materials.
+
+| Warmed deep-bog replay | Average fps | Mean frame | p95 frame | GPU shadow | GPU surface | GPU velocity |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 55 m painted trees | 20.81 | 48.05 ms | 67.38 ms | 16.94 ms | 11.26 ms | 7.63 ms |
+| 55 m split with original trees on both sides | 16.86 | 59.30 ms | 87.61 ms | 24.29 ms | 13.00 ms | 9.08 ms |
+| Original, without the split | 17.23 | 58.05 ms | 85.30 ms | 23.34 ms | 13.14 ms | 9.10 ms |
+| 55 m painted trees, repeat | 18.53 | 53.95 ms | 77.08 ms | 19.22 ms | 12.68 ms | 8.63 ms |
+
+All four runs covered the same 11.65 m and all 17 sampled positions agreed. Thermal throttling was active. The two nearby-tree runs saved 4.10–10.00 ms in mean frame time against the original in this sequence. Both missed the frame budget. The range-split control cost 1.25 ms more than the original on this test.
+
+Two fresh fixed-time drives used the same saved equipment and the same native build. All 65 sampled vehicle positions agreed across 240 pairs of driving frames. In the paddock the average brightness difference was 0.13 on a 255-level scale. The strongest local difference fell to 0.48, compared with 15.24 when the trial replaced all mature trees. The crown and trunk separation in the skyline returned. In the bog approach a nearby trunk shifted greener and darker. At the deep-bog checkpoint the worst difference was on grass blades. Moving tyre dust obscured the largest forest-access difference. The nearby variant remains experimental.
+
+Reproduce with the saved profile, `-ShadowStudy basemoving -NearTreeMetres 55`. Add `-NearTreeControl` for the conventional split or use only `-WarmTrees` for the unsplit control. All runs need a unique label and `-ShadowCandidate saved`. The local film, colour crops and greyscale driving frames are in `D:/GrandTourAssets/Reviews/Lidar60/near55-route-review`.
