@@ -1,0 +1,2901 @@
+{
+  "units": "Times in ms. FPS from full logical frame duration. Thermal throttling active in both route runs.",
+  "frame_budget_ms": 16.666666666666668,
+  "route_original_v9": {
+    "folder": "sweep19_route_timeA",
+    "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+    "preset_sha256": "8A6684E4181E7A64FE31A9A150144080E8B07B8E1E83E71A6AF01401E7F3BC07",
+    "mode": "routetime",
+    "commands": [
+      "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+      "r.AntiAliasingMethod 4",
+      "r.DynamicRes.OperationMode 0",
+      "r.ScreenPercentage 75",
+      "r.Shadow.Virtual.Enable 1",
+      "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+      "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+      "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+      "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+      "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias -3",
+      "r.Shadow.Virtual.Clipmap.LastLevel 17",
+      "r.StaticMeshLODDistanceScale 1",
+      "r.HZBOcclusion 1",
+      "r.VSync 0",
+      "t.MaxFPS 120",
+      "gt.LandscapeMud.UploadBudgetMs 0.5",
+      "gt.Weather.SkipDryOcclusion 1",
+      "gt.Weather.SkipDryOcclusion 1",
+      "r.InstanceCulling.OcclusionCull 0",
+      "r.InstanceCulling.OcclusionQueries 0"
+    ],
+    "segments": [
+      {
+        "name": "paddock_mid",
+        "frames": 300,
+        "seconds": 11.946,
+        "fps": 25.11,
+        "travel_m": 56.05,
+        "timings": {
+          "FrameTime": {
+            "mean": 39.822,
+            "p95": 45.7,
+            "median": 39.941,
+            "p99": 47.911,
+            "maximum": 49.765,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 287,
+            "over_50_ms": 0,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 38.86,
+            "p95": 41.362
+          },
+          "GPU/ShadowDepths": {
+            "mean": 4.128,
+            "p95": 4.896
+          },
+          "GPU/Basepass": {
+            "mean": 13.542,
+            "p95": 14.638
+          },
+          "GPU/RenderVelocities": {
+            "mean": 9.119,
+            "p95": 9.866
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 1493.83,
+            "p95": 1511.0
+          },
+          "GameThreadTime": {
+            "mean": 9.836,
+            "p95": 12.606
+          },
+          "RenderThreadTime": {
+            "mean": 11.155,
+            "p95": 14.823
+          },
+          "DrawCall/Basepass": {
+            "mean": 534.72,
+            "p95": 578.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2316573.447,
+            "p95": 2559725.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.387,
+            "p95": 0.428
+          }
+        },
+        "eight_seconds": {
+          "frames": 206,
+          "seconds": 8.02,
+          "fps": 25.68,
+          "estimated_travel_m": 32.84,
+          "timings": {
+            "FrameTime": {
+              "mean": 38.934,
+              "p95": 44.201,
+              "median": 39.046,
+              "p99": 46.312,
+              "maximum": 47.612,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 193,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 37.997,
+              "p95": 40.029
+            },
+            "GPU/ShadowDepths": {
+              "mean": 4.129,
+              "p95": 4.509
+            },
+            "GPU/Basepass": {
+              "mean": 13.105,
+              "p95": 14.026
+            },
+            "GPU/RenderVelocities": {
+              "mean": 8.821,
+              "p95": 9.473
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1495.117,
+              "p95": 1512.0
+            },
+            "GameThreadTime": {
+              "mean": 9.402,
+              "p95": 12.487
+            },
+            "RenderThreadTime": {
+              "mean": 11.085,
+              "p95": 14.823
+            },
+            "DrawCall/Basepass": {
+              "mean": 548.568,
+              "p95": 578.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2333886.233,
+              "p95": 2575111.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.379,
+              "p95": 0.428
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 101,
+          "seconds": 3.829,
+          "fps": 26.38,
+          "timings": {
+            "FrameTime": {
+              "mean": 37.91,
+              "p95": 42.939,
+              "median": 37.809,
+              "p99": 45.849,
+              "maximum": 47.106,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 91,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 36.947,
+              "p95": 38.695
+            },
+            "GPU/ShadowDepths": {
+              "mean": 4.116,
+              "p95": 4.289
+            },
+            "GPU/Basepass": {
+              "mean": 12.614,
+              "p95": 13.254
+            },
+            "GPU/RenderVelocities": {
+              "mean": 8.498,
+              "p95": 8.917
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1500.426,
+              "p95": 1517.0
+            },
+            "GameThreadTime": {
+              "mean": 8.771,
+              "p95": 11.585
+            },
+            "RenderThreadTime": {
+              "mean": 10.774,
+              "p95": 14.002
+            },
+            "DrawCall/Basepass": {
+              "mean": 563.465,
+              "p95": 580.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2369739.198,
+              "p95": 2644447.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.357,
+              "p95": 0.375
+            }
+          }
+        }
+      },
+      {
+        "name": "access",
+        "frames": 300,
+        "seconds": 17.614,
+        "fps": 17.03,
+        "travel_m": 42.29,
+        "timings": {
+          "FrameTime": {
+            "mean": 58.712,
+            "p95": 63.016,
+            "median": 57.438,
+            "p99": 70.79,
+            "maximum": 561.338,
+            "pct_over_60fps_budget": 99.67,
+            "over_33_3_ms": 298,
+            "over_50_ms": 290,
+            "over_100_ms": 1
+          },
+          "GPUTime": {
+            "mean": 56.225,
+            "p95": 61.779
+          },
+          "GPU/ShadowDepths": {
+            "mean": 11.522,
+            "p95": 16.094
+          },
+          "GPU/Basepass": {
+            "mean": 17.528,
+            "p95": 18.262
+          },
+          "GPU/RenderVelocities": {
+            "mean": 13.054,
+            "p95": 13.496
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 1397.8,
+            "p95": 1459.0
+          },
+          "GameThreadTime": {
+            "mean": 9.068,
+            "p95": 11.141
+          },
+          "RenderThreadTime": {
+            "mean": 10.009,
+            "p95": 12.822
+          },
+          "DrawCall/Basepass": {
+            "mean": 563.003,
+            "p95": 605.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2129033.747,
+            "p95": 2644445.0
+          },
+          "GPU/Prepass": {
+            "mean": 2.066,
+            "p95": 2.262
+          }
+        },
+        "eight_seconds": {
+          "frames": 137,
+          "seconds": 8.046,
+          "fps": 17.03,
+          "estimated_travel_m": 37.66,
+          "timings": {
+            "FrameTime": {
+              "mean": 58.728,
+              "p95": 61.32,
+              "median": 55.95,
+              "p99": 66.656,
+              "maximum": 561.338,
+              "pct_over_60fps_budget": 99.27,
+              "over_33_3_ms": 135,
+              "over_50_ms": 127,
+              "over_100_ms": 1
+            },
+            "GPUTime": {
+              "mean": 54.581,
+              "p95": 60.401
+            },
+            "GPU/ShadowDepths": {
+              "mean": 9.423,
+              "p95": 15.06
+            },
+            "GPU/Basepass": {
+              "mean": 17.459,
+              "p95": 18.314
+            },
+            "GPU/RenderVelocities": {
+              "mean": 12.782,
+              "p95": 13.114
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1425.715,
+              "p95": 1463.0
+            },
+            "GameThreadTime": {
+              "mean": 11.804,
+              "p95": 11.765
+            },
+            "RenderThreadTime": {
+              "mean": 10.52,
+              "p95": 13.586
+            },
+            "DrawCall/Basepass": {
+              "mean": 574.788,
+              "p95": 607.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2205719.38,
+              "p95": 2708243.0
+            },
+            "GPU/Prepass": {
+              "mean": 1.891,
+              "p95": 2.067
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 70,
+          "seconds": 4.222,
+          "fps": 16.58,
+          "timings": {
+            "FrameTime": {
+              "mean": 60.319,
+              "p95": 63.358,
+              "median": 54.385,
+              "p99": 66.656,
+              "maximum": 561.338,
+              "pct_over_60fps_budget": 98.57,
+              "over_33_3_ms": 68,
+              "over_50_ms": 60,
+              "over_100_ms": 1
+            },
+            "GPUTime": {
+              "mean": 53.162,
+              "p95": 59.963
+            },
+            "GPU/ShadowDepths": {
+              "mean": 8.473,
+              "p95": 14.773
+            },
+            "GPU/Basepass": {
+              "mean": 17.569,
+              "p95": 18.345
+            },
+            "GPU/RenderVelocities": {
+              "mean": 12.606,
+              "p95": 13.099
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1405.843,
+              "p95": 1453.0
+            },
+            "GameThreadTime": {
+              "mean": 14.374,
+              "p95": 9.561
+            },
+            "RenderThreadTime": {
+              "mean": 10.492,
+              "p95": 14.129
+            },
+            "DrawCall/Basepass": {
+              "mean": 560.3,
+              "p95": 579.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2286360.114,
+              "p95": 2711847.0
+            },
+            "GPU/Prepass": {
+              "mean": 1.979,
+              "p95": 2.073
+            }
+          }
+        }
+      },
+      {
+        "name": "river",
+        "frames": 300,
+        "seconds": 12.906,
+        "fps": 23.24,
+        "travel_m": 6.21,
+        "timings": {
+          "FrameTime": {
+            "mean": 43.021,
+            "p95": 58.28,
+            "median": 42.575,
+            "p99": 67.873,
+            "maximum": 77.904,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 300,
+            "over_50_ms": 18,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 41.997,
+            "p95": 56.971
+          },
+          "GPU/ShadowDepths": {
+            "mean": 12.26,
+            "p95": 26.134
+          },
+          "GPU/Basepass": {
+            "mean": 10.007,
+            "p95": 11.114
+          },
+          "GPU/RenderVelocities": {
+            "mean": 6.582,
+            "p95": 7.219
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 725.003,
+            "p95": 746.0
+          },
+          "GameThreadTime": {
+            "mean": 8.956,
+            "p95": 11.137
+          },
+          "RenderThreadTime": {
+            "mean": 8.267,
+            "p95": 9.714
+          },
+          "DrawCall/Basepass": {
+            "mean": 692.403,
+            "p95": 728.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2249881.197,
+            "p95": 2490803.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.932,
+            "p95": 1.208
+          }
+        },
+        "eight_seconds": {
+          "frames": 192,
+          "seconds": 8.007,
+          "fps": 23.98,
+          "estimated_travel_m": 5.78,
+          "timings": {
+            "FrameTime": {
+              "mean": 41.703,
+              "p95": 48.225,
+              "median": 41.299,
+              "p99": 65.291,
+              "maximum": 67.364,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 192,
+              "over_50_ms": 9,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 40.685,
+              "p95": 45.964
+            },
+            "GPU/ShadowDepths": {
+              "mean": 11.882,
+              "p95": 14.999
+            },
+            "GPU/Basepass": {
+              "mean": 9.46,
+              "p95": 10.943
+            },
+            "GPU/RenderVelocities": {
+              "mean": 6.26,
+              "p95": 7.175
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 728.88,
+              "p95": 750.0
+            },
+            "GameThreadTime": {
+              "mean": 9.139,
+              "p95": 11.137
+            },
+            "RenderThreadTime": {
+              "mean": 8.334,
+              "p95": 9.682
+            },
+            "DrawCall/Basepass": {
+              "mean": 688.656,
+              "p95": 733.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2257166.651,
+              "p95": 2489775.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.785,
+              "p95": 1.198
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 29,
+          "seconds": 1.074,
+          "fps": 26.99,
+          "timings": {
+            "FrameTime": {
+              "mean": 37.052,
+              "p95": 39.637,
+              "median": 37.14,
+              "p99": 41.167,
+              "maximum": 41.167,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 29,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 36.106,
+              "p95": 36.982
+            },
+            "GPU/ShadowDepths": {
+              "mean": 10.511,
+              "p95": 10.627
+            },
+            "GPU/Basepass": {
+              "mean": 8.218,
+              "p95": 8.369
+            },
+            "GPU/RenderVelocities": {
+              "mean": 5.423,
+              "p95": 5.488
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 724.759,
+              "p95": 730.0
+            },
+            "GameThreadTime": {
+              "mean": 7.474,
+              "p95": 9.629
+            },
+            "RenderThreadTime": {
+              "mean": 8.266,
+              "p95": 10.223
+            },
+            "DrawCall/Basepass": {
+              "mean": 661.172,
+              "p95": 683.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2116996.172,
+              "p95": 2273813.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.459,
+              "p95": 0.462
+            }
+          }
+        }
+      },
+      {
+        "name": "bog_entry",
+        "frames": 300,
+        "seconds": 17.581,
+        "fps": 17.06,
+        "travel_m": 6.38,
+        "timings": {
+          "FrameTime": {
+            "mean": 58.603,
+            "p95": 62.007,
+            "median": 56.391,
+            "p99": 76.296,
+            "maximum": 635.967,
+            "pct_over_60fps_budget": 99.33,
+            "over_33_3_ms": 298,
+            "over_50_ms": 297,
+            "over_100_ms": 1
+          },
+          "GPUTime": {
+            "mean": 55.813,
+            "p95": 60.35
+          },
+          "GPU/ShadowDepths": {
+            "mean": 12.242,
+            "p95": 17.424
+          },
+          "GPU/Basepass": {
+            "mean": 18.525,
+            "p95": 19.013
+          },
+          "GPU/RenderVelocities": {
+            "mean": 12.812,
+            "p95": 13.072
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 613.717,
+            "p95": 649.0
+          },
+          "GameThreadTime": {
+            "mean": 10.713,
+            "p95": 10.49
+          },
+          "RenderThreadTime": {
+            "mean": 9.667,
+            "p95": 11.377
+          },
+          "DrawCall/Basepass": {
+            "mean": 517.147,
+            "p95": 541.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 1966545.58,
+            "p95": 2226177.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.855,
+            "p95": 0.902
+          }
+        },
+        "eight_seconds": {
+          "frames": 139,
+          "seconds": 8.571,
+          "fps": 16.22,
+          "estimated_travel_m": 3.84,
+          "timings": {
+            "FrameTime": {
+              "mean": 61.659,
+              "p95": 65.209,
+              "median": 56.433,
+              "p99": 77.115,
+              "maximum": 635.967,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 139,
+              "over_50_ms": 139,
+              "over_100_ms": 1
+            },
+            "GPUTime": {
+              "mean": 56.376,
+              "p95": 61.554
+            },
+            "GPU/ShadowDepths": {
+              "mean": 13.364,
+              "p95": 18.107
+            },
+            "GPU/Basepass": {
+              "mean": 18.163,
+              "p95": 18.752
+            },
+            "GPU/RenderVelocities": {
+              "mean": 12.608,
+              "p95": 12.992
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 601.892,
+              "p95": 608.0
+            },
+            "GameThreadTime": {
+              "mean": 13.271,
+              "p95": 10.524
+            },
+            "RenderThreadTime": {
+              "mean": 9.609,
+              "p95": 11.272
+            },
+            "DrawCall/Basepass": {
+              "mean": 513.568,
+              "p95": 541.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 1961801.058,
+              "p95": 2241385.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.841,
+              "p95": 0.868
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 2.0,
+          "frames": 91,
+          "seconds": 5.288,
+          "fps": 17.21,
+          "timings": {
+            "FrameTime": {
+              "mean": 58.112,
+              "p95": 67.465,
+              "median": 56.799,
+              "p99": 77.048,
+              "maximum": 77.115,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 91,
+              "over_50_ms": 91,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 57.033,
+              "p95": 67.605
+            },
+            "GPU/ShadowDepths": {
+              "mean": 14.266,
+              "p95": 21.682
+            },
+            "GPU/Basepass": {
+              "mean": 18.208,
+              "p95": 18.83
+            },
+            "GPU/RenderVelocities": {
+              "mean": 12.626,
+              "p95": 13.008
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 595.956,
+              "p95": 603.0
+            },
+            "GameThreadTime": {
+              "mean": 8.264,
+              "p95": 10.338
+            },
+            "RenderThreadTime": {
+              "mean": 9.517,
+              "p95": 11.119
+            },
+            "DrawCall/Basepass": {
+              "mean": 503.978,
+              "p95": 521.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 1926200.824,
+              "p95": 2226177.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.846,
+              "p95": 0.883
+            }
+          }
+        }
+      },
+      {
+        "name": "bog552",
+        "frames": 300,
+        "seconds": 16.581,
+        "fps": 18.09,
+        "travel_m": 11.06,
+        "timings": {
+          "FrameTime": {
+            "mean": 55.269,
+            "p95": 60.633,
+            "median": 54.689,
+            "p99": 70.655,
+            "maximum": 99.335,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 300,
+            "over_50_ms": 299,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 54.184,
+            "p95": 59.9
+          },
+          "GPU/ShadowDepths": {
+            "mean": 12.138,
+            "p95": 17.35
+          },
+          "GPU/Basepass": {
+            "mean": 17.604,
+            "p95": 18.077
+          },
+          "GPU/RenderVelocities": {
+            "mean": 12.062,
+            "p95": 12.354
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 616.863,
+            "p95": 665.0
+          },
+          "GameThreadTime": {
+            "mean": 9.722,
+            "p95": 11.894
+          },
+          "RenderThreadTime": {
+            "mean": 9.374,
+            "p95": 11.211
+          },
+          "DrawCall/Basepass": {
+            "mean": 544.56,
+            "p95": 562.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2075777.867,
+            "p95": 2387513.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.722,
+            "p95": 0.762
+          }
+        },
+        "eight_seconds": {
+          "frames": 147,
+          "seconds": 8.051,
+          "fps": 18.26,
+          "estimated_travel_m": 7.73,
+          "timings": {
+            "FrameTime": {
+              "mean": 54.767,
+              "p95": 57.503,
+              "median": 54.687,
+              "p99": 61.615,
+              "maximum": 62.31,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 147,
+              "over_50_ms": 147,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 53.675,
+              "p95": 55.279
+            },
+            "GPU/ShadowDepths": {
+              "mean": 11.325,
+              "p95": 13.023
+            },
+            "GPU/Basepass": {
+              "mean": 17.767,
+              "p95": 18.095
+            },
+            "GPU/RenderVelocities": {
+              "mean": 12.134,
+              "p95": 12.361
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 611.02,
+              "p95": 633.0
+            },
+            "GameThreadTime": {
+              "mean": 10.207,
+              "p95": 12.012
+            },
+            "RenderThreadTime": {
+              "mean": 9.656,
+              "p95": 11.733
+            },
+            "DrawCall/Basepass": {
+              "mean": 554.347,
+              "p95": 563.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2095340.741,
+              "p95": 2386961.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.721,
+              "p95": 0.735
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 22,
+          "seconds": 1.212,
+          "fps": 18.15,
+          "timings": {
+            "FrameTime": {
+              "mean": 55.083,
+              "p95": 55.929,
+              "median": 55.154,
+              "p99": 57.521,
+              "maximum": 57.521,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 22,
+              "over_50_ms": 22,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 54.024,
+              "p95": 54.523
+            },
+            "GPU/ShadowDepths": {
+              "mean": 11.572,
+              "p95": 11.771
+            },
+            "GPU/Basepass": {
+              "mean": 18.052,
+              "p95": 18.095
+            },
+            "GPU/RenderVelocities": {
+              "mean": 12.347,
+              "p95": 12.394
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 628.818,
+              "p95": 643.0
+            },
+            "GameThreadTime": {
+              "mean": 9.274,
+              "p95": 10.848
+            },
+            "RenderThreadTime": {
+              "mean": 8.621,
+              "p95": 9.555
+            },
+            "DrawCall/Basepass": {
+              "mean": 557.864,
+              "p95": 563.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2091421.727,
+              "p95": 2386961.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.727,
+              "p95": 0.734
+            }
+          }
+        }
+      }
+    ]
+  },
+  "route_candidate_v10": {
+    "folder": "sweep20_route_timeB",
+    "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+    "preset_sha256": "8A6684E4181E7A64FE31A9A150144080E8B07B8E1E83E71A6AF01401E7F3BC07",
+    "mode": "routetime",
+    "commands": [
+      "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+      "r.AntiAliasingMethod 4",
+      "r.DynamicRes.OperationMode 0",
+      "r.ScreenPercentage 75",
+      "r.Shadow.Virtual.Enable 1",
+      "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+      "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+      "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+      "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+      "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias -3",
+      "r.Shadow.Virtual.Clipmap.LastLevel 17",
+      "r.StaticMeshLODDistanceScale 1",
+      "r.HZBOcclusion 1",
+      "r.VSync 0",
+      "t.MaxFPS 120",
+      "gt.LandscapeMud.UploadBudgetMs 0.5",
+      "gt.Weather.SkipDryOcclusion 1",
+      "gt.Weather.SkipDryOcclusion 1",
+      "r.InstanceCulling.OcclusionCull 1",
+      "r.InstanceCulling.OcclusionQueries 0"
+    ],
+    "segments": [
+      {
+        "name": "paddock_mid",
+        "frames": 300,
+        "seconds": 10.427,
+        "fps": 28.77,
+        "travel_m": 40.77,
+        "timings": {
+          "FrameTime": {
+            "mean": 34.757,
+            "p95": 39.915,
+            "median": 34.49,
+            "p99": 41.041,
+            "maximum": 41.917,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 201,
+            "over_50_ms": 0,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 33.798,
+            "p95": 35.203
+          },
+          "GPU/ShadowDepths": {
+            "mean": 4.12,
+            "p95": 4.401
+          },
+          "GPU/Basepass": {
+            "mean": 10.496,
+            "p95": 11.153
+          },
+          "GPU/RenderVelocities": {
+            "mean": 7.13,
+            "p95": 7.601
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 1492.13,
+            "p95": 1523.0
+          },
+          "GameThreadTime": {
+            "mean": 8.762,
+            "p95": 11.479
+          },
+          "RenderThreadTime": {
+            "mean": 10.654,
+            "p95": 14.165
+          },
+          "DrawCall/Basepass": {
+            "mean": 534.707,
+            "p95": 574.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2331756.413,
+            "p95": 2571579.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.092,
+            "p95": 0.111
+          }
+        },
+        "eight_seconds": {
+          "frames": 232,
+          "seconds": 8.022,
+          "fps": 28.92,
+          "estimated_travel_m": 31.55,
+          "timings": {
+            "FrameTime": {
+              "mean": 34.579,
+              "p95": 39.785,
+              "median": 34.437,
+              "p99": 40.985,
+              "maximum": 41.323,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 153,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 33.599,
+              "p95": 34.59
+            },
+            "GPU/ShadowDepths": {
+              "mean": 4.156,
+              "p95": 4.385
+            },
+            "GPU/Basepass": {
+              "mean": 10.386,
+              "p95": 10.737
+            },
+            "GPU/RenderVelocities": {
+              "mean": 7.054,
+              "p95": 7.335
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1494.289,
+              "p95": 1524.0
+            },
+            "GameThreadTime": {
+              "mean": 8.626,
+              "p95": 11.446
+            },
+            "RenderThreadTime": {
+              "mean": 10.626,
+              "p95": 14.116
+            },
+            "DrawCall/Basepass": {
+              "mean": 540.086,
+              "p95": 574.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2334075.5,
+              "p95": 2588241.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.09,
+              "p95": 0.108
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 103,
+          "seconds": 3.581,
+          "fps": 28.76,
+          "timings": {
+            "FrameTime": {
+              "mean": 34.766,
+              "p95": 39.956,
+              "median": 34.487,
+              "p99": 41.041,
+              "maximum": 41.323,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 70,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 33.754,
+              "p95": 34.567
+            },
+            "GPU/ShadowDepths": {
+              "mean": 4.235,
+              "p95": 4.272
+            },
+            "GPU/Basepass": {
+              "mean": 10.477,
+              "p95": 10.707
+            },
+            "GPU/RenderVelocities": {
+              "mean": 7.128,
+              "p95": 7.261
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1506.33,
+              "p95": 1528.0
+            },
+            "GameThreadTime": {
+              "mean": 8.298,
+              "p95": 11.004
+            },
+            "RenderThreadTime": {
+              "mean": 10.593,
+              "p95": 14.147
+            },
+            "DrawCall/Basepass": {
+              "mean": 558.602,
+              "p95": 577.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2356300.806,
+              "p95": 2559297.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.082,
+              "p95": 0.101
+            }
+          }
+        }
+      },
+      {
+        "name": "access",
+        "frames": 300,
+        "seconds": 12.325,
+        "fps": 24.34,
+        "travel_m": 39.43,
+        "timings": {
+          "FrameTime": {
+            "mean": 41.084,
+            "p95": 47.343,
+            "median": 40.05,
+            "p99": 52.232,
+            "maximum": 666.361,
+            "pct_over_60fps_budget": 99.33,
+            "over_33_3_ms": 244,
+            "over_50_ms": 5,
+            "over_100_ms": 1
+          },
+          "GPUTime": {
+            "mean": 38.156,
+            "p95": 46.362
+          },
+          "GPU/ShadowDepths": {
+            "mean": 12.181,
+            "p95": 23.264
+          },
+          "GPU/Basepass": {
+            "mean": 6.811,
+            "p95": 10.33
+          },
+          "GPU/RenderVelocities": {
+            "mean": 5.722,
+            "p95": 8.104
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 1457.553,
+            "p95": 1487.0
+          },
+          "GameThreadTime": {
+            "mean": 9.564,
+            "p95": 11.766
+          },
+          "RenderThreadTime": {
+            "mean": 9.847,
+            "p95": 12.624
+          },
+          "DrawCall/Basepass": {
+            "mean": 493.45,
+            "p95": 604.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2068551.673,
+            "p95": 2500707.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.253,
+            "p95": 0.354
+          }
+        },
+        "eight_seconds": {
+          "frames": 180,
+          "seconds": 8.004,
+          "fps": 22.49,
+          "estimated_travel_m": 39.2,
+          "timings": {
+            "FrameTime": {
+              "mean": 44.467,
+              "p95": 47.398,
+              "median": 41.6,
+              "p99": 52.232,
+              "maximum": 666.361,
+              "pct_over_60fps_budget": 98.89,
+              "over_33_3_ms": 173,
+              "over_50_ms": 4,
+              "over_100_ms": 1
+            },
+            "GPUTime": {
+              "mean": 40.251,
+              "p95": 46.627
+            },
+            "GPU/ShadowDepths": {
+              "mean": 10.917,
+              "p95": 18.18
+            },
+            "GPU/Basepass": {
+              "mean": 8.59,
+              "p95": 10.404
+            },
+            "GPU/RenderVelocities": {
+              "mean": 7.123,
+              "p95": 8.174
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1439.483,
+              "p95": 1482.0
+            },
+            "GameThreadTime": {
+              "mean": 11.483,
+              "p95": 12.381
+            },
+            "RenderThreadTime": {
+              "mean": 10.354,
+              "p95": 13.512
+            },
+            "DrawCall/Basepass": {
+              "mean": 553.833,
+              "p95": 608.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2120147.444,
+              "p95": 2640831.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.271,
+              "p95": 0.355
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 70,
+          "seconds": 2.912,
+          "fps": 24.04,
+          "timings": {
+            "FrameTime": {
+              "mean": 41.605,
+              "p95": 47.297,
+              "median": 41.218,
+              "p99": 50.812,
+              "maximum": 52.232,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 70,
+              "over_50_ms": 2,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 40.605,
+              "p95": 46.627
+            },
+            "GPU/ShadowDepths": {
+              "mean": 9.115,
+              "p95": 14.793
+            },
+            "GPU/Basepass": {
+              "mean": 10.057,
+              "p95": 10.444
+            },
+            "GPU/RenderVelocities": {
+              "mean": 7.776,
+              "p95": 8.174
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1432.971,
+              "p95": 1446.0
+            },
+            "GameThreadTime": {
+              "mean": 6.319,
+              "p95": 9.052
+            },
+            "RenderThreadTime": {
+              "mean": 10.385,
+              "p95": 13.623
+            },
+            "DrawCall/Basepass": {
+              "mean": 569.8,
+              "p95": 583.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2264830.771,
+              "p95": 2690375.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.336,
+              "p95": 0.362
+            }
+          }
+        }
+      },
+      {
+        "name": "river",
+        "frames": 300,
+        "seconds": 11.102,
+        "fps": 27.02,
+        "travel_m": 6.08,
+        "timings": {
+          "FrameTime": {
+            "mean": 37.006,
+            "p95": 47.567,
+            "median": 35.787,
+            "p99": 60.38,
+            "maximum": 68.49,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 280,
+            "over_50_ms": 15,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 35.981,
+            "p95": 45.532
+          },
+          "GPU/ShadowDepths": {
+            "mean": 12.286,
+            "p95": 21.986
+          },
+          "GPU/Basepass": {
+            "mean": 6.537,
+            "p95": 6.861
+          },
+          "GPU/RenderVelocities": {
+            "mean": 3.863,
+            "p95": 4.265
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 723.107,
+            "p95": 744.0
+          },
+          "GameThreadTime": {
+            "mean": 8.815,
+            "p95": 10.9
+          },
+          "RenderThreadTime": {
+            "mean": 8.329,
+            "p95": 9.921
+          },
+          "DrawCall/Basepass": {
+            "mean": 688.81,
+            "p95": 729.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2220498.467,
+            "p95": 2486483.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.309,
+            "p95": 0.334
+          }
+        },
+        "eight_seconds": {
+          "frames": 220,
+          "seconds": 8.029,
+          "fps": 27.4,
+          "estimated_travel_m": 5.8,
+          "timings": {
+            "FrameTime": {
+              "mean": 36.497,
+              "p95": 41.638,
+              "median": 35.672,
+              "p99": 56.897,
+              "maximum": 57.502,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 200,
+              "over_50_ms": 7,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 35.49,
+              "p95": 39.117
+            },
+            "GPU/ShadowDepths": {
+              "mean": 11.864,
+              "p95": 15.011
+            },
+            "GPU/Basepass": {
+              "mean": 6.462,
+              "p95": 6.846
+            },
+            "GPU/RenderVelocities": {
+              "mean": 3.778,
+              "p95": 4.201
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 725.295,
+              "p95": 745.0
+            },
+            "GameThreadTime": {
+              "mean": 9.061,
+              "p95": 11.295
+            },
+            "RenderThreadTime": {
+              "mean": 8.419,
+              "p95": 10.246
+            },
+            "DrawCall/Basepass": {
+              "mean": 684.55,
+              "p95": 731.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2222366.555,
+              "p95": 2509500.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.313,
+              "p95": 0.336
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 40,
+          "seconds": 1.367,
+          "fps": 29.27,
+          "timings": {
+            "FrameTime": {
+              "mean": 34.168,
+              "p95": 36.211,
+              "median": 34.063,
+              "p99": 37.561,
+              "maximum": 37.561,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 29,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 33.077,
+              "p95": 33.63
+            },
+            "GPU/ShadowDepths": {
+              "mean": 10.443,
+              "p95": 10.6
+            },
+            "GPU/Basepass": {
+              "mean": 6.294,
+              "p95": 6.438
+            },
+            "GPU/RenderVelocities": {
+              "mean": 3.503,
+              "p95": 3.612
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 722.525,
+              "p95": 725.0
+            },
+            "GameThreadTime": {
+              "mean": 7.543,
+              "p95": 8.833
+            },
+            "RenderThreadTime": {
+              "mean": 8.125,
+              "p95": 9.449
+            },
+            "DrawCall/Basepass": {
+              "mean": 656.6,
+              "p95": 712.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2053408.15,
+              "p95": 2250625.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.322,
+              "p95": 0.348
+            }
+          }
+        }
+      },
+      {
+        "name": "bog_entry",
+        "frames": 300,
+        "seconds": 14.316,
+        "fps": 20.96,
+        "travel_m": 2.05,
+        "timings": {
+          "FrameTime": {
+            "mean": 47.72,
+            "p95": 53.731,
+            "median": 47.073,
+            "p99": 60.414,
+            "maximum": 63.066,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 300,
+            "over_50_ms": 74,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 46.546,
+            "p95": 53.072
+          },
+          "GPU/ShadowDepths": {
+            "mean": 13.678,
+            "p95": 18.389
+          },
+          "GPU/Basepass": {
+            "mean": 12.187,
+            "p95": 13.984
+          },
+          "GPU/RenderVelocities": {
+            "mean": 8.658,
+            "p95": 9.923
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 591.787,
+            "p95": 597.0
+          },
+          "GameThreadTime": {
+            "mean": 7.001,
+            "p95": 8.57
+          },
+          "RenderThreadTime": {
+            "mean": 9.357,
+            "p95": 11.354
+          },
+          "DrawCall/Basepass": {
+            "mean": 511.547,
+            "p95": 533.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 1946282.64,
+            "p95": 2170205.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.268,
+            "p95": 0.301
+          }
+        },
+        "eight_seconds": {
+          "frames": 168,
+          "seconds": 8.043,
+          "fps": 20.89,
+          "estimated_travel_m": 1.89,
+          "timings": {
+            "FrameTime": {
+              "mean": 47.872,
+              "p95": 54.291,
+              "median": 47.348,
+              "p99": 60.414,
+              "maximum": 63.066,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 168,
+              "over_50_ms": 44,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 46.724,
+              "p95": 53.252
+            },
+            "GPU/ShadowDepths": {
+              "mean": 13.782,
+              "p95": 18.877
+            },
+            "GPU/Basepass": {
+              "mean": 12.205,
+              "p95": 14.247
+            },
+            "GPU/RenderVelocities": {
+              "mean": 8.681,
+              "p95": 10.235
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 593.649,
+              "p95": 608.0
+            },
+            "GameThreadTime": {
+              "mean": 7.245,
+              "p95": 8.669
+            },
+            "RenderThreadTime": {
+              "mean": 9.338,
+              "p95": 11.29
+            },
+            "DrawCall/Basepass": {
+              "mean": 514.351,
+              "p95": 536.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 1972516.869,
+              "p95": 2180469.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.271,
+              "p95": 0.314
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 2.0,
+          "frames": 217,
+          "seconds": 10.437,
+          "fps": 20.79,
+          "timings": {
+            "FrameTime": {
+              "mean": 48.098,
+              "p95": 54.15,
+              "median": 47.529,
+              "p99": 60.414,
+              "maximum": 63.066,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 217,
+              "over_50_ms": 62,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 46.943,
+              "p95": 53.252
+            },
+            "GPU/ShadowDepths": {
+              "mean": 13.864,
+              "p95": 18.779
+            },
+            "GPU/Basepass": {
+              "mean": 12.305,
+              "p95": 14.179
+            },
+            "GPU/RenderVelocities": {
+              "mean": 8.746,
+              "p95": 10.069
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 593.203,
+              "p95": 597.0
+            },
+            "GameThreadTime": {
+              "mean": 7.125,
+              "p95": 8.584
+            },
+            "RenderThreadTime": {
+              "mean": 9.337,
+              "p95": 11.215
+            },
+            "DrawCall/Basepass": {
+              "mean": 513.198,
+              "p95": 534.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 1966202.06,
+              "p95": 2180469.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.271,
+              "p95": 0.306
+            }
+          }
+        }
+      },
+      {
+        "name": "bog552",
+        "frames": 300,
+        "seconds": 14.509,
+        "fps": 20.68,
+        "travel_m": 9.6,
+        "timings": {
+          "FrameTime": {
+            "mean": 48.364,
+            "p95": 54.304,
+            "median": 47.717,
+            "p99": 58.054,
+            "maximum": 93.511,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 300,
+            "over_50_ms": 61,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 47.24,
+            "p95": 53.673
+          },
+          "GPU/ShadowDepths": {
+            "mean": 12.244,
+            "p95": 18.402
+          },
+          "GPU/Basepass": {
+            "mean": 13.262,
+            "p95": 14.441
+          },
+          "GPU/RenderVelocities": {
+            "mean": 9.197,
+            "p95": 10.028
+          },
+          "DrawCall/ShadowDepths": {
+            "mean": 596.96,
+            "p95": 629.0
+          },
+          "GameThreadTime": {
+            "mean": 8.906,
+            "p95": 10.849
+          },
+          "RenderThreadTime": {
+            "mean": 9.415,
+            "p95": 11.579
+          },
+          "DrawCall/Basepass": {
+            "mean": 553.387,
+            "p95": 572.0
+          },
+          "RHI/PrimitivesDrawn": {
+            "mean": 2086760.767,
+            "p95": 2378081.0
+          },
+          "GPU/Prepass": {
+            "mean": 0.324,
+            "p95": 0.357
+          }
+        },
+        "eight_seconds": {
+          "frames": 163,
+          "seconds": 8.024,
+          "fps": 20.31,
+          "estimated_travel_m": 8.13,
+          "timings": {
+            "FrameTime": {
+              "mean": 49.226,
+              "p95": 54.304,
+              "median": 48.643,
+              "p99": 57.986,
+              "maximum": 93.511,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 163,
+              "over_50_ms": 45,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 48.113,
+              "p95": 53.673
+            },
+            "GPU/ShadowDepths": {
+              "mean": 12.314,
+              "p95": 15.101
+            },
+            "GPU/Basepass": {
+              "mean": 13.746,
+              "p95": 14.636
+            },
+            "GPU/RenderVelocities": {
+              "mean": 9.523,
+              "p95": 10.187
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 611.718,
+              "p95": 634.0
+            },
+            "GameThreadTime": {
+              "mean": 9.452,
+              "p95": 12.069
+            },
+            "RenderThreadTime": {
+              "mean": 9.691,
+              "p95": 11.869
+            },
+            "DrawCall/Basepass": {
+              "mean": 557.62,
+              "p95": 580.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2087407.982,
+              "p95": 2349633.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.315,
+              "p95": 0.344
+            }
+          }
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 21,
+          "seconds": 1.02,
+          "fps": 20.59,
+          "timings": {
+            "FrameTime": {
+              "mean": 48.57,
+              "p95": 50.451,
+              "median": 48.683,
+              "p99": 50.974,
+              "maximum": 50.974,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 21,
+              "over_50_ms": 2,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 47.5,
+              "p95": 48.577
+            },
+            "GPU/ShadowDepths": {
+              "mean": 12.423,
+              "p95": 12.984
+            },
+            "GPU/Basepass": {
+              "mean": 13.725,
+              "p95": 14.196
+            },
+            "GPU/RenderVelocities": {
+              "mean": 9.532,
+              "p95": 9.87
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 626.19,
+              "p95": 634.0
+            },
+            "GameThreadTime": {
+              "mean": 8.527,
+              "p95": 9.474
+            },
+            "RenderThreadTime": {
+              "mean": 9.063,
+              "p95": 10.967
+            },
+            "DrawCall/Basepass": {
+              "mean": 563.571,
+              "p95": 583.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2091671.095,
+              "p95": 2194755.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.281,
+              "p95": 0.299
+            }
+          }
+        }
+      }
+    ]
+  },
+  "paired_native_frames": {
+    "paddock_mid": {
+      "travel_m": [
+        19.26,
+        19.26
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.29,
+      "max_pct_over_8": 0.023,
+      "mean_upper_scene_delta_255": 0.395,
+      "worst_96px_patch_mean_delta_255": 0.812,
+      "worst_local_frame": 40
+    },
+    "access": {
+      "travel_m": [
+        37.82,
+        37.82
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 3.735,
+      "max_pct_over_8": 44.561,
+      "mean_upper_scene_delta_255": 1.019,
+      "worst_96px_patch_mean_delta_255": 83.808,
+      "worst_local_frame": 37
+    },
+    "river": {
+      "travel_m": [
+        2.48,
+        2.48
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.514,
+      "max_pct_over_8": 0.624,
+      "mean_upper_scene_delta_255": 0.532,
+      "worst_96px_patch_mean_delta_255": 5.284,
+      "worst_local_frame": 23
+    },
+    "bog_entry": {
+      "travel_m": [
+        3.41,
+        3.41
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.625,
+      "max_pct_over_8": 0.031,
+      "mean_upper_scene_delta_255": 0.723,
+      "worst_96px_patch_mean_delta_255": 1.826,
+      "worst_local_frame": 25
+    },
+    "bog552": {
+      "travel_m": [
+        7.34,
+        7.34
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.348,
+      "max_pct_over_8": 1.121,
+      "mean_upper_scene_delta_255": 0.382,
+      "worst_96px_patch_mean_delta_255": 12.11,
+      "worst_local_frame": 10
+    }
+  },
+  "held_native_views": {
+    "columns": [
+      "mean_absolute_luma_255",
+      "percent_pixels_over_eight",
+      "largest_local_patch_mean_255"
+    ],
+    "stations": {
+      "bog552": {
+        "hzb": [
+          0.004,
+          0.0,
+          0.02
+        ],
+        "queries": [
+          0.005,
+          0.0001,
+          0.03
+        ],
+        "restored": [
+          0.006,
+          0.0002,
+          0.028
+        ]
+      },
+      "access": {
+        "hzb": [
+          0.042,
+          0.0002,
+          0.171
+        ],
+        "queries": [
+          0.044,
+          0.0,
+          0.173
+        ],
+        "restored": [
+          0.038,
+          0.0002,
+          0.128
+        ]
+      },
+      "paddock_mid": {
+        "hzb": [
+          0.193,
+          0.0002,
+          0.242
+        ],
+        "queries": [
+          0.198,
+          0.0004,
+          0.248
+        ],
+        "restored": [
+          0.198,
+          0.0004,
+          0.248
+        ]
+      }
+    }
+  },
+  "canopy_diagnostics": [
+    {
+      "folder": "sweep14_d003_simple",
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "preset_sha256": "8A6684E4181E7A64FE31A9A150144080E8B07B8E1E83E71A6AF01401E7F3BC07",
+      "mode": "basemoving",
+      "commands": [
+        "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+        "r.AntiAliasingMethod 4",
+        "r.DynamicRes.OperationMode 0",
+        "r.ScreenPercentage 75",
+        "r.Shadow.Virtual.Enable 1",
+        "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+        "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+        "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias -3",
+        "r.Shadow.Virtual.Clipmap.LastLevel 17",
+        "r.StaticMeshLODDistanceScale 1",
+        "r.HZBOcclusion 1",
+        "r.VSync 0",
+        "t.MaxFPS 120",
+        "gt.LandscapeMud.UploadBudgetMs 0.5",
+        "gt.Weather.SkipDryOcclusion 1",
+        "gt.Weather.SkipDryOcclusion 1",
+        "r.InstanceCulling.OcclusionCull 1",
+        "r.InstanceCulling.OcclusionQueries 0"
+      ],
+      "segments": [
+        {
+          "name": "drive_tree_leaf_constant",
+          "frames": 192,
+          "seconds": 8.03,
+          "fps": 23.91,
+          "travel_m": 11.65,
+          "timings": {
+            "FrameTime": {
+              "mean": 41.822,
+              "p95": 57.354
+            },
+            "GPUTime": {
+              "mean": 40.696,
+              "p95": 54.927
+            },
+            "GPU/ShadowDepths": {
+              "mean": 15.992,
+              "p95": 30.168
+            },
+            "GPU/Basepass": {
+              "mean": 8.286,
+              "p95": 8.749
+            },
+            "GPU/RenderVelocities": {
+              "mean": 7.143,
+              "p95": 7.594
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 626.432,
+              "p95": 639.0
+            },
+            "GameThreadTime": {
+              "mean": 10.049,
+              "p95": 14.413
+            },
+            "RenderThreadTime": {
+              "mean": 10.471,
+              "p95": 14.431
+            },
+            "DrawCall/Basepass": {
+              "mean": 567.333,
+              "p95": 584.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2128893.542,
+              "p95": 2418793.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.239,
+              "p95": 0.254
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "sweep15_near_lod",
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "preset_sha256": "8A6684E4181E7A64FE31A9A150144080E8B07B8E1E83E71A6AF01401E7F3BC07",
+      "mode": "basemoving",
+      "commands": [
+        "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+        "r.AntiAliasingMethod 4",
+        "r.DynamicRes.OperationMode 0",
+        "r.ScreenPercentage 75",
+        "r.Shadow.Virtual.Enable 1",
+        "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+        "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+        "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias -3",
+        "r.Shadow.Virtual.Clipmap.LastLevel 17",
+        "r.StaticMeshLODDistanceScale 1",
+        "r.HZBOcclusion 1",
+        "r.VSync 0",
+        "t.MaxFPS 120",
+        "gt.LandscapeMud.UploadBudgetMs 0.5",
+        "gt.Weather.SkipDryOcclusion 1",
+        "gt.Weather.SkipDryOcclusion 1",
+        "r.InstanceCulling.OcclusionCull 1",
+        "r.InstanceCulling.OcclusionQueries 0"
+      ],
+      "segments": [
+        {
+          "name": "drive_tree_min2",
+          "frames": 192,
+          "seconds": 6.797,
+          "fps": 28.25,
+          "travel_m": 11.65,
+          "timings": {
+            "FrameTime": {
+              "mean": 35.403,
+              "p95": 47.555,
+              "median": 32.867,
+              "p99": 49.221,
+              "maximum": 59.148,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 85,
+              "over_50_ms": 2,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 34.363,
+              "p95": 46.17
+            },
+            "GPU/ShadowDepths": {
+              "mean": 10.699,
+              "p95": 22.687
+            },
+            "GPU/Basepass": {
+              "mean": 8.287,
+              "p95": 8.974
+            },
+            "GPU/RenderVelocities": {
+              "mean": 5.837,
+              "p95": 6.344
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 616.776,
+              "p95": 627.0
+            },
+            "GameThreadTime": {
+              "mean": 9.482,
+              "p95": 11.488
+            },
+            "RenderThreadTime": {
+              "mean": 9.515,
+              "p95": 12.024
+            },
+            "DrawCall/Basepass": {
+              "mean": 555.198,
+              "p95": 571.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2134569.156,
+              "p95": 2229305.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.258,
+              "p95": 0.277
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "sweep16_trees_nanite",
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "preset_sha256": "8A6684E4181E7A64FE31A9A150144080E8B07B8E1E83E71A6AF01401E7F3BC07",
+      "mode": "basemoving",
+      "commands": [
+        "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+        "r.AntiAliasingMethod 4",
+        "r.DynamicRes.OperationMode 0",
+        "r.ScreenPercentage 75",
+        "r.Shadow.Virtual.Enable 1",
+        "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+        "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+        "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias -3",
+        "r.Shadow.Virtual.Clipmap.LastLevel 17",
+        "r.StaticMeshLODDistanceScale 1",
+        "r.HZBOcclusion 1",
+        "r.VSync 0",
+        "t.MaxFPS 120",
+        "gt.LandscapeMud.UploadBudgetMs 0.5",
+        "gt.Weather.SkipDryOcclusion 1",
+        "gt.Weather.SkipDryOcclusion 1",
+        "r.InstanceCulling.OcclusionCull 1",
+        "r.InstanceCulling.OcclusionQueries 0"
+      ],
+      "segments": [
+        {
+          "name": "drive_tree_nanite",
+          "frames": 192,
+          "seconds": 6.062,
+          "fps": 31.67,
+          "travel_m": 11.65,
+          "timings": {
+            "FrameTime": {
+              "mean": 31.575,
+              "p95": 37.756,
+              "median": 33.213,
+              "p99": 39.899,
+              "maximum": 40.459,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 95,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 30.556,
+              "p95": 36.646
+            },
+            "GPU/ShadowDepths": {
+              "mean": 12.117,
+              "p95": 17.191
+            },
+            "GPU/Basepass": {
+              "mean": 5.124,
+              "p95": 5.411
+            },
+            "GPU/RenderVelocities": {
+              "mean": 3.357,
+              "p95": 3.558
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 628.0,
+              "p95": 640.0
+            },
+            "GameThreadTime": {
+              "mean": 9.4,
+              "p95": 11.084
+            },
+            "RenderThreadTime": {
+              "mean": 9.304,
+              "p95": 10.915
+            },
+            "DrawCall/Basepass": {
+              "mean": 570.271,
+              "p95": 585.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2146182.76,
+              "p95": 2417811.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.271,
+              "p95": 0.291
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "sweep17_ref",
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "preset_sha256": "8A6684E4181E7A64FE31A9A150144080E8B07B8E1E83E71A6AF01401E7F3BC07",
+      "mode": "basemoving",
+      "commands": [
+        "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+        "r.AntiAliasingMethod 4",
+        "r.DynamicRes.OperationMode 0",
+        "r.ScreenPercentage 75",
+        "r.Shadow.Virtual.Enable 1",
+        "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+        "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+        "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias -3",
+        "r.Shadow.Virtual.Clipmap.LastLevel 17",
+        "r.StaticMeshLODDistanceScale 1",
+        "r.HZBOcclusion 1",
+        "r.VSync 0",
+        "t.MaxFPS 120",
+        "gt.LandscapeMud.UploadBudgetMs 0.5",
+        "gt.Weather.SkipDryOcclusion 1",
+        "gt.Weather.SkipDryOcclusion 1",
+        "r.InstanceCulling.OcclusionCull 1",
+        "r.InstanceCulling.OcclusionQueries 0"
+      ],
+      "segments": [
+        {
+          "name": "drive_control",
+          "frames": 192,
+          "seconds": 8.392,
+          "fps": 22.88,
+          "travel_m": 11.65,
+          "timings": {
+            "FrameTime": {
+              "mean": 43.711,
+              "p95": 47.556,
+              "median": 43.458,
+              "p99": 54.157,
+              "maximum": 56.637,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 192,
+              "over_50_ms": 5,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 42.665,
+              "p95": 45.934
+            },
+            "GPU/ShadowDepths": {
+              "mean": 11.065,
+              "p95": 13.486
+            },
+            "GPU/Basepass": {
+              "mean": 12.556,
+              "p95": 13.653
+            },
+            "GPU/RenderVelocities": {
+              "mean": 8.685,
+              "p95": 9.357
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 627.375,
+              "p95": 638.0
+            },
+            "GameThreadTime": {
+              "mean": 9.267,
+              "p95": 10.848
+            },
+            "RenderThreadTime": {
+              "mean": 9.607,
+              "p95": 11.235
+            },
+            "DrawCall/Basepass": {
+              "mean": 566.583,
+              "p95": 584.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2123735.906,
+              "p95": 2406203.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.284,
+              "p95": 0.302
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "sweep18_others",
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "preset_sha256": "8A6684E4181E7A64FE31A9A150144080E8B07B8E1E83E71A6AF01401E7F3BC07",
+      "mode": "renderfamilies",
+      "commands": [
+        "r.Editor.Viewport.OverridePIEScreenPercentage 0",
+        "r.AntiAliasingMethod 4",
+        "r.DynamicRes.OperationMode 0",
+        "r.ScreenPercentage 75",
+        "r.Shadow.Virtual.Enable 1",
+        "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 0",
+        "r.Shadow.Virtual.SMRT.RayCountDirectional 4",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectional 1",
+        "r.Shadow.Virtual.ResolutionLodBiasDirectionalMoving 1",
+        "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias -3",
+        "r.Shadow.Virtual.Clipmap.LastLevel 17",
+        "r.StaticMeshLODDistanceScale 1",
+        "r.HZBOcclusion 1",
+        "r.VSync 0",
+        "t.MaxFPS 120",
+        "gt.LandscapeMud.UploadBudgetMs 0.5",
+        "gt.Weather.SkipDryOcclusion 1",
+        "gt.Weather.SkipDryOcclusion 1",
+        "r.InstanceCulling.OcclusionCull 1",
+        "r.InstanceCulling.OcclusionQueries 0"
+      ],
+      "segments": [
+        {
+          "name": "00_control",
+          "frames": 88,
+          "seconds": 4.014,
+          "fps": 21.93,
+          "travel_m": 0.19,
+          "timings": {
+            "FrameTime": {
+              "mean": 45.608,
+              "p95": 48.453,
+              "median": 45.333,
+              "p99": 50.617,
+              "maximum": 58.804,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 88,
+              "over_50_ms": 2,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 44.546,
+              "p95": 45.932
+            },
+            "GPU/ShadowDepths": {
+              "mean": 10.908,
+              "p95": 11.008
+            },
+            "GPU/Basepass": {
+              "mean": 13.594,
+              "p95": 14.428
+            },
+            "GPU/RenderVelocities": {
+              "mean": 9.347,
+              "p95": 9.98
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 722.557,
+              "p95": 857.0
+            },
+            "GameThreadTime": {
+              "mean": 7.401,
+              "p95": 8.571
+            },
+            "RenderThreadTime": {
+              "mean": 9.059,
+              "p95": 10.994
+            },
+            "DrawCall/Basepass": {
+              "mean": 571.557,
+              "p95": 601.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2188719.977,
+              "p95": 2469229.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.28,
+              "p95": 0.302
+            }
+          }
+        },
+        {
+          "name": "01_tree_visibility",
+          "frames": 88,
+          "seconds": 1.861,
+          "fps": 47.28,
+          "travel_m": 0.07,
+          "timings": {
+            "FrameTime": {
+              "mean": 21.151,
+              "p95": 22.41,
+              "median": 21.038,
+              "p99": 22.999,
+              "maximum": 24.148,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 0,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 20.173,
+              "p95": 21.286
+            },
+            "GPU/ShadowDepths": {
+              "mean": 5.222,
+              "p95": 5.532
+            },
+            "GPU/Basepass": {
+              "mean": 3.221,
+              "p95": 3.406
+            },
+            "GPU/RenderVelocities": {
+              "mean": 1.577,
+              "p95": 1.666
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1022.58,
+              "p95": 1027.0
+            },
+            "GameThreadTime": {
+              "mean": 6.873,
+              "p95": 7.816
+            },
+            "RenderThreadTime": {
+              "mean": 8.118,
+              "p95": 8.696
+            },
+            "DrawCall/Basepass": {
+              "mean": 604.477,
+              "p95": 616.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2473974.636,
+              "p95": 2764415.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.486,
+              "p95": 0.516
+            }
+          }
+        },
+        {
+          "name": "02_hide_trees_and_terrain",
+          "frames": 88,
+          "seconds": 1.605,
+          "fps": 54.82,
+          "travel_m": 0.03,
+          "timings": {
+            "FrameTime": {
+              "mean": 18.243,
+              "p95": 19.772,
+              "median": 17.954,
+              "p99": 19.978,
+              "maximum": 20.58,
+              "pct_over_60fps_budget": 97.73,
+              "over_33_3_ms": 0,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 17.285,
+              "p95": 18.381
+            },
+            "GPU/ShadowDepths": {
+              "mean": 4.23,
+              "p95": 4.527
+            },
+            "GPU/Basepass": {
+              "mean": 1.789,
+              "p95": 1.915
+            },
+            "GPU/RenderVelocities": {
+              "mean": 1.122,
+              "p95": 1.205
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 511.682,
+              "p95": 515.0
+            },
+            "GameThreadTime": {
+              "mean": 6.795,
+              "p95": 7.797
+            },
+            "RenderThreadTime": {
+              "mean": 7.635,
+              "p95": 8.312
+            },
+            "DrawCall/Basepass": {
+              "mean": 482.443,
+              "p95": 493.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 652421.091,
+              "p95": 653607.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.577,
+              "p95": 0.618
+            }
+          }
+        },
+        {
+          "name": "03_hide_trees_and_dressing",
+          "frames": 88,
+          "seconds": 1.582,
+          "fps": 55.63,
+          "travel_m": 0.03,
+          "timings": {
+            "FrameTime": {
+              "mean": 17.977,
+              "p95": 18.642,
+              "median": 17.951,
+              "p99": 18.865,
+              "maximum": 19.448,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 0,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 17.03,
+              "p95": 17.263
+            },
+            "GPU/ShadowDepths": {
+              "mean": 2.624,
+              "p95": 2.76
+            },
+            "GPU/Basepass": {
+              "mean": 3.24,
+              "p95": 3.284
+            },
+            "GPU/RenderVelocities": {
+              "mean": 0.966,
+              "p95": 0.997
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1013.307,
+              "p95": 1027.0
+            },
+            "GameThreadTime": {
+              "mean": 6.91,
+              "p95": 7.69
+            },
+            "RenderThreadTime": {
+              "mean": 7.979,
+              "p95": 8.709
+            },
+            "DrawCall/Basepass": {
+              "mean": 565.125,
+              "p95": 572.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2489463.818,
+              "p95": 2749285.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.219,
+              "p95": 0.222
+            }
+          }
+        },
+        {
+          "name": "04_tree_visibility",
+          "frames": 88,
+          "seconds": 1.953,
+          "fps": 45.06,
+          "travel_m": 0.05,
+          "timings": {
+            "FrameTime": {
+              "mean": 22.191,
+              "p95": 23.108,
+              "median": 22.186,
+              "p99": 24.187,
+              "maximum": 25.5,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 0,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 21.228,
+              "p95": 21.572
+            },
+            "GPU/ShadowDepths": {
+              "mean": 5.621,
+              "p95": 5.792
+            },
+            "GPU/Basepass": {
+              "mean": 3.37,
+              "p95": 3.412
+            },
+            "GPU/RenderVelocities": {
+              "mean": 1.68,
+              "p95": 1.719
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1050.33,
+              "p95": 1058.0
+            },
+            "GameThreadTime": {
+              "mean": 6.854,
+              "p95": 7.728
+            },
+            "RenderThreadTime": {
+              "mean": 8.159,
+              "p95": 8.753
+            },
+            "DrawCall/Basepass": {
+              "mean": 600.25,
+              "p95": 611.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2537574.659,
+              "p95": 2811737.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.508,
+              "p95": 0.516
+            }
+          }
+        },
+        {
+          "name": "05_hide_trees_and_all_grass",
+          "frames": 88,
+          "seconds": 2.591,
+          "fps": 33.97,
+          "travel_m": 0.01,
+          "timings": {
+            "FrameTime": {
+              "mean": 29.441,
+              "p95": 27.359,
+              "median": 22.636,
+              "p99": 28.427,
+              "maximum": 639.631,
+              "pct_over_60fps_budget": 95.45,
+              "over_33_3_ms": 1,
+              "over_50_ms": 1,
+              "over_100_ms": 1
+            },
+            "GPUTime": {
+              "mean": 21.74,
+              "p95": 26.298
+            },
+            "GPU/ShadowDepths": {
+              "mean": 5.751,
+              "p95": 7.138
+            },
+            "GPU/Basepass": {
+              "mean": 3.601,
+              "p95": 4.407
+            },
+            "GPU/RenderVelocities": {
+              "mean": 1.695,
+              "p95": 2.048
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1038.386,
+              "p95": 1062.0
+            },
+            "GameThreadTime": {
+              "mean": 14.06,
+              "p95": 8.098
+            },
+            "RenderThreadTime": {
+              "mean": 8.195,
+              "p95": 9.019
+            },
+            "DrawCall/Basepass": {
+              "mean": 582.943,
+              "p95": 600.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2533786.636,
+              "p95": 2811427.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.528,
+              "p95": 0.644
+            }
+          }
+        },
+        {
+          "name": "06_hide_trees_and_pickup",
+          "frames": 88,
+          "seconds": 1.97,
+          "fps": 44.66,
+          "travel_m": 0.0,
+          "timings": {
+            "FrameTime": {
+              "mean": 22.391,
+              "p95": 23.222,
+              "median": 22.448,
+              "p99": 23.556,
+              "maximum": 24.53,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 0,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 21.378,
+              "p95": 21.77
+            },
+            "GPU/ShadowDepths": {
+              "mean": 5.572,
+              "p95": 5.647
+            },
+            "GPU/Basepass": {
+              "mean": 3.588,
+              "p95": 3.63
+            },
+            "GPU/RenderVelocities": {
+              "mean": 1.685,
+              "p95": 1.708
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1023.92,
+              "p95": 1024.0
+            },
+            "GameThreadTime": {
+              "mean": 6.542,
+              "p95": 7.481
+            },
+            "RenderThreadTime": {
+              "mean": 7.833,
+              "p95": 8.769
+            },
+            "DrawCall/Basepass": {
+              "mean": 531.591,
+              "p95": 543.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2363654.886,
+              "p95": 2635629.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.523,
+              "p95": 0.528
+            }
+          }
+        },
+        {
+          "name": "07_tree_visibility",
+          "frames": 88,
+          "seconds": 1.989,
+          "fps": 44.24,
+          "travel_m": 0.01,
+          "timings": {
+            "FrameTime": {
+              "mean": 22.605,
+              "p95": 23.628,
+              "median": 22.555,
+              "p99": 23.891,
+              "maximum": 24.673,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 0,
+              "over_50_ms": 0,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 21.615,
+              "p95": 21.89
+            },
+            "GPU/ShadowDepths": {
+              "mean": 5.749,
+              "p95": 5.816
+            },
+            "GPU/Basepass": {
+              "mean": 3.43,
+              "p95": 3.455
+            },
+            "GPU/RenderVelocities": {
+              "mean": 1.721,
+              "p95": 1.748
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1063.08,
+              "p95": 1069.0
+            },
+            "GameThreadTime": {
+              "mean": 6.51,
+              "p95": 7.421
+            },
+            "RenderThreadTime": {
+              "mean": 8.035,
+              "p95": 8.771
+            },
+            "DrawCall/Basepass": {
+              "mean": 600.148,
+              "p95": 617.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2538677.614,
+              "p95": 2540009.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.524,
+              "p95": 0.53
+            }
+          }
+        },
+        {
+          "name": "08_control",
+          "frames": 88,
+          "seconds": 6.589,
+          "fps": 13.36,
+          "travel_m": 0.0,
+          "timings": {
+            "FrameTime": {
+              "mean": 74.87,
+              "p95": 88.809,
+              "median": 85.806,
+              "p99": 89.804,
+              "maximum": 95.976,
+              "pct_over_60fps_budget": 100.0,
+              "over_33_3_ms": 88,
+              "over_50_ms": 63,
+              "over_100_ms": 0
+            },
+            "GPUTime": {
+              "mean": 73.31,
+              "p95": 86.694
+            },
+            "GPU/ShadowDepths": {
+              "mean": 37.565,
+              "p95": 51.188
+            },
+            "GPU/Basepass": {
+              "mean": 13.928,
+              "p95": 14.807
+            },
+            "GPU/RenderVelocities": {
+              "mean": 9.572,
+              "p95": 10.192
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1077.386,
+              "p95": 1084.0
+            },
+            "GameThreadTime": {
+              "mean": 6.869,
+              "p95": 7.833
+            },
+            "RenderThreadTime": {
+              "mean": 8.847,
+              "p95": 10.357
+            },
+            "DrawCall/Basepass": {
+              "mean": 555.489,
+              "p95": 583.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2236348.0,
+              "p95": 2348937.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.297,
+              "p95": 0.311
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

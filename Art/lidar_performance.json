@@ -1,12 +1,12 @@
 {
   "name": "LiDAR balanced visual quality",
-  "version": 9,
+  "version": 10,
   "output_resolution": [
     1600,
     900
   ],
   "target_hardware": "RTX 4050 Laptop 6GB; Development standalone",
-  "notes": "FloraWorld whole-map canopy uses authored near/far thresholds, so mesh LOD scale is 1 instead of the legacy 4. TSR 75%, virtual-shadow bias 1, four directional shadow rays and exclusion of non-Nanite foliage from coarse pages retained. Ray-traced effects and Lumen reflection policy follow project settings. CPU optimizations, 0.5 ms mud upload budget and 120 fps cap retained; 60 fps is the next measured target; the 120 fps cap is retained for headroom measurement. Full vegetation placement, native grass and driving physics retained. The main trees and saplings use a 110 m displacement cutoff and directional shadow clipmap bias -3. See Docs/LIDAR_ROUTE_SHADOWS_AND_BASE_PASS.md for driving measurements. The rain depth capture sleeps while global wetness, snow, and precipitation are all zero.",
+  "notes": "FloraWorld whole-map canopy uses authored near/far thresholds, so mesh LOD scale is 1 instead of the legacy 4. TSR 75%, virtual-shadow bias 1, four directional shadow rays and exclusion of non-Nanite foliage from coarse pages retained. Ray-traced effects and Lumen reflection policy follow project settings. CPU optimizations, 0.5 ms mud upload budget and 120 fps cap retained; 60 fps is the next measured target; the 120 fps cap is retained for headroom measurement. Full vegetation placement, native grass and driving physics retained. The main trees and saplings use a 110 m displacement cutoff and directional shadow clipmap bias -3. See Docs/LIDAR_ROUTE_SHADOWS_AND_BASE_PASS.md for driving measurements. The rain depth capture sleeps while global wetness, snow, and precipitation are all zero. LiDAR also uses per-instance depth-pyramid occlusion, with extra occlusion queries off. See Docs/LIDAR_VISIBILITY_AND_TREE_COSTS.md.",
   "commands": [
     "r.Editor.Viewport.OverridePIEScreenPercentage 0",
     "r.AntiAliasingMethod 4",
@@ -21,6 +21,8 @@
     "r.Shadow.Virtual.Clipmap.LastLevel 17",
     "r.StaticMeshLODDistanceScale 1",
     "r.HZBOcclusion 1",
+    "r.InstanceCulling.OcclusionCull 1",
+    "r.InstanceCulling.OcclusionQueries 0",
     "r.VSync 0",
     "t.MaxFPS 120",
     "gt.LandscapeMud.UploadBudgetMs 0.5",
