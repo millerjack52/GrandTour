@@ -679,5 +679,1592 @@
         }
       }
     }
-  ]
+  ],
+  "dynamic_shadow_bog": [
+    {
+      "run": "sweep70_dynamic_shadow_hzb",
+      "enabled": 1,
+      "pool_mb": 85.375,
+      "fps": 18.55,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 53.907,
+          "p95": 58.373,
+          "median": 53.08,
+          "p99": 69.519,
+          "maximum": 90.983,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 177,
+          "over_100_ms": 0
+        },
+        "GPU/Basepass": {
+          "mean": 16.264,
+          "p95": 17.374
+        },
+        "GPU/RenderVelocities": {
+          "mean": 11.228,
+          "p95": 12.046
+        },
+        "GPU/ShadowDepths": {
+          "mean": 12.154,
+          "p95": 18.47
+        }
+      },
+      "hardware": {
+        "median_clock_mhz": 1410.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 24.97,
+        "samples_thermally_limited": 11
+      }
+    },
+    {
+      "run": "sweep71_shadow_hzb_control",
+      "enabled": 0,
+      "pool_mb": 42.688,
+      "fps": 17.22,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 58.073,
+          "p95": 64.498,
+          "median": 57.297,
+          "p99": 76.273,
+          "maximum": 95.619,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 191,
+          "over_100_ms": 0
+        },
+        "GPU/Basepass": {
+          "mean": 16.792,
+          "p95": 18.404
+        },
+        "GPU/RenderVelocities": {
+          "mean": 11.649,
+          "p95": 12.768
+        },
+        "GPU/ShadowDepths": {
+          "mean": 14.755,
+          "p95": 20.339
+        }
+      },
+      "hardware": {
+        "median_clock_mhz": 1335.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 23.5,
+        "samples_thermally_limited": 11
+      }
+    },
+    {
+      "run": "sweep72_dynamic_shadow_hzb_repeat",
+      "enabled": 1,
+      "pool_mb": 85.375,
+      "fps": 17.53,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 57.047,
+          "p95": 61.62,
+          "median": 56.589,
+          "p99": 69.725,
+          "maximum": 72.104,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 192,
+          "over_100_ms": 0
+        },
+        "GPU/Basepass": {
+          "mean": 17.295,
+          "p95": 18.757
+        },
+        "GPU/RenderVelocities": {
+          "mean": 11.973,
+          "p95": 12.95
+        },
+        "GPU/ShadowDepths": {
+          "mean": 12.73,
+          "p95": 15.776
+        }
+      },
+      "hardware": {
+        "median_clock_mhz": 1275.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 23.57,
+        "samples_thermally_limited": 10
+      }
+    }
+  ],
+  "material_draw_profile": {
+    "run": "sweep73_bog_draw_profile",
+    "profiles": [
+      {
+        "frame": 711,
+        "passes": {
+          "RenderVelocities(Opaque)": {
+            "busy_ms": 12.41,
+            "named_draw_ms": 12.15,
+            "unattributed_ms": 0.26,
+            "total_named_pairs": 87,
+            "total_draw_events": 325,
+            "leading_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 6.11
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.26
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.1
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.9
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_5",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 0.89
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.59
+              },
+              {
+                "material": "MID_LandscapeMaterialInstanceConstant_0",
+                "mesh": "Landscape",
+                "events": 15,
+                "busy_ms": 0.28
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 0.21
+              }
+            ]
+          },
+          "BasePass": {
+            "busy_ms": 18.12,
+            "named_draw_ms": 17.6,
+            "unattributed_ms": 0.52,
+            "total_named_pairs": 159,
+            "total_draw_events": 517,
+            "leading_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 9.06
+              },
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 18,
+                "busy_ms": 1.59
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.4
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 1.31
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.27
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_5",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 1.03
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.63
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 0.23
+              }
+            ]
+          },
+          "ShadowDepths": {
+            "busy_ms": 15.47,
+            "named_draw_ms": 11.12,
+            "unattributed_ms": 4.35,
+            "total_named_pairs": 95,
+            "total_draw_events": 606,
+            "leading_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 3.09
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_025",
+                "events": 1,
+                "busy_ms": 1.41
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 1.27
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_021",
+                "events": 1,
+                "busy_ms": 1.27
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.75
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.63
+              },
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 25,
+                "busy_ms": 0.49
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_5",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 0.49
+              }
+            ]
+          }
+        }
+      },
+      {
+        "frame": 775,
+        "passes": {
+          "RenderVelocities(Opaque)": {
+            "busy_ms": 12.33,
+            "named_draw_ms": 12.06,
+            "unattributed_ms": 0.27,
+            "total_named_pairs": 87,
+            "total_draw_events": 349,
+            "leading_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 6.24
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.15
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.06
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.91
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_5",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 0.83
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.52
+              },
+              {
+                "material": "MID_LandscapeMaterialInstanceConstant_0",
+                "mesh": "Landscape",
+                "events": 19,
+                "busy_ms": 0.36
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 0.21
+              }
+            ]
+          },
+          "BasePass": {
+            "busy_ms": 17.8,
+            "named_draw_ms": 17.17,
+            "unattributed_ms": 0.63,
+            "total_named_pairs": 159,
+            "total_draw_events": 560,
+            "leading_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 8.99
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.46
+              },
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 18,
+                "busy_ms": 1.45
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 1.17
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 1.13
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_5",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 1.08
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.63
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 0.22
+              }
+            ]
+          },
+          "ShadowDepths": {
+            "busy_ms": 16.63,
+            "named_draw_ms": 11.9,
+            "unattributed_ms": 4.73,
+            "total_named_pairs": 95,
+            "total_draw_events": 609,
+            "leading_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 3.07
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_025",
+                "events": 1,
+                "busy_ms": 1.45
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 1.35
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_021",
+                "events": 1,
+                "busy_ms": 1.34
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.91
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.86
+              },
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 25,
+                "busy_ms": 0.52
+              },
+              {
+                "material": "MID_LandscapeMaterialInstanceConstant_0",
+                "mesh": "Landscape",
+                "events": 127,
+                "busy_ms": 0.52
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "precision_ms": 0.01,
+    "measurement": "Instrumented graphics busy time; excludes queue waits."
+  },
+  "held_bark": {
+    "run": "sweep74_bark_channels",
+    "pose": {
+      "game_time": 70.792,
+      "pawn": [
+        -27087.169,
+        -62260.756,
+        6334.355
+      ],
+      "camera": [
+        -27764.236,
+        -62041.681,
+        6575.751
+      ],
+      "rotation": [
+        0.0,
+        -10.0,
+        -18.099
+      ]
+    },
+    "reference_rect": [
+      1424,
+      483,
+      1520,
+      579
+    ],
+    "channels": {
+      "lit": {
+        "size": [
+          1600,
+          900
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            -0.0,
+            -0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            -0.748,
+            5.8,
+            -0.493
+          ],
+          "mean_abs_rgb": 2.718
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            -0.002,
+            -0.022,
+            0.001
+          ],
+          "mean_abs_rgb": 0.053
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            -0.021,
+            -0.004,
+            -0.007
+          ],
+          "mean_abs_rgb": 0.025
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            -0.767,
+            5.818,
+            -0.501
+          ],
+          "mean_abs_rgb": 2.722
+        }
+      },
+      "BaseColor": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            -0.415,
+            1.663,
+            -0.033
+          ],
+          "mean_abs_rgb": 0.767
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            -0.012,
+            -0.004,
+            0.004
+          ],
+          "mean_abs_rgb": 0.072
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            -0.004,
+            0.002,
+            0.0
+          ],
+          "mean_abs_rgb": 0.002
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            -0.407,
+            1.669,
+            -0.037
+          ],
+          "mean_abs_rgb": 0.751
+        }
+      },
+      "WorldNormal": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            -0.472,
+            -0.848,
+            -0.474
+          ],
+          "mean_abs_rgb": 0.602
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            -0.479,
+            -0.856,
+            -0.473
+          ],
+          "mean_abs_rgb": 0.606
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.007,
+            0.008,
+            -0.001
+          ],
+          "mean_abs_rgb": 0.015
+        }
+      },
+      "Roughness": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        }
+      },
+      "SceneDepth": {
+        "size": [
+          1600,
+          900
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            -0.001,
+            -0.001,
+            -0.001
+          ],
+          "mean_abs_rgb": 0.001
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            -0.001,
+            -0.001,
+            -0.001
+          ],
+          "mean_abs_rgb": 0.001
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        }
+      },
+      "AmbientOcclusion": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        }
+      },
+      "SubsurfaceColor": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        }
+      },
+      "Specular": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "mean_abs_rgb": 0.239
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            0.003,
+            0.003,
+            0.003
+          ],
+          "mean_abs_rgb": 0.24
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            -0.003,
+            -0.003,
+            -0.003
+          ],
+          "mean_abs_rgb": 0.008
+        }
+      },
+      "MaterialAO": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        }
+      },
+      "Metallic": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        }
+      },
+      "ShadingModel": {
+        "size": [
+          1200,
+          675
+        ],
+        "original_repeat": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "normal_material": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "moss_disabled": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "original_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        },
+        "candidate_moss_effect": {
+          "rgb_delta": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_abs_rgb": 0.0
+        }
+      }
+    }
+  },
+  "dynamic_shadow_foreground": {
+    "sweep76_native_shadow_control": {
+      "paddock_mid": {
+        "distance_m": 56.48,
+        "moving_frames": 298,
+        "engine_moving": {
+          "frames": 298,
+          "fps": 19.56,
+          "median_ms": 49.481,
+          "mean_ms": 51.124,
+          "p95_ms": 67.479,
+          "p99_ms": 86.719,
+          "maximum_ms": 117.515,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 297,
+          "over_50_ms": 136,
+          "over_100_ms": 1
+        },
+        "mean_shadow_ms": 6.146,
+        "clock_mhz": 1245.0,
+        "display_interval_coverage_complete": true,
+        "display_fps": 19.57,
+        "foreground_frames": 300
+      },
+      "access": {
+        "distance_m": 54.54,
+        "moving_frames": 294,
+        "engine_moving": {
+          "frames": 294,
+          "fps": 13.2,
+          "median_ms": 75.99,
+          "mean_ms": 75.743,
+          "p95_ms": 103.749,
+          "p99_ms": 125.856,
+          "maximum_ms": 276.917,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 293,
+          "over_50_ms": 274,
+          "over_100_ms": 19
+        },
+        "mean_shadow_ms": 25.691,
+        "clock_mhz": 855.0,
+        "display_interval_coverage_complete": true,
+        "display_fps": 13.15,
+        "foreground_frames": 300
+      },
+      "river": {
+        "distance_m": 6.39,
+        "moving_frames": 185,
+        "engine_moving": {
+          "frames": 185,
+          "fps": 14.33,
+          "median_ms": 67.733,
+          "mean_ms": 69.791,
+          "p95_ms": 90.233,
+          "p99_ms": 105.179,
+          "maximum_ms": 112.036,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 185,
+          "over_50_ms": 185,
+          "over_100_ms": 6
+        },
+        "mean_shadow_ms": 25.512,
+        "clock_mhz": 795.0,
+        "display_interval_coverage_complete": true,
+        "display_fps": 14.0,
+        "foreground_frames": 300
+      },
+      "bog_entry": {
+        "distance_m": 5.7,
+        "moving_frames": 137,
+        "engine_moving": {
+          "frames": 137,
+          "fps": 11.04,
+          "median_ms": 89.273,
+          "mean_ms": 90.602,
+          "p95_ms": 101.951,
+          "p99_ms": 114.748,
+          "maximum_ms": 130.357,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 137,
+          "over_50_ms": 137,
+          "over_100_ms": 9
+        },
+        "mean_shadow_ms": 25.145,
+        "clock_mhz": 780.0,
+        "display_interval_coverage_complete": false,
+        "display_fps": 10.92,
+        "foreground_frames": 300
+      },
+      "bog552": {
+        "distance_m": 7.45,
+        "moving_frames": 249,
+        "engine_moving": {
+          "frames": 249,
+          "fps": 10.95,
+          "median_ms": 89.857,
+          "mean_ms": 91.297,
+          "p95_ms": 98.509,
+          "p99_ms": 125.241,
+          "maximum_ms": 163.214,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 249,
+          "over_50_ms": 249,
+          "over_100_ms": 9
+        },
+        "mean_shadow_ms": 22.979,
+        "clock_mhz": 795.0,
+        "display_interval_coverage_complete": false,
+        "display_fps": 10.98,
+        "foreground_frames": 300
+      }
+    },
+    "sweep77_native_dynamic_shadow": {
+      "paddock_mid": {
+        "distance_m": 56.14,
+        "moving_frames": 298,
+        "engine_moving": {
+          "frames": 298,
+          "fps": 19.72,
+          "median_ms": 50.226,
+          "mean_ms": 50.715,
+          "p95_ms": 60.585,
+          "p99_ms": 76.096,
+          "maximum_ms": 102.507,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 298,
+          "over_50_ms": 155,
+          "over_100_ms": 1
+        },
+        "mean_shadow_ms": 6.217,
+        "clock_mhz": 1140.0,
+        "display_interval_coverage_complete": true,
+        "display_fps": 19.72,
+        "foreground_frames": 300
+      },
+      "access": {
+        "distance_m": 40.56,
+        "moving_frames": 175,
+        "engine_moving": {
+          "frames": 175,
+          "fps": 14.52,
+          "median_ms": 69.352,
+          "mean_ms": 68.865,
+          "p95_ms": 78.646,
+          "p99_ms": 83.946,
+          "maximum_ms": 85.975,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 175,
+          "over_50_ms": 169,
+          "over_100_ms": 0
+        },
+        "mean_shadow_ms": 16.795,
+        "clock_mhz": 930.0,
+        "display_interval_coverage_complete": true,
+        "display_fps": 15.82,
+        "foreground_frames": 300
+      },
+      "river": {
+        "distance_m": 0.0,
+        "moving_frames": 0,
+        "engine_moving": null,
+        "mean_shadow_ms": 16.716,
+        "clock_mhz": 795.0,
+        "display_interval_coverage_complete": true,
+        "display_fps": 16.89,
+        "foreground_frames": 300
+      },
+      "bog_entry": {
+        "distance_m": 0.0,
+        "moving_frames": 0,
+        "engine_moving": null,
+        "mean_shadow_ms": 16.886,
+        "clock_mhz": 787.5,
+        "display_interval_coverage_complete": true,
+        "display_fps": 16.71,
+        "foreground_frames": 300
+      },
+      "bog552": {
+        "distance_m": 6.57,
+        "moving_frames": 210,
+        "engine_moving": {
+          "frames": 210,
+          "fps": 11.1,
+          "median_ms": 89.49,
+          "mean_ms": 90.105,
+          "p95_ms": 97.493,
+          "p99_ms": 106.236,
+          "maximum_ms": 115.719,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 210,
+          "over_50_ms": 210,
+          "over_100_ms": 9
+        },
+        "mean_shadow_ms": 19.399,
+        "clock_mhz": 780.0,
+        "display_interval_coverage_complete": false,
+        "display_fps": 11.17,
+        "foreground_frames": 300
+      }
+    }
+  },
+  "dynamic_shadow_moving_images": {
+    "paddock_mid": {
+      "travel_m": [
+        19.26,
+        19.26
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.135,
+      "max_pct_over_8": 0.017,
+      "mean_upper_scene_delta_255": 0.173,
+      "worst_96px_patch_mean_delta_255": 0.747,
+      "worst_local_frame": 46
+    },
+    "access": {
+      "travel_m": [
+        37.82,
+        37.82
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 4.641,
+      "max_pct_over_8": 59.326,
+      "mean_upper_scene_delta_255": 2.305,
+      "worst_96px_patch_mean_delta_255": 73.083,
+      "worst_local_frame": 20
+    },
+    "river": {
+      "travel_m": [
+        2.48,
+        2.48
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.185,
+      "max_pct_over_8": 0.126,
+      "mean_upper_scene_delta_255": 0.166,
+      "worst_96px_patch_mean_delta_255": 0.915,
+      "worst_local_frame": 1
+    },
+    "bog_entry": {
+      "travel_m": [
+        3.41,
+        3.41
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.181,
+      "max_pct_over_8": 0.077,
+      "mean_upper_scene_delta_255": 0.167,
+      "worst_96px_patch_mean_delta_255": 2.003,
+      "worst_local_frame": 19
+    },
+    "bog552": {
+      "travel_m": [
+        7.34,
+        7.34
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.402,
+      "max_pct_over_8": 2.293,
+      "mean_upper_scene_delta_255": 0.171,
+      "worst_96px_patch_mean_delta_255": 22.74,
+      "worst_local_frame": 13
+    }
+  },
+  "explicit_bark_coordinates": {
+    "run": "sweep78_bark_coordinate_film",
+    "radius_m": 55,
+    "crops": [
+      {
+        "region": "Paddock skyline",
+        "file": "r047.png",
+        "box": [
+          1056,
+          81,
+          1376,
+          291
+        ],
+        "repeat": {
+          "mean_abs_gray": 0.153,
+          "mean_signed_rgb": [
+            -0.004,
+            -0.004,
+            -0.004
+          ]
+        },
+        "tests": {
+          "sweep67_stock_film": {
+            "mean_abs_gray": 0.0,
+            "mean_signed_rgb": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "sweep66_lod1_film": {
+            "mean_abs_gray": 0.152,
+            "mean_signed_rgb": [
+              -0.003,
+              -0.004,
+              -0.006
+            ]
+          },
+          "sweep78_bark_coordinate_film": {
+            "mean_abs_gray": 0.144,
+            "mean_signed_rgb": [
+              -0.002,
+              -0.002,
+              -0.008
+            ]
+          }
+        }
+      },
+      {
+        "region": "Bog approach, right trunk",
+        "file": "r319.png",
+        "box": [
+          1424,
+          483,
+          1520,
+          579
+        ],
+        "repeat": {
+          "mean_abs_gray": 0.069,
+          "mean_signed_rgb": [
+            0.017,
+            0.008,
+            -0.014
+          ]
+        },
+        "tests": {
+          "sweep67_stock_film": {
+            "mean_abs_gray": 0.0,
+            "mean_signed_rgb": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "sweep66_lod1_film": {
+            "mean_abs_gray": 4.498,
+            "mean_signed_rgb": [
+              -0.444,
+              6.436,
+              -0.364
+            ]
+          },
+          "sweep78_bark_coordinate_film": {
+            "mean_abs_gray": 0.399,
+            "mean_signed_rgb": [
+              -0.086,
+              -0.246,
+              -0.055
+            ]
+          }
+        }
+      },
+      {
+        "region": "Deep bog, grass blades",
+        "file": "r410.png",
+        "box": [
+          272,
+          771,
+          368,
+          867
+        ],
+        "repeat": {
+          "mean_abs_gray": 13.675,
+          "mean_signed_rgb": [
+            -1.606,
+            -3.34,
+            -2.581
+          ]
+        },
+        "tests": {
+          "sweep67_stock_film": {
+            "mean_abs_gray": 0.0,
+            "mean_signed_rgb": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "sweep66_lod1_film": {
+            "mean_abs_gray": 13.896,
+            "mean_signed_rgb": [
+              -1.237,
+              -3.13,
+              -2.522
+            ]
+          },
+          "sweep78_bark_coordinate_film": {
+            "mean_abs_gray": 13.892,
+            "mean_signed_rgb": [
+              -1.264,
+              -3.164,
+              -2.537
+            ]
+          }
+        }
+      }
+    ],
+    "film": {
+      "paddock_mid": {
+        "travel_m": [
+          19.26,
+          19.26
+        ],
+        "pose_samples": 13,
+        "max_separation_cm": 0.0,
+        "samples": 48,
+        "mean_luma_delta_255": 0.12,
+        "max_pct_over_8": 0.006,
+        "mean_upper_scene_delta_255": 0.142,
+        "worst_96px_patch_mean_delta_255": 0.427,
+        "worst_local_frame": 36
+      },
+      "access": {
+        "travel_m": [
+          37.82,
+          37.82
+        ],
+        "pose_samples": 13,
+        "max_separation_cm": 0.0,
+        "samples": 48,
+        "mean_luma_delta_255": 5.082,
+        "max_pct_over_8": 65.135,
+        "mean_upper_scene_delta_255": 4.098,
+        "worst_96px_patch_mean_delta_255": 88.803,
+        "worst_local_frame": 37
+      },
+      "river": {
+        "travel_m": [
+          2.48,
+          2.48
+        ],
+        "pose_samples": 13,
+        "max_separation_cm": 0.0,
+        "samples": 48,
+        "mean_luma_delta_255": 0.276,
+        "max_pct_over_8": 0.42,
+        "mean_upper_scene_delta_255": 0.244,
+        "worst_96px_patch_mean_delta_255": 2.171,
+        "worst_local_frame": 47
+      },
+      "bog_entry": {
+        "travel_m": [
+          3.41,
+          3.41
+        ],
+        "pose_samples": 13,
+        "max_separation_cm": 0.0,
+        "samples": 48,
+        "mean_luma_delta_255": 0.289,
+        "max_pct_over_8": 0.286,
+        "mean_upper_scene_delta_255": 0.352,
+        "worst_96px_patch_mean_delta_255": 1.592,
+        "worst_local_frame": 0
+      },
+      "bog552": {
+        "travel_m": [
+          7.34,
+          7.34
+        ],
+        "pose_samples": 13,
+        "max_separation_cm": 0.0,
+        "samples": 48,
+        "mean_luma_delta_255": 0.497,
+        "max_pct_over_8": 2.482,
+        "mean_upper_scene_delta_255": 0.389,
+        "worst_96px_patch_mean_delta_255": 22.708,
+        "worst_local_frame": 14
+      }
+    },
+    "forest_access_patch": {
+      "region": [
+        480,
+        40,
+        1536,
+        328
+      ],
+      "frame": 40,
+      "worst_rect": [
+        864,
+        40,
+        960,
+        136
+      ],
+      "comparators": [
+        "sweep51_warm_stock_film",
+        "sweep66_lod1_film",
+        "sweep78_bark_coordinate_film",
+        "sweep75_dynamic_shadow_film"
+      ],
+      "worst_scores": [
+        0.346,
+        42.405,
+        42.476,
+        0.721
+      ],
+      "shared_excess": 41.683921813964844
+    },
+    "bog_frame_cost": {
+      "fps": 14.64,
+      "frames": 192,
+      "travel_m": 11.65,
+      "gpu_hardware": {
+        "median_clock_mhz": 1050.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 20.49,
+        "samples_thermally_limited": 13
+      },
+      "timings": {
+        "FrameTime": {
+          "mean": 68.302,
+          "p95": 72.623,
+          "median": 68.051,
+          "p99": 74.969,
+          "maximum": 78.734,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 192,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 67.126,
+          "p95": 71.259
+        },
+        "GPU/ShadowDepths": {
+          "mean": 15.225,
+          "p95": 18.488
+        },
+        "GPU/Basepass": {
+          "mean": 20.683,
+          "p95": 22.389
+        },
+        "GPU/RenderVelocities": {
+          "mean": 13.856,
+          "p95": 15.126
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 646.672,
+          "p95": 658.0
+        },
+        "GameThreadTime": {
+          "mean": 9.932,
+          "p95": 11.729
+        },
+        "RenderThreadTime": {
+          "mean": 10.369,
+          "p95": 12.673
+        },
+        "DrawCall/Basepass": {
+          "mean": 570.714,
+          "p95": 589.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2141799.01,
+          "p95": 2405547.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.453,
+          "p95": 0.485
+        }
+      }
+    },
+    "appearance_gate": "fail: persistent loss of sunlit foliage between trunks at forest access"
+  }
 }
