@@ -30,7 +30,7 @@ def timing_summary(frame):
     )
 
 
-def engine_results(folder, observations, data, collect_passes=False):
+def engine_results(folder, observations, data, collect_passes=False, all_gpu_passes=False):
     first_engine_frame = observations[0]["engine_frame"]
     manifest = json.loads(next(folder.glob("playperf-*.json")).read_text(encoding="utf-8-sig"))
     collections = []
@@ -44,6 +44,8 @@ def engine_results(folder, observations, data, collect_passes=False):
                       "GPU/Prepass", "GPU/RenderVelocities", "GPU/Basepass", "GPU/ShadowDepths",
                       "GPU/ShadowProjection", "GPU/NaniteVisBuffer", "GPU/NaniteBasePass",
                       "GPU/LumenScreenProbeGather", "GPU/LumenReflections", "GPU/TemporalSuperResolution")
+            if all_gpu_passes:
+                labels += tuple(key for key in reader.fieldnames if key.startswith("GPU/"))
             passes = {key: [] for key in labels if key in reader.fieldnames}
         for row in reader:
             try:
@@ -179,7 +181,9 @@ def continuous_results(folder, data):
         )
 
 
-def analyze(folder, stations=None):
+def analyze(folder, stations=None, all_gpu_passes=False):
+    if all_gpu_passes and not stations:
+        raise ValueError("The GPU breakdown requires a measured road interval")
     with (folder / "presentation.csv").open(newline="") as source:
         rows = [
             {
@@ -288,7 +292,8 @@ def analyze(folder, stations=None):
                 ),
             )
         data["sections"].append(info)
-    origin, frame_times, passes = engine_results(folder, rows, data, collect_passes=bool(stations))
+    origin, frame_times, passes = engine_results(folder, rows, data, collect_passes=bool(stations),
+                                                all_gpu_passes=all_gpu_passes)
     if stations:
         if plan["stage"] != "linkeddrive":
             raise ValueError("Road stations require a continuous foreground drive")
@@ -302,9 +307,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("folder", type=Path)
     parser.add_argument("--stations", type=float, nargs="+", help="First forward crossing of each surveyed road station, in metres")
+    parser.add_argument("--all-gpu-passes", action="store_true", help="Include every recorded GPU pass on those road intervals")
     args = parser.parse_args()
     folder = args.folder
-    result = analyze(folder, args.stations)
+    result = analyze(folder, args.stations, args.all_gpu_passes)
     if args.stations:
         (folder / "presentation-stations.json").write_text(json.dumps(result["station_windows"], indent=2) + "\n")
     (folder / "presentation-summary.json").write_text(json.dumps(result, indent=2) + "\n")

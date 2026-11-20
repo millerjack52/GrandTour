@@ -226,7 +226,7 @@ namespace
 				if (bNaniteShadows && !Shadow->SetStaticMesh(ShadowMesh)) return;
 				if (bNaniteShadows || bStaticCasterWind)
 				{
-					// The painted wind program returns zero in the original shadow pass.
+					// Isolate shadow wind. The live LiDAR leaves can move within 55 m.
 					Shadow->SetEvaluateWorldPositionOffset(false);
 				}
 				for (int32 Slot = 0; Slot < Source->GetNumMaterials(); ++Slot)

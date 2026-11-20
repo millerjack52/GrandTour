@@ -9964,6 +9964,544 @@
         },
         "verified_shadow_wind_evaluation": false
       }
+    },
+    "foreground_shadow_wind_disabled": {
+      "run": "sweep136_static_shadow_foreground",
+      "travel_m": 100.77747768021845,
+      "reason": "end_of_route",
+      "recoveries": [],
+      "window": {
+        "start_m": 2240,
+        "end_m": 2335,
+        "start_s": 4.344,
+        "end_s": 122.135,
+        "frames": 1520,
+        "moving": {
+          "frames": 1492,
+          "fps": 12.94,
+          "median_ms": 78.454,
+          "mean_ms": 77.265,
+          "p95_ms": 95.383,
+          "p99_ms": 126.132,
+          "maximum_ms": 178.918,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 1492,
+          "over_50_ms": 1487,
+          "over_100_ms": 46
+        },
+        "median_wheel_contacts": 4,
+        "max_lateral_offset_m": 0.77
+      },
+      "pass_mean_ms": {
+        "GameThreadTime": 10.897,
+        "GPUTime": 75.03,
+        "GPU/RenderVelocities": 16.531,
+        "GPU/Basepass": 23.462,
+        "GPU/ShadowDepths": 16.642
+      },
+      "foreground_samples": [
+        [
+          "bog_approach",
+          118,
+          118
+        ],
+        [
+          "deep_bog",
+          1524,
+          1524
+        ]
+      ],
+      "gpu_clock_mhz_at_least_90_pct_utilization": 997.5,
+      "thermal_limited_high_utilization_samples": 168,
+      "peak_gpu_c": 90,
+      "decision": "The mean lies between the two original 95 m drives, and p95 and p99 are worse than both. The trial stays outside the playable profile."
+    },
+    "shadow_wind_film": {
+      "poses": 65,
+      "frames": 240,
+      "specific_crops": [
+        {
+          "section": "paddock_mid",
+          "frame": "r019.png",
+          "rect": [
+            1424,
+            72,
+            1520,
+            168
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.162,
+            "mean_signed_rgb_255": [
+              -0.004,
+              -0.005,
+              0.008
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 0.157,
+            "mean_signed_rgb_255": [
+              -0.009,
+              -0.0,
+              -0.001
+            ]
+          }
+        },
+        {
+          "section": "paddock_mid",
+          "frame": "r027.png",
+          "rect": [
+            720,
+            232,
+            816,
+            328
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.159,
+            "mean_signed_rgb_255": [
+              -0.013,
+              -0.005,
+              -0.0
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 0.157,
+            "mean_signed_rgb_255": [
+              -0.005,
+              -0.007,
+              -0.011
+            ]
+          }
+        },
+        {
+          "section": "paddock_mid",
+          "frame": "r047.png",
+          "rect": [
+            1056,
+            81,
+            1376,
+            291
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.153,
+            "mean_signed_rgb_255": [
+              -0.004,
+              -0.004,
+              -0.004
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 0.152,
+            "mean_signed_rgb_255": [
+              -0.003,
+              -0.004,
+              -0.006
+            ]
+          }
+        },
+        {
+          "section": "access",
+          "frame": "r140.png",
+          "rect": [
+            864,
+            40,
+            960,
+            136
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.349,
+            "mean_signed_rgb_255": [
+              0.396,
+              0.316,
+              0.118
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 0.243,
+            "mean_signed_rgb_255": [
+              -0.131,
+              -0.09,
+              -0.053
+            ]
+          }
+        },
+        {
+          "section": "bog_entry",
+          "frame": "r319.png",
+          "rect": [
+            1424,
+            483,
+            1520,
+            579
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.069,
+            "mean_signed_rgb_255": [
+              0.017,
+              0.008,
+              -0.014
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 0.072,
+            "mean_signed_rgb_255": [
+              0.014,
+              0.012,
+              -0.01
+            ]
+          }
+        },
+        {
+          "section": "bog552",
+          "frame": "r410.png",
+          "rect": [
+            272,
+            771,
+            368,
+            867
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 13.675,
+            "mean_signed_rgb_255": [
+              -1.606,
+              -3.34,
+              -2.581
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 4.072,
+            "mean_signed_rgb_255": [
+              -1.468,
+              -1.435,
+              -0.835
+            ]
+          }
+        }
+      ],
+      "section_comparison": {
+        "paddock_mid": {
+          "travel_m": [
+            19.26,
+            19.26
+          ],
+          "pose_samples": 13,
+          "max_separation_cm": 0.0,
+          "samples": 48,
+          "mean_luma_delta_255": 0.125,
+          "max_pct_over_8": 0.007,
+          "mean_upper_scene_delta_255": 0.154,
+          "worst_96px_patch_mean_delta_255": 0.441,
+          "worst_local_frame": 44
+        },
+        "access": {
+          "travel_m": [
+            37.82,
+            37.82
+          ],
+          "pose_samples": 13,
+          "max_separation_cm": 0.0,
+          "samples": 48,
+          "mean_luma_delta_255": 4.218,
+          "max_pct_over_8": 50.94,
+          "mean_upper_scene_delta_255": 1.934,
+          "worst_96px_patch_mean_delta_255": 64.34,
+          "worst_local_frame": 38
+        },
+        "river": {
+          "travel_m": [
+            2.48,
+            2.48
+          ],
+          "pose_samples": 13,
+          "max_separation_cm": 0.0,
+          "samples": 48,
+          "mean_luma_delta_255": 0.203,
+          "max_pct_over_8": 0.168,
+          "mean_upper_scene_delta_255": 0.17,
+          "worst_96px_patch_mean_delta_255": 1.276,
+          "worst_local_frame": 35
+        },
+        "bog_entry": {
+          "travel_m": [
+            3.41,
+            3.41
+          ],
+          "pose_samples": 13,
+          "max_separation_cm": 0.0,
+          "samples": 48,
+          "mean_luma_delta_255": 0.197,
+          "max_pct_over_8": 0.167,
+          "mean_upper_scene_delta_255": 0.213,
+          "worst_96px_patch_mean_delta_255": 1.338,
+          "worst_local_frame": 20
+        },
+        "bog552": {
+          "travel_m": [
+            7.34,
+            7.34
+          ],
+          "pose_samples": 13,
+          "max_separation_cm": 0.0,
+          "samples": 48,
+          "mean_luma_delta_255": 0.323,
+          "max_pct_over_8": 1.666,
+          "mean_upper_scene_delta_255": 0.166,
+          "worst_96px_patch_mean_delta_255": 21.639,
+          "worst_local_frame": 14
+        }
+      },
+      "largest_local_excess_over_repeat": {
+        "paddock_mid": {
+          "frame": "r047.png",
+          "box": [
+            1136,
+            328,
+            1232,
+            424
+          ],
+          "repeat": 0.143,
+          "candidate": 0.489,
+          "excess": 0.346
+        },
+        "access": {
+          "frame": "r117.png",
+          "box": [
+            1456,
+            232,
+            1552,
+            328
+          ],
+          "repeat": 6.541,
+          "candidate": 68.689,
+          "excess": 62.148
+        },
+        "river": {
+          "frame": "r247.png",
+          "box": [
+            112,
+            616,
+            208,
+            712
+          ],
+          "repeat": 0.22,
+          "candidate": 1.661,
+          "excess": 1.441
+        },
+        "bog_entry": {
+          "frame": "r308.png",
+          "box": [
+            1360,
+            136,
+            1456,
+            232
+          ],
+          "repeat": 0.163,
+          "candidate": 0.991,
+          "excess": 0.828
+        },
+        "bog552": {
+          "frame": "r412.png",
+          "box": [
+            16,
+            712,
+            112,
+            808
+          ],
+          "repeat": 0.152,
+          "candidate": 1.662,
+          "excess": 1.51
+        }
+      },
+      "near_shadow_motion": "The live native LiDAR leaf graph has a nonzero-capable wind path within 55 metres. The films cannot prove identical movement in every near shadow."
+    },
+    "fine_raster_film": {
+      "setting": "r.Nanite.MaxPixelsPerEdge 0.25",
+      "control": "sweep137_stock_fine_raster",
+      "candidate": "sweep138_tree_fine_raster",
+      "matching_poses": 65,
+      "native_frame_pairs": 240,
+      "crops": [
+        {
+          "section": "paddock_mid",
+          "frame": "r019.png",
+          "rect": [
+            1424,
+            72,
+            1520,
+            168
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.261,
+            "mean_signed_rgb_255": [
+              0.095,
+              0.053,
+              0.002
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 12.222,
+            "mean_signed_rgb_255": [
+              -15.722,
+              -11.716,
+              -0.012
+            ]
+          }
+        },
+        {
+          "section": "paddock_mid",
+          "frame": "r027.png",
+          "rect": [
+            720,
+            232,
+            816,
+            328
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.231,
+            "mean_signed_rgb_255": [
+              0.073,
+              0.047,
+              0.014
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 9.651,
+            "mean_signed_rgb_255": [
+              -12.291,
+              -9.024,
+              -0.087
+            ]
+          }
+        },
+        {
+          "section": "paddock_mid",
+          "frame": "r047.png",
+          "rect": [
+            1056,
+            81,
+            1376,
+            291
+          ],
+          "repeat": {
+            "mean_absolute_brightness_255": 0.211,
+            "mean_signed_rgb_255": [
+              0.041,
+              0.023,
+              0.005
+            ]
+          },
+          "candidate": {
+            "mean_absolute_brightness_255": 3.444,
+            "mean_signed_rgb_255": [
+              -3.923,
+              -2.795,
+              0.033
+            ]
+          }
+        }
+      ],
+      "decision": "The sunlit crowns remain visibly darker. This setting affects both camera and shadow raster detail."
+    }
+  },
+  "foreground_gpu_breakdown": {
+    "sweep101_game_checkpoint_bog": {
+      "start_m": 2240,
+      "end_m": 2335,
+      "moving_frames": 1444,
+      "gpu_mean_ms": 69.568,
+      "top_gpu_passes_by_mean_ms": {
+        "GPU/ShadowDepths": 19.677,
+        "GPU/Basepass": 19.392,
+        "GPU/RenderVelocities": 14.297,
+        "GPU/TemporalSuperResolution": 2.995,
+        "GPU/Unaccounted": 2.057,
+        "GPU/BuildRenderingCommandsDeferred": 1.474,
+        "GPU/VolumetricFog": 0.992,
+        "GPU/Postprocessing": 0.803,
+        "GPU/RenderDeferredLighting": 0.609,
+        "GPU/DistanceFieldShadows": 0.566,
+        "GPU/ShadowProjection": 0.494,
+        "GPU/RayTracingDynamicGeometry": 0.473
+      }
+    },
+    "sweep106_original_foreground_bog": {
+      "start_m": 2240,
+      "end_m": 2335,
+      "moving_frames": 1542,
+      "gpu_mean_ms": 76.687,
+      "top_gpu_passes_by_mean_ms": {
+        "GPU/Basepass": 21.713,
+        "GPU/ShadowDepths": 21.671,
+        "GPU/RenderVelocities": 15.906,
+        "GPU/TemporalSuperResolution": 3.338,
+        "GPU/Unaccounted": 2.08,
+        "GPU/BuildRenderingCommandsDeferred": 1.617,
+        "GPU/VolumetricFog": 1.076,
+        "GPU/Postprocessing": 0.877,
+        "GPU/RenderDeferredLighting": 0.639,
+        "GPU/DistanceFieldShadows": 0.596,
+        "GPU/ShadowProjection": 0.54,
+        "GPU/Prepass": 0.516
+      }
+    },
+    "sweep117_size_matched_foreground": {
+      "start_m": 2240,
+      "end_m": 2335,
+      "moving_frames": 1410,
+      "gpu_mean_ms": 65.783,
+      "top_gpu_passes_by_mean_ms": {
+        "GPU/ShadowDepths": 23.39,
+        "GPU/Basepass": 11.025,
+        "GPU/RenderVelocities": 7.897,
+        "GPU/NaniteVisBuffer": 4.51,
+        "GPU/TemporalSuperResolution": 3.707,
+        "GPU/Unaccounted": 2.114,
+        "GPU/BuildRenderingCommandsDeferred": 1.818,
+        "GPU/VolumetricFog": 1.222,
+        "GPU/Postprocessing": 0.951,
+        "GPU/RenderDeferredLighting": 0.729,
+        "GPU/NaniteBasePass": 0.699,
+        "GPU/DistanceFieldShadows": 0.632
+      }
+    },
+    "sweep125_shadow_foreground": {
+      "start_m": 2240,
+      "end_m": 2335,
+      "moving_frames": 1586,
+      "gpu_mean_ms": 46.689,
+      "top_gpu_passes_by_mean_ms": {
+        "GPU/Basepass": 10.506,
+        "GPU/RenderVelocities": 7.022,
+        "GPU/ShadowDepths": 5.863,
+        "GPU/NaniteVisBuffer": 4.141,
+        "GPU/TemporalSuperResolution": 3.414,
+        "GPU/Unaccounted": 2.057,
+        "GPU/BuildRenderingCommandsDeferred": 1.635,
+        "GPU/VolumetricFog": 1.122,
+        "GPU/ShadowProjection": 0.981,
+        "GPU/RenderDeferredLighting": 0.92,
+        "GPU/Postprocessing": 0.876,
+        "GPU/DistanceFieldShadows": 0.747
+      }
+    },
+    "sweep124_access_road": {
+      "start_m": 1600,
+      "end_m": 1650,
+      "moving_frames": 154,
+      "gpu_mean_ms": 102.825,
+      "top_gpu_passes_by_mean_ms": {
+        "GPU/ShadowDepths": 35.814,
+        "GPU/Basepass": 22.139,
+        "GPU/RenderVelocities": 16.87,
+        "GPU/Translucency": 6.067,
+        "GPU/TemporalSuperResolution": 4.147,
+        "GPU/Unaccounted": 2.164,
+        "GPU/BuildRenderingCommandsDeferred": 2.094,
+        "GPU/VolumetricFog": 1.529,
+        "GPU/DistanceFieldShadows": 1.143,
+        "GPU/Postprocessing": 1.09,
+        "GPU/RenderDeferredLighting": 0.74,
+        "GPU/RayTracingDynamicGeometry": 0.682
+      }
     }
   }
 }

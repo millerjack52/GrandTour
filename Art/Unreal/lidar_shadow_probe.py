@@ -25,9 +25,18 @@ def inspect_materials(trees):
         for m in c.get_materials():
             if not m:
                 continue
+            instance = m
             while isinstance(m, u.MaterialInstance):
                 m = m.get_editor_property("parent")
-            if not m or m.get_path_name() in graphs:
+            if not m:
+                continue
+            key = m.get_path_name()
+            if key in graphs:
+                record = graphs[key]
+                if "breeze_cm_by_instance" in record and isinstance(instance, u.MaterialInstance):
+                    record["breeze_cm_by_instance"][instance.get_path_name()] = (
+                        instance.get_scalar_parameter_value("BreezeCm")
+                    )
                 continue
             try:
                 n = u.MaterialEditingLibrary.get_material_property_input_node(
@@ -51,8 +60,15 @@ def inspect_materials(trees):
                         )
                     ],
                 }
+                if isinstance(instance, u.MaterialInstance) and (
+                    "distance(P,Camera)" in (graphs[key]["wpo_code"] or "")
+                    and "gust*Amount*fade" in graphs[key]["wpo_code"]
+                ):
+                    graphs[key]["breeze_cm_by_instance"] = {
+                        instance.get_path_name(): instance.get_scalar_parameter_value("BreezeCm")
+                    }
             except Exception as exc:
-                graphs[m.get_path_name()] = {"error": str(exc)}
+                graphs.setdefault(key, {})["error"] = str(exc)
     (out / "tree-programs.json").write_text(json.dumps(graphs, indent=1))
 
 
@@ -161,6 +177,21 @@ if mode == "init":
             indent=1,
         )
     )
+elif mode == "restore_shadow_wind":
+    casters = [
+        c for actor in u.GameplayStatics.get_all_actors_of_class(game_world(), u.Actor)
+        for c in actor.get_components_by_class(u.InstancedStaticMeshComponent)
+        if "LidarFullNaniteShadow" in {str(tag) for tag in c.component_tags} and c.cast_shadow
+    ]
+    instances = sum(c.get_instance_count() for c in casters)
+    assert instances == 146197 and {c.static_mesh.get_name() for c in casters} == {
+        f"SM_NaniteRenderLod1_{i}" for i in range(3)
+    }
+    assert all(c.cast_hidden_shadow and not c.evaluate_world_position_offset for c in casters)
+    for c in casters:
+        c.set_evaluate_world_position_offset(True)
+    assert all(c.evaluate_world_position_offset and c.world_position_offset_disable_distance == 11000 for c in casters)
+    u.log(f"GT_RESTORED_CASTER_WIND instances={instances} groups={len(casters)}")
 elif mode == "verify_launch":
     trees = builtins.gt_shadow_tree_settings
     assert trees and all(c.world_position_offset_disable_distance == 11000 for c, _, _ in trees)
