@@ -4,6 +4,7 @@ LiDAR visual-preserving 60 fps optimization plan
 First driving measurements and ranked costs are recorded in
 LIDAR_DRIVING_BASELINE_2026-11-19.md.
 The first controlled wooded-track shadow trial is in LIDAR_WOODED_TRACK_SHADOW_TRIAL.md.
+The v8 default, route checks and deep-bog surface costs are in LIDAR_ROUTE_SHADOWS_AND_BASE_PASS.md.
 
 Outcome and baseline
 Aim for sustained 60 fps on the actual target laptop without reducing the chosen

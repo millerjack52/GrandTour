@@ -1,4 +1,4 @@
-"""Generate the frame schedule for a single-site standalone shadow experiment."""
+"""Schedule and analyze standalone LiDAR shadow and base-pass comparisons."""
 
 import csv
 import hashlib
@@ -11,8 +11,13 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def schedule(stage, candidate, out):
+def schedule(stage, candidate, out, base_family="control"):
     events = []
+    route_names = ("paddock_mid", "access", "river", "bog_entry", "bog552")
+    poses = {
+        p["name"]: p
+        for p in json.loads((ROOT / "Art/lidar_driving_baseline_poses.json").read_text())
+    }
     prefix = hashlib.sha256(out.name.encode()).hexdigest()[:8] + "_"
     windows = []
 
@@ -23,7 +28,11 @@ def schedule(stage, candidate, out):
         cmd(frame, f"py {ROOT.as_posix()}/Art/Unreal/lidar_shadow_probe.py {mode} {out.as_posix()}")
 
     def shot(frame, name):
-        filename = f"{prefix}{name}.png" if stage == "visual" else f"{out.as_posix()}/{name}.png"
+        filename = (
+            f"{prefix}{name}.png"
+            if stage in ("visual", "routefilm", "boundaryfilm", "routehold")
+            else f"{out.as_posix()}/{name}.png"
+        )
         cmd(frame, f"Shot filename={filename} -nosuffix")
 
     def window(start, end, name):
@@ -31,7 +40,149 @@ def schedule(stage, candidate, out):
         cmd(end, "LogLoc")
         windows.append(dict(name=name, start=start, end=end))
 
-    if stage == "diagnose":
+    def relocate(frame, name):
+        if name == "bog_entry":
+            probe(frame, "bog_entry")
+        else:
+            pose = poses[name]
+            cmd(frame, f"BugItGo {pose['x']} {pose['y']} {pose['z']} 0 {pose['yaw']} 0")
+
+    if stage in ("routefilm", "routetime", "boundaryfilm"):
+        if candidate not in ("tree110", "baseline", "saved"):
+            raise ValueError(candidate)
+        boundary = stage == "boundaryfilm"
+        route = ("paddock_mid", "access") if boundary else route_names
+        film = stage in ("routefilm", "boundaryfilm")
+        cmd(235, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(330, "verify_launch" if candidate in ("tree110", "saved") else "verify_stock")
+        for index, name in enumerate(route):
+            setup = 350 + (970 if boundary else 370 if film else 530) * index
+            relocate(setup, name)
+            start = setup + 181
+            cmd(start - 3, "Input.-key SpaceBar")
+            cmd(start - 1, "Input.+action IA_Throttle 0.8")
+            duration = 720 if boundary else 144 if film else 300
+            window(start, start + duration, name)
+            for f in range(start + 12, start + duration, 12):
+                cmd(f, "LogLoc")
+            if name in ("paddock_mid", "access", "river"):
+                cmd(start + 35, "Input.+action IA_Steer 0.22")
+                cmd(start + 62, "Input.-action IA_Steer")
+            if film:
+                interval = 12 if boundary else 3
+                for relative in range(0, duration, interval):
+                    shot(start + relative, f"r{index}{relative // interval:02}")
+            cmd(start + duration + 1, "Input.-action IA_Throttle")
+            cmd(start + duration + 3, "Input.+key SpaceBar")
+        frames = start + duration + 18
+    elif stage == "routehold":
+        cmd(235, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(330, "verify_launch")
+        for index, name in enumerate(route_names):
+            setup = 350 + 585 * index
+            relocate(setup, name)
+            start = setup + 164
+            cmd(start - 3, "Input.-key SpaceBar")
+            cmd(start - 1, "Input.+action IA_Throttle 0.8")
+            window(start, start + 384, name)
+            if name in ("paddock_mid", "access", "river"):
+                cmd(start + 35, "Input.+action IA_Steer 0.22")
+                cmd(start + 62, "Input.-action IA_Steer")
+            for n, offset in enumerate((72, 258)):
+                sample = 2 * index + n
+                f = start + offset
+                probe(f, "pause")
+                for mark, step, treatment in (
+                    ("a", 2, "stock"),
+                    ("b", 39, "trial"),
+                    ("c", 77, "stock"),
+                ):
+                    probe(f + step, "hold_" + treatment)
+                    cmd(f + step + 8, "r.Shadow.Virtual.Cache 1")
+                    shot(f + step + 29, f"h{sample}{mark}0")
+                    shot(f + step + 32, f"h{sample}{mark}1")
+                    if mark != "c":
+                        probe(f + step + 33, f"record_{sample}_{mark}")
+                probe(f + 112, "resume")
+            cmd(start + 385, "Input.-action IA_Throttle")
+            cmd(start + 386, "Input.+key SpaceBar")
+        frames = start + 408
+    elif stage == "basemoving":
+        if candidate != "saved":
+            raise ValueError("Use the saved LiDAR profile for the moving base-pass test")
+        script = (ROOT / "Art/Unreal/lidar_base_pass_probe.py").as_posix()
+        cmd(235, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(335, "verify_launch")
+        relocate(375, "bog552")
+        cmd(525, f"py {script} inventory bog552 {out.as_posix()}")
+        cmd(555, f"py {script} measure {base_family} {out.as_posix()}")
+        cmd(623, "Input.-key SpaceBar")
+        cmd(625, "Input.+action IA_Throttle 0.8")
+        window(626, 818, f"drive_{base_family}")
+        for frame in range(638, 818, 12):
+            cmd(frame, "LogLoc")
+        cmd(819, "Input.-action IA_Throttle")
+        cmd(820, "Input.+key SpaceBar")
+        shot(825, "diagnostic")
+        cmd(830, f"py {script} measure control {out.as_posix()}")
+        frames = 850
+    elif stage == "basepass":
+        cmd(250, "Input.+key SpaceBar")
+        probe(300, "init")
+        probe(340, "verify_launch" if candidate in ("tree110", "saved") else "verify_stock")
+        cases = (
+            "control",
+            "near_grass",
+            "far_grass",
+            "all_grass",
+            "control",
+            "trees",
+            "dressing",
+            "terrain",
+            "pickup",
+            "lowres",
+            "lowres_all_grass",
+            "lowres_trees",
+            "lowres_repeat",
+            "control",
+        )
+        cmd(350, "r.ProfileGPU.ShowUI 0")
+        cmd(350, "r.ProfileGPU.UnicodeOutput 0")
+        cmd(350, "r.ProfileGPU.ThresholdPercent 0.25")
+        name = "bog552"
+        setup = 375
+        relocate(setup, name)
+        script = (ROOT / "Art/Unreal/lidar_base_pass_probe.py").as_posix()
+        cmd(setup + 170, f"py {script} inventory {name} {out.as_posix()}")
+        cmd(setup + 181, "Input.-key SpaceBar")
+        cmd(setup + 183, "Input.+action IA_Throttle 0.8")
+        window(setup + 184, setup + 290, "bog552_drive")
+        cmd(setup + 291, "Input.-action IA_Throttle")
+        cmd(setup + 292, "Input.+key SpaceBar")
+        for step, case in enumerate(cases):
+            start = setup + 405 + step * 85
+            group = {"lowres": "control", "lowres_repeat": "control"}.get(
+                case, case.removeprefix("lowres_")
+            )
+            cmd(start, f"py {script} measure {group} {out.as_posix()}")
+            cmd(
+                start + 1,
+                "r.ScreenPercentage 50" if case.startswith("lowres") else "r.ScreenPercentage 75",
+            )
+            if case == "lowres":
+                cmd(start + 20, "r.DumpRenderTargetPoolMemory")
+            window(start + 35, start + 82, f"{name}_{step:02}_{case}")
+        # Draw-event instrumentation perturbs cost; enable it only outside the timed windows.
+        cmd(start + 83, "r.ShowMaterialDrawEvents 1")
+        cmd(start + 83, "r.EmitMeshDrawEvents 1")
+        cmd(start + 87, "ProfileGPU")
+        cmd(start + 94, "r.EmitMeshDrawEvents 0")
+        cmd(start + 94, "r.ShowMaterialDrawEvents 0")
+        frames = start + 112
+    elif stage == "diagnose":
         cmd(300, "Input.+key SpaceBar")
         probe(420, "init")
         for i, group in enumerate(
@@ -223,7 +374,7 @@ def analyze(out):
     log = (out / "drive.log").read_text(errors="replace")
     if "LogPython: Error:" in log:
         raise RuntimeError("Unreal Python error in drive.log")
-    if plan["stage"] == "visual":
+    if plan["stage"] in ("visual", "routefilm", "boundaryfilm", "routehold"):
         # Move only this run's uniquely named shots from the engine output directory.
         # Short Shot commands keep the dual-treatment schedule inside UE's command-line limit.
         screenshots = ROOT / "Saved_LidarDrive/Screenshots/WindowsEditor"
@@ -248,6 +399,8 @@ def analyze(out):
         "GameThreadTime",
         "RenderThreadTime",
     )
+    if plan["stage"] in ("basepass", "basemoving", "routetime"):
+        metrics += ("DrawCall/Basepass", "RHI/PrimitivesDrawn", "GPU/Prepass")
     with Path(manifest["csv"][0]).open(newline="") as f:
         reader = csv.DictReader(f)
         frames = []
@@ -267,7 +420,8 @@ def analyze(out):
     def stats(values):
         sort = sorted(values)
         return dict(
-            mean=round(statistics.mean(values), 3), p95=round(sort[round((len(sort) - 1) * 0.95)], 3)
+            mean=round(statistics.mean(values), 3),
+            p95=round(sort[round((len(sort) - 1) * 0.95)], 3),
         )
 
     tabs = []
@@ -293,7 +447,7 @@ def analyze(out):
             pawn_cm=xyz,
             timings=dict(zip(metrics, [stats(col) for col in zip(*frames[lo:hi])])),
         )
-        if plan["stage"] == "drive":
+        if plan["stage"] in ("drive", "routetime"):
             # Equal wall-time exposure even when a faster candidate renders more frames.
             times = [r[0] / 1000 for r in frames[lo:hi]]
             import itertools, bisect
@@ -303,7 +457,9 @@ def analyze(out):
             assert 0 < stop < len(clock), "Drive did not cover eight seconds"
             split = lo + stop
             m = bisect.bisect_left(markers, split)
-            dist8 = sum(math.dist(x[:2], y[:2]) / 100 for x, y in zip(xyz[: m - a - 1], xyz[1 : m - a]))
+            dist8 = sum(
+                math.dist(x[:2], y[:2]) / 100 for x, y in zip(xyz[: m - a - 1], xyz[1 : m - a])
+            )
             first = markers[m - 1]
             frac = (
                 (clock[stop] - clock[first - lo]) / (clock[markers[m] - lo] - clock[first - lo])
@@ -318,7 +474,9 @@ def analyze(out):
                 estimated_travel_m=round(dist8, 2),
                 timings=dict(zip(metrics, [stats(col) for col in zip(*frames[lo:split])])),
             )
-            target = 1.5 if w["name"] == "bog" else 12.0
+            target = {"bog": 1.5, "river": 1.0, "bog_entry": 2.0, "bog552": 1.0}.get(
+                w["name"], 12.0
+            )
             travel = [
                 0.0,
                 *itertools.accumulate(math.dist(x[:2], y[:2]) / 100 for x, y in zip(xyz, xyz[1:])),
@@ -358,7 +516,7 @@ def analyze(out):
 
 if __name__ == "__main__":
     if sys.argv[1] == "schedule":
-        _, action, stage, candidate, out = sys.argv
-        schedule(stage, candidate, Path(out))
+        _, action, stage, candidate, out, *family = sys.argv
+        schedule(stage, candidate, Path(out), *family)
     elif sys.argv[1] == "analyze":
         analyze(Path(sys.argv[2]))

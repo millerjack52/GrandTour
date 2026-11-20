@@ -39,7 +39,10 @@ def inspect_materials(trees):
                     if isinstance(n, u.MaterialExpressionCustom)
                     else None,
                     "custom": [
-                        [str(e.get_editor_property("desc")), str(e.get_editor_property("code"))[:1800]]
+                        [
+                            str(e.get_editor_property("desc")),
+                            str(e.get_editor_property("code"))[:1800],
+                        ]
                         for e in u.MaterialEditingLibrary.get_material_expressions(m)
                         if isinstance(e, u.MaterialExpressionCustom)
                         and (
@@ -55,7 +58,9 @@ def inspect_materials(trees):
 
 if mode == "init":
     world = u.find_object(None, "/Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy.L_LidarStudy")
-    assert world and u.GameplayStatics.get_player_pawn(world, 0), "Could not resolve live LiDAR vehicle"
+    assert world and u.GameplayStatics.get_player_pawn(world, 0), (
+        "Could not resolve live LiDAR vehicle"
+    )
     groups = collections.defaultdict(list)
     inventory = collections.Counter()
     samples = []
@@ -70,7 +75,9 @@ if mode == "init":
             owner = actor.get_class().get_name()
             tags = " ".join(map(str, c.component_tags))
             desc = (asset + " " + owner + " " + tags + " " + actor.get_name()).lower()
-            if any(s in desc for s in ("tree", "canopy", "conifer", "trunk", "pine", "woodlandforest")):
+            if any(
+                s in desc for s in ("tree", "canopy", "conifer", "trunk", "pine", "woodlandforest")
+            ):
                 group = "trees"
             elif (
                 "landscapecomponent" in c.get_class().get_name().lower()
@@ -102,7 +109,10 @@ if mode == "init":
                 group = "other"
             groups[group].append(c)
             inventory[(group, owner, c.get_class().get_name(), asset, tags)] += 1
-            if isinstance(c, u.StaticMeshComponent) and c.world_position_offset_disable_distance > 0:
+            if (
+                isinstance(c, u.StaticMeshComponent)
+                and c.world_position_offset_disable_distance > 0
+            ):
                 other_distances[(tags, asset, c.world_position_offset_disable_distance)] += 1
             if isinstance(c, u.InstancedStaticMeshComponent):
                 if "FloraWorld" in tags:
@@ -133,7 +143,8 @@ if mode == "init":
         if {str(t) for t in c.component_tags} & {"FloraWorldCanopy", "FloraWorldSaplings"}
     ]
     builtins.gt_shadow_tree_settings = [
-        (c, c.world_position_offset_disable_distance, c.evaluate_world_position_offset) for c in trees
+        (c, c.world_position_offset_disable_distance, c.evaluate_world_position_offset)
+        for c in trees
     ]
     inspect_materials(trees)
     builtins.gt_shadow_groups = groups
@@ -160,10 +171,24 @@ elif mode == "verify_launch":
         == -3
     )
     u.log(f"GT_TREE_SHADOW_VERIFIED components={len(trees)}")
-elif mode == "approach":
+elif mode == "verify_stock":
+    trees = builtins.gt_shadow_tree_settings
+    assert trees and all(c.world_position_offset_disable_distance == 0 for c, _, _ in trees)
+    assert (
+        u.SystemLibrary.get_console_variable_int_value(
+            "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias"
+        )
+        == 3
+    )
+    u.log(f"GT_TREE_STOCK_VERIFIED components={len(trees)}")
+elif mode in ("approach", "bog_entry"):
     world = game_world()
     # Surveyed centreline about 18 m before the baseline point on Logging mud track fce5.
     x, y = -44506.0, -39484.0
+    yaw = -73
+    if mode == "bog_entry":
+        # Start the drive 24 metres before the deep-bog checkpoint on its heading.
+        x, y, yaw = -27247.0, -62212.0, -19.6745
     xy = u.Vector2D(x, y)
     height = None
     for tile in u.GameplayStatics.get_all_actors_of_class(world, u.GTRoadReliefTile):
@@ -194,7 +219,9 @@ elif mode == "approach":
     assert 2500 < height < 8000, "Implausible road height"
     u.log(f"GT_SHADOW_APPROACH surface_z={height:.2f}")
     pc = u.GameplayStatics.get_player_controller(world, 0)
-    u.SystemLibrary.execute_console_command(world, f"BugItGo {x} {y} {height + 110.0} 0 -73 0", pc)
+    u.SystemLibrary.execute_console_command(
+        world, f"BugItGo {x} {y} {height + 110.0} 0 {yaw} 0", pc
+    )
 elif mode.startswith("record_"):
     w = game_world()
     pawn = u.GameplayStatics.get_player_pawn(w, 0)
@@ -211,6 +238,16 @@ elif mode.startswith("record_"):
     )
 elif mode in ("pause", "resume"):
     assert u.GameplayStatics.set_game_paused(game_world(), mode == "pause")
+elif mode in ("hold_trial", "hold_stock"):
+    world = game_world()
+    trial = mode == "hold_trial"
+    for component, _, _ in builtins.gt_shadow_tree_settings:
+        component.set_world_position_offset_disable_distance(11000 if trial else 0)
+    bias = -3 if trial else 3
+    u.SystemLibrary.execute_console_command(
+        world, f"r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias {bias}"
+    )
+    u.SystemLibrary.execute_console_command(world, "r.Shadow.Virtual.Cache 0")
 elif mode.startswith("wind_"):
     if not (out / "tree-programs.json").exists():
         inspect_materials([x[0] for x in builtins.gt_shadow_tree_settings])

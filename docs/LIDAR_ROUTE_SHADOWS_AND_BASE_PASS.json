@@ -1,0 +1,2688 @@
+{
+  "conditions": {
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+    "preset_sha256": "9D6412474695435CA1CD928542EBF88AE2F957239AA027B172310B9C4938D318",
+    "module_sha256": "8FF157DEA769DA55488186574F5912DD934900475AD790C54BE32F6920400491",
+    "map_sha256": "4AF178BF4C88DEC6FEB823DAEBA3B2B45E3EB1740F0AC0B8607524413F1FCED6",
+    "audio_enabled": true,
+    "os_build": "26200",
+    "offscreen": true
+  },
+  "route": {
+    "paddock_mid": {
+      "stock": {
+        "first_8s": {
+          "fps": 17.75,
+          "frames": 143,
+          "seconds": 8.055,
+          "travel_m": 19.26,
+          "means": {
+            "FrameTime": 56.327,
+            "GPUTime": 54.354,
+            "GPU/ShadowDepths": 13.704,
+            "GPU/Basepass": 14.607,
+            "GPU/RenderVelocities": 9.649,
+            "DrawCall/ShadowDepths": 1499.587,
+            "GameThreadTime": 10.765,
+            "RenderThreadTime": 15.2,
+            "DrawCall/Basepass": 757.448,
+            "RHI/PrimitivesDrawn": 3525156.42,
+            "GPU/Prepass": 0.434
+          },
+          "p95_frame_ms": 61.984
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 98,
+          "seconds": 5.471,
+          "fps": 17.91,
+          "timings": {
+            "FrameTime": {
+              "mean": 55.823,
+              "p95": 61.603
+            },
+            "GPUTime": {
+              "mean": 53.899,
+              "p95": 56.162
+            },
+            "GPU/ShadowDepths": {
+              "mean": 13.678,
+              "p95": 14.272
+            },
+            "GPU/Basepass": {
+              "mean": 14.439,
+              "p95": 14.934
+            },
+            "GPU/RenderVelocities": {
+              "mean": 9.53,
+              "p95": 9.882
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1504.388,
+              "p95": 1515.0
+            },
+            "GameThreadTime": {
+              "mean": 10.647,
+              "p95": 13.147
+            },
+            "RenderThreadTime": {
+              "mean": 15.256,
+              "p95": 19.798
+            },
+            "DrawCall/Basepass": {
+              "mean": 758.469,
+              "p95": 795.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 3508065.592,
+              "p95": 3754015.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.427,
+              "p95": 0.454
+            }
+          }
+        },
+        "full_drive_m": 53.76
+      },
+      "candidate": {
+        "first_8s": {
+          "fps": 21.46,
+          "frames": 172,
+          "seconds": 8.015,
+          "travel_m": 27.33,
+          "means": {
+            "FrameTime": 46.599,
+            "GPUTime": 44.644,
+            "GPU/ShadowDepths": 4.526,
+            "GPU/Basepass": 14.613,
+            "GPU/RenderVelocities": 9.51,
+            "DrawCall/ShadowDepths": 1495.163,
+            "GameThreadTime": 10.885,
+            "RenderThreadTime": 14.582,
+            "DrawCall/Basepass": 749.488,
+            "RHI/PrimitivesDrawn": 3544947.07,
+            "GPU/Prepass": 0.428
+          },
+          "p95_frame_ms": 52.468
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 99,
+          "seconds": 4.529,
+          "fps": 21.86,
+          "timings": {
+            "FrameTime": {
+              "mean": 45.752,
+              "p95": 52.456
+            },
+            "GPUTime": {
+              "mean": 43.806,
+              "p95": 45.965
+            },
+            "GPU/ShadowDepths": {
+              "mean": 4.521,
+              "p95": 4.797
+            },
+            "GPU/Basepass": {
+              "mean": 14.271,
+              "p95": 14.7
+            },
+            "GPU/RenderVelocities": {
+              "mean": 9.295,
+              "p95": 9.56
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1500.616,
+              "p95": 1521.0
+            },
+            "GameThreadTime": {
+              "mean": 10.35,
+              "p95": 12.986
+            },
+            "RenderThreadTime": {
+              "mean": 14.037,
+              "p95": 18.933
+            },
+            "DrawCall/Basepass": {
+              "mean": 748.253,
+              "p95": 794.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 3504270.939,
+              "p95": 3775053.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.412,
+              "p95": 0.435
+            }
+          }
+        },
+        "full_drive_m": 56.88
+      }
+    },
+    "access": {
+      "stock": {
+        "first_8s": {
+          "fps": 9.86,
+          "frames": 79,
+          "seconds": 8.015,
+          "travel_m": 16.89,
+          "means": {
+            "FrameTime": 101.461,
+            "GPUTime": 99.311,
+            "GPU/ShadowDepths": 36.939,
+            "GPU/Basepass": 25.247,
+            "GPU/RenderVelocities": 17.324,
+            "DrawCall/ShadowDepths": 1425.899,
+            "GameThreadTime": 7.461,
+            "RenderThreadTime": 13.759,
+            "DrawCall/Basepass": 793.797,
+            "RHI/PrimitivesDrawn": 3438980.722,
+            "GPU/Prepass": 2.905
+          },
+          "p95_frame_ms": 115.793
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 65,
+          "seconds": 6.485,
+          "fps": 10.02,
+          "timings": {
+            "FrameTime": {
+              "mean": 99.771,
+              "p95": 115.06
+            },
+            "GPUTime": {
+              "mean": 97.732,
+              "p95": 113.236
+            },
+            "GPU/ShadowDepths": {
+              "mean": 36.178,
+              "p95": 43.079
+            },
+            "GPU/Basepass": {
+              "mean": 24.79,
+              "p95": 29.047
+            },
+            "GPU/RenderVelocities": {
+              "mean": 16.846,
+              "p95": 19.086
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1422.415,
+              "p95": 1442.0
+            },
+            "GameThreadTime": {
+              "mean": 7.301,
+              "p95": 10.039
+            },
+            "RenderThreadTime": {
+              "mean": 13.857,
+              "p95": 16.945
+            },
+            "DrawCall/Basepass": {
+              "mean": 784.846,
+              "p95": 833.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 3422302.538,
+              "p95": 3976195.0
+            },
+            "GPU/Prepass": {
+              "mean": 2.839,
+              "p95": 3.312
+            }
+          }
+        },
+        "full_drive_m": 42.29
+      },
+      "candidate": {
+        "first_8s": {
+          "fps": 13.53,
+          "frames": 109,
+          "seconds": 8.054,
+          "travel_m": 29.05,
+          "means": {
+            "FrameTime": 73.889,
+            "GPUTime": 71.745,
+            "GPU/ShadowDepths": 10.322,
+            "GPU/Basepass": 23.553,
+            "GPU/RenderVelocities": 16.639,
+            "DrawCall/ShadowDepths": 1431.174,
+            "GameThreadTime": 8.386,
+            "RenderThreadTime": 13.965,
+            "DrawCall/Basepass": 802.817,
+            "RHI/PrimitivesDrawn": 3458487.0,
+            "GPU/Prepass": 2.821
+          },
+          "p95_frame_ms": 81.155
+        },
+        "matched_distance": {
+          "target_m": 12.0,
+          "frames": 67,
+          "seconds": 4.831,
+          "fps": 13.87,
+          "timings": {
+            "FrameTime": {
+              "mean": 72.106,
+              "p95": 81.155
+            },
+            "GPUTime": {
+              "mean": 70.044,
+              "p95": 78.445
+            },
+            "GPU/ShadowDepths": {
+              "mean": 10.068,
+              "p95": 16.871
+            },
+            "GPU/Basepass": {
+              "mean": 23.317,
+              "p95": 24.383
+            },
+            "GPU/RenderVelocities": {
+              "mean": 16.352,
+              "p95": 17.024
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 1426.433,
+              "p95": 1444.0
+            },
+            "GameThreadTime": {
+              "mean": 7.272,
+              "p95": 10.194
+            },
+            "RenderThreadTime": {
+              "mean": 13.611,
+              "p95": 16.448
+            },
+            "DrawCall/Basepass": {
+              "mean": 777.731,
+              "p95": 834.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 3422315.627,
+              "p95": 4049171.0
+            },
+            "GPU/Prepass": {
+              "mean": 2.822,
+              "p95": 2.982
+            }
+          }
+        },
+        "full_drive_m": 41.29
+      }
+    },
+    "river": {
+      "stock": {
+        "first_8s": {
+          "fps": 12.09,
+          "frames": 97,
+          "seconds": 8.02,
+          "travel_m": 2.97,
+          "means": {
+            "FrameTime": 82.68,
+            "GPUTime": 81.357,
+            "GPU/ShadowDepths": 46.017,
+            "GPU/Basepass": 11.545,
+            "GPU/RenderVelocities": 7.627,
+            "DrawCall/ShadowDepths": 729.784,
+            "GameThreadTime": 11.317,
+            "RenderThreadTime": 10.396,
+            "DrawCall/Basepass": 825.67,
+            "RHI/PrimitivesDrawn": 2892900.402,
+            "GPU/Prepass": 0.837
+          },
+          "p95_frame_ms": 92.516
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 26,
+          "seconds": 2.095,
+          "fps": 12.41,
+          "timings": {
+            "FrameTime": {
+              "mean": 80.574,
+              "p95": 95.495
+            },
+            "GPUTime": {
+              "mean": 79.126,
+              "p95": 93.466
+            },
+            "GPU/ShadowDepths": {
+              "mean": 46.834,
+              "p95": 53.16
+            },
+            "GPU/Basepass": {
+              "mean": 10.262,
+              "p95": 13.736
+            },
+            "GPU/RenderVelocities": {
+              "mean": 6.7,
+              "p95": 9.08
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 723.5,
+              "p95": 727.0
+            },
+            "GameThreadTime": {
+              "mean": 9.889,
+              "p95": 14.327
+            },
+            "RenderThreadTime": {
+              "mean": 9.853,
+              "p95": 15.038
+            },
+            "DrawCall/Basepass": {
+              "mean": 757.462,
+              "p95": 960.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2571173.269,
+              "p95": 3317651.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.655,
+              "p95": 0.99
+            }
+          }
+        },
+        "full_drive_m": 6.1
+      },
+      "candidate": {
+        "first_8s": {
+          "fps": 19.97,
+          "frames": 160,
+          "seconds": 8.011,
+          "travel_m": 4.56,
+          "means": {
+            "FrameTime": 50.068,
+            "GPUTime": 48.745,
+            "GPU/ShadowDepths": 13.865,
+            "GPU/Basepass": 11.219,
+            "GPU/RenderVelocities": 7.443,
+            "DrawCall/ShadowDepths": 729.281,
+            "GameThreadTime": 10.057,
+            "RenderThreadTime": 10.195,
+            "DrawCall/Basepass": 776.337,
+            "RHI/PrimitivesDrawn": 2685783.381,
+            "GPU/Prepass": 0.85
+          },
+          "p95_frame_ms": 68.688
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 28,
+          "seconds": 1.345,
+          "fps": 20.82,
+          "timings": {
+            "FrameTime": {
+              "mean": 48.023,
+              "p95": 57.839
+            },
+            "GPUTime": {
+              "mean": 46.311,
+              "p95": 62.733
+            },
+            "GPU/ShadowDepths": {
+              "mean": 15.049,
+              "p95": 25.201
+            },
+            "GPU/Basepass": {
+              "mean": 10.225,
+              "p95": 12.743
+            },
+            "GPU/RenderVelocities": {
+              "mean": 6.695,
+              "p95": 8.171
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 727.107,
+              "p95": 736.0
+            },
+            "GameThreadTime": {
+              "mean": 8.128,
+              "p95": 11.421
+            },
+            "RenderThreadTime": {
+              "mean": 9.96,
+              "p95": 14.679
+            },
+            "DrawCall/Basepass": {
+              "mean": 713.0,
+              "p95": 923.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2436394.5,
+              "p95": 3259971.0
+            },
+            "GPU/Prepass": {
+              "mean": 0.638,
+              "p95": 0.926
+            }
+          }
+        },
+        "full_drive_m": 6.02
+      }
+    },
+    "bog_entry": {
+      "stock": {
+        "first_8s": {
+          "fps": 9.36,
+          "frames": 75,
+          "seconds": 8.015,
+          "travel_m": 0.82,
+          "means": {
+            "FrameTime": 106.872,
+            "GPUTime": 105.412,
+            "GPU/ShadowDepths": 51.299,
+            "GPU/Basepass": 23.545,
+            "GPU/RenderVelocities": 16.3,
+            "DrawCall/ShadowDepths": 594.947,
+            "GameThreadTime": 8.613,
+            "RenderThreadTime": 10.848,
+            "DrawCall/Basepass": 600.88,
+            "RHI/PrimitivesDrawn": 2507409.693,
+            "GPU/Prepass": 1.303
+          },
+          "p95_frame_ms": 117.945
+        },
+        "matched_distance": {
+          "target_m": 2.0,
+          "frames": 128,
+          "seconds": 13.772,
+          "fps": 9.29,
+          "timings": {
+            "FrameTime": {
+              "mean": 107.594,
+              "p95": 119.413
+            },
+            "GPUTime": {
+              "mean": 106.114,
+              "p95": 128.513
+            },
+            "GPU/ShadowDepths": {
+              "mean": 52.002,
+              "p95": 64.986
+            },
+            "GPU/Basepass": {
+              "mean": 23.511,
+              "p95": 27.819
+            },
+            "GPU/RenderVelocities": {
+              "mean": 16.288,
+              "p95": 19.379
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 595.422,
+              "p95": 601.0
+            },
+            "GameThreadTime": {
+              "mean": 8.655,
+              "p95": 9.965
+            },
+            "RenderThreadTime": {
+              "mean": 10.899,
+              "p95": 14.492
+            },
+            "DrawCall/Basepass": {
+              "mean": 597.828,
+              "p95": 753.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2484923.297,
+              "p95": 3702543.0
+            },
+            "GPU/Prepass": {
+              "mean": 1.305,
+              "p95": 1.86
+            }
+          }
+        },
+        "full_drive_m": 2.42
+      },
+      "candidate": {
+        "first_8s": {
+          "fps": 13.69,
+          "frames": 110,
+          "seconds": 8.035,
+          "travel_m": 1.19,
+          "means": {
+            "FrameTime": 73.044,
+            "GPUTime": 71.714,
+            "GPU/ShadowDepths": 14.849,
+            "GPU/Basepass": 24.563,
+            "GPU/RenderVelocities": 17.097,
+            "DrawCall/ShadowDepths": 597.091,
+            "GameThreadTime": 7.942,
+            "RenderThreadTime": 11.021,
+            "DrawCall/Basepass": 595.982,
+            "RHI/PrimitivesDrawn": 2433009.509,
+            "GPU/Prepass": 1.323
+          },
+          "p95_frame_ms": 88.698
+        },
+        "matched_distance": {
+          "target_m": 2.0,
+          "frames": 195,
+          "seconds": 14.039,
+          "fps": 13.89,
+          "timings": {
+            "FrameTime": {
+              "mean": 71.995,
+              "p95": 86.025
+            },
+            "GPUTime": {
+              "mean": 70.631,
+              "p95": 83.428
+            },
+            "GPU/ShadowDepths": {
+              "mean": 14.195,
+              "p95": 20.514
+            },
+            "GPU/Basepass": {
+              "mean": 24.326,
+              "p95": 30.074
+            },
+            "GPU/RenderVelocities": {
+              "mean": 16.916,
+              "p95": 20.735
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 596.99,
+              "p95": 604.0
+            },
+            "GameThreadTime": {
+              "mean": 7.877,
+              "p95": 9.311
+            },
+            "RenderThreadTime": {
+              "mean": 11.036,
+              "p95": 15.028
+            },
+            "DrawCall/Basepass": {
+              "mean": 604.133,
+              "p95": 787.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2427540.99,
+              "p95": 3323367.0
+            },
+            "GPU/Prepass": {
+              "mean": 1.306,
+              "p95": 1.978
+            }
+          }
+        },
+        "full_drive_m": 2.26
+      }
+    },
+    "bog552": {
+      "stock": {
+        "first_8s": {
+          "fps": 8.87,
+          "frames": 71,
+          "seconds": 8.002,
+          "travel_m": 3.64,
+          "means": {
+            "FrameTime": 112.708,
+            "GPUTime": 111.112,
+            "GPU/ShadowDepths": 52.889,
+            "GPU/Basepass": 25.197,
+            "GPU/RenderVelocities": 17.322,
+            "DrawCall/ShadowDepths": 607.479,
+            "GameThreadTime": 11.908,
+            "RenderThreadTime": 11.803,
+            "DrawCall/Basepass": 727.676,
+            "RHI/PrimitivesDrawn": 3085862.915,
+            "GPU/Prepass": 1.473
+          },
+          "p95_frame_ms": 119.885
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 23,
+          "seconds": 2.512,
+          "fps": 9.16,
+          "timings": {
+            "FrameTime": {
+              "mean": 109.198,
+              "p95": 119.388
+            },
+            "GPUTime": {
+              "mean": 107.609,
+              "p95": 117.205
+            },
+            "GPU/ShadowDepths": {
+              "mean": 52.594,
+              "p95": 54.419
+            },
+            "GPU/Basepass": {
+              "mean": 24.215,
+              "p95": 27.835
+            },
+            "GPU/RenderVelocities": {
+              "mean": 16.76,
+              "p95": 19.204
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 608.13,
+              "p95": 612.0
+            },
+            "GameThreadTime": {
+              "mean": 11.062,
+              "p95": 12.974
+            },
+            "RenderThreadTime": {
+              "mean": 11.471,
+              "p95": 14.891
+            },
+            "DrawCall/Basepass": {
+              "mean": 677.261,
+              "p95": 823.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2915189.261,
+              "p95": 3548053.0
+            },
+            "GPU/Prepass": {
+              "mean": 1.352,
+              "p95": 1.817
+            }
+          }
+        },
+        "full_drive_m": 6.71
+      },
+      "candidate": {
+        "first_8s": {
+          "fps": 12.44,
+          "frames": 100,
+          "seconds": 8.039,
+          "travel_m": 4.93,
+          "means": {
+            "FrameTime": 80.386,
+            "GPUTime": 74.784,
+            "GPU/ShadowDepths": 13.253,
+            "GPU/Basepass": 26.397,
+            "GPU/RenderVelocities": 18.194,
+            "DrawCall/ShadowDepths": 603.76,
+            "GameThreadTime": 17.466,
+            "RenderThreadTime": 12.223,
+            "DrawCall/Basepass": 727.46,
+            "RHI/PrimitivesDrawn": 3083607.04,
+            "GPU/Prepass": 1.554
+          },
+          "p95_frame_ms": 85.981
+        },
+        "matched_distance": {
+          "target_m": 1.0,
+          "frames": 24,
+          "seconds": 1.753,
+          "fps": 13.69,
+          "timings": {
+            "FrameTime": {
+              "mean": 73.035,
+              "p95": 84.748
+            },
+            "GPUTime": {
+              "mean": 71.774,
+              "p95": 83.296
+            },
+            "GPU/ShadowDepths": {
+              "mean": 13.81,
+              "p95": 14.669
+            },
+            "GPU/Basepass": {
+              "mean": 25.353,
+              "p95": 30.788
+            },
+            "GPU/RenderVelocities": {
+              "mean": 17.497,
+              "p95": 21.234
+            },
+            "DrawCall/ShadowDepths": {
+              "mean": 610.75,
+              "p95": 620.0
+            },
+            "GameThreadTime": {
+              "mean": 10.158,
+              "p95": 12.184
+            },
+            "RenderThreadTime": {
+              "mean": 11.249,
+              "p95": 14.64
+            },
+            "DrawCall/Basepass": {
+              "mean": 659.458,
+              "p95": 815.0
+            },
+            "RHI/PrimitivesDrawn": {
+              "mean": 2756118.0,
+              "p95": 3560031.0
+            },
+            "GPU/Prepass": {
+              "mean": 1.348,
+              "p95": 1.975
+            }
+          }
+        },
+        "full_drive_m": 11.13
+      }
+    }
+  },
+  "motion": {
+    "paddock_mid": {
+      "travel_m": [
+        19.26,
+        19.26
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.199,
+      "max_pct_over_8": 0.133,
+      "mean_upper_scene_delta_255": 0.324,
+      "worst_96px_patch_mean_delta_255": 2.038,
+      "worst_local_frame": 47
+    },
+    "access": {
+      "travel_m": [
+        37.82,
+        37.82
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 4.783,
+      "max_pct_over_8": 46.591,
+      "mean_upper_scene_delta_255": 1.868,
+      "worst_96px_patch_mean_delta_255": 84.979,
+      "worst_local_frame": 25
+    },
+    "river": {
+      "travel_m": [
+        2.48,
+        2.48
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.271,
+      "max_pct_over_8": 0.259,
+      "mean_upper_scene_delta_255": 0.211,
+      "worst_96px_patch_mean_delta_255": 3.601,
+      "worst_local_frame": 31
+    },
+    "bog_entry": {
+      "travel_m": [
+        3.41,
+        3.41
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.206,
+      "max_pct_over_8": 0.089,
+      "mean_upper_scene_delta_255": 0.205,
+      "worst_96px_patch_mean_delta_255": 1.276,
+      "worst_local_frame": 18
+    },
+    "bog552": {
+      "travel_m": [
+        7.34,
+        7.34
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.302,
+      "max_pct_over_8": 1.123,
+      "mean_upper_scene_delta_255": 0.183,
+      "worst_96px_patch_mean_delta_255": 12.092,
+      "worst_local_frame": 10
+    }
+  },
+  "longer_drives": {
+    "paddock_mid": {
+      "travel_m": [
+        84.95,
+        84.95
+      ],
+      "pose_samples": 61,
+      "max_separation_cm": 0.0,
+      "samples": 60,
+      "mean_luma_delta_255": 0.179,
+      "max_pct_over_8": 0.253,
+      "mean_upper_scene_delta_255": 0.278,
+      "worst_96px_patch_mean_delta_255": 1.577,
+      "worst_local_frame": 46
+    },
+    "access": {
+      "travel_m": [
+        36.45,
+        36.45
+      ],
+      "pose_samples": 61,
+      "max_separation_cm": 0.0,
+      "samples": 60,
+      "mean_luma_delta_255": 0.919,
+      "max_pct_over_8": 44.37,
+      "mean_upper_scene_delta_255": 0.397,
+      "worst_96px_patch_mean_delta_255": 63.235,
+      "worst_local_frame": 8
+    }
+  },
+  "same_pose": [
+    {
+      "section": "paddock_mid",
+      "sample": 0,
+      "pose": {
+        "game_time": 24.45833406224847,
+        "pawn": [
+          -31133.081134921646,
+          -11581.922140503095,
+          12195.2533561202
+        ],
+        "camera": [
+          -31285.28935837587,
+          -10877.966040559095,
+          12440.193767143566
+        ],
+        "rotation": [
+          -1.1303669927701689e-14,
+          -10.0,
+          -78.80248260498047
+        ]
+      },
+      "luma": {
+        "shadow_change": {
+          "mean_scene_255": 0.122,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.101,
+          "worst_96px_mean_255": 0.145
+        },
+        "stock_repeat": {
+          "mean_scene_255": 0.035,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.028,
+          "worst_96px_mean_255": 0.056
+        },
+        "trial_repeat": {
+          "mean_scene_255": 0.007,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.007,
+          "worst_96px_mean_255": 0.013
+        },
+        "stock_restored": {
+          "mean_scene_255": 0.135,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.112,
+          "worst_96px_mean_255": 0.162
+        }
+      }
+    },
+    {
+      "section": "paddock_mid",
+      "sample": 1,
+      "pose": {
+        "game_time": 27.541667487472296,
+        "pawn": [
+          -30937.79289775261,
+          -12718.358681405425,
+          12108.631826051405
+        ],
+        "camera": [
+          -31115.75349351777,
+          -12010.215401157557,
+          12350.287161218077
+        ],
+        "rotation": [
+          -3.229619949092163e-15,
+          -10.0,
+          -77.13755798339844
+        ]
+      },
+      "luma": {
+        "shadow_change": {
+          "mean_scene_255": 0.013,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.012,
+          "worst_96px_mean_255": 0.025
+        },
+        "stock_repeat": {
+          "mean_scene_255": 0.006,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.006,
+          "worst_96px_mean_255": 0.012
+        },
+        "trial_repeat": {
+          "mean_scene_255": 0.002,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.001,
+          "worst_96px_mean_255": 0.009
+        },
+        "stock_restored": {
+          "mean_scene_255": 0.013,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.012,
+          "worst_96px_mean_255": 0.027
+        }
+      }
+    },
+    {
+      "section": "access",
+      "sample": 2,
+      "pose": {
+        "game_time": 39.500001177191734,
+        "pawn": [
+          -45497.073550415895,
+          26519.293158276578,
+          10462.356743607104
+        ],
+        "camera": [
+          -45515.73965180696,
+          27276.827477883613,
+          10712.194218184892
+        ],
+        "rotation": [
+          6.459239898184326e-15,
+          -10.0,
+          -88.62324523925781
+        ]
+      },
+      "luma": {
+        "shadow_change": {
+          "mean_scene_255": 0.355,
+          "pct_scene_over_8": 0.027,
+          "mean_upper_255": 0.23,
+          "worst_96px_mean_255": 0.517
+        },
+        "stock_repeat": {
+          "mean_scene_255": 0.096,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.054,
+          "worst_96px_mean_255": 0.152
+        },
+        "trial_repeat": {
+          "mean_scene_255": 0.023,
+          "pct_scene_over_8": 0.0,
+          "mean_upper_255": 0.012,
+          "worst_96px_mean_255": 0.043
+        },
+        "stock_restored": {
+          "mean_scene_255": 0.39,
+          "pct_scene_over_8": 0.001,
+          "mean_upper_255": 0.225,
+          "worst_96px_mean_255": 0.586
+        }
+      }
+    },
+    {
+      "section": "access",
+      "sample": 3,
+      "pose": {
+        "game_time": 42.58333460241556,
+        "pawn": [
+          -45375.563171269576,
+          24079.570906241785,
+          10082.042553080915
+        ],
+        "camera": [
+          -45680.92456675238,
+          24723.837922748357,
+          10322.443436872469
+        ],
+        "rotation": [
+          -1.2111074438518696e-14,
+          -10.0,
+          -68.37263488769531
+        ]
+      },
+      "luma": {
+        "shadow_change": {
+          "mean_scene_255": 1.11,
+          "pct_scene_over_8": 0.006,
+          "mean_upper_255": 1.087,
+          "worst_96px_mean_255": 1.761
+        },
+        "stock_repeat": {
+          "mean_scene_255": 0.267,
+          "pct_scene_over_8": 0.002,
+          "mean_upper_255": 0.26,
+          "worst_96px_mean_255": 0.448
+        },
+        "trial_repeat": {
+          "mean_scene_255": 0.053,
+          "pct_scene_over_8": 0.001,
+          "mean_upper_255": 0.05,
+          "worst_96px_mean_255": 0.117
+        },
+        "stock_restored": {
+          "mean_scene_255": 1.246,
+          "pct_scene_over_8": 0.002,
+          "mean_upper_255": 1.22,
+          "worst_96px_mean_255": 1.95
+        }
+      }
+    }
+  ],
+  "base_pass": {
+    "bog552": {
+      "windows": [
+        {
+          "case": "control",
+          "base_ms": 14.963,
+          "p95_base_ms": 19.781,
+          "base_draws": 563.319,
+          "prepass_ms": 0.625,
+          "frame_ms": 45.312,
+          "travel_m": 0.0
+        },
+        {
+          "case": "near_grass",
+          "base_ms": 15.092,
+          "p95_base_ms": 19.851,
+          "base_draws": 550.383,
+          "prepass_ms": 0.656,
+          "frame_ms": 45.683,
+          "travel_m": 0.0
+        },
+        {
+          "case": "far_grass",
+          "base_ms": 15.405,
+          "p95_base_ms": 20.154,
+          "base_draws": 557.617,
+          "prepass_ms": 0.646,
+          "frame_ms": 46.622,
+          "travel_m": 0.0
+        },
+        {
+          "case": "all_grass",
+          "base_ms": 15.167,
+          "p95_base_ms": 21.009,
+          "base_draws": 546.34,
+          "prepass_ms": 0.681,
+          "frame_ms": 58.247,
+          "travel_m": 0.0
+        },
+        {
+          "case": "control",
+          "base_ms": 15.763,
+          "p95_base_ms": 20.689,
+          "base_draws": 566.043,
+          "prepass_ms": 0.658,
+          "frame_ms": 47.884,
+          "travel_m": 0.0
+        },
+        {
+          "case": "trees",
+          "base_ms": 3.029,
+          "p95_base_ms": 4.683,
+          "base_draws": 532.213,
+          "prepass_ms": 7.155,
+          "frame_ms": 43.775,
+          "travel_m": 0.0
+        },
+        {
+          "case": "dressing",
+          "base_ms": 14.647,
+          "p95_base_ms": 18.022,
+          "base_draws": 545.34,
+          "prepass_ms": 1.446,
+          "frame_ms": 72.741,
+          "travel_m": 0.0
+        },
+        {
+          "case": "terrain",
+          "base_ms": 14.952,
+          "p95_base_ms": 19.827,
+          "base_draws": 530.362,
+          "prepass_ms": 0.672,
+          "frame_ms": 46.065,
+          "travel_m": 0.0
+        },
+        {
+          "case": "pickup",
+          "base_ms": 16.662,
+          "p95_base_ms": 22.041,
+          "base_draws": 483.468,
+          "prepass_ms": 0.769,
+          "frame_ms": 49.775,
+          "travel_m": 0.0
+        },
+        {
+          "case": "lowres",
+          "base_ms": 14.334,
+          "p95_base_ms": 20.219,
+          "base_draws": 559.468,
+          "prepass_ms": 0.689,
+          "frame_ms": 44.988,
+          "travel_m": 0.0
+        },
+        {
+          "case": "lowres_all_grass",
+          "base_ms": 14.062,
+          "p95_base_ms": 19.003,
+          "base_draws": 543.426,
+          "prepass_ms": 0.7,
+          "frame_ms": 44.818,
+          "travel_m": 0.0
+        },
+        {
+          "case": "lowres_trees",
+          "base_ms": 2.597,
+          "p95_base_ms": 4.287,
+          "base_draws": 536.106,
+          "prepass_ms": 7.39,
+          "frame_ms": 47.425,
+          "travel_m": 0.0
+        },
+        {
+          "case": "lowres_repeat",
+          "base_ms": 14.874,
+          "p95_base_ms": 19.611,
+          "base_draws": 574.638,
+          "prepass_ms": 0.748,
+          "frame_ms": 72.925,
+          "travel_m": 0.0
+        },
+        {
+          "case": "control",
+          "base_ms": 16.99,
+          "p95_base_ms": 22.182,
+          "base_draws": 575.745,
+          "prepass_ms": 0.721,
+          "frame_ms": 51.141,
+          "travel_m": 0.0
+        }
+      ],
+      "groups": {
+        "eligible_components": {
+          "terrain": 2566,
+          "near_grass": 4,
+          "far_grass": 1,
+          "trees": 6,
+          "dressing": 19,
+          "pickup": 93
+        },
+        "instances": [
+          [
+            "near_grass",
+            "SM_GS3_Near_A",
+            166
+          ],
+          [
+            "far_grass",
+            "SM_GS3_Far",
+            1468
+          ],
+          [
+            "near_grass",
+            "SM_GS3_Near_B",
+            151
+          ],
+          [
+            "near_grass",
+            "SM_GS3_Near_C",
+            179
+          ],
+          [
+            "near_grass",
+            "SM_GS3_Verge",
+            156
+          ],
+          [
+            "trees",
+            "SM_Canopy_1",
+            69143
+          ],
+          [
+            "trees",
+            "SM_Canopy_0",
+            59691
+          ],
+          [
+            "trees",
+            "SM_Canopy_2",
+            30393
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Blooming_Grass_008",
+            14487
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Blooming_Grass_012",
+            14476
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Blooming_Shrubbery_006",
+            8439
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Blooming_Shrubbery_009",
+            8438
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Grass_003",
+            14478
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Grass_005",
+            14482
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Grass_013",
+            14479
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Grass_016",
+            14507
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Grass_020",
+            14505
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Small_Plants_006",
+            8474
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Small_Plants_013",
+            8436
+          ],
+          [
+            "dressing",
+            "SM_RM_Asset_Large_Rock_005",
+            2360
+          ],
+          [
+            "dressing",
+            "SM_RM_Asset_Large_Rock_053",
+            2360
+          ],
+          [
+            "dressing",
+            "SM_RM_Asset_Large_Rock_077",
+            2360
+          ],
+          [
+            "dressing",
+            "SM_RM_Asset_Medium_Rock_013",
+            2359
+          ],
+          [
+            "dressing",
+            "SM_RM_Asset_Medium_Rock_085",
+            2353
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Ferns_021",
+            46770
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Ferns_025",
+            46563
+          ],
+          [
+            "dressing",
+            "SM_Path_FP_Ferns_033",
+            46420
+          ],
+          [
+            "pickup",
+            "Sphere",
+            480
+          ],
+          [
+            "pickup",
+            "Plane",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_0",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_1",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_2",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_3",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_4",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_5",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_6",
+            120
+          ],
+          [
+            "pickup",
+            "SM_GT_SprayClump_7",
+            120
+          ]
+        ]
+      }
+    }
+  },
+  "installed_profile": {
+    "offscreen": true,
+    "audio_enabled": true,
+    "module_sha256": "8FF157DEA769DA55488186574F5912DD934900475AD790C54BE32F6920400491",
+    "preset_sha256": "D1D8154A64138D56311761680F8717808536E82A986AF9352D0D81D6A8DA6EFC",
+    "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+    "os_build": "26200",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     "
+  },
+  "installed_groups": {
+    "verified": true,
+    "original_map_sha256": "4af178bf4c88dec6feb823daeba3b2b45e3eb1740f0ac0b8607524413f1fced6",
+    "groups": [
+      {
+        "family": "FloraWorldCanopy",
+        "mesh": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Canopy/SM_Canopy_0.SM_Canopy_0",
+        "instances": 55295,
+        "sample_transforms": "2a560e522b4c379d08ff0f5231e58fef8efb9dd598af091cb3d9d42dfd05611b",
+        "materials": [
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Foliage/MI_Path_Wood_material_T_Colour_6.MI_Path_Wood_material_T_Colour_6",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_6_4c813bf5.MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/M_FirFar_0_ef95200e.M_FirFar_0_ef95200e"
+        ],
+        "wind": true,
+        "cast_shadow": true
+      },
+      {
+        "family": "FloraWorldCanopy",
+        "mesh": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Canopy/SM_Canopy_1.SM_Canopy_1",
+        "instances": 64788,
+        "sample_transforms": "bbb72388ea5663af607303051561de76b26a1d80e9b5ae3a0b9174ac571072f6",
+        "materials": [
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Foliage/MI_Path_Wood_material_T_Colour_5.MI_Path_Wood_material_T_Colour_5",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_5_ca124a94.MI_Path_Leaf_0_T_Colour_5_ca124a94",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/M_FirFar_1_7f3a4a16.M_FirFar_1_7f3a4a16"
+        ],
+        "wind": true,
+        "cast_shadow": true
+      },
+      {
+        "family": "FloraWorldCanopy",
+        "mesh": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Canopy/SM_Canopy_2.SM_Canopy_2",
+        "instances": 26114,
+        "sample_transforms": "e9e15b5dc1a125cb8b9905374d0ace285718687e4032c16b3f6bcdece3a7a31e",
+        "materials": [
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Foliage/MI_Path_Wood_material_T_Colour_4.MI_Path_Wood_material_T_Colour_4",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_4_4cbf099c.MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/M_FirFar_2_01f9bb09.M_FirFar_2_01f9bb09"
+        ],
+        "wind": true,
+        "cast_shadow": true
+      },
+      {
+        "family": "FloraWorldSaplings",
+        "mesh": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Canopy/SM_Canopy_0.SM_Canopy_0",
+        "instances": 4396,
+        "sample_transforms": "6e8d9d807126bc3f6bc9a5a85e204011cf24b992fd774026f1991401512b4622",
+        "materials": [
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Foliage/MI_Path_Wood_material_T_Colour_6.MI_Path_Wood_material_T_Colour_6",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_6_4c813bf5.MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/M_FirFar_0_ef95200e.M_FirFar_0_ef95200e"
+        ],
+        "wind": true,
+        "cast_shadow": true
+      },
+      {
+        "family": "FloraWorldSaplings",
+        "mesh": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Canopy/SM_Canopy_1.SM_Canopy_1",
+        "instances": 4355,
+        "sample_transforms": "abc2291603e8f3cc5a8ad8646aaa0656ed8a914c4399a7195fb3b3dc957da5f7",
+        "materials": [
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Foliage/MI_Path_Wood_material_T_Colour_5.MI_Path_Wood_material_T_Colour_5",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_5_ca124a94.MI_Path_Leaf_0_T_Colour_5_ca124a94",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/M_FirFar_1_7f3a4a16.M_FirFar_1_7f3a4a16"
+        ],
+        "wind": true,
+        "cast_shadow": true
+      },
+      {
+        "family": "FloraWorldSaplings",
+        "mesh": "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Canopy/SM_Canopy_2.SM_Canopy_2",
+        "instances": 4279,
+        "sample_transforms": "818015b38f79940e7c8fd90c035bb0d0653589afd076a1643f1f14f88ca01cd7",
+        "materials": [
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraWorld/Foliage/MI_Path_Wood_material_T_Colour_4.MI_Path_Wood_material_T_Colour_4",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_4_4cbf099c.MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+          "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/M_FirFar_2_01f9bb09.M_FirFar_2_01f9bb09"
+        ],
+        "wind": true,
+        "cast_shadow": true
+      }
+    ]
+  },
+  "gpu_frame": {
+    "rain": {
+      "base_ms": 4.72,
+      "visible_timed_canopy_draws_ms": {
+        "SM_Canopy_1 / MI_Path_Leaf_0_T_Colour_5_ca124a94": 1.923,
+        "SM_Canopy_2 / MI_Path_Wood_material_T_Colour_4": 0.228
+      }
+    },
+    "driver": {
+      "base_ms": 14.098,
+      "visible_timed_canopy_draws_ms": {
+        "SM_Canopy_1 / MI_Path_Leaf_0_T_Colour_5_ca124a94": 6.769,
+        "SM_Canopy_0 / MI_Path_Leaf_0_T_Colour_6_4c813bf5": 0.95,
+        "SM_Canopy_2 / MI_Path_Leaf_0_T_Colour_4_4cbf099c": 0.889,
+        "SM_Canopy_2 / MI_Path_Wood_material_T_Colour_4": 0.8759999999999999,
+        "SM_Canopy_1 / MI_Path_Wood_material_T_Colour_5": 0.611,
+        "SM_Canopy_0 / MI_Path_Wood_material_T_Colour_6": 0.495
+      }
+    }
+  },
+  "parked_controls": [
+    {
+      "step": 0,
+      "case": "control",
+      "base_ms": 14.963,
+      "shadow_ms": 8.978,
+      "vel_ms": 10.282,
+      "p95_ms": 19.781,
+      "base_draws": 563.319,
+      "frame_ms": 45.312,
+      "triangles_all_passes": 2356403.383,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 14.963,
+      "difference_ms": 0.0
+    },
+    {
+      "step": 1,
+      "case": "near_grass",
+      "base_ms": 15.092,
+      "shadow_ms": 9.114,
+      "vel_ms": 10.352,
+      "p95_ms": 19.851,
+      "base_draws": 550.383,
+      "frame_ms": 45.683,
+      "triangles_all_passes": 2348863.426,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 15.163,
+      "difference_ms": 0.071
+    },
+    {
+      "step": 2,
+      "case": "far_grass",
+      "base_ms": 15.405,
+      "shadow_ms": 9.248,
+      "vel_ms": 10.573,
+      "p95_ms": 20.154,
+      "base_draws": 557.617,
+      "frame_ms": 46.622,
+      "triangles_all_passes": 2370377.426,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 15.363,
+      "difference_ms": -0.042
+    },
+    {
+      "step": 3,
+      "case": "all_grass",
+      "base_ms": 15.167,
+      "shadow_ms": 9.209,
+      "vel_ms": 10.42,
+      "p95_ms": 21.009,
+      "base_draws": 546.34,
+      "frame_ms": 58.247,
+      "triangles_all_passes": 2353268.872,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 15.563,
+      "difference_ms": 0.396
+    },
+    {
+      "step": 4,
+      "case": "control",
+      "base_ms": 15.763,
+      "shadow_ms": 9.687,
+      "vel_ms": 10.839,
+      "p95_ms": 20.689,
+      "base_draws": 566.043,
+      "frame_ms": 47.884,
+      "triangles_all_passes": 2359690.702,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 15.763,
+      "difference_ms": 0.0
+    },
+    {
+      "step": 5,
+      "case": "trees",
+      "base_ms": 3.029,
+      "shadow_ms": 22.462,
+      "vel_ms": 1.341,
+      "p95_ms": 4.683,
+      "base_draws": 532.213,
+      "frame_ms": 43.775,
+      "triangles_all_passes": 2352672.149,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 15.899,
+      "difference_ms": 12.87
+    },
+    {
+      "step": 6,
+      "case": "dressing",
+      "base_ms": 14.647,
+      "shadow_ms": 35.57,
+      "vel_ms": 10.227,
+      "p95_ms": 18.022,
+      "base_draws": 545.34,
+      "frame_ms": 72.741,
+      "triangles_all_passes": 2469926.617,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 16.036,
+      "difference_ms": 1.389
+    },
+    {
+      "step": 7,
+      "case": "terrain",
+      "base_ms": 14.952,
+      "shadow_ms": 9.423,
+      "vel_ms": 10.677,
+      "p95_ms": 19.827,
+      "base_draws": 530.362,
+      "frame_ms": 46.065,
+      "triangles_all_passes": 832411.0,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 16.172,
+      "difference_ms": 1.22
+    },
+    {
+      "step": 8,
+      "case": "pickup",
+      "base_ms": 16.662,
+      "shadow_ms": 10.341,
+      "vel_ms": 11.482,
+      "p95_ms": 22.041,
+      "base_draws": 483.468,
+      "frame_ms": 49.775,
+      "triangles_all_passes": 2237279.34,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 16.308,
+      "difference_ms": -0.354
+    },
+    {
+      "step": 9,
+      "case": "lowres",
+      "base_ms": 14.334,
+      "shadow_ms": 10.764,
+      "vel_ms": 10.352,
+      "p95_ms": 20.219,
+      "base_draws": 559.468,
+      "frame_ms": 44.988,
+      "triangles_all_passes": 2304441.085,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 14.334,
+      "difference_ms": 0.0
+    },
+    {
+      "step": 10,
+      "case": "lowres_all_grass",
+      "base_ms": 14.062,
+      "shadow_ms": 10.663,
+      "vel_ms": 10.107,
+      "p95_ms": 19.003,
+      "base_draws": 543.426,
+      "frame_ms": 44.818,
+      "triangles_all_passes": 2258341.298,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 14.514,
+      "difference_ms": 0.452
+    },
+    {
+      "step": 11,
+      "case": "lowres_trees",
+      "base_ms": 2.597,
+      "shadow_ms": 27.162,
+      "vel_ms": 1.322,
+      "p95_ms": 4.287,
+      "base_draws": 536.106,
+      "frame_ms": 47.425,
+      "triangles_all_passes": 2303979.894,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 14.694,
+      "difference_ms": 12.097
+    },
+    {
+      "step": 12,
+      "case": "lowres_repeat",
+      "base_ms": 14.874,
+      "shadow_ms": 37.746,
+      "vel_ms": 10.596,
+      "p95_ms": 19.611,
+      "base_draws": 574.638,
+      "frame_ms": 72.925,
+      "triangles_all_passes": 2414371.383,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 14.874,
+      "difference_ms": 0.0
+    },
+    {
+      "step": 13,
+      "case": "control",
+      "base_ms": 16.99,
+      "shadow_ms": 10.049,
+      "vel_ms": 11.711,
+      "p95_ms": 22.182,
+      "base_draws": 575.745,
+      "frame_ms": 51.141,
+      "triangles_all_passes": 2379145.809,
+      "travel_m": 0.0,
+      "adjacent_control_ms": 16.99,
+      "difference_ms": 0.0
+    }
+  ],
+  "unrestricted_drive": {
+    "name": "bog552_drive",
+    "frames": 106,
+    "seconds": 4.668,
+    "fps": 22.71,
+    "travel_m": 0.0,
+    "pawn_cm": [
+      [
+        -24947.863335,
+        -63031.721562,
+        6573.229976
+      ],
+      [
+        -24947.863335,
+        -63031.721562,
+        6573.229976
+      ]
+    ],
+    "timings": {
+      "FrameTime": {
+        "mean": 44.039,
+        "p95": 55.446
+      },
+      "GPUTime": {
+        "mean": 42.927,
+        "p95": 53.038
+      },
+      "GPU/ShadowDepths": {
+        "mean": 8.713,
+        "p95": 9.13
+      },
+      "GPU/Basepass": {
+        "mean": 14.461,
+        "p95": 18.992
+      },
+      "GPU/RenderVelocities": {
+        "mean": 9.923,
+        "p95": 13.294
+      },
+      "DrawCall/ShadowDepths": {
+        "mean": 578.972,
+        "p95": 579.0
+      },
+      "GameThreadTime": {
+        "mean": 5.139,
+        "p95": 6.178
+      },
+      "RenderThreadTime": {
+        "mean": 9.03,
+        "p95": 11.622
+      },
+      "DrawCall/Basepass": {
+        "mean": 561.858,
+        "p95": 775.0
+      },
+      "RHI/PrimitivesDrawn": {
+        "mean": 2326666.17,
+        "p95": 3418989.0
+      },
+      "GPU/Prepass": {
+        "mean": 0.6,
+        "p95": 1.243
+      }
+    }
+  },
+  "moving_family_tests": {
+    "control": {
+      "case": "drive_control",
+      "start_utc": "2026-11-20T02:13:41.224000+00:00",
+      "frames": 192,
+      "travel_m": 11.65,
+      "all_timings_ms_or_counts": {
+        "FrameTime": {
+          "mean": 62.907,
+          "p95": 70.449
+        },
+        "GPUTime": {
+          "mean": 61.571,
+          "p95": 68.988
+        },
+        "GPU/ShadowDepths": {
+          "mean": 11.646,
+          "p95": 14.181
+        },
+        "GPU/Basepass": {
+          "mean": 21.835,
+          "p95": 24.384
+        },
+        "GPU/RenderVelocities": {
+          "mean": 15.117,
+          "p95": 17.023
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 627.375,
+          "p95": 638.0
+        },
+        "GameThreadTime": {
+          "mean": 9.849,
+          "p95": 11.876
+        },
+        "RenderThreadTime": {
+          "mean": 11.485,
+          "p95": 14.077
+        },
+        "DrawCall/Basepass": {
+          "mean": 734.474,
+          "p95": 831.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 3063252.542,
+          "p95": 3741175.0
+        },
+        "GPU/Prepass": {
+          "mean": 1.323,
+          "p95": 1.655
+        }
+      },
+      "pawn_cm": [
+        [
+          -24951.731384,
+          -62783.888026,
+          6394.328984
+        ],
+        [
+          -24927.598746,
+          -62800.37597,
+          6390.622239
+        ],
+        [
+          -24894.553207,
+          -62819.361515,
+          6395.339256
+        ],
+        [
+          -24845.408221,
+          -62855.470995,
+          6393.406807
+        ],
+        [
+          -24780.733909,
+          -62906.229089,
+          6401.397554
+        ],
+        [
+          -24710.081844,
+          -62951.640885,
+          6403.431087
+        ],
+        [
+          -24652.735452,
+          -62991.609536,
+          6402.808873
+        ],
+        [
+          -24608.392567,
+          -63020.723078,
+          6404.738559
+        ],
+        [
+          -24556.836717,
+          -63054.714013,
+          6410.156342
+        ],
+        [
+          -24490.346111,
+          -63100.844799,
+          6414.158161
+        ],
+        [
+          -24424.132416,
+          -63145.829147,
+          6411.077102
+        ],
+        [
+          -24352.29168,
+          -63195.000161,
+          6412.460673
+        ],
+        [
+          -24271.657134,
+          -63242.847256,
+          6418.62007
+        ],
+        [
+          -24200.530897,
+          -63289.257935,
+          6420.97646
+        ],
+        [
+          -24130.245947,
+          -63326.638735,
+          6419.543375
+        ],
+        [
+          -24055.629803,
+          -63365.477117,
+          6426.88523
+        ],
+        [
+          -23971.757752,
+          -63410.031791,
+          6433.457643
+        ]
+      ],
+      "gpu_telemetry": {
+        "samples": 1,
+        "median_temp_c_sm_mhz_watts": [
+          87.0,
+          1665.0,
+          34.6
+        ]
+      },
+      "max_offset_from_control_cm": 0.0
+    },
+    "trees": {
+      "case": "drive_trees",
+      "start_utc": "2026-11-20T02:15:31.688000+00:00",
+      "frames": 192,
+      "travel_m": 11.65,
+      "all_timings_ms_or_counts": {
+        "FrameTime": {
+          "mean": 45.598,
+          "p95": 68.954
+        },
+        "GPUTime": {
+          "mean": 44.142,
+          "p95": 67.556
+        },
+        "GPU/ShadowDepths": {
+          "mean": 15.513,
+          "p95": 38.504
+        },
+        "GPU/Basepass": {
+          "mean": 4.9,
+          "p95": 5.677
+        },
+        "GPU/RenderVelocities": {
+          "mean": 2.242,
+          "p95": 2.625
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 628.104,
+          "p95": 640.0
+        },
+        "GameThreadTime": {
+          "mean": 9.858,
+          "p95": 11.73
+        },
+        "RenderThreadTime": {
+          "mean": 11.395,
+          "p95": 13.537
+        },
+        "DrawCall/Basepass": {
+          "mean": 705.104,
+          "p95": 797.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 3055684.281,
+          "p95": 3758785.0
+        },
+        "GPU/Prepass": {
+          "mean": 10.056,
+          "p95": 11.289
+        }
+      },
+      "pawn_cm": [
+        [
+          -24951.731384,
+          -62783.888026,
+          6394.328984
+        ],
+        [
+          -24927.598746,
+          -62800.37597,
+          6390.622239
+        ],
+        [
+          -24894.553207,
+          -62819.361515,
+          6395.339256
+        ],
+        [
+          -24845.408221,
+          -62855.470995,
+          6393.406807
+        ],
+        [
+          -24780.733909,
+          -62906.229089,
+          6401.397554
+        ],
+        [
+          -24710.081844,
+          -62951.640885,
+          6403.431087
+        ],
+        [
+          -24652.735452,
+          -62991.609536,
+          6402.808873
+        ],
+        [
+          -24608.392567,
+          -63020.723078,
+          6404.738559
+        ],
+        [
+          -24556.836717,
+          -63054.714013,
+          6410.156342
+        ],
+        [
+          -24490.346111,
+          -63100.844799,
+          6414.158161
+        ],
+        [
+          -24424.132416,
+          -63145.829147,
+          6411.077102
+        ],
+        [
+          -24352.29168,
+          -63195.000161,
+          6412.460673
+        ],
+        [
+          -24271.657134,
+          -63242.847256,
+          6418.62007
+        ],
+        [
+          -24200.530897,
+          -63289.257935,
+          6420.97646
+        ],
+        [
+          -24130.245947,
+          -63326.638735,
+          6419.543375
+        ],
+        [
+          -24055.629803,
+          -63365.477117,
+          6426.88523
+        ],
+        [
+          -23971.757752,
+          -63410.031791,
+          6433.457643
+        ]
+      ],
+      "gpu_telemetry": {
+        "samples": 1,
+        "median_temp_c_sm_mhz_watts": [
+          87.0,
+          1695.0,
+          34.36
+        ]
+      },
+      "max_offset_from_control_cm": 0.0
+    },
+    "rain": {
+      "case": "drive_rain_capture",
+      "start_utc": "2026-11-20T02:17:19.927000+00:00",
+      "frames": 192,
+      "travel_m": 11.65,
+      "all_timings_ms_or_counts": {
+        "FrameTime": {
+          "mean": 54.505,
+          "p95": 57.288
+        },
+        "GPUTime": {
+          "mean": 53.47,
+          "p95": 55.818
+        },
+        "GPU/ShadowDepths": {
+          "mean": 11.87,
+          "p95": 14.277
+        },
+        "GPU/Basepass": {
+          "mean": 17.983,
+          "p95": 18.312
+        },
+        "GPU/RenderVelocities": {
+          "mean": 12.31,
+          "p95": 12.461
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 627.714,
+          "p95": 645.0
+        },
+        "GameThreadTime": {
+          "mean": 9.32,
+          "p95": 10.864
+        },
+        "RenderThreadTime": {
+          "mean": 9.437,
+          "p95": 11.372
+        },
+        "DrawCall/Basepass": {
+          "mean": 563.943,
+          "p95": 577.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2118381.135,
+          "p95": 2372863.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.738,
+          "p95": 0.757
+        }
+      },
+      "pawn_cm": [
+        [
+          -24951.731384,
+          -62783.888026,
+          6394.328984
+        ],
+        [
+          -24927.598746,
+          -62800.37597,
+          6390.622239
+        ],
+        [
+          -24894.553207,
+          -62819.361515,
+          6395.339256
+        ],
+        [
+          -24845.408221,
+          -62855.470995,
+          6393.406807
+        ],
+        [
+          -24780.733909,
+          -62906.229089,
+          6401.397554
+        ],
+        [
+          -24710.081844,
+          -62951.640885,
+          6403.431087
+        ],
+        [
+          -24652.735452,
+          -62991.609536,
+          6402.808873
+        ],
+        [
+          -24608.392567,
+          -63020.723078,
+          6404.738559
+        ],
+        [
+          -24556.836717,
+          -63054.714013,
+          6410.156342
+        ],
+        [
+          -24490.346111,
+          -63100.844799,
+          6414.158161
+        ],
+        [
+          -24424.132416,
+          -63145.829147,
+          6411.077102
+        ],
+        [
+          -24352.29168,
+          -63195.000161,
+          6412.460673
+        ],
+        [
+          -24271.657134,
+          -63242.847256,
+          6418.62007
+        ],
+        [
+          -24200.530897,
+          -63289.257935,
+          6420.97646
+        ],
+        [
+          -24130.245947,
+          -63326.638735,
+          6419.543375
+        ],
+        [
+          -24055.629803,
+          -63365.477117,
+          6426.88523
+        ],
+        [
+          -23971.757752,
+          -63410.031791,
+          6433.457643
+        ]
+      ],
+      "gpu_telemetry": {
+        "samples": 1,
+        "median_temp_c_sm_mhz_watts": [
+          87.0,
+          1665.0,
+          31.31
+        ]
+      },
+      "max_offset_from_control_cm": 0.0
+    },
+    "wind": {
+      "case": "drive_tree_wind",
+      "start_utc": "2026-11-20T02:19:12.047000+00:00",
+      "frames": 192,
+      "travel_m": 11.65,
+      "all_timings_ms_or_counts": {
+        "FrameTime": {
+          "mean": 68.981,
+          "p95": 107.622
+        },
+        "GPUTime": {
+          "mean": 67.361,
+          "p95": 106.909
+        },
+        "GPU/ShadowDepths": {
+          "mean": 15.807,
+          "p95": 51.919
+        },
+        "GPU/Basepass": {
+          "mean": 22.28,
+          "p95": 24.679
+        },
+        "GPU/RenderVelocities": {
+          "mean": 15.247,
+          "p95": 16.9
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 626.141,
+          "p95": 642.0
+        },
+        "GameThreadTime": {
+          "mean": 9.896,
+          "p95": 11.551
+        },
+        "RenderThreadTime": {
+          "mean": 11.612,
+          "p95": 14.006
+        },
+        "DrawCall/Basepass": {
+          "mean": 733.88,
+          "p95": 831.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 3065829.0,
+          "p95": 3610379.0
+        },
+        "GPU/Prepass": {
+          "mean": 1.357,
+          "p95": 1.679
+        }
+      },
+      "pawn_cm": [
+        [
+          -24951.731384,
+          -62783.888026,
+          6394.328984
+        ],
+        [
+          -24927.598746,
+          -62800.37597,
+          6390.622239
+        ],
+        [
+          -24894.553207,
+          -62819.361515,
+          6395.339256
+        ],
+        [
+          -24845.408221,
+          -62855.470995,
+          6393.406807
+        ],
+        [
+          -24780.733909,
+          -62906.229089,
+          6401.397554
+        ],
+        [
+          -24710.081844,
+          -62951.640885,
+          6403.431087
+        ],
+        [
+          -24652.735452,
+          -62991.609536,
+          6402.808873
+        ],
+        [
+          -24608.392567,
+          -63020.723078,
+          6404.738559
+        ],
+        [
+          -24556.836717,
+          -63054.714013,
+          6410.156342
+        ],
+        [
+          -24490.346111,
+          -63100.844799,
+          6414.158161
+        ],
+        [
+          -24424.132416,
+          -63145.829147,
+          6411.077102
+        ],
+        [
+          -24352.29168,
+          -63195.000161,
+          6412.460673
+        ],
+        [
+          -24271.657134,
+          -63242.847256,
+          6418.62007
+        ],
+        [
+          -24200.530897,
+          -63289.257935,
+          6420.97646
+        ],
+        [
+          -24130.245947,
+          -63326.638735,
+          6419.543375
+        ],
+        [
+          -24055.629803,
+          -63365.477117,
+          6426.88523
+        ],
+        [
+          -23971.757752,
+          -63410.031791,
+          6433.457643
+        ]
+      ],
+      "gpu_telemetry": {
+        "samples": 2,
+        "median_temp_c_sm_mhz_watts": [
+          87.0,
+          1665.0,
+          30.79
+        ]
+      },
+      "max_offset_from_control_cm": 0.0
+    },
+    "canopy1": {
+      "case": "drive_canopy_1",
+      "start_utc": "2026-11-20T02:21:06.211000+00:00",
+      "frames": 192,
+      "travel_m": 11.65,
+      "all_timings_ms_or_counts": {
+        "FrameTime": {
+          "mean": 54.693,
+          "p95": 73.917
+        },
+        "GPUTime": {
+          "mean": 53.22,
+          "p95": 74.649
+        },
+        "GPU/ShadowDepths": {
+          "mean": 16.251,
+          "p95": 35.354
+        },
+        "GPU/Basepass": {
+          "mean": 10.941,
+          "p95": 12.19
+        },
+        "GPU/RenderVelocities": {
+          "mean": 7.203,
+          "p95": 7.974
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 628.88,
+          "p95": 642.0
+        },
+        "GameThreadTime": {
+          "mean": 9.873,
+          "p95": 11.958
+        },
+        "RenderThreadTime": {
+          "mean": 11.42,
+          "p95": 13.943
+        },
+        "DrawCall/Basepass": {
+          "mean": 723.76,
+          "p95": 819.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 3048366.042,
+          "p95": 3578845.0
+        },
+        "GPU/Prepass": {
+          "mean": 6.72,
+          "p95": 7.702
+        }
+      },
+      "pawn_cm": [
+        [
+          -24951.731384,
+          -62783.888026,
+          6394.328984
+        ],
+        [
+          -24927.598746,
+          -62800.37597,
+          6390.622239
+        ],
+        [
+          -24894.553207,
+          -62819.361515,
+          6395.339256
+        ],
+        [
+          -24845.408221,
+          -62855.470995,
+          6393.406807
+        ],
+        [
+          -24780.733909,
+          -62906.229089,
+          6401.397554
+        ],
+        [
+          -24710.081844,
+          -62951.640885,
+          6403.431087
+        ],
+        [
+          -24652.735452,
+          -62991.609536,
+          6402.808873
+        ],
+        [
+          -24608.392567,
+          -63020.723078,
+          6404.738559
+        ],
+        [
+          -24556.836717,
+          -63054.714013,
+          6410.156342
+        ],
+        [
+          -24490.346111,
+          -63100.844799,
+          6414.158161
+        ],
+        [
+          -24424.132416,
+          -63145.829147,
+          6411.077102
+        ],
+        [
+          -24352.29168,
+          -63195.000161,
+          6412.460673
+        ],
+        [
+          -24271.657134,
+          -63242.847256,
+          6418.62007
+        ],
+        [
+          -24200.530897,
+          -63289.257935,
+          6420.97646
+        ],
+        [
+          -24130.245947,
+          -63326.638735,
+          6419.543375
+        ],
+        [
+          -24055.629803,
+          -63365.477117,
+          6426.88523
+        ],
+        [
+          -23971.757752,
+          -63410.031791,
+          6433.457643
+        ]
+      ],
+      "gpu_telemetry": {
+        "samples": 1,
+        "median_temp_c_sm_mhz_watts": [
+          87.0,
+          1665.0,
+          32.84
+        ]
+      },
+      "max_offset_from_control_cm": 0.0
+    },
+    "repeat": {
+      "case": "drive_control",
+      "start_utc": "2026-11-20T02:22:57.006000+00:00",
+      "frames": 192,
+      "travel_m": 11.65,
+      "all_timings_ms_or_counts": {
+        "FrameTime": {
+          "mean": 64.511,
+          "p95": 72.245
+        },
+        "GPUTime": {
+          "mean": 63.115,
+          "p95": 69.773
+        },
+        "GPU/ShadowDepths": {
+          "mean": 11.86,
+          "p95": 14.279
+        },
+        "GPU/Basepass": {
+          "mean": 22.38,
+          "p95": 24.822
+        },
+        "GPU/RenderVelocities": {
+          "mean": 15.524,
+          "p95": 17.235
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 627.734,
+          "p95": 645.0
+        },
+        "GameThreadTime": {
+          "mean": 9.959,
+          "p95": 12.14
+        },
+        "RenderThreadTime": {
+          "mean": 11.447,
+          "p95": 14.137
+        },
+        "DrawCall/Basepass": {
+          "mean": 734.703,
+          "p95": 832.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 3072181.167,
+          "p95": 3770685.0
+        },
+        "GPU/Prepass": {
+          "mean": 1.358,
+          "p95": 1.679
+        }
+      },
+      "pawn_cm": [
+        [
+          -24951.731384,
+          -62783.888026,
+          6394.328984
+        ],
+        [
+          -24927.598746,
+          -62800.37597,
+          6390.622239
+        ],
+        [
+          -24894.553207,
+          -62819.361515,
+          6395.339256
+        ],
+        [
+          -24845.408221,
+          -62855.470995,
+          6393.406807
+        ],
+        [
+          -24780.733909,
+          -62906.229089,
+          6401.397554
+        ],
+        [
+          -24710.081844,
+          -62951.640885,
+          6403.431087
+        ],
+        [
+          -24652.735452,
+          -62991.609536,
+          6402.808873
+        ],
+        [
+          -24608.392567,
+          -63020.723078,
+          6404.738559
+        ],
+        [
+          -24556.836717,
+          -63054.714013,
+          6410.156342
+        ],
+        [
+          -24490.346111,
+          -63100.844799,
+          6414.158161
+        ],
+        [
+          -24424.132416,
+          -63145.829147,
+          6411.077102
+        ],
+        [
+          -24352.29168,
+          -63195.000161,
+          6412.460673
+        ],
+        [
+          -24271.657134,
+          -63242.847256,
+          6418.62007
+        ],
+        [
+          -24200.530897,
+          -63289.257935,
+          6420.97646
+        ],
+        [
+          -24130.245947,
+          -63326.638735,
+          6419.543375
+        ],
+        [
+          -24055.629803,
+          -63365.477117,
+          6426.88523
+        ],
+        [
+          -23971.757752,
+          -63410.031791,
+          6433.457643
+        ]
+      ],
+      "gpu_telemetry": {
+        "samples": 1,
+        "median_temp_c_sm_mhz_watts": [
+          87.0,
+          1665.0,
+          30.84
+        ]
+      },
+      "max_offset_from_control_cm": 0.0
+    }
+  },
+  "moving_family_protocol": {
+    "checkpoint": "bog552",
+    "fixed_simulation_hz": 24,
+    "measured_frames": 192,
+    "travel_m": 11.65,
+    "throttle": 0.8,
+    "base_pass_metric": "GPU/Basepass",
+    "gpu_units": "milliseconds",
+    "whole_frame_60fps_budget_ms": 16.667,
+    "note": "Conditions in route are pre-promotion. The family tests use the installed v8 preset. Suppressions are diagnostic and overlap across views. The separate unrestricted_drive stalled."
+  },
+  "launcher_verification": {
+    "normal": {
+      "cutoff_cm": 11000,
+      "clipmap_bias": -3,
+      "canopy_and_sapling_groups": 6
+    },
+    "stock_switch": {
+      "cutoff_cm": 0,
+      "clipmap_bias": 3,
+      "canopy_and_sapling_groups": 6
+    },
+    "check": "Read back live game components and console variable at frame 300 of separate normal launcher runs, captured at frame 365, exit code 0."
+  }
+}

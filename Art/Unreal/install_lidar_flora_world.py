@@ -232,6 +232,7 @@ def woodland_midstory(rows,cfg):
   c.set_visibility(False);c.set_hidden_in_game(True);c.set_cast_shadow(False)
  for k,ts in groups.items():
   proto=prototypes[k];c=u.GTVegetationSubsystem.add_tagged_instances(owner,proto.static_mesh,ts,'FloraWorldSaplings','NoCollision',True)
+  c.set_world_position_offset_disable_distance(11000)
   props(c,override_min_lod=True,min_lod=2,visible_in_ray_tracing=False,affect_distance_field_lighting=False,cast_contact_shadow=True,shadow_cache_invalidation_behavior=u.ShadowCacheInvalidationBehavior.RIGID);c.set_cull_distances(20000,35000)
   for i,mat in enumerate(proto.get_materials()):c.set_material(i,mat)
  report['sapling_count']=sum(map(len,groups.values()))
@@ -272,6 +273,7 @@ def install(rows,cfg):
   mesh=meshes[k]
   assert u.get_editor_subsystem(u.StaticMeshEditorSubsystem).set_lod_screen_sizes(mesh,[1.,.65,.28,.14]);E.save_loaded_asset(mesh,False)
   c=u.GTVegetationSubsystem.add_tagged_instances(owner,mesh,ts,'FloraWorldCanopy','NoCollision',True)
+  c.set_world_position_offset_disable_distance(11000)
   props(c,override_min_lod=True,min_lod=cfg['tree_min_lod'],visible_in_ray_tracing=False,affect_distance_field_lighting=False,cast_contact_shadow=True,shadow_cache_invalidation_behavior=u.ShadowCacheInvalidationBehavior.RIGID)
   c.set_cull_distances(0,0)
   for i,slot in enumerate(mesh.static_materials):

@@ -1,7 +1,8 @@
-param([switch]$Play,[switch]$OriginalQuality,[switch]$ShowFPS,[switch]$Paddock,[switch]$House,[switch]$WoodedTrack,[switch]$TreeShadowTrial)
+param([switch]$Play,[switch]$OriginalQuality,[switch]$ShowFPS,[switch]$Paddock,[switch]$House,[switch]$WoodedTrack,[switch]$TreeShadowTrial,[switch]$StockTreeShadows)
 $ErrorActionPreference='Stop'
 if($WoodedTrack -and (-not $Play -or $House -or $Paddock)){throw '-WoodedTrack requires play and one starting point'}
 if($TreeShadowTrial -and (-not $Play -or $OriginalQuality)){throw '-TreeShadowTrial requires play with the measured LiDAR quality preset'}
+if($StockTreeShadows -and (-not $Play -or $TreeShadowTrial)){throw '-StockTreeShadows requires play and one shadow setting'}
 if($Paddock -and -not $Play){throw '-Paddock requires -Play'}
 if($House -and (-not $Play -or $Paddock)){throw '-House requires -Play and cannot combine with -Paddock'}
 & "$PSScriptRoot/wait_unreal_free.ps1" -MaxMinutes 0
@@ -14,10 +15,12 @@ $preset=Get-Content "$PSScriptRoot/lidar_performance.json" -Raw | ConvertFrom-Js
 if($Play){$taskArgs+=@('-game','-windowed',('-ResX='+$preset.output_resolution[0]),('-ResY='+$preset.output_resolution[1]))}
 $commands=@()
 if(-not $OriginalQuality){$commands+=@($preset.commands)}
-if($TreeShadowTrial){
+# The v8 map and preset provide the default in standalone and PIE. The old trial
+# switch remains accepted by the wooded-track shortcut. Stock is a launch-only control.
+if($StockTreeShadows -or ($OriginalQuality -and $Play)){
  $taskArgs+='-ForceEnablePython'
  $trial=(Join-Path $PSScriptRoot 'Unreal/lidar_tree_shadow_trial.py').Replace('\','/')
- $commands+="py $trial"
+ $commands+="py $trial stock"
 }
 if($WoodedTrack){
  $points=Get-Content -Raw "$PSScriptRoot/lidar_driving_baseline_poses.json" | ConvertFrom-Json
