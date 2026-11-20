@@ -6,6 +6,11 @@ LIDAR_DRIVING_BASELINE_2026-11-19.md.
 The first controlled wooded-track shadow trial is in LIDAR_WOODED_TRACK_SHADOW_TRIAL.md.
 The v8 default, route checks and deep-bog surface costs are in LIDAR_ROUTE_SHADOWS_AND_BASE_PASS.md.
 
+Apply the "Reuse across maps and asset packs" criteria in
+GRAND_TOUR_VISUAL_PERFORMANCE_PLAN.md throughout this sweep. LiDAR is the first
+measurement site. Use Benmore's willows to check tree changes on different art
+before recommending them across the project.
+
 Outcome and baseline
 Aim for sustained 60 fps on the actual target laptop without reducing the chosen
 visual quality. Current detected CPU/GPU: Ryzen 7 8845HS and RTX 4050 Laptop GPU.

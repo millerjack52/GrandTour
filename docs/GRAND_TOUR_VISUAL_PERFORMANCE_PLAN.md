@@ -8,6 +8,20 @@ Make Grand Tour's materials, lighting, vegetation and environmental response mor
 
 Start in the existing L_LidarStudy riverbank/forest reach, with the access road, ford and open paddock as control scenes. Extend successful methods to the rest of the map and then other Grand Tour maps. Keep the original driving route and terrain layout.
 
+### Reuse across maps and asset packs
+
+For the 60 fps sweep, describe each optimization by the work it removes and the conditions under which the image and gameplay are preserved. Put shared behavior in the relevant renderer, subsystem or asset preparation tool. Let each map opt in and supply its own art inputs and route. A different tree pack should be able to use the same implementation through authoring or configuration. Mesh names, species counts, material slots, LOD indices and camera distances belong to the asset or map that supplied them.
+
+| Current example | What can transfer | What needs local evidence |
+| --- | --- | --- |
+| Dry-weather capture | The shared weather system can suspend its overhead capture while precipitation, global wetness and snow are all zero. | Check that the map's materials use the capture under those same conditions. Time a dry drive and verify the transition back to wet weather. |
+| Fast crown shadows | A tree can keep its visible mesh and use a cheaper mesh to cast its shadow. | The current installer expects three specific LiDAR meshes, four LODs and an approved chase-camera projection. A reusable version needs a source-to-caster mapping per asset and shadow ranges derived from its authored transitions and the active camera. Keep the original caster when a suitable replacement is unavailable. |
+| Static painted leaves | Unreal can disable vertex displacement on selected tree components. | On LiDAR the near wind was barely visible and disabling it saved 0.30 ms in the matched-clock bog replay. Check what else a new material does with vertex displacement, including branch sway or interaction, before opting in. |
+
+Use Benmore's willows as the second tree family for testing. The existing Benmore inventory records four willow meshes, including trees that participate in ray tracing and distance-field lighting. The LiDAR shadow installer explicitly excludes those configurations. Preserve those lighting contributions in any Benmore trial. [Benmore performance audit](BENMORE_PERFORMANCE_AUDIT.md)
+
+Call a change transferable once the same implementation has run on two maps with different assets. For each map, compare the original and candidate on its own matched drive at the same resolution, camera, weather and quality settings. Record whole-frame time, p95 and the affected pass. Review the moving silhouettes, light through the crowns, shadows and distance transitions. Keep the result for each map separately. Until the second comparison passes, label the result with the map and assets actually tested. [LiDAR tree measurements](LIDAR_TREE_RENDER_LOD_AND_SHADOW_CULLING.md)
+
 The existing 120 fps objective remains open. Proposed intermediate milestone: a visually accepted 60 fps route on the current RTX 4050 Laptop 6 GB profile. This is a planning milestone, not an instruction to change the current 120 fps cap or abandon the longer-term objective. Switch 2 compatibility is not a target established by this request.
 
 ## Evidence and constraints
