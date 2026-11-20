@@ -11540,5 +11540,361 @@
       ],
       "timing_result": "No driving sample. The pre-drive survey rejected every fixed offset."
     }
+  },
+  "preferred_fast_crown_shadows": {
+    "visual_reference": "Middle column, Fast shadows. Original trees visible, bounded Nanite shadow copies with area preservation.",
+    "film_65_matched_poses_shadow_drawing": {
+      "paddock_mid": {
+        "default_ms": 4.027,
+        "fast_ms": 2.843
+      },
+      "access": {
+        "default_ms": 9.697,
+        "fast_ms": 5.684
+      },
+      "river": {
+        "default_ms": 13.359,
+        "fast_ms": 3.539
+      },
+      "bog_entry": {
+        "default_ms": 12.784,
+        "fast_ms": 4.123
+      },
+      "bog552": {
+        "default_ms": 12.319,
+        "fast_ms": 3.791
+      }
+    },
+    "timed_bog_17_matched_poses": {
+      "preferred_crown_reference_replay_143129": {
+        "fps": 30.28,
+        "frames": 192,
+        "travel_m": 11.65,
+        "gpu_hardware": {
+          "median_clock_mhz": 2497.5,
+          "peak_temperature_c": 87.0,
+          "median_power_w": 67.995,
+          "samples_thermally_limited": 6
+        },
+        "milliseconds": {
+          "FrameTime": {
+            "mean": 33.024,
+            "p95": 36.539,
+            "median": 32.825,
+            "p99": 39.916,
+            "maximum": 42.554,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 71,
+            "over_50_ms": 0,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 32.095,
+            "p95": 34.263
+          },
+          "GPU/Basepass": {
+            "mean": 9.252,
+            "p95": 9.803
+          },
+          "GPU/RenderVelocities": {
+            "mean": 6.37,
+            "p95": 6.765
+          },
+          "GPU/ShadowDepths": {
+            "mean": 8.212,
+            "p95": 9.75
+          }
+        }
+      },
+      "preferred_crown_fast_replay_143129": {
+        "fps": 35.62,
+        "frames": 192,
+        "travel_m": 11.65,
+        "gpu_hardware": {
+          "median_clock_mhz": 2445.0,
+          "peak_temperature_c": 87.0,
+          "median_power_w": 67.14,
+          "samples_thermally_limited": 5
+        },
+        "milliseconds": {
+          "FrameTime": {
+            "mean": 28.074,
+            "p95": 30.1,
+            "median": 27.952,
+            "p99": 31.817,
+            "maximum": 32.585,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 0,
+            "over_50_ms": 0,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 27.143,
+            "p95": 27.969
+          },
+          "GPU/Basepass": {
+            "mean": 9.317,
+            "p95": 9.812
+          },
+          "GPU/RenderVelocities": {
+            "mean": 6.419,
+            "p95": 6.736
+          },
+          "GPU/ShadowDepths": {
+            "mean": 2.474,
+            "p95": 3.204
+          }
+        }
+      }
+    },
+    "driving": {
+      "paired_three_metres": [
+        {
+          "label": "preferred_crown_control_20261120_143129",
+          "conditions": {
+            "module_sha256": "A6338FEE7351AA59D8619B1AC1A39AEC6918A982D32454071F85C3F496C69FB1",
+            "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+            "size_matched_trees": false,
+            "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+            "only_tree_shadows": false,
+            "offscreen": false,
+            "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+            "match_shadow_range": false,
+            "stable_nanite_shadows": false
+          },
+          "reason": "driver_changed",
+          "total_travel_m": 47.27,
+          "recoveries": 2,
+          "focused_samples": 700,
+          "station_window_m": [
+            2278,
+            2281
+          ],
+          "moving": {
+            "frames": 29,
+            "fps": 31.68,
+            "median_ms": 27.633,
+            "mean_ms": 31.565,
+            "p95_ms": 54.643,
+            "p99_ms": 73.941,
+            "maximum_ms": 73.941,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 7,
+            "over_50_ms": 2,
+            "over_100_ms": 0
+          },
+          "median_wheels": 4.0,
+          "max_lateral_offset_m": 0.59,
+          "gpu_passes_mean_ms": {
+            "GameThreadTime": 9.868,
+            "GPUTime": 30.655,
+            "GPU/RenderVelocities": 4.07,
+            "GPU/Basepass": 5.675,
+            "GPU/ShadowDepths": 12.559
+          },
+          "station_hardware": {
+            "samples": 1,
+            "median_clock_mhz": 2715.0,
+            "max_temperature_c": 86.0,
+            "thermally_limited_samples": 0
+          }
+        },
+        {
+          "label": "preferred_crown_fast_20261120_143129",
+          "conditions": {
+            "module_sha256": "A6338FEE7351AA59D8619B1AC1A39AEC6918A982D32454071F85C3F496C69FB1",
+            "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+            "size_matched_trees": false,
+            "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+            "only_tree_shadows": true,
+            "offscreen": false,
+            "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+            "match_shadow_range": true,
+            "stable_nanite_shadows": true
+          },
+          "reason": "end_of_route",
+          "total_travel_m": 105.02,
+          "recoveries": 1,
+          "focused_samples": 1069,
+          "station_window_m": [
+            2278,
+            2281
+          ],
+          "moving": {
+            "frames": 26,
+            "fps": 34.23,
+            "median_ms": 29.735,
+            "mean_ms": 29.216,
+            "p95_ms": 31.117,
+            "p99_ms": 31.286,
+            "maximum_ms": 31.286,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 0,
+            "over_50_ms": 0,
+            "over_100_ms": 0
+          },
+          "median_wheels": 4,
+          "max_lateral_offset_m": 0.45,
+          "gpu_passes_mean_ms": {
+            "GameThreadTime": 13.681,
+            "GPUTime": 28.144,
+            "GPU/RenderVelocities": 6.472,
+            "GPU/Basepass": 9.161,
+            "GPU/ShadowDepths": 3.749
+          },
+          "station_hardware": {
+            "samples": 1,
+            "median_clock_mhz": 2400.0,
+            "max_temperature_c": 86.0,
+            "thermally_limited_samples": 1
+          }
+        }
+      ],
+      "focused_55_metres": [
+        {
+          "label": "sweep101_game_checkpoint_bog",
+          "conditions": {
+            "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+            "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+            "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+            "module_sha256": "43AE763C7C9E6B4BD8CE35F3C96267C024E38A5E869AB63D471372BEBAD1DF3E",
+            "offscreen": false
+          },
+          "reason": "end_of_route",
+          "total_travel_m": 100.68,
+          "recoveries": 0,
+          "focused_samples": 1615,
+          "station_window_m": [
+            2280,
+            2335
+          ],
+          "moving": {
+            "frames": 763,
+            "fps": 13.34,
+            "median_ms": 73.443,
+            "mean_ms": 74.942,
+            "p95_ms": 91.653,
+            "p99_ms": 104.98,
+            "maximum_ms": 146.516,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 763,
+            "over_50_ms": 763,
+            "over_100_ms": 14
+          },
+          "median_wheels": 4,
+          "max_lateral_offset_m": 0.78,
+          "gpu_passes_mean_ms": {
+            "GameThreadTime": 10.55,
+            "GPUTime": 73.026,
+            "GPU/RenderVelocities": 15.286,
+            "GPU/Basepass": 20.078,
+            "GPU/ShadowDepths": 20.454
+          },
+          "station_hardware": {
+            "samples": 59,
+            "median_clock_mhz": 1065.0,
+            "max_temperature_c": 89.0,
+            "thermally_limited_samples": 59
+          }
+        },
+        {
+          "label": "sweep106_original_foreground_bog",
+          "conditions": {
+            "module_sha256": "43AE763C7C9E6B4BD8CE35F3C96267C024E38A5E869AB63D471372BEBAD1DF3E",
+            "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+            "offscreen": false,
+            "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+            "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E"
+          },
+          "reason": "end_of_route",
+          "total_travel_m": 101.02,
+          "recoveries": 0,
+          "focused_samples": 1671,
+          "station_window_m": [
+            2280,
+            2335
+          ],
+          "moving": {
+            "frames": 749,
+            "fps": 12.37,
+            "median_ms": 80.352,
+            "mean_ms": 80.822,
+            "p95_ms": 92.346,
+            "p99_ms": 108.232,
+            "maximum_ms": 142.667,
+            "percent_over_budget": 100.0,
+            "over_33_3_ms": 749,
+            "over_50_ms": 749,
+            "over_100_ms": 15
+          },
+          "median_wheels": 4,
+          "max_lateral_offset_m": 0.73,
+          "gpu_passes_mean_ms": {
+            "GameThreadTime": 10.775,
+            "GPUTime": 78.923,
+            "GPU/RenderVelocities": 16.616,
+            "GPU/Basepass": 22.031,
+            "GPU/ShadowDepths": 21.959
+          },
+          "station_hardware": {
+            "samples": 62,
+            "median_clock_mhz": 952.5,
+            "max_temperature_c": 89.0,
+            "thermally_limited_samples": 62
+          }
+        },
+        {
+          "label": "preferred_crown_fast_20261120_143129",
+          "conditions": {
+            "module_sha256": "A6338FEE7351AA59D8619B1AC1A39AEC6918A982D32454071F85C3F496C69FB1",
+            "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+            "size_matched_trees": false,
+            "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+            "only_tree_shadows": true,
+            "offscreen": false,
+            "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+            "match_shadow_range": true,
+            "stable_nanite_shadows": true
+          },
+          "reason": "end_of_route",
+          "total_travel_m": 105.02,
+          "recoveries": 1,
+          "focused_samples": 1069,
+          "station_window_m": [
+            2280,
+            2335
+          ],
+          "moving": {
+            "frames": 662,
+            "fps": 37.55,
+            "median_ms": 27.269,
+            "mean_ms": 26.633,
+            "p95_ms": 31.137,
+            "p99_ms": 33.648,
+            "maximum_ms": 50.409,
+            "percent_over_budget": 98.19,
+            "over_33_3_ms": 9,
+            "over_50_ms": 1,
+            "over_100_ms": 0
+          },
+          "median_wheels": 4,
+          "max_lateral_offset_m": 1.84,
+          "gpu_passes_mean_ms": {
+            "GameThreadTime": 10.184,
+            "GPUTime": 25.587,
+            "GPU/RenderVelocities": 5.553,
+            "GPU/Basepass": 7.679,
+            "GPU/ShadowDepths": 2.702
+          },
+          "station_hardware": {
+            "samples": 25,
+            "median_clock_mhz": 2325.0,
+            "max_temperature_c": 88.0,
+            "thermally_limited_samples": 25
+          }
+        }
+      ]
+    },
+    "status": "Preferred by user. Experimental in the launcher. Route-wide 60 fps unverified."
   }
 }
