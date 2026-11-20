@@ -148,14 +148,18 @@ namespace
 		if (!World || World->WorldType != EWorldType::Game || Args.Num() != 2 ||
 			UGameplayStatics::GetCurrentLevelName(World, true) != TEXT("L_LidarStudy")) return;
 		int32 Metres = 0;
-		const bool bOriginalShadows = Args[1] == TEXT("renderlod_original_shadows");
-		const bool bNaniteShadows = Args[1] == TEXT("renderlod_nanite_shadows");
+		const bool bForceCasterLOD1 = Args[1] == TEXT("original_lod1_shadows_only");
+		const bool bStaticCasterWind = Args[1] == TEXT("original_static_shadows_only");
+		const bool bConventionalOnly = bForceCasterLOD1 || bStaticCasterWind || Args[1] == TEXT("original_shadows_only");
+		const bool bOriginalShadows = bConventionalOnly || Args[1] == TEXT("renderlod_original_shadows");
+		const bool bOriginalCameraTrees = bConventionalOnly || Args[1] == TEXT("nanite_shadows_only");
+		const bool bNaniteShadows = Args[1] == TEXT("nanite_shadows_only") || Args[1] == TEXT("renderlod_nanite_shadows");
 		const bool bFullRangeShadows = bOriginalShadows || bNaniteShadows;
 		const bool bRenderLod = Args[1] == TEXT("renderlod") || bFullRangeShadows;
-		if (!LexTryParseString(Metres, *Args[0]) || Metres < 20 || Metres > 150 ||
+		if (!LexTryParseString(Metres, *Args[0]) || (bOriginalCameraTrees ? Metres != 0 : (Metres < 20 || Metres > 150)) ||
 			(!bRenderLod && Args[1] != TEXT("paint") && Args[1] != TEXT("control"))) return;
 		const int32 Radius = Metres * 100;
-		const bool bPaint = bRenderLod || Args[1] == TEXT("paint");
+		const bool bPaint = !bConventionalOnly && (bRenderLod || Args[1] == TEXT("paint"));
 		struct FSource { UInstancedStaticMeshComponent* Component; UStaticMesh* Near; };
 		TArray<FSource> Sources;
 		for (TActorIterator<AActor> It(World); It; ++It)
@@ -191,12 +195,6 @@ namespace
 		{
 			auto* Source = Entry.Component;
 			auto* Owner = Source->GetOwner();
-			auto* Near = NewObject<UInstancedStaticMeshComponent>(Owner, NAME_None, RF_Transient, Source);
-			Near->SetupAttachment(Source->GetAttachParent(), Source->GetAttachSocketName());
-			Near->SetRelativeTransform(Source->GetRelativeTransform());
-			Near->PerInstanceSMData = Source->PerInstanceSMData;
-			Near->InstancingRandomSeed = Source->InstancingRandomSeed;
-			Near->AdditionalRandomSeeds = Source->AdditionalRandomSeeds;
 			if (bPaint)
 			{
 				// Both distance tests must see the same instance centre. Nanite rebuilds
@@ -209,15 +207,6 @@ namespace
 				UE_LOG(LogTemp, Display, TEXT("GT_TREE_RANGE_BOUNDS mesh=%s centre_delta_cm=%.3f extent_delta_cm=%.3f"),
 					*Entry.Near->GetName(), (BuiltBounds.Origin - FarBounds.Origin).Size(), (Extent - FarBounds.BoxExtent).Size());
 			}
-			Near->SetStaticMesh(Entry.Near);
-			for (int32 Slot = 0; Slot < Source->GetNumMaterials(); ++Slot)
-			{
-				Near->SetMaterial(Slot, bPaint ? Entry.Near->GetMaterial(Slot) : Source->GetMaterial(Slot));
-			}
-			Near->SetCullDistances(Radius, Radius);
-			Near->ComponentTags = Source->ComponentTags;
-			Near->ComponentTags.Add(TEXT("TrialNearCanopy"));
-			Near->SetVisibility(Source->IsVisible());
 			if (bFullRangeShadows)
 			{
 				// The camera's near/far transition must not change which trees
@@ -229,9 +218,14 @@ namespace
 				Shadow->InstancingRandomSeed = Source->InstancingRandomSeed;
 				Shadow->AdditionalRandomSeeds = Source->AdditionalRandomSeeds;
 				UStaticMesh* ShadowMesh = bNaniteShadows ? Entry.Near : Source->GetStaticMesh().Get();
-				if (bNaniteShadows)
+				if (bForceCasterLOD1)
 				{
-					if (!Shadow->SetStaticMesh(ShadowMesh)) return;
+					// The conventional renderer's override is one-based.
+					Shadow->SetForcedLodModel(2);
+				}
+				if (bNaniteShadows && !Shadow->SetStaticMesh(ShadowMesh)) return;
+				if (bNaniteShadows || bStaticCasterWind)
+				{
 					// The painted wind program returns zero in the original shadow pass.
 					Shadow->SetEvaluateWorldPositionOffset(false);
 				}
@@ -248,12 +242,51 @@ namespace
 				Shadow->RegisterComponent();
 				if (!Shadow->IsRegistered() || Shadow->GetStaticMesh() != ShadowMesh ||
 					Shadow->GetInstanceCount() != Source->GetInstanceCount()) return;
-				Near->SetCastShadow(false);
 				Source->SetCastShadow(false);
+				if (bConventionalOnly)
+				{
+					const auto* Proxy = Shadow->GetSceneProxy();
+					if (!Proxy) return;
+					const FString Name = ShadowMesh->GetName();
+					ENQUEUE_RENDER_COMMAND(LidarAuditConventionalCaster)([Proxy, Name](FRHICommandListImmediate&)
+					{
+						UE_LOG(LogTemp, Display, TEXT("GT_CONVENTIONAL_CASTER mesh=%s nanite=%d evaluate_wpo=%d always_wpo=%d"),
+							*Name, Proxy->IsNaniteMesh(), Proxy->EvaluateWorldPositionOffset(), Proxy->AnyMaterialAlwaysEvaluatesWorldPositionOffset());
+					});
+					FlushRenderingCommands();
+				}
+				if (bForceCasterLOD1)
+				{
+					UE_LOG(LogTemp, Display, TEXT("GT_CONVENTIONAL_SHADOW_LOD mesh=%s forced_model=%d instances=%d"),
+						*ShadowMesh->GetName(), Shadow->GetForcedLodModel(), Shadow->GetInstanceCount());
+				}
 				UE_LOG(LogTemp, Display, TEXT("%s mesh=%s instances=%d"),
 					bNaniteShadows ? TEXT("GT_FULL_NANITE_SHADOW") : TEXT("GT_ORIGINAL_CANOPY_SHADOW"),
 					*Source->GetStaticMesh()->GetName(), Shadow->GetInstanceCount());
 			}
+			if (bOriginalCameraTrees)
+			{
+				UE_LOG(LogTemp, Display, TEXT("GT_CAMERA_TREE_UNCHANGED mesh=%s instances=%d min=%d max=%d"),
+					*Source->GetStaticMesh()->GetName(), Source->GetInstanceCount(), Source->InstanceMinDrawDistance, Source->InstanceEndCullDistance);
+				Total += Source->GetInstanceCount();
+				continue;
+			}
+			auto* Near = NewObject<UInstancedStaticMeshComponent>(Owner, NAME_None, RF_Transient, Source);
+			Near->SetupAttachment(Source->GetAttachParent(), Source->GetAttachSocketName());
+			Near->SetRelativeTransform(Source->GetRelativeTransform());
+			Near->PerInstanceSMData = Source->PerInstanceSMData;
+			Near->InstancingRandomSeed = Source->InstancingRandomSeed;
+			Near->AdditionalRandomSeeds = Source->AdditionalRandomSeeds;
+			Near->SetStaticMesh(Entry.Near);
+			if (bFullRangeShadows) Near->SetCastShadow(false);
+			for (int32 Slot = 0; Slot < Source->GetNumMaterials(); ++Slot)
+			{
+				Near->SetMaterial(Slot, bPaint ? Entry.Near->GetMaterial(Slot) : Source->GetMaterial(Slot));
+			}
+			Near->SetCullDistances(Radius, Radius);
+			Near->ComponentTags = Source->ComponentTags;
+			Near->ComponentTags.Add(TEXT("TrialNearCanopy"));
+			Near->SetVisibility(Source->IsVisible());
 			Owner->AddInstanceComponent(Near);
 			Owner->AddOwnedComponent(Near);
 			Near->RegisterComponent();

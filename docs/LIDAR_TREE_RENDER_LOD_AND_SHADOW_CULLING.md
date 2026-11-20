@@ -249,3 +249,18 @@ Use `-StableNaniteShadows` on the size-matched tree trial to reproduce the full-
 The pickup drove 77.19 m from the player's Track Start checkpoint. The river section recorded 361 moving frames at 14.47 fps, with p95 at 79.57 ms and p99 at 91.65 ms. The vehicle condition system reported flooding with approximately 0.86 m of water at the intake. The pickup reached road station 1785.86 and stalled before completing the crossing.
 
 The player's Rutted Saddle checkpoint provided a separate 119.19 m physical drive. In the wooded section 2,160 moving frames averaged 12.13 fps, with p95 at 106.10 ms and p99 at 129.52 ms. All 2,354 presentation samples retained game-window focus. After the timed drive ended, collision queries found a native log mesh 3 m ahead on the vehicle's centreline. Neither road, obstacle, water height nor vehicle setup was edited for these attempts. Both are partial route timings.
+
+Both original 850 m Riverside drives slowed in the same places. Between road stations 900 and 1000 the pickup averaged 20.44 and 15.61 fps. Between 1600 and 1650 it averaged 11.30 and 9.59 fps. In that final stretch shadow drawing averaged 30.67 and 35.81 ms, drawing visible surfaces took 18.43 and 22.14 ms, and rendering motion vectors took 14.00 and 16.87 ms. The companion JSON includes all nine distance windows for each run.
+
+## Isolating the tree shadows
+
+Two 240-frame comparisons used the original visible forest throughout. All 65 pickup positions matched the original and its repeat. Forcing conventional shadows to use the first playable tree mesh produced brightness differences of 0.16 and 0.21 levels out of 255 in two sunlit paddock patches. The original repeat differed by 0.16 in both. With the bounded Nanite shadow copy the same patches differed by 17.32 and 14.11. The sunlight change persists even with the original trees on screen. Forcing the first playable mesh on the conventional shadow path did not reproduce it. The local four-column comparison is in `D:/GrandTourAssets/Reviews/Lidar60/original-camera-shadow-comparison/caster-isolation.jpg`.
+
+Another comparison kept both the visible trees and their conventional shadow geometry. Only the hidden shadow copies changed their wind-evaluation flag. The render thread confirmed the requested flag on each species. The short replay covered 11.65 m at the same 17 pickup positions in each run.
+
+| Shadow wind evaluation | Mean fps | Mean frame | p95 / p99 frame | Mean shadow pass | Median GPU clock |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Enabled | 15.38 | 65.01 ms | 72.68 / 85.92 ms | 16.68 ms | 1155 MHz |
+| Disabled | 17.30 | 57.80 ms | 62.90 / 75.59 ms | 11.90 ms | 1245 MHz |
+
+Both GPU runs reached 89 degrees C and were thermally limited throughout their hardware samples. The 4.79 ms shadow difference is an observed replay result. The different GPU clocks limit attribution to the flag. Every measured frame exceeded 16.67 ms in both runs. These experiments use explicit test switches and the playable profile retains its original tree settings.

@@ -265,7 +265,7 @@ namespace
                     if (Group.Caster || !Mesh.StartsWith(TEXT("SM_NaniteRenderLod1_"))) return;
                     Group.Caster = C;
                 }
-                else if (C->ComponentHasTag(TEXT("LidarSizeRange")) && Mesh.StartsWith(TEXT("SM_Canopy_")))
+                else if (C->IsVisible() && C->ComponentHasTag(TEXT("FloraWorldCanopy")) && Mesh.StartsWith(TEXT("SM_Canopy_")))
                 {
                     Groups.FindOrAdd(Mesh.Right(1)).Source = C;
                 }
