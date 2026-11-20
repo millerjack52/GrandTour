@@ -128,3 +128,51 @@ Three independently launched games drove the same simulated route sections with 
 Pooling the five equal-size windows gave 12.95 fps with the original and 14.23 and 12.78 fps with the candidate. Pooled p95 rose from 95.74 to 97.41 and 103.51 ms. Pooled p99 fell from 120.40 to 117.79 and 114.27 ms. Five of the 4,500 measured frames met the 16.67 ms budget, all in the deep bog. The GPU was thermally limited on AC power. The river benefit repeated even with a lower GPU clock. Deep-bog shadow work fell on both repeats, with essentially the same deep-bog frame rate. The route-wide tail result and the extra 42.69 MiB of shadow memory do not justify changing the saved v10 default.
 
 Reproduce with `-ShadowStudy routetime -ShadowCandidate saved -WarmTrees -FixedRouteReplay` and `-StudySettings 'r.Shadow.Virtual.DynamicHZB 1'` or `0`. The measurements, including p99 by checkpoint, are under `dynamic_shadow_fixed_route` in the accompanying JSON.
+
+## Restoring the moving patch of sunlight
+
+Two more games repeated the paddock and forest-access drives. For the access section both rebuilt the virtual shadow maps every frame. Across 26 pickup positions their trajectories matched the normal cached films. At access frame 40 the brightness difference between original and accelerated trees fell from 41.95 with ordinary caching to 2.33 without caching. Rebuilding the shadows changed the original tree crop by 1.98 levels and the accelerated crop by 42.01. This isolates the shadow cache as a contributor to the dark patch while driving. It does not establish that all other tree differences have the same cause. Rebuilding every shadow frame is a diagnostic and carries a substantial cost.
+
+The next 55 m variant retains caching. Three ordinary, full-range tree components cast shadows through the source geometry and painted cutouts. Separate near and far components draw the trees visible to the camera. This lets the sun keep the same casters as the pickup crosses the rendering boundary. All 146,197 original mature tree transforms are represented in the three shadow groups. The saplings use the saved rendering path. The playable map and preset have their original hashes.
+
+In a new 240-pair driving film all 65 recorded pickup positions matched the original. The forest-access crop differed by 1.46 brightness levels with the original casters, compared with 41.95 using the earlier accelerated casters. The bog bark crop differed by 0.40, the paddock skyline by 0.15 and the close grass by 3.22. A full-frame scan against two earlier original-tree drives found its largest remaining difference in the bottom-left tyre dust at access. In the other four locations the worst 96-pixel region in excess of both repeats measured 0.18–1.08 levels. The native film is `D:/GrandTourAssets/Reviews/Lidar60/original-caster-route-review/lidar-route-trees.mp4`. The four-way cache comparison is `D:/GrandTourAssets/Reviews/Lidar60/bark-coordinate-route-review/forest-access-shadow-cache.jpg`.
+
+Use `-ShadowStudy accesscache` for the uncached moving isolation. With `-ShadowCandidate saved`, add `-NearTreeMetres 55 -RenderLodTrees -BarkCoordinates -OriginalTreeShadows` to the normal route film or moving bog comparison to test the retained shadow casters.
+
+### Deep-bog cost with the original casters
+
+All 17 pickup positions matched across three 192-frame deep-bog drives covering 11.65 m. Two candidate runs bracketed the original. The mean-frame saving was 3.95 ms in the first comparison and 0.32 ms in the repeat. The GPU ran faster than the original on both. The first run had a slower p99 frame despite its higher mean fps. This is insufficient evidence for a playable default.
+
+| Trees and shadows | FPS | Mean / p95 / p99 frame, ms | Base / velocity / shadow, ms | Median GPU clock |
+| --- | ---: | ---: | ---: | ---: |
+| Accelerated trees, original casters | 17.89 | 55.89 / 59.84 / 78.86 | 15.42 / 10.47 / 14.37 | 1395 MHz |
+| Original | 16.71 | 59.84 / 64.45 / 70.77 | 17.44 / 12.12 / 15.10 | 1275 MHz |
+| Accelerated trees, original casters, repeat | 16.80 | 59.52 / 64.02 / 69.96 | 16.70 / 11.35 / 15.20 | 1298 MHz |
+
+### Why the leaf vertices stay separate
+
+Tracing the active material graph found the second set of texture coordinates, UV1, connected to the painted colour atlas. That sample feeds the leaves' base colour, subsurface colour and ambient occlusion. The opacity mask uses the default UV0 and wind uses neither set. Merging vertices solely by position, tangent basis, vertex colour and UV0 would lose painted surface information. The trial stopped before replacing the source mesh.
+
+The original index order also has little room for a conventional vertex-cache reorder. A software model retaining the last 32 referenced vertices counted 32,626 misses for 32,626 distinct vertices at the first playable leaf LOD, and 17,897 for 17,897 at the second. This is an index-locality measurement. The GPU's actual cache policy can differ. Reproduce the connected graph and counts with `Art/Unreal/lidar_leaf_inputs.py` and an output path in `GT_LIDAR_LEAF_INPUT_REPORT`.
+
+### Forest-access tyre dust
+
+At the 55 m range the biggest moving difference was a tyre plume in the lower left of access frame 25. Two independent games repeated the same 26 pickup positions with particle drawing temporarily hidden for the access section. The shadow cache was active in both. In the plume's 96 × 96 crop the difference fell from 77.18 to 0.16 brightness levels. The sunlit gap in frame 40 differed by 0.88 with particles hidden and 1.46 with normal particles. Across 48 access frames the largest 96 × 96 difference with particles hidden was 2.76, on the pickup body in frame 35. The normal game and the five-checkpoint comparison film include the particles. Run `-ShadowStudy accessparticles` on each tree configuration and compare the ordinary and particle-hidden pairs with `Art/tools/lidar_access_particle_comparison.py`.
+
+### Normal game-window drives from the wet shelf
+
+The test driver can now start from the map's ordinary fourth checkpoint, rest the tyres on the road, then steer and use the pedals. It backs off the accelerator when the wheels slip. The player vehicle, drivetrain, terrain and mud simulation keep their saved settings. The first original-tree drive covered 100.68 m and reached the end of the measured track. A fresh original-tree repeat covered 101.02 m and reached the same end. The 55 m candidate stalled after 53.90 m of total movement, including four recovery manoeuvres. Two earlier checkpoint-placement tests without grounded wheels are excluded.
+
+All three pickups drove through the same first 40 surveyed metres between road stations 2240 and 2280. The comparison uses their first forward passage, while in the foreground driving view and moving faster than 0.5 m/s. The paths within the road and physics timing vary between runs. Road and display clocks aligned within 4.1–23.4 ms across the two section markers. One frame was excluded at each interval boundary.
+
+| Trees | Moving frames on shared 40 m | FPS | p95 | p99 | Longest frame | GPU clock at ≥90% utilisation |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Original | 679 | 14.89 | 83.70 ms | 99.45 ms | 115.69 ms | 1140 MHz |
+| Accelerated inside 55 m, original shadow casters | 688 | 13.29 | 98.24 ms | 121.57 ms | 341.74 ms | 1080 MHz |
+| Original repeat | 791 | 13.05 | 94.20 ms | 117.64 ms | 167.72 ms | 1020 MHz |
+
+Every measured moving frame exceeded 16.67 ms. The candidate's mean sits between the two originals, and its p95 and p99 were worse than both originals. The current default stays in place. Over their full deep-bog sections the two originals measured 13.96 and 12.67 fps. The saved records include per-section tails, hitches, foreground coverage, display gaps and per-10-metre comparisons. Use `-ShadowStudy linkeddrive -ShadowCandidate saved -ForegroundDrive -TargetWindow -LinkedStart bog530`. Run `Art/tools/lidar_presentation.py <run> --stations 2240 2250 2260 2270 2280` for the shared-distance measurements.
+
+### Extending the corrected tree rendering to 150 metres
+
+A separate 240-frame comparison kept the original trees casting shadows and extended accelerated drawing to 150 m. All 65 pickup positions matched. The original problem region on the paddock skyline differed by 0.65 brightness levels, down from 4.97 in the earlier 150 m test. The forest-access sunlight differed by 1.68 and the close bog bark by 0.40. The wider scan still found small changes to distant foliage between trunks. At paddock frame 27 its worst 96 × 96 region differed by 2.40 against 0.17 in the original repeats. At bog-approach frame 22, a small sky opening behind the trunks changed, with a 2.36 difference against 0.15 in the repeats. The native crops and footage are in `D:/GrandTourAssets/Reviews/Lidar60/original-caster-150m-review`.

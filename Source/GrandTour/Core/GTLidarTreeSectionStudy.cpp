@@ -142,7 +142,8 @@ namespace
 		if (!World || World->WorldType != EWorldType::Game || Args.Num() != 2 ||
 			UGameplayStatics::GetCurrentLevelName(World, true) != TEXT("L_LidarStudy")) return;
 		int32 Metres = 0;
-		const bool bRenderLod = Args[1] == TEXT("renderlod");
+		const bool bOriginalShadows = Args[1] == TEXT("renderlod_original_shadows");
+		const bool bRenderLod = Args[1] == TEXT("renderlod") || bOriginalShadows;
 		if (!LexTryParseString(Metres, *Args[0]) || Metres < 20 || Metres > 150 ||
 			(!bRenderLod && Args[1] != TEXT("paint") && Args[1] != TEXT("control"))) return;
 		const int32 Radius = Metres * 100;
@@ -164,6 +165,7 @@ namespace
 					return;
 				}
 				if (bRenderLod && (!C->bOverrideMinLOD || C->MinLOD != 1)) return;
+				if (bOriginalShadows && !C->CastShadow) return;
 				const FString Prefix = bRenderLod ? TEXT("SM_NaniteRenderLod1_") : TEXT("SM_NanitePainted_");
 				const FString Path = TEXT("/Game/GrandTour/ArtTests/LidarStudy/PerformanceStudy/") + Prefix + Original->GetName().Right(1);
 				UStaticMesh* Near = bPaint ? LoadObject<UStaticMesh>(nullptr, *Path) : Original;
@@ -208,6 +210,32 @@ namespace
 			Near->ComponentTags = Source->ComponentTags;
 			Near->ComponentTags.Add(TEXT("TrialNearCanopy"));
 			Near->SetVisibility(Source->IsVisible());
+			if (bOriginalShadows)
+			{
+				// The camera's near/far transition must not change which trees
+				// populate a cached shadow page. Preserve the full original caster.
+				auto* Shadow = NewObject<UInstancedStaticMeshComponent>(Owner, NAME_None, RF_Transient, Source);
+				Shadow->SetupAttachment(Source->GetAttachParent(), Source->GetAttachSocketName());
+				Shadow->SetRelativeTransform(Source->GetRelativeTransform());
+				Shadow->PerInstanceSMData = Source->PerInstanceSMData;
+				Shadow->InstancingRandomSeed = Source->InstancingRandomSeed;
+				Shadow->AdditionalRandomSeeds = Source->AdditionalRandomSeeds;
+				for (int32 Slot = 0; Slot < Source->GetNumMaterials(); ++Slot) Shadow->SetMaterial(Slot, Source->GetMaterial(Slot));
+				Shadow->ComponentTags.Reset();
+				Shadow->ComponentTags.Add(TEXT("LidarOriginalCanopyShadow"));
+				Shadow->SetCastHiddenShadow(true);
+				Shadow->SetHiddenInGame(true);
+				Shadow->SetRenderInMainPass(false);
+				Shadow->SetRenderInDepthPass(false);
+				Owner->AddInstanceComponent(Shadow);
+				Shadow->RegisterComponent();
+				if (!Shadow->IsRegistered() || Shadow->GetStaticMesh() != Source->GetStaticMesh() ||
+					Shadow->GetInstanceCount() != Source->GetInstanceCount()) return;
+				Near->SetCastShadow(false);
+				Source->SetCastShadow(false);
+				UE_LOG(LogTemp, Display, TEXT("GT_ORIGINAL_CANOPY_SHADOW mesh=%s instances=%d"),
+					*Source->GetStaticMesh()->GetName(), Shadow->GetInstanceCount());
+			}
 			Owner->AddInstanceComponent(Near);
 			Owner->AddOwnedComponent(Near);
 			Near->RegisterComponent();

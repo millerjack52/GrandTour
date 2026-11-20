@@ -54,6 +54,8 @@ def schedule(
                 "routehold",
                 "barkbuffers",
                 "accessbuffers",
+                "accesscache",
+                "accessparticles",
                 "shadowdepthhold",
             )
             else f"{out.as_posix()}/{name}.png"
@@ -79,7 +81,7 @@ def schedule(
         if (
             candidate != "saved"
             or base_family != "control"
-            or linked_start not in ("access", "bog214", "bog552")
+            or linked_start not in ("access", "bog214", "bog530", "bog552")
         ):
             raise ValueError("Continuous drive requires the playable preset and a surveyed start")
         cmd(235, "Input.+key SpaceBar")
@@ -88,17 +90,25 @@ def schedule(
         cmd(285, "gt.Lidar.AuditRenderPass")
         cmd(315, "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias")
         cmd(316, "r.InstanceCulling.OcclusionCull")
-        relocate(340, linked_start)
+        if linked_start == "bog530":
+            # The fourth recovery point is the ordinary player's wet-shelf start.
+            # Let the pickup settle on its wheels before the driving window.
+            cmd(340, "Input.+key Four")
+            cmd(341, "Input.-key Four")
+            cmd(344, "Input.-key SpaceBar")
+            cmd(345, "Input.+key SpaceBar")
+        else:
+            relocate(340, linked_start)
         cmd(506, "Input.-key SpaceBar")
         cmd(510, f"gt.Lidar.Present start {out.name}")
         driver = (ROOT / "Art/Unreal/lidar_continuous_drive.py").as_posix()
         cmd(512, f"py {driver} {out.as_posix()} {linked_start}")
         frames = 36000
-    elif stage in ("routefilm", "routetime", "boundaryfilm", "barkbuffers", "accessbuffers"):
+    elif stage in ("routefilm", "routetime", "boundaryfilm", "barkbuffers", "accessbuffers", "accesscache", "accessparticles"):
         if candidate not in ("tree110", "baseline", "saved"):
             raise ValueError(candidate)
         boundary = stage == "boundaryfilm"
-        route = route_names[:2] if boundary else route_names
+        route = route_names[:2] if boundary or stage in ("accesscache", "accessparticles") else route_names
         if checkpoint:
             route = (checkpoint,)
         access_channels = stage == "accessbuffers"
@@ -107,7 +117,15 @@ def schedule(
             if candidate != "saved" or base_family != "control":
                 raise ValueError("Bark-channel comparisons require the saved trees")
             route = route_names[:2] if access_channels else route_names[:4]
-        film = stage in ("routefilm", "boundaryfilm", "barkbuffers", "accessbuffers")
+        film = stage in ("routefilm", "boundaryfilm", "barkbuffers", "accessbuffers", "accesscache", "accessparticles")
+        if stage == "accesscache":
+            cmd(701, "r.Shadow.Virtual.Cache 0")
+            cmd(899, "r.Shadow.Virtual.Cache")
+        if stage == "accessparticles":
+            # Isolate the moving foliage behind non-repeating translucent tyre dust.
+            cmd(701, "ShowFlag.Particles 0")
+            cmd(898, "r.Shadow.Virtual.Cache")
+            cmd(899, "ShowFlag.Particles")
         cmd(235, "Input.+key SpaceBar")
         if native_player:
             cmd(330, "gt.Lidar.AuditRenderPass")
@@ -752,7 +770,12 @@ def analyze(out):
                 json.loads((out / f"record_{sample}_{mark}.json").read_text()) for mark in "abc"
             ]
             assert poses[0] == poses[1] == poses[2], sample
-    if plan["stage"] in ("visual", "routefilm", "boundaryfilm", "routehold", "shadowdepthhold"):
+    if plan["stage"] == "accessparticles":
+        if not re.search(r'\]ShowFlag\.Particles = "0"', log) or not re.search(r'\]r\.Shadow\.Virtual\.Cache = "1"', log):
+            raise ValueError("Expected particle visibility off with the saved shadow cache on")
+    if plan["stage"] == "accesscache" and not re.search(r'\]r\.Shadow\.Virtual\.Cache = "0"', log):
+        raise ValueError("The uncached shadow comparison did not verify")
+    if plan["stage"] in ("visual", "routefilm", "boundaryfilm", "routehold", "shadowdepthhold", "accesscache", "accessparticles"):
         # Move only this run's uniquely named shots from the engine output directory.
         # Short Shot commands keep the dual-treatment schedule inside UE's command-line limit.
         screenshots = ROOT / "Saved_LidarDrive/Screenshots/WindowsEditor"
@@ -762,7 +785,8 @@ def analyze(out):
                 r":Shot filename=(" + re.escape(prefix) + r"([a-z0-9_]+\.png)) -nosuffix$", command
             )
             if match:
-                source = screenshots / match[1]
+                direct = out / match[1]
+                source = direct if direct.exists() else screenshots / match[1]
                 dest = out / match[2]
                 if not dest.exists():
                     if source.drive.lower() == dest.drive.lower():

@@ -84,6 +84,58 @@ def engine_results(folder, observations, data):
         event["driving"] = observed.get("driving")
         event["next_frame_ms"] = times[index + 1] if index + 1 < len(times) else None
     data["garbage_collections"] = collections
+    return origin, times
+
+
+def station_results(folder, observations, origin, frame_times, stations):
+    """Measure the first forward traversal of specified road intervals."""
+    if len(stations) < 2 or any(a >= b for a, b in zip(stations, stations[1:])):
+        raise ValueError("Expected at least two ascending road stations, in metres")
+    drive = json.loads((folder / "continuous-drive.json").read_text())
+    samples = drive["samples"]
+    telemetry_sections = [(key, next(group)) for key, group in groupby(samples, key=lambda s: s[1])]
+    displayed_sections = [
+        (key, next(group)) for key, group in groupby(observations, key=lambda r: r["section"])
+        if key != "None"
+    ]
+    if [k for k, _ in telemetry_sections] != [k for k, _ in displayed_sections]:
+        raise ValueError("Road telemetry and the foreground section markers do not agree")
+    anchors = [
+        record["query_qpc"] / record["qpc_frequency"] - sample[0]
+        for (_, sample), (_, record) in zip(telemetry_sections, displayed_sections)
+    ]
+    # Both telemetry and the frame label come from the same driver callback.
+    # The viewport observes the label at its next query. Check the offset again
+    # on each subsequent transition and omit a frame at interval boundaries.
+    discrepancy = max(anchors) - min(anchors)
+    if discrepancy > 0.25:
+        raise ValueError(f"Road and display clocks disagree by {discrepancy:.3f} seconds")
+    first_time = anchors[0]
+    times = [r["query_qpc"] / r["qpc_frequency"] - first_time for r in observations]
+    crossings = []
+    index = 1
+    for station in stations:
+        while index < len(samples) and not samples[index - 1][2] <= station <= samples[index][2]:
+            index += 1
+        if index == len(samples):
+            raise ValueError(f"The pickup never crossed road station {station} moving forward")
+        a, b = samples[index - 1:index + 1]
+        fraction = (station - a[2]) / (b[2] - a[2]) if a[2] != b[2] else 0
+        crossings.append(a[0] + fraction * (b[0] - a[0]))
+    windows = []
+    for first, last, t0, t1 in zip(stations, stations[1:], crossings, crossings[1:]):
+        inside = [r for r, t in zip(observations, times) if t0 <= t < t1][1:-1]
+        if not inside or any(r["result"] or not r["foreground"] or not r["driving"] for r in inside):
+            raise ValueError("The game window did not present the complete road interval")
+        moving = [frame_times[r["engine_frame"] - origin] for r in inside if r["speed_mps"] > 0.5]
+        interval = [s for s in samples if t0 <= s[0] <= t1]
+        if not moving or not interval:
+            raise ValueError("No moving road samples within the requested interval")
+        windows.append(dict(start_m=first, end_m=last, start_s=round(t0, 3), end_s=round(t1, 3),
+                            frames=len(inside), moving=timing_summary(moving),
+                            median_wheel_contacts=median(s[8] for s in interval),
+                            max_lateral_offset_m=max(s[3] for s in interval)))
+    return dict(section_anchor_spread_ms=round(discrepancy * 1000, 2), windows=windows)
 
 
 def continuous_results(folder, data):
@@ -109,7 +161,7 @@ def continuous_results(folder, data):
         )
 
 
-def analyze(folder):
+def analyze(folder, stations=None):
     with (folder / "presentation.csv").open(newline="") as source:
         rows = [
             {
@@ -218,7 +270,11 @@ def analyze(folder):
                 ),
             )
         data["sections"].append(info)
-    engine_results(folder, rows, data)
+    origin, frame_times = engine_results(folder, rows, data)
+    if stations:
+        if plan["stage"] != "linkeddrive":
+            raise ValueError("Road stations require a continuous foreground drive")
+        data["station_windows"] = station_results(folder, rows, origin, frame_times, stations)
     if plan["stage"] == "linkeddrive":
         continuous_results(folder, data)
     return data
@@ -227,8 +283,12 @@ def analyze(folder):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("folder", type=Path)
-    folder = parser.parse_args().folder
-    result = analyze(folder)
+    parser.add_argument("--stations", type=float, nargs="+", help="First forward crossing of each surveyed road station, in metres")
+    args = parser.parse_args()
+    folder = args.folder
+    result = analyze(folder, args.stations)
+    if args.stations:
+        (folder / "presentation-stations.json").write_text(json.dumps(result["station_windows"], indent=2) + "\n")
     (folder / "presentation-summary.json").write_text(json.dumps(result, indent=2) + "\n")
     for section in result["sections"]:
         print(section)

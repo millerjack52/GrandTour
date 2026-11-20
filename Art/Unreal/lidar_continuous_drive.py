@@ -57,14 +57,46 @@ class RoadDrive:
         offset, self.index, self.start_station = closest(
             self.points, self.station, p.x, p.y, 0, len(self.points) - 1
         )
-        poses = json.loads((root / "Art/lidar_driving_baseline_poses.json").read_text())
-        pose = next(item for item in poses if item["name"] == start)
-        assert offset < 600 and math.hypot(p.x - pose["x"], p.y - pose["y"]) < 1100, (
+        if start == "bog530":
+            (route,) = u.GameplayStatics.get_all_actors_of_class(self.world, u.GTMudRoute)
+            checkpoint = route.get_editor_property("RecoveryPoints")[3].translation
+            assert self.pc.get_editor_property("SelectedLane") == 4
+            assert abs(self.start_station - junction - 530) < 12
+            expected_xy = checkpoint.x, checkpoint.y
+        else:
+            poses = json.loads((root / "Art/lidar_driving_baseline_poses.json").read_text())
+            pose = next(item for item in poses if item["name"] == start)
+            expected_xy = pose["x"], pose["y"]
+        assert offset < 600 and math.dist((p.x, p.y), expected_xy) < 1100, (
             start,
             offset,
             p,
         )
         self.output = output
+        support = u.SystemLibrary.line_trace_single(
+            self.world,
+            p + u.Vector(0, 0, 250),
+            p - u.Vector(0, 0, 650),
+            u.TraceTypeQuery.TRACE_TYPE_QUERY1,
+            True,
+            [self.car],
+            u.DrawDebugTrace.NONE,
+            True,
+        )
+        hit = support.to_tuple() if support else ()
+        floor = next((v.z for v in hit if isinstance(v, u.Vector)), None)
+        self.placement = dict(
+            start=start,
+            expected_xy_cm=expected_xy,
+            position_cm=p.to_tuple(),
+            rotation=self.car.get_actor_rotation().to_tuple(),
+            up_z=self.car.get_actor_up_vector().z,
+            ground_trace_z_cm=floor,
+            ground_objects=[
+                v.get_path_name() for v in hit if isinstance(v, (u.Actor, u.PrimitiveComponent))
+            ],
+        )
+        (output / "drive-placement.json").write_text(json.dumps(self.placement, indent=2))
         self.travel = 0
         self.previous = (p.x, p.y)
         self.stall_station = self.start_station
@@ -78,6 +110,7 @@ class RoadDrive:
         self.next_report = self.started + 10
         self.samples = []
         self.handle = None
+        self.throttle_limit = 1.0
         drive = self.car.get_drivetrain()
         self.drivetrain = drive
         self.traction = self.car.get_traction()
@@ -87,8 +120,7 @@ class RoadDrive:
         self.move.set_target_gear(1, True)
         self.move.set_brake_input(0)
         self.move.set_handbrake_input(False)
-        # The initial checkpoint placement can leave an airborne chassis asleep.
-        # Wake it once before sampling. The normal sleep policy applies on the road.
+        # Wake the chassis once after placement. Wheel contacts are recorded throughout.
         self.move.set_sleeping(False)
 
     def command(self, value):
@@ -119,6 +151,9 @@ class RoadDrive:
                 "gear",
                 "engine_rpm",
                 "max_sinkage_fraction",
+                "slipping_wheels",
+                "largest_slip_cm_s",
+                "throttle_limit",
             ],
             start_station_m=self.start_station,
             travel_m=self.travel,
@@ -139,6 +174,7 @@ class RoadDrive:
             now = time.monotonic()
             if now - self.last_input < 0.10:
                 return
+            input_dt = min(0.3, now - self.last_input)
             self.last_input = now
             if self.pc.get_workshop().is_open() or u.GameplayStatics.is_game_paused(self.world):
                 self.finish("workshop_or_pause")
@@ -209,18 +245,28 @@ class RoadDrive:
             target_speed = max(3.5, (9 if section == "forest_access" else 6) - 3 * abs(steer))
             throttle = max(0, min(1, 0.45 + 0.32 * (target_speed - speed)))
             brake = max(0, min(0.65, (speed - target_speed - 1) * 0.25))
+            wheels = [
+                u.ChaosWheeledVehicleMovementComponent.break_wheel_status(
+                    self.move.get_wheel_state(i)
+                )
+                for i in range(4)
+            ]
+            contacts = sum(w[0] for w in wheels)
+            slipping = [abs(w[7]) for w in wheels if w[0] and w[6]]
+            slip = max(slipping, default=0)
+            # The previous driver kept the accelerator floored through sustained
+            # wheelspin. Ease the pedal until tyres bite, then feed power back in.
+            if len(slipping) >= 2 and slip > 100 and speed < 3:
+                self.throttle_limit = max(0.20, self.throttle_limit - input_dt * 0.8)
+            else:
+                self.throttle_limit = min(1.0, self.throttle_limit + input_dt * 0.35)
+            throttle = min(throttle, self.throttle_limit)
             if now < self.reverse_until:
-                throttle, brake, steer = 0, 0.65, -0.45 * steer
+                throttle, brake, steer = 0, min(0.65, self.throttle_limit), -0.45 * steer
             self.car.set_raw_steer(steer)
             self.move.set_throttle_input(throttle)
             self.move.set_brake_input(brake)
             self.move.set_handbrake_input(False)
-            contacts = sum(
-                u.ChaosWheeledVehicleMovementComponent.break_wheel_status(
-                    self.move.get_wheel_state(i)
-                )[0]
-                for i in range(4)
-            )
             if now >= self.next_report:
                 u.log(
                     f"GT_LINKED_DRIVING {section} station={here:.1f} travel_m={self.travel:.1f} speed_mps={speed:.1f} wheel_contacts={contacts}"
@@ -243,6 +289,9 @@ class RoadDrive:
                     self.drivetrain.get_gear(),
                     round(self.drivetrain.get_engine_rpm()),
                     round(self.traction.get_max_sinkage_fraction(), 3),
+                    len(slipping),
+                    round(slip, 1),
+                    round(self.throttle_limit, 2),
                 ]
             )
         except Exception:
