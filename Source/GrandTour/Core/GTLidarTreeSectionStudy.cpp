@@ -228,6 +228,7 @@ namespace
 				Shadow->SetRenderInMainPass(false);
 				Shadow->SetRenderInDepthPass(false);
 				Owner->AddInstanceComponent(Shadow);
+				Owner->AddOwnedComponent(Shadow);
 				Shadow->RegisterComponent();
 				if (!Shadow->IsRegistered() || Shadow->GetStaticMesh() != Source->GetStaticMesh() ||
 					Shadow->GetInstanceCount() != Source->GetInstanceCount()) return;

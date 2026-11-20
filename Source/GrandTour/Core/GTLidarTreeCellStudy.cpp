@@ -1,3 +1,4 @@
+#include "GTLidarTreeInstances.h"
 #include "Components/InstancedStaticMeshComponent.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
@@ -55,18 +56,9 @@ namespace
 			Template->AdditionalRandomSeeds.Reset();
 			Template->ComponentTags = {TEXT("LidarTreeCellTrial")};
 			TMap<FIntPoint, TArray<int32>> Cells;
-			TArray<int32> Seeds;
-			Seeds.Reserve(Source->GetInstanceCount());
-			FRandomStream Stream(Source->InstancingRandomSeed);
-			int32 Reset = 0;
+			const auto Seeds = GTLidarTreeInstances::RandomSeeds(*Source);
 			for (int32 I = 0; I < Source->GetInstanceCount(); ++I)
 			{
-				if (Source->AdditionalRandomSeeds.IsValidIndex(Reset) && Source->AdditionalRandomSeeds[Reset].StartInstanceIndex == I)
-				{
-					Stream.Initialize(Source->AdditionalRandomSeeds[Reset++].RandomSeed);
-				}
-				Seeds.Add(Stream.GetCurrentSeed());
-				Stream.GetFraction();
 				const FVector P = Source->GetComponentTransform().TransformPosition(Source->PerInstanceSMData[I].Transform.GetOrigin());
 				Cells.FindOrAdd(FIntPoint(FMath::FloorToInt(P.X / CellCm), FMath::FloorToInt(P.Y / CellCm))).Add(I);
 			}
@@ -75,25 +67,7 @@ namespace
 				auto* Mesh = NewObject<UInstancedStaticMeshComponent>(Owner, NAME_None, RF_Transient, Template);
 				Mesh->SetupAttachment(Source->GetAttachParent(), Source->GetAttachSocketName());
 				Mesh->SetRelativeTransform(Source->GetRelativeTransform());
-				Mesh->InstancingRandomSeed = Seeds[Cell.Value[0]];
-				// A zero initial seed is regenerated on registration. An explicit index-zero reset preserves it.
-				if (Mesh->InstancingRandomSeed == 0)
-				{
-					Mesh->InstancingRandomSeed = 1;
-					Mesh->AdditionalRandomSeeds.AddDefaulted();
-				}
-				for (int32 Index : Cell.Value)
-				{
-					const int32 Local = Mesh->PerInstanceSMData.Num();
-					if (Local > 0 && (Index != Cell.Value[Local - 1] + 1 || !Source->AdditionalRandomSeeds.IsEmpty()))
-					{
-						auto& Seed = Mesh->AdditionalRandomSeeds.AddDefaulted_GetRef();
-						Seed.StartInstanceIndex = Local;
-						Seed.RandomSeed = Seeds[Index];
-					}
-					// Preserve the raw instance matrix, including its full affine basis.
-					Mesh->PerInstanceSMData.Add(Source->PerInstanceSMData[Index]);
-				}
+				GTLidarTreeInstances::CopySubset(*Mesh, *Source, Cell.Value, Seeds);
 				Owner->AddInstanceComponent(Mesh);
 				Mesh->RegisterComponent();
 				++TotalCells;

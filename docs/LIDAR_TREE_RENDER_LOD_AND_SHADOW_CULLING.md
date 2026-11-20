@@ -176,3 +176,35 @@ Every measured moving frame exceeded 16.67 ms. The candidate's mean sits between
 ### Extending the corrected tree rendering to 150 metres
 
 A separate 240-frame comparison kept the original trees casting shadows and extended accelerated drawing to 150 m. All 65 pickup positions matched. The original problem region on the paddock skyline differed by 0.65 brightness levels, down from 4.97 in the earlier 150 m test. The forest-access sunlight differed by 1.68 and the close bog bark by 0.40. The wider scan still found small changes to distant foliage between trunks. At paddock frame 27 its worst 96 × 96 region differed by 2.40 against 0.17 in the original repeats. At bog-approach frame 22, a small sky opening behind the trunks changed, with a 2.36 difference against 0.15 in the repeats. The native crops and footage are in `D:/GrandTourAssets/Reviews/Lidar60/original-caster-150m-review`.
+
+## First forward passage across 95 metres
+
+The 150 m candidate covered 109.56 m including recovery manoeuvres, then stalled about two metres short of the measured track end. Both original runs reached the end. All three pickups crossed road stations 2240 and 2335. Each comparison below includes only foreground driving frames on the first forward passage between those stations, above 0.5 m/s. The runs varied in wheel tracks, speed and GPU clock.
+
+| Rendering | Moving frames | FPS | p95 / p99 / longest frame | GPU / surface / velocity / shadow drawing |
+| --- | ---: | ---: | ---: | ---: |
+| Original | 1444 | 14.03 | 87.70 / 103.06 / 146.52 ms | 69.57 / 19.39 / 14.30 / 19.68 ms |
+| 150 m with original casters | 1451 | 14.99 | 82.85 / 106.86 / 176.32 ms | 64.48 / 11.78 / 8.22 / 22.40 ms |
+| Original repeat | 1542 | 12.71 | 93.52 / 110.87 / 167.72 ms | 76.69 / 21.71 / 15.91 / 21.67 ms |
+
+Nanite visibility and surface shading together cost 4.92 ms in the 150 m trial. All three runs exceeded the 16.67 ms budget on every moving frame. The mean and p95 improved against both originals, while the candidate's worst frame was longer. Its largest remaining individual GPU pass was drawing shadows. Native foliage and dust remained visible throughout. The 150 m setting stays experimental.
+
+## Matching the tree detail level to the driving view
+
+Five independent locations in one fixed replay measured the renderer's padded local tree bounds, actual instance transforms and camera projection at 5.875 seconds into each drive. The original detail choice depends on the projected size of a tree, which varies with its height. The counts below include bounds touching the view frustum before occlusion. They describe potential draws.
+
+| Location | Original LOD1 within 55 m | Original LOD1 within 110 m | Original LOD1 / LOD2 within 150 m |
+| --- | ---: | ---: | ---: |
+| Paddock | 0 | 59 | 152 / 22 |
+| Forest access | 106 | 241 | 332 / 16 |
+| River | 37 | 228 | 352 / 13 |
+| Bog approach | 133 | 374 | 571 / 29 |
+| Deep bog | 119 | 354 | 526 / 13 |
+
+All the counted trees inside 110 m used LOD1. No counted tree inside 150 m used the far billboard. Extending a uniform 150 m replacement puts some of the smaller trees on different geometry from the source. These counts alone cannot identify which individual leaf covers a particular output pixel. The diagnostic uses the engine's packed mesh thresholds and the active driving camera's LOD scale. Reproduce it with `-ShadowStudy routetime -ShadowCandidate saved -WarmTrees -FixedRouteReplay -TreeSizeAudit`.
+
+A further study splits the visible trees using each instance's original bounds and the current chase-view projection. It rounds each transition down to the next 10 m interval and caps the experimental range at 210 m. The original renderer chooses the geometry beyond that interval. Full-range original shadow casters still cover all 146,197 mature trees. The native bog run verified 33 distance groups, 69 visible renderer proxies and zero fallback materials. Every instance keeps its source placement and random seed. Use `-SizeMatchedTrees -NearTreeMetres 210 -RenderLodTrees -BarkCoordinates -OriginalTreeShadows` with a saved driving comparison. Other camera modes and view sizes require independent validation.
+
+The size-based trial finished the real wet-shelf drive, covering 100.82 m without a recovery manoeuvre. Across the shared 95 m it measured 14.67 fps on 1,410 moving frames, with 84.84 ms p95, 104.24 ms p99 and a 136.17 ms maximum. The two originals measured 14.03 and 12.71 fps. Every moving frame exceeded the 60 fps budget. In the candidate the surface pass cost 11.03 ms, velocity 7.90 ms and shadow drawing 23.39 ms. The GPU took 65.78 ms and the game thread 10.80 ms. The separate 192-frame fixed bog replay measured 23.81 fps with 50.35 ms p95. The moving game-window measurements determine the result for this road.
+
+The 240-frame film matched all 65 original pickup positions. In the paddock frame-27 foliage patch the size-based version reduced the difference from 2.40 to 0.40 levels. The original repeat differed by 0.16. The small sky opening at the bog approach still changed. The patch differed by 2.52 levels, against 2.36 with the fixed range and 0.14 in the original repeat. The close grass difference of 13.69 was comparable to the original repeat's 13.68. The four-column image at `D:/GrandTourAssets/Reviews/Lidar60/size-matched-review/sky-and-ground.jpg` shows the two original runs, fixed-range trial and size-based trial. The remaining crown difference and frame times keep the size-based trial outside the saved configuration.

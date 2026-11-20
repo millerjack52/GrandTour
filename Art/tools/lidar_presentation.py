@@ -30,14 +30,22 @@ def timing_summary(frame):
     )
 
 
-def engine_results(folder, observations, data):
+def engine_results(folder, observations, data, collect_passes=False):
     first_engine_frame = observations[0]["engine_frame"]
     manifest = json.loads(next(folder.glob("playperf-*.json")).read_text(encoding="utf-8-sig"))
     collections = []
     times = []
+    passes = {}
     origin = None
     with Path(manifest["csv"][0]).open(newline="", encoding="utf-8-sig") as stream:
-        for row in csv.DictReader(stream):
+        reader = csv.DictReader(stream)
+        if collect_passes:
+            labels = ("GameThreadTime", "RenderThreadTime", "RHIThreadTime", "GPUTime",
+                      "GPU/Prepass", "GPU/RenderVelocities", "GPU/Basepass", "GPU/ShadowDepths",
+                      "GPU/ShadowProjection", "GPU/NaniteVisBuffer", "GPU/NaniteBasePass",
+                      "GPU/LumenScreenProbeGather", "GPU/LumenReflections", "GPU/TemporalSuperResolution")
+            passes = {key: [] for key in labels if key in reader.fieldnames}
+        for row in reader:
             try:
                 dt = float(row["FrameTime"])
             except (TypeError, ValueError):
@@ -56,6 +64,8 @@ def engine_results(folder, observations, data):
                     )
                 )
             times.append(dt)
+            for key, values in passes.items():
+                values.append(float(row[key]) if row[key] else None)
     if origin is None:
         raise ValueError("No matching display and engine capture start")
     for info in data["sections"]:
@@ -84,10 +94,10 @@ def engine_results(folder, observations, data):
         event["driving"] = observed.get("driving")
         event["next_frame_ms"] = times[index + 1] if index + 1 < len(times) else None
     data["garbage_collections"] = collections
-    return origin, times
+    return origin, times, passes
 
 
-def station_results(folder, observations, origin, frame_times, stations):
+def station_results(folder, observations, origin, frame_times, passes, stations):
     """Measure the first forward traversal of specified road intervals."""
     if len(stations) < 2 or any(a >= b for a, b in zip(stations, stations[1:])):
         raise ValueError("Expected at least two ascending road stations, in metres")
@@ -127,12 +137,20 @@ def station_results(folder, observations, origin, frame_times, stations):
         inside = [r for r, t in zip(observations, times) if t0 <= t < t1][1:-1]
         if not inside or any(r["result"] or not r["foreground"] or not r["driving"] for r in inside):
             raise ValueError("The game window did not present the complete road interval")
-        moving = [frame_times[r["engine_frame"] - origin] for r in inside if r["speed_mps"] > 0.5]
+        indices = [r["engine_frame"] - origin for r in inside if r["speed_mps"] > 0.5]
+        moving = [frame_times[i] for i in indices]
         interval = [s for s in samples if t0 <= s[0] <= t1]
         if not moving or not interval:
             raise ValueError("No moving road samples within the requested interval")
+        costs = {}
+        for key, values in passes.items():
+            measured = [values[i] for i in indices if values[i] is not None]
+            if measured:
+                costs[key] = dict(samples=len(measured), mean_ms=round(sum(measured) / len(measured), 3),
+                                  p95_ms=percentile(measured, .95))
         windows.append(dict(start_m=first, end_m=last, start_s=round(t0, 3), end_s=round(t1, 3),
                             frames=len(inside), moving=timing_summary(moving),
+                            pass_timings=costs,
                             median_wheel_contacts=median(s[8] for s in interval),
                             max_lateral_offset_m=max(s[3] for s in interval)))
     return dict(section_anchor_spread_ms=round(discrepancy * 1000, 2), windows=windows)
@@ -270,11 +288,11 @@ def analyze(folder, stations=None):
                 ),
             )
         data["sections"].append(info)
-    origin, frame_times = engine_results(folder, rows, data)
+    origin, frame_times, passes = engine_results(folder, rows, data, collect_passes=bool(stations))
     if stations:
         if plan["stage"] != "linkeddrive":
             raise ValueError("Road stations require a continuous foreground drive")
-        data["station_windows"] = station_results(folder, rows, origin, frame_times, stations)
+        data["station_windows"] = station_results(folder, rows, origin, frame_times, passes, stations)
     if plan["stage"] == "linkeddrive":
         continuous_results(folder, data)
     return data
