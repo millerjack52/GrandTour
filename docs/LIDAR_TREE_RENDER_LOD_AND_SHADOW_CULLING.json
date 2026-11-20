@@ -1,0 +1,683 @@
+{
+  "source_geometry": [
+    {
+      "species": 0,
+      "original_lod0": 37382,
+      "render_lod1": 18691,
+      "slots": [
+        0,
+        1
+      ],
+      "signature": "22d136b050e393f1506a4ce5e5a4a6cdc12c388cd25dee8f76f8d47c089b6e24"
+    },
+    {
+      "species": 1,
+      "original_lod0": 44893,
+      "render_lod1": 22447,
+      "slots": [
+        0,
+        1
+      ],
+      "signature": "da6337f0c7cb2b9681af8d289e3bab9301a7f9f7f2a18b487c32ab692d349d83"
+    },
+    {
+      "species": 2,
+      "original_lod0": 54865,
+      "render_lod1": 27432,
+      "slots": [
+        0,
+        1
+      ],
+      "signature": "ff75ccb9f959ab24b42ebe7e4678c576b37af31b15455334a75480ffc1b278c7"
+    }
+  ],
+  "bog_replays": [
+    {
+      "run": "sweep65_stock_bog",
+      "frames": 192,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 49.765,
+          "p95": 55.784,
+          "median": 49.201,
+          "p99": 61.037,
+          "maximum": 64.96,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 61,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 48.736,
+          "p95": 55.755
+        },
+        "GPU/ShadowDepths": {
+          "mean": 12.577,
+          "p95": 14.779
+        },
+        "GPU/Basepass": {
+          "mean": 14.188,
+          "p95": 15.866
+        },
+        "GPU/RenderVelocities": {
+          "mean": 9.754,
+          "p95": 10.759
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 632.672,
+          "p95": 644.0
+        },
+        "GameThreadTime": {
+          "mean": 9.381,
+          "p95": 11.257
+        },
+        "RenderThreadTime": {
+          "mean": 9.411,
+          "p95": 10.985
+        },
+        "DrawCall/Basepass": {
+          "mean": 570.547,
+          "p95": 586.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2132793.667,
+          "p95": 2375015.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.319,
+          "p95": 0.342
+        }
+      },
+      "fps": 20.09,
+      "gpu_clock": {
+        "median_clock_mhz": 1590.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 29.32,
+        "samples_thermally_limited": 9
+      },
+      "samples": 9,
+      "nanite_visibility_ms": 0.33,
+      "nanite_surface_ms": 0.133,
+      "conditions": {
+        "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+        "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "offscreen": true,
+        "render_lod_trees": false,
+        "near_tree_control": false,
+        "audio_enabled": true,
+        "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+        "velocity_pass_trial": "",
+        "os_build": "26200",
+        "near_tree_metres": 0,
+        "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+        "module_sha256": "3830332724B0AC1A5302C260FF6972F90571D24D9D47DC671EC0C147784B495A",
+        "native_player": false,
+        "disable_editor_python": false,
+        "static_far_leaves": false,
+        "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492"
+      }
+    },
+    {
+      "run": "sweep64_lod0_bog",
+      "frames": 192,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 44.722,
+          "p95": 47.791,
+          "median": 44.563,
+          "p99": 49.393,
+          "maximum": 53.402,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 1,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 43.657,
+          "p95": 45.815
+        },
+        "GPU/ShadowDepths": {
+          "mean": 9.885,
+          "p95": 11.735
+        },
+        "GPU/Basepass": {
+          "mean": 12.788,
+          "p95": 13.559
+        },
+        "GPU/RenderVelocities": {
+          "mean": 8.649,
+          "p95": 9.138
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 646.672,
+          "p95": 658.0
+        },
+        "GameThreadTime": {
+          "mean": 9.381,
+          "p95": 11.165
+        },
+        "RenderThreadTime": {
+          "mean": 9.674,
+          "p95": 11.733
+        },
+        "DrawCall/Basepass": {
+          "mean": 571.323,
+          "p95": 588.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2132695.469,
+          "p95": 2376441.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.305,
+          "p95": 0.325
+        }
+      },
+      "fps": 22.36,
+      "gpu_clock": {
+        "median_clock_mhz": 1665.0,
+        "peak_temperature_c": 88.0,
+        "median_power_w": 30.19,
+        "samples_thermally_limited": 8
+      },
+      "samples": 8,
+      "nanite_visibility_ms": 0.867,
+      "nanite_surface_ms": 0.335,
+      "conditions": {
+        "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+        "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "offscreen": true,
+        "render_lod_trees": false,
+        "near_tree_control": false,
+        "audio_enabled": true,
+        "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+        "velocity_pass_trial": "",
+        "os_build": "26200",
+        "near_tree_metres": 55,
+        "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+        "module_sha256": "3830332724B0AC1A5302C260FF6972F90571D24D9D47DC671EC0C147784B495A",
+        "native_player": false,
+        "disable_editor_python": false,
+        "static_far_leaves": false,
+        "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492"
+      }
+    },
+    {
+      "run": "sweep63_lod1_bog",
+      "frames": 192,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 43.02,
+          "p95": 47.337,
+          "median": 42.927,
+          "p99": 49.907,
+          "maximum": 52.137,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 2,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 42.002,
+          "p95": 44.673
+        },
+        "GPU/ShadowDepths": {
+          "mean": 9.532,
+          "p95": 11.537
+        },
+        "GPU/Basepass": {
+          "mean": 12.473,
+          "p95": 13.28
+        },
+        "GPU/RenderVelocities": {
+          "mean": 8.49,
+          "p95": 9.027
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 646.672,
+          "p95": 658.0
+        },
+        "GameThreadTime": {
+          "mean": 9.347,
+          "p95": 11.184
+        },
+        "RenderThreadTime": {
+          "mean": 9.746,
+          "p95": 11.272
+        },
+        "DrawCall/Basepass": {
+          "mean": 570.219,
+          "p95": 586.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2132627.99,
+          "p95": 2374745.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.298,
+          "p95": 0.319
+        }
+      },
+      "fps": 23.24,
+      "gpu_clock": {
+        "median_clock_mhz": 1665.0,
+        "peak_temperature_c": 87.0,
+        "median_power_w": 34.265,
+        "samples_thermally_limited": 8
+      },
+      "samples": 8,
+      "nanite_visibility_ms": 0.836,
+      "nanite_surface_ms": 0.332,
+      "conditions": {
+        "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+        "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "offscreen": true,
+        "render_lod_trees": true,
+        "near_tree_control": false,
+        "audio_enabled": true,
+        "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+        "velocity_pass_trial": "",
+        "os_build": "26200",
+        "near_tree_metres": 55,
+        "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+        "module_sha256": "3830332724B0AC1A5302C260FF6972F90571D24D9D47DC671EC0C147784B495A",
+        "native_player": false,
+        "disable_editor_python": false,
+        "static_far_leaves": false,
+        "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492"
+      }
+    },
+    {
+      "run": "sweep68_lod1_150_bog",
+      "frames": 192,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 37.049,
+          "p95": 39.521,
+          "median": 36.698,
+          "p99": 54.19,
+          "maximum": 54.545,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 191,
+          "over_50_ms": 4,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 35.982,
+          "p95": 37.533
+        },
+        "GPU/ShadowDepths": {
+          "mean": 8.232,
+          "p95": 9.71
+        },
+        "GPU/Basepass": {
+          "mean": 7.294,
+          "p95": 8.114
+        },
+        "GPU/RenderVelocities": {
+          "mean": 4.671,
+          "p95": 5.331
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 646.667,
+          "p95": 658.0
+        },
+        "GameThreadTime": {
+          "mean": 9.769,
+          "p95": 11.81
+        },
+        "RenderThreadTime": {
+          "mean": 10.259,
+          "p95": 12.024
+        },
+        "DrawCall/Basepass": {
+          "mean": 570.651,
+          "p95": 589.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2124938.885,
+          "p95": 2421891.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.342,
+          "p95": 0.363
+        }
+      },
+      "fps": 26.99,
+      "gpu_clock": {
+        "median_clock_mhz": 1500.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 26.02,
+        "samples_thermally_limited": 7
+      },
+      "samples": 7,
+      "nanite_visibility_ms": 2.822,
+      "nanite_surface_ms": 0.429,
+      "conditions": {
+        "offscreen": true,
+        "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics     ",
+        "audio_enabled": true,
+        "os_build": "26200",
+        "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+        "material_draw_study": false,
+        "velocity_pass_trial": "",
+        "workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "disable_editor_python": false,
+        "near_tree_control": false,
+        "render_lod_trees": true,
+        "module_sha256": "3830332724B0AC1A5302C260FF6972F90571D24D9D47DC671EC0C147784B495A",
+        "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+        "near_tree_metres": 150,
+        "final_workshop_save_sha256": "66C07BD58022E00924FF96B08B584B3A2BBB86F25742DA2D23E09CBB6B0E0492",
+        "native_player": false,
+        "static_far_leaves": false
+      }
+    }
+  ],
+  "film_55m": {
+    "paddock_mid": {
+      "travel_m": [
+        19.26,
+        19.26
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.126,
+      "max_pct_over_8": 0.01,
+      "mean_upper_scene_delta_255": 0.157,
+      "worst_96px_patch_mean_delta_255": 0.489,
+      "worst_local_frame": 47
+    },
+    "access": {
+      "travel_m": [
+        37.82,
+        37.82
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 4.694,
+      "max_pct_over_8": 62.611,
+      "mean_upper_scene_delta_255": 4.083,
+      "worst_96px_patch_mean_delta_255": 86.173,
+      "worst_local_frame": 37
+    },
+    "river": {
+      "travel_m": [
+        2.48,
+        2.48
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.268,
+      "max_pct_over_8": 0.361,
+      "mean_upper_scene_delta_255": 0.25,
+      "worst_96px_patch_mean_delta_255": 2.153,
+      "worst_local_frame": 47
+    },
+    "bog_entry": {
+      "travel_m": [
+        3.41,
+        3.41
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.349,
+      "max_pct_over_8": 0.25,
+      "mean_upper_scene_delta_255": 0.416,
+      "worst_96px_patch_mean_delta_255": 4.498,
+      "worst_local_frame": 19
+    },
+    "bog552": {
+      "travel_m": [
+        7.34,
+        7.34
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.57,
+      "max_pct_over_8": 2.574,
+      "mean_upper_scene_delta_255": 0.493,
+      "worst_96px_patch_mean_delta_255": 22.711,
+      "worst_local_frame": 14
+    }
+  },
+  "film_150m": {
+    "paddock_mid": {
+      "travel_m": [
+        19.26,
+        19.26
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 1.823,
+      "max_pct_over_8": 6.426,
+      "mean_upper_scene_delta_255": 4.215,
+      "worst_96px_patch_mean_delta_255": 14.228,
+      "worst_local_frame": 2
+    },
+    "access": {
+      "travel_m": [
+        37.82,
+        37.82
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 4.895,
+      "max_pct_over_8": 60.94,
+      "mean_upper_scene_delta_255": 2.847,
+      "worst_96px_patch_mean_delta_255": 83.825,
+      "worst_local_frame": 19
+    },
+    "river": {
+      "travel_m": [
+        2.48,
+        2.48
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.419,
+      "max_pct_over_8": 0.639,
+      "mean_upper_scene_delta_255": 0.451,
+      "worst_96px_patch_mean_delta_255": 5.246,
+      "worst_local_frame": 41
+    },
+    "bog_entry": {
+      "travel_m": [
+        3.41,
+        3.41
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.368,
+      "max_pct_over_8": 0.327,
+      "mean_upper_scene_delta_255": 0.525,
+      "worst_96px_patch_mean_delta_255": 4.499,
+      "worst_local_frame": 19
+    },
+    "bog552": {
+      "travel_m": [
+        7.34,
+        7.34
+      ],
+      "pose_samples": 13,
+      "max_separation_cm": 0.0,
+      "samples": 48,
+      "mean_luma_delta_255": 0.564,
+      "max_pct_over_8": 2.18,
+      "mean_upper_scene_delta_255": 0.725,
+      "worst_96px_patch_mean_delta_255": 21.637,
+      "worst_local_frame": 14
+    }
+  },
+  "matched_crops": [
+    {
+      "region": "Paddock skyline",
+      "file": "r047.png",
+      "box": [
+        1056,
+        81,
+        1376,
+        291
+      ],
+      "repeat": {
+        "mean_abs_gray": 0.153,
+        "mean_signed_rgb": [
+          -0.004,
+          -0.004,
+          -0.004
+        ]
+      },
+      "tests": {
+        "sweep67_stock_film": {
+          "mean_abs_gray": 0.0,
+          "mean_signed_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "sweep52_near_paint_film": {
+          "mean_abs_gray": 0.15,
+          "mean_signed_rgb": [
+            -0.003,
+            -0.002,
+            -0.003
+          ]
+        },
+        "sweep66_lod1_film": {
+          "mean_abs_gray": 0.152,
+          "mean_signed_rgb": [
+            -0.003,
+            -0.004,
+            -0.006
+          ]
+        },
+        "sweep69_lod1_150_film": {
+          "mean_abs_gray": 4.973,
+          "mean_signed_rgb": [
+            -5.821,
+            -4.084,
+            0.034
+          ]
+        }
+      }
+    },
+    {
+      "region": "Bog approach, right trunk",
+      "file": "r319.png",
+      "box": [
+        1424,
+        483,
+        1520,
+        579
+      ],
+      "repeat": {
+        "mean_abs_gray": 0.069,
+        "mean_signed_rgb": [
+          0.017,
+          0.008,
+          -0.014
+        ]
+      },
+      "tests": {
+        "sweep67_stock_film": {
+          "mean_abs_gray": 0.0,
+          "mean_signed_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "sweep52_near_paint_film": {
+          "mean_abs_gray": 4.5,
+          "mean_signed_rgb": [
+            -0.427,
+            6.434,
+            -0.349
+          ]
+        },
+        "sweep66_lod1_film": {
+          "mean_abs_gray": 4.498,
+          "mean_signed_rgb": [
+            -0.444,
+            6.436,
+            -0.364
+          ]
+        },
+        "sweep69_lod1_150_film": {
+          "mean_abs_gray": 4.499,
+          "mean_signed_rgb": [
+            -0.43,
+            6.435,
+            -0.368
+          ]
+        }
+      }
+    },
+    {
+      "region": "Deep bog, grass blades",
+      "file": "r410.png",
+      "box": [
+        272,
+        771,
+        368,
+        867
+      ],
+      "repeat": {
+        "mean_abs_gray": 13.675,
+        "mean_signed_rgb": [
+          -1.606,
+          -3.34,
+          -2.581
+        ]
+      },
+      "tests": {
+        "sweep67_stock_film": {
+          "mean_abs_gray": 0.0,
+          "mean_signed_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "sweep52_near_paint_film": {
+          "mean_abs_gray": 3.692,
+          "mean_signed_rgb": [
+            -0.276,
+            -0.704,
+            -0.655
+          ]
+        },
+        "sweep66_lod1_film": {
+          "mean_abs_gray": 13.896,
+          "mean_signed_rgb": [
+            -1.237,
+            -3.13,
+            -2.522
+          ]
+        },
+        "sweep69_lod1_150_film": {
+          "mean_abs_gray": 3.707,
+          "mean_signed_rgb": [
+            -0.133,
+            -0.601,
+            -0.64
+          ]
+        }
+      }
+    }
+  ]
+}

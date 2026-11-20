@@ -142,10 +142,11 @@ namespace
 		if (!World || World->WorldType != EWorldType::Game || Args.Num() != 2 ||
 			UGameplayStatics::GetCurrentLevelName(World, true) != TEXT("L_LidarStudy")) return;
 		int32 Metres = 0;
+		const bool bRenderLod = Args[1] == TEXT("renderlod");
 		if (!LexTryParseString(Metres, *Args[0]) || Metres < 20 || Metres > 150 ||
-			(Args[1] != TEXT("paint") && Args[1] != TEXT("control"))) return;
+			(!bRenderLod && Args[1] != TEXT("paint") && Args[1] != TEXT("control"))) return;
 		const int32 Radius = Metres * 100;
-		const bool bPaint = Args[1] == TEXT("paint");
+		const bool bPaint = bRenderLod || Args[1] == TEXT("paint");
 		struct FSource { UInstancedStaticMeshComponent* Component; UStaticMesh* Near; };
 		TArray<FSource> Sources;
 		for (TActorIterator<AActor> It(World); It; ++It)
@@ -162,7 +163,9 @@ namespace
 					UE_LOG(LogTemp, Warning, TEXT("GT_TREE_RANGE incompatible component=%s min=%d end=%d"), *C->GetPathName(), C->InstanceMinDrawDistance, C->InstanceEndCullDistance);
 					return;
 				}
-				const FString Path = TEXT("/Game/GrandTour/ArtTests/LidarStudy/PerformanceStudy/SM_NanitePainted_") + Original->GetName().Right(1);
+				if (bRenderLod && (!C->bOverrideMinLOD || C->MinLOD != 1)) return;
+				const FString Prefix = bRenderLod ? TEXT("SM_NaniteRenderLod1_") : TEXT("SM_NanitePainted_");
+				const FString Path = TEXT("/Game/GrandTour/ArtTests/LidarStudy/PerformanceStudy/") + Prefix + Original->GetName().Right(1);
 				UStaticMesh* Near = bPaint ? LoadObject<UStaticMesh>(nullptr, *Path) : Original;
 				if (!Near || Near->GetStaticMaterials().Num() != C->GetNumMaterials())
 				{

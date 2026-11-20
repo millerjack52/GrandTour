@@ -1,4 +1,4 @@
-param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214','bog552')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,150)][int]$NearTreeMetres=0, [switch]$NearTreeControl, [ValidateSet('depth','base')][string]$VelocityPassStudy, [switch]$StaticFarLeaves, [switch]$NativePlayer, [switch]$DisableEditorPython)
+param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214','bog552')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,150)][int]$NearTreeMetres=0, [switch]$NearTreeControl, [ValidateSet('depth','base')][string]$VelocityPassStudy, [switch]$StaticFarLeaves, [switch]$NativePlayer, [switch]$DisableEditorPython, [switch]$RenderLodTrees)
 $ErrorActionPreference='Stop'
 if($ShadowStudy){$DrivingBaseline=$true}
 if($TargetWindow -and !$ForegroundDrive){throw 'The target window requires foreground timing'}
@@ -13,6 +13,7 @@ if($StaticFarLeaves){
 }
 if($VelocityPassStudy -and (!$EvidenceRoot -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $NearTreeMetres -or $StudySettings -or $TreeSections -or $TreeShadowIndices -or $TreeCellMetres -or $ShadowStudy -notin @('basemoving','routefilm','routetime'))){throw 'Motion-vector pass comparisons require the original trees and an external evidence folder'}
 if($VelocityPassStudy){$WarmTrees=$true}
+if($RenderLodTrees -and (!$NearTreeMetres -or $NearTreeControl)){throw 'Rendered LOD trees require a painted near-tree comparison'}
 if($NearTreeControl -and !$NearTreeMetres){throw 'A near-tree control needs a distance'}
 if($NearTreeMetres -and ($NearTreeMetres -lt 20 -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $TreeCellMetres -or $TreeSections -or $TreeShadowIndices -or $StudySettings -or $ShadowStudy -notin @('routefilm','boundaryfilm','routetime','basemoving','linkeddrive'))){throw 'Near-tree comparisons require the saved route, original tree placement and a 20 to 150 metre distance'}
 if($EarlyFamily -and $ShadowStudy -ne 'basemoving'){throw 'Early family installation requires a moving study'}
@@ -73,6 +74,7 @@ try {
   }
   $workshopSave=Join-Path $taskRoot 'Saved_LidarDrive/SaveGames/GT_Workshop_RangeRover.sav'
   $conditions.workshop_save_sha256=if(Test-Path -LiteralPath $workshopSave){(Get-FileHash -LiteralPath $workshopSave).Hash}else{$null}
+  $conditions.render_lod_trees=[bool]$RenderLodTrees
   $conditions.near_tree_metres=$NearTreeMetres
   $conditions.near_tree_control=[bool]$NearTreeControl
   $conditions.velocity_pass_trial=$VelocityPassStudy
@@ -112,7 +114,7 @@ try {
    }
    if($ShadowStudy -eq 'basemoving'){$schedule+='592:gt.Lidar.AuditTreeRendering'}
    if($NearTreeMetres){
-    $mode=if($NearTreeControl){'control'}else{'paint'}
+    $mode=if($NearTreeControl){'control'}elseif($RenderLodTrees){'renderlod'}else{'paint'}
     $schedule+=("342:gt.Lidar.NearTreeStudy $NearTreeMetres $mode")
     if($StaticFarLeaves){
      $farScript=(Join-Path $PSScriptRoot 'Unreal/lidar_distant_leaf_trial.py').Replace('\','/')
@@ -310,7 +312,7 @@ try {
    $expectedProxies=3*$paint
    if(!(Select-String -LiteralPath $log -SimpleMatch "GT_TREE_RANGE groups=3 instances=146197 radius_cm=$($NearTreeMetres*100) painted=$paint" -Quiet)){throw 'Near-tree distances were not installed on all three mature species'}
    foreach($species in 0..2){
-    $nearMesh=if($NearTreeControl){"SM_Canopy_$species"}else{"SM_NanitePainted_$species"}
+    $nearMesh=if($NearTreeControl){"SM_Canopy_$species"}elseif($RenderLodTrees){"SM_NaniteRenderLod1_$species"}else{"SM_NanitePainted_$species"}
     foreach($range in @("mesh=$nearMesh min_cm=0 max_cm=$($NearTreeMetres*100)","mesh=SM_Canopy_$species min_cm=$($NearTreeMetres*100) max_cm=2147483648")){
      if(!(Select-String -LiteralPath $log -SimpleMatch "GT_TREE_DRAW_RANGE $range" -Quiet)){throw "Missing renderer distance check: $range"}
     }
