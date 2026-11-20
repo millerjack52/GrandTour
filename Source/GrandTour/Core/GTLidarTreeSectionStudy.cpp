@@ -134,6 +134,9 @@ namespace
 					}
 					UE_LOG(LogTemp, Display, TEXT("GT_TREE_RENDER mesh=%s nanite_data=%d nanite_proxy=%d slots=%d material_fallbacks=%d"),
 						*Group.Mesh, Group.bValidNaniteData, bNanite, Group.Materials.Num(), GroupFallbacks);
+					if (!bShadowAudit && Group.SceneProxy)
+						UE_LOG(LogTemp, Display, TEXT("GT_VISIBLE_TREE_WIND mesh=%s evaluate=%d always=%d"),
+							*Group.Mesh, Group.SceneProxy->EvaluateWorldPositionOffset(), Group.SceneProxy->AnyMaterialAlwaysEvaluatesWorldPositionOffset());
 				}
 				UE_LOG(LogTemp, Display, TEXT("%s groups=%d proxies=%d nanite=%d material_fallbacks=%d"),
 					bShadowAudit ? TEXT("GT_TREE_SHADOW_SUMMARY") : TEXT("GT_TREE_RENDER_SUMMARY"), Groups.Num(), Proxies, Nanite, Fallbacks);

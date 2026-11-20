@@ -338,3 +338,20 @@ A follow-up disabled Nanite area preservation on the visible trees alone. All th
 The real-time pickup completed the bog section with both renderers. The saved-tree run had focus throughout and travelled 99.97 m. The 130.84 m nearby-tree run retained focus over just one complete shared 5 m interval, road stations 2270–2275. Moving frames there averaged 46.38 fps on the saved trees and 46.66 fps on the nearby trees, with 66 and 48 frames respectively and a median of four wheels in contact. The respective p95 frame times were 28.00 and 23.60 ms. A further nearby-tree drive reported zero focused samples. These normal-window drives do not establish a sustained frame-rate gain over the full bog. The launcher requests focus once for foreground benchmarks, and the comparison uses Unreal's recorded foreground state for each frame.
 
 For timing use `Art/profile_lidar_play.ps1 -ShadowStudy basemoving -ShadowCandidate saved -EvidenceRoot <folder> -Label <name>`. Use `-BaseFamily tree_mask_threshold -EarlyFamily` for the edge test, with `-EarlyFamily` on its control as well. Use `-WarmTrees` on the saved-tree geometry controls. For the geometry test add `-NearTreeMetres 210 -RenderLodTrees -BarkCoordinates -SizeMatchedTrees -StableNaniteShadows -MatchShadowRange`. Add `-UndilatedCameraTrees` to repeat the visible-only shape test. The same geometry flags work with `-ShadowStudy routefilm`. The [moving comparison](D:/GrandTourAssets/Reviews/Lidar60/v11-painted-leaves-review/painted-crown-driving.mp4) includes each full chase-camera view and a native-size detail. [Recorded measurements](LIDAR_FAST_CROWN_LEAF_RESULTS.json).
+
+### Static painted tree leaves in v12
+
+The normal LiDAR launcher now disables wind on the painted crowns of 146,197 mature trees and 13,030 saplings. The setting acts on the six visible tree groups in the running LiDAR world. The normal launch also registered all 111 approved Fast shadow groups. The four replay runs reproduced the v11 shadow distances and instance counts in every group. The renderer reported wind disabled on all six visible groups in the static runs and enabled on all six in the controls.
+
+The deep-bog comparison replayed the same 17 vehicle positions over 11.65 m, with 192 measured moving frames per run at 1600 × 900 and 75% TSR on the RTX 4050 Laptop. The table follows run order.
+
+| Painted tree leaves | Mean frame | p95 frame | Average fps | Base pass | Motion vectors | Median GPU clock |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Animated, first control | 25.78 ms | 27.55 ms | 38.79 | 8.40 ms | 5.75 ms | 2745 MHz |
+| Static, first drive | 25.48 ms | 27.93 ms | 39.25 | 8.36 ms | 5.65 ms | 2745 MHz |
+| Static, second drive | 26.34 ms | 29.34 ms | 37.97 | 8.75 ms | 5.83 ms | 2640 MHz |
+| Animated, second control | 27.11 ms | 29.38 ms | 36.89 | 8.90 ms | 6.11 ms | 2580 MHz |
+
+At the same median GPU clock, static leaves saved 0.30 ms on the mean frame and the p95 frame took 0.38 ms longer. Both later runs recorded thermal limits and their clocks differed. This short replay shows a small mean-frame improvement in the matched pair. The sustained effect over the full route is unverified.
+
+To repeat the static replay use `Art/profile_lidar_play.ps1 -ShadowStudy basemoving -ShadowCandidate saved -WarmTrees -EvidenceRoot <folder> -Label <name>`. Add `-AnimatedTreeLeaves` for the animated control. For ordinary play, the Unreal launch argument `-GTLidarStaticLeaves=0` restores the former tree wind for that session.

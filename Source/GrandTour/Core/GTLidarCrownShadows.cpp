@@ -65,30 +65,8 @@ namespace
     }
 }
 
-void UGTLidarPerformanceSubsystem::InstallCrownShadows()
+static void InstallCrownShadows(const TMap<FString, FCrown*>& Trees)
 {
-    auto* World = GetWorld();
-    if (!World || World->bIsTearingDown) return;
-    TMap<FString, FCrown*> Trees;
-    for (TActorIterator<AActor> It(World); It; ++It)
-    {
-        TInlineComponentArray<FCrown*> Components(*It);
-        for (auto* Source : Components)
-        {
-            if (!Source->ComponentHasTag(TEXT("FloraWorldCanopy")) || !Source->IsVisible() ||
-                !Source->GetStaticMesh() || !Source->GetSceneProxy()) continue;
-            const FString Name = Source->GetStaticMesh()->GetName();
-            if (Trees.Contains(Name)) return;
-            Trees.Add(Name, Source);
-        }
-    }
-    if (Trees.Num() != 3)
-    {
-        if (++CrownAttempts < 20)
-            World->GetTimerManager().SetTimer(CrownTimer, this, &UGTLidarPerformanceSubsystem::InstallCrownShadows, .25f);
-        else UE_LOG(LogTemp, Warning, TEXT("LiDAR Fast shadows unavailable: original tree groups did not register."));
-        return;
-    }
     TArray<FCrownGroup> Groups;
     for (int32 Species = 0; Species < 3; ++Species)
     {
@@ -154,4 +132,53 @@ void UGTLidarPerformanceSubsystem::InstallCrownShadows()
     }
     for (const auto& Group : Groups) Group.Source->SetCastShadow(false);
     UE_LOG(LogTemp, Display, TEXT("GT_FAST_CROWN_READY species=%d groups=%d instances=%d"), Groups.Num(), Created.Num(), Instances);
+}
+
+void UGTLidarPerformanceSubsystem::ApplyTreeSettings()
+{
+    auto* World = GetWorld();
+    if (!World || World->bIsTearingDown) return;
+    TMap<FString, FCrown*> Mature;
+    TArray<FCrown*> VisibleTrees;
+    int32 MatureGroups = 0, SaplingGroups = 0;
+    for (TActorIterator<AActor> It(World); It; ++It)
+    {
+        TInlineComponentArray<FCrown*> Components(*It);
+        for (auto* Tree : Components)
+        {
+            const bool bMature = Tree->ComponentHasTag(TEXT("FloraWorldCanopy"));
+            if (!(bMature || Tree->ComponentHasTag(TEXT("FloraWorldSaplings"))) ||
+                !Tree->IsVisible() || !Tree->GetStaticMesh() || !Tree->GetSceneProxy()) continue;
+            VisibleTrees.Add(Tree);
+            if (bMature)
+            {
+                ++MatureGroups;
+                Mature.Add(Tree->GetStaticMesh()->GetName(), Tree);
+            }
+            else ++SaplingGroups;
+        }
+    }
+    const bool bCastersReady = MatureGroups == 3 && Mature.Num() == 3;
+    if ((!bCastersReady || (bStaticTreeLeaves && SaplingGroups < 3)) && ++CrownAttempts < 20)
+    {
+        World->GetTimerManager().SetTimer(CrownTimer, this, &UGTLidarPerformanceSubsystem::ApplyTreeSettings, .25f);
+        return;
+    }
+    // Build the approved caster ranges using the original padded foliage bounds.
+    if (bFastCrownShadows)
+    {
+        if (bCastersReady) InstallCrownShadows(Mature);
+        else UE_LOG(LogTemp, Warning, TEXT("LiDAR Fast shadows unavailable: original tree groups did not register."));
+    }
+    if (bStaticTreeLeaves)
+    {
+        int32 Instances = 0;
+        for (auto* Tree : VisibleTrees)
+        {
+            Tree->SetEvaluateWorldPositionOffset(false);
+            Instances += Tree->GetInstanceCount();
+        }
+        UE_LOG(LogTemp, Display, TEXT("GT_LIDAR_STATIC_LEAVES mature=%d saplings=%d instances=%d"),
+            MatureGroups, SaplingGroups, Instances);
+    }
 }

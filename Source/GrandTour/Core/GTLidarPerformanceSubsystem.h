@@ -13,8 +13,10 @@ public:
     virtual void OnWorldBeginPlay(UWorld& World) override;
     virtual void Deinitialize() override;
 private:
-    void InstallCrownShadows();
+    void ApplyTreeSettings();
     FTimerHandle CrownTimer;
     int32 CrownAttempts = 0;
+    bool bFastCrownShadows = false;
+    bool bStaticTreeLeaves = false;
     bool bOwnsProfile=false;
 };

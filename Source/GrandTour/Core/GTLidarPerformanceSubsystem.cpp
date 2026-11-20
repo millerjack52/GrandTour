@@ -42,8 +42,14 @@ void UGTLidarPerformanceSubsystem::OnWorldBeginPlay(UWorld& World)
     Root->TryGetBoolField(TEXT("fast_crown_shadows"),bFastCrowns);
     int32 FastCrowns=Enabled && bFastCrowns;
     FParse::Value(FCommandLine::Get(),TEXT("GTLidarFastShadows="),FastCrowns);
-    if(FastCrowns && World.GetNetMode()!=NM_DedicatedServer)
-        World.GetTimerManager().SetTimer(CrownTimer,this,&UGTLidarPerformanceSubsystem::InstallCrownShadows,.25f);
+    bFastCrownShadows=FastCrowns!=0;
+    bool bStaticLeaves=false;
+    Root->TryGetBoolField(TEXT("static_tree_leaves"),bStaticLeaves);
+    int32 StaticLeaves=Enabled && bStaticLeaves;
+    FParse::Value(FCommandLine::Get(),TEXT("GTLidarStaticLeaves="),StaticLeaves);
+    bStaticTreeLeaves=StaticLeaves!=0;
+    if((bFastCrownShadows || bStaticTreeLeaves) && World.GetNetMode()!=NM_DedicatedServer)
+        World.GetTimerManager().SetTimer(CrownTimer,this,&UGTLidarPerformanceSubsystem::ApplyTreeSettings,.25f);
     if(!Enabled)return;
     if(Users>0){++Users;bOwnsProfile=true;return;}
     if(!Root->TryGetArrayField(TEXT("commands"),Commands))return;

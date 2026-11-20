@@ -1,4 +1,4 @@
-param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies','barkbuffers','accessbuffers','shadowdepthhold','accesscache','accessparticles')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214','track_start','track192','track270','bog530','bog552')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,250)][int]$NearTreeMetres=0, [switch]$NearTreeControl, [ValidateSet('depth','base')][string]$VelocityPassStudy, [switch]$StaticFarLeaves, [switch]$NativePlayer, [switch]$DisableEditorPython, [switch]$RenderLodTrees, [switch]$MaterialDrawStudy, [switch]$BarkCoordinates, [switch]$LabelTreeLods, [ValidateSet('paddock_mid','access','river','bog_entry','bog552')][string]$DriveCheckpoint, [switch]$FixedRouteReplay, [switch]$OriginalTreeShadows,[switch]$TreeSizeAudit,[switch]$SizeMatchedTrees,[switch]$StableNaniteShadows,[switch]$MatchShadowRange,[switch]$OnlyTreeShadows,[switch]$ForceCasterLodOne,[switch]$StaticCasterWind,[switch]$RestoreCasterWind,[switch]$UndilatedShadow,[switch]$SurveyLogPass,[switch]$ConventionalCrownShadows,[switch]$UndilatedCameraTrees)
+param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies','barkbuffers','accessbuffers','shadowdepthhold','accesscache','accessparticles')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214','track_start','track192','track270','bog530','bog552')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,250)][int]$NearTreeMetres=0, [switch]$NearTreeControl, [ValidateSet('depth','base')][string]$VelocityPassStudy, [switch]$StaticFarLeaves, [switch]$NativePlayer, [switch]$DisableEditorPython, [switch]$RenderLodTrees, [switch]$MaterialDrawStudy, [switch]$BarkCoordinates, [switch]$LabelTreeLods, [ValidateSet('paddock_mid','access','river','bog_entry','bog552')][string]$DriveCheckpoint, [switch]$FixedRouteReplay, [switch]$OriginalTreeShadows,[switch]$TreeSizeAudit,[switch]$SizeMatchedTrees,[switch]$StableNaniteShadows,[switch]$MatchShadowRange,[switch]$OnlyTreeShadows,[switch]$ForceCasterLodOne,[switch]$StaticCasterWind,[switch]$RestoreCasterWind,[switch]$UndilatedShadow,[switch]$SurveyLogPass,[switch]$ConventionalCrownShadows,[switch]$UndilatedCameraTrees,[switch]$AnimatedTreeLeaves)
 $ErrorActionPreference='Stop'
 if($ShadowStudy){$DrivingBaseline=$true}
 if($SurveyLogPass -and ($ShadowStudy -ne 'linkeddrive' -or $LinkedStart -ne 'track270' -or !$ForegroundDrive)){throw 'The log clearance survey uses the normal rutted saddle drive'}
@@ -82,6 +82,7 @@ if($ExtraCommands){$Commands+=','+$ExtraCommands}
 # Historical caster, LOD and visibility experiments control their own tree groups.
 $explicitTreeSetup=$OnlyTreeShadows -or $NearTreeMetres -or $TreeSections -or $TreeCellMetres -or $TreeSizeAudit
 $useFastCrowns=$UseSavedProfile -and $preset.fast_crown_shadows -and (!$ShadowStudy -or $ShadowCandidate -eq 'saved') -and !$explicitTreeSetup -and !$ConventionalCrownShadows
+$useStaticLeaves=$UseSavedProfile -and $preset.static_tree_leaves -and (!$ShadowStudy -or $ShadowCandidate -eq 'saved') -and !$AnimatedTreeLeaves -and !$StaticFarLeaves -and $BaseFamily -ne 'tree_wind'
 & "$PSScriptRoot/wait_unreal_free.ps1" -PollSeconds 10 -MaxMinutes 1
 if($LASTEXITCODE -ne 0){throw 'Unreal occupied'}
 $reservation=[Threading.Mutex]::new($false,'Local\GrandTour-BenmoreProfiling');$acquired=$false
@@ -108,6 +109,7 @@ try {
    offscreen=(!$ForegroundDrive)
    film_in_run_directory=[bool]$directFilm
    saved_fast_crowns=[bool]$useFastCrowns
+   static_tree_leaves=[bool]$useStaticLeaves
    audio_enabled=$true
   }
   $workshopSave=Join-Path $taskRoot 'Saved_LidarDrive/SaveGames/GT_Workshop_RangeRover.sav'
@@ -285,6 +287,7 @@ try {
  $launch=@(('"'+$taskRoot+'/GrandTour.uproject"'),'/Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy','-game','-windowed','-ResX=1600','-ResY=900','-RenderOffScreen','-Unattended','-NoSplash','-NoSound','-GTNoLoad','-GTLookKuwahara=0','-dx12',('-ExecCmds="csv.UseLegacyFrameTime 0,CsvProfile FRAMES='+$frames+'"'),'-ExitAfterCsvProfiling',('-csvExecCmds="'+($schedule -join ',')+'"'),('-abslog="'+$log+'"'))
  $launch+='-GTLidarPerformance=0' # Scalar settings are scheduled explicitly by the benchmark.
  $launch+=('-GTLidarFastShadows='+[int]$useFastCrowns)
+ $launch+=('-GTLidarStaticLeaves='+[int]$useStaticLeaves)
  if($DrivingBaseline){
   $launch=@($launch | Where-Object {$_ -ne '-NoSound'})
   $launch+='-ForceRes'
@@ -411,6 +414,12 @@ try {
   if(!$readback -or [double]$readback.Matches[0].Groups[1].Value -ne [double]$expected){throw "The game did not verify $setting before the film"}
  }
  if($useFastCrowns -and !(Select-String -LiteralPath $log -SimpleMatch 'GT_FAST_CROWN_READY species=3 groups=111 instances=146197' -Quiet)){throw 'Saved Fast shadows failed to activate on the driving map'}
+ if($useStaticLeaves -and !(Select-String -LiteralPath $log -SimpleMatch 'GT_LIDAR_STATIC_LEAVES mature=3 saplings=3 instances=159227' -Quiet)){throw 'Static leaf settings did not reach all six painted tree groups'}
+ if($ShadowStudy -eq 'basemoving' -and $ShadowCandidate -eq 'saved' -and $BaseFamily -eq 'control' -and !$explicitTreeSetup -and !$LabelTreeLods){
+  $wind=@(Select-String -LiteralPath $log -Pattern 'GT_VISIBLE_TREE_WIND mesh=SM_Canopy_[012] evaluate=(\d) always=(\d)' | Select-Object -Last 6)
+  $expected=[int](!$useStaticLeaves)
+  if($wind.Count -ne 6 -or ($wind | Where-Object {[int]$_.Matches[0].Groups[1].Value -ne $expected -or $_.Matches[0].Groups[2].Value -ne '0'})){throw 'The renderer did not verify the requested leaf wind state'}
+ }
  if($useFastCrowns -and $WarmTrees -and !(Select-String -LiteralPath $log -SimpleMatch 'GT_TREE_SHADOW_SUMMARY groups=111 proxies=111 nanite=111 material_fallbacks=0' -Quiet)){throw 'The saved crown shadow materials did not verify'}
  if($OnlyTreeShadows){
    $stock=@(Select-String -LiteralPath $log -Pattern 'GT_CAMERA_TREE_UNCHANGED mesh=SM_Canopy_[012] instances=(\d+) min=0 max=0')
