@@ -312,7 +312,9 @@ bool UGTWorkshopComponent::Fit()
     }
     Message=SelectedPart==4 ? TEXT("Equipment updated") : OptionName(SelectedOption)+TEXT(" fitted");
     if(ShowAWDSplit()) Message=FString::Printf(TEXT("AWD fitted / %d%% front, %d%% rear"),FittedFrontPercent,100-FittedFrontPercent);
-    ApplyPreview(true); bComparing=false; SelectedPart=INDEX_NONE; Distance=780.f;
+    bEquipmentPreview=false;
+    bComparing=false;
+    ApplyPreview(true);
     UE_LOG(LogTemp, Display, TEXT("Workshop fitted: %s"), *Describe());
     return true;
 }

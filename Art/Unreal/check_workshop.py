@@ -77,18 +77,32 @@ def run():
         check(c.get_collision_enabled()==u.CollisionEnabled.NO_COLLISION,'visual wheel does not add a physics collider '+str(i))
     check(work.open(),'workshop opens while parked');yield 2
     # Every subset previews and commits independently; removal uses the same reversible path.
+    work.select_part(4)
     saved_mask=0
     for target_mask in [1,3,7,6,2,0,4,5,7]:
         for choice in range(3):
             bit=1<<choice
             if (saved_mask&bit)==(target_mask&bit):continue
-            work.select_part(4);work.preview(choice)
+            work.preview(choice)
             check(body.workshop_equipment==saved_mask^bit,'equipment preview '+str(saved_mask)+' toggle '+str(choice))
             check(loadout()==loadout_before and inventory()==boot_before,'equipment preview preserves mechanical state '+str(saved_mask)+'/'+str(choice))
             work.compare(True);check(body.workshop_equipment==saved_mask,'equipment compare restores fitted set '+str(saved_mask)+'/'+str(choice))
             work.compare(False);check(body.workshop_equipment==saved_mask^bit,'equipment compare release restores preview '+str(saved_mask)+'/'+str(choice))
             work.cancel();check(body.workshop_equipment==saved_mask,'equipment cancel restores fitted set '+str(saved_mask)+'/'+str(choice))
-            work.select_part(4);work.preview(choice);check(work.fit(),'equipment commits '+str(saved_mask)+'/'+str(choice));saved_mask^=bit
+            work.select_part(4);work.preview(choice)
+            first_fit=target_mask==1 and saved_mask==0
+            if first_fit:
+                work.orbit(24,-8);work.zoom(2);yield 2
+                camera=pc.get_view_target()
+                position=camera.get_actor_location();direction=camera.get_actor_forward_vector()
+            check(work.fit(),'equipment commits '+str(saved_mask)+'/'+str(choice));saved_mask^=bit
+            if first_fit:
+                yield 1
+                check(pc.get_view_target()==camera and (camera.get_actor_location()-position).length()<1
+                      and (camera.get_actor_forward_vector()-direction).length()<.002,'fitting equipment preserves the chosen camera view')
+            check(f'selected=4 option={choice} ' in work.describe(),'apply stays on the selected accessory '+str(choice))
+            work.compare(True);work.compare(False)
+            check(not work.fit() and body.workshop_equipment==saved_mask,'repeat apply keeps the committed equipment set')
         check(body.workshop_equipment==target_mask and all(c.is_visible()==bool(target_mask&(1<<i)) for i,c in enumerate(equipment)),'equipment combination '+str(target_mask))
     work.select_part(4);work.preview(1);work.select_part(0)
     check(body.workshop_equipment==7,'switching category discards pending equipment removal');work.cancel()
@@ -115,6 +129,7 @@ def run():
     work.compare(False);check(scalar(mat,'WorkshopPaintAmount')==1,'releasing compare restores preview')
     work.cancel();check(scalar(mat,'WorkshopPaintAmount')==0,'cancel restores original paint')
     work.select_part(0);work.preview(1);check(work.fit(),'paint fits and saves')
+    check('selected=0 option=1 ' in work.describe(),'fitting paint stays on the chosen swatch')
     check(u.GameplayStatics.does_save_game_exist(slot,0),'committed cosmetic save exists')
     work.select_part(1);wheel=mesh.get_material(mesh.get_material_index('M_Wheel'));rim_before=rims[0].static_mesh
     for ri,rname in enumerate(['SM_Rim_Pressed','SM_Rim_Alloy','SM_Rim_Heavy']):

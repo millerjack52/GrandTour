@@ -2,7 +2,7 @@
 
 The Range Rover now has a native runtime workshop overlay using the approved orange/black title blocks and studio-board labels. The vehicle remains in the existing rally world. This is the interactive layout and customization slice; the illustrated hangar and equipment assets from the concept have not been built.
 
-Launch `Play-Workshop.bat`, stop the Range Rover, and press **U**. Click Paint, Wheels, Tyres, Suspension or Equipment on the vehicle. Drag empty space to orbit, scroll to zoom, or use Tab to cycle parts and arrows to change options. Hold Space or the Compare button to see the fitted choice. Enter/Fit commits; Cancel/Escape discards a pending preview. Escape from the walk-around view, U, or Back to drive closes the workshop.
+Launch `Play-Workshop.bat`, stop the Range Rover, and press **U**. Click Paint, Wheels, Tyres, Suspension or Equipment on the vehicle. Drag empty space to orbit, scroll to zoom, or use Tab to cycle parts and arrows to change options. Hold Space or the Compare button to see the fitted choice. Enter/Fit commits the choice and keeps the current part, option and camera view open. Cancel/Escape returns to the walk-around and discards any pending preview. Escape from the walk-around view, U, or Back to drive closes the workshop.
 
 - Body and roof paint: original plus Highland green, Sandstone, Oxblood, Charcoal and Limestone. The roof follows the selected body colour. Original trim, interior, baked detail, damage and dirt are retained.
 - Wheels: the Blender Pressed steel, Classic alloy and Heavy-duty steel models replace the drawn wheels on all four corners. Each rim and tyre remains independently selectable and follows its animated wheel bone, including steering, rotation and suspension travel.
