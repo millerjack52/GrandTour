@@ -81,7 +81,7 @@ def schedule(
         if (
             candidate != "saved"
             or base_family != "control"
-            or linked_start not in ("access", "bog214", "bog530", "bog552")
+            or linked_start not in ("access", "bog214", "track_start", "track192", "track270", "bog530", "bog552")
         ):
             raise ValueError("Continuous drive requires the playable preset and a surveyed start")
         cmd(235, "Input.+key SpaceBar")
@@ -90,11 +90,12 @@ def schedule(
         cmd(285, "gt.Lidar.AuditRenderPass")
         cmd(315, "r.Shadow.Virtual.Clipmap.WPODisableDistance.LodBias")
         cmd(316, "r.InstanceCulling.OcclusionCull")
-        if linked_start == "bog530":
-            # The fourth recovery point is the ordinary player's wet-shelf start.
-            # Let the pickup settle on its wheels before the driving window.
-            cmd(340, "Input.+key Four")
-            cmd(341, "Input.-key Four")
+        recovery_keys = {"track_start": "One", "track192": "Two", "track270": "Three", "bog530": "Four"}
+        if linked_start in recovery_keys:
+            # Invoke the actual checkpoint and settle the suspension before sampling.
+            key = recovery_keys[linked_start]
+            cmd(340, f"Input.+key {key}")
+            cmd(341, f"Input.-key {key}")
             cmd(344, "Input.-key SpaceBar")
             cmd(345, "Input.+key SpaceBar")
         else:

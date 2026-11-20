@@ -7995,5 +7995,1358 @@
         "excess": 0.992
       }
     }
+  },
+  "full_range_nanite_shadow_trial": {
+    "changed": "Mature tree shadow geometry only. Both trial modes show the same size-matched camera geometry.",
+    "checkpoint_build": "0264524558098D7468742F1F3B762845269B8154D05635A31453E71B27487B24",
+    "original": {
+      "run": "sweep121_original_shadow_control",
+      "fps": 20.83,
+      "frame_count": 192,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 48.012,
+          "p95": 53.153,
+          "median": 47.643,
+          "p99": 61.608,
+          "maximum": 63.124,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 33,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 46.893,
+          "p95": 50.538
+        },
+        "GPU/ShadowDepths": {
+          "mean": 16.193,
+          "p95": 19.569
+        },
+        "GPU/Basepass": {
+          "mean": 7.757,
+          "p95": 8.639
+        },
+        "GPU/RenderVelocities": {
+          "mean": 4.884,
+          "p95": 5.542
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 646.516,
+          "p95": 658.0
+        },
+        "GameThreadTime": {
+          "mean": 9.893,
+          "p95": 11.697
+        },
+        "RenderThreadTime": {
+          "mean": 10.456,
+          "p95": 12.319
+        },
+        "DrawCall/Basepass": {
+          "mean": 573.005,
+          "p95": 592.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2151445.385,
+          "p95": 2419807.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.406,
+          "p95": 0.448
+        }
+      },
+      "hardware": {
+        "median_clock_mhz": 1245.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 22.61,
+        "samples_thermally_limited": 9
+      }
+    },
+    "candidate": {
+      "run": "sweep120_stable_nanite_shadow_bog",
+      "fps": 26.72,
+      "frame_count": 192,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 37.431,
+          "p95": 51.277,
+          "median": 34.29,
+          "p99": 53.216,
+          "maximum": 56.212,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 139,
+          "over_50_ms": 14,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 36.375,
+          "p95": 49.373
+        },
+        "GPU/ShadowDepths": {
+          "mean": 4.649,
+          "p95": 7.154
+        },
+        "GPU/Basepass": {
+          "mean": 7.709,
+          "p95": 11.332
+        },
+        "GPU/RenderVelocities": {
+          "mean": 4.901,
+          "p95": 7.027
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 636.047,
+          "p95": 648.0
+        },
+        "GameThreadTime": {
+          "mean": 10.033,
+          "p95": 11.963
+        },
+        "RenderThreadTime": {
+          "mean": 10.411,
+          "p95": 11.854
+        },
+        "DrawCall/Basepass": {
+          "mean": 573.766,
+          "p95": 591.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2139578.51,
+          "p95": 2436413.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.402,
+          "p95": 0.542
+        }
+      },
+      "hardware": {
+        "median_clock_mhz": 1320.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 24.11,
+        "samples_thermally_limited": 7
+      }
+    },
+    "fixed_matching_pickup_positions": 17,
+    "route_film_matching_positions": 65,
+    "route_film_pairs": 240,
+    "original_drive": {
+      "run": "sweep117_size_matched_foreground",
+      "start": "bog530",
+      "stop": "end_of_route",
+      "travel_m": 100.82,
+      "max_station_m": 2340.45,
+      "recoveries": 0,
+      "foreground_samples": 1544,
+      "all_samples": 1544,
+      "contacts": {
+        "4": 752
+      },
+      "matched_window": {
+        "start_m": 2240,
+        "end_m": 2335,
+        "start_s": 3.79,
+        "end_s": 100.019,
+        "frames": 1410,
+        "moving": {
+          "frames": 1410,
+          "fps": 14.67,
+          "median_ms": 70.415,
+          "mean_ms": 68.144,
+          "p95_ms": 84.838,
+          "p99_ms": 104.239,
+          "maximum_ms": 136.173,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 1410,
+          "over_50_ms": 1317,
+          "over_100_ms": 18
+        },
+        "pass_timings": {
+          "GameThreadTime": {
+            "samples": 1410,
+            "mean_ms": 10.801,
+            "p95_ms": 13.348
+          },
+          "RenderThreadTime": {
+            "samples": 1410,
+            "mean_ms": 10.474,
+            "p95_ms": 11.862
+          },
+          "RHIThreadTime": {
+            "samples": 1410,
+            "mean_ms": 7.158,
+            "p95_ms": 9.093
+          },
+          "GPUTime": {
+            "samples": 1410,
+            "mean_ms": 65.783,
+            "p95_ms": 81.109
+          },
+          "GPU/Prepass": {
+            "samples": 1410,
+            "mean_ms": 0.579,
+            "p95_ms": 0.792
+          },
+          "GPU/RenderVelocities": {
+            "samples": 1410,
+            "mean_ms": 7.897,
+            "p95_ms": 10.701
+          },
+          "GPU/Basepass": {
+            "samples": 1410,
+            "mean_ms": 11.025,
+            "p95_ms": 13.806
+          },
+          "GPU/ShadowDepths": {
+            "samples": 1410,
+            "mean_ms": 23.39,
+            "p95_ms": 39.354
+          },
+          "GPU/ShadowProjection": {
+            "samples": 1410,
+            "mean_ms": 0.586,
+            "p95_ms": 0.687
+          },
+          "GPU/NaniteVisBuffer": {
+            "samples": 1410,
+            "mean_ms": 4.51,
+            "p95_ms": 5.588
+          },
+          "GPU/NaniteBasePass": {
+            "samples": 1410,
+            "mean_ms": 0.699,
+            "p95_ms": 0.865
+          },
+          "GPU/LumenScreenProbeGather": {
+            "samples": 1410,
+            "mean_ms": 0.019,
+            "p95_ms": 0.026
+          },
+          "GPU/LumenReflections": {
+            "samples": 1410,
+            "mean_ms": 0.536,
+            "p95_ms": 0.633
+          },
+          "GPU/TemporalSuperResolution": {
+            "samples": 1410,
+            "mean_ms": 3.707,
+            "p95_ms": 4.614
+          }
+        },
+        "median_wheel_contacts": 4,
+        "max_lateral_offset_m": 0.76
+      }
+    },
+    "trial_drive": {
+      "run": "sweep125_shadow_foreground",
+      "start": "bog530",
+      "stop": "stalled",
+      "travel_m": 112.17,
+      "max_station_m": 2337.12,
+      "recoveries": 5,
+      "foreground_samples": 2507,
+      "all_samples": 2507,
+      "contacts": {
+        "4": 1031,
+        "3": 2
+      },
+      "matched_window": {
+        "start_m": 2240,
+        "end_m": 2335,
+        "start_s": 1.474,
+        "end_s": 89.074,
+        "frames": 1818,
+        "moving": {
+          "frames": 1586,
+          "fps": 20.68,
+          "median_ms": 47.462,
+          "mean_ms": 48.345,
+          "p95_ms": 62.083,
+          "p99_ms": 75.337,
+          "maximum_ms": 146.919,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 1578,
+          "over_50_ms": 665,
+          "over_100_ms": 4
+        },
+        "pass_timings": {
+          "GameThreadTime": {
+            "samples": 1586,
+            "mean_ms": 10.592,
+            "p95_ms": 12.858
+          },
+          "RenderThreadTime": {
+            "samples": 1586,
+            "mean_ms": 10.036,
+            "p95_ms": 11.547
+          },
+          "RHIThreadTime": {
+            "samples": 1586,
+            "mean_ms": 6.726,
+            "p95_ms": 8.566
+          },
+          "GPUTime": {
+            "samples": 1586,
+            "mean_ms": 46.689,
+            "p95_ms": 59.755
+          },
+          "GPU/Prepass": {
+            "samples": 1586,
+            "mean_ms": 0.495,
+            "p95_ms": 0.693
+          },
+          "GPU/RenderVelocities": {
+            "samples": 1586,
+            "mean_ms": 7.022,
+            "p95_ms": 10.696
+          },
+          "GPU/Basepass": {
+            "samples": 1586,
+            "mean_ms": 10.506,
+            "p95_ms": 14.645
+          },
+          "GPU/ShadowDepths": {
+            "samples": 1586,
+            "mean_ms": 5.863,
+            "p95_ms": 8.1
+          },
+          "GPU/ShadowProjection": {
+            "samples": 1586,
+            "mean_ms": 0.981,
+            "p95_ms": 1.313
+          },
+          "GPU/NaniteVisBuffer": {
+            "samples": 1586,
+            "mean_ms": 4.141,
+            "p95_ms": 5.221
+          },
+          "GPU/NaniteBasePass": {
+            "samples": 1586,
+            "mean_ms": 0.658,
+            "p95_ms": 0.881
+          },
+          "GPU/LumenScreenProbeGather": {
+            "samples": 1586,
+            "mean_ms": 0.017,
+            "p95_ms": 0.026
+          },
+          "GPU/LumenReflections": {
+            "samples": 1586,
+            "mean_ms": 0.641,
+            "p95_ms": 0.865
+          },
+          "GPU/TemporalSuperResolution": {
+            "samples": 1586,
+            "mean_ms": 3.414,
+            "p95_ms": 4.454
+          }
+        },
+        "median_wheel_contacts": 4,
+        "max_lateral_offset_m": 2.22
+      }
+    },
+    "native_crop_checks": [
+      {
+        "section": "paddock_mid",
+        "frame": "r047.png",
+        "rect": [
+          1056,
+          81,
+          1376,
+          291
+        ],
+        "repeat": {
+          "mean_absolute_brightness_255": 0.153,
+          "mean_signed_rgb_255": [
+            -0.004,
+            -0.004,
+            -0.004
+          ]
+        },
+        "candidate": {
+          "mean_absolute_brightness_255": 5.062,
+          "mean_signed_rgb_255": [
+            -5.946,
+            -4.177,
+            0.033
+          ]
+        }
+      },
+      {
+        "section": "access",
+        "frame": "r140.png",
+        "rect": [
+          864,
+          40,
+          960,
+          136
+        ],
+        "repeat": {
+          "mean_absolute_brightness_255": 0.349,
+          "mean_signed_rgb_255": [
+            0.396,
+            0.316,
+            0.118
+          ]
+        },
+        "candidate": {
+          "mean_absolute_brightness_255": 1.995,
+          "mean_signed_rgb_255": [
+            -2.007,
+            -1.553,
+            -0.725
+          ]
+        }
+      },
+      {
+        "section": "bog_entry",
+        "frame": "r319.png",
+        "rect": [
+          1424,
+          483,
+          1520,
+          579
+        ],
+        "repeat": {
+          "mean_absolute_brightness_255": 0.069,
+          "mean_signed_rgb_255": [
+            0.017,
+            0.008,
+            -0.014
+          ]
+        },
+        "candidate": {
+          "mean_absolute_brightness_255": 0.402,
+          "mean_signed_rgb_255": [
+            -0.086,
+            -0.247,
+            -0.06
+          ]
+        }
+      },
+      {
+        "section": "bog552",
+        "frame": "r410.png",
+        "rect": [
+          272,
+          771,
+          368,
+          867
+        ],
+        "repeat": {
+          "mean_absolute_brightness_255": 13.675,
+          "mean_signed_rgb_255": [
+            -1.606,
+            -3.34,
+            -2.581
+          ]
+        },
+        "candidate": {
+          "mean_absolute_brightness_255": 14.086,
+          "mean_signed_rgb_255": [
+            -0.237,
+            -2.405,
+            -2.294
+          ]
+        }
+      }
+    ],
+    "worst_shadow_pair_by_section": {
+      "Paddock": {
+        "frame": "r019.png",
+        "mean_abs": 2.022,
+        "brightest_96": 0.366,
+        "darkest_96": -16.824,
+        "max_abs_96": 17.254,
+        "box": [
+          1424,
+          72,
+          1520,
+          168
+        ]
+      },
+      "Forest access": {
+        "frame": "r117.png",
+        "mean_abs": 31.352,
+        "brightest_96": 71.021,
+        "darkest_96": -91.993,
+        "max_abs_96": 91.993,
+        "box": [
+          1104,
+          296,
+          1200,
+          392
+        ]
+      },
+      "River": {
+        "frame": "r241.png",
+        "mean_abs": 0.319,
+        "brightest_96": 2.194,
+        "darkest_96": -4.732,
+        "max_abs_96": 6.72,
+        "box": [
+          592,
+          776,
+          688,
+          872
+        ]
+      },
+      "Bog approach": {
+        "frame": "r301.png",
+        "mean_abs": 0.34,
+        "brightest_96": 0.488,
+        "darkest_96": -6.661,
+        "max_abs_96": 7.152,
+        "box": [
+          1360,
+          8,
+          1456,
+          104
+        ]
+      },
+      "Deep bog": {
+        "frame": "r409.png",
+        "mean_abs": 0.457,
+        "brightest_96": 1.107,
+        "darkest_96": -2.256,
+        "max_abs_96": 4.947,
+        "box": [
+          944,
+          648,
+          1040,
+          744
+        ]
+      }
+    },
+    "decision": "Rejected as a playable default. The distant paddock trees show conspicuously more shade and the moving frame times exceed budget."
+  },
+  "longer_route_baselines": {
+    "first_hollow": {
+      "run": "sweep123_wooded_road",
+      "start": "track192",
+      "stop": "stalled",
+      "travel_m": 35.12,
+      "max_station_m": 1926.85,
+      "recoveries": 3,
+      "foreground_samples": 868,
+      "all_samples": 868,
+      "contacts": {
+        "4": 392,
+        "3": 45
+      },
+      "matched_window": {
+        "start_m": 1905,
+        "end_m": 1925,
+        "start_s": 3.39,
+        "end_s": 24.663,
+        "frames": 309,
+        "moving": {
+          "frames": 309,
+          "fps": 14.63,
+          "median_ms": 66.674,
+          "mean_ms": 68.338,
+          "p95_ms": 88.035,
+          "p99_ms": 108.078,
+          "maximum_ms": 117.73,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 309,
+          "over_50_ms": 309,
+          "over_100_ms": 7
+        },
+        "pass_timings": {
+          "GameThreadTime": {
+            "samples": 309,
+            "mean_ms": 11.591,
+            "p95_ms": 14.114
+          },
+          "RenderThreadTime": {
+            "samples": 309,
+            "mean_ms": 11.555,
+            "p95_ms": 13.766
+          },
+          "RHIThreadTime": {
+            "samples": 309,
+            "mean_ms": 7.604,
+            "p95_ms": 9.436
+          },
+          "GPUTime": {
+            "samples": 309,
+            "mean_ms": 66.665,
+            "p95_ms": 80.333
+          },
+          "GPU/Prepass": {
+            "samples": 309,
+            "mean_ms": 0.392,
+            "p95_ms": 0.55
+          },
+          "GPU/RenderVelocities": {
+            "samples": 309,
+            "mean_ms": 12.993,
+            "p95_ms": 16.012
+          },
+          "GPU/Basepass": {
+            "samples": 309,
+            "mean_ms": 18.136,
+            "p95_ms": 22.687
+          },
+          "GPU/ShadowDepths": {
+            "samples": 309,
+            "mean_ms": 18.9,
+            "p95_ms": 23.025
+          },
+          "GPU/ShadowProjection": {
+            "samples": 309,
+            "mean_ms": 0.464,
+            "p95_ms": 0.504
+          },
+          "GPU/NaniteVisBuffer": {
+            "samples": 309,
+            "mean_ms": 0.388,
+            "p95_ms": 0.415
+          },
+          "GPU/NaniteBasePass": {
+            "samples": 309,
+            "mean_ms": 0.171,
+            "p95_ms": 0.197
+          },
+          "GPU/LumenScreenProbeGather": {
+            "samples": 309,
+            "mean_ms": 0.025,
+            "p95_ms": 0.043
+          },
+          "GPU/LumenReflections": {
+            "samples": 309,
+            "mean_ms": 0.579,
+            "p95_ms": 0.721
+          },
+          "GPU/TemporalSuperResolution": {
+            "samples": 309,
+            "mean_ms": 2.927,
+            "p95_ms": 3.234
+          }
+        },
+        "median_wheel_contacts": 4,
+        "max_lateral_offset_m": 0.28
+      }
+    },
+    "riverside_access": {
+      "run": "sweep124_access_road",
+      "start": "access",
+      "stop": "stalled",
+      "travel_m": 934.88,
+      "max_station_m": 1681.42,
+      "recoveries": 3,
+      "foreground_samples": 3457,
+      "all_samples": 3457,
+      "contacts": {
+        "4": 1975
+      },
+      "matched_window": {
+        "start_m": 800,
+        "end_m": 1650,
+        "start_s": 6.979,
+        "end_s": 240.048,
+        "frames": 2777,
+        "moving": {
+          "frames": 2777,
+          "fps": 11.93,
+          "median_ms": 81.222,
+          "mean_ms": 83.828,
+          "p95_ms": 115.258,
+          "p99_ms": 133.875,
+          "maximum_ms": 234.626,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 2776,
+          "over_50_ms": 2744,
+          "over_100_ms": 695
+        },
+        "pass_timings": {
+          "GameThreadTime": {
+            "samples": 2777,
+            "mean_ms": 8.754,
+            "p95_ms": 10.817
+          },
+          "RenderThreadTime": {
+            "samples": 2777,
+            "mean_ms": 10.605,
+            "p95_ms": 12.917
+          },
+          "RHIThreadTime": {
+            "samples": 2777,
+            "mean_ms": 7.826,
+            "p95_ms": 10.348
+          },
+          "GPUTime": {
+            "samples": 2777,
+            "mean_ms": 82.016,
+            "p95_ms": 113.479
+          },
+          "GPU/Prepass": {
+            "samples": 2777,
+            "mean_ms": 0.512,
+            "p95_ms": 0.831
+          },
+          "GPU/RenderVelocities": {
+            "samples": 2777,
+            "mean_ms": 12.686,
+            "p95_ms": 19.022
+          },
+          "GPU/Basepass": {
+            "samples": 2777,
+            "mean_ms": 16.538,
+            "p95_ms": 24.07
+          },
+          "GPU/ShadowDepths": {
+            "samples": 2777,
+            "mean_ms": 27.408,
+            "p95_ms": 45.772
+          },
+          "GPU/ShadowProjection": {
+            "samples": 2777,
+            "mean_ms": 0.726,
+            "p95_ms": 1.081
+          },
+          "GPU/NaniteVisBuffer": {
+            "samples": 2777,
+            "mean_ms": 0.471,
+            "p95_ms": 0.524
+          },
+          "GPU/NaniteBasePass": {
+            "samples": 2777,
+            "mean_ms": 0.216,
+            "p95_ms": 0.26
+          },
+          "GPU/LumenScreenProbeGather": {
+            "samples": 2777,
+            "mean_ms": 0.103,
+            "p95_ms": 0.18
+          },
+          "GPU/LumenReflections": {
+            "samples": 2777,
+            "mean_ms": 0.604,
+            "p95_ms": 0.757
+          },
+          "GPU/TemporalSuperResolution": {
+            "samples": 2777,
+            "mean_ms": 4.218,
+            "p95_ms": 5.568
+          }
+        },
+        "median_wheel_contacts": 4,
+        "max_lateral_offset_m": 3.1
+      }
+    },
+    "earlier_riverside_access": {
+      "run": "sweep60_linked_riverside",
+      "start": "access",
+      "stop": "stalled",
+      "travel_m": 941.23,
+      "max_station_m": 1681.32,
+      "recoveries": 3,
+      "foreground_samples": 3519,
+      "all_samples": 3519,
+      "contacts": {
+        "4": 1680
+      },
+      "matched_window": {
+        "start_m": 800,
+        "end_m": 1650,
+        "start_s": 6.708,
+        "end_s": 199.066,
+        "frames": 2773,
+        "moving": {
+          "frames": 2773,
+          "fps": 14.44,
+          "median_ms": 68.186,
+          "mean_ms": 69.244,
+          "p95_ms": 98.39,
+          "p99_ms": 110.123,
+          "maximum_ms": 185.18,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 2772,
+          "over_50_ms": 2331,
+          "over_100_ms": 112
+        },
+        "pass_timings": {
+          "GameThreadTime": {
+            "samples": 2773,
+            "mean_ms": 8.563,
+            "p95_ms": 10.704
+          },
+          "RenderThreadTime": {
+            "samples": 2773,
+            "mean_ms": 10.572,
+            "p95_ms": 12.914
+          },
+          "RHIThreadTime": {
+            "samples": 2773,
+            "mean_ms": 7.417,
+            "p95_ms": 9.749
+          },
+          "GPUTime": {
+            "samples": 2773,
+            "mean_ms": 67.607,
+            "p95_ms": 96.556
+          },
+          "GPU/Prepass": {
+            "samples": 2773,
+            "mean_ms": 0.422,
+            "p95_ms": 0.626
+          },
+          "GPU/RenderVelocities": {
+            "samples": 2773,
+            "mean_ms": 10.364,
+            "p95_ms": 15.338
+          },
+          "GPU/Basepass": {
+            "samples": 2773,
+            "mean_ms": 13.672,
+            "p95_ms": 19.269
+          },
+          "GPU/ShadowDepths": {
+            "samples": 2773,
+            "mean_ms": 22.569,
+            "p95_ms": 37.772
+          },
+          "GPU/ShadowProjection": {
+            "samples": 2773,
+            "mean_ms": 0.586,
+            "p95_ms": 0.747
+          },
+          "GPU/NaniteVisBuffer": {
+            "samples": 2773,
+            "mean_ms": 0.413,
+            "p95_ms": 0.47
+          },
+          "GPU/NaniteBasePass": {
+            "samples": 2773,
+            "mean_ms": 0.186,
+            "p95_ms": 0.232
+          },
+          "GPU/LumenScreenProbeGather": {
+            "samples": 2773,
+            "mean_ms": 0.079,
+            "p95_ms": 0.14
+          },
+          "GPU/LumenReflections": {
+            "samples": 2773,
+            "mean_ms": 0.494,
+            "p95_ms": 0.645
+          },
+          "GPU/TemporalSuperResolution": {
+            "samples": 2773,
+            "mean_ms": 3.38,
+            "p95_ms": 4.662
+          }
+        },
+        "median_wheel_contacts": 4.0,
+        "max_lateral_offset_m": 3.0
+      }
+    }
+  },
+  "distance_matched_shadow_trial": {
+    "build": "14FCE25C563628BEF810C82A5331EDDB17946A168F6F40F94D7C95EA21BC3415",
+    "run": "sweep126_matched_shadow_bog",
+    "original_lod_sections": [
+      {
+        "mesh": "SM_Canopy_1",
+        "lod": 1,
+        "material_slot": 0,
+        "casts_shadow": true,
+        "triangles": 3535
+      },
+      {
+        "mesh": "SM_Canopy_1",
+        "lod": 1,
+        "material_slot": 1,
+        "casts_shadow": true,
+        "triangles": 18912
+      },
+      {
+        "mesh": "SM_Canopy_1",
+        "lod": 2,
+        "material_slot": 0,
+        "casts_shadow": true,
+        "triangles": 467
+      },
+      {
+        "mesh": "SM_Canopy_1",
+        "lod": 2,
+        "material_slot": 1,
+        "casts_shadow": true,
+        "triangles": 9410
+      },
+      {
+        "mesh": "SM_Canopy_1",
+        "lod": 3,
+        "material_slot": 2,
+        "casts_shadow": false,
+        "triangles": 8
+      },
+      {
+        "mesh": "SM_Canopy_0",
+        "lod": 1,
+        "material_slot": 0,
+        "casts_shadow": true,
+        "triangles": 15271
+      },
+      {
+        "mesh": "SM_Canopy_0",
+        "lod": 1,
+        "material_slot": 1,
+        "casts_shadow": true,
+        "triangles": 3420
+      },
+      {
+        "mesh": "SM_Canopy_0",
+        "lod": 2,
+        "material_slot": 0,
+        "casts_shadow": true,
+        "triangles": 4804
+      },
+      {
+        "mesh": "SM_Canopy_0",
+        "lod": 2,
+        "material_slot": 1,
+        "casts_shadow": true,
+        "triangles": 3420
+      },
+      {
+        "mesh": "SM_Canopy_0",
+        "lod": 3,
+        "material_slot": 2,
+        "casts_shadow": false,
+        "triangles": 8
+      },
+      {
+        "mesh": "SM_Canopy_2",
+        "lod": 1,
+        "material_slot": 0,
+        "casts_shadow": true,
+        "triangles": 22148
+      },
+      {
+        "mesh": "SM_Canopy_2",
+        "lod": 1,
+        "material_slot": 1,
+        "casts_shadow": true,
+        "triangles": 5284
+      },
+      {
+        "mesh": "SM_Canopy_2",
+        "lod": 2,
+        "material_slot": 0,
+        "casts_shadow": true,
+        "triangles": 6786
+      },
+      {
+        "mesh": "SM_Canopy_2",
+        "lod": 2,
+        "material_slot": 1,
+        "casts_shadow": true,
+        "triangles": 5284
+      },
+      {
+        "mesh": "SM_Canopy_2",
+        "lod": 3,
+        "material_slot": 2,
+        "casts_shadow": false,
+        "triangles": 8
+      }
+    ],
+    "caster_groups": 111,
+    "trees": 146197,
+    "distance_increment_m": 5,
+    "minimum_distance_m": 225.0,
+    "maximum_distance_m": 420.0,
+    "bog": {
+      "frames": 192,
+      "fps": 26.33,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 37.98,
+          "p95": 40.792,
+          "median": 38.004,
+          "p99": 41.834,
+          "maximum": 42.98,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 191,
+          "over_50_ms": 0,
+          "over_100_ms": 0
+        },
+        "GPUTime": {
+          "mean": 36.894,
+          "p95": 38.888
+        },
+        "GPU/ShadowDepths": {
+          "mean": 4.656,
+          "p95": 6.084
+        },
+        "GPU/Basepass": {
+          "mean": 7.856,
+          "p95": 8.86
+        },
+        "GPU/RenderVelocities": {
+          "mean": 4.898,
+          "p95": 5.457
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 636.047,
+          "p95": 648.0
+        },
+        "GameThreadTime": {
+          "mean": 10.302,
+          "p95": 12.524
+        },
+        "RenderThreadTime": {
+          "mean": 10.79,
+          "p95": 12.367
+        },
+        "DrawCall/Basepass": {
+          "mean": 573.005,
+          "p95": 590.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2123162.812,
+          "p95": 2401557.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.404,
+          "p95": 0.431
+        }
+      },
+      "hardware": {
+        "median_clock_mhz": 1170.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 22.5,
+        "samples_thermally_limited": 7
+      }
+    },
+    "moving_visual": {
+      "pairs": 240,
+      "matched_pickup_positions": 65,
+      "tracked": [
+        {
+          "name": "Paddock crowns",
+          "frame": "r019",
+          "box": [
+            1424,
+            72,
+            1520,
+            168
+          ],
+          "original_shadow": 1.0,
+          "full": 17.4,
+          "bounded": 17.401
+        },
+        {
+          "name": "Paddock canopy",
+          "frame": "r027",
+          "box": [
+            720,
+            232,
+            816,
+            328
+          ],
+          "original_shadow": 0.905,
+          "full": 14.185,
+          "bounded": 14.182
+        },
+        {
+          "name": "Access sunlight",
+          "frame": "r140",
+          "box": [
+            864,
+            40,
+            960,
+            136
+          ],
+          "original_shadow": 1.643,
+          "full": 1.995,
+          "bounded": 1.696
+        },
+        {
+          "name": "Bog crown gap",
+          "frame": "r322",
+          "box": [
+            1328,
+            8,
+            1424,
+            104
+          ],
+          "original_shadow": 2.524,
+          "full": 4.294,
+          "bounded": 4.281
+        }
+      ]
+    },
+    "revised_draws": [
+      {
+        "frame": 711,
+        "passes": {
+          "RenderVelocities(Opaque)": {
+            "busy_ms": 4.32,
+            "named_draw_ms": 4.08,
+            "largest_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 4,
+                "busy_ms": 0.89
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 0.55
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 4,
+                "busy_ms": 0.55
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 4,
+                "busy_ms": 0.52
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.3
+              },
+              {
+                "material": "MID_LandscapeMaterialInstanceConstant_0",
+                "mesh": "Landscape",
+                "events": 15,
+                "busy_ms": 0.29
+              }
+            ]
+          },
+          "BasePass": {
+            "busy_ms": 7.1,
+            "named_draw_ms": 6.42,
+            "largest_draws": [
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 18,
+                "busy_ms": 1.49
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 1.14
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 0.85
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.63
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.58
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.33
+              }
+            ]
+          },
+          "ShadowDepths": {
+            "busy_ms": 3.78,
+            "named_draw_ms": 1.36,
+            "largest_draws": [
+              {
+                "material": "MID_LandscapeMaterialInstanceConstant_0",
+                "mesh": "Landscape",
+                "events": 128,
+                "busy_ms": 0.41
+              },
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 25,
+                "busy_ms": 0.31
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 0.11
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 1,
+                "busy_ms": 0.1
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_025",
+                "events": 1,
+                "busy_ms": 0.09
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_021",
+                "events": 1,
+                "busy_ms": 0.08
+              }
+            ]
+          }
+        }
+      },
+      {
+        "frame": 775,
+        "passes": {
+          "RenderVelocities(Opaque)": {
+            "busy_ms": 5.68,
+            "named_draw_ms": 5.42,
+            "largest_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 1.11
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 4,
+                "busy_ms": 1.08
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 4,
+                "busy_ms": 0.65
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 4,
+                "busy_ms": 0.56
+              },
+              {
+                "material": "MID_LandscapeMaterialInstanceConstant_0",
+                "mesh": "Landscape",
+                "events": 19,
+                "busy_ms": 0.44
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 4,
+                "busy_ms": 0.33
+              }
+            ]
+          },
+          "BasePass": {
+            "busy_ms": 9.38,
+            "named_draw_ms": 8.39,
+            "largest_draws": [
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 3,
+                "busy_ms": 1.78
+              },
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 18,
+                "busy_ms": 1.74
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_6_4c813bf5",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 1.39
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_4_4cbf099c",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.79
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_6",
+                "mesh": "SM_Canopy_0",
+                "events": 3,
+                "busy_ms": 0.72
+              },
+              {
+                "material": "MI_Path_Wood_material_T_Colour_4",
+                "mesh": "SM_Canopy_2",
+                "events": 3,
+                "busy_ms": 0.4
+              }
+            ]
+          },
+          "ShadowDepths": {
+            "busy_ms": 4.43,
+            "named_draw_ms": 1.78,
+            "largest_draws": [
+              {
+                "material": "MID_LandscapeMaterialInstanceConstant_0",
+                "mesh": "Landscape",
+                "events": 127,
+                "busy_ms": 0.57
+              },
+              {
+                "material": "MID_M_Fine_Detail_0",
+                "mesh": "None",
+                "events": 25,
+                "busy_ms": 0.4
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_033",
+                "events": 1,
+                "busy_ms": 0.15
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_025",
+                "events": 1,
+                "busy_ms": 0.12
+              },
+              {
+                "material": "MI_Path_Fern_1",
+                "mesh": "SM_Path_FP_Ferns_021",
+                "events": 1,
+                "busy_ms": 0.12
+              },
+              {
+                "material": "MI_Path_Leaf_0_T_Colour_5_ca124a94",
+                "mesh": "SM_Canopy_1",
+                "events": 1,
+                "busy_ms": 0.08
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "decision": "The original billboard stops casting, but matching that transition did not restore the distant sunlit crowns. Both new shadow modes remain outside the saved configuration."
   }
 }

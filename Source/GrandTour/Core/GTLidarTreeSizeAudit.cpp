@@ -139,7 +139,8 @@ namespace
             TInlineComponentArray<FTree*> Components(*It);
             for (FTree* C : Components)
             {
-                if (C->ComponentHasTag(TEXT("LidarOriginalCanopyShadow")) && C->IsRegistered() && C->CastShadow) ++Shadows;
+                if ((C->ComponentHasTag(TEXT("LidarOriginalCanopyShadow")) || C->ComponentHasTag(TEXT("LidarFullNaniteShadow"))) &&
+                    C->IsRegistered() && C->CastShadow) ++Shadows;
                 if (!C->IsVisible() || !C->ComponentHasTag(TEXT("FloraWorldCanopy"))) continue;
                 const UStaticMesh* Mesh = C->GetStaticMesh();
                 if (!Mesh || C->CastShadow || C->NumCustomDataFloats || C->ComponentHasTag(TEXT("LidarSizeRange")))
@@ -236,5 +237,118 @@ namespace
     FAutoConsoleCommandWithWorldAndArgs SizeRanges(TEXT("gt.Lidar.SizeTreeRanges"),
         TEXT("Use each tree's original projected detail threshold in the current driving view."),
         FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(ApplySizeRanges));
+
+    void MatchShadowRanges(const TArray<FString>& Args, UWorld* World)
+    {
+        FSceneViewProjectionData View;
+        double Factor;
+        if (!Args.IsEmpty() || !GetDrivingProjection(World, View, Factor)) return;
+        using FTree = UInstancedStaticMeshComponent;
+        struct FGroup
+        {
+            FTree* Caster = nullptr;
+            FTree* Source = nullptr;
+            FBox Bounds = FBox(ForceInit);
+            double Threshold = 0.;
+        };
+        TMap<FString, FGroup> Groups;
+        for (TActorIterator<AActor> It(World); It; ++It)
+        {
+            TInlineComponentArray<FTree*> Components(*It);
+            for (FTree* C : Components)
+            {
+                if (!C->IsRegistered() || !C->GetStaticMesh()) continue;
+                const FString Mesh = C->GetStaticMesh()->GetName();
+                if (C->ComponentHasTag(TEXT("LidarFullNaniteShadow")) && C->CastShadow)
+                {
+                    auto& Group = Groups.FindOrAdd(Mesh.Right(1));
+                    if (Group.Caster || !Mesh.StartsWith(TEXT("SM_NaniteRenderLod1_"))) return;
+                    Group.Caster = C;
+                }
+                else if (C->ComponentHasTag(TEXT("LidarSizeRange")) && Mesh.StartsWith(TEXT("SM_Canopy_")))
+                {
+                    Groups.FindOrAdd(Mesh.Right(1)).Source = C;
+                }
+            }
+        }
+        if (Groups.Num() != 3) return;
+        for (auto& Entry : Groups)
+        {
+            auto& Group = Entry.Value;
+            if (!Group.Source || !Group.Caster || !Group.Source->GetSceneProxy() || Group.Caster->NumCustomDataFloats) return;
+            const auto* Data = Group.Source->GetStaticMesh()->GetRenderData();
+            if (!Data || Data->LODResources.Num() != 4 || Group.Source->MinLOD != 1) return;
+            int32 FirstSilent = INDEX_NONE;
+            for (int32 LOD = 1; LOD < Data->LODResources.Num(); ++LOD)
+            {
+                bool bCasts = false;
+                for (const auto& Section : Data->LODResources[LOD].Sections)
+                {
+                    UE_LOG(LogTemp, Display, TEXT("GT_SOURCE_SHADOW_LOD mesh=%s lod=%d slot=%d casts=%d triangles=%u"),
+                        *Group.Source->GetStaticMesh()->GetName(), LOD, Section.MaterialIndex, int32(Section.bCastShadow), Section.NumTriangles);
+                    bCasts |= Section.NumTriangles > 0 && Section.bCastShadow;
+                }
+                if (bCasts && FirstSilent != INDEX_NONE) return;
+                if (!bCasts && FirstSilent == INDEX_NONE) FirstSilent = LOD;
+            }
+            if (FirstSilent <= 1) return;
+            Group.Threshold = FMath::FloorToDouble(Data->ScreenSize[FirstSilent].GetValue() * 1024.) / 1024.;
+            if (Group.Threshold <= 0.) return;
+            // Conventional shadow instance culling uses the padded local bounds in GPU Scene.
+            const auto* Proxy = Group.Source->GetSceneProxy();
+            ENQUEUE_RENDER_COMMAND(LidarReadShadowLodBounds)([Proxy, &Group](FRHICommandListImmediate&)
+            {
+                const auto* Buffer = Proxy->GetInstanceSceneDataBuffers();
+                if (!Buffer || Buffer->GetNumInstances() == 0) return;
+                const auto Bounds = Buffer->GetInstanceLocalBounds(0).ToBox();
+                if (Buffer->GetFlags().bHasPerInstanceLocalBounds)
+                    for (int32 I = 1; I < Buffer->GetNumInstances(); ++I)
+                        if (!Buffer->GetInstanceLocalBounds(I).ToBox().Equals(Bounds, .01)) return;
+                Group.Bounds = Bounds;
+            });
+            FlushRenderingCommands();
+            if (!Group.Bounds.IsValid || Group.Bounds.GetExtent().IsNearlyZero()) return;
+        }
+        int32 Total = 0, Count = 0;
+        for (auto& Entry : Groups)
+        {
+            auto& Group = Entry.Value;
+            auto* Source = Group.Caster;
+            TMap<int32, TArray<int32>> ByDistance;
+            for (int32 I = 0; I < Source->GetInstanceCount(); ++I)
+            {
+                FTransform Instance;
+                if (!Source->GetInstanceTransform(I, Instance, true)) return;
+                const double Radius = (Group.Bounds.GetExtent() * Instance.GetScale3D()).Size();
+                const int32 Stop = FMath::RoundToInt(Factor * Radius / (Group.Threshold * 500.)) * 500;
+                if (Stop <= 0) return;
+                ByDistance.FindOrAdd(Stop).Add(I);
+            }
+            const auto Seeds = GTLidarTreeInstances::RandomSeeds(*Source);
+            auto* Owner = Source->GetOwner();
+            for (const auto& Bucket : ByDistance)
+            {
+                auto* C = NewObject<FTree>(Owner, NAME_None, RF_Transient, Source);
+                C->SetupAttachment(Source->GetAttachParent(), Source->GetAttachSocketName());
+                C->SetRelativeTransform(Source->GetRelativeTransform());
+                GTLidarTreeInstances::CopySubset(*C, *Source, Bucket.Value, Seeds);
+                C->SetCullDistances(Bucket.Key, Bucket.Key);
+                Owner->AddInstanceComponent(C);
+                Owner->AddOwnedComponent(C);
+                C->RegisterComponent();
+                if (!C->IsRegistered() || !C->CastShadow || !C->bCastHiddenShadow || !C->bHiddenInGame ||
+                    C->GetInstanceCount() != Bucket.Value.Num() || C->GetStaticMesh() != Source->GetStaticMesh()) return;
+                Total += C->GetInstanceCount();
+                ++Count;
+                UE_LOG(LogTemp, Display, TEXT("GT_CAST_RANGE mesh=%s stop_cm=%d instances=%d"), *Entry.Key, Bucket.Key, C->GetInstanceCount());
+            }
+            Source->SetCastShadow(false);
+            Source->UnregisterComponent();
+        }
+        UE_LOG(LogTemp, Display, TEXT("GT_MATCHED_SHADOW_RANGE species=%d groups=%d instances=%d factor=%.6f"), Groups.Num(), Count, Total, Factor);
+    }
+    FAutoConsoleCommandWithWorldAndArgs ShadowRanges(TEXT("gt.Lidar.MatchTreeShadowRanges"),
+        TEXT("Match study shadow draw distances to each original tree's final shadow-casting detail level."),
+        FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(MatchShadowRanges));
 }
 #endif

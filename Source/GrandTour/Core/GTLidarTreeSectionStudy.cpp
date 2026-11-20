@@ -50,12 +50,18 @@ namespace
 		};
 		TArray<FGroup> Groups;
 		TArray<FMaterial*> Resources;
+		const bool bShadowAudit = Args.Contains(TEXT("shadow"));
 		for (TActorIterator<AActor> It(World); It; ++It)
 		{
 			TInlineComponentArray<UInstancedStaticMeshComponent*> Components(*It);
 			for (auto* Component : Components)
 			{
-				if (!Component->IsVisible() || (!Component->ComponentHasTag(TEXT("FloraWorldCanopy")) &&
+				if (bShadowAudit)
+				{
+					if (!Component->IsRegistered() || !Component->CastShadow ||
+						!Component->ComponentHasTag(TEXT("LidarFullNaniteShadow"))) continue;
+				}
+				else if (!Component->IsVisible() || (!Component->ComponentHasTag(TEXT("FloraWorldCanopy")) &&
 					!Component->ComponentHasTag(TEXT("FloraWorldSaplings")))) continue;
 				UStaticMesh* Mesh = Component->GetStaticMesh();
 				if (!Mesh) continue;
@@ -87,7 +93,7 @@ namespace
 			Group.SceneProxy = Group.Component->GetSceneProxy();
 		}
 		ENQUEUE_RENDER_COMMAND(AuditLidarTreeRendering)(
-			[Groups = MoveTemp(Groups), Level](FRHICommandListImmediate&)
+			[Groups = MoveTemp(Groups), Level, bShadowAudit](FRHICommandListImmediate&)
 			{
 				int32 Nanite = 0, Fallbacks = 0, Proxies = 0;
 				for (const auto& Group : Groups)
@@ -128,8 +134,8 @@ namespace
 					UE_LOG(LogTemp, Display, TEXT("GT_TREE_RENDER mesh=%s nanite_data=%d nanite_proxy=%d slots=%d material_fallbacks=%d"),
 						*Group.Mesh, Group.bValidNaniteData, bNanite, Group.Materials.Num(), GroupFallbacks);
 				}
-				UE_LOG(LogTemp, Display, TEXT("GT_TREE_RENDER_SUMMARY groups=%d proxies=%d nanite=%d material_fallbacks=%d"),
-					Groups.Num(), Proxies, Nanite, Fallbacks);
+				UE_LOG(LogTemp, Display, TEXT("%s groups=%d proxies=%d nanite=%d material_fallbacks=%d"),
+					bShadowAudit ? TEXT("GT_TREE_SHADOW_SUMMARY") : TEXT("GT_TREE_RENDER_SUMMARY"), Groups.Num(), Proxies, Nanite, Fallbacks);
 			});
 		FlushRenderingCommands();
 	}
@@ -143,7 +149,9 @@ namespace
 			UGameplayStatics::GetCurrentLevelName(World, true) != TEXT("L_LidarStudy")) return;
 		int32 Metres = 0;
 		const bool bOriginalShadows = Args[1] == TEXT("renderlod_original_shadows");
-		const bool bRenderLod = Args[1] == TEXT("renderlod") || bOriginalShadows;
+		const bool bNaniteShadows = Args[1] == TEXT("renderlod_nanite_shadows");
+		const bool bFullRangeShadows = bOriginalShadows || bNaniteShadows;
+		const bool bRenderLod = Args[1] == TEXT("renderlod") || bFullRangeShadows;
 		if (!LexTryParseString(Metres, *Args[0]) || Metres < 20 || Metres > 150 ||
 			(!bRenderLod && Args[1] != TEXT("paint") && Args[1] != TEXT("control"))) return;
 		const int32 Radius = Metres * 100;
@@ -165,7 +173,7 @@ namespace
 					return;
 				}
 				if (bRenderLod && (!C->bOverrideMinLOD || C->MinLOD != 1)) return;
-				if (bOriginalShadows && !C->CastShadow) return;
+				if (bFullRangeShadows && !C->CastShadow) return;
 				const FString Prefix = bRenderLod ? TEXT("SM_NaniteRenderLod1_") : TEXT("SM_NanitePainted_");
 				const FString Path = TEXT("/Game/GrandTour/ArtTests/LidarStudy/PerformanceStudy/") + Prefix + Original->GetName().Right(1);
 				UStaticMesh* Near = bPaint ? LoadObject<UStaticMesh>(nullptr, *Path) : Original;
@@ -210,7 +218,7 @@ namespace
 			Near->ComponentTags = Source->ComponentTags;
 			Near->ComponentTags.Add(TEXT("TrialNearCanopy"));
 			Near->SetVisibility(Source->IsVisible());
-			if (bOriginalShadows)
+			if (bFullRangeShadows)
 			{
 				// The camera's near/far transition must not change which trees
 				// populate a cached shadow page. Preserve the full original caster.
@@ -220,9 +228,17 @@ namespace
 				Shadow->PerInstanceSMData = Source->PerInstanceSMData;
 				Shadow->InstancingRandomSeed = Source->InstancingRandomSeed;
 				Shadow->AdditionalRandomSeeds = Source->AdditionalRandomSeeds;
-				for (int32 Slot = 0; Slot < Source->GetNumMaterials(); ++Slot) Shadow->SetMaterial(Slot, Source->GetMaterial(Slot));
+				UStaticMesh* ShadowMesh = bNaniteShadows ? Entry.Near : Source->GetStaticMesh().Get();
+				if (bNaniteShadows)
+				{
+					if (!Shadow->SetStaticMesh(ShadowMesh)) return;
+					// The painted wind program returns zero in the original shadow pass.
+					Shadow->SetEvaluateWorldPositionOffset(false);
+				}
+				for (int32 Slot = 0; Slot < Source->GetNumMaterials(); ++Slot)
+					Shadow->SetMaterial(Slot, bNaniteShadows ? ShadowMesh->GetMaterial(Slot) : Source->GetMaterial(Slot));
 				Shadow->ComponentTags.Reset();
-				Shadow->ComponentTags.Add(TEXT("LidarOriginalCanopyShadow"));
+				Shadow->ComponentTags.Add(bNaniteShadows ? TEXT("LidarFullNaniteShadow") : TEXT("LidarOriginalCanopyShadow"));
 				Shadow->SetCastHiddenShadow(true);
 				Shadow->SetHiddenInGame(true);
 				Shadow->SetRenderInMainPass(false);
@@ -230,11 +246,12 @@ namespace
 				Owner->AddInstanceComponent(Shadow);
 				Owner->AddOwnedComponent(Shadow);
 				Shadow->RegisterComponent();
-				if (!Shadow->IsRegistered() || Shadow->GetStaticMesh() != Source->GetStaticMesh() ||
+				if (!Shadow->IsRegistered() || Shadow->GetStaticMesh() != ShadowMesh ||
 					Shadow->GetInstanceCount() != Source->GetInstanceCount()) return;
 				Near->SetCastShadow(false);
 				Source->SetCastShadow(false);
-				UE_LOG(LogTemp, Display, TEXT("GT_ORIGINAL_CANOPY_SHADOW mesh=%s instances=%d"),
+				UE_LOG(LogTemp, Display, TEXT("%s mesh=%s instances=%d"),
+					bNaniteShadows ? TEXT("GT_FULL_NANITE_SHADOW") : TEXT("GT_ORIGINAL_CANOPY_SHADOW"),
 					*Source->GetStaticMesh()->GetName(), Shadow->GetInstanceCount());
 			}
 			Owner->AddInstanceComponent(Near);

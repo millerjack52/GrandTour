@@ -214,3 +214,32 @@ A second launch on the same build with the original trees reproduced all 17 pick
 All five sections of the size-based film were also scanned for local differences using overlapping 96-pixel squares. The forest-access maximum fell on a tyre cloud. Away from forest access the largest excess over the two original controls was 2.38 brightness levels in the same bog-approach opening. The 30-second film and the five-location crop sheet are in `D:/GrandTourAssets/Reviews/Lidar60/size-matched-review/`.
 
 A separate particle isolation used the fixed 150 m version and original trees at 26 matching pickup positions. In forest-access frame 137 the bright tyre cloud differed by 80.52 levels during ordinary driving and 0.23 with particles hidden for the diagnostic. The frame-140 sunlit gap differed by 1.68 and 0.88 respectively. Across all 48 isolated forest-access pairs the largest 96-pixel patch differed by 2.17. This experiment isolates the fixed-range version. The size-based film retained the normal particles.
+
+## Replacing the full-range shadow casters
+
+The original mature trees use different meshes as they recede. This trial gave the three species a full-range Nanite shadow copy of their first playable mesh. It kept the visible size-based trees, original far appearance materials, 146,197 mature tree placements and the pickup's chase camera. Unreal verified the three new shadow proxies and their painted materials on the render thread. Both shadow modes used identical pickup positions at 17 points in the 11.65 m bog replay.
+
+| Bog replay | Mean fps | Mean / p95 / p99 frame, ms | Base / velocity / shadow, ms | Median GPU clock |
+| --- | ---: | ---: | ---: | ---: |
+| Original shadow geometry | 20.83 | 48.01 / 53.15 / 61.61 | 7.76 / 4.88 / 16.19 | 1245 MHz |
+| New full-range shadow geometry | 26.72 | 37.43 / 51.28 / 53.22 | 7.71 / 4.90 / 4.65 | 1320 MHz |
+
+The foreground pickup crossed the same 95 m from road station 2240 to 2335 in both modes. With original shadows it averaged 14.67 fps, with p95 at 84.84 ms and p99 at 104.24 ms. With the full-range shadow copy it averaged 20.68 fps across 1,586 moving frames. The mean took 48.35 ms, p95 took 62.08 ms, p99 took 75.34 ms and the maximum reached 146.92 ms. Mean shadow drawing fell from 23.39 to 5.86 ms. The full-range trial travelled 112.17 m including reverse manoeuvres and stalled at road station 2337.12, about 3.4 m short of the measured route end. Every moving frame on the shared stretch exceeded the 16.67 ms budget.
+
+The 240-pair film reproduced all 65 pickup positions. In paddock frame 19 a 96-pixel patch on the distant crowns differed by 17.25 brightness levels between the two shadow modes. The canopy became visibly darker. The original shadow geometry preserved the sunlit crowns at that distance. This visual failure rules out the full-range version as the playable default. The crops are in `D:/GrandTourAssets/Reviews/Lidar60/stable-nanite-shadow-review/early-sky.jpg`. The separate forest-access dust cloud varies across ordinary launches.
+
+## Longer original drives
+
+Two fresh foreground runs used the saved forest, pickup, grass, water, mud physics and 1600 × 900 camera. The wooded-track drive used the player's First Hollow checkpoint. It physically travelled 35.12 m with three attempts to reverse out, reached road station 1926.85 and stalled. Across its first uninterrupted 20 m between stations 1905 and 1925 the 309 moving frames averaged 14.63 fps. The p95 was 88.04 ms, the p99 was 108.08 ms and shadow drawing averaged 18.90 ms.
+
+The Riverside access drive physically travelled 934.88 m and reached station 1681.42. An earlier original run reached station 1681.32. On the same first forward 850 m between stations 800 and 1650, the new run averaged 11.93 fps over 2,777 moving frames with p95 at 115.26 ms and p99 at 133.88 ms. The earlier run averaged 14.44 fps over 2,773 moving frames with p95 at 98.39 ms and p99 at 110.12 ms. All 3,457 presentation samples of the new run retained window focus. Both pickups stalled before the end of Riverside access at station 1695.78. Neither run crossed the 14.75 m gap to the start of the separate logging road.
+
+### Testing the original far shadow distance
+
+The runtime mesh audit read the section flags on all three source trees. Both real mesh levels cast from both bark and leaves. Each far billboard has eight triangles and its shadow flag is off. The distance experiment used the source renderer's padded bounds, per-tree size and chase-camera projection to approximate that final transition in 5 m increments. It verified 111 shadow groups spanning 225–420 m, all 146,197 mature trees and zero fallback materials.
+
+The 11.65 m bog replay averaged 26.33 fps with a 37.98 ms mean, 40.79 ms p95, 41.83 ms p99 and 4.66 ms for shadow drawing. The GPU reached 89 °C at a median 1170 MHz. The movie matched all 65 pickup positions across five checkpoints. Matching the cutoff made almost no difference to the lost sunlight. In paddock frame 19 the full-range and bounded trials both differed from the original by 17.40 brightness levels. In frame 27 they differed by 14.19 and 14.18. The original-shadow version differed by 1.00 and 0.91 in those same patches. This rules out the missing final distance cutoff as the sole explanation. The native comparison is in `D:/GrandTourAssets/Reviews/Lidar60/matched-shadow-review/shadow-distance-driving.jpg`.
+
+Two instrumented frames with the bounded shadow trial had conventional base passes of 7.10 and 9.38 ms. Tree D 003's remaining conventional leaves took 0.85 and 1.78 ms, down from roughly 9 ms in the earlier instrumented original. The fine ground-detail material took 1.49 and 1.74 ms. Nanite visibility and surface work are separate from those conventional draws. The physical foreground result for the full-range experiment and the visual failures of both shadow variants remain the basis of the default decision.
+
+Use `-StableNaniteShadows` on the size-matched tree trial to reproduce the full-range case, or add `-MatchShadowRange` to reproduce the bounded case. The baseline measurements above used the original playable v10 profile.

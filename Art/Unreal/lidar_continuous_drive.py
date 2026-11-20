@@ -57,11 +57,13 @@ class RoadDrive:
         offset, self.index, self.start_station = closest(
             self.points, self.station, p.x, p.y, 0, len(self.points) - 1
         )
-        if start == "bog530":
+        recovery_starts = {"track_start": (1, 3), "track192": (2, 192), "track270": (3, 270), "bog530": (4, 530)}
+        if start in recovery_starts:
+            lane, track_station = recovery_starts[start]
             (route,) = u.GameplayStatics.get_all_actors_of_class(self.world, u.GTMudRoute)
-            checkpoint = route.get_editor_property("RecoveryPoints")[3].translation
-            assert self.pc.get_editor_property("SelectedLane") == 4
-            assert abs(self.start_station - junction - 530) < 12
+            checkpoint = route.get_editor_property("RecoveryPoints")[lane - 1].translation
+            assert self.pc.get_editor_property("SelectedLane") == lane
+            assert abs(self.start_station - junction - track_station) < 12
             expected_xy = checkpoint.x, checkpoint.y
         else:
             poses = json.loads((root / "Art/lidar_driving_baseline_poses.json").read_text())
@@ -126,6 +128,37 @@ class RoadDrive:
     def command(self, value):
         u.SystemLibrary.execute_console_command(self.world, value, self.pc)
 
+    def inspect_stall(self):
+        location = self.car.get_actor_location()
+        forward = self.car.get_actor_forward_vector()
+        angle = math.atan2(forward.y, forward.x)
+        front = u.Vector(math.cos(angle), math.sin(angle), 0)
+        right = u.Vector(-math.sin(angle), math.cos(angle), 0)
+        def trace(a, b):
+            result = u.SystemLibrary.line_trace_single(
+                self.world, a, b, u.TraceTypeQuery.TRACE_TYPE_QUERY1, True,
+                [self.car], u.DrawDebugTrace.NONE, True,
+            )
+            values = result.to_tuple() if result else ()
+            if not values or not values[0]:
+                return None
+            point = next(v for v in values if isinstance(v, u.Vector))
+            return dict(point_cm=point.to_tuple(), objects=[
+                obj.get_path_name() for obj in values if isinstance(obj, (u.Actor, u.PrimitiveComponent))
+            ])
+        checks = []
+        for lateral in (-110, 0, 110):
+            origin = location + right * lateral
+            for height in (35, 80):
+                start = origin + u.Vector(0, 0, height)
+                checks.append(dict(lateral_cm=lateral, height_cm=height, forward_to_cm=950,
+                                   hit=trace(start, start + front * 950)))
+            for ahead in (0, 300, 600, 950):
+                column = origin + front * ahead
+                checks.append(dict(lateral_cm=lateral, ahead_cm=ahead,
+                                   ground=trace(column + u.Vector(0, 0, 225), column - u.Vector(0, 0, 600))))
+        return dict(position_cm=location.to_tuple(), yaw_degrees=math.degrees(angle), visibility_traces=checks)
+
     def finish(self, reason):
         if self.handle is not None:
             u.unregister_slate_post_tick_callback(self.handle)
@@ -164,6 +197,12 @@ class RoadDrive:
         (self.output / "continuous-drive.json").write_text(
             json.dumps(payload, separators=(",", ":"))
         )
+        if reason == "stalled":
+            # Read the obstacles and road heights after the measured driving window.
+            try:
+                (self.output / "stall-collision.json").write_text(json.dumps(self.inspect_stall(), indent=2))
+            except Exception:
+                u.log_warning(traceback.format_exc())
         u.log(
             f"GT_LINKED_END reason={reason} travel_m={self.travel:.2f} samples={len(self.samples)}"
         )
