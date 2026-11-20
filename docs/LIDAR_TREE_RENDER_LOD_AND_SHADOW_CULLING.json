@@ -5412,7 +5412,47 @@
           ]
         }
       }
-    ]
+    ],
+    "forest_access_150m_particle_control": {
+      "ordinary_runs": [
+        67,
+        107
+      ],
+      "isolated_runs": [
+        102,
+        119
+      ],
+      "matched_poses": 26,
+      "moving_access_pairs": 48,
+      "frame_137_tyre_cloud": {
+        "box": [
+          688,
+          648,
+          784,
+          744
+        ],
+        "ordinary_luma_difference": 80.521,
+        "isolated_luma_difference": 0.234
+      },
+      "frame_140_sun_gap": {
+        "ordinary_luma_difference": 1.677,
+        "isolated_luma_difference": 0.884
+      },
+      "largest_isolated_tile": {
+        "frame": "r139.png",
+        "dust_on": 4.463,
+        "dust_off": 0.148,
+        "sunlight_on": 2.048,
+        "sunlight_off": 1.075,
+        "max_without_particles": 2.169,
+        "rect": [
+          976,
+          8,
+          1072,
+          104
+        ]
+      }
+    }
   },
   "d003_active_leaf_graph": {
     "material": "/Game/GrandTour/ArtTests/LidarStudy/FloraTrailStyle/v1/MI_Path_Leaf_0_T_Colour_5_ca124a94.MI_Path_Leaf_0_T_Colour_5_ca124a94",
@@ -7825,6 +7865,134 @@
         "study_settings": [],
         "velocity_pass_trial": "",
         "disable_editor_python": false
+      }
+    },
+    "same_build_original_bog": {
+      "matched_pickup_positions": 17,
+      "run": "sweep118_bog_same_binary",
+      "fps": 14.74,
+      "frames": 192,
+      "travel_m": 11.65,
+      "timings": {
+        "FrameTime": {
+          "mean": 67.835,
+          "p95": 73.434,
+          "median": 67.358,
+          "p99": 84.291,
+          "maximum": 124.385,
+          "pct_over_60fps_budget": 100.0,
+          "over_33_3_ms": 192,
+          "over_50_ms": 192,
+          "over_100_ms": 1
+        },
+        "GPUTime": {
+          "mean": 66.73,
+          "p95": 73.046
+        },
+        "GPU/ShadowDepths": {
+          "mean": 17.309,
+          "p95": 21.606
+        },
+        "GPU/Basepass": {
+          "mean": 20.082,
+          "p95": 21.467
+        },
+        "GPU/RenderVelocities": {
+          "mean": 13.989,
+          "p95": 15.243
+        },
+        "DrawCall/ShadowDepths": {
+          "mean": 632.682,
+          "p95": 644.0
+        },
+        "GameThreadTime": {
+          "mean": 9.932,
+          "p95": 12.428
+        },
+        "RenderThreadTime": {
+          "mean": 10.457,
+          "p95": 12.687
+        },
+        "DrawCall/Basepass": {
+          "mean": 571.391,
+          "p95": 588.0
+        },
+        "RHI/PrimitivesDrawn": {
+          "mean": 2141755.01,
+          "p95": 2419553.0
+        },
+        "GPU/Prepass": {
+          "mean": 0.428,
+          "p95": 0.468
+        }
+      },
+      "gpu_hardware": {
+        "median_clock_mhz": 1125.0,
+        "peak_temperature_c": 89.0,
+        "median_power_w": 21.65,
+        "samples_thermally_limited": 13
+      }
+    },
+    "full_frame_tile_scan": {
+      "paddock": {
+        "frame": "r027.png",
+        "box": [
+          976,
+          104,
+          1072,
+          200
+        ],
+        "candidate": 1.408,
+        "original_repeats": 0.152,
+        "excess": 1.256
+      },
+      "forest_access": {
+        "frame": "r114.png",
+        "box": [
+          784,
+          392,
+          880,
+          488
+        ],
+        "candidate": 75.942,
+        "original_repeats": 2.038,
+        "excess": 73.904
+      },
+      "river": {
+        "frame": "r213.png",
+        "box": [
+          592,
+          8,
+          688,
+          104
+        ],
+        "candidate": 0.868,
+        "original_repeats": 0.144,
+        "excess": 0.725
+      },
+      "bog_approach": {
+        "frame": "r322.png",
+        "box": [
+          1328,
+          8,
+          1424,
+          104
+        ],
+        "candidate": 2.524,
+        "original_repeats": 0.146,
+        "excess": 2.378
+      },
+      "deep_bog": {
+        "frame": "r408.png",
+        "box": [
+          496,
+          136,
+          592,
+          232
+        ],
+        "candidate": 1.184,
+        "original_repeats": 0.191,
+        "excess": 0.992
       }
     }
   }
