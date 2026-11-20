@@ -112,3 +112,19 @@ The original Tree D 003 geometry was duplicated for a study. Two children of the
 | Shadows | 2.81 / 2.86 | 0.00 / 0.00 |
 
 The first playable leaf section had 32,626 referenced vertices, of which 16,597 were distinct by position, normal, tangent and UV0. Its 18,912 triangles are unchanged. This identifies a candidate for reusing vertex work. These counts do not establish a speedup. To repeat the split timers, run `Art/Unreal/prepare_lidar_leaf_lod_labels.py` with the source caster audit in `GT_LIDAR_NANITE_SOURCE_AUDIT`, then add `-LabelTreeLods -MaterialDrawStudy` to the saved moving bog replay.
+
+## Repeated shadow timing across the five checkpoints
+
+Three independently launched games drove the same simulated route sections with shadow culling on, off and on. All 130 sampled pickup positions matched. Each run contained 300 measured frames at each checkpoint. The pickup traveled 42.31 m in the paddock, 37.23 m at forest access, 6.78 m at the river, 1.42 m on the bog approach and 17.52 m in the bog. The test kept 1600 × 900 output, 75% TSR, sound, physics, the original trees and the same saved equipment. The table shows elapsed frame times from the offscreen game. Each triple lists the original followed by the two candidate runs.
+
+| Location | Mean fps | p95 frame time, ms | Mean shadow drawing, ms | Median GPU clock, MHz |
+| --- | ---: | ---: | ---: | ---: |
+| Paddock | 18.12 / 20.72 / 15.89 | 66.86 / 67.90 / 70.14 | 6.50 / 5.81 / 7.63 | 1050 / 1260 / 810 |
+| Forest access | 13.85 / 14.88 / 14.39 | 83.28 / 90.81 / 82.24 | 21.29 / 18.21 / 18.61 | 825 / 908 / 810 |
+| River margin | 12.72 / 16.87 / 14.32 | 104.24 / 75.91 / 88.98 | 29.02 / 14.85 / 17.82 | 675 / 780 / 630 |
+| Bog approach | 11.09 / 11.51 / 10.10 | 97.59 / 107.24 / 109.35 | 24.64 / 22.12 / 25.05 | 765 / 788 / 713 |
+| Deep bog | 11.13 / 11.14 / 11.11 | 99.21 / 98.20 / 99.58 | 22.19 / 18.32 / 18.63 | 795 / 780 / 765 |
+
+Pooling the five equal-size windows gave 12.95 fps with the original and 14.23 and 12.78 fps with the candidate. Pooled p95 rose from 95.74 to 97.41 and 103.51 ms. Pooled p99 fell from 120.40 to 117.79 and 114.27 ms. Five of the 4,500 measured frames met the 16.67 ms budget, all in the deep bog. The GPU was thermally limited on AC power. The river benefit repeated even with a lower GPU clock. Deep-bog shadow work fell on both repeats, with essentially the same deep-bog frame rate. The route-wide tail result and the extra 42.69 MiB of shadow memory do not justify changing the saved v10 default.
+
+Reproduce with `-ShadowStudy routetime -ShadowCandidate saved -WarmTrees -FixedRouteReplay` and `-StudySettings 'r.Shadow.Virtual.DynamicHZB 1'` or `0`. The measurements, including p99 by checkpoint, are under `dynamic_shadow_fixed_route` in the accompanying JSON.

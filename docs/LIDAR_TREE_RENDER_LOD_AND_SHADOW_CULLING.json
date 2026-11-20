@@ -3591,5 +3591,236 @@
         }
       }
     ]
+  },
+  "dynamic_shadow_fixed_route": {
+    "samples_per_site": 26,
+    "positions_matched": 130,
+    "runs": [
+      {
+        "label": "sweep87_fixed_dynamic_route",
+        "setting": 1,
+        "fps": 14.23,
+        "p95_ms": 97.407,
+        "p99_ms": 117.792,
+        "frames_within_budget": 1,
+        "sites": [
+          {
+            "section": "paddock_mid",
+            "distance_m": 42.31,
+            "frames": 300,
+            "fps": 20.72,
+            "mean_frame_ms": 48.264,
+            "p95_ms": 67.904,
+            "p99_ms": 78.52,
+            "gpu_mean_ms": 47.063,
+            "shadow_mean_ms": 5.811,
+            "gpu_clock_mhz": 1260.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "access",
+            "distance_m": 37.23,
+            "frames": 300,
+            "fps": 14.88,
+            "mean_frame_ms": 67.193,
+            "p95_ms": 90.807,
+            "p99_ms": 101.533,
+            "gpu_mean_ms": 65.891,
+            "shadow_mean_ms": 18.21,
+            "gpu_clock_mhz": 907.5,
+            "peak_c": 89.0
+          },
+          {
+            "section": "river",
+            "distance_m": 6.78,
+            "frames": 300,
+            "fps": 16.87,
+            "mean_frame_ms": 59.272,
+            "p95_ms": 75.906,
+            "p99_ms": 93.065,
+            "gpu_mean_ms": 58.093,
+            "shadow_mean_ms": 14.847,
+            "gpu_clock_mhz": 780.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "bog_entry",
+            "distance_m": 1.42,
+            "frames": 300,
+            "fps": 11.51,
+            "mean_frame_ms": 86.911,
+            "p95_ms": 107.239,
+            "p99_ms": 131.627,
+            "gpu_mean_ms": 85.561,
+            "shadow_mean_ms": 22.119,
+            "gpu_clock_mhz": 787.5,
+            "peak_c": 89.0
+          },
+          {
+            "section": "bog552",
+            "distance_m": 17.52,
+            "frames": 300,
+            "fps": 11.14,
+            "mean_frame_ms": 89.772,
+            "p95_ms": 98.199,
+            "p99_ms": 112.54,
+            "gpu_mean_ms": 86.986,
+            "shadow_mean_ms": 18.317,
+            "gpu_clock_mhz": 780.0,
+            "peak_c": 89.0
+          }
+        ]
+      },
+      {
+        "label": "sweep88_fixed_control_route",
+        "setting": 0,
+        "fps": 12.95,
+        "p95_ms": 95.743,
+        "p99_ms": 120.401,
+        "frames_within_budget": 2,
+        "sites": [
+          {
+            "section": "paddock_mid",
+            "distance_m": 42.31,
+            "frames": 300,
+            "fps": 18.12,
+            "mean_frame_ms": 55.18,
+            "p95_ms": 66.864,
+            "p99_ms": 83.727,
+            "gpu_mean_ms": 54.0,
+            "shadow_mean_ms": 6.496,
+            "gpu_clock_mhz": 1050.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "access",
+            "distance_m": 37.23,
+            "frames": 300,
+            "fps": 13.85,
+            "mean_frame_ms": 72.177,
+            "p95_ms": 83.282,
+            "p99_ms": 98.903,
+            "gpu_mean_ms": 70.971,
+            "shadow_mean_ms": 21.288,
+            "gpu_clock_mhz": 825.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "river",
+            "distance_m": 6.78,
+            "frames": 300,
+            "fps": 12.72,
+            "mean_frame_ms": 78.605,
+            "p95_ms": 104.241,
+            "p99_ms": 121.951,
+            "gpu_mean_ms": 77.389,
+            "shadow_mean_ms": 29.019,
+            "gpu_clock_mhz": 675.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "bog_entry",
+            "distance_m": 1.42,
+            "frames": 300,
+            "fps": 11.09,
+            "mean_frame_ms": 90.195,
+            "p95_ms": 97.593,
+            "p99_ms": 121.147,
+            "gpu_mean_ms": 88.911,
+            "shadow_mean_ms": 24.641,
+            "gpu_clock_mhz": 765.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "bog552",
+            "distance_m": 17.52,
+            "frames": 300,
+            "fps": 11.13,
+            "mean_frame_ms": 89.848,
+            "p95_ms": 99.211,
+            "p99_ms": 116.767,
+            "gpu_mean_ms": 86.841,
+            "shadow_mean_ms": 22.185,
+            "gpu_clock_mhz": 795.0,
+            "peak_c": 89.0
+          }
+        ]
+      },
+      {
+        "label": "sweep89_fixed_dynamic_repeat",
+        "setting": 1,
+        "fps": 12.78,
+        "p95_ms": 103.514,
+        "p99_ms": 114.268,
+        "frames_within_budget": 2,
+        "sites": [
+          {
+            "section": "paddock_mid",
+            "distance_m": 42.31,
+            "frames": 300,
+            "fps": 15.89,
+            "mean_frame_ms": 62.924,
+            "p95_ms": 70.138,
+            "p99_ms": 72.252,
+            "gpu_mean_ms": 61.74,
+            "shadow_mean_ms": 7.629,
+            "gpu_clock_mhz": 810.0,
+            "peak_c": 88.0
+          },
+          {
+            "section": "access",
+            "distance_m": 37.23,
+            "frames": 300,
+            "fps": 14.39,
+            "mean_frame_ms": 69.487,
+            "p95_ms": 82.238,
+            "p99_ms": 86.698,
+            "gpu_mean_ms": 68.279,
+            "shadow_mean_ms": 18.611,
+            "gpu_clock_mhz": 810.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "river",
+            "distance_m": 6.78,
+            "frames": 300,
+            "fps": 14.32,
+            "mean_frame_ms": 69.852,
+            "p95_ms": 88.981,
+            "p99_ms": 108.033,
+            "gpu_mean_ms": 68.638,
+            "shadow_mean_ms": 17.824,
+            "gpu_clock_mhz": 630.0,
+            "peak_c": 89.0
+          },
+          {
+            "section": "bog_entry",
+            "distance_m": 1.42,
+            "frames": 300,
+            "fps": 10.1,
+            "mean_frame_ms": 99.0,
+            "p95_ms": 109.353,
+            "p99_ms": 132.19,
+            "gpu_mean_ms": 97.603,
+            "shadow_mean_ms": 25.05,
+            "gpu_clock_mhz": 712.5,
+            "peak_c": 89.0
+          },
+          {
+            "section": "bog552",
+            "distance_m": 17.52,
+            "frames": 300,
+            "fps": 11.11,
+            "mean_frame_ms": 89.996,
+            "p95_ms": 99.576,
+            "p99_ms": 114.571,
+            "gpu_mean_ms": 87.199,
+            "shadow_mean_ms": 18.626,
+            "gpu_clock_mhz": 765.0,
+            "peak_c": 89.0
+          }
+        ]
+      }
+    ]
   }
 }
