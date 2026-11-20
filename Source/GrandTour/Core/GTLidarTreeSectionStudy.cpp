@@ -143,10 +143,32 @@ namespace
 		TEXT("Report the actual LiDAR tree scene proxies and any material shader fallbacks."),
 		FConsoleCommandWithWorldAndArgsDelegate::CreateStatic(&AuditTreeRendering));
 
+	void MatchStudyTreeBounds(UStaticMesh* Mesh, const UStaticMesh* Original)
+	{
+		// Near and far distance tests must use the same instance centre.
+		const auto Far = Original->GetBounds();
+		const auto Built = Mesh->GetBounds();
+		const FVector Extent = Far.BoxExtent.ComponentMax(Built.BoxExtent + (Built.Origin - Far.Origin).GetAbs());
+		Mesh->SetExtendedBounds(FBoxSphereBounds(Far.Origin, Extent, Extent.Size()));
+		UE_LOG(LogTemp, Display, TEXT("GT_TREE_RANGE_BOUNDS mesh=%s centre_delta_cm=%.3f extent_delta_cm=%.3f"),
+			*Mesh->GetName(), (Built.Origin - Far.Origin).Size(), (Extent - Far.BoxExtent).Size());
+	}
+
 	void TrialNearCanopy(const TArray<FString>& Args, UWorld* World)
 	{
-		if (!World || World->WorldType != EWorldType::Game || Args.Num() != 2 ||
+		if (!World || World->WorldType != EWorldType::Game || Args.Num() < 2 || Args.Num() > 3 ||
 			UGameplayStatics::GetCurrentLevelName(World, true) != TEXT("L_LidarStudy")) return;
+		FString ShapeFolder;
+		if (Args.Num() == 3)
+		{
+			if ((Args[1] != TEXT("nanite_shadows_only") && Args[1] != TEXT("renderlod_nanite_shadows")) ||
+				Args[2].Len() != 12) return;
+			for (TCHAR Ch : Args[2])
+			{
+				if (!FChar::IsHexDigit(Ch)) return;
+			}
+			ShapeFolder = TEXT("ShadowShape/") + Args[2] + TEXT("/");
+		}
 		int32 Metres = 0;
 		const bool bForceCasterLOD1 = Args[1] == TEXT("original_lod1_shadows_only");
 		const bool bStaticCasterWind = Args[1] == TEXT("original_static_shadows_only");
@@ -160,7 +182,7 @@ namespace
 			(!bRenderLod && Args[1] != TEXT("paint") && Args[1] != TEXT("control"))) return;
 		const int32 Radius = Metres * 100;
 		const bool bPaint = !bConventionalOnly && (bRenderLod || Args[1] == TEXT("paint"));
-		struct FSource { UInstancedStaticMeshComponent* Component; UStaticMesh* Near; };
+		struct FSource { UInstancedStaticMeshComponent* Component; UStaticMesh* Near; UStaticMesh* Shadow; };
 		TArray<FSource> Sources;
 		for (TActorIterator<AActor> It(World); It; ++It)
 		{
@@ -179,14 +201,25 @@ namespace
 				if (bRenderLod && (!C->bOverrideMinLOD || C->MinLOD != 1)) return;
 				if (bFullRangeShadows && !C->CastShadow) return;
 				const FString Prefix = bRenderLod ? TEXT("SM_NaniteRenderLod1_") : TEXT("SM_NanitePainted_");
-				const FString Path = TEXT("/Game/GrandTour/ArtTests/LidarStudy/PerformanceStudy/") + Prefix + Original->GetName().Right(1);
+				const FString Folder = TEXT("/Game/GrandTour/ArtTests/LidarStudy/PerformanceStudy/");
+				const FString Asset = Prefix + Original->GetName().Right(1);
+				const FString Path = Folder + Asset;
 				UStaticMesh* Near = bPaint ? LoadObject<UStaticMesh>(nullptr, *Path) : Original;
 				if (!Near || Near->GetStaticMaterials().Num() != C->GetNumMaterials())
 				{
 					UE_LOG(LogTemp, Warning, TEXT("GT_TREE_RANGE incompatible mesh=%s copy=%s"), *Original->GetName(), *GetNameSafe(Near));
 					return;
 				}
-				Sources.Add({C, Near});
+				UStaticMesh* Shadow = bNaniteShadows ? Near : Original;
+				if (!ShapeFolder.IsEmpty())
+				{
+					Shadow = LoadObject<UStaticMesh>(nullptr, *(Folder + ShapeFolder + Asset));
+					if (!Shadow || Shadow->GetNumSections(0) != Near->GetNumSections(0) ||
+						Shadow->GetStaticMaterials().Num() != C->GetNumMaterials() ||
+						Shadow->GetNaniteSettings().ShapePreservation != ENaniteShapePreservation::None) return;
+					UE_LOG(LogTemp, Display, TEXT("GT_UNDILATED_SHADOW mesh=%s"), *Shadow->GetPathName());
+				}
+				Sources.Add({C, Near, Shadow});
 			}
 		}
 		if (Sources.Num() != 3) return;
@@ -197,15 +230,11 @@ namespace
 			auto* Owner = Source->GetOwner();
 			if (bPaint)
 			{
-				// Both distance tests must see the same instance centre. Nanite rebuilds
-				// the bounds from LOD0, whereas the original also has a far billboard.
-				const auto FarBounds = Source->GetStaticMesh()->GetBounds();
-				const auto BuiltBounds = Entry.Near->GetBounds();
-				const FVector Extent = FarBounds.BoxExtent.ComponentMax(BuiltBounds.BoxExtent +
-					(BuiltBounds.Origin - FarBounds.Origin).GetAbs());
-				Entry.Near->SetExtendedBounds(FBoxSphereBounds(FarBounds.Origin, Extent, Extent.Size()));
-				UE_LOG(LogTemp, Display, TEXT("GT_TREE_RANGE_BOUNDS mesh=%s centre_delta_cm=%.3f extent_delta_cm=%.3f"),
-					*Entry.Near->GetName(), (BuiltBounds.Origin - FarBounds.Origin).Size(), (Extent - FarBounds.BoxExtent).Size());
+				MatchStudyTreeBounds(Entry.Near, Source->GetStaticMesh());
+				if (bNaniteShadows && Entry.Shadow != Entry.Near)
+				{
+					MatchStudyTreeBounds(Entry.Shadow, Source->GetStaticMesh());
+				}
 			}
 			if (bFullRangeShadows)
 			{
@@ -217,7 +246,7 @@ namespace
 				Shadow->PerInstanceSMData = Source->PerInstanceSMData;
 				Shadow->InstancingRandomSeed = Source->InstancingRandomSeed;
 				Shadow->AdditionalRandomSeeds = Source->AdditionalRandomSeeds;
-				UStaticMesh* ShadowMesh = bNaniteShadows ? Entry.Near : Source->GetStaticMesh().Get();
+				UStaticMesh* ShadowMesh = Entry.Shadow;
 				if (bForceCasterLOD1)
 				{
 					// The conventional renderer's override is one-based.

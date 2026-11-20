@@ -28,8 +28,9 @@ def schedule(
         raise ValueError("Native player requires the saved timed route")
     events = []
     route_names = ("paddock_mid", "access", "river", "bog_entry", "bog552")
-    if checkpoint and (not native_player or checkpoint not in route_names):
-        raise ValueError("A single checkpoint requires a native timed drive")
+    paddock_film = stage == "routefilm" and candidate == "saved" and checkpoint == "paddock_mid"
+    if checkpoint and not (paddock_film or (native_player and checkpoint in route_names)):
+        raise ValueError("A single checkpoint requires a native timed drive or the opening paddock film")
     poses = {
         p["name"]: p
         for p in json.loads((ROOT / "Art/lidar_driving_baseline_poses.json").read_text())

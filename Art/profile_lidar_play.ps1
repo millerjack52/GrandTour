@@ -1,10 +1,19 @@
-param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies','barkbuffers','accessbuffers','shadowdepthhold','accesscache','accessparticles')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214','track_start','track192','track270','bog530','bog552')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,250)][int]$NearTreeMetres=0, [switch]$NearTreeControl, [ValidateSet('depth','base')][string]$VelocityPassStudy, [switch]$StaticFarLeaves, [switch]$NativePlayer, [switch]$DisableEditorPython, [switch]$RenderLodTrees, [switch]$MaterialDrawStudy, [switch]$BarkCoordinates, [switch]$LabelTreeLods, [ValidateSet('paddock_mid','access','river','bog_entry','bog552')][string]$DriveCheckpoint, [switch]$FixedRouteReplay, [switch]$OriginalTreeShadows,[switch]$TreeSizeAudit,[switch]$SizeMatchedTrees,[switch]$StableNaniteShadows,[switch]$MatchShadowRange,[switch]$OnlyTreeShadows,[switch]$ForceCasterLodOne,[switch]$StaticCasterWind)
+param([ValidatePattern('^[A-Za-z0-9_-]+$')][string]$Label='baseline',[string]$Commands='r.ScreenPercentage 100',[int]$FramesPerSite=1200,[switch]$Drive,[switch]$Probes,[switch]$UseSavedProfile,[switch]$Uncapped,[string]$PoseFile='',[string]$ExtraCommands='',[switch]$DistanceAB,[switch]$OnFoot,[switch]$Walk,[switch]$HighRange,[switch]$DrivingBaseline,[ValidateSet('diagnose','cache','canopy','rebuild','drive','visual','routefilm','boundaryfilm','routehold','routetime','linkeddrive','basepass','basemoving','efficiency','weathercheck','visibilityhold','renderfamilies','barkbuffers','accessbuffers','shadowdepthhold','accesscache','accessparticles')][string]$ShadowStudy, [string]$ShadowCandidate='baseline',[ValidateSet('control','all_grass','near_grass','far_grass','trees','dressing','terrain','pickup','canopy_1','rain_capture','tree_wind','tree_visibility','tree_min2','tree_leaf_opaque','tree_nanite','mature_tree_nanite','mature_d003_nanite','mature_tree_paint','tree_paint','mature_d003_paint','tree_leaf_constant','dress_windlimit','tree_mask_threshold')][string]$BaseFamily='control',[string[]]$StudySettings=@(),[ValidateRange(0,1024)][int]$TreeCellMetres=0,[string]$EvidenceRoot='',[switch]$TreeMeshAudit,[switch]$TreeSections,[switch]$EarlyFamily,[ValidateSet('shadow','shadow_control')][string]$TreeShadowIndices,[switch]$ForegroundDrive,[switch]$TargetWindow,[ValidateSet('access','bog214','track_start','track192','track270','bog530','bog552')][string]$LinkedStart='access',[switch]$WarmTrees, [ValidateRange(0,250)][int]$NearTreeMetres=0, [switch]$NearTreeControl, [ValidateSet('depth','base')][string]$VelocityPassStudy, [switch]$StaticFarLeaves, [switch]$NativePlayer, [switch]$DisableEditorPython, [switch]$RenderLodTrees, [switch]$MaterialDrawStudy, [switch]$BarkCoordinates, [switch]$LabelTreeLods, [ValidateSet('paddock_mid','access','river','bog_entry','bog552')][string]$DriveCheckpoint, [switch]$FixedRouteReplay, [switch]$OriginalTreeShadows,[switch]$TreeSizeAudit,[switch]$SizeMatchedTrees,[switch]$StableNaniteShadows,[switch]$MatchShadowRange,[switch]$OnlyTreeShadows,[switch]$ForceCasterLodOne,[switch]$StaticCasterWind,[switch]$RestoreCasterWind,[switch]$UndilatedShadow,[switch]$SurveyLogPass)
 $ErrorActionPreference='Stop'
 if($ShadowStudy){$DrivingBaseline=$true}
+if($SurveyLogPass -and ($ShadowStudy -ne 'linkeddrive' -or $LinkedStart -ne 'track270' -or !$ForegroundDrive)){throw 'The log clearance survey uses the normal rutted saddle drive'}
+$shadowFilmSetting=$ShadowStudy -eq 'routefilm' -and $ShadowCandidate -eq 'saved' -and !$ForegroundDrive -and $StudySettings.Count -eq 1 -and $StudySettings[0] -cin @('r.Nanite.MaxPixelsPerEdge 0.25','r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 1','r.Shadow.Virtual.MarkCoarsePagesDirectional 0')
+$paddockFilm=$ShadowStudy -eq 'routefilm' -and $DriveCheckpoint -eq 'paddock_mid' -and $ShadowCandidate -eq 'saved' -and !$ForegroundDrive
+if($RestoreCasterWind -and (!$StableNaniteShadows -or $ShadowStudy -notin @('routefilm','basemoving'))){throw 'Restoring wind requires a Nanite shadow comparison'}
+if($UndilatedShadow){
+ if(!$StableNaniteShadows -or (!$OnlyTreeShadows -and !$SizeMatchedTrees)){throw 'The shape comparison requires a verified set of Nanite shadow casters'}
+ $shapeVersion=(Get-Content -Raw -LiteralPath "$PSScriptRoot/Export/LidarStudy/FloraWorld/shadow-shape-study.json" | ConvertFrom-Json).version
+ if($shapeVersion -cnotmatch '^[a-f0-9]{12}$'){throw 'The alternate shadow shape has no valid build identifier'}
+}
 if($ForceCasterLodOne -and (!$OnlyTreeShadows -or $StableNaniteShadows -or $MatchShadowRange)){throw 'The conventional LOD1 shadow comparison uses the original visible trees'}
 if($StaticCasterWind -and (!$OnlyTreeShadows -or $StableNaniteShadows -or $ForceCasterLodOne)){throw 'The shadow wind comparison uses the original tree geometry and original LODs'}
 if($OnlyTreeShadows){
- if($NearTreeMetres -or $SizeMatchedTrees -or $RenderLodTrees -or $BarkCoordinates -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $StudySettings -or $TreeSections -or $TreeCellMetres -or $TreeShadowIndices -or $ShadowStudy -notin @('basemoving','routefilm','linkeddrive')){throw 'The isolated shadow study uses the original visible forest and a saved driving scenario'}
+ if($NearTreeMetres -or $SizeMatchedTrees -or $RenderLodTrees -or $BarkCoordinates -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or ($StudySettings -and !$shadowFilmSetting) -or $TreeSections -or $TreeCellMetres -or $TreeShadowIndices -or $ShadowStudy -notin @('basemoving','routefilm','linkeddrive')){throw 'The isolated shadow study uses the original visible forest and a saved driving scenario'}
  $WarmTrees=$true
 }
 if($MatchShadowRange -and ((!$SizeMatchedTrees -and !$OnlyTreeShadows) -or !$StableNaniteShadows)){throw 'Matching the original shadow distances requires the size-based tree and shadow trial'}
@@ -13,7 +22,7 @@ if($SizeMatchedTrees -and ((!$OriginalTreeShadows -and !$StableNaniteShadows) -o
 if($NearTreeMetres -gt 150 -and !$SizeMatchedTrees){throw 'A fixed tree range above 150 m requires matching each original detail threshold'}
 if($FixedRouteReplay -and ($ForegroundDrive -or $ShadowStudy -ne 'routetime' -or $ShadowCandidate -ne 'saved')){throw 'The fixed route comparison uses the saved timed route offscreen'}
 if($TreeSizeAudit -and (!$FixedRouteReplay -or $NearTreeMetres -or $BaseFamily -ne 'control' -or $StudySettings -or $TreeSections -or $TreeCellMetres)){throw 'Tree size auditing uses the original fixed route'}
-if($DriveCheckpoint -and !$NativePlayer){throw 'A fresh single checkpoint uses the native timed player'}
+if($DriveCheckpoint -and !$NativePlayer -and !$paddockFilm){throw 'A single checkpoint requires a native timed drive or the opening paddock film'}
 if($TargetWindow -and !$ForegroundDrive){throw 'The target window requires foreground timing'}
 if($ShadowStudy -in @('barkbuffers','accessbuffers','shadowdepthhold') -and ($ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $StudySettings -or $NearTreeMetres -or $WarmTrees -or $TreeSections -or $TreeShadowIndices -or $TreeCellMetres -or $VelocityPassStudy -or $StaticFarLeaves -or $MaterialDrawStudy)){throw 'Held comparisons set up both treatments on the saved route'}
 if($ShadowStudy -eq 'linkeddrive' -and !$ForegroundDrive){throw 'Continuous route timing requires the actual game window'}
@@ -37,7 +46,7 @@ if($BarkCoordinates -and (!$RenderLodTrees -or $ShadowStudy -notin @('routefilm'
 if($OriginalTreeShadows -and (!$BarkCoordinates -or !$RenderLodTrees -or $ShadowStudy -notin @('routefilm','basemoving','accessparticles','linkeddrive'))){throw 'Original shadow casters use the corrected near trees on the matched drive'}
 if($RenderLodTrees -and (!$NearTreeMetres -or $NearTreeControl)){throw 'Rendered LOD trees require a painted near-tree comparison'}
 if($NearTreeControl -and !$NearTreeMetres){throw 'A near-tree control needs a distance'}
-if($NearTreeMetres -and ($NearTreeMetres -lt 20 -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $TreeCellMetres -or $TreeSections -or $TreeShadowIndices -or $StudySettings -or $ShadowStudy -notin @('routefilm','boundaryfilm','routetime','basemoving','linkeddrive','accesscache','accessparticles'))){throw 'Near-tree comparisons require the saved route, original tree placement and a 20 to 150 metre distance'}
+if($NearTreeMetres -and ($NearTreeMetres -lt 20 -or $ShadowCandidate -ne 'saved' -or $BaseFamily -ne 'control' -or $TreeCellMetres -or $TreeSections -or $TreeShadowIndices -or ($StudySettings -and !$shadowFilmSetting) -or $ShadowStudy -notin @('routefilm','boundaryfilm','routetime','basemoving','linkeddrive','accesscache','accessparticles'))){throw 'Near-tree comparisons require the saved route, original tree placement and a 20 to 150 metre distance'}
 if($EarlyFamily -and $ShadowStudy -ne 'basemoving'){throw 'Early family installation requires a moving study'}
 if($TreeShadowIndices){if($TreeSections){throw 'Choose a single canopy study'};$TreeSections=$true}
 if($TreeSections -and ($TreeCellMetres -or $ShadowCandidate -ne 'saved' -or $ShadowStudy -notin @('basemoving','routefilm','routetime'))){throw 'Section study requires the saved trees and a driving comparison'}
@@ -111,6 +120,9 @@ try {
   $conditions.only_tree_shadows=[bool]$OnlyTreeShadows
   $conditions.force_caster_lod_one=[bool]$ForceCasterLodOne
   $conditions.static_caster_wind=[bool]$StaticCasterWind
+  if($SurveyLogPass){$conditions.survey_log_pass=$true}
+  $conditions.restore_caster_wind=[bool]$RestoreCasterWind
+  if($UndilatedShadow){$conditions.shadow_shape_build=$shapeVersion}
   $conditions.bark_coordinates=[bool]$BarkCoordinates
   $conditions.render_lod_trees=[bool]$RenderLodTrees
   $conditions.near_tree_metres=$NearTreeMetres
@@ -137,12 +149,16 @@ try {
  $index=0
  foreach($pose in $poses) {
   $frame=200+$index*$FramesPerSite
-  if($ShadowStudy -ne 'linkeddrive' -and !$DriveCheckpoint){$schedule+=('{0}:BugItGo {1} {2} {3} 0 {4} 0' -f $frame,$pose.x,$pose.y,$pose.z,$pose.yaw)}
+  if($ShadowStudy -ne 'linkeddrive' -and (!$DriveCheckpoint -or $paddockFilm)){$schedule+=('{0}:BugItGo {1} {2} {3} 0 {4} 0' -f $frame,$pose.x,$pose.y,$pose.z,$pose.yaw)}
   if($ShadowStudy){
    & python "$PSScriptRoot/tools/lidar_shadow_study.py" schedule $ShadowStudy $ShadowCandidate $out $BaseFamily ([int]$EarlyFamily.IsPresent) $LinkedStart ([int]$NativePlayer.IsPresent) ([int]($WarmTrees -or $NearTreeMetres -or $BaseFamily.EndsWith('_paint'))) $DriveCheckpoint
    if($LASTEXITCODE -ne 0){throw 'Could not prepare shadow experiment'}
    $study=Get-Content -Raw -LiteralPath "$out/shadow-schedule.json" | ConvertFrom-Json
    $schedule+=@($study.commands)
+   if($SurveyLogPass){
+    $surveyScript=(Join-Path $PSScriptRoot 'Unreal/lidar_log_clearance.py').Replace('\','/')
+    $schedule+=("460:py $surveyScript "+$out.Replace('\','/'))
+   }
    if($directFilm){$schedule+=('270:gt.Lidar.FilmDirectory "'+$out.Replace('\','/')+'"')}
    if($TreeSizeAudit){
     foreach($window in $study.windows){$schedule+=('{0}:gt.Lidar.AuditTreeScreenSizes {1}' -f ($window.start+141),$window.name)}
@@ -158,6 +174,7 @@ try {
    if($ShadowStudy -eq 'basemoving'){$schedule+='592:gt.Lidar.AuditTreeRendering'}
    if($NearTreeMetres){
     $mode=if($NearTreeControl){'control'}elseif($StableNaniteShadows){'renderlod_nanite_shadows'}elseif($OriginalTreeShadows){'renderlod_original_shadows'}elseif($RenderLodTrees){'renderlod'}else{'paint'}
+    if($UndilatedShadow){$mode+=" $shapeVersion"}
     $initialRange=if($SizeMatchedTrees){55}else{$NearTreeMetres}
     $schedule+=("342:gt.Lidar.NearTreeStudy $initialRange $mode")
     if($SizeMatchedTrees){$schedule+=("348:gt.Lidar.SizeTreeRanges $NearTreeMetres")}
@@ -170,11 +187,17 @@ try {
      $schedule+=("345:py $farScript")
     }
    }
+   if($shadowFilmSetting){$schedule+=('420:'+$StudySettings[0].Split(' ')[0])}
    if($OnlyTreeShadows){
     $geometry=if($ForceCasterLodOne){'original_lod1_shadows_only'}elseif($StableNaniteShadows){'nanite_shadows_only'}elseif($StaticCasterWind){'original_static_shadows_only'}else{'original_shadows_only'}
+    if($UndilatedShadow){$geometry+=" $shapeVersion"}
     $schedule+=("342:gt.Lidar.NearTreeStudy 0 $geometry")
    }
    if($MatchShadowRange){$schedule+='349:gt.Lidar.MatchTreeShadowRanges'}
+   if($RestoreCasterWind){
+    $probe=(Join-Path $PSScriptRoot 'Unreal/lidar_shadow_probe.py').Replace('\','/')
+    $schedule+=("356:py $probe restore_shadow_wind "+$out.Replace('\','/'))
+   }
    if($WarmTrees -or $NearTreeMetres -or $BaseFamily.EndsWith('_paint')){
     if($ShadowStudy -eq 'basemoving'){$schedule+='468:gt.Lidar.AuditTreeRendering warm'}
     if($ShadowStudy -in @('routefilm','boundaryfilm','routetime','linkeddrive','accesscache','accessparticles')){$schedule+=@('425:gt.Lidar.AuditTreeRendering warm','455:gt.Lidar.AuditTreeRendering')}
@@ -345,6 +368,10 @@ try {
   $conditions | ConvertTo-Json | Set-Content "$out/conditions.json"
  }
  if($ForegroundDrive){
+  if($SurveyLogPass){
+   if(!(Test-Path -LiteralPath "$out/log-clearance.json")){throw 'The game did not run the clearance survey'}
+   if($null -eq (Get-Content -Raw -LiteralPath "$out/log-clearance.json" | ConvertFrom-Json).chosen_cm){throw 'No lane passed the obstacle clearance survey'}
+  }
   if($foregroundShadowTrial){
    $expected=$StudySettings[0].Split(' ')[1]
    $actual=Select-String -LiteralPath $log -SimpleMatch 'r.Shadow.Virtual.DynamicHZB = "' | Select-Object -Last 1
@@ -364,6 +391,11 @@ try {
   $savedShots=@(Get-ChildItem -LiteralPath $out -File -Filter ($study.image_prefix+'*.png'))
   if(!$stamp -or !$savedShots.Count){throw 'The game did not write its film to the evidence drive'}
  }
+ if($shadowFilmSetting){
+  $setting,$expected=$StudySettings[0].Split(' ')
+  $readback=Select-String -LiteralPath $log -Pattern ('\[421\]'+[regex]::Escape($setting)+' = "([0-9.]+)"') | Select-Object -Last 1
+  if(!$readback -or [double]$readback.Matches[0].Groups[1].Value -ne [double]$expected){throw "The game did not verify $setting before the film"}
+ }
  if($OnlyTreeShadows){
    $stock=@(Select-String -LiteralPath $log -Pattern 'GT_CAMERA_TREE_UNCHANGED mesh=SM_Canopy_[012] instances=(\d+) min=0 max=0')
    $total=0
@@ -382,6 +414,13 @@ try {
   }
  }
  if($StableNaniteShadows){
+  if($UndilatedShadow){
+   foreach($species in 0..2){
+    $asset="/Game/GrandTour/ArtTests/LidarStudy/PerformanceStudy/ShadowShape/$shapeVersion/SM_NaniteRenderLod1_$species"
+    if(!(Select-String -LiteralPath $log -SimpleMatch "GT_UNDILATED_SHADOW mesh=$asset." -Quiet)){throw "Unverified shadow shape for species $species"}
+   }
+  }
+  if($RestoreCasterWind -and !(Select-String -LiteralPath $log -SimpleMatch 'GT_RESTORED_CASTER_WIND instances=146197' -Quiet)){throw 'The original wind flag did not verify on every replacement shadow instance'}
   $expectedShadowGroups=3
   if($MatchShadowRange){
    $matched=@(Select-String -LiteralPath $log -Pattern 'GT_MATCHED_SHADOW_RANGE species=3 groups=(\d+) instances=146197 factor=')

@@ -10503,5 +10503,1042 @@
         "GPU/RayTracingDynamicGeometry": 0.682
       }
     }
+  },
+  "undilated_shadow_geometry": {
+    "decision": "Visual fail. Experimental settings only.",
+    "native_images": {
+      "sweep139_wind_crown": {
+        "original": "sweep67_stock_film",
+        "identical_positions": 13,
+        "film_frames": 48,
+        "conditions": {
+          "size_matched_trees": false,
+          "only_tree_shadows": true,
+          "restore_caster_wind": true,
+          "study_settings": []
+        },
+        "tracked_native_crops": {
+          "r019.png": {
+            "mean_absolute_brightness_255": 17.314,
+            "mean_signed_rgb_255": [
+              -22.93,
+              -16.805,
+              -0.063
+            ]
+          },
+          "r027.png": {
+            "mean_absolute_brightness_255": 14.107,
+            "mean_signed_rgb_255": [
+              -18.884,
+              -13.574,
+              -0.207
+            ]
+          },
+          "r047.png": {
+            "mean_absolute_brightness_255": 4.913,
+            "mean_signed_rgb_255": [
+              -5.94,
+              -4.171,
+              0.047
+            ]
+          }
+        }
+      },
+      "sweep140_coarse_original": {
+        "original": "sweep67_stock_film",
+        "identical_positions": 13,
+        "film_frames": 48,
+        "conditions": {
+          "size_matched_trees": false,
+          "only_tree_shadows": false,
+          "restore_caster_wind": false,
+          "study_settings": [
+            "r.Shadow.Virtual.NonNanite.IncludeInCoarsePages 1"
+          ]
+        },
+        "tracked_native_crops": {
+          "r019.png": {
+            "mean_absolute_brightness_255": 0.261,
+            "mean_signed_rgb_255": [
+              -0.091,
+              -0.056,
+              -0.02
+            ]
+          },
+          "r027.png": {
+            "mean_absolute_brightness_255": 0.226,
+            "mean_signed_rgb_255": [
+              -0.077,
+              -0.054,
+              -0.018
+            ]
+          },
+          "r047.png": {
+            "mean_absolute_brightness_255": 0.213,
+            "mean_signed_rgb_255": [
+              -0.039,
+              -0.027,
+              -0.001
+            ]
+          }
+        }
+      },
+      "sweep141_no_coarse_original": {
+        "original": "sweep67_stock_film",
+        "identical_positions": 13,
+        "film_frames": 48,
+        "conditions": {
+          "size_matched_trees": false,
+          "only_tree_shadows": false,
+          "restore_caster_wind": false,
+          "study_settings": [
+            "r.Shadow.Virtual.MarkCoarsePagesDirectional 0"
+          ]
+        },
+        "tracked_native_crops": {
+          "r019.png": {
+            "mean_absolute_brightness_255": 0.246,
+            "mean_signed_rgb_255": [
+              -0.103,
+              -0.066,
+              -0.011
+            ]
+          },
+          "r027.png": {
+            "mean_absolute_brightness_255": 0.224,
+            "mean_signed_rgb_255": [
+              -0.062,
+              -0.039,
+              -0.018
+            ]
+          },
+          "r047.png": {
+            "mean_absolute_brightness_255": 0.206,
+            "mean_signed_rgb_255": [
+              -0.041,
+              -0.028,
+              -0.007
+            ]
+          }
+        }
+      },
+      "sweep142_no_coarse_caster": {
+        "original": "sweep67_stock_film",
+        "identical_positions": 13,
+        "film_frames": 48,
+        "conditions": {
+          "size_matched_trees": false,
+          "only_tree_shadows": true,
+          "restore_caster_wind": false,
+          "study_settings": [
+            "r.Shadow.Virtual.MarkCoarsePagesDirectional 0"
+          ]
+        },
+        "tracked_native_crops": {
+          "r019.png": {
+            "mean_absolute_brightness_255": 17.324,
+            "mean_signed_rgb_255": [
+              -22.929,
+              -16.82,
+              -0.061
+            ]
+          },
+          "r027.png": {
+            "mean_absolute_brightness_255": 14.098,
+            "mean_signed_rgb_255": [
+              -18.876,
+              -13.57,
+              -0.212
+            ]
+          },
+          "r047.png": {
+            "mean_absolute_brightness_255": 4.917,
+            "mean_signed_rgb_255": [
+              -5.945,
+              -4.174,
+              0.044
+            ]
+          }
+        }
+      },
+      "sweep143_undilated_shadow": {
+        "original": "sweep67_stock_film",
+        "identical_positions": 13,
+        "film_frames": 48,
+        "conditions": {
+          "size_matched_trees": false,
+          "shadow_shape_build": "eebabdbc8e07",
+          "restore_caster_wind": false,
+          "study_settings": [],
+          "only_tree_shadows": true
+        },
+        "tracked_native_crops": {
+          "r019.png": {
+            "mean_absolute_brightness_255": 6.494,
+            "mean_signed_rgb_255": [
+              2.403,
+              1.901,
+              0.009
+            ]
+          },
+          "r027.png": {
+            "mean_absolute_brightness_255": 3.606,
+            "mean_signed_rgb_255": [
+              -0.479,
+              -0.334,
+              -0.019
+            ]
+          },
+          "r047.png": {
+            "mean_absolute_brightness_255": 3.471,
+            "mean_signed_rgb_255": [
+              2.843,
+              2.104,
+              0.019
+            ]
+          }
+        }
+      },
+      "sweep145_fine_undilated": {
+        "original": "sweep137_stock_fine_raster",
+        "identical_positions": 13,
+        "film_frames": 48,
+        "conditions": {
+          "only_tree_shadows": true,
+          "size_matched_trees": false,
+          "shadow_shape_build": "eebabdbc8e07",
+          "study_settings": [
+            "r.Nanite.MaxPixelsPerEdge 0.25"
+          ],
+          "restore_caster_wind": false
+        },
+        "tracked_native_crops": {
+          "r019.png": {
+            "mean_absolute_brightness_255": 11.263,
+            "mean_signed_rgb_255": [
+              -14.552,
+              -10.852,
+              0.042
+            ]
+          },
+          "r027.png": {
+            "mean_absolute_brightness_255": 8.785,
+            "mean_signed_rgb_255": [
+              -11.051,
+              -8.114,
+              -0.037
+            ]
+          },
+          "r047.png": {
+            "mean_absolute_brightness_255": 3.215,
+            "mean_signed_rgb_255": [
+              -3.761,
+              -2.654,
+              0.038
+            ]
+          }
+        }
+      },
+      "sweep148_combined_shape_film": {
+        "original": "sweep67_stock_film",
+        "identical_positions": 65,
+        "film_frames": 240,
+        "conditions": {
+          "only_tree_shadows": false,
+          "restore_caster_wind": false,
+          "size_matched_trees": true,
+          "study_settings": [],
+          "shadow_shape_build": "eebabdbc8e07"
+        },
+        "tracked_native_crops": {
+          "r019.png": {
+            "mean_absolute_brightness_255": 6.874,
+            "mean_signed_rgb_255": [
+              2.455,
+              1.999,
+              -0.02
+            ]
+          },
+          "r027.png": {
+            "mean_absolute_brightness_255": 3.923,
+            "mean_signed_rgb_255": [
+              -0.56,
+              -0.289,
+              -0.004
+            ]
+          },
+          "r047.png": {
+            "mean_absolute_brightness_255": 3.724,
+            "mean_signed_rgb_255": [
+              2.853,
+              2.13,
+              0.011
+            ]
+          },
+          "r140.png": {
+            "mean_absolute_brightness_255": 1.55,
+            "mean_signed_rgb_255": [
+              -1.029,
+              -0.76,
+              -0.368
+            ]
+          },
+          "r319.png": {
+            "mean_absolute_brightness_255": 0.404,
+            "mean_signed_rgb_255": [
+              -0.094,
+              -0.248,
+              -0.052
+            ]
+          },
+          "r410.png": {
+            "mean_absolute_brightness_255": 3.966,
+            "mean_signed_rgb_255": [
+              0.775,
+              0.03,
+              -0.446
+            ]
+          }
+        },
+        "largest_96px_excess_over_repeat": {
+          "paddock_mid": {
+            "frame": "r015.png",
+            "box": [
+              1360,
+              72,
+              1456,
+              168
+            ],
+            "repeat": 0.135,
+            "candidate": 10.71,
+            "excess": 10.575
+          },
+          "access": {
+            "frame": "r123.png",
+            "box": [
+              1392,
+              232,
+              1488,
+              328
+            ],
+            "repeat": 0.842,
+            "candidate": 81.195,
+            "excess": 80.353
+          },
+          "river": {
+            "frame": "r235.png",
+            "box": [
+              336,
+              520,
+              432,
+              616
+            ],
+            "repeat": 0.212,
+            "candidate": 3.524,
+            "excess": 3.312
+          },
+          "bog_entry": {
+            "frame": "r345.png",
+            "box": [
+              16,
+              360,
+              112,
+              456
+            ],
+            "repeat": 0.202,
+            "candidate": 3.69,
+            "excess": 3.488
+          },
+          "bog552": {
+            "frame": "r432.png",
+            "box": [
+              368,
+              232,
+              464,
+              328
+            ],
+            "repeat": 0.148,
+            "candidate": 6.267,
+            "excess": 6.12
+          }
+        }
+      }
+    },
+    "controlled_bog_17_matching_positions": {
+      "sweep133_original_caster_wind": {
+        "frames": 192,
+        "fps": 15.38,
+        "travel_m": 11.65,
+        "gpu_hardware": {
+          "median_clock_mhz": 1155.0,
+          "peak_temperature_c": 89.0,
+          "median_power_w": 22.66,
+          "samples_thermally_limited": 12
+        },
+        "timings_ms": {
+          "FrameTime": {
+            "mean": 65.006,
+            "p95": 72.677,
+            "median": 64.115,
+            "p99": 85.924,
+            "maximum": 118.748,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 192,
+            "over_50_ms": 192,
+            "over_100_ms": 2
+          },
+          "GPUTime": {
+            "mean": 63.962,
+            "p95": 72.423
+          },
+          "GPU/ShadowDepths": {
+            "mean": 16.684,
+            "p95": 22.571
+          },
+          "GPU/Basepass": {
+            "mean": 19.096,
+            "p95": 21.295
+          },
+          "GPU/RenderVelocities": {
+            "mean": 13.336,
+            "p95": 14.915
+          }
+        }
+      },
+      "sweep146_undilated_bog": {
+        "frames": 192,
+        "fps": 17.96,
+        "travel_m": 11.65,
+        "gpu_hardware": {
+          "median_clock_mhz": 1305.0,
+          "peak_temperature_c": 89.0,
+          "median_power_w": 23.02,
+          "samples_thermally_limited": 11
+        },
+        "timings_ms": {
+          "FrameTime": {
+            "mean": 55.677,
+            "p95": 72.293,
+            "median": 51.375,
+            "p99": 78.18,
+            "maximum": 82.938,
+            "pct_over_60fps_budget": 100.0,
+            "over_33_3_ms": 192,
+            "over_50_ms": 126,
+            "over_100_ms": 0
+          },
+          "GPUTime": {
+            "mean": 54.61,
+            "p95": 70.55
+          },
+          "GPU/ShadowDepths": {
+            "mean": 6.459,
+            "p95": 9.346
+          },
+          "GPU/Basepass": {
+            "mean": 19.483,
+            "p95": 26.238
+          },
+          "GPU/RenderVelocities": {
+            "mean": 13.312,
+            "p95": 17.814
+          }
+        }
+      }
+    },
+    "local_film": "D:/GrandTourAssets/Reviews/Lidar60/combined-shape-review/lidar-route-shadows.mp4",
+    "local_comparison": "D:/GrandTourAssets/Reviews/Lidar60/shadow-shape-review/paddock-crowns.jpg",
+    "foreground_95m": {
+      "run": "sweep149_combined_shape_foreground",
+      "road_window": {
+        "start_m": 2240.0,
+        "end_m": 2335.0,
+        "start_s": 1.391,
+        "end_s": 65.426,
+        "frames": 1752,
+        "moving": {
+          "frames": 1287,
+          "fps": 27.24,
+          "median_ms": 35.929,
+          "mean_ms": 36.704,
+          "p95_ms": 46.654,
+          "p99_ms": 55.631,
+          "maximum_ms": 64.611,
+          "percent_over_budget": 100.0,
+          "over_33_3_ms": 924,
+          "over_50_ms": 38,
+          "over_100_ms": 0
+        },
+        "pass_timings": {
+          "GameThreadTime": {
+            "samples": 1287,
+            "mean_ms": 10.135,
+            "p95_ms": 12.705
+          },
+          "RenderThreadTime": {
+            "samples": 1287,
+            "mean_ms": 9.806,
+            "p95_ms": 11.083
+          },
+          "RHIThreadTime": {
+            "samples": 1287,
+            "mean_ms": 6.122,
+            "p95_ms": 7.593
+          },
+          "GPUTime": {
+            "samples": 1287,
+            "mean_ms": 35.428,
+            "p95_ms": 44.692
+          },
+          "GPU/Prepass": {
+            "samples": 1287,
+            "mean_ms": 0.356,
+            "p95_ms": 0.526
+          },
+          "GPU/RenderVelocities": {
+            "samples": 1287,
+            "mean_ms": 4.781,
+            "p95_ms": 6.797
+          },
+          "GPU/Basepass": {
+            "samples": 1287,
+            "mean_ms": 7.382,
+            "p95_ms": 10.557
+          },
+          "GPU/ShadowDepths": {
+            "samples": 1287,
+            "mean_ms": 5.973,
+            "p95_ms": 8.463
+          },
+          "GPU/ShadowProjection": {
+            "samples": 1287,
+            "mean_ms": 0.512,
+            "p95_ms": 0.916
+          },
+          "GPU/NaniteVisBuffer": {
+            "samples": 1287,
+            "mean_ms": 2.924,
+            "p95_ms": 3.563
+          },
+          "GPU/NaniteBasePass": {
+            "samples": 1287,
+            "mean_ms": 0.493,
+            "p95_ms": 0.653
+          },
+          "GPU/LumenScreenProbeGather": {
+            "samples": 1287,
+            "mean_ms": 0.014,
+            "p95_ms": 0.028
+          },
+          "GPU/LumenReflections": {
+            "samples": 1287,
+            "mean_ms": 0.536,
+            "p95_ms": 0.774
+          },
+          "GPU/TemporalSuperResolution": {
+            "samples": 1287,
+            "mean_ms": 2.444,
+            "p95_ms": 3.135
+          },
+          "GPU/CanvasDrawTiles": {
+            "samples": 1287,
+            "mean_ms": 0.217,
+            "p95_ms": 0.285
+          },
+          "GPU/RayTracingGeometry": {
+            "samples": 1287,
+            "mean_ms": 0.297,
+            "p95_ms": 0.435
+          },
+          "GPU/DistanceFields": {
+            "samples": 1287,
+            "mean_ms": 0.23,
+            "p95_ms": 0.301
+          },
+          "GPU/AllocateRendertargets": {
+            "samples": 1287,
+            "mean_ms": 0.001,
+            "p95_ms": 0.001
+          },
+          "GPU/VisibilityCommands": {
+            "samples": 1287,
+            "mean_ms": 0.001,
+            "p95_ms": 0.002
+          },
+          "GPU/UpdateLumenSceneBuffers": {
+            "samples": 1287,
+            "mean_ms": 0.01,
+            "p95_ms": 0.015
+          },
+          "GPU/GPUSceneUpdate": {
+            "samples": 1287,
+            "mean_ms": 0.037,
+            "p95_ms": 0.044
+          },
+          "GPU/NaniteStreaming": {
+            "samples": 1287,
+            "mean_ms": 0.001,
+            "p95_ms": 0.002
+          },
+          "GPU/NaniteReadback": {
+            "samples": 1287,
+            "mean_ms": 0.139,
+            "p95_ms": 0.149
+          },
+          "GPU/FXSystemPreRender": {
+            "samples": 1287,
+            "mean_ms": 0.001,
+            "p95_ms": 0.001
+          },
+          "GPU/BuildRenderingCommandsDeferred": {
+            "samples": 1287,
+            "mean_ms": 1.208,
+            "p95_ms": 1.496
+          },
+          "GPU/HZB": {
+            "samples": 1287,
+            "mean_ms": 0.17,
+            "p95_ms": 0.201
+          },
+          "GPU/BeginOcclusionTests": {
+            "samples": 1287,
+            "mean_ms": 0.003,
+            "p95_ms": 0.004
+          },
+          "GPU/LightGrid": {
+            "samples": 1287,
+            "mean_ms": 0.033,
+            "p95_ms": 0.039
+          },
+          "GPU/LightFunctionAtlasGeneration": {
+            "samples": 1287,
+            "mean_ms": 0.0,
+            "p95_ms": 0.001
+          },
+          "GPU/SkyAtmosphereLUTs": {
+            "samples": 1287,
+            "mean_ms": 0.114,
+            "p95_ms": 0.147
+          },
+          "GPU/CaptureConvolveSkyEnvMap": {
+            "samples": 1287,
+            "mean_ms": 0.036,
+            "p95_ms": 0.073
+          },
+          "GPU/CustomDepth": {
+            "samples": 1287,
+            "mean_ms": 0.019,
+            "p95_ms": 0.039
+          },
+          "GPU/SingleLayerWaterDepthPrepass": {
+            "samples": 1287,
+            "mean_ms": 0.238,
+            "p95_ms": 0.306
+          },
+          "GPU/LumenSceneUpdate": {
+            "samples": 1287,
+            "mean_ms": 0.301,
+            "p95_ms": 0.397
+          },
+          "GPU/BuildRenderingCommands": {
+            "samples": 1287,
+            "mean_ms": 0.011,
+            "p95_ms": 0.016
+          },
+          "GPU/RayTracingDynamicGeometry": {
+            "samples": 1287,
+            "mean_ms": 0.4,
+            "p95_ms": 0.479
+          },
+          "GPU/RayTracingScene": {
+            "samples": 1287,
+            "mean_ms": 0.307,
+            "p95_ms": 0.397
+          },
+          "GPU/RenderDeferredLighting": {
+            "samples": 1287,
+            "mean_ms": 0.57,
+            "p95_ms": 0.651
+          },
+          "GPU/TranslucentLighting": {
+            "samples": 1287,
+            "mean_ms": 0.278,
+            "p95_ms": 0.526
+          },
+          "GPU/Lights": {
+            "samples": 1287,
+            "mean_ms": 0.162,
+            "p95_ms": 0.224
+          },
+          "GPU/DistanceFieldShadows": {
+            "samples": 1287,
+            "mean_ms": 0.569,
+            "p95_ms": 0.849
+          },
+          "GPU/VolumetricFog": {
+            "samples": 1287,
+            "mean_ms": 0.845,
+            "p95_ms": 1.074
+          },
+          "GPU/SingleLayerWater": {
+            "samples": 1287,
+            "mean_ms": 0.268,
+            "p95_ms": 0.339
+          },
+          "GPU/SkyAtmosphere": {
+            "samples": 1287,
+            "mean_ms": 0.15,
+            "p95_ms": 0.175
+          },
+          "GPU/Fog": {
+            "samples": 1287,
+            "mean_ms": 0.111,
+            "p95_ms": 0.153
+          },
+          "GPU/PostRenderOpsFX": {
+            "samples": 1287,
+            "mean_ms": 0.003,
+            "p95_ms": 0.003
+          },
+          "GPU/FXSystemPostRenderOpaque": {
+            "samples": 1287,
+            "mean_ms": 0.004,
+            "p95_ms": 0.004
+          },
+          "GPU/Translucency": {
+            "samples": 1287,
+            "mean_ms": 0.263,
+            "p95_ms": 0.36
+          },
+          "GPU/Postprocessing": {
+            "samples": 1287,
+            "mean_ms": 0.668,
+            "p95_ms": 0.814
+          },
+          "GPU/MotionBlur": {
+            "samples": 1287,
+            "mean_ms": 0.3,
+            "p95_ms": 0.374
+          },
+          "GPU/VirtualTextureUpdate": {
+            "samples": 1287,
+            "mean_ms": 0.001,
+            "p95_ms": 0.001
+          },
+          "GPU/SlateUI": {
+            "samples": 1287,
+            "mean_ms": 0.013,
+            "p95_ms": 0.016
+          },
+          "GPU/Unaccounted": {
+            "samples": 1287,
+            "mean_ms": 1.862,
+            "p95_ms": 2.162
+          }
+        },
+        "median_wheel_contacts": 4.0,
+        "max_lateral_offset_m": 2.84
+      },
+      "travel_m": 123.05695457075956,
+      "reason": "end_of_route",
+      "recoveries": 4,
+      "window_focus_samples": 2610,
+      "presentation_samples": 2610,
+      "map_sha256": "6975CE77869FB81F0B2648F2016927FF1C9439CABE3DB4F74B85BA94DF90BF0E",
+      "preset_sha256": "5AE0F62647271A98B1F739FC209E44E871216E1563CE95F52EBFF13E2AC61D15",
+      "gpu_at_90pc_load_or_higher": {
+        "samples": 120,
+        "median_clock_mhz": 1447.5,
+        "peak_temperature_c": 89,
+        "median_power_w": 25.38,
+        "thermal_limited_samples": 120
+      }
+    },
+    "coarse_pages_off_both_renderers": {
+      "control": "sweep141_no_coarse_original",
+      "trial": "sweep142_no_coarse_caster",
+      "paddock_crops": {
+        "r019.png": {
+          "mean_absolute_brightness_255": 17.265,
+          "mean_signed_rgb_255": [
+            -22.826,
+            -16.755,
+            -0.05
+          ]
+        },
+        "r027.png": {
+          "mean_absolute_brightness_255": 14.065,
+          "mean_signed_rgb_255": [
+            -18.814,
+            -13.531,
+            -0.194
+          ]
+        },
+        "r047.png": {
+          "mean_absolute_brightness_255": 4.889,
+          "mean_signed_rgb_255": [
+            -5.903,
+            -4.147,
+            0.051
+          ]
+        }
+      }
+    }
+  },
+  "saddle_obstacle_clearance": {
+    "sweep130_track_saddle": {
+      "reason": "stalled",
+      "elapsed_s": 194.48499999998603,
+      "travel_m": 119.18909299134482,
+      "start_station_m": 1978.083267490685,
+      "recoveries": [
+        [
+          165.5,
+          2089.2,
+          1.5
+        ],
+        [
+          176.59,
+          2088.92,
+          -1.5
+        ],
+        [
+          187.61,
+          2088.79,
+          1.5
+        ]
+      ],
+      "furthest_station_m": 2089.34,
+      "physical_sections": [
+        {
+          "section": "wooded_track",
+          "samples": 1235,
+          "elapsed_s": 194.3,
+          "road_progress_m": 110.07,
+          "travel_m": 119.08,
+          "moving_pct": 92.1,
+          "wheel_contacts_median": 4
+        }
+      ]
+    },
+    "sweep144_surveyed_saddle": {
+      "reason": "stalled",
+      "elapsed_s": 162.92199999999139,
+      "travel_m": 121.85144792416435,
+      "start_station_m": 1978.0914954445134,
+      "recoveries": [
+        [
+          134.0,
+          2091.23,
+          1.5
+        ],
+        [
+          145.02,
+          2091.25,
+          -1.5
+        ],
+        [
+          156.12,
+          2091.25,
+          1.5
+        ]
+      ],
+      "furthest_station_m": 2091.25,
+      "physical_sections": [
+        {
+          "section": "wooded_track",
+          "samples": 1156,
+          "elapsed_s": 162.78,
+          "road_progress_m": 113.15,
+          "travel_m": 121.85,
+          "moving_pct": 89.6,
+          "wheel_contacts_median": 4.0
+        }
+      ],
+      "measured_lane": {
+        "chosen_cm": 200,
+        "probes": [
+          {
+            "offset_cm": 0,
+            "clear": false,
+            "first_blocked_station_m": 381,
+            "reason": "SM_NZ_Log_A"
+          },
+          {
+            "offset_cm": 50,
+            "clear": false,
+            "first_blocked_station_m": 381,
+            "reason": "SM_NZ_Log_A"
+          },
+          {
+            "offset_cm": -50,
+            "clear": false,
+            "first_blocked_station_m": 379,
+            "reason": "SM_NZ_Log_B"
+          },
+          {
+            "offset_cm": 100,
+            "clear": false,
+            "first_blocked_station_m": 381,
+            "reason": "SM_NZ_Log_A"
+          },
+          {
+            "offset_cm": -100,
+            "clear": false,
+            "first_blocked_station_m": 379,
+            "reason": "SM_NZ_Log_B"
+          },
+          {
+            "offset_cm": 150,
+            "clear": false,
+            "first_blocked_station_m": 381,
+            "reason": "SM_NZ_Log_A"
+          },
+          {
+            "offset_cm": -150,
+            "clear": false,
+            "first_blocked_station_m": 379,
+            "reason": "SM_NZ_Log_B"
+          },
+          {
+            "offset_cm": 200,
+            "clear": true
+          }
+        ]
+      }
+    },
+    "sweep147_saddle_body_clearance": {
+      "chosen_cm": null,
+      "body_swept": true,
+      "probes": [
+        {
+          "offset_cm": 0,
+          "clear": false,
+          "first_blocked_station_m": 381,
+          "reason": "SM_NZ_Log_A"
+        },
+        {
+          "offset_cm": 50,
+          "clear": false,
+          "first_blocked_station_m": 381,
+          "reason": "SM_NZ_Log_A"
+        },
+        {
+          "offset_cm": -50,
+          "clear": false,
+          "first_blocked_station_m": 379,
+          "reason": "SM_NZ_Log_B"
+        },
+        {
+          "offset_cm": 100,
+          "clear": false,
+          "first_blocked_station_m": 381,
+          "reason": "SM_NZ_Log_A"
+        },
+        {
+          "offset_cm": -100,
+          "clear": false,
+          "first_blocked_station_m": 379,
+          "reason": "SM_NZ_Log_B"
+        },
+        {
+          "offset_cm": 150,
+          "clear": false,
+          "first_blocked_station_m": 381,
+          "reason": "SM_NZ_Log_A"
+        },
+        {
+          "offset_cm": -150,
+          "clear": false,
+          "first_blocked_station_m": 379,
+          "reason": "SM_NZ_Log_B"
+        },
+        {
+          "offset_cm": 200,
+          "clear": false,
+          "first_blocked_station_m": 383,
+          "reason": "Cylinder"
+        },
+        {
+          "offset_cm": -200,
+          "clear": false,
+          "first_blocked_station_m": 379,
+          "reason": "SM_NZ_Log_B"
+        },
+        {
+          "offset_cm": 250,
+          "clear": false,
+          "first_blocked_station_m": 375,
+          "reason": "SM_NZ_TreeFern_A"
+        },
+        {
+          "offset_cm": -250,
+          "clear": false,
+          "first_blocked_station_m": 378,
+          "reason": "SM_NZ_Log_B"
+        },
+        {
+          "offset_cm": 300,
+          "clear": false,
+          "first_blocked_station_m": 375,
+          "reason": "SM_NZ_TreeFern_A"
+        },
+        {
+          "offset_cm": -300,
+          "clear": false,
+          "first_blocked_station_m": 377,
+          "reason": "SM_NZ_Stump_A"
+        },
+        {
+          "offset_cm": 350,
+          "clear": false,
+          "first_blocked_station_m": 372,
+          "reason": "SM_NZ_TreeFern_B"
+        },
+        {
+          "offset_cm": -350,
+          "clear": false,
+          "first_blocked_station_m": 369,
+          "reason": "Cylinder"
+        },
+        {
+          "offset_cm": 400,
+          "clear": false,
+          "first_blocked_station_m": 371,
+          "reason": "SM_NZ_TreeFern_B"
+        },
+        {
+          "offset_cm": -400,
+          "clear": false,
+          "first_blocked_station_m": 369,
+          "reason": "Cylinder"
+        },
+        {
+          "offset_cm": 450,
+          "clear": false,
+          "first_blocked_station_m": 372,
+          "reason": "SM_NZ_TreeFern_B"
+        },
+        {
+          "offset_cm": -450,
+          "clear": false,
+          "first_blocked_station_m": 369,
+          "reason": "Cylinder"
+        },
+        {
+          "offset_cm": 500,
+          "clear": false,
+          "first_blocked_station_m": 372,
+          "reason": "SM_NZ_TreeFern_B"
+        },
+        {
+          "offset_cm": -500,
+          "clear": false,
+          "first_blocked_station_m": 369,
+          "reason": "Cylinder"
+        }
+      ],
+      "timing_result": "No driving sample. The pre-drive survey rejected every fixed offset."
+    }
   }
 }

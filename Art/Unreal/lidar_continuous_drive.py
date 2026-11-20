@@ -39,6 +39,7 @@ class RoadDrive:
             ),
         ]
         junction = self.station[self.points.index(track[0])]
+        self.track_start_m = junction
         self.sections = [
             (junction + 45, "forest_access"),
             (junction + 115, "river"),
@@ -75,6 +76,16 @@ class RoadDrive:
             p,
         )
         self.output = output
+        self.clearance = None
+        clearance_file = output / "log-clearance.json"
+        if clearance_file.exists():
+            assert start == "track270"
+            sys.path.insert(0, str(root / "Art/Unreal"))
+            from lidar_log_clearance import lane_offset
+            shift = json.loads(clearance_file.read_text())["chosen_cm"]
+            if shift is None:
+                raise ValueError("No surveyed line cleared the log and supported the pickup")
+            self.clearance = lambda track_station: lane_offset(track_station, shift)
         support = u.SystemLibrary.line_trace_single(
             self.world,
             p + u.Vector(0, 0, 250),
@@ -279,8 +290,12 @@ class RoadDrive:
             )
             dx, dy = b[0] - a[0], b[1] - a[1]
             length = math.hypot(dx, dy)
-            target_x = a[0] + t * dx - dy / length * self.lane_offset
-            target_y = a[1] + t * dy + dx / length * self.lane_offset
+            lateral = self.lane_offset
+            track_station = target_station - self.track_start_m
+            if self.clearance and 356 <= track_station <= 408:
+                lateral = self.clearance(track_station)
+            target_x = a[0] + t * dx - dy / length * lateral
+            target_y = a[1] + t * dy + dx / length * lateral
             bearing = math.atan2(target_y - pos.y, target_x - pos.x)
             forward = self.car.get_actor_forward_vector()
             angle = math.remainder(bearing - math.atan2(forward.y, forward.x), 2 * math.pi)
