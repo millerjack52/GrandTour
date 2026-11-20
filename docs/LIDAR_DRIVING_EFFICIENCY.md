@@ -1,0 +1,13 @@
+# LiDAR driving efficiency
+
+## Clear-weather rendering
+
+The v9 LiDAR profile keeps the overhead shelter depth capture asleep when precipitation, global wetness and snow cover are all exactly zero. The normal player launcher reported zero captures between frames 300 and 400 in clear weather. A separate historic v8 run kept the overhead view active while driving. The source switch defaults to its previous behavior in other maps. The tested LiDAR map SHA-256 remains `6975ce77869fb81f0b2648f2016927ff1c9439cabe3db4f74b85ba94df90bf0e`.
+
+On the same 11.65 m deep-bog drive, the default control took 58.65 ms per frame (17.05 fps) and the dry-capture candidate took 48.24 ms (20.73 fps). Mean GPU time went from 57.34 to 47.26 ms. The two runs had identical pickup positions at all 17 samples. GPU medians during the matched windows were close but the laptop throttled during the measurements. The earlier single-component trial on the previous build saved 8.1 ms of GPU time. These figures describe this checkpoint on the RTX 4050 Laptop at 1600 × 900, 75% TSR, with gameplay and audio enabled.
+
+The material function uses shelter only when multiplying global wetness or snow. Local mud moisture and local snow still contribute in clear weather. The first wet frame updates the overhead depth at the current camera position before publishing the coverage to materials. The capture stays active while ground dries or snow melts. Two independent control games and one candidate game produced the same simulated moisture, snow and drop counts. On rain onset, the four sampled shelter depths matched within 0.25 cm. The subsequent rain, drying, snow and melt samples matched exactly. The separate roof fixture passed with 376 live drops, zero drops under the roof, open depth 3,142 cm and roof depth 2,668 cm. Its traction, exposure, sound and snow checks passed. The live launcher used the saved LiDAR setting without any test override.
+
+The route comparison and per-family experiments continue toward the whole-frame budget of 16.67 ms. The deepest bog still costs more than that budget even in a diagnostic that hides all six tree render groups (21.88 ms of GPU time). That diagnostic changes the view and exposes more ground. It gives a second reason to inspect ground, vehicle and shadow work alongside the canopy.
+
+To reproduce the previous overhead rendering policy for one profiling run, pass `-StudySettings 'gt.Weather.SkipDryOcclusion 0'` to the controlled LiDAR profiler. On this machine the original v8 preset is backed up under `D:/GrandTourAssets/Reviews/Lidar60`. [Weather transitions, depth samples and native image comparisons](LIDAR_DRY_CAPTURE_RESULTS.json). [Previous shadow baseline](LIDAR_ROUTE_SHADOWS_AND_BASE_PASS.md).

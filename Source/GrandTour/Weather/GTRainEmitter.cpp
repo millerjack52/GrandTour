@@ -226,6 +226,21 @@ void AGTRainEmitter::Follow(const FVector& InCameraLocation)
 	bHaveCamera = true;
 }
 
+void AGTRainEmitter::SetOcclusionRequired(bool bRequired)
+{
+	if (bRequired == bOcclusionRequired)
+	{
+		return;
+	}
+	bOcclusionRequired = bRequired;
+	bCaptureCurrent = false;
+	if (bRequired && bHaveCamera)
+	{
+		// Refresh at the new camera before the subsystem publishes the first wet frame.
+		UpdateCapture(0.f);
+	}
+}
+
 void AGTRainEmitter::SpawnDrop()
 {
 	const float Angle = Random.FRand() * 2.f * PI;
@@ -344,6 +359,10 @@ void AGTRainEmitter::PushInstances()
 
 void AGTRainEmitter::UpdateCapture(float DeltaSeconds)
 {
+	if (!bOcclusionRequired)
+	{
+		return;
+	}
 	// Snap the window to whole texels so the captured depth does not swim as the player walks.
 	const float Texel = HalfExtentCm * 2.f / FMath::Max(1, Resolution);
 	const FVector Snapped(FMath::GridSnap(CameraLocation.X, Texel), FMath::GridSnap(CameraLocation.Y, Texel), CameraLocation.Z);
@@ -355,11 +374,12 @@ void AGTRainEmitter::UpdateCapture(float DeltaSeconds)
 	{
 		return;
 	}
-	if (bMoved || CaptureTimer >= CaptureInterval || CaptureCount == 0)
+	if (bMoved || CaptureTimer >= CaptureInterval || !bCaptureCurrent)
 	{
 		CaptureTimer = 0.f;
 		Capture->CaptureScene();
 		++CaptureCount;
+		bCaptureCurrent = true;
 	}
 }
 
@@ -373,7 +393,7 @@ FVector2D AGTRainEmitter::WorldToPixel(const FVector& World) const
 
 bool AGTRainEmitter::ReadOcclusionDepth(const FVector& WorldLocation, float& OutDepth) const
 {
-	if (!bGpuEnabled || !RenderTarget || CaptureCount == 0)
+	if (!bGpuEnabled || !RenderTarget || !HasCurrentOcclusion())
 	{
 		return false;
 	}

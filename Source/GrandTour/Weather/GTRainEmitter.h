@@ -72,6 +72,8 @@ public:
 
 	/** The subsystem sets these every tick. */
 	void SetWeather(float InRainIntensity, float InTemperatureC, const FVector& InWindCmPerSec);
+	void SetOcclusionRequired(bool bRequired);
+	bool HasCurrentOcclusion() const { return bOcclusionRequired && bCaptureCurrent; }
 	void SetAmbience(float RainGain, float WindGain, float ClickRate);
 	void Follow(const FVector& CameraLocation);
 
@@ -217,5 +219,7 @@ private:
 	float SpawnAccumulator = 0.f;
 	float CaptureTimer = 0.f;
 	bool bHaveCamera = false;
+	bool bOcclusionRequired = true;
+	bool bCaptureCurrent = false;
 	FRandomStream Random;
 };

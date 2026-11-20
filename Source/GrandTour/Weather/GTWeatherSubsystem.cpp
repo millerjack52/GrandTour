@@ -29,6 +29,9 @@ static TAutoConsoleVariable<float> CVarWeatherRain(
 
 namespace
 {
+	TAutoConsoleVariable<int32> CVarSkipDryOcclusion(
+		TEXT("gt.Weather.SkipDryOcclusion"), 0,
+		TEXT("Skip the rain depth capture while precipitation, accumulated wetness and snow are all zero."));
 	const FName WeatherParamWetness(TEXT("Wetness"));
 	const FName ParamRain(TEXT("RainIntensity"));
 	const FName WeatherParamSnow(TEXT("SnowAmount"));
@@ -291,6 +294,10 @@ void UGTWeatherSubsystem::Tick(float DeltaTime)
 		}
 		Emitter->Follow(Camera);
 		Emitter->SetWeather(Current.RainIntensity, Current.TemperatureC, GetWindVector());
+		// MF_Weather multiplies the occlusion sample by global wetness or snow.
+		// Vehicle spray, local mud moisture and local snow do not use that sample.
+		Emitter->SetOcclusionRequired(CVarSkipDryOcclusion.GetValueOnGameThread() == 0 ||
+			Current.RainIntensity > 0.f || Wetness > 0.f || SnowAmount > 0.f);
 		Emitter->SetAmbience(Current.RainGain, Current.WindGain, ClickRate);
 	}
 	WriteCollection();
@@ -372,7 +379,7 @@ void UGTWeatherSubsystem::WriteCollection()
 	Vector(ParamWindDirection, FLinearColor(FMath::Cos(Yaw), FMath::Sin(Yaw), 0.f, 0.f));
 	if (Emitter)
 	{
-		Scalar(ParamOcclusionEnabled, (Emitter->bGpuEnabled && Emitter->bRenderTargetFromAsset && Emitter->CaptureCount > 0) ? 1.f : 0.f);
+		Scalar(ParamOcclusionEnabled, (Emitter->bGpuEnabled && Emitter->bRenderTargetFromAsset && Emitter->HasCurrentOcclusion()) ? 1.f : 0.f);
 		const FVector Centre = Emitter->GetCaptureCentre();
 		Vector(ParamOcclusionBounds, FLinearColor(Centre.X, Centre.Y, Emitter->GetCaptureTopZ(), Emitter->HalfExtentCm));
 	}
