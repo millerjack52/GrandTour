@@ -76,4 +76,15 @@ if __name__ == "__main__":
     parser.add_argument("folder", type=Path)
     folder = parser.parse_args().folder
     data = read_profiles((folder / "drive.log").read_text(errors="replace"))
+    conditions = json.loads((folder / "conditions.json").read_text(encoding="utf-8-sig"))
+    if conditions.get("label_tree_lods"):
+        labels = {"MI_D003_Leaf_LOD1", "MI_D003_Leaf_LOD2"}
+        for frame in data:
+            for name in PASSES:
+                draws = frame["passes"][name]["materials"]
+                observed = {row["material"] for row in draws if row["mesh"] == "SM_D003_LodLabels"}
+                if not labels <= observed:
+                    raise ValueError(
+                        f"Missing D003 leaf detail level in frame {frame['frame']} {name}"
+                    )
     (folder / "material-draws.json").write_text(json.dumps(data, indent=2) + "\n")

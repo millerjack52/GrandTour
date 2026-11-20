@@ -90,3 +90,25 @@ Both games used the native player with editor scripting disabled, 1600 × 900 ou
 | Deep bog | 249 / 210 | 10.95 / 11.10 | 98.51 / 97.49 ms | 795 / 780 MHz |
 
 The candidate pickup covered zero distance at the river and bog approach. Those two stationary windows cannot establish driving performance. At forest access the pickup covered 54.54 m with the original and 40.56 m with the candidate, limiting direct comparison there. Every recorded moving frame exceeded 16.67 ms.
+
+### Fresh starts and held views
+
+Two fresh game windows at the river covered 6.14 m and 6.11 m with the original and candidate shadow settings. The 145 and 137 moving frames averaged 20.69 and 24.47 fps. Their p95 times were 68.22 and 56.34 ms and their p99 times were 76.47 and 63.50 ms. Median GPU clocks were 1328 and 1380 MHz. At the bog approach the pickup advanced only 0.33 and 0.61 m. Ten and sixteen moving frames are insufficient for a driving tail comparison there. Use `-DriveCheckpoint river` or `-DriveCheckpoint bog_entry` with the native foreground test for a fresh start.
+
+Ten held driving views covered two locations in each of the five checkpoints. Each switched from original shadow culling to the second hierarchy and back at the same camera transform, pickup transform and game time. Across the ten holds the largest 96-pixel patch difference was 1.71 brightness levels, against 1.90 after restoring the original. The largest mean scene difference was 1.09 on the 255-level scale. The largest fraction of any scene changing by over eight levels was 0.076%. The native comparison board is `D:/GrandTourAssets/Reviews/Lidar60/dynamic-shadow-route-review/held-pairs.jpg`. Use `-ShadowStudy shadowdepthhold -ShadowCandidate saved` to reproduce the captures.
+
+### Forest access while moving and after settling
+
+The sunlit patch missing in the moving near-tree film came back in the held view. With normal shadows active the mean absolute RGB difference between the two settled crops was 0.26 levels. Disabling shadows for both reduced this to 0.25. The settled base-colour and depth differences were 0.09 and 0.02. This held test installed the fast trees after the camera stopped. It cannot explain the earlier moving difference or establish visual parity. The native stills and moving crops are in `D:/GrandTourAssets/Reviews/Lidar60/bark-coordinate-route-review/forest-access-moving-and-settled.jpg`.
+
+### Which painted leaves cost time
+
+The original Tree D 003 geometry was duplicated for a study. Two children of the same painted leaf material gave its first and second playable detail levels independent timer names. A per-section digest matched the source positions, triangle indices, normals, tangents and UV0 at all four mesh detail levels. The game drew the original instance group through the conventional renderer. The numbers below are GPU busy milliseconds from the named leaf draws in two instrumented, moving deep-bog frames.
+
+| Pass | First playable LOD, frames 711 / 775 | Second playable LOD, frames 711 / 775 |
+| --- | ---: | ---: |
+| Surface shading | 7.44 / 7.51 | 0.40 / 0.95 |
+| Motion vectors | 5.06 / 5.49 | 0.24 / 0.53 |
+| Shadows | 2.81 / 2.86 | 0.00 / 0.00 |
+
+The first playable leaf section had 32,626 referenced vertices, of which 16,597 were distinct by position, normal, tangent and UV0. Its 18,912 triangles are unchanged. This identifies a candidate for reusing vertex work. These counts do not establish a speedup. To repeat the split timers, run `Art/Unreal/prepare_lidar_leaf_lod_labels.py` with the source caster audit in `GT_LIDAR_NANITE_SOURCE_AUDIT`, then add `-LabelTreeLods -MaterialDrawStudy` to the saved moving bog replay.

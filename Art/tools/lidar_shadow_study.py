@@ -6,7 +6,7 @@ import json
 import re
 import statistics
 import shutil
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import sys
 
@@ -22,11 +22,14 @@ def schedule(
     linked_start="access",
     native_player=False,
     warm_trees=False,
+    checkpoint="",
 ):
     if native_player and (stage != "routetime" or candidate != "saved" or base_family != "control"):
         raise ValueError("Native player requires the saved timed route")
     events = []
     route_names = ("paddock_mid", "access", "river", "bog_entry", "bog552")
+    if checkpoint and (not native_player or checkpoint not in route_names):
+        raise ValueError("A single checkpoint requires a native timed drive")
     poses = {
         p["name"]: p
         for p in json.loads((ROOT / "Art/lidar_driving_baseline_poses.json").read_text())
@@ -43,7 +46,16 @@ def schedule(
     def shot(frame, name):
         filename = (
             f"{prefix}{name}.png"
-            if stage in ("visual", "routefilm", "boundaryfilm", "routehold")
+            if stage
+            in (
+                "visual",
+                "routefilm",
+                "boundaryfilm",
+                "routehold",
+                "barkbuffers",
+                "accessbuffers",
+                "shadowdepthhold",
+            )
             else f"{out.as_posix()}/{name}.png"
         )
         cmd(frame, f"Shot filename={filename} -nosuffix")
@@ -82,12 +94,20 @@ def schedule(
         driver = (ROOT / "Art/Unreal/lidar_continuous_drive.py").as_posix()
         cmd(512, f"py {driver} {out.as_posix()} {linked_start}")
         frames = 36000
-    elif stage in ("routefilm", "routetime", "boundaryfilm"):
+    elif stage in ("routefilm", "routetime", "boundaryfilm", "barkbuffers", "accessbuffers"):
         if candidate not in ("tree110", "baseline", "saved"):
             raise ValueError(candidate)
         boundary = stage == "boundaryfilm"
-        route = ("paddock_mid", "access") if boundary else route_names
-        film = stage in ("routefilm", "boundaryfilm")
+        route = route_names[:2] if boundary else route_names
+        if checkpoint:
+            route = (checkpoint,)
+        access_channels = stage == "accessbuffers"
+        channels = stage == "barkbuffers" or access_channels
+        if channels:
+            if candidate != "saved" or base_family != "control":
+                raise ValueError("Bark-channel comparisons require the saved trees")
+            route = route_names[:2] if access_channels else route_names[:4]
+        film = stage in ("routefilm", "boundaryfilm", "barkbuffers", "accessbuffers")
         cmd(235, "Input.+key SpaceBar")
         if native_player:
             cmd(330, "gt.Lidar.AuditRenderPass")
@@ -126,14 +146,44 @@ def schedule(
             if name in ("paddock_mid", "access", "river"):
                 cmd(start + 35, "Input.+action IA_Steer 0.22")
                 cmd(start + 62, "Input.-action IA_Steer")
-            if film:
+            if channels and name == route[-1]:
+                # Repeat the moving film up to its known failure, then hold the same game time.
+                held = start + (120 if access_channels else 57)
+                disabled = "noshadows" if access_channels else "nomoss"
+                probe(held, "pause")
+                bark_script = (ROOT / "Art/Unreal/lidar_bark_channel_probe.py").as_posix()
+                cmd(held + 1, f"py {bark_script} setup")
+                for offset, role in (
+                    (140, "stock"),
+                    (285, "stock_" + disabled),
+                    (455, "paint"),
+                    (600, "paint_" + disabled),
+                ):
+                    shot(held + offset, role + "_a")
+                    shot(held + offset + 5, role + "_b")
+                    probe(held + offset + 6, "record_" + role)
+                off = "shadows_off" if access_channels else "off"
+                restore = "shadows_restore" if access_channels else "restore"
+                cmd(held + 152, f"py {bark_script} {off}")
+                cmd(held + 296, f"py {bark_script} {restore}")
+                cmd(held + 300, "gt.Lidar.NearTreeStudy 55 renderlod")
+                if access_channels:
+                    apply_bark = (ROOT / "Art/Unreal/lidar_bark_coordinate_trial.py").as_posix()
+                    cmd(held + 301, f"py {apply_bark}")
+                cmd(held + 305, "gt.Lidar.AuditTreeRendering warm")
+                cmd(held + 451, "gt.Lidar.AuditTreeRendering")
+                cmd(held + 467, f"py {bark_script} {off}")
+                frames = held + 625
+                break
+            if film and not channels:
                 interval = 12 if boundary else 3
                 for relative in range(0, duration, interval):
                     shot(start + relative, f"r{index}{relative // interval:02}")
             cmd(start + duration + 1, "Input.-action IA_Throttle")
             cmd(start + duration + 3, "Input.+key SpaceBar")
-        frames = start + duration + 18
-    elif stage == "routehold":
+        if not channels:
+            frames = start + duration + 18
+    elif stage in ("routehold", "shadowdepthhold"):
         cmd(235, "Input.+key SpaceBar")
         probe(300, "init")
         probe(330, "verify_launch")
@@ -156,11 +206,14 @@ def schedule(
                     ("b", 39, "trial"),
                     ("c", 77, "stock"),
                 ):
-                    probe(f + step, "hold_" + treatment)
+                    if stage == "shadowdepthhold":
+                        cmd(f + step, f"r.Shadow.Virtual.DynamicHZB {int(treatment == 'trial')}")
+                    else:
+                        probe(f + step, "hold_" + treatment)
                     cmd(f + step + 8, "r.Shadow.Virtual.Cache 1")
                     shot(f + step + 29, f"h{sample}{mark}0")
                     shot(f + step + 32, f"h{sample}{mark}1")
-                    if mark != "c":
+                    if mark != "c" or stage == "shadowdepthhold":
                         probe(f + step + 33, f"record_{sample}_{mark}")
                 probe(f + 112, "resume")
             cmd(start + 385, "Input.-action IA_Throttle")
@@ -589,7 +642,117 @@ def analyze(out):
     log = (out / "drive.log").read_text(errors="replace")
     if "LogPython: Error:" in log:
         raise RuntimeError("Unreal Python error in drive.log")
-    if plan["stage"] in ("visual", "routefilm", "boundaryfilm", "routehold"):
+    if plan["stage"] in ("barkbuffers", "accessbuffers"):
+        from PIL import Image
+        import numpy as np
+
+        access = plan["stage"] == "accessbuffers"
+        layer = "shadows" if access else "moss"
+        roles = ("stock", f"stock_no{layer}", "paint", f"paint_no{layer}")
+        poses = [json.loads((out / f"record_{role}.json").read_text()) for role in roles]
+        assert all(pose == poses[0] for pose in poses)
+        if access:
+            quality = [int(v) for v in re.findall(r"GT_ACCESS_SHADOW_QUALITY value=(\d+)", log)]
+            assert len(quality) == 3 and quality[0] == quality[2] == 0 and quality[1] > 0
+            assert log.count("GT_BARK_COORDINATE_BIND mesh=") == 3
+        else:
+            assert log.count("GT_BARK_LAYER mesh=") == 6
+        assert "GT_TREE_RENDER_SUMMARY groups=9 proxies=9 nanite=3 material_fallbacks=0" in log
+        # Buffer dumping may replace the requested filename. Pair each real screenshot
+        # trace with its scheduled Shot on the very same engine frame.
+        screenshots = ROOT / "Saved_LidarDrive/Screenshots/WindowsEditor"
+        captures = {}
+        for entry in re.finditer(
+            r"\[(\d{4}\.\d\d\.\d\d-\d\d\.\d\d\.\d\d:\d{3})\]\[( *\d+)\]"
+            r'LogCsvProfiler: Display: CSVEvent "CsvExecCommand : Shot filename=[^\r\n]*?'
+            r'(stock(?:_no(?:moss|shadows))?|paint(?:_no(?:moss|shadows))?)_([ab])\.png -nosuffix" \[Frame \d+\]'
+            r'[^\r\n]*\r?\n\[(.*?)\]\[\2\]LogCore: Display: Tracing Screenshot "([\w-]+)"',
+            log,
+        ):
+            role, take = entry[3], entry[4]
+            stamp = datetime.strptime(entry[5], "%Y.%m.%d-%H.%M.%S:%f").replace(tzinfo=timezone.utc)
+            captures[role, take] = (entry[6], stamp.timestamp())
+        assert len(captures) == 8 and len({v[0] for v in captures.values()}) == 8, captures
+        rect = [864, 40, 960, 136] if access else [1424, 483, 1520, 579]
+        result = dict(pose=poses[0], reference_rect=rect, channels={})
+        for channel in (
+            "",
+            "BaseColor",
+            "WorldNormal",
+            "Roughness",
+            "SceneDepth",
+            "AmbientOcclusion",
+            "SubsurfaceColor",
+            "Specular",
+            "MaterialAO",
+            "Metallic",
+            "ShadingModel",
+        ):
+            samples = {}
+            sizes = set()
+            for role in roles:
+                for take in ("a", "b"):
+                    suffix = "_" + channel if channel else ""
+                    destination = out / f"{role}_{take}{suffix}.png"
+                    if not destination.exists():
+                        actual_stem, captured = captures[role, take]
+                        actual_suffix = "_LightingModel" if channel == "ShadingModel" else suffix
+                        source = screenshots / f"{actual_stem}{actual_suffix}.png"
+                        if abs(source.stat().st_mtime - captured) > 30:
+                            raise ValueError(
+                                f"Screenshot timestamp does not match its trace: {source}"
+                            )
+                        partial = destination.with_suffix(".partial")
+                        shutil.copyfile(source, partial)
+                        if partial.stat().st_size != source.stat().st_size:
+                            raise OSError(f"Incomplete screenshot {partial}")
+                        partial.replace(destination)
+                        source.unlink()
+                    with Image.open(destination) as frame:
+                        sizes.add(frame.size)
+                        w, h = frame.size
+                        rect = tuple(
+                            round(v * scale)
+                            for v, scale in zip(
+                                result["reference_rect"], (w / 1600, h / 900, w / 1600, h / 900)
+                            )
+                        )
+                        samples[role, take] = np.asarray(
+                            frame.convert("RGB").crop(rect), dtype=np.float32
+                        )
+            assert len(sizes) == 1
+
+            def difference(lhs, rhs):
+                delta = samples[rhs] - samples[lhs]
+                return dict(
+                    rgb_delta=np.round(delta.mean(axis=(0, 1)), 3).tolist(),
+                    mean_abs_rgb=round(float(np.abs(delta).mean()), 3),
+                )
+
+            result["channels"][channel or "lit"] = dict(
+                size=sizes.pop(),
+                original_repeat=difference(("stock", "a"), ("stock", "b")),
+                normal_material=difference(("stock", "b"), ("paint", "b")),
+                **{
+                    layer + "_disabled": difference((roles[1], "b"), (roles[3], "b")),
+                    "original_" + layer + "_effect": difference((roles[1], "b"), ("stock", "b")),
+                    "candidate_" + layer + "_effect": difference((roles[3], "b"), ("paint", "b")),
+                },
+            )
+        (out / ("access-channels.json" if access else "bark-channels.json")).write_text(
+            json.dumps(result, indent=2)
+        )
+        return
+    if plan["stage"] == "shadowdepthhold":
+        actual = re.findall(r'\]r\.Shadow\.Virtual\.DynamicHZB = "([01])"', log)
+        if actual != ["0", "1", "0"] * 10:
+            raise ValueError("Incomplete held shadow transitions")
+        for sample in range(10):
+            poses = [
+                json.loads((out / f"record_{sample}_{mark}.json").read_text()) for mark in "abc"
+            ]
+            assert poses[0] == poses[1] == poses[2], sample
+    if plan["stage"] in ("visual", "routefilm", "boundaryfilm", "routehold", "shadowdepthhold"):
         # Move only this run's uniquely named shots from the engine output directory.
         # Short Shot commands keep the dual-treatment schedule inside UE's command-line limit.
         screenshots = ROOT / "Saved_LidarDrive/Screenshots/WindowsEditor"
@@ -787,6 +950,7 @@ if __name__ == "__main__":
             family[2] if len(family) > 2 else "access",
             bool(int(family[3])) if len(family) > 3 else False,
             bool(int(family[4])) if len(family) > 4 else False,
+            family[5] if len(family) > 5 else "",
         )
     elif sys.argv[1] == "analyze":
         analyze(Path(sys.argv[2]))
