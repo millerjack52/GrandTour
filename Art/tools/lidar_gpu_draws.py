@@ -83,6 +83,10 @@ if __name__ == "__main__":
             for name in PASSES:
                 draws = frame["passes"][name]["materials"]
                 observed = {row["material"] for row in draws if row["mesh"] == "SM_D003_LodLabels"}
+                if name == "ShadowDepths" and conditions.get("saved_fast_crowns"):
+                    if observed:
+                        raise ValueError(f"The visible D003 mesh cast a shadow in frame {frame['frame']}")
+                    continue
                 if not labels <= observed:
                     raise ValueError(
                         f"Missing D003 leaf detail level in frame {frame['frame']} {name}"

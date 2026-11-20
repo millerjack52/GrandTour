@@ -312,3 +312,29 @@ The normal LiDAR launcher and LiDAR Play in Editor now select the approved Fast 
 Use `Play-LidarStudy.bat` for the default. Run `Art/open_lidar_study.ps1 -Play -ConventionalCrownShadows` to compare the previous shadows with the other LiDAR settings held fixed. The same switch is available in `Art/profile_lidar_play.ps1`. The map-scoped setting in `Art/lidar_performance.json` is `fast_crown_shadows`. Each play world creates the shadow groups once and keeps the original casters if the replacement proxies fail verification.
 
 On a licensed workstation with the prepared study meshes, run `Art/Unreal/prepare_lidar_fast_crown_shadows.py` in Unreal to install the three local packages under `FloraWorld/CrownShadows`. Their dependencies are the approved area-preserving first-playable-LOD meshes built by `Art/Unreal/prepare_lidar_render_lod_study.py`. The source checkout contains the preparation code. The purchased art stays on the workstation.
+
+### Painted leaves with Fast shadows
+
+Two named GPU captures on the saved trees isolated Tree D 003 at its first playable detail level. Its leaf draw took 4.09 and 4.10 ms in the base pass, and 2.69 and 2.78 ms in motion vectors. At the second detail level the same passes took 0.22–0.49 and 0.12–0.28 ms. The visible D 003 mesh produced no shadow draw. The dedicated casters supplied its shadows.
+
+The table covers 192 moving frames at 1600 × 900 with 75% TSR. All runs repeated the same 17 pickup positions over 11.65 m of the deep bog. The simpler leaf edge calculation used the existing painted mask on all six mature and sapling groups. A separate experiment used painted Nanite geometry for the nearby mature trees, including their trunks. The original distance transitions and Fast shadow meshes were retained. The mask and geometry experiments each have their own controls.
+
+| Bog replay | Mean frame | p95 frame | Average fps | Base pass | Motion vectors | Shadows | Median GPU clock |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Original leaf edges, first control | 26.34 ms | 28.99 ms | 37.96 | 8.47 ms | 5.77 ms | 2.97 ms | 2745 MHz |
+| Simpler leaf edges | 27.10 ms | 30.75 ms | 36.90 | 8.53 ms | 5.86 ms | 3.70 ms | 2715 MHz |
+| Original leaf edges, repeat | 27.12 ms | 29.42 ms | 36.87 | 8.82 ms | 6.08 ms | 2.97 ms | 2640 MHz |
+| Saved visible trees, first control | 27.85 ms | 29.78 ms | 35.90 | 9.25 ms | 6.36 ms | 2.45 ms | 2498 MHz |
+| Nearby Nanite trees, first drive | 20.27 ms | 21.40 ms | 49.33 | 3.86 ms | 2.46 ms | 2.47 ms | 2460 MHz |
+| Saved visible trees, second control | 28.54 ms | 30.27 ms | 35.04 | 9.47 ms | 6.53 ms | 2.58 ms | 2430 MHz |
+| Nearby Nanite trees, second drive | 20.27 ms | 21.25 ms | 49.35 | 3.88 ms | 2.47 ms | 2.48 ms | 2430 MHz |
+
+At the same median GPU clock the nearby trees saved 8.27 ms on the entire frame. Moving work into Nanite changes which GPU passes account for it. The whole-frame saving includes that cost. The simpler leaf edges finished within the spread of the controls.
+
+Five chase-camera sections provided 240 native frames for each version at 65 matching vehicle positions. The saved Fast shadows reproduced the approved sunlit paddock crop within 0.12 brightness levels out of 255. The nearby Nanite trees kept the overall painted crown colours, with mean differences of 0.68 levels in the sunlit crown and 0.71 in the shaded crown. At the bog approach, a small sky opening beside a trunk filled in. Its 96 × 96 crop differed by 2.58 levels, compared with 0.15 between saved-tree repeats. Dust varied at forest access and grass also varied in the bog. The crown assessment uses dedicated foliage regions.
+
+A follow-up disabled Nanite area preservation on the visible trees alone. All three shadow meshes retained the approved setting. The opening still filled in, with a 2.59-level difference, and the forest-access crop increased from 1.33 to 2.38. The follow-up averaged 48.07 fps on the short replay. The simpler leaf mask and both visible-geometry experiments remain outside the default preset.
+
+The real-time pickup completed the bog section with both renderers. The saved-tree run had focus throughout and travelled 99.97 m. The 130.84 m nearby-tree run retained focus over just one complete shared 5 m interval, road stations 2270–2275. Moving frames there averaged 46.38 fps on the saved trees and 46.66 fps on the nearby trees, with 66 and 48 frames respectively and a median of four wheels in contact. The respective p95 frame times were 28.00 and 23.60 ms. A further nearby-tree drive reported zero focused samples. These normal-window drives do not establish a sustained frame-rate gain over the full bog. The launcher requests focus once for foreground benchmarks, and the comparison uses Unreal's recorded foreground state for each frame.
+
+For timing use `Art/profile_lidar_play.ps1 -ShadowStudy basemoving -ShadowCandidate saved -EvidenceRoot <folder> -Label <name>`. Use `-BaseFamily tree_mask_threshold -EarlyFamily` for the edge test, with `-EarlyFamily` on its control as well. Use `-WarmTrees` on the saved-tree geometry controls. For the geometry test add `-NearTreeMetres 210 -RenderLodTrees -BarkCoordinates -SizeMatchedTrees -StableNaniteShadows -MatchShadowRange`. Add `-UndilatedCameraTrees` to repeat the visible-only shape test. The same geometry flags work with `-ShadowStudy routefilm`. The [moving comparison](D:/GrandTourAssets/Reviews/Lidar60/v11-painted-leaves-review/painted-crown-driving.mp4) includes each full chase-camera view and a native-size detail. [Recorded measurements](LIDAR_FAST_CROWN_LEAF_RESULTS.json).

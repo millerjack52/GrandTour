@@ -157,10 +157,12 @@ namespace
 
 	void TrialNearCanopy(const TArray<FString>& Args, UWorld* World)
 	{
-		if (!World || World->WorldType != EWorldType::Game || Args.Num() < 2 || Args.Num() > 3 ||
+		if (!World || World->WorldType != EWorldType::Game || Args.Num() < 2 || Args.Num() > 4 ||
 			UGameplayStatics::GetCurrentLevelName(World, true) != TEXT("L_LidarStudy")) return;
 		FString ShapeFolder;
-		if (Args.Num() == 3)
+		const bool bCameraShape = Args.Num() == 4;
+		if (bCameraShape && (Args[3] != TEXT("camera") || Args[1] != TEXT("renderlod_nanite_shadows"))) return;
+		if (Args.Num() >= 3)
 		{
 			if ((Args[1] != TEXT("nanite_shadows_only") && Args[1] != TEXT("renderlod_nanite_shadows")) ||
 				Args[2].Len() != 12) return;
@@ -214,11 +216,15 @@ namespace
 				UStaticMesh* Shadow = bNaniteShadows ? Near : Original;
 				if (!ShapeFolder.IsEmpty())
 				{
-					Shadow = LoadObject<UStaticMesh>(nullptr, *(Folder + ShapeFolder + Asset));
-					if (!Shadow || Shadow->GetNumSections(0) != Near->GetNumSections(0) ||
-						Shadow->GetStaticMaterials().Num() != C->GetNumMaterials() ||
-						Shadow->GetNaniteSettings().ShapePreservation != ENaniteShapePreservation::None) return;
-					UE_LOG(LogTemp, Display, TEXT("GT_UNDILATED_SHADOW mesh=%s"), *Shadow->GetPathName());
+					auto* Alternate = LoadObject<UStaticMesh>(nullptr, *(Folder + ShapeFolder + Asset));
+					if (!Alternate || Alternate->GetNumSections(0) != Near->GetNumSections(0) ||
+						Alternate->GetStaticMaterials().Num() != C->GetNumMaterials() ||
+						Alternate->GetNaniteSettings().ShapePreservation != ENaniteShapePreservation::None) return;
+					if (bCameraShape) Near = Alternate;
+					else Shadow = Alternate;
+					UE_LOG(LogTemp, Display, TEXT("%s mesh=%s caster=%s"),
+						bCameraShape ? TEXT("GT_UNDILATED_CAMERA") : TEXT("GT_UNDILATED_SHADOW"),
+						*Alternate->GetPathName(), *Shadow->GetPathName());
 				}
 				Sources.Add({C, Near, Shadow});
 			}
