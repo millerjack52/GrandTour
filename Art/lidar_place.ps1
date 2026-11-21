@@ -1,4 +1,4 @@
-param([ValidateSet('Prepare','ValidateDesign','ApplyDesign','AuthoringCheck','LoggingCheck','RutWater','RutWaterCheck','TrackDetail','TrackDetailCheck','RiverCheck','RiverDetail','RiverPerf','Profile60','Grass','GrassCheck','TreadCheck','Install','Check','Audit','Polish','WaterDiag','Water','FoliagePerf','FoliageStat')][string]$Mode='Install')
+param([ValidateSet('Prepare','ValidateDesign','ApplyDesign','AuthoringCheck','LoggingCheck','RutWater','RutWaterCheck','TrackDetail','TrackDetailCheck','RiverCheck','RiverDetail','RiverPerf','BankReliefPreview','Profile60','Grass','GrassCheck','TreadCheck','Install','Check','Audit','Polish','WaterDiag','Water','FoliagePerf','FoliageStat')][string]$Mode='Install')
 $ErrorActionPreference='Stop'
 $taskRoot=Split-Path $PSScriptRoot
 if($Mode -in @('Prepare','ValidateDesign','ApplyDesign')) {
@@ -42,9 +42,14 @@ try {
  if(-not $acquired){throw 'Unreal slot is reserved'}
  if(Get-Process UnrealEditor,UnrealEditor-Cmd -ErrorAction SilentlyContinue){throw 'Editor is already running'}
  $script=if($Mode -eq 'Grass'){'lidar_grass_gs3.py'}elseif($Mode -eq 'GrassCheck'){'check_lidar_grass_gs3.py'}elseif($Mode -eq 'TreadCheck'){'check_lidar_treads.py'}elseif($Mode -eq 'Profile60'){'profile_lidar_60.py'}elseif($Mode -eq 'RiverPerf'){'diagnose_lidar_river_perf.py'}elseif($Mode -eq 'RiverDetail'){'lidar_river_detail.py'}elseif($Mode -eq 'RiverCheck'){'check_lidar_river.py'}elseif($Mode -eq 'RutWater'){'lidar_rut_water.py'}elseif($Mode -eq 'RutWaterCheck'){'check_lidar_rut_water.py'}elseif($Mode -eq 'TrackDetail'){'lidar_track_detail.py'}elseif($Mode -eq 'TrackDetailCheck'){'check_lidar_track_detail.py'}elseif($Mode -eq 'LoggingCheck'){'check_lidar_logging.py'}elseif($Mode -eq 'AuthoringCheck'){'check_lidar_authoring.py'}elseif($Mode -eq 'Install'){'install_lidar_place.py'}elseif($Mode -eq 'Audit'){'inspect_lidar_assets.py'}elseif($Mode -eq 'Polish'){'polish_lidar_place.py'}elseif($Mode -eq 'WaterDiag'){'diagnose_lidar_water.py'}elseif($Mode -eq 'Water'){'water_lidar_place.py'}elseif($Mode -eq 'FoliagePerf'){'foliage_perf_lidar_place.py'}elseif($Mode -eq 'FoliageStat'){'stat_lidar_place.py'}else{'check_lidar_place.py'}
+ if($Mode -eq 'BankReliefPreview'){$script='preview_lidar_bank_relief.py'}
  $taskArgs=@(('"'+$taskRoot+'/GrandTour.uproject"'),'/Engine/Maps/Entry','-Unattended','-NoSplash','-NoSound','-nop4','-GTNoLoad','-RenderOffScreen','-dx12',('-abslog="'+$taskRoot+'/Saved/Logs/LidarPlace-'+$Mode+'.log"'),('-ExecutePythonScript="'+$taskRoot+'/Art/Unreal/'+$script+'"'))
  if($Mode -eq 'WaterCheck'){$taskArgs+='-GTWaterOnly'}
  if($Mode -eq 'EnrichCheck'){$taskArgs+='-GTEnrichCheck'}
+ if($Mode -eq 'BankReliefPreview'){
+  $previewRun=[Guid]::NewGuid().ToString()
+  $taskArgs+=@('-NoAutoSave',('-GTBankPreviewRun='+$previewRun))
+ }
  $started=Get-Date
  $p=Start-Process 'C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor.exe' -ArgumentList $taskArgs -WindowStyle Hidden -PassThru
  # Retain a process handle before it exits so Windows keeps its exit status.
@@ -58,6 +63,12 @@ try {
  }
  $p.WaitForExit()
  $exitStatus=$p.ExitCode
+ if($Mode -eq 'BankReliefPreview'){
+  $review=Join-Path $taskRoot ('Saved/LidarBankRelief/'+$previewRun)
+  if($exitStatus -ne 0 -or -not (Test-Path -LiteralPath "$review/report.json")){throw "Bank preview failed. Inspect $review and the preview log."}
+  Write-Output "Bank comparison saved in $review"
+  return
+ }
  $f=Get-Item "$taskRoot/Art/Export/LidarStudy/Place/$($Mode.ToLower()).json";$r=Get-Content -LiteralPath $f.FullName -Raw|ConvertFrom-Json
  @{mode=$Mode;exit_code=$exitStatus;started=$started.ToString('o');report_written=$f.LastWriteTime.ToString('o');report_ok=$r.ok;process_id=$p.Id}|ConvertTo-Json|Set-Content "$taskRoot/Art/Export/LidarStudy/Place/$($Mode.ToLower())-process.json"
  if($null -eq $exitStatus -or $exitStatus -ne 0 -or -not $r.ok -or $f.LastWriteTime -lt $started){throw "LidarStudy $Mode failed; inspect fresh report and process status"}
