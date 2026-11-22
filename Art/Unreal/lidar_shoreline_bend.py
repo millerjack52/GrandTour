@@ -120,68 +120,115 @@ def stone(part, bed, rng, x, y, radius, water):
         part["t"].append((rings[-1][n],rings[-1][k],top))
 
 
-# Lateral offsets in metres from the measured waterline. Positive points uphill.
-# The sole straddles the wet margin, the rear skirt and both ends enter the soil.
-CUT = ((-1.05,-.16),(-.56,.02),(-.31,.16),(-.12,.39),(-.09,.64),
-       (-.19,.83),(-.22,.96),(.01,1.),(.55,.85),(1.16,.60),(1.88,.24),(2.36,-.22))
-SHELF = ((-1.25,-.2),(-.9,.02),(-.65,.16),(-.38,.43),(-.14,.70),
-         (.12,.86),(.43,1.),(.82,.89),(1.25,.68),(1.69,.41),(2.10,.17),(2.5,-.22))
+def interpolate_keys(t, keys):
+    """Follow the broken line between successive erosion or deposition stations."""
+    for (ta, a), (tb, b) in zip(keys, keys[1:]):
+        if t <= tb:
+            return lerp(a, b, (t-ta)/(tb-ta))
+    return keys[-1][1]
+
+
+def scar_rows(shore, ground, side, rng):
+    """Expose a terrace on the river side of a plane fitted to the landward grade."""
+    length = shore[-1][1] - shore[0][1]
+    # Failed slices of bank recede into the slope. Most of the intact face
+    # has a nearly level skyline across metres of bank between those breaks.
+    recess = []
+    for t, distance in ((0, .28), (.12, -.16), (.30, -.20), (.38, .38),
+                        (.47, .50), (.52, .05), (.70, -.24), (.83, -.12), (1., .34)):
+        jitter = 0 if t in (0,1) else rng.uniform(-.03,.03)
+        recess.append((t+jitter, distance+rng.uniform(-.10,.10)))
+    expose = [(0., .05), (.22, .12), (.38, -.10), (.57, -.16), (.76, .05), (1., .12)]
+    sections = []
+    for i, (x,y,water) in enumerate(shore):
+        t = i/(len(shore)-1)
+        erosion = taper(min(t*length, (1-t)*length)/1.15)
+        anchor = 1.72 + interpolate_keys(t, expose)
+        bed = lambda d: ground.bed(x+side*d, y)
+        crest_offset = lerp(anchor+.26, interpolate_keys(t, recess), erosion)
+        # This grade rises inland. The top meets the native ground at the
+        # anchor and passes inside the original hillside beyond it.
+        grade = min(.18,max(.045,(bed(anchor+.9)-bed(anchor))*.30))
+        cap = lambda d: bed(anchor) + grade*(d-anchor) - .045
+        crest = cap(crest_offset)
+        low = max(water-.15, bed(crest_offset-.10)-.08)
+        height = max(.05,crest-low)
+        notch = min(.32, max(.08,height*.34)) * erosion
+        # Outer toe, vertical earth face, recessed organic layer, upper lip
+        # and forest-floor cap. Repeat the lip vertex to split its shading.
+        profile = [
+            (crest_offset-1.02,bed(crest_offset-1.02)-.18,(.044,.042,.031)),
+            (crest_offset-.46,low+.03,(.062,.056,.041)),
+            (crest_offset+.03,low+.13*height,(.092,.071,.050)),
+            (crest_offset+notch*.45,low+.56*height,(.106,.071,.044)),
+            (crest_offset+notch,crest-.14*height,(.064,.045,.031)),
+            (crest_offset+notch*.96,crest-.075*height,(.045,.036,.026)),
+            (crest_offset,crest-.035,(.061,.049,.031)),
+            (crest_offset,crest-.035,(.065,.071,.035)),
+            (crest_offset+.10,cap(crest_offset+.10),(.069,.073,.038)),
+            (max(crest_offset+.22,anchor*.69),cap(max(crest_offset+.22,anchor*.69)),(.065,.068,.039)),
+            (max(crest_offset+.40,anchor+.20),cap(max(crest_offset+.40,anchor+.20))-.025,(.065,.060,.036)),
+            (anchor+1.12,min(cap(anchor+1.12),bed(anchor+1.12)-.14),(.063,.059,.037)),
+        ]
+        sections.append(profile)
+    return sections
+
+
+def shelf_rows(shore, ground, side, rng):
+    """A low fan that widens into the inside bend and planes down into the channel."""
+    widest = rng.uniform(.44,.60)
+    spread = [(0.,.05),(.15,.34),(widest,1.),(.76,.78),(.94,.21),(1.,.04)]
+    rows = []
+    for i,(x,y,water) in enumerate(shore):
+        t = i/(len(shore)-1)
+        fan = interpolate_keys(t,spread)
+        width = .25 + 1.19*fan
+        # Referenced to water level across the entire bar. Inland native ground
+        # intersects the rising gravel plane and conceals its rear margin.
+        distances = (-width-.23,-width,-.74*width,-.42*width,-.19*width,.03,.28,.65,1.1)
+        row = []
+        for j,d in enumerate(distances):
+            z = water-.13 + .32*(d+width)
+            z = min(z, water+.23*fan+.025*d)
+            if j in (0,len(distances)-1):
+                z=min(z,ground.bed(x+side*d,y)-.15)
+            tint = taper((z-water+.06)/.26)
+            colour=[lerp(a,b,tint) for a,b in zip((.043,.043,.036),(.090,.081,.062))]
+            row.append((d,z,colour))
+        rows.append(row)
+    return rows
 
 
 def build_section(spec, ground):
-    name, y0,y1,first,last,gravel,seed = spec
-    rng=random.Random(seed)
-    side=1 if first[1]>first[0] else -1
-    n=math.ceil((y1-y0)/.30)
-    shore=[]
+    name, y0, y1, first, last, gravel, seed = spec
+    rng = random.Random(seed)
+    side = 1 if first[1] > first[0] else -1
+    n = math.ceil((y1-y0)/.27)
+    shore = []
     for i in range(n+1):
-        t=i/n
-        y=lerp(y0,y1,t)
-        x,level=ground.shore(lerp(first[0],last[0],t),lerp(first[1],last[1],t),y)
-        shore.append([x,y,level])
-    ox,oy,oz=shore[n//2]
-    part=dict(origin=[ox,oy,oz],v=[],c=[],t=[],uv=[])
-    profile=SHELF if gravel else CUT
-    count=len(profile)
-    for i,(x,y,level) in enumerate(shore):
-        t=i/n
-        end=taper(min(t,1-t)/.13)
-        wave=.5+.5*math.sin((y-y0)*1.18+seed)
-        height=(.21+.24*wave if gravel else .53+.42*wave)+.09*math.sin(2.4*y+seed)
-        near_wet=ground.sheet.covers(u.Vector2D((x-side*.23)*100,y*100))
-        if not near_wet:
+        t = i/n
+        y = lerp(y0,y1,t)
+        x,level = ground.shore(lerp(first[0],last[0],t),lerp(first[1],last[1],t),y)
+        if not ground.sheet.covers(u.Vector2D((x-side*.23)*100,y*100)):
             raise ValueError(f"Physical river and rendered mesh disagree at {x}, {y}")
-        for j,(off,amount) in enumerate(profile):
-            off=off*(.79+.21*math.sin(y*.81+seed))+.13*math.sin(y*1.36+seed)*end
-            px=x+side*off
-            base=ground.bed(px,y)
-            rise=height*max(0.,amount)*end
-            z=base+rise-.13*(1.-end)
-            if j==0 or j==count-1:
-                z=base-.16
-            if gravel:
-                # Limit the bar to the water elevation. Following the original
-                # steep slope here spreads a grey skin up the opposite bluff.
-                top = level + lerp(-.28, .19+.13*wave, max(amount,0.))
-                z = lerp(min(base-.12, level-.12), top, end)
-                if j in (0,count-1):
-                    z = min(base-.16, level-.16)
-            wet=taper((z-level+.035)/.42)
-            cap=taper((off-.03)/.60)
-            tint=.84+.14*math.sin(y*1.6+seed+off*.8)+rng.uniform(0,.07)
-            pigment=[lerp(a,b,wet) for a,b in zip((.030,.028,.021),(.070,.049,.032))]
-            if gravel:
-                pigment=[lerp(a,b,.52) for a,b in zip(pigment,(.068,.062,.049))]
-            else:
-                pigment=[lerp(a,b,cap) for a,b in zip(pigment,(.052,.057,.030))]
+        shore.append([x,y,level])
+    ox,oy,oz = shore[n//2]
+    part = dict(origin=[ox,oy,oz],v=[],c=[],t=[],uv=[])
+    rows = shelf_rows(shore,ground,side,rng) if gravel else scar_rows(shore,ground,side,rng)
+    count = len(rows[0])
+    for i, ((x,y,water), profile) in enumerate(zip(shore,rows)):
+        grain = rng.uniform(.93,1.06)
+        for j, (off,z,colour) in enumerate(profile):
+            px = x+side*off
             part["v"].append([px-ox,y-oy,z-oz])
-            part["c"].append([v*tint for v in pigment])
-            part["uv"].append([(y-y0)/1.25,(off+rise)/1.25])
-            if i and j:
-                a=(i-1)*count+j-1
-                b=a+count
-                faces=((a,b,a+1),(b,b+1,a+1))
+            part["c"].append([v*grain for v in colour])
+            part["uv"].append([(y-y0)/1.25,(off+z-oz)/1.25])
+            if i and j and (gravel or j!=7):
+                a = (i-1)*count+j-1
+                b = a+count
+                faces = ((a,b,a+1),(b,b+1,a+1))
                 part["t"].extend(f if side>0 else f[::-1] for f in faces)
+
     def gravel_surface(x, y):
         # The cross-sections are straight in Y. Interpolate their corresponding
         # edge vertices to seat each cobble on the triangle surface or bare bed.
