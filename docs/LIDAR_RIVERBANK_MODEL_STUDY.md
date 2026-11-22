@@ -1,6 +1,30 @@
 # Fitted earth banks on the LiDAR ford
 
-The 220 m study covers stations 3130–3350 m on the saved LiDAR river. The preview adds eroded soil faces with shallow, partly buried cobbles. At the closest driving position the earth lip breaks the plane between two trunks. The pale, smooth-looking cobbles draw too much attention. At 48 m the overall bank still reads as one slope. Keep this as an authoring study. The normal driving map still uses the existing landscape and bank dressing.
+## Drive the saved shoreline bend
+
+Open `Play-LidarStudy-RiverBend.bat` from the project root. The pickup starts near the ford at X −483.1 m, Y −356.8 m, facing down the approach. Drive into the shallows for about 30 m. Two earthen cuts flank an opening on the bank ahead. The lower cobbled shelf is on the opposite bank. The normal LiDAR launcher opens the same saved level from its usual starting point.
+
+The three static mesh actors are under **LiDAR / River / Shoreline Test Bend** in the World Outliner. Their meshes and shared material live in `/Game/GrandTour/ArtTests/LidarStudy/ShorelineTestBend`. Together they have 4,276 triangles. Baking traces the visible river mesh against the landscape and physical road tiles along each cross-section, then checks the wet side against the water simulation. The toe enters the shallows and the back and ends of each piece enter the terrain. The gravel bar is capped relative to water elevation so its surface gradually disappears into the steeper bluff.
+
+A fresh standalone game launched through the river-bend startup settings loaded all three saved meshes and placed the player in the pickup. It drove 32.1 m under vehicle physics. Vertical collision probes through the traced shoreline hit the outer cut at nine samples, the shorter cut at five and the gravel shelf at thirteen. This drive checked approach and visibility. The earlier frame times below apply only to the uphill preview. Frame-time cost for the saved bend has not been measured.
+
+The local standalone screenshots, drive path and measured waterline coordinates are in `Saved/FordGroundReview/ShoreBend-20261122/Final`. The original level backup is `Saved/LidarAuthoringBackups/Shoreline-Test-Bend-20261122-145854/L_LidarStudy.umap`. Its SHA-256 is `6975ce77869fb81f0b2648f2016927ff1c9439cabe3db4f74b85ba94df90bf0e`. The saved bend level SHA-256 is `4170129d2fdb841721fdf201d64fa0701a979adc79466ba11c25bb4b5b09f781`.
+
+To recreate the saved placement on a local asset installation, load the LiDAR study level in the editor, wait for the map to finish loading, and run the following from the Unreal Python console. Stage creates or updates the three tagged actors and save writes the assets and level.
+
+```python
+import sys
+from pathlib import Path
+import unreal
+sys.path.insert(0, str(Path(unreal.Paths.project_dir()).resolve() / "Art/Unreal"))
+import lidar_shoreline_bend
+placement = lidar_shoreline_bend.stage()
+lidar_shoreline_bend.save(placement)
+```
+
+## Earlier uphill preview
+
+The 220 m study covered stations 3130–3350 m on the saved LiDAR river. The preview adds eroded soil faces with shallow, partly buried cobbles. At the closest driving position the earth lip breaks the plane between two trunks. The pale, smooth-looking cobbles draw too much attention. At 48 m the overall bank still reads as one slope. This uphill version ran only in the preview world.
 
 The existing fitted bank skin follows one surveyed 22 × 15.6 m patch. The three existing river outcrops provide individual rock shapes. General-purpose modules need a buried toe, tapered ends and an uphill edge that meets the ground throughout each bend. The next art pass should pair a darker, root-bound cut on eroding bends with low gravel shelves on depositing bends. The shape of the landscape at the water’s edge must carry the larger silhouette through the gaps.
 

@@ -1,5 +1,6 @@
-param([switch]$Play,[switch]$OriginalQuality,[switch]$ShowFPS,[switch]$Paddock,[switch]$House,[switch]$WoodedTrack,[switch]$TreeShadowTrial,[switch]$StockTreeShadows,[switch]$ConventionalCrownShadows)
+param([switch]$Play,[switch]$OriginalQuality,[switch]$ShowFPS,[switch]$Paddock,[switch]$House,[switch]$WoodedTrack,[switch]$TreeShadowTrial,[switch]$StockTreeShadows,[switch]$ConventionalCrownShadows,[switch]$RiverBend)
 $ErrorActionPreference='Stop'
+if($RiverBend -and (-not $Play -or $Paddock -or $House -or $WoodedTrack)){throw '-RiverBend requires play and one starting point'}
 if($WoodedTrack -and (-not $Play -or $House -or $Paddock)){throw '-WoodedTrack requires play and one starting point'}
 if($TreeShadowTrial -and (-not $Play -or $OriginalQuality)){throw '-TreeShadowTrial requires play with the measured LiDAR quality preset'}
 if($StockTreeShadows -and (-not $Play -or $TreeShadowTrial)){throw '-StockTreeShadows requires play and one shadow setting'}
@@ -31,6 +32,10 @@ if($WoodedTrack){
  $commands+=('BugItGo {0} {1} {2} 0 {3} 0' -f $pose.x,$pose.y,$pose.z,$pose.yaw)
 }
 if($ShowFPS){$commands+='stat fps'}
+if($RiverBend){
+ $commands+='EnableCheats'
+ $commands+='BugItGo -48310 -35680 4753 0 -108 0'
+}
 if($Paddock){
  $poses=Get-Content "$PSScriptRoot/Export/LidarStudy/Place/gs3-poses.json" -Raw | ConvertFrom-Json
  $pose=$poses[0]
