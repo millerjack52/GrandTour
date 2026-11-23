@@ -6,12 +6,17 @@ param(
     [switch]$SunsetStudy,
     [switch]$BroadleafStudy,
     [switch]$OriginalBroadleaf,
+    [switch]$RiverApproach,
+    [switch]$BeforeRiverReveal,
+    [switch]$VisualOnly,
+    [string]$ReplayDrive,
     [switch]$TimingOnly,
     [switch]$SavedBaseline
 )
 $ErrorActionPreference = 'Stop'
 $project = Get-Item -LiteralPath (Join-Path $ProjectRoot 'GrandTour.uproject')
 if($SavedBaseline -and $Stage -ne 'baseline'){throw 'The saved baseline can only be used for a baseline drive.'}
+if($BeforeRiverReveal -and (!$RiverApproach -or $Stage -ne 'candidate' -or $SavedBaseline)){throw 'Use the pre-reveal map with the dressed river approach.'}
 $reviewSettings=Join-Path $project.DirectoryName 'Saved_ForestAccessReview\Config\WindowsEditor'
 $null=New-Item -ItemType Directory -Path $reviewSettings -Force
 $liveSettings=Join-Path $project.DirectoryName 'Saved\Config\WindowsEditor\GameUserSettings.ini'
@@ -25,6 +30,9 @@ $previousSunset = $env:GT_BEND_SUNSET
 $previousCrown = $env:GT_BEND_CROWN_STUDY
 $previousOriginal = $env:GT_BEND_ORIGINAL_CROWN
 $previousTiming = $env:GT_BEND_TIMING_ONLY
+$previousRiver = $env:GT_BEND_RIVER_APPROACH
+$previousVisual = $env:GT_BEND_VISUAL_ONLY
+$previousReplay = $env:GT_BEND_REPLAY
 $previousMap = $env:GT_BEND_DRIVE_MAP
 $normalMap='/Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy'
 $env:GT_BEND_DRIVE_MAP=$normalMap
@@ -33,6 +41,12 @@ $env:GT_BEND_SUNSET = [int]$SunsetStudy.IsPresent
 $env:GT_BEND_CROWN_STUDY = [int]$BroadleafStudy.IsPresent
 $env:GT_BEND_ORIGINAL_CROWN = [int]$OriginalBroadleaf.IsPresent
 $env:GT_BEND_TIMING_ONLY = [int]$TimingOnly.IsPresent
+$env:GT_BEND_RIVER_APPROACH = [int]$RiverApproach.IsPresent
+$env:GT_BEND_VISUAL_ONLY = [int]$VisualOnly.IsPresent
+if($ReplayDrive){
+    if(!$RiverApproach -or !$VisualOnly){throw 'A recorded path is used with the visual river approach.'}
+    $env:GT_BEND_REPLAY=(Get-Item -LiteralPath $ReplayDrive).FullName
+}else{$env:GT_BEND_REPLAY=$null}
 $env:GT_BEND_DRIVE_OUTPUT = $output
 $env:GT_BEND_DRIVE_SCRIPT = (Join-Path $PSScriptRoot 'capture-bend.py').Replace('\','/')
 function Start-Process($FilePath,$ArgumentList) {
@@ -51,10 +65,16 @@ function Start-Process($FilePath,$ArgumentList) {
 }
 $launcher = Join-Path $project.DirectoryName 'Art\open_lidar_study.ps1'
 try {
-    if($SavedBaseline){
+    if($SavedBaseline -or $BeforeRiverReveal){
         $receipt=Get-Content -LiteralPath (Join-Path $project.DirectoryName 'Saved/ForestAccessBend/build.json') -Raw | ConvertFrom-Json
-        $backup=Join-Path $project.DirectoryName 'Saved/ForestAccessBend/BeforeForestAccess.umap'
-        if((Get-FileHash -LiteralPath $backup).Hash -ne $receipt.source_sha256){throw 'The original map backup failed its checksum.'}
+        if($BeforeRiverReveal){
+            $backup=$receipt.river_reveal.backup
+            $expected=$receipt.river_reveal.before_sha256
+        }else{
+            $backup=Join-Path $project.DirectoryName 'Saved/ForestAccessBend/BeforeForestAccess.umap'
+            $expected=$receipt.source_sha256
+        }
+        if((Get-FileHash -LiteralPath $backup).Hash -ne $expected){throw 'The map backup failed its checksum.'}
         $tempName='ForestAccessReview_'+[guid]::NewGuid().ToString('N')
         $copyFolder=New-Item -ItemType Directory -Path (Join-Path $project.DirectoryName ('Content/'+$tempName))
         $copyMap=Join-Path $copyFolder.FullName 'L_LidarStudy.umap'
@@ -70,6 +90,9 @@ try {
     $env:GT_BEND_CROWN_STUDY = $previousCrown
     $env:GT_BEND_ORIGINAL_CROWN = $previousOriginal
     $env:GT_BEND_TIMING_ONLY = $previousTiming
+    $env:GT_BEND_RIVER_APPROACH = $previousRiver
+    $env:GT_BEND_VISUAL_ONLY = $previousVisual
+    $env:GT_BEND_REPLAY = $previousReplay
     $env:GT_BEND_DRIVE_MAP = $previousMap
     if ($copyMap -and (Test-Path -LiteralPath $copyMap)){Remove-Item -LiteralPath $copyMap}
     if ($copyFolder -and !(Get-ChildItem -LiteralPath $copyFolder.FullName -Force)){Remove-Item -LiteralPath $copyFolder.FullName}
@@ -78,5 +101,5 @@ if(Test-Path -LiteralPath (Join-Path $output 'error.txt')) { throw (Get-Content 
 $report=Get-Item -LiteralPath (Join-Path $output 'drive.json') -ErrorAction SilentlyContinue
 if(!$report){throw "Unreal produced no drive report at $output"}
 if(!(Get-Content -LiteralPath $report.FullName -Raw | ConvertFrom-Json).ok) {throw 'The pickup did not complete the bend.'}
-if(!(Get-ChildItem -LiteralPath $output -Filter 'timing.csv*')) {throw "The drive completed but the GPU timing trace is missing from $output"}
+if(!$VisualOnly -and !(Get-ChildItem -LiteralPath $output -Filter 'timing.csv*')) {throw "The drive completed but the GPU timing trace is missing from $output"}
 $output

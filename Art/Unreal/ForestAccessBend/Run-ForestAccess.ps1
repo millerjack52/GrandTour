@@ -5,7 +5,8 @@ param(
     [switch]$Preview,
     [switch]$PreviewOnly,
     [switch]$VerifyOnly,
-    [switch]$Broadleaf
+    [switch]$Broadleaf,
+    [switch]$RiverReveal
 )
 $ErrorActionPreference='Stop'
 $project=Get-Item -LiteralPath (Join-Path $ProjectRoot 'GrandTour.uproject')
@@ -51,6 +52,7 @@ try {
     }
     $stages=if($VerifyOnly){@('verify')}else{@('build','verify')}
     if ($Broadleaf -and !$VerifyOnly) {$stages=@('broadleaf','verify')}
+    if ($RiverReveal -and !$VerifyOnly) {$stages=@('river-reveal','verify')}
     foreach ($stage in $stages) {
         if (Get-Process UnrealEditor*,blender,Wardogs* -ErrorAction SilentlyContinue) {throw 'Another renderer is active.'}
         $env:GT_BEND_STAGE=$stage

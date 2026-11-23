@@ -642,7 +642,7 @@ def verify_placement(rows,r):
     if meadow:
         for k,v in r['meadow_crown'].items():assert abs(M.get_material_instance_scalar_parameter_value(leaf,k)-v)<.001
         assert r['woodland']['grass_fans']>0
-    if r.get('revision',1)>=7:
+    if 'broadleaf' in r:
         br=r['broadleaf']
         assert tree.static_mesh.get_path_name().split('.')[0]==br['mesh']
         assert [m.get_path_name() for m in list(tree.get_materials())[:2]]==br['near_materials']
@@ -693,6 +693,43 @@ def verify_placement(rows,r):
         v=cache[key].get_instance_transform(i,True).translation
         assert math.dist(v.to_tuple(),pos)<.15,(owner,comp,i)
     assert str(next(a for a in rows if isinstance(a,u.GTProceduralGround)).output_digest)==r['ground_digest']
+    if 'river_reveal' in r:
+        import river_reveal
+        river_reveal.verify(reveal_context(),rows,r['river_reveal'])
+        assert other_tree_digest(rows,None)==r['river_reveal']['tree_digest']
+        assert tree.static_mesh.get_name()==r['crown']['source']
+        assert math.dist(tree.get_instance_transform(0,True).translation.to_tuple(),r['crown']['position'])<.02
+
+def reveal_context():
+    from types import SimpleNamespace
+    return SimpleNamespace(actors=actors,road_samples=road_samples,FOLDER=FOLDER,OWNER=OWNER,
+                           E=E,new_actor=new_actor)
+
+def install_river_reveal():
+    import river_reveal
+    verify()
+    r=json.loads((OUT/'build.json').read_text())
+    if 'river_reveal' not in r:
+        assert r['revision']==6,'The river study starts with the approved original broadleaf'
+        old_hash=digest(MAPFILE)
+        candidates=list(OUT.glob('*-'+old_hash+'.umap'))
+        backup=candidates[0] if candidates else OUT/('BeforeRiverReveal-'+old_hash+'.umap')
+        if not backup.exists():
+            shutil.copyfile(MAPFILE,backup)
+        assert digest(backup)==old_hash
+        dump('before-river-reveal',r)
+        tree_digest=other_tree_digest(actors(),None)
+        changes=river_reveal.install(reveal_context(),r)
+        changes.update(before_sha256=old_hash,backup=str(backup),tree_digest=tree_digest)
+        r.update(revision=8,river_reveal=changes)
+    if r['river_reveal'].get('edges_version')==2:
+        return
+    r['river_reveal'].update(river_reveal.install(reveal_context(),r,refit=True))
+    r['revision']=9
+    verify_placement(actors(),r)
+    dump('placement',r)
+    assert L.save_current_level(),'River study save failed'
+    dump('build',r)
 def verify():
     rows=actors()
     manifest=OUT/'build.json'
@@ -721,6 +758,7 @@ try:
     if MODE=='survey':survey()
     elif MODE=='verify':verify()
     elif MODE=='broadleaf':grouped_broadleaf()
+    elif MODE=='river-reveal':install_river_reveal()
     elif MODE=='build':
         if any(a.get_actor_label()==OWNER for a in actors()):
             verify()

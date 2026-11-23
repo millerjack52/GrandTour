@@ -153,8 +153,13 @@ def run():
         return u.Vector(x,y,0)
     def station(pos):
         return route.nearest(pos.x,pos.y)[1]
-    start = at(22)
-    heading = route.at(22)[2]
+    river_approach = os.environ.get('GT_BEND_RIVER_APPROACH') == '1'
+    visual_only = os.environ.get('GT_BEND_VISUAL_ONLY') == '1'
+    # Finish just inside the river. Farther out the stock intake can flood
+    # and the amount of coasting depends on the frame-to-frame physics steps.
+    spawn_m, first_m, last_m = (2, 6, 72) if river_approach else (22, 27, 69)
+    start = at(spawn_m)
+    heading = route.at(spawn_m)[2]
     cmd("EnableCheats")
     cmd(f"BugItGo {start.x:.2f} {start.y:.2f} {ground(start.x,start.y)+150:.2f} 0 {heading:.3f} 0")
     cmd("r.SetRes 1600x900w")
@@ -168,16 +173,21 @@ def run():
     car.reset_driving_inputs()
     movement = car.get_chaos_movement()
     movement.set_handbrake_input(True)
-    if study_crown or original_crown or timing_only:
+    if study_crown or original_crown or timing_only or river_approach:
         cmd("gt.Lidar.AuditRenderPass warm")
     settle = time.monotonic() + 12
     while time.monotonic() < settle:
         yield
-    if study_crown or original_crown or timing_only:
+    if study_crown or original_crown or timing_only or river_approach:
         cmd("gt.Lidar.AuditRenderPass warm")
         for _ in range(12):yield
     position = car.get_actor_location()
     assert math.hypot(position.x-start.x,position.y-start.y) < 450, "Pickup missed the bend approach"
+    if os.environ.get('GT_BEND_REPLAY'):
+        from replay_reveal import replay
+        yield from replay(world,pc,car,added,route,ground,photo,out)
+        cmd('quit')
+        return
     yield from photo("approach")
     car.get_drivetrain().set_low_range(True)
     car.get_drivetrain().set_diff_lock(True)
@@ -190,14 +200,21 @@ def run():
     csv_before = set(csv_dir.glob("Profile*.csv*"))
     started = time.monotonic()
     path = []
-    while time.monotonic()-started < 100:
+    progress = []
+    snaps=[]
+    next_station=float(first_m)
+    if visual_only:
+        u.GameplayStatics.set_global_time_dilation(world,.32)
+    while time.monotonic()-started < (155 if visual_only else 100):
         position = car.get_actor_location()
         along = station(position)
         path.append([along,*position.to_tuple(),car.get_actor_up_vector().z])
-        if not csv_started and along >= 27:
+        if river_approach:
+            progress.append((along,time.monotonic()-started))
+        if not visual_only and not csv_started and along >= first_m:
             cmd("csvprofile start")
             csv_started = True
-        if along >= 69:
+        if along >= last_m:
             break
         target = at(along + 6)
         heading = math.degrees(math.atan2(target.y-position.y,target.x-position.x))
@@ -205,17 +222,25 @@ def run():
         car.set_raw_steer(max(-1,min(1,error/33)))
         movement.set_sleeping(False)
         movement.set_throttle_input(.72)
-        timed = 27 <= along <= 69
+        timed = not visual_only and first_m <= along <= last_m
+        if visual_only and along>=next_station:
+            snaps.append([len(snaps),along,time.monotonic()])
+            yield from photo("motion-%03d"%(len(snaps)-1))
+            next_station+=.4
         yield
     timed = False
+    if visual_only:
+        u.GameplayStatics.set_global_time_dilation(world,1.)
+        (out/'motion.json').write_text(json.dumps(snaps))
     if csv_started:
         cmd("csvprofile stop")
     movement.set_throttle_input(0)
     movement.set_brake_input(1)
     movement.set_handbrake_input(True)
-    ok = path[-1][0] >= 69 and min(r[-1] for r in path) > .70
+    ok = path[-1][0] >= last_m and min(r[-1] for r in path) > .70
     timings = sorted(samples)
     report = {"ok":ok, "saved_bend_actors":len(added), "station_start_m":path[0][0], "station_end_m":path[-1][0],
+              "timing_stations_m":[first_m,last_m],
               "timed_frames":len(samples), "p95_engine_tick_ms":timings[math.ceil(.95*len(timings))-1] if timings else None,
               "median_engine_tick_ms":statistics.median(timings) if timings else None,
               "path":path[::5]}
@@ -223,6 +248,10 @@ def run():
         driven_tree = next(c for a in added for c in a.get_components_by_class(u.InstancedStaticMeshComponent)
                            if 'ForestAccessPaintedTree' in map(str,c.component_tags))
         report['driven_tree'] = driven_tree.static_mesh.get_path_name()
+    if river_approach:
+        report['progress'] = progress
+        report['river_floor_present'] = any(c.static_mesh and c.static_mesh.get_name().startswith('SM_RiverFloor_')
+               for a in added for c in a.get_components_by_class(u.StaticMeshComponent))
     (out/"drive.json").write_text(json.dumps(report,indent=2))
     if timing_only:
         import shutil
@@ -289,6 +318,11 @@ def run():
         trunk=pilot.get_instance_transform(0,True).translation
         _,ts,to=route.nearest(trunk.x,trunk.y)
         views.append(('pilot-crown',roadside(ts-4,to-5,190),trunk+u.Vector(0,0,345)))
+    if river_approach:
+        views = [(label, roadside(s,0,235), roadside(end,offset,height))
+                 for label,s,end,offset,height in [
+                     ('early',19,34,0,130), ('turn',41,58,-1,120),
+                     ('verge',53,61,5,55), ('water',61,76,-1,115)]]
     for label,eye,look in views:
         cam.set_actor_location_and_rotation(eye,u.MathLibrary.find_look_at_rotation(eye,look),False,True)
         pc.set_view_target_with_blend(cam,0)
@@ -314,8 +348,8 @@ def run():
         shutil.copyfile(file,out/("timing"+"".join(file.suffixes)))
     if not ok:
         raise RuntimeError("Pickup did not traverse the full bend")
-    if os.environ.get("GT_BEND_MOTION")=="1":
-        if candidate:
+    if os.environ.get("GT_BEND_MOTION")=="1" and not visual_only:
+        if candidate and not river_approach:
             dressing=[a.static_mesh_component for a in added if isinstance(a,u.StaticMeshActor)
                    and a.static_mesh_component.static_mesh.get_name().startswith(('SM_ShoulderRelief_','SM_WoodlandFronds_'))]
             dressing.extend(c for a in added for c in a.get_components_by_class(u.InstancedStaticMeshComponent)
@@ -326,14 +360,18 @@ def run():
                 yield from profile_dressing(dressing,csv_dir)
         # Capture a separate pass so screenshot readback cannot affect the timing CSV.
         pc.set_view_target_with_blend(car,0)
-        cmd(f"BugItGo {start.x:.2f} {start.y:.2f} {ground(start.x,start.y)+150:.2f} 0 {route.at(22)[2]:.3f} 0")
+        cmd(f"BugItGo {start.x:.2f} {start.y:.2f} {ground(start.x,start.y)+150:.2f} 0 {route.at(spawn_m)[2]:.3f} 0")
         settle=time.monotonic()+3
         while time.monotonic()<settle:yield
         movement.set_handbrake_input(False)
         movement.set_brake_input(0)
         movement.set_target_gear(1,True)
-        snaps=[]; next_station=27.
-        timeout=time.monotonic()+60
+        snaps=[]; next_station=float(first_m)
+        if river_approach:
+            # The visual lap runs in slow simulation time to sample the chase view
+            # densely enough for playback. Timing always uses the preceding normal lap.
+            u.GameplayStatics.set_global_time_dilation(world,.28)
+        timeout=time.monotonic()+(240 if river_approach else 60)
         while time.monotonic()<timeout:
             p=car.get_actor_location()
             along=station(p)
@@ -346,10 +384,14 @@ def run():
             if along>=next_station:
                 snaps.append([len(snaps),along,time.monotonic()])
                 yield from photo("motion-%03d"%(len(snaps)-1))
-                next_station+=1.6
-            if along>=69:break
+                next_station+=.27 if river_approach else 1.6
+            if along>=last_m:break
             yield
         (out/"motion.json").write_text(json.dumps(snaps))
+        if river_approach:
+            u.GameplayStatics.set_global_time_dilation(world,1.)
+        if river_approach and (not snaps or snaps[-1][1]<last_m-1):
+            raise RuntimeError('The visual drive stopped short of the water.')
     if study_crown:
         yield from examine(pair,path,route,ground,cam,pc,cmd,photo,csv_dir,out)
     if os.environ.get('GT_BEND_SUNSET')=='1':
