@@ -69,11 +69,13 @@ The final fresh load checked material revision 4, 370 grouped grass fans and ter
 
 ## Small broadleaf at station 57 m
 
-The single 4.6 m broadleaf stands 10.2 m off the road centre. Its three detailed meshes use the original bark, painted leaf material and UVs. At build time the leaf cards gather around 12 branch groups. The first trial exposed the boughs but produced thin horizontal tiers. The saved version preserves more leaf spread along the boughs and lets the upper fans overlap. The far mesh uses four fresh colour and normal views baked from the grouped tree. Its side silhouettes cover 24–26% fewer texels than the original at the same alpha threshold.
+The **original broadleaf is the selected tree in the live map**. The restored map matches the pre-grouping file byte for byte. A fresh standalone pickup run (`candidate-20261123-182457-562`) loaded `FloraWorld/Canopy/SM_Canopy_1` and completed the bend. The following measurements document the earlier trial.
+
+The single 4.6 m broadleaf stands 10.2 m off the road centre. In the experimental duplicate its three detailed meshes use the original bark, painted leaf material and UVs. At build time the leaf cards gather around 12 branch groups. The first trial exposed the boughs but produced thin horizontal tiers. The second preserved more leaf spread along the boughs and let the upper fans overlap. The far mesh used four fresh colour and normal views baked from the grouped tree. Its side silhouettes covered 24–26% fewer texels than the original at the same alpha threshold.
 
 The four LODs retain 44,893, 22,447, 9,877 and 8 triangles. The tree occupies one existing instance. The bend verification fingerprints the transforms, mesh and material bindings of the other 159,238 instances under the canopy, midstorey and bend pine groups. The original map is recoverable from `Saved/ForestAccessBend/BeforeBroadleaf-d14d295d15d3fe3ae7ff8d11c379eca55aa74f7a705b799bc5de64b4172e3cab.umap`. The original small-tree mesh also remains available for runtime comparisons.
 
-Run the following from the project root after setting up the previous bend. The first command builds the local assets, applies the single placement and verifies a fresh load. The second records the saved chase drive, then replays passenger-side looks from the positions of that pickup. At each replay position the camera stays fixed while only the small tree switches. Four additional frames with the tree hidden locate its silhouette through neighbouring branches. Six alternating 128-frame GPU samples use the same road camera, separately from both the timing drive and screenshot readbacks.
+To reproduce the grouped-tree experiment on a study copy, run the following from that project's root after setting up the previous bend. The first command installs the experimental tree and verifies a fresh load. The second records the chase drive, then replays passenger-side looks from the positions of that pickup. At each replay position the camera stays fixed while only the small tree switches. Four additional frames with the tree hidden locate its silhouette through neighbouring branches. Six alternating 128-frame GPU samples use the same road camera, separately from both the timing drive and screenshot readbacks.
 
 ```powershell
 $bend = './Art/Unreal/ForestAccessBend'
@@ -91,7 +93,7 @@ The original visual run was `candidate-20261123-174641-445`. The final grouped r
 
 In the fixed road view, the three paired changes in median GPU time were −0.320, +0.070 and +0.011 ms. Median paired base-pass change was +0.001 ms and shadow depths changed by −0.030 ms. These are differences in whole-scene GPU passes with only this tree switched. The panel and the 21-second pickup and side-view clip are `broadleaf-window.jpg` and `broadleaf-drive-and-window.mp4` in the final run folder. The optional MP4 combines the two WebP comparisons.
 
-| Full 42 m drive, RTX 4050 Laptop GPU, milliseconds | Original, three drives | Saved grouped crown, two drives |
+| Full 42 m drive, RTX 4050 Laptop GPU, milliseconds | Original, three drives | Experimental grouped crown, two drives |
 |---|---:|---:|
 | Median frame time | 30.57–36.13 | 31.12–34.83 |
 | 95th-percentile frame time | 35.94–39.01 | 34.17–37.76 |
