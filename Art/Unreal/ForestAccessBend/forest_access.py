@@ -483,6 +483,25 @@ def middle_storey(report):
     report.update(revision=5,pines=len(placements))
     return report
 
+def meadow_crown(report):
+    owner=next(a for a in actors() if a.get_actor_label()==OWNER)
+    tree,=[c for c in owner.get_components_by_class(u.InstancedStaticMeshComponent)
+           if 'ForestAccessPaintedTree' in map(str,c.component_tags)]
+    slot=next(i for i,m in enumerate(tree.get_materials()) if m and m.get_name() in
+              ('MI_ForestAccessLeaf','MI_BendCanopyVolume'))
+    source=FOLDER+'/MI_ForestAccessLeaf'
+    target=FOLDER+'/MI_BendCanopyVolume'
+    mat=u.load_asset(target) if E.does_asset_exist(target) else E.duplicate_asset(source,target)
+    parameters={'CrownVolume':.75,'MapCrownVolume':.70,'CrownCard':.49,'CrownOcclusion':.48}
+    available={str(k) for k in M.get_scalar_parameter_names(mat)}
+    assert parameters.keys()<=available,(parameters.keys()-available)
+    for key,value in parameters.items():M.set_material_instance_scalar_parameter_value(mat,key,value)
+    M.update_material_instance(mat)
+    assert E.save_loaded_asset(mat,False)
+    owner.modify();tree.modify();tree.set_material(slot,mat)
+    report.update(revision=6,meadow_crown=parameters)
+    return report
+
 def install():
     rows=actors()
     road_pairs=[(a,road_samples(a)) for a in rows if isinstance(a,u.GTProceduralRoad)]
@@ -538,7 +557,7 @@ def install():
     report=dict(stage='built',approach=[round(ax,1),round(ay,1),round(terrain.height(ax,ay)+150,1)],yaw=round(heading,2),source_sha256=backup_hash,ground_digest=str(author.output_digest),
                 plants_moved=len(moves),reused_outcrop=reuse,rock_mesh=mesh.get_name(),
                 floors=floor_labels,litter=litter,habitat=habitat,crown=crown,moved=samples,hero=list(hero_tf.translation.to_tuple()))
-    report=middle_storey(recompose(facing_the_track(report)))
+    report=meadow_crown(middle_storey(recompose(facing_the_track(report))))
     dump('placement',report)
     assert L.save_current_level(),'Level save failed'
     return report
@@ -547,7 +566,8 @@ def verify_placement(rows,r):
     named={a.get_actor_label():a for a in rows}
     assert OWNER in named and all(n in named for n in r['floors'])
     rock=named[OWNER+'_Outcrop']
-    rock_mat='M_ForestAccessBeddedStone' if r.get('revision',1)>=4 else 'M_ForestAccessStone'
+    meadow=r.get('revision',1)>=6
+    rock_mat='M_BendMossLedges' if meadow else ('M_ForestAccessBeddedStone' if r.get('revision',1)>=4 else 'M_ForestAccessStone')
     assert rock.static_mesh_component.get_material(0).get_name()==rock_mat
     assert math.dist(rock.get_actor_location().to_tuple(),r['hero'])<.2
     habitat={c.static_mesh.get_name().removeprefix('SM_NZ_'):c.get_instance_count()
@@ -556,7 +576,12 @@ def verify_placement(rows,r):
     assert habitat==r['habitat'],(habitat,r['habitat'])
     tree,=[c for c in named[OWNER].get_components_by_class(u.InstancedStaticMeshComponent)
            if 'ForestAccessPaintedTree' in map(str,c.component_tags)]
-    assert tree.get_instance_count()==1 and any(m and m.get_name()=='MI_ForestAccessLeaf' for m in tree.get_materials())
+    leaf_name='MI_BendCanopyVolume' if meadow else 'MI_ForestAccessLeaf'
+    leaf=next(m for m in tree.get_materials() if m and m.get_name()==leaf_name)
+    assert tree.get_instance_count()==1
+    if meadow:
+        for k,v in r['meadow_crown'].items():assert abs(M.get_material_instance_scalar_parameter_value(leaf,k)-v)<.001
+        assert r['woodland']['grass_fans']>0
     if r.get('revision',1)>=2:
         ferns,=[c for c in named[OWNER].get_components_by_class(u.InstancedStaticMeshComponent)
                 if 'ForestAccessPaintedFerns' in map(str,c.component_tags)]
@@ -568,13 +593,18 @@ def verify_placement(rows,r):
             assert component.get_collision_enabled()==u.CollisionEnabled.NO_COLLISION
             ground_mat='M_BendPeatAndMoss' if r.get('revision',1)>=4 else 'M_BendMossPeat'
             expected=ground_mat if label.endswith('_ShoulderRelief') else 'M_BendBrushFoliage'
+            if meadow:expected='M_BendMossColonies' if label.endswith('_ShoulderRelief') else 'M_BendMeadowBlades'
             assert component.get_material(0).get_name()==expected
     if MODE=='verify' and r.get('revision',1)>=4:
-        assert E.get_metadata_tag(rock.static_mesh_component.get_material(0),'BendRockSurface')=='2'
-        assert E.get_metadata_tag(u.load_asset(FOLDER+'/M_BendPeatAndMoss'),'BendMossSurface')=='2'
-        assert E.does_asset_exist(FOLDER+'/T_BendMossLitterFields')
+        version='3' if meadow else '2'
+        assert E.get_metadata_tag(rock.static_mesh_component.get_material(0),'BendRockSurface')==version
+        ground=u.load_asset(FOLDER+('/M_BendMossColonies' if meadow else '/M_BendPeatAndMoss'))
+        assert E.get_metadata_tag(ground,'BendMossSurface')==('4' if meadow else version)
+        assert E.does_asset_exist(FOLDER+('/T_BendMossShoots' if meadow else '/T_BendMossLitterFields'))
     if r.get('revision',1)>=5:
-        if MODE=='verify':assert E.get_metadata_tag(u.load_asset(FOLDER+'/M_BendBrushFoliage'),'BendFoliageSurface')=='2'
+        if MODE=='verify':
+            blades=u.load_asset(FOLDER+('/M_BendMeadowBlades' if meadow else '/M_BendBrushFoliage'))
+            assert E.get_metadata_tag(blades,'BendFoliageSurface')==('3' if meadow else '2')
         grove,=[c for c in named[OWNER].get_components_by_class(u.InstancedStaticMeshComponent)
                 if 'ForestAccessPines' in map(str,c.component_tags)]
         assert grove.get_instance_count()==r['pines'] and not grove.evaluate_world_position_offset
@@ -607,8 +637,14 @@ def verify():
             else:r=staged
     verify_placement(rows,r)
     if not manifest.exists() or json.loads(manifest.read_text())!=r:dump('build',r)
-    dump('verified',dict(ok=True,revision=r.get('revision',1),plants_moved=r['plants_moved'],
-                         ground_digest=r['ground_digest'],project=str(ROOT),map_sha256=digest(MAPFILE)))
+    receipt=dict(ok=True,revision=r.get('revision',1),plants_moved=r['plants_moved'],
+                 ground_digest=r['ground_digest'],project=str(ROOT),map_sha256=digest(MAPFILE))
+    if r.get('revision',1)>=6:
+        moss=u.load_asset(FOLDER+'/M_BendMossColonies')
+        receipt.update(moss_version=E.get_metadata_tag(moss,'BendMossSurface'),
+                       moss_sha256=digest(MAPFILE.parent/'ForestAccessBend/M_BendMossColonies.uasset'),
+                       grass_fans=r['woodland']['grass_fans'])
+    dump('verified',receipt)
 
 try:
     assert L.load_level(MAP),MAP
@@ -618,21 +654,18 @@ try:
         if any(a.get_actor_label()==OWNER for a in actors()):
             verify()
             report=json.loads((OUT/'build.json').read_text())
-            if report.get('revision',1)<5:
-                if report.get('revision',1)<2:report=facing_the_track(report)
-                if report.get('revision',1)<4:report=recompose(report)
-                report=middle_storey(report)
-                from forest_floor import material
-                material(FOLDER,True)
+            if report.get('revision',1)<6:
+                old_revision=report.get('revision',1)
+                if old_revision<2:report=facing_the_track(report)
+                report=recompose(report)
+                if old_revision<5:report=middle_storey(report)
+                report=meadow_crown(report)
                 dump('placement',report)
                 assert L.save_current_level(),'Level save failed'
                 dump('build',report)
             else:
                 from forest_floor import material
-                from bend_rock import painted_rock
                 material(FOLDER,False)
-                material(FOLDER,True)
-                painted_rock(FOLDER)
         else:dump('build',install())
     else:raise ValueError(MODE)
     dump(MODE+'-session',dict(receipt=os.environ.get('GT_BEND_RECEIPT'),ok=True))

@@ -55,6 +55,52 @@ def profile_dressing(components,csv_dir):
     finally:
         for component in components:component.set_visibility(True)
 
+def sunset_study(actors,cam,car,roadside,ground):
+    """Compare a low cross-light against saved daylight in the running game."""
+    suns=[a for a in actors if isinstance(a,u.DirectionalLight) and a.light_component.visible]
+    sun=next((a for a in suns if a.get_actor_label()=='Sun'),None) or max(suns,key=lambda a:a.light_component.intensity)
+    light=sun.light_component
+    rotation=sun.get_actor_rotation()
+    intensity=light.intensity
+    temperature=light.temperature
+    kelvin=light.use_temperature
+    poses=json.loads((here.parents[1]/'lidar_driving_baseline_poses.json').read_text())
+    paddock=next(p for p in poses if p['name']=='paddock_mid')
+    x,y=paddock['x'],paddock['y']
+    vista=u.Vector(x,y,ground(x,y)+225)
+    yaw=math.radians(paddock['yaw'])
+    views=[('bend',roadside(40,.4,245),roadside(55,-3,83)),
+           ('woods',roadside(51,0,180),roadside(56,11,125)),
+           ('ridge',vista,vista+u.Vector(20000*math.cos(yaw),20000*math.sin(yaw),80))]
+    def daylight():
+        sun.set_actor_rotation(rotation,False)
+        light.set_temperature(temperature);light.set_editor_property('use_temperature',kelvin)
+        light.set_intensity(intensity)
+    try:
+        for name,eye,look in views:
+            if name=='ridge':
+                pc.set_view_target_with_blend(car,0)
+                cmd(f"BugItGo {x:.2f} {y:.2f} {vista.z-80:.2f} 0 {paddock['yaw']:.3f} 0")
+            cam.set_actor_location_and_rotation(eye,u.MathLibrary.find_look_at_rotation(eye,look),False,True)
+            pc.set_view_target_with_blend(cam,0)
+            for mode in ('daylight','low-sun'):
+                if mode=='low-sun':
+                    sun.set_actor_rotation(u.Rotator(pitch=-11,yaw=54),False)
+                    light.set_editor_property('use_temperature',True)
+                    light.set_temperature(4050.)
+                    light.set_intensity(.67*intensity)
+                    assert abs(sun.get_actor_rotation().pitch+11)<.1
+                end=time.monotonic()+5
+                while time.monotonic()<end:yield
+                yield from photo('study-'+name+'-'+mode)
+            daylight()
+    finally:daylight()
+    (out/'sunset-study.json').write_text(json.dumps(dict(
+        original_pitch=rotation.pitch,original_yaw=rotation.yaw,original_intensity=intensity,
+        original_temperature=temperature,study_pitch=-11,study_yaw=54,study_kelvin=4050,
+        study_intensity=.67*intensity,restored_pitch=sun.get_actor_rotation().pitch,
+        restored_intensity=light.intensity),indent=2))
+
 def run():
     global world, pc, timed
     deadline = time.monotonic() + 90
@@ -80,7 +126,7 @@ def run():
         raise RuntimeError("The running map does not match the requested comparison stage.")
     if candidate:
         stone=next(a for a in added if isinstance(a,u.StaticMeshActor) and a.static_mesh_component.get_material(0)
-                   and a.static_mesh_component.get_material(0).get_name() in ("M_ForestAccessStone","M_ForestAccessBeddedStone"))
+                   and a.static_mesh_component.get_material(0).get_name() in ("M_ForestAccessStone","M_ForestAccessBeddedStone","M_BendMossLedges"))
     ignored=[a for a in actors if not isinstance(a,(u.Landscape,u.GTRoadReliefTile))]
     def ground(x,y):
         hit=u.SystemLibrary.line_trace_single(world,u.Vector(x,y,25000),u.Vector(x,y,-5000),
@@ -201,6 +247,11 @@ def run():
         views.extend([("landmark",roadside(rock_station-3,side*1.1,150),centre),
                       ("landmark-high",roadside(rock_station-3,rock_offset-side*2.3,290),centre),
                       ("colony",roadside(54,3.5,110),roadside(56,10.2,65))])
+        pilot=next(c for a in added for c in a.get_components_by_class(u.InstancedStaticMeshComponent)
+                   if 'ForestAccessPaintedTree' in map(str,c.component_tags))
+        trunk=pilot.get_instance_transform(0,True).translation
+        _,ts,to=route.nearest(trunk.x,trunk.y)
+        views.append(('pilot-crown',roadside(ts-4,to-5,190),trunk+u.Vector(0,0,345)))
     for label,eye,look in views:
         cam.set_actor_location_and_rotation(eye,u.MathLibrary.find_look_at_rotation(eye,look),False,True)
         pc.set_view_target_with_blend(cam,0)
@@ -208,6 +259,17 @@ def run():
         while time.monotonic()<end:
             yield
         yield from photo(label)
+        if label in ('interior','floor') and os.environ.get('GT_BEND_ISOLATE_MOSS')=='1':
+            for family,stem in [('earth','SM_ShoulderRelief_'),('hummocks','SM_NZ_MossHummock')]:
+                matches=[c for a in actors for c in a.get_components_by_class(u.StaticMeshComponent)
+                         if c.visible and c.static_mesh and c.static_mesh.get_name().startswith(stem)]
+                try:
+                    for c in matches:c.set_visibility(False)
+                    for _ in range(32):yield
+                    yield from photo(label+'-without-'+family)
+                finally:
+                    for c in matches:c.set_visibility(True)
+                for _ in range(32):yield
     csv_paths=set(csv_dir.glob("Profile*.csv*"))-csv_before
     if csv_paths:
         import shutil
@@ -251,6 +313,8 @@ def run():
             if along>=69:break
             yield
         (out/"motion.json").write_text(json.dumps(snaps))
+    if os.environ.get('GT_BEND_SUNSET')=='1':
+        yield from sunset_study(actors,cam,car,roadside,ground)
     cmd("quit")
 
 worker = run()

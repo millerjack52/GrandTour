@@ -27,7 +27,8 @@ foreach($path in @($EditorCmd,$authoring,(Join-Path $project.DirectoryName 'Art\
 $null=New-Item -ItemType Directory -Path $reportDir -Force
 $python=Join-Path $project.DirectoryName 'Saved\Tools\TerrainPython\Scripts\python.exe'
 if (!(Test-Path -LiteralPath $python)) {$python='python'}
-if (!$VerifyOnly -and (!(Test-Path -LiteralPath (Join-Path $reportDir 'T_ForestAccessFloor.tga')) -or
+if (!$VerifyOnly -and (!(Test-Path -LiteralPath (Join-Path $reportDir 'T_BendMossShoots.tga')) -or
+                       !(Test-Path -LiteralPath (Join-Path $reportDir 'T_ForestAccessFloor.tga')) -or
                        !(Test-Path -LiteralPath (Join-Path $reportDir 'T_BendMossLitterFields.tga')))) {
     & $python (Join-Path $PSScriptRoot 'bake_floor.py') --output-dir $reportDir
     if ($LASTEXITCODE -ne 0) {throw 'The forest floor texture bake failed.'}

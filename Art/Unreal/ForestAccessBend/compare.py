@@ -49,6 +49,38 @@ def sheet(before, after, shots, output):
                 sheet.paste(image.convert("RGB").resize((width, height), Image.Resampling.LANCZOS), (x, y+label))
     sheet.save(output, quality=92, subsampling=0)
 
+def moss_comparison(before,after):
+    width=650
+    panel=Image.new('RGB',(width*2,620),(28,31,29))
+    draw=ImageDraw.Draw(panel)
+    try:font=ImageFont.truetype('segoeui.ttf',19)
+    except OSError:font=ImageFont.load_default()
+    for col,(run,title) in enumerate(((before,'Previous bend'),(after,'Revised bend'))):
+        with Image.open(run/'interior.png') as frame:
+            frame=frame.convert('RGB')
+            x=col*width
+            draw.text((x+10,4),title,font=font,fill='white')
+            panel.paste(frame.resize((width,366),Image.Resampling.LANCZOS),(x,32))
+            draw.text((x+10,402),'Same frame, foreground detail',font=font,fill='white')
+            w,h=frame.size
+            box=(round(.31*w),round(.67*h),round(.84*w),round(.94*h))
+            panel.paste(frame.crop(box).resize((width,186),Image.Resampling.LANCZOS),(x,432))
+    panel.save(after/'moss-and-grass.jpg',quality=94,subsampling=0)
+
+def sunset_comparison(run):
+    shots=[('ridge','Open ridge'),('woods','Forest interior'),('bend','Approach')]
+    panel=Image.new('RGB',(1120,3*343),(28,31,29))
+    draw=ImageDraw.Draw(panel)
+    try:font=ImageFont.truetype('segoeui.ttf',17)
+    except OSError:font=ImageFont.load_default()
+    for row,(name,caption) in enumerate(shots):
+        for col,(key,lighting) in enumerate((('daylight','Saved daylight'),('low-sun','Low sun study'))):
+            with Image.open(run/f'study-{name}-{key}.png') as frame:
+                x,y=col*560,row*343
+                draw.text((x+9,y+2),lighting+'   /   '+caption,font=font,fill='white')
+                panel.paste(frame.convert('RGB').resize((560,315),Image.Resampling.LANCZOS),(x,y+27))
+    panel.save(run/'sunset-comparison.jpg',quality=94,subsampling=0)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
@@ -57,6 +89,10 @@ if __name__ == "__main__":
     parser.add_argument("--reference", type=Path, help="Original woodland daylight reference image.")
     args = parser.parse_args()
     before, after = args.before, args.after
+    if (after/'sunset-study.json').exists():sunset_comparison(after)
+    if (before/'pilot-crown.png').exists() and (after/'pilot-crown.png').exists():
+        moss_comparison(before,after)
+        sheet(before,after,[('pilot-crown','Trial broadleaf'),('landmark','Rock shelves')],after/'crown-and-stone.jpg')
     for run in (before, after):
         if not json.loads((run/"drive.json").read_text())["ok"]:
             raise ValueError(f"Drive incomplete in {run}")

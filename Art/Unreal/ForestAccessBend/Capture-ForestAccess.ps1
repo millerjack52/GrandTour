@@ -3,6 +3,7 @@ param(
     [string]$ProjectRoot = (Join-Path $PSScriptRoot '..\..\..'),
     [Parameter(Mandatory)][ValidateSet('baseline','candidate')][string]$Stage,
     [switch]$Motion,
+    [switch]$SunsetStudy,
     [switch]$SavedBaseline
 )
 $ErrorActionPreference = 'Stop'
@@ -17,10 +18,12 @@ $null = New-Item -ItemType Directory -Path $output -Force
 $previousOutput = $env:GT_BEND_DRIVE_OUTPUT
 $previousScript = $env:GT_BEND_DRIVE_SCRIPT
 $previousMotion = $env:GT_BEND_MOTION
+$previousSunset = $env:GT_BEND_SUNSET
 $previousMap = $env:GT_BEND_DRIVE_MAP
 $normalMap='/Game/GrandTour/ArtTests/LidarStudy/L_LidarStudy'
 $env:GT_BEND_DRIVE_MAP=$normalMap
 $env:GT_BEND_MOTION = [int]$Motion.IsPresent
+$env:GT_BEND_SUNSET = [int]$SunsetStudy.IsPresent
 $env:GT_BEND_DRIVE_OUTPUT = $output
 $env:GT_BEND_DRIVE_SCRIPT = (Join-Path $PSScriptRoot 'capture-bend.py').Replace('\','/')
 function Start-Process($FilePath,$ArgumentList) {
@@ -54,6 +57,7 @@ try {
     $env:GT_BEND_DRIVE_OUTPUT = $previousOutput
     $env:GT_BEND_DRIVE_SCRIPT = $previousScript
     $env:GT_BEND_MOTION = $previousMotion
+    $env:GT_BEND_SUNSET = $previousSunset
     $env:GT_BEND_DRIVE_MAP = $previousMap
     if ($copyMap -and (Test-Path -LiteralPath $copyMap)){Remove-Item -LiteralPath $copyMap}
     if ($copyFolder -and !(Get-ChildItem -LiteralPath $copyFolder.FullName -Force)){Remove-Item -LiteralPath $copyFolder.FullName}

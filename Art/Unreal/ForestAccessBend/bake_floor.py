@@ -62,3 +62,34 @@ for _ in range(1300):
             brush.polygon([(x+xx+a,y+yy+b) for a,b in shape],fill=shade)
 field=np.dstack((cover,cushion,np.asarray(litter)/255))
 Image.fromarray(np.uint8(field*255)).save(out.with_name('T_BendMossLitterFields.tga'))
+
+# A repeatable 72 cm swatch. Paint overlapping fronds in rosettes; the three
+# channels carry colony shape, tip pigment and relief in a single masked texture.
+def moss_swatch():
+    cover = .64 * periodic(6) + .25 * periodic(13) + .11 * periodic(31)
+    relief = np.array(cover * .48)
+    tips = np.zeros_like(cover)
+    for _ in range(420):
+        x, y = rng.uniform(0, size, 2)
+        phase = rng.uniform(0, math.tau)
+        radius = rng.uniform(5, 18)
+        for n in range(7):
+            angle = phase + n * 2.4 + rng.uniform(-.27, .27)
+            c, s = math.cos(angle), math.sin(angle)
+            length = radius * rng.uniform(.6, 1.15)
+            width = length * rng.uniform(.14, .25)
+            r = math.ceil(length + width + 1)
+            iy, ix = np.mgrid[int(y)-r:int(y)+r+1, int(x)-r:int(x)+r+1]
+            along = ((ix-x)*c + (iy-y)*s) / length
+            across = (-(ix-x)*s + (iy-y)*c) / width
+            profile = np.maximum(0., 1.-abs(across-.36*along**2)
+                                 / np.maximum(.10, np.sin(np.pi*np.clip(along, 0, 1))**.67))
+            profile *= (along>0) & (along<1)
+            idx = (iy % size, ix % size)
+            base = cover[int(y), int(x)] * .42
+            relief[idx] = np.maximum(relief[idx], (base + profile*.46)*(profile>0))
+            tips[idx] = np.maximum(tips[idx], profile*np.clip(.20 + .85*along, 0, 1))
+    packed = np.dstack([cover, tips, relief]).clip(0, 1)
+    Image.fromarray(np.uint8(packed*255)).save(out.with_name('T_BendMossShoots.tga'))
+
+moss_swatch()

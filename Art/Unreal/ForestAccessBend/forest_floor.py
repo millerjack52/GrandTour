@@ -17,13 +17,30 @@ def mix(a,b,t):
     return tuple(x+(y-x)*clamp(t) for x,y in zip(a,b))
 
 
+def moss_texture(folder):
+    name='T_BendMossShoots'
+    texture=u.load_asset(folder+'/'+name) if u.EditorAssetLibrary.does_asset_exist(folder+'/'+name) else None
+    if not texture:
+        from pathlib import Path
+        task=u.AssetImportTask()
+        task.filename=str(Path(u.Paths.project_dir()).resolve()/'Saved/ForestAccessBend'/(name+'.tga'))
+        task.destination_path=folder;task.automated=True;task.save=True
+        u.AssetToolsHelpers.get_asset_tools().import_asset_tasks([task])
+        texture=u.load_asset(folder+'/'+name)
+        assert texture,name
+        texture.set_editor_property('srgb',False)
+        texture.set_editor_property('compression_settings',u.TextureCompressionSettings.TC_MASKS)
+        assert u.EditorAssetLibrary.save_loaded_asset(texture,False)
+    return texture
+
+
 def material(folder, plants):
-    name='M_BendBrushFoliage' if plants else 'M_BendPeatAndMoss'
+    name='M_BendMeadowBlades' if plants else 'M_BendMossColonies'
     path=folder+'/'+name
     assets=u.EditorAssetLibrary
     if assets.does_asset_exist(path):
         mat=u.load_asset(path)
-        tag,version=('BendFoliageSurface','2') if plants else ('BendMossSurface','2')
+        tag,version=('BendFoliageSurface','3') if plants else ('BendMossSurface','4')
         if assets.get_metadata_tag(mat,tag)==version:return mat
         u.MaterialEditingLibrary.delete_all_material_expressions(mat)
     else:mat=u.AssetToolsHelpers.get_asset_tools().create_asset(name,folder,u.Material,u.MaterialFactoryNew())
@@ -35,6 +52,7 @@ def material(folder, plants):
         uv=g.node(u.MaterialExpressionTextureCoordinate)
         pigment=g.custom(['C','UV','P','Centre'],'''
 float2 q=(P.xy-Centre.xy)*.01;
+if (UV.x>1.5) return C;
 float beds=.61*sin(q.x*.55+q.y*.72)+.39*sin(q.y*.94-q.x*.21);
 float fern=smoothstep(.008,.039,C.g-C.r)*smoothstep(.018,.075,C.g-C.b);
 float3 bronze=lerp(float3(.095,.042,.022),float3(.307,.158,.059),smoothstep(.032,.185,C.g));
@@ -51,34 +69,25 @@ return pigment*(1.+.24*midrib-.075*(1.-smoothstep(.05,.22,vane)));
         base='/Game/GrandTour/ArtTests/LidarStudy/FirstSection/'
         peat=u.load_asset(base+'PeatMoss/T_PM_PeatColour')
         packed=u.load_asset(base+'PeatMoss/T_PM_PeatData')
-        field_path=folder+'/T_BendMossLitterFields'
-        if not assets.does_asset_exist(field_path):
-            from pathlib import Path
-            task=u.AssetImportTask()
-            task.filename=str(Path(u.Paths.project_dir()).resolve()/'Saved/ForestAccessBend/T_BendMossLitterFields.tga')
-            task.destination_path=folder;task.automated=True;task.save=True
-            u.AssetToolsHelpers.get_asset_tools().import_asset_tasks([task])
-        field=u.load_asset(field_path)
-        assert field,field_path
-        field.set_editor_property('srgb',False)
-        field.set_editor_property('compression_settings',u.TextureCompressionSettings.TC_MASKS)
-        assert assets.save_loaded_asset(field,False)
+        field=moss_texture(folder)
         p=g.node(u.MaterialExpressionWorldPosition)
         normal=g.node(u.MaterialExpressionVertexNormalWS)
-        surf=g.custom(['Paint','P','Peat','Packed','Fields'],'''
-float2 uv=(P.xy-float2(-53000,-32000))/148.;
+        surf=g.custom(['Paint','P','Up','Peat','Packed','Fields'],'''
+float2 uv=P.xy/148.;
 float4 peat=Texture2DSample(Peat,View.MaterialTextureBilinearWrapedSampler,uv);
 float4 data=Texture2DSample(Packed,View.MaterialTextureBilinearWrapedSampler,uv);
-float3 field=Texture2DSample(Fields,View.MaterialTextureBilinearWrapedSampler,float2(uv.y+.21*uv.x,-uv.x)*.37).rgb;
-float patch=smoothstep(.38,.68,.75*field.r+.39*Paint.g+.10*field.g);
-float3 moss=lerp(float3(.046,.061,.025),float3(.144,.157,.064),smoothstep(.19,.81,field.g));
-float3 soil=lerp(float3(.085,.061,.039),peat.rgb*float3(1.12,1.00,.85),.77);
-float litter=field.b*(1.-.76*patch);
-Height=lerp(data.r*1.90,field.g*.75+peat.a*.26+data.r*.34,patch)+.14*litter;
-float3 surface=lerp(soil,moss*(.89+.18*peat.a),patch);
-return lerp(surface,float3(.183,.102,.043)*(.75+.5*field.g),litter*.68)*lerp(.86,1.05,data.b);
+float3 field=Texture2DSample(Fields,View.MaterialTextureBilinearWrapedSampler,P.xy/72.).rgb;
+float2 colonies=float2(.89*P.x+.46*P.y,-.46*P.x+.89*P.y)/280.;
+float bed=Texture2DSample(Fields,View.MaterialTextureBilinearWrapedSampler,colonies).r;
+float growth=.30*Paint.g+.49*bed+.16*field.r+.09*field.b+.07*smoothstep(.65,.97,Up.z);
+float patch=smoothstep(.537,.622,growth);
+float fibres=saturate(dot(peat.rgb,float3(.26,.57,.17))*4.4);
+float3 soil=lerp(float3(.027,.020,.015),float3(.092,.065,.042),fibres)*lerp(.78,1.17,data.r);
+float3 moss=lerp(float3(.035,.050,.018),float3(.132,.148,.049),saturate(field.r*.53+field.g*.94));
+Height=lerp(data.r*1.65,field.b*.84+field.r*.70,patch);
+return lerp(soil,moss,patch)*lerp(.87,1.04,data.b);
 ''',outputs=[('Height',u.CustomMaterialOutputType.CMOT_FLOAT1)])
-        g.wire(col,surf,'Paint');g.wire(p,surf,'P')
+        g.wire(col,surf,'Paint');g.wire(p,surf,'P');g.wire(normal,surf,'Up')
         g.wire(g.node(u.MaterialExpressionTextureObject,texture=field,sampler_type=u.MaterialSamplerType.SAMPLERTYPE_MASKS),surf,'Fields')
         for pin,t in [('Peat',peat),('Packed',packed)]:
             assert t,pin
@@ -93,7 +102,7 @@ return lerp(surface,float3(.183,.102,.043)*(.75+.5*field.g),litter*.68)*lerp(.86
     g.output(g.scalar(.88),u.MaterialProperty.MP_ROUGHNESS)
     g.output(g.scalar(.14),u.MaterialProperty.MP_SPECULAR)
     assert not u.MaterialEditingLibrary.recompile_material(mat)
-    assets.set_metadata_tag(mat,'BendFoliageSurface' if plants else 'BendMossSurface','2')
+    assets.set_metadata_tag(mat,'BendFoliageSurface' if plants else 'BendMossSurface','3' if plants else '4')
     assert u.EditorAssetLibrary.save_loaded_asset(mat,False)
     return mat
 
@@ -129,7 +138,12 @@ def build(road, ground, roads, water, folder, spawn, prefix, stone):
         channel=clamp((.57-abs(math.sin(.46*s+1.14*d+.77*math.sin(.29*s))))/.57)
         h*=1-.55*channel
         rim=clamp((abs(d)-3.55)/1.0)*clamp((s-27)/1.4)*clamp((69-s)/1.4)
-        return (h*(.91+.20*phase)-11)*rim-4,clamp(moss*.91+.25*phase-.51*channel)
+        # Let fingers of exposed soil pass between colonies. Low wet peat and
+        # root shoulders rise a few centimetres, with occasional higher spines.
+        fold=math.sin(.79*s+.96*d+.89*math.sin(d*1.26))*.5+.5
+        lift=h*(.30+.24*fold)+4.5*phase-7
+        cover=clamp(.68*moss+.38*fold+.25*phase-.40*channel-.09)
+        return lift*rim-3,cover,clamp(moss*.91+.25*phase-.51*channel)
     segments=[]
     for r in roads:
         for a,b in zip(r.points,r.points[1:]):
@@ -149,14 +163,15 @@ def build(road, ground, roads, water, folder, spawn, prefix, stone):
     nearby=[i for i,s in enumerate(road.stations) if 18<=s<=82]
     lo,hi=nearby[0]-1,nearby[-1]+2
     local=Road(road.points[lo:hi],road.stations[lo:hi])
-    step=38.
+    step=29.
     grid={}
-    for i in range(-90,91):
-        for j in range(-90,91):
+    radius=math.ceil(3400/step)
+    for i in range(-radius,radius+1):
+        for j in range(-radius,radius+1):
             x,y=x0+i*step,y0+j*step
             _,s,d=local.nearest(x,y)
             if not (26<s<70 and 3.55<=abs(d)<15):continue
-            h,m=field(s,d)
+            h,m,_=field(s,d)
             if h<-10 or not safe(x,y):continue
             grid[i,j]=(x,y,h,m)
     indices={};heights={}
@@ -165,7 +180,8 @@ def build(road, ground, roads, water, folder, spawn, prefix, stone):
                   ((1,0),(-1,0),(0,1),(0,-1),(1,1),(-1,1),(1,-1),(-1,-1)))),4)
         h=-16+(h+16)*clamp((r-1)/2)
         heights[i,j]=h
-        indices[i,j]=vert(earth,x,y,ground.height(x,y)+h,(.20,.04+.90*m,.12),(x/148,y/148))
+        burial=clamp((h+2)/10)
+        indices[i,j]=vert(earth,x,y,ground.height(x,y)+h,(.20,(.05+.90*m)*burial,.12),(x/148,y/148))
     for i,j in grid:
         for keys in (((i,j),(i+1,j),(i,j+1)),((i+1,j),(i+1,j+1),(i,j+1))):
             if all(k in indices for k in keys) and max(heights[k] for k in keys)>-8:
@@ -179,7 +195,7 @@ def build(road, ground, roads, water, folder, spawn, prefix, stone):
         z=ground.height(x,y)
         if all(k in indices for k,_ in weights):
             z=max(z,sum((earth['v'][indices[k]][2]*100+z0)*w for k,w in weights))
-        return x,y,z,field(s,d)[1]
+        return x,y,z,field(s,d)[2]
     fern_count=leaf_count=0
     for i,(cs,cd,rs,rd,_) in enumerate(lobes):
         # Each colony shares a pigment family. Bronze is restricted to two colonies.
@@ -249,7 +265,39 @@ def build(road, ground, roads, water, folder, spawn, prefix, stone):
             ids=[vert(foliage,x+dx*a-dy*b,y+dy*a+dx*b,z+h,c,((b/w+1)*.5,(a/l+1)*.5)) for a,b,h in points]
             for a,b,c in ((0,1,2),(0,2,4),(1,3,2),(2,3,4)):face(foliage,ids[a],ids[b],ids[c])
             leaf_count+=1
-    audit=dict(ferns=fern_count,leaves=leaf_count,meshes={})
+    # Open, leaning grass fans form islands along the transitions. Bake their
+    # silhouettes and a shared pigment per group into the existing foliage draw.
+    grass_rng=random.Random(64507)
+    grass_count=0
+    for cs,cd,rs,rd,_ in lobes:
+        for _ in range(13):
+            station=cs+grass_rng.uniform(-rs*.77,rs*.77)
+            offset=cd+grass_rng.uniform(-rd*.94,rd*.94)
+            yaw=grass_rng.uniform(0,math.tau)
+            warm=.5+.5*math.sin(station*.39+offset*.51)
+            base=mix((.038,.055,.023),(.070,.077,.028),warm)
+            tip=mix((.104,.155,.052),(.175,.197,.070),warm)
+            for fan in range(grass_rng.randint(3,7)):
+                s=station+grass_rng.gauss(0,.53);d=offset+grass_rng.gauss(0,.38)
+                x,y,z,m=surface(s,d)
+                if not (27.4<s<68.6 and 3.98<abs(d)<14.5 and safe(x,y) and .12<m<.83):continue
+                if math.hypot(x-stone[0],y-stone[1])<145:continue
+                grass_count+=1
+                tilt=yaw+grass_rng.uniform(-.55,.55)
+                for blade in range(grass_rng.randint(6,11)):
+                    a=tilt+grass_rng.uniform(-1.6,1.6)
+                    dx,dy=math.cos(a),math.sin(a)
+                    h=grass_rng.uniform(10,29);reach=h*grass_rng.uniform(.4,.95)
+                    w=grass_rng.uniform(1.1,2.7)
+                    bx=x+grass_rng.uniform(-5,5);by=y+grass_rng.uniform(-5,5)
+                    def blade_point(along,side,lift,t):
+                        return vert(foliage,bx+dx*along-dy*side,by+dy*along+dx*side,
+                                    z-1.1+lift,mix(base,tip,t),(2.5,t))
+                    ids=[blade_point(0,-w*.58,0,0),blade_point(0,w*.58,0,0),
+                         blade_point(reach*.31,-w,h*.64,.65),blade_point(reach*.31,w,h*.64,.65),
+                         blade_point(reach,0,h,1)]
+                    for a,b,c in ((0,1,2),(1,3,2),(2,3,4)):face(foliage,ids[a],ids[b],ids[c])
+    audit=dict(ferns=fern_count,leaves=leaf_count,grass_fans=grass_count,meshes={})
     for name,p,plants in [('ShoulderRelief',earth,False),('WoodlandFronds',foliage,True)]:
         sig=hashlib.sha256(json.dumps(p,separators=(',',':')).encode()).hexdigest()[:10]
         path=folder+'/SM_'+name+'_'+sig
@@ -266,7 +314,7 @@ def build(road, ground, roads, water, folder, spawn, prefix, stone):
         a.modify()
         c=a.static_mesh_component
         c.modify()
-        c.set_static_mesh(mesh);c.set_collision_profile_name('NoCollision')
+        c.set_static_mesh(mesh);c.set_material(0,mat);c.set_collision_profile_name('NoCollision')
         c.set_editor_property('receives_decals',False)
         c.set_editor_property('cast_shadow',True)
         c.set_editor_property('visible_in_ray_tracing',False)
