@@ -6,6 +6,50 @@
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Pawn.h"
 #include "HAL/IConsoleManager.h"
+#include "Misc/FileHelper.h"
+
+bool AGTMixedGroundDetails::ImportVisualGrassDensity(const FString& File, FVector2D Origin, double Span)
+{
+    if ((GetWorld() && GetWorld()->IsGameWorld()) || Origin.ContainsNaN() || !FMath::IsFinite(Span) || Span <= 0)
+        return false;
+
+    TArray<uint8> Bytes;
+    if (!FFileHelper::LoadFileToArray(Bytes, *File) || Bytes.Num() < int32(sizeof(int32)))
+        return false;
+    int32 Size = 0;
+    FMemory::Memcpy(&Size, Bytes.GetData(), sizeof(Size));
+    if (Size < 2 || Size > 4096 || Bytes.Num() != int64(Size) * Size + int32(sizeof(Size)))
+        return false;
+
+    Modify();
+    VisualDensitySize = Size;
+    VisualDensitySpan = Span;
+    VisualDensityOrigin = Origin;
+    VisualDensity.Reset(Size * Size);
+    VisualDensity.Append(Bytes.GetData() + sizeof(Size), Size * Size);
+    return true;
+}
+
+float AGTMixedGroundDetails::VisualGrassDensityAt(FVector2D Point) const
+{
+    if (VisualDensitySize < 2 || VisualDensity.IsEmpty())
+        return 1.f;
+    const FVector2D UV = (Point - VisualDensityOrigin) / VisualDensitySpan;
+    if (UV.X < 0 || UV.Y < 0 || UV.X >= 1 || UV.Y >= 1)
+        return 1.f;
+
+    const FVector2D Texel = UV * VisualDensitySize - FVector2D(.5, .5);
+    const int32 X = FMath::FloorToInt(Texel.X);
+    const int32 Y = FMath::FloorToInt(Texel.Y);
+    auto Read = [&](int32 Col, int32 Row)
+    {
+        const int32 Last = VisualDensitySize - 1;
+        const int32 Index = FMath::Clamp(Row, 0, Last) * VisualDensitySize + FMath::Clamp(Col, 0, Last);
+        return VisualDensity[Index] / 255.f;
+    };
+    return FMath::BiLerp(Read(X, Y), Read(X + 1, Y), Read(X, Y + 1), Read(X + 1, Y + 1),
+                         float(Texel.X - X), float(Texel.Y - Y));
+}
 
 bool AGTMixedGroundDetails::FinishReviewStreaming()
 {
@@ -141,7 +185,7 @@ void AGTMixedGroundDetails::StreamDistantGrass(FVector2D Centre,double Deadline)
             ++Work;
             const FVector2D P=Position(K);
             const auto S=Surface->SampleSurface(P);
-            if(S.GrassCover<.15f || ClumpHash(K.X,K.Y,12)>FMath::Min(1.f,S.GrassCover*1.5f) || S.WaterDepthCm>2)continue;
+            if(S.GrassCover<.15f || S.WaterDepthCm>2 || ClumpHash(K.X,K.Y,12)>FMath::Min(1.f,S.GrassCover*1.5f)*VisualGrassDensityAt(P))continue;
             // GP2: paddock interiors (style G over .8) have no distant cards in clump mode; the ground material's pasture colour carries them. The band and verges keep them.
             if(bClumpActive && !bFarPasture && S.GrassCover>.8f)continue;
             const auto H=Surface->GroundHeightAt(FVector(P,0));if(!H.IsSet())continue;
@@ -234,7 +278,7 @@ bool AGTMixedGroundDetails::EvalClumpCell(FIntPoint K,double LatticeStep,bool bR
     const float ScaleMin=ClumpScaleMin,ScaleMax=FMath::Max(ClumpScaleMax,ClumpScaleMin);
     const int32 X=K.X,Y=K.Y;const FVector2D P=CellPosition(X,Y,LatticeStep,0,1);
     const auto S=Surface->SampleSurface(P);const float G=S.GrassCover;
-    if(G<.15f || ClumpHash(X,Y,2)>FMath::Min(1.f,G*1.5f) || S.WaterDepthCm>2)return false;
+    if(G<.15f || S.WaterDepthCm>2 || ClumpHash(X,Y,2)>FMath::Min(1.f,G*1.5f)*VisualGrassDensityAt(P))return false;
     const float Band=FMath::SmoothStep(.3f,.4f,G)*(1.f-FMath::SmoothStep(.7f,.8f,G));
     if((Band>.2f)!=bRank)return false;
     const auto H=Surface->GroundHeightAt(FVector(P,0));if(!H.IsSet())return false;
@@ -439,7 +483,7 @@ void AGTMixedGroundDetails::RefreshGrass(FVector2D Centre,bool bImmediate)
         const FVector2D P((X+.15+.7*Hash(X,Y,0))*Step,(Y+.15+.7*Hash(X,Y,1))*Step);
         if((P-GrassCentre).SizeSquared()>Radius*Radius)continue;
         const auto S=Surface->SampleSurface(P);
-        if(S.GrassCover<.15f || Hash(X,Y,2)>FMath::Min(1.f,S.GrassCover*1.5f) || S.WaterDepthCm>2)continue;
+        if(S.GrassCover<.15f || S.WaterDepthCm>2 || Hash(X,Y,2)>FMath::Min(1.f,S.GrassCover*1.5f)*VisualGrassDensityAt(P))continue;
         const auto H=Surface->GroundHeightAt(FVector(P,0));if(!H.IsSet())continue;
         // Rank band: style G .3 to .8 (the bush edge and verges). Soft window .3 to .4 in, .7 to .8 out so no hard line shows; every card in the band is
         // RankZ taller, and its straw colour varies per card (hash seed 6) so the band mottles instead of reading as one flat strip.

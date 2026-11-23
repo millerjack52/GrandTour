@@ -17,7 +17,7 @@ def closest(motion,station):
     return min(motion,key=lambda row:abs(row[1]-station))
 
 
-def panel(paths,caption,width=680):
+def panel(paths,caption,width=680,labels=('Before','River study')):
     height=width*9//16
     canvas=Image.new('RGB',(width*2,height+40),'#212723')
     draw=ImageDraw.Draw(canvas)
@@ -25,7 +25,7 @@ def panel(paths,caption,width=680):
         font=ImageFont.truetype('segoeui.ttf',19)
     except OSError:
         font=ImageFont.load_default()
-    for i,(p,label) in enumerate(zip(paths,['Before','River study'])):
+    for i,(p,label) in enumerate(zip(paths,labels)):
         with Image.open(p) as img:
             canvas.paste(img.convert('RGB').resize((width,height),Image.Resampling.LANCZOS),(i*width,40))
         draw.text((i*width+12,7),f'{label}   /   {caption}',fill='white',font=font)

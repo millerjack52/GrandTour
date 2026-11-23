@@ -38,7 +38,9 @@ def replay(world,pc,car,actors,road,ground,photo,out):
         rotation=u.MathLibrary.find_look_at_rotation(eye,look)
         cam.set_actor_location_and_rotation(eye,rotation,False,True)
         return list(eye.to_tuple())+list(rotation.to_tuple())
-    for i in range(133):
+    woodland_review=os.environ.get('GT_WOODLAND_FIELD_REVIEW')=='1'
+    identify=os.environ.get('GT_WOODLAND_IDENTIFY')=='1'
+    for i in range(0,0 if identify else 133,4 if woodland_review else 1):
         s=6+i*.5
         p=position(s)
         forward=position(s+1)-position(s-1)
@@ -64,6 +66,23 @@ def replay(world,pc,car,actors,road,ground,photo,out):
         for _ in range(28):
             yield
         yield from photo(label)
+    if woodland_review:
+        root=Path(u.Paths.project_dir()).resolve()
+        guide=json.loads((root/'Art/Export/LidarStudy/Place/prepare.json').read_text())['captures']['Bush_track']
+        x,y=guide['pos_cm'];tx,ty=guide['target_cm']
+        w=[('bush-entry',(x,y),(tx,ty),160,140),('bush-interior',(x,y),(x+820,y-420),165,70),
+           ('bush-downhill',(tx,ty),(tx-(tx-x)*.6,ty-(ty-y)*.6),160,100)]
+        for label,(x,y),(tx,ty),h,eh in w:
+            p=u.Vector(x,y,ground(x,y)+h);look=u.Vector(tx,ty,ground(tx,ty)+eh)
+            car.set_actor_location(p,False,True);point_camera(p,look)
+            for _ in range(100):yield
+            yield from photo(label);views.append([label,*p.to_tuple(),*look.to_tuple()])
+            if label=='bush-interior':
+                from woodland_isolation import inspect_floor
+                inspect_floor(p,look,ground,root,out,world)
+            if label=='bush-interior' and os.environ.get('GT_WOODLAND_IDENTIFY')=='1':
+                from woodland_isolation import isolate
+                yield from isolate(u.GameplayStatics.get_all_actors_of_class(world,u.Actor),photo,out,p)
     tree=next(c for a in actors for c in a.get_components_by_class(u.InstancedStaticMeshComponent)
               if 'ForestAccessPaintedTree' in map(str,c.component_tags))
     note=dict(ok=True,view='Recorded driver-height replay',source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),

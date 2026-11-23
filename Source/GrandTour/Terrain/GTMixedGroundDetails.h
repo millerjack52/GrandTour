@@ -19,6 +19,15 @@ public:
     UPROPERTY(VisibleAnywhere,BlueprintReadOnly) TObjectPtr<UInstancedStaticMeshComponent> Grass;
     UPROPERTY(EditAnywhere,BlueprintReadWrite) bool bGenerateAroundPlayer=false;
     UPROPERTY(EditAnywhere,BlueprintReadWrite) float GrassSpacingCm=55.f;
+    /** Optional visual planting probability. Soil and wheel contacts use the original surface. */
+    UFUNCTION(BlueprintCallable,CallInEditor) bool ImportVisualGrassDensity(const FString& File,FVector2D Origin,double Span);
+    UFUNCTION(BlueprintPure) float VisualGrassDensityAt(FVector2D Point) const;
+private:
+    UPROPERTY() TArray<uint8> VisualDensity;
+    UPROPERTY() int32 VisualDensitySize=0;
+    UPROPERTY() FVector2D VisualDensityOrigin=FVector2D::ZeroVector;
+    UPROPERTY() double VisualDensitySpan=0;
+public:
     /** LP3e: multiplies the near cards' XY and Z scale (clamped .5 to 1.5). Card positions and jitter depend only on GrassSpacingCm, never on this. */
     UPROPERTY(EditAnywhere,BlueprintReadWrite,meta=(ClampMin="0.5",ClampMax="1.5")) float BladeScale=1.f;
     /** LP3e: near cards where style G is between .3 and .8 (rank grass at the bush edge and verges) grow this much taller (Z scale) and carry Straw in
