@@ -76,11 +76,19 @@ def sunset_study(actors,cam,car,roadside,ground):
         sun.set_actor_rotation(rotation,False)
         light.set_temperature(temperature);light.set_editor_property('use_temperature',kelvin)
         light.set_intensity(intensity)
+    movement=car.get_chaos_movement()
+    car.reset_driving_inputs()
+    movement.set_throttle_input(0)
+    movement.set_brake_input(1)
+    movement.set_handbrake_input(True)
     try:
         for name,eye,look in views:
             if name=='ridge':
                 pc.set_view_target_with_blend(car,0)
-                cmd(f"BugItGo {x:.2f} {y:.2f} {vista.z-80:.2f} 0 {paddock['yaw']:.3f} 0")
+                # Keep the streaming source near the camera and the pickup behind it.
+                px=x-1800*math.cos(yaw);py=y-1800*math.sin(yaw)
+                cmd(f"BugItGo {px:.2f} {py:.2f} {ground(px,py)+145:.2f} 0 {paddock['yaw']:.3f} 0")
+                movement.set_handbrake_input(True)
             cam.set_actor_location_and_rotation(eye,u.MathLibrary.find_look_at_rotation(eye,look),False,True)
             pc.set_view_target_with_blend(cam,0)
             for mode in ('daylight','low-sun'):
