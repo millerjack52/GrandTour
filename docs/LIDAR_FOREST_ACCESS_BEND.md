@@ -66,3 +66,37 @@ The direct comparison uses the previous saved bend (`candidate-20261123-165743-9
 The final drive was 2.35 ms slower at the median. An independent repeat of the final daylight drive registered 33.38 ms median and 36.37 ms at the 95th percentile. Its fixed-camera daylight and low-sun pairs are in `candidate-20261123-171443-322/sunset-comparison.jpg`. Two runs of the intervening material revision also differed across launches (31.23 and 35.15 ms). In the fixed inland camera, the median of three adjacent visible-minus-hidden GPU pairs for the combined relief, foliage and pines was −0.77 ms in the previous bend and −0.18 ms in the revision. This check includes the occlusion those objects provide. Attribution of the full driving delta remains open; route-wide 60 fps remains unverified.
 
 The final fresh load checked material revision 4, 370 grouped grass fans and terrain digest `6AE1F9489CE5EC408044BFEC06A9FE25`. The comparison media, six individual GPU traces and raw driving CSV are in the final run folder under `Saved/ForestAccessBend/drives`. The separate recoverable pre-Meadows map, local assets and receipts are in `D:/GrandTourGitHub/LocalReviewBackups/ForestAccessBeforeMeadows` on the authoring machine.
+
+## Small broadleaf at station 57 m
+
+The single 4.6 m broadleaf stands 10.2 m off the road centre. Its three detailed meshes use the original bark, painted leaf material and UVs. At build time the leaf cards gather around 12 branch groups. The first trial exposed the boughs but produced thin horizontal tiers. The saved version preserves more leaf spread along the boughs and lets the upper fans overlap. The far mesh uses four fresh colour and normal views baked from the grouped tree. Its side silhouettes cover 24–26% fewer texels than the original at the same alpha threshold.
+
+The four LODs retain 44,893, 22,447, 9,877 and 8 triangles. The tree occupies one existing instance. The bend verification fingerprints the transforms, mesh and material bindings of the other 159,238 instances under the canopy, midstorey and bend pine groups. The original map is recoverable from `Saved/ForestAccessBend/BeforeBroadleaf-d14d295d15d3fe3ae7ff8d11c379eca55aa74f7a705b799bc5de64b4172e3cab.umap`. The original small-tree mesh also remains available for runtime comparisons.
+
+Run the following from the project root after setting up the previous bend. The first command builds the local assets, applies the single placement and verifies a fresh load. The second records the saved chase drive, then replays passenger-side looks from the positions of that pickup. At each replay position the camera stays fixed while only the small tree switches. Four additional frames with the tree hidden locate its silhouette through neighbouring branches. Six alternating 128-frame GPU samples use the same road camera, separately from both the timing drive and screenshot readbacks.
+
+```powershell
+$bend = './Art/Unreal/ForestAccessBend'
+& "$bend/Run-ForestAccess.ps1" -Broadleaf
+& "$bend/Capture-ForestAccess.ps1" -Stage candidate -Motion -BroadleafStudy
+& "$bend/Capture-ForestAccess.ps1" -Stage candidate -Motion -OriginalBroadleaf
+& "$bend/Capture-ForestAccess.ps1" -Stage candidate -TimingOnly
+```
+
+Use `compare_crown.py ORIGINAL_RUN GROUPED_STUDY_RUN` to assemble matched chase frames, the same-camera replay and the GPU sample differences. Pass `--repeat original RUN` or `--repeat grouped RUN` for each extra timing drive. Driving uses Fast shadows, 1600 × 900 output and the saved 75% TSR setting.
+
+### Broadleaf driving result
+
+The original visual run was `candidate-20261123-174641-445`. The final grouped run was `candidate-20261123-180545-470`. All 27 chase frames paired within 0.17 m along the road. In the side-looking replay, both meshes use the identical camera position at each of 21 stations. At station 61 m, daylight and the trunk behind the small tree show through a gap below the upper tuft. From the normal chase camera this tree is easy to miss among the larger trunks. In deep shade the individual tufts still read quite dark. The comparison supports a change in branch silhouette, with less evidence for an improvement in painted shading.
+
+In the fixed road view, the three paired changes in median GPU time were −0.320, +0.070 and +0.011 ms. Median paired base-pass change was +0.001 ms and shadow depths changed by −0.030 ms. These are differences in whole-scene GPU passes with only this tree switched. The panel and the 21-second pickup and side-view clip are `broadleaf-window.jpg` and `broadleaf-drive-and-window.mp4` in the final run folder. The optional MP4 combines the two WebP comparisons.
+
+| Full 42 m drive, RTX 4050 Laptop GPU, milliseconds | Original, three drives | Saved grouped crown, two drives |
+|---|---:|---:|
+| Median frame time | 30.57–36.13 | 31.12–34.83 |
+| 95th-percentile frame time | 35.94–39.01 | 34.17–37.76 |
+| Median GPU time | 29.76–35.35 | 30.34–33.95 |
+| Median GPU base pass | 10.79–13.12 | 11.00–12.57 |
+| Median GPU shadow depths | 2.55–2.92 | 2.58–2.81 |
+
+The two additional original runs were `candidate-20261123-180124-319` and `candidate-20261123-180920-046`. The final grouped repeat was `candidate-20261123-181035-121`. Each range is the smallest to largest per-drive measurement. The run-to-run variation exceeds the measured effect of this one tree. Both versions exceed the 16.67 ms frame budget.

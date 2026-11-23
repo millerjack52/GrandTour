@@ -135,6 +135,13 @@ def run():
     if candidate:
         stone=next(a for a in added if isinstance(a,u.StaticMeshActor) and a.static_mesh_component.get_material(0)
                    and a.static_mesh_component.get_material(0).get_name() in ("M_ForestAccessStone","M_ForestAccessBeddedStone","M_BendMossLedges"))
+    study_crown = os.environ.get('GT_BEND_CROWN_STUDY') == '1'
+    original_crown = os.environ.get('GT_BEND_ORIGINAL_CROWN') == '1'
+    timing_only = os.environ.get('GT_BEND_TIMING_ONLY') == '1'
+    if study_crown or original_crown:
+        from capture_crown import BroadleafPair, examine
+        pair = BroadleafPair(added, json.loads((out.parent.parent/'build.json').read_text())['broadleaf'])
+        pair.select(not original_crown)
     ignored=[a for a in actors if not isinstance(a,(u.Landscape,u.GTRoadReliefTile))]
     def ground(x,y):
         hit=u.SystemLibrary.line_trace_single(world,u.Vector(x,y,25000),u.Vector(x,y,-5000),
@@ -161,9 +168,14 @@ def run():
     car.reset_driving_inputs()
     movement = car.get_chaos_movement()
     movement.set_handbrake_input(True)
+    if study_crown or original_crown or timing_only:
+        cmd("gt.Lidar.AuditRenderPass warm")
     settle = time.monotonic() + 12
     while time.monotonic() < settle:
         yield
+    if study_crown or original_crown or timing_only:
+        cmd("gt.Lidar.AuditRenderPass warm")
+        for _ in range(12):yield
     position = car.get_actor_location()
     assert math.hypot(position.x-start.x,position.y-start.y) < 450, "Pickup missed the bend approach"
     yield from photo("approach")
@@ -207,7 +219,24 @@ def run():
               "timed_frames":len(samples), "p95_engine_tick_ms":timings[math.ceil(.95*len(timings))-1] if timings else None,
               "median_engine_tick_ms":statistics.median(timings) if timings else None,
               "path":path[::5]}
+    if candidate:
+        driven_tree = next(c for a in added for c in a.get_components_by_class(u.InstancedStaticMeshComponent)
+                           if 'ForestAccessPaintedTree' in map(str,c.component_tags))
+        report['driven_tree'] = driven_tree.static_mesh.get_path_name()
     (out/"drive.json").write_text(json.dumps(report,indent=2))
+    if timing_only:
+        import shutil
+        end=time.monotonic()+20
+        while time.monotonic()<end:
+            ready=[f for f in set(csv_dir.glob('Profile*.csv*'))-csv_before if f.stat().st_size>5000]
+            if ready:break
+            yield
+        else:raise RuntimeError('Timed drive produced no GPU trace')
+        for _ in range(12):yield
+        file=max(ready,key=lambda f:f.stat().st_mtime_ns)
+        shutil.copyfile(file,out/('timing'+''.join(file.suffixes)))
+        cmd('quit')
+        return
     yield from photo("finish")
     def roadside(st,off,height):
         x,y,_=route.at(st,off)
@@ -321,12 +350,16 @@ def run():
             if along>=69:break
             yield
         (out/"motion.json").write_text(json.dumps(snaps))
+    if study_crown:
+        yield from examine(pair,path,route,ground,cam,pc,cmd,photo,csv_dir,out)
     if os.environ.get('GT_BEND_SUNSET')=='1':
         yield from sunset_study(actors,cam,car,roadside,ground)
     cmd("quit")
 
 worker = run()
 def tick(dt):
+    if worker.gi_running:
+        return
     try:
         if timed:
             samples.append(dt*1000)

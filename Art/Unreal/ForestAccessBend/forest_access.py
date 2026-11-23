@@ -502,6 +502,66 @@ def meadow_crown(report):
     report.update(revision=6,meadow_crown=parameters)
     return report
 
+def other_tree_digest(rows, pilot):
+    owners = ('LidarStudy_FloraWorld_Canopy', 'LidarStudy_FloraWorld_Midstory', OWNER)
+    signature = hashlib.sha256()
+    count = 0
+    for a in sorted((a for a in rows if a.get_actor_label() in owners), key=lambda a: a.get_actor_label()):
+        for c in sorted(a.get_components_by_class(u.InstancedStaticMeshComponent), key=lambda c: c.get_name()):
+            if c == pilot or not c.static_mesh:
+                continue
+            if a.get_actor_label() == OWNER and 'ForestAccessPines' not in map(str, c.component_tags):
+                continue
+            count += c.get_instance_count()
+            signature.update(str((a.get_actor_label(),c.get_name(),c.static_mesh.get_path_name(),
+                [m.get_path_name() if m else '' for m in c.get_materials()],c.visible,c.cast_shadow)).encode())
+            for i in range(c.get_instance_count()):
+                t = c.get_instance_transform(i, True)
+                values = t.translation.to_tuple() + t.rotation.to_tuple() + t.scale3d.to_tuple()
+                signature.update((','.join(format(v,'.4f') for v in values)+'\n').encode())
+    assert count > 13030
+    return dict(instances=count,sha256=signature.hexdigest())
+
+def grouped_broadleaf():
+    import bend_crown as crown
+    verify()
+    report = json.loads((OUT/'build.json').read_text())
+    rows = actors()
+    tree = crown.target(rows)
+    setup = json.loads((OUT/'broadleaf-prepared.json').read_text())
+    assert setup['ok'] and setup['version'] == crown.VERSION
+    mesh = u.load_asset(crown.VARIANT)
+    assert mesh and E.get_metadata_tag(mesh, 'ForestAccessTufts') == crown.VERSION
+    before = other_tree_digest(rows, tree)
+    if report.get('revision') == 7:
+        assert before == report['broadleaf']['other_trees']
+        assert tree.static_mesh == mesh and tree.get_material(2) == u.load_asset(setup['far'])
+        report['broadleaf'].update(setup)
+        verify_placement(rows,report)
+        dump('placement',report)
+        dump('build',report)
+        return
+    assert report['revision'] == 6 and tree.static_mesh == u.load_asset(crown.ORIGINAL)
+    assert tree.get_material(2) == u.load_asset(setup['old_far'])
+    old_hash = digest(MAPFILE)
+    backup = OUT/('BeforeBroadleaf-'+old_hash+'.umap')
+    if not backup.exists():
+        shutil.copyfile(MAPFILE, backup)
+    assert digest(backup) == old_hash
+    mats = list(tree.get_materials())
+    tree.get_owner().modify()
+    tree.modify()
+    assert tree.set_static_mesh(mesh)
+    for i, material in enumerate(mats[:2]):
+        tree.set_material(i, material)
+    tree.set_material(2, u.load_asset(setup['far']))
+    report.update(revision=7, broadleaf=dict(**setup, other_trees=before, before_map_sha256=old_hash,
+        near_materials=[m.get_path_name() for m in mats[:2]]))
+    verify_placement(rows, report)
+    dump('placement',report)
+    assert L.save_current_level(), 'Could not save the isolated broadleaf placement'
+    dump('build',report)
+
 def install():
     rows=actors()
     road_pairs=[(a,road_samples(a)) for a in rows if isinstance(a,u.GTProceduralRoad)]
@@ -582,6 +642,16 @@ def verify_placement(rows,r):
     if meadow:
         for k,v in r['meadow_crown'].items():assert abs(M.get_material_instance_scalar_parameter_value(leaf,k)-v)<.001
         assert r['woodland']['grass_fans']>0
+    if r.get('revision',1)>=7:
+        br=r['broadleaf']
+        assert tree.static_mesh.get_path_name().split('.')[0]==br['mesh']
+        assert [m.get_path_name() for m in list(tree.get_materials())[:2]]==br['near_materials']
+        assert tree.get_material(2).get_path_name().split('.')[0]==br['far']
+        assert other_tree_digest(rows,tree)==br['other_trees']
+        assert math.dist(tree.get_instance_transform(0,True).translation.to_tuple(),r['crown']['position'])<.02
+        assert [tree.static_mesh.get_num_triangles(i) for i in range(4)]==br['lod_triangles']
+        if MODE=='verify':
+            assert E.get_metadata_tag(tree.static_mesh,'ForestAccessTufts')==br['version']
     if r.get('revision',1)>=2:
         ferns,=[c for c in named[OWNER].get_components_by_class(u.InstancedStaticMeshComponent)
                 if 'ForestAccessPaintedFerns' in map(str,c.component_tags)]
@@ -650,6 +720,7 @@ try:
     assert L.load_level(MAP),MAP
     if MODE=='survey':survey()
     elif MODE=='verify':verify()
+    elif MODE=='broadleaf':grouped_broadleaf()
     elif MODE=='build':
         if any(a.get_actor_label()==OWNER for a in actors()):
             verify()

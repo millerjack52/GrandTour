@@ -4,7 +4,8 @@ param(
     [string]$EditorCmd = 'C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor-Cmd.exe',
     [switch]$Preview,
     [switch]$PreviewOnly,
-    [switch]$VerifyOnly
+    [switch]$VerifyOnly,
+    [switch]$Broadleaf
 )
 $ErrorActionPreference='Stop'
 $project=Get-Item -LiteralPath (Join-Path $ProjectRoot 'GrandTour.uproject')
@@ -35,7 +36,21 @@ if (!$VerifyOnly -and (!(Test-Path -LiteralPath (Join-Path $reportDir 'T_BendMos
 }
 $oldStage=$env:GT_BEND_STAGE
 try {
+    if ($Broadleaf -and !$VerifyOnly) {
+        if (Get-Process UnrealEditor*,blender,Wardogs* -ErrorAction SilentlyContinue) {throw 'Another renderer is active.'}
+        $prepare=Join-Path $PSScriptRoot 'prepare_bend_crown.py'
+        $app=Join-Path (Split-Path -Parent $EditorCmd) 'UnrealEditor.exe'
+        $receipt=Join-Path $reportDir 'broadleaf-prepared.json'
+        $started=[DateTime]::UtcNow
+        $params=@(('"'+$project.FullName+'"'),'/Engine/Maps/Entry',('-ExecCmds="py '+$prepare.Replace('\','/')+'"'),
+            '-Unattended','-NoSound','-NoSplash','-RenderOffScreen','-NoAutoSave',('-abslog="'+(Join-Path $reportDir 'broadleaf-prepare.log')+'"'))
+        $job=Start-Process $app -ArgumentList $params -WindowStyle Hidden -PassThru -Wait
+        if ($job.ExitCode -ne 0 -or !(Test-Path -LiteralPath $receipt) -or (Get-Item $receipt).LastWriteTimeUtc -lt $started) {throw 'No fresh broadleaf preparation receipt.'}
+        $prepared=Get-Content -Raw -LiteralPath $receipt | ConvertFrom-Json
+        if (!$prepared.ok) {throw $prepared.error}
+    }
     $stages=if($VerifyOnly){@('verify')}else{@('build','verify')}
+    if ($Broadleaf -and !$VerifyOnly) {$stages=@('broadleaf','verify')}
     foreach ($stage in $stages) {
         if (Get-Process UnrealEditor*,blender,Wardogs* -ErrorAction SilentlyContinue) {throw 'Another renderer is active.'}
         $env:GT_BEND_STAGE=$stage
